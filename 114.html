@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>114學測英文詳解｜詞彙題答案與解析、線上練習｜Winglish 必英</title>
+<meta name="description" content="114 學年度學測英文詞彙題 1～10 題答案與完整中文詳解：每個選項為什麼對、為什麼錯，附中譯和重點單字。還可以線上作答、選項自動打亂反覆練習。">
+<link rel="canonical" href="https://winglish-tw.github.io/114.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1A2238;
+  --ink-soft:#4A536B;
+  --paper:#F7F9FC;
+  --white:#FFFFFF;
+  --mist:#E4E9F2;
+  --sheet-red:#D23F57;
+  --sheet-red-soft:#F7D9DF;
+  --marker:#FFE14D;
+  --ok:#17875C;
+  --ok-soft:#DDF3E9;
+  --wrong-soft:#FCE6EA;
+  --radius-lg:22px;
+  --radius-sm:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
+  font-size:17px;line-height:1.75;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sheet-red);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.en{font-family:"Bricolage Grotesque","Noto Sans TC",sans-serif}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo svg{width:38px;height:38px;flex:none}
+.logo b{font-family:"Bricolage Grotesque",sans-serif;font-size:24px;font-weight:800;letter-spacing:-.5px;line-height:1}
+.logo small{display:block;font-size:13px;font-weight:700;color:var(--sheet-red);letter-spacing:4px;margin-top:2px}
+.top nav{display:flex;gap:22px;font-size:15px}
+.top nav a{text-decoration:none;color:var(--ink-soft)}
+.top nav a:hover{color:var(--ink)}
+@media (max-width:640px){.top nav a:not(.nav-cta){display:none}}
+.nav-cta{background:var(--ink);color:#fff!important;padding:8px 16px;border-radius:999px;font-weight:700}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;padding:36px 0 72px}
+@media (max-width:900px){.hero{grid-template-columns:1fr;gap:36px;padding-top:16px}}
+.hero h1{font-size:clamp(34px,5.2vw,56px);line-height:1.22;font-weight:900;margin:0 0 18px;letter-spacing:.5px}
+.hero h1 .mark{background:linear-gradient(transparent 58%,var(--marker) 58%,var(--marker) 92%,transparent 92%);padding:0 2px}
+.hero p.lead{font-size:19px;color:var(--ink-soft);margin:0 0 28px;max-width:30em}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:inherit;font-weight:800;font-size:18px;
+  text-decoration:none;border-radius:999px;padding:14px 30px;border:2px solid var(--ink);cursor:pointer;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-main{background:var(--sheet-red);border-color:var(--sheet-red);color:#fff;box-shadow:0 6px 0 #9E2A3E}
+.btn-main:hover{box-shadow:0 8px 0 #9E2A3E}
+.btn-line{background:transparent;color:var(--ink)}
+.free-note{font-size:15px;color:var(--ink-soft);margin-top:16px}
+.free-note b{color:var(--ok)}
+
+/* demo sheet */
+.sheet{background:var(--white);border-radius:var(--radius-lg);padding:26px 26px 22px;position:relative;
+  box-shadow:0 1px 0 var(--mist),0 24px 50px -24px rgba(26,34,56,.35);
+  border-top:8px solid var(--sheet-red)}
+.sheet-head{display:flex;justify-content:space-between;align-items:baseline;font-size:14px;color:var(--ink-soft);
+  border-bottom:2px solid var(--sheet-red);padding-bottom:10px;margin-bottom:18px;position:relative;background:var(--white)}
+.sheet-head strong{color:var(--sheet-red);font-size:15px}
+.q{position:relative;padding-left:46px;background:var(--white)}
+.q .num{position:absolute;left:0;top:0;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:22px;color:var(--sheet-red)}
+.q .stem{font-family:"Bricolage Grotesque","Noto Sans TC",sans-serif;font-size:20px;line-height:1.6;margin:0 0 16px}
+.blank{display:inline-block;min-width:96px;border-bottom:2.5px solid var(--ink);text-align:center;font-weight:700;color:var(--sheet-red)}
+.opts{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;font-size:18px;color:var(--ink);
+  background:var(--white);border:1.5px solid var(--mist);border-radius:var(--radius-sm);padding:9px 14px;cursor:pointer}
+.opt:hover{border-color:var(--ink-soft)}
+.bubble{flex:none;width:34px;height:20px;border:2px solid var(--sheet-red);border-radius:50%;display:grid;place-items:center;
+  font-size:12px;font-weight:700;color:var(--sheet-red);font-family:"Bricolage Grotesque",sans-serif;position:relative;overflow:hidden}
+.opt.picked .bubble{color:transparent}
+.opt.picked .bubble::after{content:"";position:absolute;inset:1px;border-radius:50%;
+  background:repeating-linear-gradient(-20deg,#2b2f3a 0 2px,#3d4250 2px 3px)}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--sheet-red);background:var(--wrong-soft)}
+.opt .w{font-family:"Bricolage Grotesque",sans-serif}
+.feedback{margin-top:14px;border-radius:var(--radius-sm);padding:12px 16px;font-size:16px;line-height:1.7;display:none}
+.feedback.show{display:block}
+.feedback.bad{background:var(--wrong-soft);border-left:5px solid var(--sheet-red)}
+.feedback.good{background:var(--ok-soft);border-left:5px solid var(--ok)}
+.feedback b{display:block;font-size:17px;margin-bottom:2px}
+.sheet-foot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;position:relative;background:var(--white);font-size:14px;color:var(--ink-soft)}
+.next{font:inherit;font-size:15px;font-weight:700;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:8px 18px;cursor:pointer}
+.next[hidden]{display:none}
+
+/* sections */
+section{padding:72px 0}
+.sec-title{font-size:clamp(26px,3.4vw,36px);font-weight:900;line-height:1.35;margin:0 0 12px}
+.sec-lead{color:var(--ink-soft);margin:0 0 36px;max-width:34em}
+
+/* years strip */
+.years{background:var(--ink);color:#fff;padding:56px 0}
+.years-grid{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px}
+.years h2{margin:0;font-size:26px;font-weight:900;line-height:1.4;max-width:12em}
+.years h2 span{color:var(--marker)}
+.year-list{display:flex;gap:clamp(10px,2.4vw,28px);list-style:none;margin:0;padding:0}
+.year-list li{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(34px,6vw,64px);line-height:1;letter-spacing:-1px}
+.year-list li small{display:block;font-family:"Noto Sans TC",sans-serif;font-size:13px;font-weight:500;letter-spacing:1px;opacity:.7;margin-top:8px;text-align:center}
+.year-list li:last-child{color:var(--marker)}
+.parts{margin-top:28px;font-size:15px;opacity:.85}
+
+/* features */
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:2px solid var(--ink)}
+@media (max-width:760px){.feat{grid-template-columns:1fr}}
+.feat article{padding:28px 28px 30px 0;border-bottom:1.5px solid var(--mist)}
+.feat article:nth-child(odd){padding-right:40px}
+@media (min-width:761px){.feat article:nth-child(even){padding-left:40px;border-left:1.5px solid var(--mist)}}
+.feat h3{font-size:21px;margin:0 0 6px;font-weight:900}
+.feat p{margin:0;color:var(--ink-soft)}
+.feat .icon{width:44px;height:44px;margin-bottom:12px}
+
+/* who */
+.who{background:var(--white);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+@media (max-width:820px){.who-grid{grid-template-columns:1fr}}
+.who-grid div{border-left:5px solid var(--marker);padding:4px 0 4px 18px}
+.who-grid h3{margin:0 0 4px;font-size:19px}
+.who-grid p{margin:0;color:var(--ink-soft);font-size:16px}
+
+/* plans */
+.free-banner{background:var(--marker);border-radius:var(--radius-lg);padding:22px 26px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.free-banner p{margin:0;font-size:18px;font-weight:700}
+.free-banner .btn{font-size:16px;padding:10px 22px;background:var(--ink);border-color:var(--ink);color:#fff}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:820px){.plans{grid-template-columns:1fr}}
+.plan{background:var(--white);border:1.5px solid var(--mist);border-radius:var(--radius-lg);padding:26px;position:relative}
+.plan.best{border:2.5px solid var(--sheet-red)}
+.plan .tag{position:absolute;top:-14px;left:24px;background:var(--sheet-red);color:#fff;font-size:14px;font-weight:700;padding:3px 12px;border-radius:999px}
+.plan h3{margin:0;font-size:20px}
+.plan .price{font-family:"Bricolage Grotesque",sans-serif;font-size:44px;font-weight:800;line-height:1.1;margin:10px 0 2px}
+.plan .price small{font-family:"Noto Sans TC",sans-serif;font-size:16px;font-weight:500;color:var(--ink-soft)}
+.plan p{margin:6px 0 0;color:var(--ink-soft);font-size:15px}
+.plan-note{font-size:14px;color:var(--ink-soft);margin-top:16px}
+
+/* faq */
+.faq details{border-bottom:1.5px solid var(--mist);padding:18px 0}
+.faq details:first-of-type{border-top:2px solid var(--ink)}
+.faq summary{cursor:pointer;font-size:19px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"Bricolage Grotesque",sans-serif;font-size:26px;line-height:1;color:var(--sheet-red);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin:10px 0 0;color:var(--ink-soft);max-width:40em}
+
+/* closing */
+.closing{text-align:center;padding:80px 0}
+.closing h2{font-size:clamp(28px,4vw,42px);font-weight:900;margin:0 0 10px}
+.closing p{color:var(--ink-soft);margin:0 0 28px}
+
+footer{background:var(--ink);color:#C9D0DE;font-size:15px;padding:36px 0}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
+footer a{color:#fff}
+footer .links{display:flex;gap:22px;flex-wrap:wrap}
+
+/* privacy page */
+.doc{max-width:760px;margin:0 auto;padding:24px 20px 72px}
+.doc h1{font-size:clamp(30px,4vw,40px);font-weight:900;margin:12px 0 4px}
+.doc .date{color:var(--ink-soft);font-size:15px;margin:0 0 28px}
+.doc h2{font-size:21px;font-weight:900;margin:36px 0 8px;padding-left:14px;border-left:5px solid var(--sheet-red)}
+.doc p,.doc li{color:#2C3550}
+.doc ul{padding-left:22px}
+.doc li{margin-bottom:6px}
+.doc .box{background:var(--white);border:1.5px solid var(--mist);border-radius:var(--radius-lg);padding:22px 24px;margin-top:20px}
+
+
+.yp{max-width:820px;margin:0 auto;padding:8px 20px 64px}
+.crumb{font-size:14px;color:var(--ink-soft);margin:4px 0 0}
+.crumb a{color:var(--ink-soft)}
+.yp h1{font-size:clamp(30px,4.6vw,46px);font-weight:900;line-height:1.3;margin:10px 0 12px}
+.yp .intro{color:var(--ink-soft);margin:0 0 24px}
+.cta-box{background:var(--ink);color:#fff;border-radius:var(--radius-lg);padding:22px 24px;display:flex;flex-wrap:wrap;gap:14px 24px;align-items:center;justify-content:space-between;margin:28px 0}
+.cta-box p{margin:0;font-size:17px}
+.cta-box .btn{font-size:16px;padding:11px 24px;box-shadow:none}
+.yp h2{font-size:24px;font-weight:900;margin:48px 0 10px;padding-left:14px;border-left:6px solid var(--sheet-red)}
+.keys{display:grid;grid-template-columns:repeat(10,1fr);border:1.5px solid var(--mist);border-radius:var(--radius-sm);overflow:hidden;background:#fff;text-align:center;margin:12px 0 4px}
+.keys div{border-right:1px solid var(--mist)}
+.keys div:last-child{border-right:0}
+.keys span{display:block;padding:6px 0;font-size:14px;color:var(--ink-soft);background:var(--paper);border-bottom:1px solid var(--mist)}
+.keys b{display:block;padding:8px 0;font-size:20px;color:var(--sheet-red);font-family:"Bricolage Grotesque",sans-serif}
+@media (max-width:560px){.keys{grid-template-columns:repeat(5,1fr)}.keys div:nth-child(5){border-right:0}.keys div:nth-child(-n+5){border-bottom:1px solid var(--mist)}}
+.item{background:#fff;border:1.5px solid var(--mist);border-radius:var(--radius-lg);padding:20px 22px;margin:16px 0}
+.item .stem{font-family:"Bricolage Grotesque","Noto Sans TC",sans-serif;font-size:18px;margin:0 0 10px;line-height:1.65}
+.item .stem b{color:var(--sheet-red);margin-right:6px}
+.item ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,auto);gap:4px 20px;justify-content:start;font-family:"Bricolage Grotesque",sans-serif}
+@media (max-width:560px){.item ol{grid-template-columns:repeat(2,auto)}}
+.item details{margin-top:12px;border-top:1px dashed var(--mist);padding-top:10px}
+.item summary{cursor:pointer;font-weight:800;color:var(--sheet-red);font-size:16px}
+.item .ans{font-size:16px;margin:10px 0 0}
+.item .ans p{margin:6px 0}
+.item .ans ul{margin:6px 0;padding-left:20px;color:var(--ink-soft)}
+.ok{display:inline-block;background:var(--ok-soft);color:var(--ok);font-weight:800;border-radius:6px;padding:1px 10px}
+.topic-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.topic-list{grid-template-columns:1fr}}
+.topic-list div{background:#fff;border:1.5px solid var(--mist);border-radius:var(--radius-sm);padding:14px 18px}
+.topic-list small{color:var(--ink-soft);display:block}
+.years-nav{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+.years-nav a{text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;border:2px solid var(--ink);border-radius:999px;padding:6px 18px}
+.years-nav a[aria-current]{background:var(--ink);color:#fff}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="Winglish 必英 首頁"><svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#1A2238"/><path d="M7 12c5 1 8 4 9.5 10L20 13l3.5 9c1.5-6 4.5-9 9.5-10-3.5 4-5 9-6 16h-3.2L20 20.5 16.2 28H13c-1-7-2.5-12-6-16z" fill="#fff"/><ellipse cx="31" cy="30" rx="4" ry="2.4" fill="#FFE14D"/></svg><span><b>Winglish</b><small>必英</small></span></a>
+    <nav><a href="index.html">首頁</a><a class="nav-cta" href="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec">開始練習</a></nav>
+  </header>
+</div>
+<main class="yp">
+  <p class="crumb"><a href="index.html">Winglish 必英</a>／學測英文歷屆試題</p>
+  <h1>114 學測英文詳解</h1>
+  <p class="intro">114 學年度學科能力測驗英文考科。這一頁整理了詞彙題第 1～10 題的答案和完整詳解，每個選項為什麼對、為什麼錯都寫清楚。想自己先作答再看解析，可以到線上練習，選項每次都會重新打亂。</p>
+  <div class="cta-box"><p>先自己做做看，答錯會馬上告訴你為什麼。進去後在上方選年度就好。</p><a class="btn btn-main" href="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec">到線上練習作答</a></div>
+
+  <h2>詞彙題答案</h2>
+  <div class="keys"><div><span>1</span><b>C</b></div><div><span>2</span><b>A</b></div><div><span>3</span><b>A</b></div><div><span>4</span><b>C</b></div><div><span>5</span><b>C</b></div><div><span>6</span><b>D</b></div><div><span>7</span><b>D</b></div><div><span>8</span><b>A</b></div><div><span>9</span><b>B</b></div><div><span>10</span><b>A</b></div></div>
+
+  <h2>詞彙題詳解（第 1～10 題）</h2>
+  <div class="item" id="q1">
+  <p class="stem"><b>1.</b>If you put a <u>　　　　</u> under a leaking faucet, you will be surprised at the amount of water collected in 24 hours.</p>
+  <ol><li>(A) border</li><li>(B) timer</li><li>(C) container</li><li>(D) marker</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(C) container</span></p>
+    <p>中譯：如果你在漏水的水龍頭下面放一個＿＿，你會驚訝 24 小時能接到多少水。</p>
+    <p>關鍵：put a ___ under a leaking faucet，後面又說 water collected（收集到的水）→ 要放一個「容器」：container。</p>
+    <p>其他選項為什麼不對：</p><ul><li>border 是「邊界、邊緣」，放在水龍頭下面接不了水。</li><li>timer 是「計時器」，雖然句子提到 24 小時，但計時器不能接水。</li><li>marker 是「麥克筆、標記」，不能用來裝水。</li></ul>
+    <p>單字：container 容器｜leak 漏水｜faucet 水龍頭｜collect 收集</p>
+  </div></details>
+</div>
+<div class="item" id="q2">
+  <p class="stem"><b>2.</b>The local farmers’ market is popular as it offers a variety of fresh seasonal <u>　　　　</u> to people in the community.</p>
+  <ol><li>(A) produce</li><li>(B) fashion</li><li>(C) brand</li><li>(D) trend</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(A) produce</span></p>
+    <p>中譯：當地的農夫市集很受歡迎，因為它提供社區民眾各式各樣新鮮的當季＿＿。</p>
+    <p>關鍵：farmers’ market（農夫市集）＋ fresh seasonal（新鮮、當季的）→ 農產品。produce 當名詞時是「農產品」，重音在第一個音節。</p>
+    <p>其他選項為什麼不對：</p><ul><li>fashion 是「時尚」，農夫市集不賣「新鮮的當季時尚」。</li><li>brand 是「品牌」，品牌不會是新鮮的。</li><li>trend 是「趨勢」，趨勢不能吃，也不會是當季的新鮮東西。</li></ul>
+    <p>單字：produce（名詞）農產品｜seasonal 當季的｜a variety of 各式各樣的｜community 社區</p>
+  </div></details>
+</div>
+<div class="item" id="q3">
+  <p class="stem"><b>3.</b>As the years have passed by, many of my childhood memories are already <u>　　　　</u>; I can no longer recall clearly what happened back then.</p>
+  <ol><li>(A) blurring</li><li>(B) trimming</li><li>(C) draining</li><li>(D) glaring</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(A) blurring</span></p>
+    <p>中譯：隨著時間過去，很多童年回憶已經＿＿了；我再也想不清楚當時發生了什麼事。</p>
+    <p>關鍵：分號後面說「再也想不清楚」→ 回憶變「模糊」：blur。</p>
+    <p>其他選項為什麼不對：</p><ul><li>trimming 是「修剪」（頭髮、樹枝），回憶不會被修剪。</li><li>draining 是「排水、耗盡」，回憶不是液體。</li><li>glaring 是「刺眼的、怒視」，跟「想不清楚」相反。</li></ul>
+    <p>單字：blur 變模糊｜childhood 童年｜recall 回想起</p>
+  </div></details>
+</div>
+<div class="item" id="q4">
+  <p class="stem"><b>4.</b>Racist remarks are by nature <u>　　　　</u> and hurtful, and should be avoided on all occasions.</p>
+  <ol><li>(A) excessive</li><li>(B) furious</li><li>(C) offensive</li><li>(D) stubborn</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(C) offensive</span></p>
+    <p>中譯：種族歧視的言論本質上就是＿＿又傷人的，在任何場合都應該避免。</p>
+    <p>關鍵：空格和 hurtful（傷人的）用 and 連接，意思要相近 → offensive（冒犯人的）。</p>
+    <p>其他選項為什麼不對：</p><ul><li>excessive 是「過度的」，「本質上就是過度的」意思不完整。</li><li>furious 是「狂怒的」，形容人的情緒，言論本身不會生氣。</li><li>stubborn 是「固執的」，用來形容人。</li></ul>
+    <p>單字：offensive 冒犯人的｜racist 種族歧視的｜remark 言論｜by nature 本質上｜occasion 場合</p>
+  </div></details>
+</div>
+<div class="item" id="q5">
+  <p class="stem"><b>5.</b>Not satisfied with the first <u>　　　　</u> of her essay, Mary revised it several times before turning it in to the teacher.</p>
+  <ol><li>(A) text</li><li>(B) brush</li><li>(C) draft</li><li>(D) plot</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(C) draft</span></p>
+    <p>中譯：Mary 對作文的第一份＿＿不滿意，交給老師之前修改了好幾次。</p>
+    <p>關鍵：first draft ＝ 初稿。後面說 revised it several times（修改好幾次）→ 草稿：draft。</p>
+    <p>其他選項為什麼不對：</p><ul><li>text 是「文字、課文」，不會說作文的「第一份文字」。</li><li>brush 是「刷子、畫筆」。</li><li>plot 是「（故事的）情節」，作文不一定有情節，而且後面修改的是整份稿子。</li></ul>
+    <p>單字：draft 草稿｜revise 修改｜turn in 繳交</p>
+  </div></details>
+</div>
+<div class="item" id="q6">
+  <p class="stem"><b>6.</b>Left <u>　　　　</u> for years, the deserted house was filled with a thick coating of dust and a smell of old damp wood.</p>
+  <ol><li>(A) casual</li><li>(B) fragile</li><li>(C) remote</li><li>(D) vacant</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(D) vacant</span></p>
+    <p>中譯：這棟廢棄的房子＿＿了好幾年，積滿厚厚的灰塵，還有老舊潮濕木頭的味道。</p>
+    <p>關鍵：deserted（廢棄的）、滿是灰塵 → 房子一直「空著」：left vacant。</p>
+    <p>其他選項為什麼不對：</p><ul><li>casual 是「隨意的、休閒的」，用來形容態度或穿著。</li><li>fragile 是「易碎的」，房子不會因為放著不管而變得易碎。</li><li>remote 是「偏遠的」，房子的位置不會因為沒人住而改變。</li></ul>
+    <p>單字：vacant 空著的｜deserted 廢棄的｜coating 一層｜damp 潮濕的</p>
+  </div></details>
+</div>
+<div class="item" id="q7">
+  <p class="stem"><b>7.</b>The high school student showed <u>　　　　</u> courage when she helped the old man escape from the fire.</p>
+  <ol><li>(A) gigantic</li><li>(B) exclusive</li><li>(C) multiple</li><li>(D) enormous</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(D) enormous</span></p>
+    <p>中譯：這位高中生幫助老先生逃離火場時，展現了＿＿的勇氣。</p>
+    <p>關鍵：enormous courage ＝ 極大的勇氣。enormous 可以形容抽象的程度，gigantic 多半只形容具體的大小。</p>
+    <p>其他選項為什麼不對：</p><ul><li>gigantic 也是「巨大的」，但多半形容看得到的體積，例如 a gigantic building，不用來形容勇氣。</li><li>exclusive 是「獨家的、專屬的」。</li><li>multiple 是「多個的」，後面接複數名詞，courage 是不可數名詞。</li></ul>
+    <p>單字：enormous 極大的｜courage 勇氣｜escape 逃離</p>
+  </div></details>
+</div>
+<div class="item" id="q8">
+  <p class="stem"><b>8.</b>Publicly financed projects are often <u>　　　　</u> or delayed during tough economic times due to a lack of resources.</p>
+  <ol><li>(A) halted</li><li>(B) hatched</li><li>(C) possessed</li><li>(D) reinforced</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(A) halted</span></p>
+    <p>中譯：經濟不景氣時，公共出資的計畫常常因為缺乏資源而被＿＿或延後。</p>
+    <p>關鍵：和 delayed（延後）並列，原因是 lack of resources（缺乏資源）→ 計畫被「中止」：halt。</p>
+    <p>其他選項為什麼不對：</p><ul><li>hatched 是「孵化」，也可以指「策劃」，但缺乏資源不會讓計畫被策劃出來。</li><li>possessed 是「擁有、被附身」。</li><li>reinforced 是「強化」，缺乏資源時反而沒辦法強化。</li></ul>
+    <p>單字：halt 中止｜finance 出資｜tough 艱困的｜resource 資源</p>
+  </div></details>
+</div>
+<div class="item" id="q9">
+  <p class="stem"><b>9.</b>Despite his busy schedule, the President <u>　　　　</u> the school’s graduation ceremony with his presence and a heartwarming speech.</p>
+  <ol><li>(A) praised</li><li>(B) graced</li><li>(C) addressed</li><li>(D) credited</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(B) graced</span></p>
+    <p>中譯：儘管行程忙碌，總統還是＿＿了學校的畢業典禮，並發表溫暖人心的演講。</p>
+    <p>關鍵：grace an event with one’s presence ＝ 某人蒞臨，讓活動增光，是固定用法。</p>
+    <p>其他選項為什麼不對：</p><ul><li>praised 是「稱讚」，「用他的出席來稱讚典禮」不通。</li><li>addressed 是「對……演說、處理」，可以說 address the ceremony（在典禮上致詞），但不會接 with his presence（用他的出席）。</li><li>credited 是「歸功於」。</li></ul>
+    <p>單字：grace 使增光；蒞臨｜presence 出席｜heartwarming 溫暖人心的</p>
+  </div></details>
+</div>
+<div class="item" id="q10">
+  <p class="stem"><b>10.</b>The manager of the company was sued for <u>　　　　</u> abusing his colleagues, calling them “hopeless losers.”</p>
+  <ol><li>(A) verbally</li><li>(B) dominantly</li><li>(C) legitimately</li><li>(D) relevantly</li></ol>
+  <details><summary>看答案與詳解</summary><div class="ans">
+    <p>答案：<span class="ok">(A) verbally</span></p>
+    <p>中譯：這家公司的經理＿＿霸凌同事，罵他們是「無可救藥的魯蛇」，因此被告。</p>
+    <p>關鍵：calling them “hopeless losers”（用話罵人）→ 言語上的霸凌：verbally abuse。</p>
+    <p>其他選項為什麼不對：</p><ul><li>dominantly 是「佔優勢地」，不是形容霸凌的方式。</li><li>legitimately 是「合法地」，霸凌不會是合法的。</li><li>relevantly 是「相關地」。</li></ul>
+    <p>單字：verbally 言語上｜abuse 虐待；霸凌｜sue 控告｜colleague 同事</p>
+  </div></details>
+</div>
+
+  <h2>綜合測驗</h2>
+  <p>114 學測綜合測驗有兩篇文章，線上練習裡每一格都有錯誤選項說明、全文中譯和重點單字。</p>
+  <div class="topic-list"><div><small>綜合測驗 第 11 至 15 題</small><b>世界咖啡館的誕生</b></div><div><small>綜合測驗 第 16 至 20 題</small><b>為什麼會暈車？</b></div></div>
+
+  <h2>翻譯與作文</h2>
+  <p>114 學測的中譯英和英文作文，線上練習附有參考寫法、常見錯誤、好用句型和範文。</p>
+  <div class="cta-box"><p>綜合測驗、翻譯和作文都在線上練習裡。</p><a class="btn btn-main" href="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec">開始練習</a></div>
+
+  <h2>其他年度</h2>
+  <div class="years-nav"><a href="115.html">115</a><a href="114.html" aria-current="page">114</a><a href="113.html">113</a><a href="112.html">112</a><a href="111.html">111</a></div>
+</main>
+<footer>
+  <div class="wrap">
+    <span>© 2026 Winglish 必英</span>
+    <span class="links"><a href="index.html">首頁</a><a href="privacy.html">隱私權政策</a><a href="mailto:christyhsiao6@gmail.com">聯絡我們</a></span>
+  </div>
+</footer>
+</body>
+</html>
