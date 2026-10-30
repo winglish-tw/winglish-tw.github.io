@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-42J5R61SED"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-42J5R61SED');</script>
+<title>我的練習進度｜Winglish 必英</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+/* Layout: one narrow column — code gate, then summary numbers, 8-week bar chart, weak points, recent records */
+:root{
+  --bg:#f3f5f8; --sheet:#ffffff; --fg:#1d2733; --muted:#5d6b7a; --rule:#dde3ea;
+  --ink:#1f4e8c; --ink-soft:#e6eef8; --ok:#1f7a4d; --bad:#b33a2e; --bad-soft:#fbe9e6;
+  --f-zh:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#12171d; --sheet:#1a2129; --fg:#e4e9ef; --muted:#9aa8b6; --rule:#2c3640;
+  --ink:#8db6ec; --ink-soft:#1f2c3c; --ok:#6fcf9b; --bad:#f08a7e; --bad-soft:#3a1f1c; color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--f-zh);font-size:16px;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 48px}
+h1{font-size:1.35rem;margin:0}
+h2{font-size:1.02rem;margin:0 0 10px}
+.sub{color:var(--muted);font-size:.9rem;margin:2px 0 16px}
+.panel{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+.btn{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--ink);background:var(--sheet);color:var(--ink);cursor:pointer;font-weight:500}
+.btn.primary{background:var(--ink);color:var(--sheet)}
+.btn:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.grow{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.grow input{flex:1;min-width:0;font:inherit;font-size:1.05rem;letter-spacing:.05em;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--fg);text-transform:uppercase}
+.msg{min-height:1.4em;margin:10px 0 0;font-size:.9rem;color:var(--muted)}
+.msg.err{color:var(--bad)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media (max-width:480px){.stats{grid-template-columns:1fr 1fr}}
+.stat{min-width:0}
+.stat .k{font-size:.82rem;color:var(--muted)}
+.stat .v{font-size:1.6rem;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink);line-height:1.2}
+.stat .d{font-size:.82rem;font-variant-numeric:tabular-nums}
+.up{color:var(--ok)} .down{color:var(--bad)}
+.chart{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;align-items:end;height:150px;border-bottom:1px solid var(--rule);padding-top:18px}
+.bar{position:relative;background:var(--ink-soft);border-radius:4px 4px 0 0;min-height:2px}
+.bar.cur{background:var(--ink)}
+.bar span{position:absolute;top:-18px;left:0;right:0;text-align:center;font-size:.72rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar.none{background:transparent;border-bottom:2px dashed var(--rule)}
+.xl{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;font-size:.72rem;color:var(--muted);text-align:center;margin-top:4px}
+.note{font-size:.82rem;color:var(--muted);margin:8px 0 0}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tag{background:var(--bad-soft);color:var(--bad);border-radius:999px;padding:3px 12px;font-size:.88rem}
+.tablebox{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:520px}
+th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{color:var(--muted);font-weight:500}
+td.num{font-variant-numeric:tabular-nums}
+.top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;flex-wrap:wrap}
+[hidden]{display:none!important}
+.wh{border-top:1px solid var(--rule);padding-block:10px}.wh:first-child{border-top:0}
+.whd{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.92rem}
+.pill{font-size:.78rem;border-radius:999px;padding:1px 10px;white-space:nowrap}
+.pill.wait{background:var(--ink-soft);color:var(--ink)}.pill.done{background:#e3f3ea;color:var(--ok)}
+.wh details{margin-top:6px;font-size:.92rem}.wh summary{cursor:pointer;color:var(--ink);font-weight:500}
+.fbtext{white-space:pre-wrap;margin:8px 0 0;line-height:1.7}
+.ans{white-space:pre-wrap;font-family:Georgia,serif;background:var(--bg);border-radius:6px;padding:8px 10px;margin:6px 0 0}
+.homelink{display:inline-block;margin:0 0 10px;font-size:.92rem;color:var(--ink);text-decoration:none;font-weight:600}
+.homelink:hover{text-decoration:underline}
+</style>
+
+<div class="wrap">
+  <a class="homelink" href="https://winglish-tw.github.io/" target="_top">‹ 回到 Winglish 首頁</a>
+  <div id="gate" class="panel">
+    <h1>我的練習進度</h1>
+    <p class="sub">登入後查看你的練習紀錄，只有你自己看得到。</p>
+    <form id="gform">
+      <div id="gwrap"><a class="btn primary" id="googleLogin" target="_top" style="text-decoration:none;display:inline-block">用 Google 登入</a><p class="msg" style="margin:6px 0 12px">請選擇付款時填寫的 Gmail 帳號。</p></div>
+      <label for="gcode">或輸入訂閱者代碼</label>
+      <div class="grow"><input id="gcode" autocomplete="off" placeholder="例如 G7K2QX" required><button class="btn primary" id="gbtn" type="submit">查看進度</button></div>
+      <p class="msg" id="gmsg" role="status"></p>
+    </form>
+  </div>
+
+  <div id="main" hidden>
+    <div class="top">
+      <div><h1 id="title">我的練習進度</h1><p class="sub">一次答對率＝第一次作答就選對的題數 ÷ 總題數</p></div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" id="refresh">重新整理</button><button class="btn" id="logout">換代碼</button></div>
+    </div>
+
+    <div class="panel">
+      <h2>最近 7 天</h2>
+      <div class="stats">
+        <div class="stat"><div class="k">練習次數</div><div class="v" id="s-sets">–</div><div class="d" id="d-sets"></div></div>
+        <div class="stat"><div class="k">一次答對率</div><div class="v" id="s-rate">–</div><div class="d" id="d-rate"></div></div>
+        <div class="stat"><div class="k">累計練習</div><div class="v" id="s-all">–</div><div class="d">次</div></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>每週一次答對率（最近 8 週）</h2>
+      <div class="chart" id="chart"></div>
+      <div class="xl" id="xl"></div>
+      <p class="note">虛線表示那一週沒有練習。</p>
+    </div>
+
+    <div class="panel">
+      <h2>最常錯的考點（全部紀錄）</h2>
+      <div class="tags" id="tags"></div>
+    </div>
+
+    <div class="panel" id="wpanel" hidden>
+      <h2>翻譯與作文批改</h2>
+      <div id="wlist"></div>
+    </div>
+
+    <div class="panel">
+      <h2>最近的練習紀錄</h2>
+      <div class="tablebox"><table>
+        <thead><tr><th>時間</th><th>試卷・大題</th><th>範圍</th><th>模式</th><th>一次答對</th><th>用時</th><th>錯題</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec";
+const LOGIN_URL="https://script.google.com/macros/s/AKfycbxw46y8Otn4sgPrxAlz6JGqYc9aUxxL8_-3UUvv62UGwnbwvoz8iEkYtMOwS2uEPDI9hQ/exec";
+const SESSION="";
+const HAS_GAS=true;
+function demo(){const w=[null,55,60,null,65,70,72,80];return {ok:true,name:"示範訂閱者",
+  thisW:{sets:4,rate:80,bySection:{}},lastW:{sets:3,rate:72},all:{sets:21,topTags:[{tag:"轉折語",n:6},{tag:"動詞",n:4},{tag:"上下文邏輯",n:3}]},
+  weeks:w.map((r,i)=>({label:i===7?"本週":(7-i)+" 週前",rate:r,sets:r==null?0:3})),
+  recent:[{date:"10/30 07:40",paper:"115學測",section:"詞彙",scope:"全部",mode:"標準",total:10,first:8,used:512,limit:600,wrongNums:"6、9"},
+          {date:"10/29 21:10",paper:"115學測",section:"綜合測驗",scope:"錯題重做",mode:"基礎",total:3,first:3,used:140,limit:600,wrongNums:""}]}}
+function gas(fn,...args){return fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:fn,args:args})}).then(r=>{if(!r.ok)throw new Error("http "+r.status);return r.json()})}
+const $=id=>document.getElementById(id);
+function fmt(s){s=Math.round(s);return Math.floor(s/60)+":"+String(s%60).padStart(2,"0")}
+function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+let CODE="";
+async function load(code,silent){
+  code=String(code||"").trim();if(code.indexOf("S.")!==0)code=code.toUpperCase();if(!code)return;
+  $("gmsg").className="msg";$("gmsg").textContent="讀取中…";$("gbtn").disabled=true;
+  try{const p=await gas("getProgress",code);
+    if(!p||!p.ok){$("gmsg").className="msg err";$("gmsg").textContent=(silent&&code.indexOf("S.")!==0)?"":p&&p.reason==="notsub"?"這個 Google 帳號（"+p.email+"）還沒有訂閱。如果付款時填的是別的 Gmail，請換那個帳號登入。":p&&p.reason==="loginexpired"?"登入已過期，請再按一次「用 Google 登入」。":p&&p.reason==="expired"?"你的訂閱已在 "+p.expires+" 到期。續訂後，原本的紀錄都還在。":p&&p.reason==="stopped"?"這個帳號已停用。":"找不到這組代碼，請對照開通信再輸入一次。";try{localStorage.removeItem("gsat-code")}catch(e){}}
+    else{CODE=code;try{localStorage.setItem("gsat-code",code)}catch(e){}render(p);$("gate").hidden=true;$("main").hidden=false;}
+  }catch(e){$("gmsg").className="msg err";$("gmsg").textContent="連線失敗，請檢查網路後再試一次。"}
+  $("gbtn").disabled=false;}
+function diff(el,cur,prev,unit){
+  if(prev==null||cur==null||prev===0&&unit!=="%"){el.textContent="";return}
+  const d=cur-prev;el.className="d "+(d>0?"up":d<0?"down":"");
+  el.textContent=d>0?"比前 7 天多 "+d+unit:d<0?"比前 7 天少 "+(-d)+unit:"跟前 7 天一樣";}
+function render(p){
+  $("title").textContent=p.name+" 的練習進度";if(p.expires)$("title").nextElementSibling.textContent="訂閱到期日 "+p.expires+"。一次答對率＝第一次作答就選對的題數 ÷ 總題數";
+  $("s-sets").textContent=p.thisW.sets;
+  $("s-rate").textContent=p.thisW.rate==null?"–":p.thisW.rate+"%";
+  $("s-all").textContent=p.all.sets;
+  diff($("d-sets"),p.thisW.sets,p.lastW.sets," 次");
+  diff($("d-rate"),p.thisW.rate,p.lastW.rate,"%");
+  $("chart").innerHTML=p.weeks.map((w,i)=>w.rate==null?`<div class="bar none" title="${esc(w.label)}：沒有練習"></div>`
+    :`<div class="bar${i===p.weeks.length-1?" cur":""}" style="height:${Math.max(2,w.rate)}%" title="${esc(w.label)}：${w.rate}%，練習 ${w.sets} 次"><span>${w.rate}%</span></div>`).join("");
+  $("xl").innerHTML=p.weeks.map(w=>`<span>${esc(w.label)}</span>`).join("");
+  $("tags").innerHTML=p.all.topTags&&p.all.topTags.length?p.all.topTags.map(t=>`<span class="tag">${esc(t.tag)}・錯 ${t.n} 次</span>`).join(""):`<span class="note">目前沒有錯題紀錄。</span>`;
+  const ws=p.writings||[];$("wpanel").hidden=!ws.length;
+  $("wlist").innerHTML=ws.map(h=>`<div class="wh"><div class="whd"><span>${esc(h.date)}・${esc(h.title)}</span><span class="pill ${h.done?"done":"wait"}">${h.done?"已批改":"批改中"}</span></div><details><summary>${h.done?"看批改結果":"看我送出的內容"}</summary>${h.done&&h.teacher?`<p class="fbtext"><b>老師的話：</b>${esc(h.teacher)}</p>`:""}<div class="ans">${esc(h.answer)}</div>${h.done?`<p class="fbtext">${esc(h.feedback)}</p>`:""}</details></div>`).join("");
+  $("rows").innerHTML=p.recent.length?p.recent.map(r=>`<tr><td class="num">${esc(r.date)}</td><td>${esc(r.paper)}・${esc(r.section)}</td><td>${esc(r.scope)}</td><td>${esc(r.mode)}</td><td class="num">${r.first} / ${r.total}</td><td class="num">${fmt(r.used)}${r.limit&&r.used>r.limit?' <span class="down">超時</span>':""}</td><td>${esc(r.wrongNums)||"—"}</td></tr>`).join("")
+    :`<tr><td colspan="7" class="note">還沒有練習紀錄。做完一個大題後，成績就會出現在這裡。</td></tr>`;
+}
+$("gform").addEventListener("submit",e=>{e.preventDefault();load($("gcode").value,false)});
+$("refresh").onclick=()=>load(CODE,false);
+$("logout").onclick=()=>{try{localStorage.removeItem("gsat-code")}catch(e){}CODE="";$("main").hidden=true;$("gate").hidden=false;$("gcode").value="";$("gmsg").textContent=""};
+if(LOGIN_URL.indexOf("http")===0)$("googleLogin").href=LOGIN_URL+"?next=progress";else $("gwrap").hidden=true;
+if(SESSION){load(SESSION,true);}
+else{try{const c=localStorage.getItem("gsat-code");if(c){if(c.indexOf("S.")!==0)$("gcode").value=c;load(c,true)}}catch(e){}}
+</script>
+

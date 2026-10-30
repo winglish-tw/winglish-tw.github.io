@@ -1,0 +1,849 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-42J5R61SED"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-42J5R61SED');</script>
+<title>學測英文練習｜Winglish 必英</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: one narrow exam-sheet column; tabs on top; each item is a card-free row separated by rules */
+:root{
+  --bg:#f3f5f8; --sheet:#ffffff; --fg:#1d2733; --muted:#5d6b7a; --rule:#dde3ea;
+  --ink:#1f4e8c; --ink-soft:#e6eef8;
+  --ok:#1f7a4d; --ok-soft:#e3f3ea; --bad:#b33a2e; --bad-soft:#fbe9e6;
+  --f-zh:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-en:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12171d; --sheet:#1a2129; --fg:#e4e9ef; --muted:#9aa8b6; --rule:#2c3640;
+  --ink:#8db6ec; --ink-soft:#1f2c3c; --ok:#6fcf9b; --ok-soft:#173226; --bad:#f08a7e; --bad-soft:#3a1f1c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171d; --sheet:#1a2129; --fg:#e4e9ef; --muted:#9aa8b6; --rule:#2c3640;
+  --ink:#8db6ec; --ink-soft:#1f2c3c; --ok:#6fcf9b; --ok-soft:#173226; --bad:#f08a7e; --bad-soft:#3a1f1c; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-zh);font-size:16px;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 60px}
+.homelink{display:inline-block;margin:0 0 10px;font-size:.92rem;color:var(--ink);text-decoration:none;font-weight:600}
+.homelink:hover{text-decoration:underline}
+header h1{font-size:1.35rem;margin:0;text-wrap:balance}
+header p{margin:.2rem 0 0;color:var(--muted);font-size:.9rem}
+.tabs{display:flex;gap:8px;margin:18px 0 12px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding-block:8px;z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tabs{flex-wrap:wrap}
+.timer{flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;background:var(--sheet);border:1px solid var(--rule);border-radius:8px;padding:8px 12px}
+.clock{font-size:1.5rem;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em;color:var(--ink);min-width:4.2em}
+.clock.warn{color:#c27a12}
+.clock.over{color:var(--bad)}
+.tstate{font-size:.82rem;color:var(--muted);flex:1;min-width:8em}
+.tctl{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.tctl .btn{padding:5px 12px;font-size:.88rem}
+.tctl select{font:inherit;font-size:.88rem;padding:5px 6px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--fg)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.tab{flex:1;font:inherit;font-weight:500;padding:10px 8px;border:1px solid var(--rule);background:var(--sheet);color:var(--fg);border-radius:8px;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--sheet)}
+.tab small{display:block;font-weight:400;font-size:.78rem;opacity:.85;font-variant-numeric:tabular-nums}
+.sheet{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding-block:6px;padding-inline:18px}
+.howto{font-size:.88rem;color:var(--muted);margin:0 0 12px}
+.q{padding-block:18px;border-bottom:1px solid var(--rule)}
+.q:last-child{border-bottom:0}
+.stem{font-family:var(--f-en);font-size:1.06rem;line-height:1.6;margin:0 0 4px}
+.num{font-family:var(--f-zh);font-weight:700;color:var(--ink);margin-right:6px;font-variant-numeric:tabular-nums}
+.zh{font-size:.88rem;color:var(--muted);margin:0 0 10px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:480px){.opts{grid-template-columns:1fr}}
+.opt{font-family:var(--f-en);font-size:1rem;text-align:left;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--fg);cursor:pointer;min-width:0}
+.opt:hover:not(:disabled){border-color:var(--ink)}
+.opt:focus-visible,.tab:focus-visible,.btn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.opt b{font-family:var(--f-zh);margin-right:6px}
+.opt.wrong{background:var(--bad-soft);border-color:var(--bad);color:var(--bad);text-decoration:line-through}
+.opt.right{background:var(--ok-soft);border-color:var(--ok);color:var(--ok);font-weight:600}
+.opt:disabled{cursor:default}
+.fb{margin-top:10px;padding:10px 12px;border-radius:8px;font-size:.93rem}
+.fb.bad{background:var(--bad-soft);color:var(--fg);border-left:3px solid var(--bad)}
+.fb.good{background:var(--ok-soft);color:var(--fg);border-left:3px solid var(--ok)}
+.fb .tag{font-weight:700;display:block;margin-bottom:2px}
+.fb.bad .tag{color:var(--bad)} .fb.good .tag{color:var(--ok)}
+.fb ul{margin:6px 0 0;padding-left:1.2em}
+.fb li{margin:2px 0}
+.en{font-family:var(--f-en)}
+.passage{font-family:var(--f-en);font-size:1.04rem;line-height:1.75;padding-block:16px;border-bottom:2px solid var(--rule)}
+.passage h3{font-family:var(--f-zh);font-size:.95rem;color:var(--muted);margin:0 0 8px;font-weight:500}
+.passage p{margin:0 0 .8em;text-indent:1.5em}
+.blank{display:inline-block;min-width:3.2em;text-align:center;border-bottom:2px solid var(--ink);color:var(--ink);font-family:var(--f-zh);font-weight:700;font-size:.9rem;padding:0 4px;cursor:pointer;text-indent:0}
+.blank.done{font-family:var(--f-en);font-size:1rem;color:var(--ok);border-color:var(--ok);font-weight:600}
+details.tr{margin:4px 0 0;font-size:.92rem}
+details.tr summary{cursor:pointer;color:var(--ink);font-weight:500}
+details.tr p{text-indent:0;font-family:var(--f-zh);color:var(--muted);margin:.5em 0}
+.summary{margin-top:16px;padding:16px 18px;background:var(--ink-soft);border-radius:10px}
+.summary h2{font-size:1.05rem;margin:0 0 4px}
+.summary p{margin:0 0 10px;color:var(--muted);font-size:.92rem}
+.btn{font:inherit;padding:8px 14px;border-radius:8px;border:1px solid var(--ink);background:var(--sheet);color:var(--ink);cursor:pointer;font-weight:500}
+.btn.primary{background:var(--ink);color:var(--sheet)}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.gate{min-height:70vh;display:grid;place-items:center;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px}
+.gbox{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:22px;max-width:420px;width:100%}
+.gbox h1{font-size:1.3rem;margin:0 0 4px}
+.gbox p{color:var(--muted);margin:0 0 14px;font-size:.92rem}
+.gbox label{font-weight:500;font-size:.9rem}
+.grow{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.grow input{flex:1;min-width:0;font:inherit;font-size:1.05rem;letter-spacing:.05em;padding:8px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--fg);text-transform:uppercase}
+.grow input:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.gmsg{min-height:1.4em;margin:10px 0 0!important}
+.gmsg.err{color:var(--bad)!important}
+.ubar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;font-size:.9rem;color:var(--muted);margin-bottom:6px}
+.ubar .btn{font-size:.85rem;padding:5px 12px;text-decoration:none}
+.login{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:14px 16px;margin:6px 0 10px}
+.login label{font-weight:500;font-size:.9rem}
+.gbtn{display:inline-block;text-decoration:none;text-align:center;min-width:12em}
+.small{font-size:.86rem}.muted{color:var(--muted)}
+.lock{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:20px 18px}
+.lock h2{margin:0 0 6px;font-size:1.15rem}
+.lock>p{color:var(--muted);margin:0 0 12px}
+.lock ul{margin:0 0 16px;padding-left:1.2em}
+.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:16px}
+.plan{border:1px solid var(--rule);border-radius:10px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.plan.best{border:2px solid var(--ink)}
+.plan .pn{font-weight:700}
+.plan .pp{font-size:1.2rem;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums}
+.plan .pt{font-size:.82rem;color:var(--muted);flex:1}
+.plan .btn{text-align:center;text-decoration:none;margin-top:6px}
+.btn[aria-disabled="true"]{opacity:.5;pointer-events:none}
+[hidden]{display:none!important}
+.yearbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
+.yearbar label{font-weight:700}
+.yearbar select{font:inherit;font-size:1rem;padding:7px 10px;border:1px solid var(--ink);border-radius:8px;background:var(--sheet);color:var(--fg);min-width:12em}
+.yearbar select:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.tab{white-space:nowrap;padding-left:4px!important;padding-right:4px!important}
+@media (max-width:420px){.tab{font-size:.92rem}}
+.guide{margin-top:12px;border-top:1px dashed var(--rule);padding-top:10px}
+.guide summary{cursor:pointer;color:var(--ink);font-weight:700}
+.gsec{margin-top:10px}
+.gq{font-weight:700;margin:12px 0 2px}
+.gl{font-size:.82rem;letter-spacing:.04em;color:var(--ink);font-weight:700;margin:8px 0 2px}
+.guide ul{margin:0;padding-left:1.2em}
+.guide li{margin:3px 0}
+.guide ul.cols{columns:2;column-gap:20px}
+@media (max-width:480px){.guide ul.cols{columns:1}}
+.model{white-space:pre-wrap;font-family:var(--f-en);font-size:1.02rem;line-height:1.75;background:var(--bg);border-radius:8px;padding:12px 14px}
+.wcard{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:16px 18px;margin-bottom:14px}
+.wcard h2{font-size:1.08rem;margin:0 0 6px}
+.wcard .note{color:var(--muted);font-size:.9rem;margin:0 0 10px}
+.wq{margin:12px 0 4px;font-weight:500}
+.wcard textarea{width:100%;min-height:4.5em;font-family:var(--f-en);font-size:1rem;line-height:1.6;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--bg);color:var(--fg);resize:vertical;box-sizing:border-box}
+.wcard textarea.essay{min-height:16em}
+.wcard textarea:focus-visible{outline:2px solid var(--ink);outline-offset:1px}
+.wcard img{display:block;width:100%;border-radius:6px;margin:8px 0 4px;border:1px solid var(--rule)}
+.wcount{font-size:.85rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.wcount.ok{color:var(--ok)}
+.quota{background:var(--ink-soft);border-radius:10px;padding:12px 16px;margin-bottom:14px;font-size:.92rem}
+.quota b{font-variant-numeric:tabular-nums}
+.confirm{margin-top:10px;padding:10px 12px;border-radius:8px;background:var(--ink-soft);font-size:.92rem}
+.wmsg{min-height:1.4em;font-size:.9rem;margin:8px 0 0}
+.wmsg.err{color:var(--bad)} .wmsg.good{color:var(--ok)}
+.hist{border-top:1px solid var(--rule);padding-block:10px}
+.hist:first-of-type{border-top:0}
+.hist .hd{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:.9rem}
+.pill{font-size:.78rem;border-radius:999px;padding:1px 10px;white-space:nowrap}
+.pill.wait{background:var(--ink-soft);color:var(--ink)} .pill.done{background:var(--ok-soft);color:var(--ok)}
+.hist details{margin-top:6px;font-size:.92rem}
+.hist summary{cursor:pointer;color:var(--ink);font-weight:500}
+.fbtext{white-space:pre-wrap;margin:8px 0 0;line-height:1.7}
+.ans{white-space:pre-wrap;font-family:var(--f-en);background:var(--bg);border-radius:6px;padding:8px 10px;margin:6px 0 0}
+.savemsg{font-size:.88rem;margin:4px 0;padding:6px 10px;border-radius:8px;background:var(--ink-soft)}
+.savemsg.err{background:var(--bad-soft);color:var(--bad)}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.mbtn{font:inherit;font-weight:700;text-align:left;padding:10px 12px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--fg);cursor:pointer}
+.mbtn small{display:block;font-weight:400;font-size:.8rem;color:var(--muted)}
+.mbtn[aria-pressed="true"]{border:2px solid var(--ink);background:var(--ink-soft);color:var(--ink)}
+.mbtn:focus-visible,.hbtn:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.wrap:not(.basic) .b-only{display:none}
+.opt .gl{display:none;font-family:var(--f-zh);font-size:.82rem;color:var(--muted);margin-left:6px}
+.basic .show-gl .opt .gl{display:inline}
+.show-gl .opt.right .gl,.show-gl .opt.wrong .gl{display:inline}
+.hints{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.hbtn{font:inherit;font-size:.85rem;padding:5px 10px;border-radius:999px;border:1px dashed var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.hbtn:disabled{opacity:.45;cursor:default}
+.hintbox{margin-top:8px;padding:8px 12px;border-radius:8px;background:var(--ink-soft);font-size:.92rem}
+.bar{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center;justify-content:space-between;margin:0 0 12px}
+.bar .mode{font-size:.88rem;color:var(--muted)}
+.bar .btn{font-size:.9rem;padding:6px 12px}
+@media (prefers-reduced-motion:no-preference){.fb{animation:in .18s ease-out}@keyframes in{from{opacity:.4;transform:translateY(-3px)}to{opacity:1;transform:none}}}
+/* ===== 文意選填／篇章結構／閱讀測驗／混合題 ===== */
+.tabrow{display:flex;gap:6px;overflow-x:auto;flex-basis:100%;padding-bottom:2px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.tabrow .tab{flex:0 0 auto;min-width:5.6em;padding:8px 10px!important}
+.mp{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;padding:6px 18px 14px}
+.mp .passage p{text-indent:1.5em}
+.mp .passage p.noind{text-indent:0}
+.mb{display:inline-block;min-width:3.2em;text-align:center;border:0;border-bottom:2px solid var(--ink);background:transparent;color:var(--ink);font-family:var(--f-zh);font-weight:700;font-size:.9rem;padding:0 6px;line-height:1.5;cursor:pointer;text-indent:0;border-radius:4px 4px 0 0}
+.mb.cur{background:var(--ink-soft);outline:2px solid var(--ink);outline-offset:1px}
+.mb.done{font-family:var(--f-en);font-size:1rem;color:var(--ok);border-color:var(--ok);font-weight:600;cursor:default}
+.mb.long{display:inline;min-width:0;padding:0 8px}
+.dock{position:sticky;bottom:0;z-index:4;background:var(--sheet);border:2px solid var(--ink);border-radius:12px;padding:10px 12px;margin-top:12px;box-shadow:0 -6px 18px rgba(0,0,0,.08);max-height:45vh;overflow:auto}
+.dock.static{position:static;max-height:none;box-shadow:none}
+.dock .now{font-weight:700;margin:0 0 6px;display:flex;justify-content:space-between;gap:8px;align-items:center;flex-wrap:wrap}
+.dock .now .btn{padding:3px 10px;font-size:.85rem}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:inherit;font-family:var(--f-en);font-size:.98rem;padding:6px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--fg);cursor:pointer;text-align:left}
+.chip:hover:not(:disabled){border-color:var(--ink)}
+.chip small{font-family:var(--f-zh);font-size:.78rem;color:var(--muted);margin-left:4px}
+.chip .k{font-family:var(--f-zh);font-weight:700;color:var(--muted);margin-right:4px;font-size:.85rem}
+.chip.used{opacity:.4;text-decoration:line-through}
+.chip.no{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+.chip:disabled{cursor:default}
+.chips.sent{flex-direction:column}
+.chips.sent .chip{width:100%}
+.chip .czh{display:none;font-family:var(--f-zh);font-size:.84rem;color:var(--muted);margin-top:2px}
+.basic .chip .czh{display:block}
+.wrap:not(.basic) .chip small{display:none}
+.dlist{margin-top:14px}
+.drow{border-top:1px solid var(--rule);padding:10px 0;font-size:.93rem}
+.drow .h{font-weight:700;margin-bottom:2px}
+.drow .tag{display:inline-block;font-size:.75rem;background:var(--ink-soft);color:var(--ink);border-radius:999px;padding:0 8px;margin-left:6px;font-weight:500}
+.drow ul{margin:4px 0 0;padding-left:1.2em;color:var(--muted)}
+.qz{font-size:.88rem;color:var(--muted);margin:0 0 8px}
+.wrap:not(.basic) .qz,.wrap:not(.basic) .oz{display:none}
+.oz{display:block;font-family:var(--f-zh);font-size:.82rem;color:var(--muted);font-weight:400}
+.rimg{max-width:100%;height:auto;border:1px solid var(--rule);border-radius:8px;margin:6px 0 10px;background:#fff}
+.mx-s{font-family:var(--f-en);font-size:1.04rem;line-height:2.1;background:var(--bg);border-radius:8px;padding:10px 14px;margin:8px 0}
+.mx-in{font:inherit;font-family:var(--f-en);width:8.5em;padding:2px 8px;border:0;border-bottom:2px solid var(--ink);background:var(--sheet);color:var(--fg);border-radius:4px 4px 0 0}
+.mx-in.ok{border-color:var(--ok);color:var(--ok);font-weight:600;background:var(--ok-soft)}
+.mx-in.bad{border-color:var(--bad);background:var(--bad-soft)}
+.mx-checks{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+@media (max-width:480px){.mx-checks{grid-template-columns:1fr}}
+.mx-checks label{display:flex;gap:8px;align-items:center;border:1px solid var(--rule);border-radius:8px;padding:8px 10px;cursor:pointer;font-family:var(--f-en)}
+.mx-checks label.ok{background:var(--ok-soft);border-color:var(--ok)}
+.mx-checks label.bad{background:var(--bad-soft);border-color:var(--bad)}
+.mx-ta{font:inherit;font-family:var(--f-en);width:100%;min-height:3.2em;padding:8px 10px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--fg)}
+.pts{font-size:.8rem;color:var(--muted);font-weight:400;margin-left:6px}
+.notyet{background:var(--sheet);border:1px dashed var(--rule);border-radius:10px;padding:22px 18px;color:var(--muted)}
+.notyet b{color:var(--fg)}
+</style>
+
+<div class="wrap" id="main">
+  <div class="ubar">
+    <span id="ustate">免費試用中：詞彙題可以直接做，綜合測驗需要訂閱。</span>
+    <span class="row" id="uact"><button class="btn primary" id="openlogin">已訂閱？登入</button></span>
+  </div>
+  <form class="login" id="gform" hidden>
+    <div id="gwrap"><a class="btn primary gbtn" id="googleLogin" target="_top">用 Google 登入</a><p class="small muted" style="margin:6px 0 12px">請選擇付款時填寫的 Gmail 帳號。</p></div>
+    <label for="gcode">或輸入訂閱者代碼（開通信裡的那組代碼）</label>
+    <div class="grow"><input id="gcode" autocomplete="off" autocapitalize="characters" placeholder="例如 G7K2QX" required><button class="btn primary" id="gbtn" type="submit">解鎖</button><button class="btn" id="gcancel" type="button">取消</button></div>
+    <p class="gmsg" id="gmsg" role="status"></p>
+  </form>
+  <p class="savemsg" id="savemsg" role="status" hidden></p>
+  <a class="homelink" href="https://winglish-tw.github.io/" target="_top">‹ 回到 Winglish 首頁</a>
+  <header>
+    <h1>學測英文｜歷屆試題練習</h1>
+    <p>先選模式：基礎比較弱的話，從「基礎模式」開始。點選答案馬上知道對錯。選錯會告訴你錯在哪，可以再試一次；答對後看完整詳解。每次重做，選項順序都會打亂，詞彙題的題目順序也會打亂。</p>
+  </header>
+  <div class="yearbar"><label for="ysel">選擇年份</label><select id="ysel"></select></div>
+  <div class="modes" role="group" aria-label="練習模式">
+    <button class="mbtn" id="m-std" aria-pressed="true">標準模式<small>跟正式考試一樣，沒有中文</small></button>
+    <button class="mbtn" id="m-basic" aria-pressed="false">基礎模式<small>附中文句意，卡住可以看提示</small></button>
+  </div>
+  <div class="tabs" role="tablist">
+    <div class="tabrow">
+    <button class="tab" role="tab" id="tab-vocab" aria-selected="true" data-sec="vocab">詞彙題<small id="sc-vocab">0 / 10</small></button>
+    <button class="tab" role="tab" id="tab-cloze" aria-selected="false" data-sec="cloze">綜合測驗<small id="sc-cloze">訂閱解鎖</small></button>
+    <button class="tab" role="tab" id="tab-wb" aria-selected="false" data-sec="wb">文意選填<small id="sc-wb">讀取中</small></button>
+    <button class="tab" role="tab" id="tab-st" aria-selected="false" data-sec="st">篇章結構<small id="sc-st">讀取中</small></button>
+    <button class="tab" role="tab" id="tab-rd" aria-selected="false" data-sec="rd">閱讀測驗<small id="sc-rd">讀取中</small></button>
+    <button class="tab" role="tab" id="tab-mx" aria-selected="false" data-sec="mx">混合題<small id="sc-mx">讀取中</small></button>
+    <button class="tab" role="tab" id="tab-write" aria-selected="false" data-sec="write">翻譯作文<small id="sc-write">老師批改</small></button>
+    </div>
+    <div class="timer" id="timer">
+      <span class="clock" id="clock" aria-live="off">10:00</span>
+      <span class="tstate" id="tstate">作答第一題時自動開始</span>
+      <div class="tctl">
+        <button class="btn" id="tbtn">開始</button>
+        <button class="btn" id="treset">重設</button>
+        <label class="sr" for="tlimit">計時方式</label>
+        <select id="tlimit">
+          <option value="300">倒數 5 分鐘</option>
+          <option value="480">倒數 8 分鐘</option>
+          <option value="600" selected>倒數 10 分鐘</option>
+          <option value="900">倒數 15 分鐘</option>
+          <option value="0">不限時（只計時）</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <section id="sec-vocab"></section>
+  <section id="sec-cloze" hidden></section>
+  <section id="sec-wb" hidden></section>
+  <section id="sec-st" hidden></section>
+  <section id="sec-rd" hidden></section>
+  <section id="sec-mx" hidden></section>
+  <section id="sec-write" hidden></section>
+</div>
+
+<script>
+const L="ABCD";
+const vocab115=[
+{n:1,s:"The mayor has such a ______ schedule that it takes weeks to arrange an interview with her.",zh:"市長的行程非常＿＿，要好幾週才能安排到採訪她。",o:["hasty","tight","diligent","routine"],a:1,
+ w:{0:"hasty 是「匆忙的、草率的」，用來形容人或動作（a hasty decision 草率的決定），不能形容行程很滿。",2:"diligent 是「勤奮的」，只能形容人（a diligent student），行程不會勤奮。",3:"routine 是「例行的」。例行公事不代表很滿，也解釋不了為什麼要等好幾週。"},
+ k:"關鍵：such a ___ schedule that... 要等好幾週 → 行程很「滿」。tight schedule ＝ 行程緊湊、排得很滿，是固定搭配。",v:"tight 緊的；緊湊的｜schedule 行程｜arrange 安排"},
+{n:2,s:"Jane started as an ______ art designer, but now she has a professional studio of her own.",zh:"Jane 一開始是＿＿美術設計師，但現在她有了自己的專業工作室。",o:["official","instant","amateur","elementary"],a:2,
+ w:{0:"official 是「官方的、正式的」，和後面的 professional（專業的）沒有形成對比。",1:"instant 是「立即的」（instant noodles 泡麵），不能形容人的身分。",3:"elementary 是「初級的、基礎的」，形容課程或程度（elementary school），不用來形容一個人的職業身分。"},
+ k:"關鍵：but 表示前後對比。後面是 professional（專業的），前面就要找相反詞 amateur（業餘的）。",v:"amateur 業餘的；業餘愛好者｜professional 專業的｜studio 工作室"},
+{n:3,s:"The teaching ______ at the famous high school soon attracted more than a dozen well-qualified applicants.",zh:"那所名校的教師＿＿很快就吸引了十幾位條件很好的應徵者。",o:["career","vacancy","expectation","inspiration"],a:1,
+ w:{0:"career 是「職業生涯」，指一個人一輩子的工作經歷，不會「吸引應徵者」。",2:"expectation 是「期望」，期望不會有人來應徵。",3:"inspiration 是「靈感、鼓舞」，和應徵者（applicants）無關。"},
+ k:"關鍵：attracted ... applicants（吸引應徵者）→ 有「職缺」才會有人應徵。teaching vacancy ＝ 教職缺額。",v:"vacancy 空缺；職缺｜applicant 應徵者｜well-qualified 條件很好的｜a dozen 一打（十二）"},
+{n:4,s:"Designed by a young engineer, the new product has created far more profit than ______ expected.",zh:"這個由年輕工程師設計的新產品，創造的利潤遠超過＿＿預期。",o:["initially","genuinely","alternatively","fundamentally"],a:0,
+ w:{1:"genuinely 是「真心地、真正地」，「比真心預期的更多」語意奇怪。",2:"alternatively 是「或者、另一個選擇是」，用來提出另一個方案，放這裡不通。",3:"fundamentally 是「根本上」，「比根本上預期的還多」不合理。"},
+ k:"關鍵：more profit than ___ expected → 比「當初、一開始」預期的還多。initially ＝ 起初，常和 expected 搭配。",v:"initially 起初｜profit 利潤｜far more 遠多於"},
+{n:5,s:"It has been confirmed that a balanced ______ of fruit and vegetables is a key element to good health.",zh:"已經證實，均衡＿＿蔬果是身體健康的關鍵。",o:["dimension","integration","provision","consumption"],a:3,
+ w:{0:"dimension 是「尺寸、面向」，「蔬果的均衡尺寸」不合理。",1:"integration 是「整合、融合」，多用於系統或族群，不是講吃東西。",2:"provision 是「供應、提供」，是「給別人」的動作。對健康有幫助的是自己「吃」，不是「供應」。"},
+ k:"關鍵：跟健康有關的是「吃」蔬果。consumption ＝ 攝取、食用（動詞 consume）。a balanced consumption ＝ 均衡攝取。",v:"consumption 攝取；消耗｜balanced 均衡的｜confirm 證實｜element 要素"},
+{n:6,s:"As a shy boy afraid of making public appearances, Timmy ______ the thought of speaking before large audiences.",zh:"Timmy 是個害怕公開露面的害羞男孩，他＿＿在一大群觀眾面前說話這個念頭。",o:["dreads","stresses","wanders","escapes"],a:0,
+ w:{1:"stresses 是「強調」（stress the importance 強調重要性）。注意不是「感到壓力」，那要說 is stressed about。",2:"wanders 是「漫遊、閒逛」，是不及物動詞，後面不能直接接受詞 the thought。",3:"escapes 是「逃脫」。他是「害怕」那個念頭，題目沒有說他逃掉了。"},
+ k:"關鍵：shy、afraid of → 他「很害怕」上台說話。dread ＝ 非常害怕、畏懼，常用 dread the thought of + V-ing。",v:"dread 畏懼｜public appearance 公開露面｜audience 觀眾"},
+{n:7,s:"To the newly-crowned winner of the piano competition, music is his life’s ______, which he has devoted himself to whole-heartedly.",zh:"對這位剛奪冠的鋼琴比賽得主來說，音樂是他一生的＿＿，他全心全意投入其中。",o:["resource","impact","passion","emphasis"],a:2,
+ w:{0:"resource 是「資源」，像水、錢、人力，和「全心投入」的情感不搭。",1:"impact 是「影響」，「人生的影響」語意不完整，也不會說 devote oneself to an impact。",3:"emphasis 是「重點、強調」，比較理性，接不上 whole-heartedly（全心全意）的情感。"},
+ k:"關鍵：devoted himself to whole-heartedly（全心全意投入）→ 是他的「熱情所在」。life’s passion ＝ 一生的熱愛。",v:"passion 熱情；熱愛｜devote oneself to 致力於｜whole-heartedly 全心全意地｜newly-crowned 剛奪冠的"},
+{n:8,s:"The drunk driver who shouted at passers-by and ______ them with glass bottles was quickly arrested by the police.",zh:"那個對路人大吼、還拿玻璃瓶＿＿他們的酒駕司機，很快就被警察逮捕了。",o:["shattered","assaulted","overturned","condemned"],a:1,
+ w:{0:"shattered 是「打碎」，受詞是物品（shatter the glass）。這裡的 them 是路人，人不會被「打碎」。",2:"overturned 是「翻倒、推翻」（overturn a car / a decision），不能用玻璃瓶翻倒路人。",3:"condemned 是「譴責」，是用言語批評。用玻璃瓶「譴責」別人不合理。"},
+ k:"關鍵：拿玻璃瓶對路人做什麼才會被抓？→「攻擊」。assault sb. with sth. ＝ 用某物攻擊某人。",v:"assault 攻擊；襲擊｜passer-by 路人（複數 passers-by）｜arrest 逮捕"},
+{n:9,s:"There were so many people at the bus station that I had to ______ my way through the crowd to board the bus in time.",zh:"公車站人好多，我必須＿＿穿過人群，才能及時上車。",o:["crash","tumble","elbow","struggle"],a:2,
+ w:{0:"crash 是「撞擊、墜毀」（a car crash），不是在人群中前進的方式。",1:"tumble 是「跌倒、滾落」，跌倒沒辦法讓你穿過人群。",3:"struggle 是「掙扎」，通常說 struggle through the crowd。題目是「___ my way through」這個結構，最標準的固定用法是 elbow one’s way through。"},
+ k:"關鍵：___ one’s way through the crowd ＝ 用某種方式穿過人群。elbow 當動詞是「用手肘推擠」，elbow one’s way through a crowd ＝ 用手肘擠過人群。",v:"elbow 手肘；用手肘推擠｜crowd 人群｜board 登上（車、船、飛機）"},
+{n:10,s:"Deadly shootings on US campuses have raised ______ concerns about how to prevent such tragic incidents from happening again.",zh:"美國校園裡的致命槍擊案，已引發大家＿＿擔憂，關心如何防止這類悲劇再次發生。",o:["swift","brutal","harsh","grave"],a:3,
+ w:{0:"swift 是「迅速的」，形容動作（a swift reply），不形容擔憂的程度。",1:"brutal 是「殘暴的」，可以形容槍擊案本身，但不能形容「擔憂」。",2:"harsh 是「嚴厲的、嚴酷的」（harsh criticism / weather），不和 concern 搭配。"},
+ k:"關鍵：形容「擔憂很嚴重」→ grave concerns（嚴重的擔憂）是固定搭配。grave 當形容詞＝嚴重的、嚴肅的。",v:"grave 嚴重的｜concern 擔憂｜deadly 致命的｜tragic 悲慘的｜incident 事件"}
+];
+
+let passages=[];
+let cloze=[];
+
+
+
+let active="vocab";
+let LIMIT=600;try{const v=localStorage.getItem("gsat115-limit");if(v!==null)LIMIT=+v}catch(e){}
+const T={vocab:{el:0,run:false,last:0,fin:false},cloze:{el:0,run:false,last:0,fin:false}};
+function fmt(sec){sec=Math.max(0,Math.floor(sec));return String(Math.floor(sec/60)).padStart(2,"0")+":"+String(sec%60).padStart(2,"0")}
+function tick(){const now=Date.now();for(const k in T){const t=T[k];if(t.run){t.el+=(now-t.last)/1000;t.last=now}}drawTimer()}
+function tStart(sec){const t=T[sec];if(t.run||t.fin)return;t.run=true;t.last=Date.now();drawTimer()}
+function tPause(sec){const t=T[sec];if(!t.run)return;tick();t.run=false;drawTimer()}
+function tReset(sec){T[sec]={el:0,run:false,last:0,fin:false};drawTimer()}
+function drawTimer(){
+  const t=T[active],c=document.getElementById("clock"),st=document.getElementById("tstate"),b=document.getElementById("tbtn");
+  c.classList.remove("warn","over");
+  if(LIMIT>0){
+    const left=LIMIT-t.el;
+    if(left>=0){c.textContent=fmt(Math.ceil(left));if(left<=60)c.classList.add("warn")}
+    else{c.textContent="+"+fmt(-left);c.classList.add("over")}
+  }else c.textContent=fmt(t.el);
+  if(t.fin) st.textContent="已完成，用時 "+fmt(t.el)+(LIMIT>0&&t.el>LIMIT?"（超時 "+fmt(t.el-LIMIT)+"）":"");
+  else if(t.run) st.textContent=(LIMIT>0&&t.el>LIMIT)?"時間到！還沒做完的題目可以繼續作答":"計時中";
+  else st.textContent=t.el>0?"已暫停":"作答第一題時自動開始";
+  b.textContent=t.run?"暫停":(t.el>0?"繼續":"開始");b.disabled=t.fin;
+}
+setInterval(tick,500);
+document.getElementById("tbtn").onclick=()=>{T[active].run?tPause(active):tStart(active)};
+document.getElementById("treset").onclick=()=>tReset(active);
+const sel=document.getElementById("tlimit");sel.value=String(LIMIT);
+sel.onchange=()=>{LIMIT=+sel.value;try{localStorage.setItem("gsat115-limit",LIMIT)}catch(e){}drawTimer()};
+document.addEventListener("visibilitychange",()=>{if(!document.hidden)for(const k in T)if(T[k].run)T[k].last=Date.now()-0});
+const GL115={"1": ["匆忙的", "緊湊的", "勤奮的", "例行的"], "2": ["官方的", "立即的", "業餘的", "初級的"], "3": ["職業生涯", "職缺", "期望", "靈感"], "4": ["起初", "真心地", "或者", "根本上"], "5": ["尺寸；面向", "整合", "供應", "攝取；食用"], "6": ["害怕", "強調", "閒逛", "逃脫"], "7": ["資源", "影響", "熱情", "強調；重點"], "8": ["打碎", "攻擊", "翻倒", "譴責"], "9": ["撞擊", "跌倒", "用手肘推擠", "掙扎"], "10": ["迅速的", "殘暴的", "嚴厲的", "嚴重的"]};
+const HINT115={"1": "線索在後半句：要等「好幾週」才能採訪她，表示她的行程怎麼樣？", "2": "注意 but：後面說她現在是 professional（專業的），前面應該是相反的意思。", "3": "看 attracted applicants（吸引應徵者）：有什麼東西，才會有人來應徵？", "4": "than ___ expected：比「什麼時候」預期的還多？", "5": "跟身體健康有關：我們要對蔬果做什麼動作？", "6": "他很害羞、害怕公開露面，那他對上台說話的感覺是？", "7": "他 devoted himself whole-heartedly（全心全意投入），音樂對他來說是什麼？", "8": "他用玻璃瓶對路人做了什麼事，才會被警察抓？", "9": "公車站人很多，要用身體哪個部位「擠」過人群？", "10": "校園槍擊案引起的擔憂，程度怎麼樣？"};
+let BASIC=false;try{BASIC=localStorage.getItem("gsat115-basic")==="1"}catch(e){}
+function setMode(b){BASIC=b;document.querySelector(".wrap").classList.toggle("basic",b);
+  document.getElementById("m-std").setAttribute("aria-pressed",!b);document.getElementById("m-basic").setAttribute("aria-pressed",b);
+  try{localStorage.setItem("gsat115-basic",b?"1":"0")}catch(e){}}
+document.getElementById("m-std").onclick=()=>setMode(false);
+document.getElementById("m-basic").onclick=()=>setMode(true);
+setMode(BASIC);
+const TAG115={"1": "形容詞", "2": "形容詞", "3": "名詞", "4": "副詞", "5": "名詞", "6": "動詞", "7": "名詞", "8": "動詞", "9": "動詞", "10": "形容詞", "11": "轉折語", "12": "動詞", "13": "名詞", "14": "上下文邏輯", "15": "片語", "16": "動詞", "17": "上下文邏輯", "18": "片語", "19": "轉折語", "20": "上下文邏輯"};
+const DATA114={"vocab": [{"n": 1, "s": "If you put a ______ under a leaking faucet, you will be surprised at the amount of water collected in 24 hours.", "zh": "如果你在漏水的水龍頭下面放一個＿＿，你會驚訝 24 小時能接到多少水。", "o": ["border", "timer", "container", "marker"], "a": 2, "w": {"0": "border 是「邊界、邊緣」，放在水龍頭下面接不了水。", "1": "timer 是「計時器」，雖然句子提到 24 小時，但計時器不能接水。", "3": "marker 是「麥克筆、標記」，不能用來裝水。"}, "k": "關鍵：put a ___ under a leaking faucet，後面又說 water collected（收集到的水）→ 要放一個「容器」：container。", "v": "container 容器｜leak 漏水｜faucet 水龍頭｜collect 收集"}, {"n": 2, "s": "The local farmers’ market is popular as it offers a variety of fresh seasonal ______ to people in the community.", "zh": "當地的農夫市集很受歡迎，因為它提供社區民眾各式各樣新鮮的當季＿＿。", "o": ["produce", "fashion", "brand", "trend"], "a": 0, "w": {"1": "fashion 是「時尚」，農夫市集不賣「新鮮的當季時尚」。", "2": "brand 是「品牌」，品牌不會是新鮮的。", "3": "trend 是「趨勢」，趨勢不能吃，也不會是當季的新鮮東西。"}, "k": "關鍵：farmers’ market（農夫市集）＋ fresh seasonal（新鮮、當季的）→ 農產品。produce 當名詞時是「農產品」，重音在第一個音節。", "v": "produce（名詞）農產品｜seasonal 當季的｜a variety of 各式各樣的｜community 社區"}, {"n": 3, "s": "As the years have passed by, many of my childhood memories are already ______; I can no longer recall clearly what happened back then.", "zh": "隨著時間過去，很多童年回憶已經＿＿了；我再也想不清楚當時發生了什麼事。", "o": ["blurring", "trimming", "draining", "glaring"], "a": 0, "w": {"1": "trimming 是「修剪」（頭髮、樹枝），回憶不會被修剪。", "2": "draining 是「排水、耗盡」，回憶不是液體。", "3": "glaring 是「刺眼的、怒視」，跟「想不清楚」相反。"}, "k": "關鍵：分號後面說「再也想不清楚」→ 回憶變「模糊」：blur。", "v": "blur 變模糊｜childhood 童年｜recall 回想起"}, {"n": 4, "s": "Racist remarks are by nature ______ and hurtful, and should be avoided on all occasions.", "zh": "種族歧視的言論本質上就是＿＿又傷人的，在任何場合都應該避免。", "o": ["excessive", "furious", "offensive", "stubborn"], "a": 2, "w": {"0": "excessive 是「過度的」，「本質上就是過度的」意思不完整。", "1": "furious 是「狂怒的」，形容人的情緒，言論本身不會生氣。", "3": "stubborn 是「固執的」，用來形容人。"}, "k": "關鍵：空格和 hurtful（傷人的）用 and 連接，意思要相近 → offensive（冒犯人的）。", "v": "offensive 冒犯人的｜racist 種族歧視的｜remark 言論｜by nature 本質上｜occasion 場合"}, {"n": 5, "s": "Not satisfied with the first ______ of her essay, Mary revised it several times before turning it in to the teacher.", "zh": "Mary 對作文的第一份＿＿不滿意，交給老師之前修改了好幾次。", "o": ["text", "brush", "draft", "plot"], "a": 2, "w": {"0": "text 是「文字、課文」，不會說作文的「第一份文字」。", "1": "brush 是「刷子、畫筆」。", "3": "plot 是「（故事的）情節」，作文不一定有情節，而且後面修改的是整份稿子。"}, "k": "關鍵：first draft ＝ 初稿。後面說 revised it several times（修改好幾次）→ 草稿：draft。", "v": "draft 草稿｜revise 修改｜turn in 繳交"}, {"n": 6, "s": "Left ______ for years, the deserted house was filled with a thick coating of dust and a smell of old damp wood.", "zh": "這棟廢棄的房子＿＿了好幾年，積滿厚厚的灰塵，還有老舊潮濕木頭的味道。", "o": ["casual", "fragile", "remote", "vacant"], "a": 3, "w": {"0": "casual 是「隨意的、休閒的」，用來形容態度或穿著。", "1": "fragile 是「易碎的」，房子不會因為放著不管而變得易碎。", "2": "remote 是「偏遠的」，房子的位置不會因為沒人住而改變。"}, "k": "關鍵：deserted（廢棄的）、滿是灰塵 → 房子一直「空著」：left vacant。", "v": "vacant 空著的｜deserted 廢棄的｜coating 一層｜damp 潮濕的"}, {"n": 7, "s": "The high school student showed ______ courage when she helped the old man escape from the fire.", "zh": "這位高中生幫助老先生逃離火場時，展現了＿＿的勇氣。", "o": ["gigantic", "exclusive", "multiple", "enormous"], "a": 3, "w": {"0": "gigantic 也是「巨大的」，但多半形容看得到的體積，例如 a gigantic building，不用來形容勇氣。", "1": "exclusive 是「獨家的、專屬的」。", "2": "multiple 是「多個的」，後面接複數名詞，courage 是不可數名詞。"}, "k": "關鍵：enormous courage ＝ 極大的勇氣。enormous 可以形容抽象的程度，gigantic 多半只形容具體的大小。", "v": "enormous 極大的｜courage 勇氣｜escape 逃離"}, {"n": 8, "s": "Publicly financed projects are often ______ or delayed during tough economic times due to a lack of resources.", "zh": "經濟不景氣時，公共出資的計畫常常因為缺乏資源而被＿＿或延後。", "o": ["halted", "hatched", "possessed", "reinforced"], "a": 0, "w": {"1": "hatched 是「孵化」，也可以指「策劃」，但缺乏資源不會讓計畫被策劃出來。", "2": "possessed 是「擁有、被附身」。", "3": "reinforced 是「強化」，缺乏資源時反而沒辦法強化。"}, "k": "關鍵：和 delayed（延後）並列，原因是 lack of resources（缺乏資源）→ 計畫被「中止」：halt。", "v": "halt 中止｜finance 出資｜tough 艱困的｜resource 資源"}, {"n": 9, "s": "Despite his busy schedule, the President ______ the school’s graduation ceremony with his presence and a heartwarming speech.", "zh": "儘管行程忙碌，總統還是＿＿了學校的畢業典禮，並發表溫暖人心的演講。", "o": ["praised", "graced", "addressed", "credited"], "a": 1, "w": {"0": "praised 是「稱讚」，「用他的出席來稱讚典禮」不通。", "2": "addressed 是「對……演說、處理」，可以說 address the ceremony（在典禮上致詞），但不會接 with his presence（用他的出席）。", "3": "credited 是「歸功於」。"}, "k": "關鍵：grace an event with one’s presence ＝ 某人蒞臨，讓活動增光，是固定用法。", "v": "grace 使增光；蒞臨｜presence 出席｜heartwarming 溫暖人心的"}, {"n": 10, "s": "The manager of the company was sued for ______ abusing his colleagues, calling them “hopeless losers.”", "zh": "這家公司的經理＿＿霸凌同事，罵他們是「無可救藥的魯蛇」，因此被告。", "o": ["verbally", "dominantly", "legitimately", "relevantly"], "a": 0, "w": {"1": "dominantly 是「佔優勢地」，不是形容霸凌的方式。", "2": "legitimately 是「合法地」，霸凌不會是合法的。", "3": "relevantly 是「相關地」。"}, "k": "關鍵：calling them “hopeless losers”（用話罵人）→ 言語上的霸凌：verbally abuse。", "v": "verbally 言語上｜abuse 虐待；霸凌｜sue 控告｜colleague 同事"}], "gl": {"1": ["邊界", "計時器", "容器", "麥克筆；標記"], "2": ["農產品", "時尚", "品牌", "趨勢"], "3": ["變模糊", "修剪", "排乾；耗盡", "刺眼；怒視"], "4": ["過度的", "狂怒的", "冒犯人的", "固執的"], "5": ["文字；課文", "刷子", "草稿", "情節"], "6": ["隨意的", "易碎的", "偏遠的", "空著的"], "7": ["巨大的（體積）", "獨家的", "多個的", "極大的"], "8": ["中止", "孵化", "擁有", "強化"], "9": ["稱讚", "蒞臨；使增光", "演講；處理", "歸功於"], "10": ["言語上", "佔優勢地", "合法地", "相關地"]}, "hint": {"1": "放在漏水的水龍頭下面，又能「收集」水，會是什麼東西？", "2": "農夫市集賣的「新鮮、當季」的東西是什麼？注意 produce 當名詞的意思。", "3": "分號後面說「再也想不清楚」，表示回憶變得怎麼樣？", "4": "空格和 hurtful（傷人的）用 and 連接，兩個字意思要相近。", "5": "第一次寫好、之後還要改好幾次的東西叫什麼？", "6": "房子被「放著」好幾年沒人住，滿是灰塵，它是什麼狀態？", "7": "gigantic 和 enormous 都有「很大」的意思，哪一個可以形容「勇氣」這種看不見的東西？", "8": "沒錢的時候，計畫會被「延後」或怎麼樣？", "9": "看後面的 with his presence（他的出席），哪個動詞常跟這個片語一起用？", "10": "後面說他罵同事 hopeless losers，是用什麼方式霸凌？"}, "tag": {"1": "名詞", "2": "名詞", "3": "動詞", "4": "形容詞", "5": "名詞", "6": "形容詞", "7": "形容詞", "8": "動詞", "9": "動詞", "10": "副詞", "11": "時態", "12": "動詞", "13": "動詞", "14": "片語", "15": "轉折語", "16": "動詞", "17": "上下文邏輯", "18": "文法", "19": "片語", "20": "轉折語"}};
+const DATA113={"vocab": [{"n": 1, "o": ["spicy", "slender", "slight", "slippery"], "a": 1, "zh": "想要擁有＿＿身材的人，應該規律運動並保持健康的飲食習慣。", "w": {"0": "spicy 是「辣的」，用來形容食物。", "2": "slight 最常見的意思是「輕微的、少量的」，例如 a slight cold；形容身材時偏向「瘦小、單薄」，不是一般人想要的身材。desire a slender figure 才是常見說法。", "3": "slippery 是「滑的」，例如 a slippery floor。"}, "k": "關鍵：規律運動、健康飲食 → 想要「苗條」的身材：a slender figure。", "v": "slender 苗條的｜figure 身材｜maintain 維持", "s": "People who desire a ______ figure should exercise regularly and maintain healthy eating habits."}, {"n": 2, "o": ["emerging", "flashing", "rushing", "floating"], "a": 0, "zh": "看太陽從雲海中＿＿，是所有到阿里山的遊客必做的事。", "w": {"1": "flashing 是「閃爍」，太陽不會一閃一閃的。", "2": "rushing 是「衝、急忙」，日出是慢慢升起的。", "3": "floating 是「漂浮」，太陽不是漂在雲海上。"}, "k": "關鍵：emerge from ＝ 從……出現、浮現。日出時，太陽從雲海中「冒出來」。", "v": "emerge 出現；浮現｜a sea of clouds 雲海｜must-do 必做的", "s": "Watching the sun ______ from a sea of clouds is a must-do activity for all visitors to Ali Mountain."}, {"n": 3, "o": ["apt", "due", "bound", "docked"], "a": 1, "zh": "你知道下一班公車＿＿幾點到嗎？我已經在這裡等了超過 30 分鐘。", "w": {"0": "apt 是「有……傾向的」，要接 to + 原形動詞，例如 be apt to forget。", "2": "bound 可以表示「開往」，但要說 bound for + 地點，例如 bound for Taipei，不接時間。", "3": "docked 是「（船）靠岸的」，用在船，不用在公車。"}, "k": "關鍵：be due ＝ 預定（到達）。What time is the bus due? ＝ 公車預定幾點到？", "v": "due 預定的；到期的｜apt 有……傾向的｜bound for 開往", "s": "Do you know what time the next bus is ______? I’ve been waiting here for more than 30 minutes."}, {"n": 4, "o": ["density", "humidity", "circulation", "atmosphere"], "a": 1, "zh": "炙熱的高溫加上很高的＿＿，讓我覺得又熱又黏，不管做什麼都涼不下來。", "w": {"0": "density 是「密度」，高密度不會讓人覺得黏。", "2": "circulation 是「循環、流通」，空氣流通好反而比較涼快。", "3": "atmosphere 是「大氣、氣氛」，不會說 high atmosphere。"}, "k": "關鍵：hot and sticky（又熱又黏）→ 空氣很潮濕：high humidity（高濕度）。", "v": "humidity 濕度｜roasting 炙熱的｜sticky 黏的｜cool off 涼快下來", "s": "The roasting heat and high ______ made me feel hot and sticky, no matter what I did to cool off."}, {"n": 5, "o": ["stay", "take", "serve", "stand"], "a": 3, "zh": "像畢卡索和莫內這樣真正偉大的藝術家，他們的作品無疑能＿＿時間的考驗。", "w": {"0": "stay 是「停留、保持」，stay the test 不是英文說法。", "1": "take the test 是「參加考試」，不是「經得起考驗」。", "2": "serve 是「服務、供應」，不接 the test of time。"}, "k": "關鍵：stand the test of time ＝ 經得起時間的考驗，是固定說法。", "v": "stand the test of time 經得起時間考驗｜no doubt 無疑地｜artwork 藝術作品", "s": "Artwork created by truly great artists such as Picasso and Monet will no doubt ______ the test of time."}, {"n": 6, "o": ["forceful", "realistic", "compulsory", "distinctive"], "a": 2, "zh": "在一些國家，服兵役只對男性是＿＿的；女性不必當兵。", "w": {"0": "forceful 是「強而有力的」，用來形容人或說法，例如 a forceful speech。", "1": "realistic 是「實際的、寫實的」。", "3": "distinctive 是「獨特的」。"}, "k": "關鍵：分號後面說女性「不必」當兵 → 對男性是「強制的、義務的」：compulsory。", "v": "compulsory 強制的；義務的｜military service 兵役｜serve in the military 服兵役", "s": "In some countries, military service is ______ for men only; women do not have to serve in the military."}, {"n": 7, "o": ["advantage", "revenge", "remedy", "credit"], "a": 3, "zh": "團隊成員抱怨，隊長總是把大家辛苦工作的＿＿攬在自己身上。", "w": {"0": "take advantage of 是「利用」，後面要接 of，不接 for。", "1": "take revenge for 是「為……報仇」，意思不合理。", "2": "remedy 是「補救、療法」，不和 take ... for 搭配。"}, "k": "關鍵：take (the) credit for ＝ 把……的功勞攬在自己身上。", "v": "credit 功勞｜complain 抱怨", "s": "The team complained that its leader always took the ______ for all the hard work done by the team members."}, {"n": 8, "o": ["proposes", "contains", "promises", "confirms"], "a": 2, "zh": "這間商務飯店位在市中心，＿＿不只有好的服務，還有方便的大眾運輸。", "w": {"0": "proposes 是「提議」，飯店不會「提議」好服務。", "1": "contains 是「包含」，通常指容器裡裝著東西，不用來說飯店提供服務或交通便利。", "3": "confirms 是「確認」，意思不通。"}, "k": "關鍵：promise 在這裡是「保證有、可望提供」：飯店「保證」有好服務，交通也方便。", "v": "promise 保證；可望｜convenient 方便的｜public transport 大眾運輸", "s": "Located at the center of the city, the business hotel ______ not only good service but also convenient public transport."}, {"n": 9, "o": ["appeal", "approach", "operation", "observation"], "a": 0, "zh": "因為血庫存量降到非常低的程度，很多醫院正在＿＿民眾捐血。", "w": {"1": "approach 是「方法、接近」，make an approach 不是「呼籲」的意思。", "2": "operation 是「手術、運作」。", "3": "observation 是「觀察」。"}, "k": "關鍵：make an appeal for sb to do sth ＝ 呼籲某人做某事。", "v": "appeal 呼籲｜critically 危急地｜donate 捐贈", "s": "As blood supplies have fallen to a critically low level, many hospitals are making an ______ for the public to donate blood."}, {"n": 10, "o": ["eligibly", "randomly", "apparently", "consequently"], "a": 1, "zh": "David 發現自己不能選讀書夥伴，而是會被＿＿分到一個讀書小組，覺得很失望。", "w": {"0": "eligibly 是「有資格地」，不是分組的方式。", "2": "apparently 是「顯然地」，放在這裡意思不通。", "3": "consequently 是「因此」，是連接前後句的副詞，不用來形容「被分組」的方式。"}, "k": "關鍵：不能自己選夥伴 → 被「隨機」分組：randomly。", "v": "randomly 隨機地｜disappointed 失望的｜be placed in 被分到", "s": "David felt disappointed when he found out that he could not choose his study partners, but would be ______ placed in a study group."}], "gl": {"1": ["辣的", "苗條的", "輕微的；瘦小的", "滑的"], "2": ["浮現", "閃爍", "衝", "漂浮"], "3": ["有……傾向的", "預定到達的", "開往（接 for）", "（船）靠岸的"], "4": ["密度", "濕度", "循環", "大氣；氣氛"], "5": ["停留", "參加（考試）", "服務", "經得起"], "6": ["強而有力的", "實際的", "強制的", "獨特的"], "7": ["優勢", "報復", "補救；療法", "功勞"], "8": ["提議", "包含", "保證（有）", "確認"], "9": ["呼籲", "方法；接近", "手術；運作", "觀察"], "10": ["有資格地", "隨機地", "顯然地", "因此"]}, "hint": {"1": "規律運動、健康飲食，是為了擁有什麼樣的身材？", "2": "日出時，太陽從雲海裡慢慢「冒出來」，哪個字有這個意思？", "3": "問的是公車「預定」幾點到，哪個字接在 be 動詞後面可以表示「預定」？", "4": "覺得「黏黏的」通常是因為空氣怎麼樣？", "5": "「經得起時間的考驗」是固定說法：___ the test of time。", "6": "女性「不必」當兵，那對男性來說是怎樣的？", "7": "大家抱怨的是，隊長總是拿走大家努力的什麼？", "8": "飯店位置好，可以「保證」給客人什麼？", "9": "血不夠了，醫院會對民眾做什麼，請大家來捐血？", "10": "不能自己選夥伴，那是怎麼被分組的？"}, "tag": {"1": "形容詞", "2": "動詞", "3": "形容詞", "4": "名詞", "5": "片語", "6": "形容詞", "7": "片語", "8": "動詞", "9": "名詞", "10": "副詞", "11": "片語", "12": "文法", "13": "上下文邏輯", "14": "形容詞", "15": "名詞", "16": "時態", "17": "片語", "18": "上下文邏輯", "19": "動詞", "20": "動詞"}};
+const DATA112={"vocab": [{"n": 1, "o": ["sticky", "greasy", "clumsy", "mighty"], "a": 0, "zh": "公車司機常抱怨乘客座位底下的口香糖，因為它＿＿又很難清掉。", "w": {"1": "greasy 是「油膩的」，口香糖的問題是黏，不是油。", "2": "clumsy 是「笨手笨腳的」，用來形容人。", "3": "mighty 是「強大的」，不會用來形容口香糖。"}, "k": "關鍵：口香糖「很難清掉」的原因 → 黏黏的：sticky。", "v": "sticky 黏的｜chewing gum 口香糖｜remove 去除", "s": "The bus driver often complains about chewing gum found under passenger seats because it is ______ and very hard to remove."}, {"n": 2, "o": ["clap", "toss", "pose", "snap"], "a": 2, "zh": "Jesse 是很有天分的模特兒，拍照時可以輕鬆擺出優雅的＿＿。", "w": {"0": "clap 是「拍手」，不會說「擺出優雅的拍手」。", "1": "toss 是「拋、扔」。", "3": "snap 是「快照、啪一聲」，是拍照的人做的事，不是模特兒擺出來的。"}, "k": "關鍵：模特兒拍照時擺出的「姿勢」：adopt a pose（擺出姿勢）。", "v": "pose 姿勢｜adopt 採取；擺出｜elegant 優雅的｜shoot 拍攝", "s": "Jesse is a talented model. He can easily adopt an elegant ______ for a camera shoot."}, {"n": 3, "o": ["siblings", "commuters", "ancestors", "instructors"], "a": 2, "zh": "為了畫家譜，Mary 試著追溯她的＿＿，一直追到他們剛抵達北美的時候。", "w": {"0": "siblings 是「兄弟姊妹」，不需要追溯到很久以前。", "1": "commuters 是「通勤者」，跟家譜無關。", "3": "instructors 是「教練、講師」，跟家譜無關。"}, "k": "關鍵：family tree（家譜）＋ trace back（追溯）→ 祖先：ancestors。", "v": "ancestor 祖先｜family tree 家譜｜trace 追溯", "s": "In order to draw her family tree, Mary tried to trace her ______ back to their arrival in North America."}, {"n": 4, "o": ["blank", "bare", "hollow", "queer"], "a": 1, "zh": "一聽到超級颱風警報，Nancy 就衝去超市，結果卻發現貨架幾乎＿＿，存貨也快沒了。", "w": {"0": "blank 是「空白的」，通常形容紙張、表情或螢幕，例如 a blank page，不用來形容貨架被買光。", "2": "hollow 是「中空的」，例如 a hollow tree，指東西裡面是空心的。", "3": "queer 是「奇怪的」，是比較舊的用法。"}, "k": "關鍵：shelves almost bare ＝ 貨架幾乎被搬空。bare 形容「光禿禿、空蕩蕩」，後面 stock nearly gone 也是線索。", "v": "bare 光禿的；空的｜stock 存貨｜only to 結果卻", "s": "Upon the super typhoon warning, Nancy rushed to the supermarket—only to find the shelves almost ______ and the stock nearly gone."}, {"n": 5, "o": ["liability", "generosity", "integrity", "sincerity"], "a": 3, "zh": "雖然 Jack 當面跟我說了對不起，我卻感受不到他的道歉有任何＿＿。", "w": {"0": "liability 是「責任、負債」，不會「感受到」道歉裡的負債。", "1": "generosity 是「慷慨」，道歉不需要慷慨。", "2": "integrity 是「正直」，形容人的品格，不是形容一句道歉。"}, "k": "關鍵：Even though（雖然）表示前後相反：說了對不起，卻感受不到「誠意」：sincerity。", "v": "sincerity 誠意｜apology 道歉｜in person 親自", "s": "Even though Jack said “Sorry!” to me in person, I did not feel any ______ in his apology."}, {"n": 6, "o": ["resolve", "fraction", "privilege", "recall"], "a": 3, "zh": "我爺爺的＿＿力驚人，他到現在還能生動地描述小時候第一天上學的情形。", "w": {"0": "resolve 當名詞是「決心」，跟描述童年回憶無關。", "1": "fraction 是「部分、分數」。", "2": "privilege 是「特權」。"}, "k": "關鍵：還能清楚描述小時候的事 → 記憶力很好。powers of recall ＝ 記憶力（recall 當名詞是「回想、記憶」）。", "v": "recall 記憶；回想｜astonishing 驚人的｜vividly 生動地", "s": "My grandfather has astonishing powers of ______. He can still vividly describe his first day at school as a child."}, {"n": 7, "o": ["provoke", "counter", "expose", "convert"], "a": 1, "zh": "最近的研究找到很多證據，可以＿＿這家藥廠宣稱的「神奇」抗癌藥丸。", "w": {"0": "provoke 是「激起、挑釁」，證據不會激起藥廠的說法。", "2": "expose 是「揭露」，通常揭露的是秘密或醜聞，例如 expose the lie；「揭露宣稱」語意不完整。", "3": "convert 是「轉換、使改變信仰」。"}, "k": "關鍵：「神奇」加了引號，表示作者不相信 → 證據是用來「反駁」這些說法：counter（反駁、對抗）。", "v": "counter 反駁｜evidence 證據｜claim 宣稱｜tablet 藥片", "s": "Recent research has found lots of evidence to ______ the drug company’s claims about its “miracle” tablets for curing cancer."}, {"n": 8, "o": ["crippled", "accelerated", "rendered", "ventured"], "a": 0, "zh": "貪污的官員和錯誤的政策＿＿了國家的經濟，也讓人民背負龐大的外債。", "w": {"1": "accelerated 是「加速」，貪污和錯誤政策不會加速經濟發展。", "2": "rendered 是「使成為」，要接受詞加補語，例如 render it useless，這裡少了補語。", "3": "ventured 是「冒險」。"}, "k": "關鍵：貪污、錯誤政策、龐大外債，都是負面的 → 經濟被「重創」：cripple（使癱瘓、重創）。", "v": "cripple 重創；使癱瘓｜corrupt 貪污的｜misguided 錯誤的｜burden 使負擔", "s": "Corrupt officials and misguided policies have ______ the country’s economy and burdened its people with enormous foreign debts."}, {"n": 9, "o": ["choked", "disturbed", "enclosed", "injected"], "a": 0, "zh": "因為來看棒球冠軍賽的球迷人數創新高，球場周圍的公路一整天都被車潮＿＿。", "w": {"1": "disturbed 是「打擾」，通常用在人，公路不會被打擾。", "2": "enclosed 是「圍起來」，車潮不會把公路圍起來。", "3": "injected 是「注射」。"}, "k": "關鍵：be choked with traffic ＝ 被車潮塞滿、塞得動彈不得。", "v": "choke 塞滿；使窒息｜record 創紀錄的｜stadium 體育場", "s": "As a record number of fans showed up for the baseball final, the highways around the stadium were ______ with traffic all day."}, {"n": 10, "o": ["undoubtedly", "roughly", "understandably", "supposedly"], "a": 3, "zh": "研究顯示，＿＿公正的媒體，其實常常深受政治意識形態影響。", "w": {"0": "undoubtedly 是「無疑地」，但後面說它們「其實」受影響，前後矛盾。", "1": "roughly 是「大約」，不能形容「公正」。", "2": "understandably 是「可以理解地」，意思不通。"}, "k": "關鍵：in fact（事實上）表示和前面的說法相反 →「照理說、據說」公正：supposedly。", "v": "supposedly 照理說；據說｜unbiased 公正的｜ideology 意識形態", "s": "Studies show that the ______ unbiased media are in fact often deeply influenced by political ideology."}], "gl": {"1": ["黏的", "油膩的", "笨拙的", "強大的"], "2": ["拍手", "拋", "姿勢", "快照"], "3": ["兄弟姊妹", "通勤者", "祖先", "講師"], "4": ["空白的", "空蕩蕩的", "中空的", "奇怪的"], "5": ["責任；負債", "慷慨", "正直", "誠意"], "6": ["決心", "部分", "特權", "記憶；回想"], "7": ["激起", "反駁", "揭露", "轉換"], "8": ["重創", "加速", "使成為", "冒險"], "9": ["塞滿", "打擾", "圍起來", "注射"], "10": ["無疑地", "大約", "可以理解地", "照理說"]}, "hint": {"1": "口香糖「很難清掉」，是因為它怎麼樣？", "2": "模特兒拍照時要擺出什麼？", "3": "畫家譜要一路「往回追」，追的是誰？", "4": "颱風前大家搶購，貨架變得怎麼樣？", "5": "Even though 表示前後相反：說了對不起，卻感受不到什麼？", "6": "能清楚描述小時候的事，表示他哪一種能力很好？", "7": "「神奇」加了引號，表示作者相信嗎？證據是要支持還是反駁？", "8": "貪污、錯誤政策、龐大外債，對經濟是好是壞？", "9": "球迷人數創新高，公路被車潮怎麼了？", "10": "後面說 in fact（事實上）受到影響，所以前面的「公正」只是怎樣的說法？"}, "tag": {"1": "形容詞", "2": "名詞", "3": "名詞", "4": "形容詞", "5": "名詞", "6": "名詞", "7": "動詞", "8": "動詞", "9": "動詞", "10": "副詞", "11": "上下文邏輯", "12": "形容詞", "13": "片語", "14": "片語", "15": "轉折語", "16": "片語", "17": "形容詞", "18": "文法", "19": "形容詞", "20": "片語"}};
+const DATA111={"vocab": [{"n": 1, "o": ["advanced", "delivered", "offered", "stretched"], "a": 1, "zh": "Jeffery 不想煮飯的時候，常常上網訂披薩，請人＿＿到家裡。", "w": {"0": "advanced 是「前進、提前」，不會把披薩 advance 到家裡。", "2": "offered 是「提供」，offer 後面通常接人，例如 offer sb sth，不會說 offer it to his house。", "3": "stretched 是「伸展、拉長」。"}, "k": "關鍵：訂披薩 → 外送到家：have it delivered（請人把它送來）。have + 物 + 過去分詞 ＝ 請人做某事。", "v": "deliver 遞送｜order 訂購｜feel like 想要", "s": "When Jeffery doesn’t feel like cooking, he often orders pizza online and has it ______ to his house."}, {"n": 2, "o": ["assistant", "influence", "contribution", "politician"], "a": 0, "zh": "Jane 是我遇過最好的＿＿，沒有她幫忙，我無法想像辦公室要怎麼運作。", "w": {"1": "influence 是「影響」，不是一個人。", "2": "contribution 是「貢獻」，也不是一個人。", "3": "politician 是「政治人物」，跟幫忙管理辦公室無關。"}, "k": "關鍵：空格要填一個「人」，又是幫忙處理辦公室事務的 → 助理：assistant。", "v": "assistant 助理｜run an office 經營辦公室｜imagine 想像", "s": "Jane is the best ______ I have ever had. I cannot imagine running my office without her help."}, {"n": 3, "o": ["chat", "quiz", "puppet", "variety"], "a": 2, "zh": "這間廟舉辦十天的舞獅、歌仔戲和傳統＿＿戲表演，來慶祝媽祖節。", "w": {"0": "chat 是「聊天」，chat show 是談話節目，不是傳統表演。", "1": "quiz 是「小考、問答」，quiz show 是益智節目。", "3": "variety 是「多樣」，variety show 是綜藝節目，不是傳統表演。"}, "k": "關鍵：hand puppet show ＝ 布袋戲。和舞獅、歌仔戲並列，都是廟會的傳統表演。", "v": "puppet 木偶；布偶｜host 舉辦｜opera 戲劇", "s": "The temple celebrated Mazu Festival by hosting ten days of lion dances, Taiwanese operas, and traditional hand ______ shows."}, {"n": 4, "o": ["potentially", "delicately", "ambiguously", "optionally"], "a": 0, "zh": "這種新疫苗因為＿＿致命的副作用，被食品藥物管理局禁止使用。", "w": {"1": "delicately 是「細緻地、巧妙地」，不能形容副作用。", "2": "ambiguously 是「模稜兩可地」。", "3": "optionally 是「可選擇地」，副作用不是可以選的。"}, "k": "關鍵：potentially fatal ＝ 可能致命的。副作用有致命的「可能」，所以被禁。", "v": "potentially 可能地｜fatal 致命的｜side effect 副作用｜ban 禁止", "s": "The new vaccine was banned by the Food and Drug Administration due to its ______ fatal side effects."}, {"n": 5, "o": ["Tagging", "Flocking", "Rolling", "Snapping"], "a": 0, "zh": "＿＿照片標上日期和關鍵字，能幫你在檔案裡輕鬆整理它們。", "w": {"1": "flock 是「成群聚集」，是不及物動詞，不接 the photos。", "2": "roll 是「滾動」，不會說 roll the photos with dates。", "3": "snap 是「拍照、折斷」，拍照片不會「拍上日期」。"}, "k": "關鍵：tag A with B ＝ 給 A 標上 B。幫照片「加上標籤」：tagging。動名詞片語當主詞，後面的動詞用 help。", "v": "tag 加標籤｜keyword 關鍵字｜sort 分類；整理", "s": "______ the photos with dates and keywords help you sort them easily in your file."}, {"n": 6, "o": ["enormous", "intimate", "agreeable", "ultimate"], "a": 2, "zh": "＿＿的人通常很好相處，但別期待他什麼事都會說「好」。", "w": {"0": "enormous 是「巨大的」，不能形容人的個性。", "1": "intimate 是「親密的」，形容關係，例如 an intimate friend，不是個性。", "3": "ultimate 是「最終的、極致的」。"}, "k": "關鍵：pleasant and easy to get along with（好相處）→ 隨和的：agreeable。後面 always say yes 也和 agree 有關。", "v": "agreeable 隨和的；令人愉快的｜get along with 和……相處", "s": "An ______ person is usually pleasant and easy to get along with, but don’t expect that he or she will always say “yes” to everything."}, {"n": 7, "o": ["identical", "visible", "available", "remarkable"], "a": 1, "zh": "這家米其林星級餐廳的入口藏在小巷深處、夾在一堆小店之間，路人幾乎＿＿。", "w": {"0": "identical 是「完全相同的」，要說 identical to sth，意思不對。", "2": "available 是「可取得的、有空的」，入口不是被取得的東西。", "3": "remarkable 是「了不起的」，跟 hidden 意思相反。"}, "k": "關鍵：Hidden deep（藏得很深）→ 路人幾乎「看不到」：barely visible。", "v": "visible 看得見的｜barely 幾乎不｜alley 小巷｜passerby 路人", "s": "Hidden deep in a small alley among various tiny shops, the entrance of the Michelin star restaurant is barely ______ to passersby."}, {"n": 8, "o": ["moderate", "absolute", "promising", "eventual"], "a": 3, "zh": "我環島旅行原本的預算是五千元，但＿＿花費很可能會高出五成。", "w": {"0": "moderate 是「適中的」，但後面說會多出五成，不是適中。", "1": "absolute 是「絕對的」，不會說絕對的花費。", "2": "promising 是「有希望的」，用來形容人或前景。"}, "k": "關鍵：but 和 original（原本的）形成對比 →「最後的」花費：eventual cost。", "v": "eventual 最後的｜budget 預算｜round-island 環島的", "s": "The original budget for my round-island trip was NT$5,000, but the ______ cost is likely to be 50 percent higher."}, {"n": 9, "o": ["trial", "route", "strike", "quest"], "a": 3, "zh": "看完自然史的電視節目後，Adam 決定去南達科他州＿＿恐龍化石。", "w": {"0": "trial 是「試驗、審判」，go on trial 是「受審」。", "1": "route 是「路線」，不會說 go on a route for fossils。", "2": "strike 是「罷工、打擊」，go on strike 是「罷工」。"}, "k": "關鍵：go on a quest for ＝ 去尋找、探尋。去找恐龍化石：a quest for dinosaur fossils。", "v": "quest 探尋｜fossil 化石｜natural history 自然史", "s": "After watching a TV program on natural history, Adam decided to go on a ______ for dinosaur fossils in South Dakota."}, {"n": 10, "o": ["bounces", "blushes", "polishes", "transfers"], "a": 1, "zh": "到處都開著粉紅色的櫻花，山谷在明亮的春日陽光下，像年輕的新娘一樣＿＿。", "w": {"0": "bounces 是「彈跳」，山谷不會跳。", "2": "polishes 是「擦亮」，要有受詞，而且新娘不會「像在擦亮」。", "3": "transfers 是「轉移」。"}, "k": "關鍵：粉紅色的櫻花 ＋ 害羞的新娘 → 臉紅：blush。這是把山谷比喻成臉紅的新娘。", "v": "blush 臉紅｜blossom 花｜bloom 開花｜bride 新娘", "s": "With pink cherry blossoms blooming everywhere, the valley ______ like a young bride under the bright spring sunshine."}], "gl": {"1": ["前進；提前", "遞送", "提供", "伸展"], "2": ["助理", "影響", "貢獻", "政治人物"], "3": ["聊天", "問答", "木偶；布偶", "多樣"], "4": ["可能地", "細緻地", "模稜兩可地", "可選擇地"], "5": ["加標籤", "聚集", "滾動", "拍照；折斷"], "6": ["巨大的", "親密的", "隨和的", "最終的"], "7": ["完全相同的", "看得見的", "可取得的", "了不起的"], "8": ["適中的", "絕對的", "有希望的", "最後的"], "9": ["試驗；審判", "路線", "罷工；打擊", "探尋"], "10": ["彈跳", "臉紅", "擦亮", "轉移"]}, "hint": {"1": "訂了披薩，要請人把它怎麼樣到家裡？", "2": "空格要填一個「人」，這個人在辦公室幫她很多忙。", "3": "和舞獅、歌仔戲並列的傳統表演，用手操作的是什麼戲？", "4": "副作用不一定會發生，但有致命的「可能」，要用哪個副詞？", "5": "給照片「加上」日期和關鍵字，方便整理，是在做什麼？", "6": "好相處、常說好，這是什麼樣的個性？", "7": "入口藏在小巷深處，路人幾乎怎麼樣？", "8": "but 前面說「原本的」預算，後面說的是什麼時候的花費？", "9": "去南達科他州「找」恐龍化石，哪個字是「探尋」？", "10": "粉紅色的櫻花讓山谷看起來像新娘的臉怎麼了？"}, "tag": {"1": "動詞", "2": "名詞", "3": "名詞", "4": "副詞", "5": "動詞", "6": "形容詞", "7": "形容詞", "8": "形容詞", "9": "名詞", "10": "動詞", "11": "動詞", "12": "時態", "13": "上下文邏輯", "14": "名詞", "15": "上下文邏輯", "16": "片語", "17": "時態", "18": "動詞", "19": "片語", "20": "動詞"}};
+const YEARS={"115":{vocab:vocab115,gl:GL115,hint:HINT115,tag:TAG115},"114":DATA114,"113":DATA113,"112":DATA112,"111":DATA111};
+const YLIST=Object.keys(YEARS).sort((a,b)=>b-a);
+let YEAR=(()=>{try{const y=localStorage.getItem("gsat-year");if(y&&YEARS[y])return y}catch(e){}return YLIST[0]})();
+let vocab,GL,HINT,TAG,KEY;
+function setYearData(y){YEAR=y;const Y=YEARS[y];vocab=Y.vocab;GL=Object.assign({},Y.gl);HINT=Object.assign({},Y.hint);TAG=Y.tag;
+  KEY=y==="115"?"gsat115-wrong":"gsat-wrong-"+y;passages=[];cloze=[];try{localStorage.setItem("gsat-year",y)}catch(e){}}
+setYearData(YEAR);
+const API="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec";
+const APP_URL="https://winglish.tw/progress.html";
+const LOGIN_URL="https://script.google.com/macros/s/AKfycbxw46y8Otn4sgPrxAlz6JGqYc9aUxxL8_-3UUvv62UGwnbwvoz8iEkYtMOwS2uEPDI9hQ/exec";
+const SESSION="";
+const CFG={"plans":[],"freeMode":true,"freeUntil":"2027-01-31"};
+const HAS_GAS=true;
+let CODE="",UNLOCKED=false;
+function gas(fn,...args){return fetch(API,{method:"POST",headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:fn,args:args})}).then(r=>{if(!r.ok)throw new Error("http "+r.status);return r.json()})}
+const $=id=>document.getElementById(id);
+/* ===== 文意選填／篇章結構／閱讀測驗／混合題 ===== */
+/* ===== 匿名使用統計 ===== */
+const VID=(()=>{try{let v=localStorage.getItem("wg-vid");if(!v){v=Math.random().toString(36).slice(2,10);localStorage.setItem("wg-vid",v)}return v}catch(e){return "anon"}})();
+const MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+function logUse(ev,sec,first,total){try{gas("logUse",{ev,vid:VID,year:YEAR,sec:sec||"",first:first||0,total:total||0,login:!!CODE,mobile:MOBILE}).catch(()=>{})}catch(e){}}
+setTimeout(()=>logUse("open"),1500);
+const MSEC={wb:"文意選填",st:"篇章結構",rd:"閱讀測驗",mx:"混合題"};
+let MORE=null,MLOAD=0;
+const MS={};
+function mShuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function mStatus(sec,t){const e=$("sc-"+sec);if(e)e.textContent=t}
+function mNotYet(msg){["wb","st","rd","mx"].forEach(s=>{if(T[s])tReset(s);$("sec-"+s).innerHTML=`<div class="notyet"><b>${YEAR} 年的${MSEC[s]}還在整理中。</b><br>${msg||"這一年的題目還在整理中，可以先在上面切換到其他年度練習。"}</div>`;mStatus(s,"整理中")})}
+async function loadMore(){
+  const my=++MLOAD;
+  ["wb","st","rd","mx"].forEach(s=>{$("sec-"+s).innerHTML='<p class="muted">讀取中…</p>'});
+  try{const d=await gas("getMoreContent",CODE,YEAR);if(my!==MLOAD)return;
+    if(d&&d.ok){MORE=d;mBuildBlank("wb");mBuildBlank("st");mBuildRd();mBuildMx();}
+    else if(d&&d.reason==="locked"){["wb","st","rd","mx"].forEach(s=>{$("sec-"+s).innerHTML='<div class="notyet"><b>這個題型需要訂閱。</b><br>登入訂閱帳號後就能練習。</div>';mStatus(s,"訂閱解鎖")})}
+    else mNotYet();
+  }catch(e){if(my===MLOAD)["wb","st","rd","mx"].forEach(s=>{$("sec-"+s).innerHTML='<p class="muted">連線失敗，請重新整理頁面。</p>'})}
+}
+async function mSave(sec,first,total,used,wrongNums,wrongTags){
+  logUse("done",MSEC[sec],first,total);
+  const m=$("savemsg");m.hidden=false;m.className="savemsg";
+  if(!CODE){m.textContent=CFG.freeMode?"用 Google 免費登入後，成績會自動記錄，每週一還會收到練習摘要。":"訂閱後，成績會自動記錄。";return;}
+  m.textContent="正在儲存這次的成績…";
+  const r={paper:YEAR+"學測",section:MSEC[sec],scope:"全部",mode:BASIC?"基礎":"標準",total,first,used,limit:LIMIT,wrongNums,wrongTags};
+  try{const x=await gas("saveResult",CODE,r);
+    if(x&&x.ok){m.textContent="成績已儲存，可以到「查看我的進度」看紀錄。";setTimeout(()=>{m.hidden=true},5000)}
+    else{m.className="savemsg err";m.textContent=(x&&x.msg)||"成績沒有儲存成功。"}}
+  catch(e){m.className="savemsg err";m.textContent="成績沒有儲存成功，請檢查網路。"}}
+function mSummary(sec,box,first,total,again){
+  const used=T[sec]?T[sec].el:0;if(T[sec]){tPause(sec);T[sec].fin=true;drawTimer()}
+  box.insertAdjacentHTML("beforeend",`<div class="summary"><h2>完成了！一次答對 ${first} / ${total} 題</h2><p>用時 ${fmt(used)}。選項順序每次都會重新打亂，可以再練一次。</p><div class="row"><button class="btn primary" data-again>再練一次</button></div></div>`);
+  box.querySelector("[data-again]").onclick=()=>{tReset(sec);again();window.scrollTo({top:0})};
+  try{localStorage.setItem("gsat-done-"+YEAR+"-"+sec,"1")}catch(e){}
+  return used;}
+function mPara(t){return t.replace(/\{(\d+)\}/g,(m,n)=>`<button class="mb" id="mb-${n}" data-n="${n}">${n}</button>`)}
+
+/* ---- 文意選填、篇章結構（點空格，再從下方選答案） ---- */
+function mBuildBlank(sec){
+  const D=MORE[sec];if(!D){$("sec-"+sec).innerHTML='<div class="notyet">這一年沒有這個題型。</div>';return}
+  if(!T[sec])T[sec]={el:0,run:false,last:0,fin:false};tReset(sec);
+  const isWb=sec==="wb",opts=isWb?D.bank:D.opts;
+  const st={cur:D.items[0].n,s:{}};D.items.forEach(q=>st.s[q.n]={done:false,tries:0,wrong:new Set()});MS[sec]=st;
+  const order=mShuffle(opts.map(o=>o.k));const LB={};order.forEach((k,i)=>LB[k]="ABCDEFGHIJ"[i]);
+  const root=$("sec-"+sec);
+  root.innerHTML=`<p class="howto">${isWb?"先點文章裡的空格，再從下方的字詞中選一個填進去。每個字詞只會用到一次。":"先點文章裡的空格，再從下方的句子中選一句放進去。五個句子裡有一句用不到。"}</p>
+  <div class="mp"><div class="passage"><h3>${D.title}</h3>${D.p.map(t=>"<p"+(t.indexOf("{")===0?' class="noind"':"")+">"+mPara(t)+"</p>").join("")}
+  <details class="tr" id="${sec}-tr" hidden><summary>看全文翻譯</summary>${D.tr.map(t=>"<p>"+t+"</p>").join("")}</details></div>
+  <div class="dock${isWb?"":" static"}"><p class="now"><span id="${sec}-now"></span><button class="btn b-only" id="${sec}-hint">提示</button></p><div id="${sec}-fb"></div><div class="chips${isWb?"":" sent"}" id="${sec}-chips"></div></div>
+  <div class="dlist" id="${sec}-done"></div></div>`;
+  root.querySelectorAll(".mb").forEach(b=>b.onclick=()=>{if(!st.s[b.dataset.n].done){st.cur=+b.dataset.n;draw()}});
+  const word=k=>opts.find(o=>o.k===k);
+  function draw(){
+    root.querySelectorAll(".mb").forEach(b=>b.classList.toggle("cur",+b.dataset.n===st.cur&&!st.s[b.dataset.n].done));
+    const q=D.items.find(x=>x.n===st.cur);
+    $(sec+"-now").textContent=q?`第 ${q.n} 題要填：`+(BASIC&&isWb?q.need:""):"全部完成";
+    const used=new Set(D.items.filter(x=>st.s[x.n].done).map(x=>x.a));
+    const wr=q?st.s[q.n].wrong:new Set();
+    $(sec+"-chips").innerHTML=order.map(k=>{const o=word(k);const u=used.has(k),no=wr.has(k);
+      return `<button class="chip${u?" used":""}${no?" no":""}" data-k="${k}"${u||no||!q?" disabled":""}><span class="k">(${LB[k]})</span>${isWb?esc(o.w)+`<small>${o.pos}・${o.m}</small>`:esc(o.t)+`<span class="czh">${o.zh}</span>`}</button>`}).join("");
+    $(sec+"-chips").querySelectorAll(".chip").forEach(c=>c.onclick=()=>pick(c.dataset.k));
+    const h=$(sec+"-hint");if(h){h.hidden=!q;h.onclick=()=>{$(sec+"-fb").innerHTML=`<div class="fb good"><span class="tag">提示</span>${isWb?q.why:q.k.split("。")[0]+"。"}</div>`}}
+  }
+  function pick(k){
+    const q=D.items.find(x=>x.n===st.cur);if(!q)return;const s=st.s[q.n];s.tries++;tStart(sec);
+    const o=word(k);
+    if(k!==q.a){s.wrong.add(k);
+      let msg;
+      if(isWb){const pos=o.pos.replace("片語","");msg=pos!==q.need?`這一格要填<b>${q.need}</b>，<span class="en">${esc(o.w)}</span> 是${o.pos}，放進去文法不通。<br>${q.why}`:(q.same[k]||"詞性對了，但意思和上下文接不起來，再看看前後句。")}
+      else msg=q.w[k]||"這一句和前後文接不起來，再看看空格前後在講什麼。";
+      $(sec+"-fb").innerHTML=`<div class="fb bad"><span class="tag">再想想看</span>${msg}</div>`;draw();return}
+    s.done=true;const b=$("mb-"+q.n);b.textContent=isWb?o.w:"("+LB[k]+")";b.classList.add("done");b.disabled=true;
+    if(!isWb){b.title=o.t}
+    const others=isWb?Object.entries(q.same).map(([kk,t])=>`<li>${t}</li>`).join(""):Object.entries(q.w).map(([kk,t])=>`<li><b>(${LB[kk]})</b> ${t}</li>`).join("");
+    $(sec+"-done").insertAdjacentHTML("afterbegin",`<div class="drow"><div class="h">第 ${q.n} 題　<span class="en">(${LB[k]}) ${esc(isWb?o.w:o.t)}</span>${isWb?`<span class="tag">${q.need}</span>`:""}${s.tries===1?" ✓ 一次答對":""}</div><div>${q.k}</div>${others?`<ul>${others}</ul>`:""}<div class="muted small">${q.v}</div></div>`);
+    $(sec+"-fb").innerHTML=`<div class="fb good"><span class="tag">答對了！</span>${q.k}</div>`;
+    const next=D.items.find(x=>!st.s[x.n].done&&x.n>q.n)||D.items.find(x=>!st.s[x.n].done);
+    st.cur=next?next.n:null;draw();
+    const done=D.items.filter(x=>st.s[x.n].done).length,first=D.items.filter(x=>st.s[x.n].tries===1).length;
+    mStatus(sec,done+" / "+D.items.length);
+    if(!next){$(sec+"-tr").hidden=false;$(sec+"-fb").innerHTML="";root.querySelector(".dock").hidden=true;
+      const used=mSummary(sec,root.querySelector(".mp"),first,D.items.length,()=>mBuildBlank(sec));
+      const wrong=D.items.filter(x=>st.s[x.n].tries>1);
+      mSave(sec,first,D.items.length,used,wrong.map(x=>x.n),wrong.map(x=>isWb?"文意選填－"+x.need:"篇章結構"))}
+  }
+  mStatus(sec,"0 / "+D.items.length);draw();
+}
+
+/* ---- 閱讀測驗 ---- */
+function mBuildRd(){
+  const sec="rd",R=MORE.rd;if(!R){$("sec-rd").innerHTML='<div class="notyet">這一年沒有這個題型。</div>';return}
+  if(!T[sec])T[sec]={el:0,run:false,last:0,fin:false};tReset(sec);
+  const all=[].concat(...R.map(p=>p.qs)),st={};all.forEach(q=>st[q.n]={done:false,tries:0});
+  const root=$("sec-rd");
+  root.innerHTML=`<p class="howto">先讀文章，再回答下面的題目。選錯會告訴你錯在哪，可以再選一次。整篇做完會出現全文翻譯。</p>`+
+    R.map((p,pi)=>`<div class="mp" style="margin-bottom:16px"><div class="passage"><h3>${p.title}</h3>${p.p.map(t=>"<p>"+t+"</p>").join("")}<details class="tr" id="rd-tr-${pi}" hidden><summary>看全文翻譯</summary>${p.tr.map(t=>"<p>"+t+"</p>").join("")}<p class="muted">重點單字：${p.v}</p></details></div><div class="sheet" style="border:0;padding:0">${p.qs.map(q=>`<div class="q" id="rq-${q.n}"></div>`).join("")}</div></div>`).join("")+`<div id="rd-end"></div>`;
+  const L="ABCD";
+  function drawQ(q,pi){
+    const el=$("rq-"+q.n),idx=q.img?[0,1,2,3]:mShuffle([0,1,2,3]);
+    el.innerHTML=`<p class="stem"><span class="num">${q.n}.</span>${q.q}</p><p class="qz">${q.qzh}</p>${q.img?`<img class="rimg" alt="第 ${q.n} 題的四張路線圖" src="${MORE.img[q.img]}">`:""}
+      <div class="opts">${idx.map((i,j)=>`<button class="opt" data-i="${i}"><b>(${L[j]})</b>${q.img?"":esc(q.o[i])}${q.img?"":`<span class="oz">${q.oz[i]}</span>`}</button>`).join("")}</div><div class="fbw"></div>`;
+    el.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+      const s=st[q.n];if(s.done)return;s.tries++;tStart(sec);const i=+b.dataset.i;
+      if(i!==q.a){b.classList.add("wrong");b.disabled=true;el.querySelector(".fbw").innerHTML=`<div class="fb bad"><span class="tag">再想想看</span>${q.w[i]||"這個選項和文章內容不符。"}</div>`;return}
+      s.done=true;b.classList.add("right");el.querySelectorAll(".opt").forEach(x=>x.disabled=true);
+      const others=Object.entries(q.w).map(([k,t])=>`<li><span class="en">${q.img?q.oz[k]:esc(q.o[k])}</span>：${t}</li>`).join("");
+      el.querySelector(".fbw").innerHTML=`<div class="fb good"><span class="tag">答對了！${s.tries===1?"一次就答對":""}</span>${q.k}<ul>${others}</ul></div>`;
+      const P=R[pi];if(P.qs.every(x=>st[x.n].done))$("rd-tr-"+pi).hidden=false;
+      const done=all.filter(x=>st[x.n].done).length,first=all.filter(x=>st[x.n].tries===1).length;mStatus(sec,done+" / "+all.length);
+      if(done===all.length){const used=mSummary(sec,$("rd-end"),first,all.length,mBuildRd);const wrong=all.filter(x=>st[x.n].tries>1);mSave(sec,first,all.length,used,wrong.map(x=>x.n),wrong.map(x=>"閱讀－"+x.tag))}
+    });
+  }
+  R.forEach((p,pi)=>p.qs.forEach(q=>drawQ(q,pi)));
+  mStatus(sec,"0 / "+all.length);
+}
+
+/* ---- 混合題 ---- */
+function mNorm(s){return String(s||"").toLowerCase().replace(/[‐-―−]/g,"-").replace(/[^a-z\- ]/g," ").replace(/\s+/g," ").trim()}
+function mBuildMx(){
+  const sec="mx",M=MORE.mx;if(!M){$("sec-mx").innerHTML='<div class="notyet">這一年沒有這個題型。</div>';return}
+  if(!T[sec])T[sec]={el:0,run:false,last:0,fin:false};tReset(sec);
+  const root=$("sec-mx"),parts={};let total=0;
+  root.innerHTML=`<p class="howto">混合題有填充、多選和簡答。填好後按「檢查答案」，答錯會給提示，可以再試；試兩次還不會，可以直接看答案。</p>
+  <div class="mp"><div class="passage"><h3>${M.title}</h3>${M.p.map((t,i)=>"<p"+(i?' class="noind"':"")+">"+t+"</p>").join("")}<details class="tr" id="mx-tr" hidden><summary>看全文翻譯</summary>${M.tr.map(t=>"<p>"+t+"</p>").join("")}</details></div>
+  <div class="sheet" style="border:0;padding:0">${M.items.map((it,i)=>`<div class="q" id="mxq-${i}"></div>`).join("")}</div></div><div id="mx-end"></div>`;
+  function fin(key,ok1){parts[key]=ok1;const keys=Object.keys(parts);const n=M.items.reduce((a,it)=>a+(it.type==="fill"?it.blanks.length:1),0);
+    const done=keys.length;mStatus(sec,done+" / "+n);
+    if(done===n){$("mx-tr").hidden=false;const first=keys.filter(k=>parts[k]).length;const used=mSummary(sec,$("mx-end"),first,n,mBuildMx);const wrong=keys.filter(k=>!parts[k]);mSave(sec,first,n,used,wrong,wrong.map(()=>"混合題"))}}
+  M.items.forEach((it,i)=>{
+    const el=$("mxq-"+i);
+    if(it.type==="fill"){
+      el.innerHTML=`<p class="stem"><span class="num">${it.n}.</span>填充題<span class="pts">${it.pts}</span></p><p class="zh" style="margin:0 0 4px">${it.prompt}</p>
+      <div class="mx-s">${esc(it.s).replace(/\{(\w+)\}/g,(m,n)=>{const bb=it.blanks.find(x=>String(x.n)===n)||{};const lb=bb.lb||n;return `<b>${lb}</b> <input class="mx-in" id="mxi-${n}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="第 ${lb} 題">`})}</div><p class="qz">${it.szh}</p>
+      <div class="row"><button class="btn primary" data-chk>檢查答案</button><button class="btn" data-show hidden>看答案</button></div><div class="fbw"></div>`;
+      const tries={},FB={};it.blanks.forEach(b=>{tries[b.n]=0;FB[b.n]=""});
+      const check=(show)=>{let html="";tStart(sec);const add=(n,h)=>{FB[n]=h};
+        it.blanks.forEach(b=>{const inp=$("mxi-"+b.n);if(inp.classList.contains("ok"))return;
+          const v=mNorm(inp.value);
+          if(!show&&!v){add(b.n,`<div class="fb bad"><span class="tag">第 ${b.lb||b.n} 題還沒填</span></div>`);return}
+          if(!show)tries[b.n]++;
+          if(!show&&b.ans.includes(v)){inp.classList.remove("bad");inp.classList.add("ok");inp.disabled=true;add(b.n,`<div class="fb good"><span class="tag">第 ${b.lb||b.n} 題答對了！</span>${b.k}</div>`);fin(String(b.n),tries[b.n]===1);return}
+          if(show){inp.value=b.ans[0];inp.classList.remove("bad");inp.classList.add("ok");inp.disabled=true;add(b.n,`<div class="fb good"><span class="tag">第 ${b.lb||b.n} 題答案</span>${b.k}</div>`);if(!(String(b.n) in parts))fin(String(b.n),false);return}
+          inp.classList.add("bad");
+          const msg=v===mNorm(b.src)?`字找對了！但是放進句子要做<b>字形變化</b>。${b.hint}`:b.hint;
+          add(b.n,`<div class="fb bad"><span class="tag">第 ${b.lb||b.n} 題再想想看</span>${msg}</div>`)});
+        el.querySelector(".fbw").innerHTML=it.blanks.map(b=>FB[b.n]).join("");
+        if(it.blanks.some(b=>tries[b.n]>=2&&!$("mxi-"+b.n).classList.contains("ok")))el.querySelector("[data-show]").hidden=false;
+        if(it.blanks.every(b=>$("mxi-"+b.n).classList.contains("ok"))){el.querySelector("[data-chk]").hidden=true;el.querySelector("[data-show]").hidden=true}};
+      el.querySelector("[data-chk]").onclick=()=>check(false);el.querySelector("[data-show]").onclick=()=>check(true);
+    }else if(it.type==="multi"){
+      el.innerHTML=`<p class="stem"><span class="num">${it.n}.</span>${esc(it.q)}<span class="pts">多選・${it.pts}</span></p><p class="qz">${it.qzh}</p>
+      <div class="mx-checks">${it.opts.map(o=>`<label data-k="${o[0]}"><input type="checkbox" value="${o[0]}"> ${esc(o)}</label>`).join("")}</div>
+      <div class="row"><button class="btn primary" data-chk>檢查答案</button><button class="btn" data-show hidden>看答案</button></div><div class="fbw"></div>`;
+      let tries=0;
+      const reveal=(ok)=>{el.querySelectorAll("input").forEach(c=>{c.disabled=true;c.checked=it.a.includes(c.value)});
+        el.querySelectorAll("label").forEach(l=>{l.classList.remove("bad");if(it.a.includes(l.dataset.k))l.classList.add("ok")});
+        el.querySelector("[data-chk]").hidden=true;el.querySelector("[data-show]").hidden=true;
+        el.querySelector(".fbw").innerHTML=`<div class="fb good"><span class="tag">${ok?"答對了！":"答案："}${it.a.join("、")}</span><ul>${it.a.map(k=>`<li><b>${k}</b>：${it.why[k]}</li>`).join("")}${Object.entries(it.no).map(([k,t])=>`<li><b>${k}</b>：${t}</li>`).join("")}</ul></div>`;
+        if(!(String(it.n) in parts))fin(String(it.n),ok&&tries===1)};
+      el.querySelector("[data-chk]").onclick=()=>{const sel=[...el.querySelectorAll("input:checked")].map(c=>c.value).sort();tStart(sec);
+        if(!sel.length){el.querySelector(".fbw").innerHTML='<div class="fb bad"><span class="tag">還沒選</span>這題是多選題，至少要選一個。</div>';return}
+        tries++;
+        if(sel.join()===it.a.slice().sort().join()){reveal(true);return}
+        const extra=sel.filter(k=>!it.a.includes(k)),miss=it.a.filter(k=>!sel.includes(k)).length;
+        el.querySelectorAll("label").forEach(l=>l.classList.toggle("bad",extra.includes(l.dataset.k)));
+        el.querySelector(".fbw").innerHTML=`<div class="fb bad"><span class="tag">再想想看</span>${extra.map(k=>`<b>${k}</b>：${it.no[k]||""}`).join("<br>")}${miss?`${extra.length?"<br>":""}還少選了 ${miss} 家店。三樣東西各要去哪一家店買？回文章找每家店賣什麼。`:""}</div>`;
+        if(tries>=2)el.querySelector("[data-show]").hidden=false};
+      el.querySelector("[data-show]").onclick=()=>reveal(false);
+    }else if(it.type==="short"){
+      el.innerHTML=`<p class="stem"><span class="num">${it.n}.</span>${esc(it.q)}<span class="pts">簡答・${it.pts}</span></p><p class="qz">${it.qzh}</p>
+      <textarea class="mx-ta" aria-label="第 ${it.n} 題作答"></textarea>
+      <div class="row" style="margin-top:6px"><button class="btn primary" data-chk>檢查答案</button><button class="btn" data-show hidden>看答案</button></div><div class="fbw"></div>`;
+      let tries=0;const ta=el.querySelector("textarea");
+      const done=(ok)=>{ta.disabled=true;el.querySelector("[data-chk]").hidden=true;el.querySelector("[data-show]").hidden=true;
+        el.querySelector(".fbw").innerHTML=`<div class="fb good"><span class="tag">${ok?"答對了！":"參考答案："+esc(it.model)}</span>${it.k}</div>`;fin(String(it.n),ok&&tries===1)};
+      el.querySelector("[data-chk]").onclick=()=>{const v=mNorm(ta.value);tStart(sec);
+        if(!v){el.querySelector(".fbw").innerHTML='<div class="fb bad"><span class="tag">還沒寫</span>先寫下你的答案。</div>';return}
+        tries++;
+        if(it.keys.some(k=>v.includes(mNorm(k)))){done(true);return}
+        el.querySelector(".fbw").innerHTML=`<div class="fb bad"><span class="tag">再想想看</span>${it.hint||"回到文章找找看，答案就在原文裡。"}</div>`;
+        if(tries>=2)el.querySelector("[data-show]").hidden=false};
+      el.querySelector("[data-show]").onclick=()=>done(false);
+    }
+  });
+  mStatus(sec,"0 / "+M.items.reduce((a,it)=>a+(it.type==="fill"?it.blanks.length:1),0));
+}
+
+function demoGas(fn,code){ // 只在本機預覽時使用；正式網站會連到後台
+  if(fn==="checkCode")return code==="DEMO01"?{ok:true,name:"示範訂閱者",expires:"2027/10/30"}:{ok:false,reason:"notfound"};
+  if(fn==="getLockedContent"&&CFG.freeMode)return (window.__DEMO_LOCKED_Y&&window.__DEMO_LOCKED_Y[arguments[2]])||{ok:false};
+  if(fn==="getLockedContent")return (window.__DEMO_LOCKED_Y&&window.__DEMO_LOCKED_Y[arguments[2]])||window.__DEMO_LOCKED||{ok:false};
+  if(fn==="getMoreContent")return (window.__DEMO_MORE_Y&&window.__DEMO_MORE_Y[arguments[2]])||{ok:false,reason:"notyet"};
+  if(fn==="getWritingInfo")return (window.__DEMO_WRITE_Y&&window.__DEMO_WRITE_Y[arguments[2]])||window.__DEMO_WRITE||{ok:false};
+  return {ok:true};}
+const gmsg=$("gmsg");
+function showLogin(v){$("gform").hidden=!v;if(v){$("gcode").focus();gmsg.textContent="";}}
+$("gcancel").onclick=()=>showLogin(false);
+function setFree(){
+  CODE="";UNLOCKED=false;
+  if(CFG.freeMode){openFree();return;}
+  $("ustate").textContent="免費試用中：詞彙題可以直接做，綜合測驗需要訂閱。";
+  $("uact").innerHTML='<button class="btn primary" id="openlogin">已訂閱？登入</button>';
+  $("openlogin").onclick=()=>showLogin(true);
+  $("sc-cloze").textContent="訂閱解鎖";renderLock();renderWriteLock();loadMore();}
+async function openFree(){
+  $("ustate").textContent="免費開放中：所有題目都可以直接做。用 Google 登入，就能記錄成績，每週一收到練習摘要。";
+  $("uact").innerHTML='<button class="btn primary" id="openlogin">免費登入</button>';
+  $("openlogin").onclick=()=>showLogin(true);
+  $("sec-cloze").innerHTML='<p class="muted">讀取中…</p>';
+  try{const data=await gas("getLockedContent","",YEAR);
+    if(data&&data.ok){passages=data.passages;cloze=data.cloze;Object.assign(GL,data.gl);Object.assign(HINT,data.hint);UNLOCKED=true;build("cloze",null);loadMore();}
+    else $("sec-cloze").innerHTML='<p class="muted">讀取失敗，請重新整理頁面。</p>';
+  }catch(e){$("sec-cloze").innerHTML='<p class="muted">連線失敗，請重新整理頁面。</p>'}
+  loadWriting();
+}
+async function enter(code,silent){
+  code=String(code||"").trim();if(code.indexOf("S.")!==0)code=code.toUpperCase();if(!code)return;
+  gmsg.className="gmsg";gmsg.textContent="確認中…";$("gbtn").disabled=true;
+  try{const r=await gas("checkCode",code);
+    if(r&&r.ok){
+      const data=await gas("getLockedContent",code,YEAR);
+      if(!data||!data.ok)throw new Error("locked");
+      passages=data.passages;cloze=data.cloze;Object.assign(GL,data.gl);Object.assign(HINT,data.hint);
+      CODE=code;UNLOCKED=true;try{localStorage.setItem("gsat-code",code)}catch(e){}
+      $("ustate").textContent=r.free?("已登入："+r.name+"｜成績會自動記錄"):("訂閱者："+r.name+"｜到期日 "+r.expires);
+      const prog=APP_URL.indexOf("http")===0?'<a class="btn" target="_blank" rel="noopener" href="'+APP_URL+'?page=progress">查看我的進度</a>':"";
+      $("uact").innerHTML=prog+'<button class="btn" id="logout">登出</button>';
+      $("logout").onclick=()=>{try{localStorage.removeItem("gsat-code")}catch(e){}setFree();};
+      showLogin(false);build("cloze",null);loadMore();loadWriting();
+    }else{
+      try{localStorage.removeItem("gsat-code")}catch(e){}
+      if(silent&&code.indexOf("S.")!==0){setFree();}
+      else{setFree();showLogin(true);gmsg.className="gmsg err";gmsg.textContent=r&&r.reason==="notsub"?"這個 Google 帳號（"+r.email+"）還沒有訂閱。如果付款時填的是別的 Gmail，請換那個帳號登入。":r&&r.reason==="loginexpired"?"登入已過期，請再按一次「用 Google 登入」。":r&&r.reason==="expired"?"你的訂閱已在 "+r.expires+" 到期。續訂後會自動恢復，練習紀錄也都還在。":r&&r.reason==="stopped"?"這個帳號已停用。":"找不到這組代碼，請對照開通信再輸入一次。";}
+    }
+  }catch(e){gmsg.className="gmsg err";gmsg.textContent="連線失敗，請檢查網路後再試一次。";}
+  $("gbtn").disabled=false;}
+$("gform").addEventListener("submit",e=>{e.preventDefault();enter($("gcode").value,false)});
+function renderLock(){
+  const root=$("sec-cloze");
+  const plans=(CFG.plans||[]).map((p,i)=>`<div class="plan${p.best?" best":""}"><span class="pn">${p.name}</span><span class="pp">${p.price}</span><span class="pt">${p.note||""}</span>${p.url?`<a class="btn primary" href="${p.url}" target="_blank" rel="noopener">訂閱${p.name}</a>`:`<span class="btn" aria-disabled="true">付款連結即將開放</span>`}</div>`).join("");
+  root.innerHTML=`<div class="lock"><h2>綜合測驗需要訂閱</h2><p>詞彙題可以免費試做。訂閱後可以使用：</p>
+  <ul><li>所有大題，包括綜合測驗和之後陸續加入的歷屆試題</li><li>每題逐選項說明、完整中文詳解、基礎模式提示</li><li>成績自動記錄、進度查詢頁、每週一寄到信箱的練習摘要</li></ul>
+  <div class="plans">${plans}</div>
+  <p>付款後 10 分鐘內，會收到一封開通信，裡面有你的訂閱者代碼。</p>
+  <button class="btn" id="lockLogin">已經訂閱？輸入代碼</button></div>`;
+  $("lockLogin").onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});showLogin(true);};
+}
+const scope={vocab:"全部",cloze:"全部"};
+async function saveResult(sec,first,total,used,wrong){
+  logUse("done",sec==="vocab"?"詞彙題":"綜合測驗",first,total);
+  const m=document.getElementById("savemsg");m.hidden=false;m.className="savemsg";
+  if(!CODE){m.textContent=CFG.freeMode?"用 Google 免費登入後，成績會自動記錄，每週一還會收到練習摘要。":"訂閱後，成績會自動記錄，每週一還會收到練習摘要。";return;}
+  m.textContent="正在儲存這次的成績…";
+  const r={paper:YEAR+"學測",section:sec==="vocab"?"詞彙":"綜合測驗",scope:scope[sec],mode:BASIC?"基礎":"標準",total,first,used,limit:LIMIT,wrongNums:wrong,wrongTags:wrong.map(n=>TAG[n])};
+  try{const x=await gas("saveResult",CODE,r);
+    if(x&&x.ok){m.textContent="成績已儲存，可以到「查看我的進度」看紀錄。";setTimeout(()=>{m.hidden=true},5000)}
+    else{m.className="savemsg err";m.textContent=(x&&x.msg)||"成績沒有儲存成功。"}}
+  catch(e){m.className="savemsg err";m.textContent="成績沒有儲存成功，請檢查網路。"}}
+const state={vocab:{},cloze:{}};
+const current={vocab:[],cloze:[]};
+const order={};
+function loadWrong(){try{return JSON.parse(localStorage.getItem(KEY))||{vocab:[],cloze:[]}}catch(e){return {vocab:[],cloze:[]}}}
+function saveWrong(w){try{localStorage.setItem(KEY,JSON.stringify(w))}catch(e){}}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+function letter(n,i){return L[order[n].indexOf(i)]}
+function renderItem(q,sec,showStem,disp){
+  order[q.n]=shuffle([0,1,2,3]);
+  const div=document.createElement("div");div.className="q";div.id="q"+q.n;
+  let h="";
+  if(showStem) h+=`<p class="stem"><span class="num">${disp}.</span>${q.s.replace("______","<u>&emsp;&emsp;&emsp;</u>")}</p><p class="zh b-only">${q.zh}</p>`;
+  else h+=`<p class="stem"><span class="num">${q.n}.</span><span class="zh b-only" style="font-family:var(--f-zh)">${q.zh}</span></p>`;
+  h+=`<div class="opts">`+order[q.n].map((i,pos)=>`<button class="opt" id="o${q.n}-${i}" data-i="${i}"><b>(${L[pos]})</b>${q.o[i]}<small class="gl">${GL[q.n][i]}</small></button>`).join("")+`</div><div class="hints b-only"><button class="hbtn" data-h="clue">提示：關鍵線索</button><button class="hbtn" data-h="gl">提示：看選項中文</button></div><div class="hintbox" hidden></div><div class="fbw"></div>`;
+  div.innerHTML=h;
+  div.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>pick(q,sec,+b.dataset.i,div)));
+  div.querySelector('[data-h="clue"]').onclick=e=>{const hb=div.querySelector(".hintbox");hb.hidden=false;hb.textContent=HINT[q.n];e.currentTarget.disabled=true};
+  div.querySelector('[data-h="gl"]').onclick=e=>{div.classList.add("show-gl");e.currentTarget.disabled=true};
+  return div;
+}
+function pick(q,sec,i,div){
+  const st=state[sec][q.n]||(state[sec][q.n]={tries:0,firstWrong:false,done:false});
+  if(st.done) return;
+  if(!T[sec].run&&!T[sec].fin) tStart(sec);
+  st.tries++;
+  const btn=div.querySelector(`#o${q.n}-${i}`);const fbw=div.querySelector(".fbw");
+  if(i!==q.a){
+    if(st.tries===1) st.firstWrong=true;
+    btn.classList.add("wrong");btn.disabled=true;
+    fbw.innerHTML=`<div class="fb bad"><span class="tag">(${letter(q.n,i)}) 不對，再想想</span>${q.w[i]}</div>`;
+  }else{
+    st.done=true;btn.classList.add("right");div.classList.add("show-gl");div.querySelector(".hints").hidden=true;
+    div.querySelectorAll(".opt").forEach(b=>b.disabled=true);
+    const others=order[q.n].filter(j=>j!==q.a).map(j=>`<li><span class="en">(${letter(q.n,j)}) ${q.o[j]}</span>：${q.w[j]}</li>`).join("");
+    fbw.innerHTML=`<div class="fb good"><span class="tag">${st.firstWrong?"答對了（第 "+st.tries+" 次）":"一次就答對！"}</span>${q.k}<ul>${others}</ul><div style="margin-top:6px"><b>重點單字：</b>${q.v}</div></div>`;
+    if(sec==="cloze"){const b=document.getElementById("b"+q.n);if(b){b.textContent=q.o[q.a];b.classList.add("done");}}
+    const w=loadWrong();const set=new Set(w[sec]||[]);
+    if(st.firstWrong) set.add(q.n); else set.delete(q.n);
+    w[sec]=[...set].sort((a,b)=>a-b);saveWrong(w);
+    update(sec);
+  }
+}
+function update(sec){
+  const list=current[sec];
+  const done=list.filter(n=>state[sec][n]&&state[sec][n].done).length;
+  const first=list.filter(n=>state[sec][n]&&state[sec][n].done&&!state[sec][n].firstWrong).length;
+  document.getElementById("sc-"+sec).textContent=`${done} / ${list.length}`;
+  const box=document.getElementById("sum-"+sec);
+  if(done===list.length){
+    const wrong=list.filter(n=>state[sec][n].firstWrong);
+    tick();T[sec].run=false;T[sec].fin=true;drawTimer();
+    const used=T[sec].el,over=LIMIT>0&&used>LIMIT;
+    if(scope[sec]==="全部"){try{localStorage.setItem("gsat-done-"+YEAR+"-"+sec,"1")}catch(e){}fillYears();}
+    saveResult(sec,first,list.length,used,wrong);
+    box.hidden=false;
+    box.innerHTML=`<h2>完成！第一次就答對 ${first} / ${list.length} 題</h2><p>用時 ${fmt(used)}${LIMIT>0?(over?"，超過限時 "+fmt(used-LIMIT)+"，下次試著加快一點。":"，在時間內完成。"):""}</p><p>${wrong.length?"第一次選錯的題目："+(sec==="vocab"?wrong.map(n=>vocab.find(q=>q.n===n).o[vocab.find(q=>q.n===n).a]).join("、"):wrong.join("、"))+"。再練一次時選項順序會打亂，看看是不是真的懂了。":"全部一次答對，太厲害了！"}</p><div class="row">${wrong.length?`<button class="btn primary" id="rw-${sec}">只重做錯的題目</button>`:""}<button class="btn" id="ra-${sec}">全部重做</button></div>`;
+    const rw=document.getElementById("rw-"+sec);if(rw) rw.onclick=()=>build(sec,wrong);
+    document.getElementById("ra-"+sec).onclick=()=>build(sec,null);
+  }
+}
+function toolbar(sec,only){
+  const saved=(loadWrong()[sec]||[]);
+  const mode=only?`<span class="mode">目前在練：錯題 ${only.length} 題${sec==="vocab"?"（題目順序已打亂）":""}</span>`:`<span class="mode">目前在練：全部 10 題${sec==="vocab"?"（題目順序已打亂）":""}</span>`;
+  return `<div class="bar">${mode}<div class="row"><button class="btn" data-act="all">重新開始（全部）</button>${saved.length?`<button class="btn primary" data-act="wrong">練上次錯的 ${saved.length} 題</button>`:""}</div></div>`;
+}
+function build(sec,only){
+  const root=document.getElementById("sec-"+sec);root.innerHTML="";
+  const list=sec==="vocab"?vocab:cloze;
+  state[sec]={};tReset(sec);scope[sec]=only?"錯題重做":"全部";
+  current[sec]=list.map(q=>q.n).filter(n=>!only||only.includes(n));
+  root.insertAdjacentHTML("beforeend",toolbar(sec,only));
+  root.querySelector('[data-act="all"]').onclick=()=>build(sec,null);
+  const wb=root.querySelector('[data-act="wrong"]');if(wb) wb.onclick=()=>build(sec,loadWrong()[sec]);
+  const sheet=document.createElement("div");sheet.className="sheet";
+  if(sec==="vocab"){
+    root.insertAdjacentHTML("beforeend",`<p class="howto">選出最適合填入空格的字。每題下面有中文意思，看不懂英文句子時可以參考。</p>`);
+    shuffle(vocab.filter(q=>current[sec].includes(q.n))).forEach((q,i)=>sheet.appendChild(renderItem(q,sec,true,i+1)));
+  }else{
+    root.insertAdjacentHTML("beforeend",`<p class="howto">先讀文章，再回答下面的題目。答對後，答案會自動填進文章空格。讀完可以打開「看中文翻譯」。</p>`);
+    passages.forEach((ps,pi)=>{
+      const nums=pi===0?[11,12,13,14,15]:[16,17,18,19,20];
+      const use=nums.filter(n=>current[sec].includes(n));
+      if(!use.length) return;
+      const pa=document.createElement("div");pa.className="passage";
+      pa.innerHTML=`<h3>${ps.title}</h3>`+ps.p.map(t=>"<p>"+t.replace(/\{(\d+)\}/g,(m,n)=>{const q=cloze.find(c=>c.n==n);const dn=!use.includes(+n);return `<span class="blank${dn?" done":""}" id="b${n}" role="button" tabindex="0">${dn?q.o[q.a]:n}</span>`;})+"</p>").join("")+`<details class="tr"><summary>看中文翻譯</summary>${ps.tr.map(t=>"<p>"+t+"</p>").join("")}</details>`;
+      sheet.appendChild(pa);
+      use.forEach(n=>sheet.appendChild(renderItem(cloze.find(c=>c.n===n),sec,false)));
+    });
+    sheet.addEventListener("click",e=>{const b=e.target.closest(".blank");if(b&&!b.classList.contains("done")){document.getElementById("q"+b.id.slice(1))?.scrollIntoView({behavior:"smooth",block:"center"});}});
+  }
+  root.appendChild(sheet);
+  const sum=document.createElement("div");sum.className="summary";sum.id="sum-"+sec;sum.hidden=true;root.appendChild(sum);
+  update(sec);
+  if(document.getElementById("sec-"+sec).offsetParent) window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected",x===t?"true":"false"));
+  ["vocab","cloze","wb","st","rd","mx","write"].forEach(k=>document.getElementById("sec-"+k).hidden=t.dataset.sec!==k);
+  if(t.dataset.sec!=="write"&&!T[t.dataset.sec])T[t.dataset.sec]={el:0,run:false,last:0,fin:false};
+  t.scrollIntoView({block:"nearest",inline:"nearest"});
+  document.getElementById("timer").hidden=t.dataset.sec==="write";
+  if(t.dataset.sec!=="write"){active=t.dataset.sec;drawTimer();}
+  window.scrollTo({top:0});
+}));
+
+/* ========== 三、翻譯與作文（老師親改） ========== */
+function doneLabel(y){const K=["vocab","cloze","wb","st","rd","mx"];let n=0;K.forEach(k=>{try{if(localStorage.getItem("gsat-done-"+y+"-"+k))n++}catch(e){}});return n===K.length?"　✓ 已完成":n?"　（完成 "+n+" / "+K.length+"）":""}
+function fillYears(){const sel=document.getElementById("ysel");sel.innerHTML=YLIST.map(y=>`<option value="${y}"${y===YEAR?" selected":""}>${y} 年學測${doneLabel(y)}</option>`).join("")}
+document.getElementById("ysel").addEventListener("change",async()=>{
+  setYearData(document.getElementById("ysel").value);fillYears();build("vocab",null);
+  if(UNLOCKED){$("sec-cloze").innerHTML='<p class="muted">讀取中…</p>';
+    try{const data=await gas("getLockedContent",CODE,YEAR);
+      if(data&&data.ok){passages=data.passages;cloze=data.cloze;Object.assign(GL,data.gl);Object.assign(HINT,data.hint);build("cloze",null);loadMore();}
+      else $("sec-cloze").innerHTML='<p class="muted">這一年的綜合測驗讀取失敗，請重新整理頁面。</p>';
+    }catch(e){$("sec-cloze").innerHTML='<p class="muted">連線失敗，請重新整理頁面。</p>'}
+    loadWriting();
+  }else{$("sc-cloze").textContent="訂閱解鎖";renderLock();loadMore();}
+});
+let WINFO=null;
+function esc(t){return String(t==null?"":t).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function draftKey(k){return "gsat-draft-"+k}
+function getDraft(k){try{return localStorage.getItem(draftKey(k))||""}catch(e){return ""}}
+function setDraft(k,v){try{localStorage.setItem(draftKey(k),v)}catch(e){}}
+function renderWriteLock(){
+  WINFO=null;$("sc-write").textContent="老師批改";
+  $("sec-write").innerHTML=`<div class="lock"><h2>翻譯和作文的寫作指引</h2><p>先在紙上寫，再對照指引自己檢查，知道哪裡寫得好、哪裡要改。</p>
+  <ul><li>中譯英：參考譯法、每個關鍵詞怎麼翻、學生最常犯的錯</li><li>英文作文：兩段怎麼安排、實用單字和句型、一篇完整的範文</li></ul>
+  <p>訂閱後就可以使用。</p><button class="btn primary" id="wLogin">已經訂閱？登入</button></div>`;
+  $("wLogin").onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});showLogin(true);};
+}
+async function loadWriting(){
+  $("sec-write").innerHTML=`<p class="muted">讀取中…</p>`;
+  try{const r=await gas("getWritingInfo",CODE,YEAR);if(!r||!r.ok){renderWriteLock();return}WINFO=r;renderWrite();}
+  catch(e){$("sec-write").innerHTML=`<p class="wmsg err">讀取失敗，請重新整理頁面。</p>`}
+}
+function wcount(t){return (t.match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g)||[]).length}
+function renderWrite(){
+  const r=WINFO,d=r.data,left=Math.max(0,r.quota-r.used);
+  const open=r.quota>0;
+  $("sc-write").textContent=open?`本月剩 ${left} 篇`:"寫作指引";
+  const tr=d.translation,es=d.essay;
+  const hist=r.history.length?r.history.map(h=>`<div class="hist"><div class="hd"><span>${esc(h.date)}・${esc(h.title)}</span><span class="pill ${h.done?"done":"wait"}">${h.done?"已批改":"批改中"}</span></div>
+     <details><summary>${h.done?"看批改結果":"看我送出的內容"}</summary>${h.done&&h.teacher?`<p class="fbtext"><b>老師的話：</b>${esc(h.teacher)}</p>`:""}<div class="ans">${esc(h.answer)}</div>${h.done?`<p class="fbtext">${esc(h.feedback)}</p>`:""}</details></div>`).join("")
+    :`<p class="muted" style="margin:0">還沒有送出過。</p>`;
+  $("sec-write").innerHTML=`
+  ${open?`<div class="quota">本月還可以送出 <b>${left} / ${r.quota}</b> 篇（中譯英一組算一篇）。送出後${esc(r.turnaround)}批改完成，結果會寄到你的信箱，也會出現在這一頁最下面。</div>`:`<div class="quota">建議先在紙上寫，限時 30 分鐘左右，寫完再打開下面的寫作指引對照。</div>`}
+  <div class="wcard"><h2>${esc(tr.title)}</h2><p class="note">${esc(tr.note)}</p>
+    ${tr.items.map((x,i)=>`<p class="wq">${i+1}. ${esc(x)}</p>${open?`<label class="sr" for="wt${i}">第 ${i+1} 題翻譯</label><textarea id="wt${i}" data-k="tr${i}" spellcheck="false" placeholder="在這裡寫英文翻譯"></textarea>`:""}`).join("")}
+    ${open?`<div class="row" style="margin-top:10px"><button class="btn primary" data-send="translation">送出翻譯</button></div><div data-box="translation"></div>`:""}
+    ${trGuide(tr)}</div>
+  <div class="wcard"><h2>${esc(es.title)}</h2><p class="note">說明：依提示寫一篇英文作文，文長至少 ${es.minWords} 個單詞（words）。</p>
+    <p style="margin:0 0 6px">提示：${esc(es.prompt)}</p>
+    ${es.image?`<img src="${es.image}" alt="題目圖片：${esc(es.imageDesc)}">`:""}
+    ${open?`<label class="sr" for="we">英文作文</label><textarea id="we" class="essay" data-k="essay" spellcheck="false" placeholder="在這裡寫作文。兩段之間空一行。"></textarea>
+    <div class="row" style="justify-content:space-between;margin-top:8px"><span class="wcount" id="wc"></span><button class="btn primary" data-send="essay">送出作文</button></div><div data-box="essay"></div>`:""}
+    ${esGuide(es)}</div>
+  ${open||r.history.length?`<div class="wcard"><h2>我的批改紀錄</h2>${hist}</div>`:""}`;
+  document.querySelectorAll("#sec-write textarea").forEach(ta=>{ta.value=getDraft(ta.dataset.k);ta.addEventListener("input",()=>{setDraft(ta.dataset.k,ta.value);if(ta.id==="we")updCount()})});
+  function updCount(){if(!$("we"))return;const n=wcount($("we").value);$("wc").textContent=`已寫 ${n} 個單詞（至少 ${es.minWords}）`;$("wc").className="wcount"+(n>=es.minWords?" ok":"")}
+  updCount();
+  document.querySelectorAll("[data-send]").forEach(b=>b.onclick=()=>askSend(b.dataset.send));
+}
+function trGuide(tr){
+  if(!tr.guide)return "";
+  return `<details class="guide"><summary>看參考譯法與常見錯誤</summary>${tr.guide.map((g,i)=>`<div class="gsec"><p class="gq">第 ${i+1} 題</p>
+    <p class="gl">參考譯法</p><ul>${g.ref.map(x=>`<li class="en">${esc(x)}</li>`).join("")}</ul>
+    <p class="gl">翻譯重點</p><ul>${g.points.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>
+    <p class="gl">常見錯誤</p><ul>${g.errors.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>`).join("")}</details>`;
+}
+function esGuide(es){
+  const g=es.guide;if(!g)return "";
+  return `<details class="guide"><summary>看寫作指引與範文</summary>
+    <div class="gsec"><p class="gl">段落安排</p><ul>${g.structure.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    <div class="gsec"><p class="gl">實用單字</p><ul class="cols">${g.vocab.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    <div class="gsec"><p class="gl">實用句型</p><ul>${g.patterns.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div>
+    <div class="gsec"><p class="gl">範文（${wcount(g.model)} 個單詞，參考用）</p><div class="model">${esc(g.model)}</div>
+    <p class="muted small">範文只是其中一種寫法。你的內容和例子不同沒關係，重點是兩段都有回答題目要求、句子正確。</p></div></details>`;
+}
+function askSend(kind){
+  const box=document.querySelector(`[data-box="${kind}"]`),r=WINFO;
+  if(r.used>=r.quota){box.innerHTML=`<p class="wmsg err">這個月的批改篇數已經用完，下個月 1 號會恢復。草稿會留在這台裝置上。</p>`;return}
+  if(kind==="translation"&&[0,1].some(i=>!$("wt"+i).value.trim())){box.innerHTML=`<p class="wmsg err">每一題都要寫完才能送出。</p>`;return}
+  if(kind==="essay"){const n=wcount($("we").value);if(n<40){box.innerHTML=`<p class="wmsg err">作文太短了，寫完整再送出。</p>`;return}}
+  const warn=kind==="essay"&&wcount($("we").value)<WINFO.data.essay.minWords?`<br>目前還不到 ${WINFO.data.essay.minWords} 個單詞，正式考試會扣分。`:"";
+  box.innerHTML=`<div class="confirm">確定要送出嗎？送出後就不能修改，會用掉本月 1 篇額度。${warn}<div class="row" style="margin-top:8px"><button class="btn primary" data-ok>確定送出</button><button class="btn" data-no>再檢查一下</button></div></div>`;
+  box.querySelector("[data-no]").onclick=()=>{box.innerHTML=""};
+  box.querySelector("[data-ok]").onclick=async e=>{
+    e.currentTarget.disabled=true;
+    const ans=kind==="translation"?[0,1].map(i=>$("wt"+i).value):$("we").value;
+    try{const x=await gas("submitWriting",CODE,kind,ans,YEAR);
+      if(x&&x.ok){
+        (kind==="translation"?["tr0","tr1"]:["essay"]).forEach(k=>setDraft(k,""));
+        await loadWriting();
+        const b2=document.querySelector(`[data-box="${kind}"]`);if(b2)b2.innerHTML=`<p class="wmsg good">已送出！${esc(WINFO.turnaround)}會收到批改結果。</p>`;
+      }else box.innerHTML=`<p class="wmsg err">${esc((x&&x.msg)||"送出失敗，請再試一次。")}</p>`;
+    }catch(err){box.innerHTML=`<p class="wmsg err">連線失敗，作答已經存成草稿，請稍後再試。</p>`}
+  };
+}
+
+fillYears();build("vocab",null);setFree();
+if(LOGIN_URL.indexOf("http")===0)$("googleLogin").href=LOGIN_URL;else $("gwrap").hidden=true;
+if(CFG.freeMode){const gp=document.querySelector("#gwrap p");if(gp)gp.textContent="免費。登入後成績會自動記錄，每週一收到練習摘要。";}
+const QS=new URLSearchParams(location.search),LT=QS.get("login");
+if(LT){try{history.replaceState(null,"",location.pathname)}catch(e){}
+  gmsg.textContent="登入中…";
+  gas("exchangeLogin",LT).then(r=>{if(r&&r.ok){try{localStorage.setItem("gsat-code",r.session)}catch(e){}
+    if(QS.get("page")==="progress"){location.href="progress.html";return}enter(r.session,true)}
+    else{showLogin(true);gmsg.className="gmsg err";gmsg.textContent="登入逾時了，請再按一次「用 Google 登入」。"}}).catch(()=>{gmsg.className="gmsg err";gmsg.textContent="連線失敗，請重新整理頁面。"});}
+else if(SESSION){enter(SESSION,true);}
+else{try{const c=localStorage.getItem("gsat-code");if(c){if(c.indexOf("S.")!==0)$("gcode").value=c;enter(c,true)}}catch(e){}}
+</script>
+
