@@ -112,14 +112,13 @@ section{padding:72px 0}
 .parts{margin-top:28px;font-size:15px;opacity:.85}
 
 /* features */
-.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:2px solid var(--ink)}
-@media (max-width:760px){.feat{grid-template-columns:1fr}}
-.feat article{padding:28px 28px 30px 0;border-bottom:1.5px solid var(--mist)}
-.feat article:nth-child(odd){padding-right:40px}
-@media (min-width:761px){.feat article:nth-child(even){padding-left:40px;border-left:1.5px solid var(--mist)}}
-.feat h3{font-size:21px;margin:0 0 6px;font-weight:900}
-.feat p{margin:0;color:var(--ink-soft)}
-.feat .icon{width:44px;height:44px;margin-bottom:12px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:32px 36px}
+@media (max-width:900px){.feat{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.feat{grid-template-columns:1fr;gap:24px}}
+.feat article{border-top:2px solid var(--ink);padding-top:18px}
+.feat h3{font-size:19px;margin:0 0 6px;font-weight:900;line-height:1.45}
+.feat p{margin:0;color:var(--ink-soft);font-size:16px}
+.feat .icon{width:44px;height:44px;margin-bottom:10px}
 
 /* who */
 .who{background:var(--white);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
@@ -145,18 +144,11 @@ section{padding:72px 0}
 .plan-note{font-size:14px;color:var(--ink-soft);margin-top:16px}
 
 /* faq */
-.faq details{border-bottom:1.5px solid var(--mist);padding:18px 0}
-.faq details:first-of-type{border-top:2px solid var(--ink)}
-.faq summary{cursor:pointer;font-size:19px;font-weight:800;list-style:none;display:flex;justify-content:space-between;gap:16px}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:"Bricolage Grotesque",sans-serif;font-size:26px;line-height:1;color:var(--sheet-red);transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{margin:10px 0 0;color:var(--ink-soft);max-width:40em}
-
-/* closing */
-.closing{text-align:center;padding:80px 0}
-.closing h2{font-size:clamp(28px,4vw,42px);font-weight:900;margin:0 0 10px}
-.closing p{color:var(--ink-soft);margin:0 0 28px}
+.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px 40px}
+@media (max-width:760px){.faq-grid{grid-template-columns:1fr}}
+.faq-grid div{border-top:2px solid var(--ink);padding-top:14px}
+.faq-grid h3{margin:0 0 6px;font-size:18px;font-weight:900}
+.faq-grid p{margin:0;color:var(--ink-soft);font-size:16px}
 
 footer{background:var(--ink);color:#C9D0DE;font-size:15px;padding:36px 0}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between;align-items:center}
@@ -197,7 +189,6 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
       <p class="lead">111～115 學測英文歷屆試題，在手機或電腦上直接作答。每個錯誤選項都有中文說明，每題都有完整詳解；選項每次重新打亂，練到真的懂，不是背答案。</p>
       <div class="cta-row">
         <a class="btn btn-main" href="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec">免費開始練習</a>
-        <a class="btn btn-line" href="#features">看看有什麼</a>
       </div>
       <p class="free-note">現在<b>全部題目免費開放</b>，不用登入也能練。</p>
     </div>
@@ -283,48 +274,20 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
   </div>
 </section>
 
-<section id="free" style="padding-bottom:40px">
-  <div class="wrap">
-    <div class="free-banner">
-      <p>現在全部題目免費開放，打開就能練。</p>
-      <a class="btn" href="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec">免費開始練習</a>
+
+
+<section id="faq">
+  <div class="wrap faq">
+    <h2 class="sec-title">常見問題</h2>
+    <div class="faq-grid">
+      <div><h3>一定要登入才能練習嗎？</h3><p>不用。打開網站就能直接作答。用 Google 帳號登入後，系統會記錄你的成績和常錯的題型，讓你看到自己的進步。登入時我們只會讀取你的 Email 地址。</p></div>
+      <div><h3>用手機可以練嗎？</h3><p>可以。手機、平板、電腦都能用，不用下載 App，用瀏覽器打開就好。</p></div>
+      <div><h3>我英文不好，跟得上嗎？</h3><p>可以先打開基礎模式，題目會有提示、選項附中文意思。每次練一小段就好，重點是弄懂每一題。</p></div>
+      <div><h3>題目和詳解是從哪裡來的？</h3><p>題目是大考中心公開的歷屆學測英文試題。詳解由 Winglish 編寫。</p></div>
+      <div><h3>有問題要找誰？</h3><p>請寫信到 <a href="mailto:christyhsiao6@gmail.com">christyhsiao6@gmail.com</a>，我們會盡快回覆。</p></div>
     </div>
   </div>
 </section>
-
-<section id="faq" style="padding-top:24px">
-  <div class="wrap faq">
-    <h2 class="sec-title">常見問題</h2>
-    <details>
-      <summary>一定要登入才能練習嗎？</summary>
-      <p>不用。打開網站就能直接作答。用 Google 帳號登入後，系統會記錄你的成績和常錯的題型，讓你看到自己的進步。登入時我們只會讀取你的 Email 地址。</p>
-    </details>
-    <details>
-      <summary>用手機可以練嗎？</summary>
-      <p>可以。手機、平板、電腦都能用，不用下載 App，用瀏覽器打開就好。</p>
-    </details>
-    <details>
-      <summary>我英文不好，跟得上嗎？</summary>
-      <p>可以先打開基礎模式，題目會有提示、選項附中文意思。每次練一小段就好，重點是弄懂每一題。</p>
-    </details>
-    <details>
-      <summary>題目和詳解是從哪裡來的？</summary>
-      <p>題目是大考中心公開的歷屆學測英文試題。詳解由 Winglish 編寫。</p>
-    </details>
-    <details>
-      <summary>有問題要找誰？</summary>
-      <p>請寫信到 <a href="mailto:christyhsiao6@gmail.com">christyhsiao6@gmail.com</a>，我們會盡快回覆。</p>
-    </details>
-  </div>
-</section>
-
-<div class="closing">
-  <div class="wrap">
-    <h2>今天就從一題開始</h2>
-    <p>每天練一點，英文穩穩進步。</p>
-    <a class="btn btn-main" href="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec">免費開始練習</a>
-  </div>
-</div>
 
 <footer>
   <div class="wrap">
