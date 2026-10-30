@@ -1,0 +1,189 @@
+<title>英文程度測驗｜Winglish 必英</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: one centered column; intro → one question per screen with a level ladder → result with 6-step ladder chart */
+:root{
+  --bg:#f3f5f8; --sheet:#ffffff; --fg:#1d2733; --muted:#5d6b7a; --rule:#dde3ea;
+  --ink:#1f4e8c; --ink-soft:#e6eef8; --ok:#1f7a4d; --ok-soft:#e3f3ea; --bad:#b33a2e; --bad-soft:#fbe9e6;
+  --f-zh:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;
+  --f-en:"Source Serif 4",Georgia,"Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#12171d; --sheet:#1a2129; --fg:#e4e9ef; --muted:#9aa8b6; --rule:#2c3640;
+  --ink:#8db6ec; --ink-soft:#1f2c3c; --ok:#6fcf9b; --ok-soft:#173226; --bad:#f08a7e; --bad-soft:#3a1f1c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12171d; --sheet:#1a2129; --fg:#e4e9ef; --muted:#9aa8b6; --rule:#2c3640;
+  --ink:#8db6ec; --ink-soft:#1f2c3c; --ok:#6fcf9b; --ok-soft:#173226; --bad:#f08a7e; --bad-soft:#3a1f1c; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-zh);font-size:16px;line-height:1.7}
+.wrap{max-width:640px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 56px}
+h1{font-size:1.5rem;margin:0 0 6px;text-wrap:balance}
+h2{font-size:1.1rem;margin:0 0 8px;text-wrap:balance}
+.muted{color:var(--muted)}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:12px;padding:20px}
+.btn{font:inherit;font-weight:500;padding:10px 18px;border-radius:8px;border:1px solid var(--ink);background:var(--sheet);color:var(--ink);cursor:pointer}
+.btn.primary{background:var(--ink);color:var(--sheet)}
+.btn:disabled{opacity:.45;cursor:default}
+.btn:focus-visible,.opt:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}
+.facts div{border-top:2px solid var(--ink);padding-top:6px;min-width:0}
+.facts b{display:block;font-size:1.3rem;font-variant-numeric:tabular-nums}
+.facts span{font-size:.82rem;color:var(--muted)}
+ul.tight{margin:8px 0 16px;padding-left:1.2em}
+/* question */
+.top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px;font-size:.88rem;color:var(--muted)}
+.ladder{display:flex;gap:4px;align-items:flex-end}
+.ladder i{display:block;width:14px;border-radius:2px;background:var(--rule)}
+.ladder i.on{background:var(--ink)}
+.bar{height:6px;background:var(--rule);border-radius:3px;overflow:hidden;margin-bottom:16px}
+.bar div{height:100%;background:var(--ink);transition:width .2s}
+.kind{display:inline-block;font-size:.78rem;letter-spacing:.04em;color:var(--ink);background:var(--ink-soft);border-radius:999px;padding:1px 10px;margin-bottom:8px}
+.passage{font-family:var(--f-en);font-size:1.02rem;line-height:1.7;background:var(--bg);border-radius:8px;padding:12px 14px;margin:0 0 12px}
+.stem{font-family:var(--f-en);font-size:1.12rem;line-height:1.6;margin:0 0 14px}
+.stem.zh{font-family:var(--f-zh);font-size:1rem}
+.opts{display:grid;gap:8px}
+.opt{font-family:var(--f-en);font-size:1.02rem;text-align:left;padding:11px 14px;border:1px solid var(--rule);border-radius:8px;background:var(--sheet);color:var(--fg);cursor:pointer;min-width:0}
+.opt b{font-family:var(--f-zh);margin-right:8px}
+.opt:hover{border-color:var(--ink)}
+.opt.sel{border:2px solid var(--ink);background:var(--ink-soft)}
+.opt.idk{font-family:var(--f-zh);color:var(--muted);border-style:dashed}
+.nav{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+/* result */
+.lvl{font-size:3rem;font-weight:700;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+.lvlname{font-size:1.2rem;font-weight:700;margin:6px 0 2px}
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;align-items:end;height:150px;margin-top:22px;border-bottom:1px solid var(--rule)}
+.step{position:relative;border-radius:4px 4px 0 0;background:var(--ink-soft)}
+.step.pass{background:var(--ink)}
+.step.here{background:transparent;border:2px dashed var(--ink);border-bottom:0}
+.step span{position:absolute;top:-20px;left:0;right:0;text-align:center;font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.stepx{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;text-align:center;font-size:.75rem;color:var(--muted);margin-top:4px}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+.plan{border-left:3px solid var(--ink);padding:4px 0 4px 14px;margin:16px 0}
+.miss{border-top:1px solid var(--rule);padding-block:14px}
+.miss .q{font-family:var(--f-en);margin:0 0 6px}
+.miss .a{font-size:.92rem}
+.miss .a .no{color:var(--bad)} .miss .a .yes{color:var(--ok);font-weight:700}
+.miss .why{font-size:.92rem;color:var(--muted);margin:4px 0 0}
+.lock{background:var(--ink-soft);border-radius:10px;padding:16px;margin-top:18px}
+section[hidden]{display:none}
+@media (max-width:420px){.facts{grid-template-columns:1fr 1fr 1fr}.lvl{font-size:2.5rem}}
+@media (prefers-reduced-motion:reduce){.bar div{transition:none}}
+</style>
+
+<div class="wrap">
+  <p style="margin:0 0 14px"><a href="index.html" style="color:var(--ink);text-decoration:none;font-weight:600">‹ 回到 Winglish 首頁</a></p>
+  <section id="intro">
+    <h1>你的英文在哪一級？</h1>
+    <p class="muted">免費測驗，從國中基礎一路到學測以上。做完會告訴你程度、建議怎麼開始練學測題目，以及每題錯在哪裡。</p>
+    <div class="facts">
+      <div><b>10 題</b><span>由淺到深</span></div>
+      <div><b>6 級</b><span>對應 7000 單字分級</span></div>
+      <div><b>免費</b><span>做完看錯題解說</span></div>
+    </div>
+    <div class="card">
+      <h2>作答前請看</h2>
+      <ul class="tight">
+        <li>作答時不會顯示對錯，做完才一起看解說。</li>
+        <li>不會的題目，請選「我不知道」，不要用猜的。猜對反而會讓建議的級別太難。</li>
+        <li>可以按「上一題」回去改答案。</li>
+      </ul>
+      <button class="btn primary" id="start">開始測驗</button>
+    </div>
+  </section>
+
+  <section id="quiz" hidden>
+    <div class="top">
+      <span id="count">第 1 題 / 10</span>
+      <span class="ladder" id="ladder" aria-label="目前題目的難度"></span>
+    </div>
+    <div class="bar"><div id="prog" style="width:0"></div></div>
+    <div class="card" id="qcard"></div>
+    <div class="nav">
+      <button class="btn" id="prev">上一題</button>
+      <button class="btn primary" id="next" disabled>下一題</button>
+    </div>
+  </section>
+
+  <section id="result" hidden></section>
+</div>
+
+<script>
+const LV=[null,
+ {name:"國中基礎",desc:"能看懂最基本的句子，例如現在式、代名詞、be 動詞。"},
+ {name:"國中程度",desc:"國中英文大致沒問題，能分辨時態和常見連接詞。"},
+ {name:"高一程度",desc:"能處理分詞、常用片語，也比較少犯「中式英文」的錯。"},
+ {name:"高二程度",desc:"單字量開始變大，能讀懂短文並抓到主旨。"},
+ {name:"學測程度",desc:"假設語氣、轉折語、抽象名詞都能掌握，可以挑戰學測題目。"},
+ {name:"進階",desc:"倒裝句、進階形容詞、推論題都難不倒你。"}];
+const Q=[
+{lv:1,k:"文法",s:"My sister ______ to school by bus every day.",o:["go","goes","going","gone"],a:1,w:"主詞 my sister 是第三人稱單數，every day 表示習慣，用現在式，動詞要加 s：goes。"},
+{lv:1,k:"文法",s:"There ______ many people in the park yesterday.",o:["is","are","was","were"],a:3,w:"yesterday 是過去，many people 是複數，所以用 were。"},
+{lv:2,k:"字義",s:"The movie was so ______ that I fell asleep.",o:["boring","bored","exciting","excited"],a:0,w:"電影「令人」無聊用 -ing：boring。bored 是「人感到」無聊。看電影睡著，所以不是 exciting。"},
+{lv:2,k:"時態",s:"Have you ever ______ to Japan?",o:["be","went","been","go"],a:2,w:"Have you ever 是現在完成式，後面接過去分詞。「去過某地」固定說 have been to。"},
+{lv:3,k:"常見錯誤",s:"下列哪一句是正確的英文？",zh:true,o:["I very like this song.","I like this song very much.","I am very like this song.","I like very this song."],a:1,w:"中文說「我很喜歡」，但英文的 very 不能直接修飾 like。要說 like ... very much 或 really like。這是台灣學生最常犯的錯之一。"},
+{lv:3,k:"分詞",s:"The bridge ______ in 1998 is still in good condition.",o:["building","built","was built","builds"],a:1,w:"句子的主要動詞是 is，空格只是修飾 bridge。橋是「被」建造的，用過去分詞 built（＝ which was built）。選 was built 會變成一句有兩個動詞。"},
+{lv:4,k:"常見錯誤",s:"We need to ______ the problem before it gets worse.",o:["discuss about","discuss","discuss on","discussing about"],a:1,w:"discuss 本身就是「討論……」，後面直接接受詞，不用 about。中文說「討論關於」，所以很多人會多加 about。"},
+{lv:4,k:"閱讀・主旨",p:"Many people think goldfish can only remember things for three seconds. However, scientists have found that goldfish can remember things for months. They can even be trained to push a lever to get food.",s:"What does the passage mainly say?",o:["Goldfish are easy to train.","A common belief about goldfish is wrong.","Goldfish need a lot of food.","Scientists love goldfish."],a:1,w:"文章先說大家「以為」金魚只有三秒記憶，再用 However 推翻它。主旨是「一般人對金魚的想法是錯的」。訓練金魚只是用來證明的例子。"},
+{lv:5,k:"假設語氣",s:"Had I known about the traffic jam, I ______ earlier.",o:["would leave","left","would have left","had left"],a:2,w:"Had I known ＝ If I had known，是「與過去事實相反」的假設，主要子句用 would have + 過去分詞。"},
+{lv:6,k:"倒裝句",s:"Not until the lights went out ______ how late it was.",o:["we realized","did we realize","we did realize","realized we"],a:1,w:"Not until ... 放在句首時，主要子句要倒裝：助動詞放到主詞前面 → did we realize。"},
+];
+const L="ABCD";
+let i=0,ans=new Array(Q.length).fill(null);
+const $=id=>document.getElementById(id);
+function esc(t){return String(t).replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]))}
+function show(id){["intro","quiz","result"].forEach(s=>$(s).hidden=s!==id);window.scrollTo({top:0})}
+function renderQ(){
+  const q=Q[i];
+  $("count").textContent=`第 ${i+1} 題 / ${Q.length}`;
+  $("prog").style.width=(i/Q.length*100)+"%";
+  $("ladder").innerHTML=[1,2,3,4,5,6].map(n=>`<i class="${n<=q.lv?"on":""}" style="height:${4+n*3}px"></i>`).join("")+`<span style="margin-left:6px">Level ${q.lv}</span>`;
+  $("qcard").innerHTML=`<span class="kind">${q.k}</span>${q.p?`<p class="passage">${esc(q.p)}</p>`:""}<p class="stem${q.zh?" zh":""}">${esc(q.s)}</p>
+   <div class="opts" role="radiogroup">${q.o.map((t,j)=>`<button class="opt${ans[i]===j?" sel":""}" role="radio" aria-checked="${ans[i]===j}" data-j="${j}"><b>(${L[j]})</b>${esc(t)}</button>`).join("")}
+   <button class="opt idk${ans[i]===-1?" sel":""}" role="radio" aria-checked="${ans[i]===-1}" data-j="-1">我不知道</button></div>`;
+  $("qcard").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{ans[i]=+b.dataset.j;renderQ();});
+  $("prev").disabled=i===0;
+  $("next").disabled=ans[i]===null;
+  $("next").textContent=i===Q.length-1?"看結果":"下一題";
+}
+$("start").onclick=()=>{i=0;ans.fill(null);show("quiz");renderQ()};
+$("prev").onclick=()=>{if(i>0){i--;renderQ()}};
+$("next").onclick=()=>{if(ans[i]===null)return;if(i<Q.length-1){i++;renderQ()}else result()};
+function result(){
+  const per=[0,0,0,0,0,0,0];Q.forEach((q,k)=>{if(ans[k]===q.a)per[q.lv]++});
+  const cnt=[0,0,0,0,0,0,0];Q.forEach(q=>cnt[q.lv]++);const TOTALQ=Q.length;
+  const total=per.reduce((a,b)=>a+b,0);
+  let start=7;for(let n=1;n<=6;n++){if(per[n]<cnt[n]){start=n;break}}
+  const passed=start-1;
+  const head=passed===0
+    ?`<p class="muted">你的程度</p><div class="lvl">打底中</div><p class="lvlname">從 Level 1 開始最適合</p><p>Level 1 的題目還有一些不熟，這很正常。從最基礎的開始，每天練一點，進步會很明顯。</p>`
+    :`<p class="muted">你的程度</p><div class="lvl">Level ${passed}</div><p class="lvlname">${LV[passed].name}</p><p>${LV[passed].desc}</p>`;
+  const tips=start<=2
+    ?["切換到「基礎模式」：題目有中文句意，卡住可以看提示。","先從「詞彙題」開始，一次做一年就好，看完每題的詳解再做下一年。","詞彙題熟了，再試「綜合測驗」。"]
+    :start<=4
+    ?["先用「基礎模式」做「詞彙題」和「綜合測驗」。","答對率穩定之後，改用「標準模式」，跟正式考試一樣沒有中文。","接著挑戰「文意選填」和「閱讀測驗」。"]
+    :start<=6
+    ?["直接用「標準模式」，六種題型都可以做。","打開計時器，練習正式考試的作答速度。","錯的題目一定要看詳解，弄懂每個錯誤選項錯在哪。"]
+    :["用「標準模式」加計時，一次做完一整年。","多練「混合題」和翻譯作文，這是拉開分數的地方。","挑戰看看能不能每一大題都一次答對。"];
+  const plan=`<div class="plan"><b>${start<=6?`你的程度大約在 Level ${start}。`:"6 級都通過了，很厲害。"}建議這樣練學測題目：</b><ul class="tight" style="margin:8px 0 0">${tips.map(t=>`<li>${t}</li>`).join("")}</ul></div>`;
+  const bars=[1,2,3,4,5,6].map(n=>{const cls=n<start?"pass":n===start?"here":"";return `<div class="step ${cls}" style="height:${Math.max(per[n],0.15)/cnt[n]*100}%" title="Level ${n}：答對 ${per[n]} / ${cnt[n]}"><span>${per[n]}/${cnt[n]}</span></div>`}).join("");
+  const misses=Q.map((q,k)=>({q,k})).filter(x=>ans[x.k]!==x.q.a);
+  const missHtml=misses.length?misses.map(({q,k})=>`<div class="miss"><p class="muted" style="margin:0 0 4px;font-size:.82rem">第 ${k+1} 題・Level ${q.lv}・${q.k}</p>${q.p?`<p class="passage">${esc(q.p)}</p>`:""}<p class="q">${esc(q.s)}</p>
+     <p class="a">${ans[k]===-1?'你選：<span class="no">我不知道</span>':`你選：<span class="no">(${L[ans[k]]}) ${esc(q.o[ans[k]])}</span>`}　正確答案：<span class="yes">(${L[q.a]}) ${esc(q.o[q.a])}</span></p>
+     <p class="why">${q.w}</p></div>`).join(""):`<p class="muted">10 題全部答對！</p>`;
+  $("result").innerHTML=`<div class="card">${head}
+    <p class="muted" style="margin:0">總共答對 ${total} / ${TOTALQ} 題</p>
+    <div class="steps" aria-label="每一級答對題數">${bars}</div>
+    <div class="stepx">${[1,2,3,4,5,6].map(n=>`<span>L${n}</span>`).join("")}</div>
+    <div class="legend"><span><i style="background:var(--ink)"></i>已通過（這一級全對）</span><span><i style="border:2px dashed var(--ink)"></i>建議從這裡開始</span><span><i style="background:var(--ink-soft)"></i>之後再挑戰</span></div>
+    ${plan}
+    <div class="row" style="margin-top:14px"><a class="btn primary" href="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec" style="text-decoration:none">開始練習學測題目</a></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h2>錯題解說（${misses.length} 題）</h2>${missHtml}</div>
+  <div class="row" style="margin-top:16px"><button class="btn" id="again">重新測驗</button></div>`;
+  $("again").onclick=()=>{show("intro")};
+  show("result");
+}
+</script>
