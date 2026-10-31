@@ -226,7 +226,7 @@ details.tr p{text-indent:0;font-family:var(--f-zh);color:var(--muted);margin:.5e
     <span class="row" id="uact"><button class="btn primary" id="openlogin">已訂閱？登入</button></span>
   </div>
   <form class="login" id="gform" hidden>
-    <div id="gwrap"><a class="btn primary gbtn" id="googleLogin" target="_top">用 Google 登入</a><p class="small muted" style="margin:6px 0 12px">請選擇付款時填寫的 Gmail 帳號。<br><b>手機或瀏覽器登入了好幾個 Google 帳號？</b>按了登入如果出現「很抱歉，目前無法開啟這個檔案」，請改用<b>無痕視窗</b>打開 winglish.tw 再登入，就可以了。</p></div>
+    <div id="gwrap"><div id="gsiBtn" style="min-height:44px"></div><div id="iabWarn" hidden style="background:#FFF6C2;border-radius:8px;padding:8px 12px;margin:8px 0;font-size:.9rem"><b>你現在是在 IG、LINE 或 FB 裡面打開網站</b>，Google 不允許在這裡登入。請點右上角「⋯」→「用瀏覽器開啟」（或「在 Chrome／Safari 中開啟」），再登入。</div><p class="small muted" style="margin:6px 0 12px">請選擇付款時填寫的 Gmail 帳號。</p></div>
     <label for="gcode">或輸入訂閱者代碼（開通信裡的那組代碼）</label>
     <div class="grow"><input id="gcode" autocomplete="off" autocapitalize="characters" placeholder="例如 G7K2QX" required><button class="btn primary" id="gbtn" type="submit">解鎖</button><button class="btn" id="gcancel" type="button">取消</button></div>
     <p class="gmsg" id="gmsg" role="status"></p>
@@ -862,7 +862,25 @@ function loadWritingKeep(kind){/* 連線中斷時不清空作答，只更新紀�
 }
 
 fillYears();build("vocab",null);setFree();
-if(LOGIN_URL.indexOf("http")===0)$("googleLogin").href=LOGIN_URL;else $("gwrap").hidden=true;
+/* ===== 使用 Google 帳戶登入（官方按鈕，多帳號也不會被擋） ===== */
+const GCLIENT="898954238154-h57464a44db48b6dii181a22hra4nbau.apps.googleusercontent.com";
+function inAppBrowser(){return /FBAN|FBAV|FB_IAB|Instagram|Line\/|Barcelona|Threads|MicroMessenger|; wv\)/i.test(navigator.userAgent||"")}
+function initGsi(onSession,say){
+  const box=document.getElementById("gsiBtn");if(!box)return;
+  if(inAppBrowser()){const w=document.getElementById("iabWarn");if(w)w.hidden=false;}
+  const s=document.createElement("script");s.src="https://accounts.google.com/gsi/client";s.async=true;
+  s.onload=()=>{try{
+    google.accounts.id.initialize({client_id:GCLIENT,ux_mode:"popup",auto_select:false,callback:r=>{
+      say("登入中…",false);
+      gas("googleLogin",r.credential).then(x=>{
+        if(x&&x.ok){try{localStorage.setItem("gsat-code",x.session)}catch(e){}onSession(x.session)}
+        else say((x&&x.msg)||"登入失敗，請再試一次。",true)}).catch(()=>say("連線失敗，請檢查網路後再試一次。",true))}});
+    google.accounts.id.renderButton(box,{theme:"outline",size:"large",shape:"pill",text:"signin_with",locale:"zh_TW",width:260});
+  }catch(e){say("登入按鈕載入失敗，請重新整理頁面。",true)}};
+  s.onerror=()=>say("登入按鈕載入失敗，請重新整理頁面。如果你在 IG、LINE 裡打開，請改用瀏覽器開啟。",true);
+  document.head.appendChild(s);
+}
+initGsi(sess=>{gmsg.className="gmsg";gmsg.textContent="";enter(sess,false)},(t,err)=>{gmsg.className="gmsg"+(err?" err":"");gmsg.textContent=t});
 if(CFG.freeMode){const gp=document.querySelector("#gwrap p");if(gp)gp.textContent="免費。登入後成績會自動記錄，每週一收到練習摘要。";}
 const QS=new URLSearchParams(location.search),LT=QS.get("login");
 if(LT){try{history.replaceState(null,"",location.pathname)}catch(e){}
