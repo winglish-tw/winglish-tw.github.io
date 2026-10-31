@@ -7,7 +7,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Winglish 必英｜學測英文歷屆試題練習</title>
-<meta name="description" content="Winglish 必英：111～115 學測英文歷屆試題線上練習。答錯立刻告訴你為什麼錯，每題都有中文詳解，選項每次重新打亂，可以一直練。">
+<meta name="description" content="Winglish 必英：100～115 學測英文歷屆試題線上練習。答錯立刻告訴你為什麼錯，每題都有中文詳解，選項每次重新打亂，可以一直練。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -105,11 +105,12 @@ section{padding:72px 0}
 
 /* years strip */
 .years{background:var(--ink);color:#fff;padding:56px 0}
-.years-grid{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px}
-.years h2{margin:0;font-size:26px;font-weight:900;line-height:1.4;max-width:12em}
+.years-grid{display:flex;flex-direction:column;align-items:stretch;gap:28px}
+.years h2{margin:0;font-size:26px;font-weight:900;line-height:1.4}
 .years h2 span{color:var(--marker)}
-.year-list{display:flex;gap:clamp(10px,2.4vw,28px);list-style:none;margin:0;padding:0}
-.year-list li{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(34px,6vw,64px);line-height:1;letter-spacing:-1px}
+.year-list{display:grid;grid-template-columns:repeat(8,1fr);gap:22px 8px;list-style:none;margin:0;padding:0;text-align:center}
+@media (max-width:600px){.year-list{grid-template-columns:repeat(4,1fr)}.year-list li{font-size:30px}}
+.year-list li{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:clamp(30px,4.6vw,52px);line-height:1;letter-spacing:-1px}
 .year-list li small{display:block;font-family:"Noto Sans TC",sans-serif;font-size:13px;font-weight:500;letter-spacing:1px;opacity:.7;margin-top:8px;text-align:center}
 .year-list li:last-child{color:var(--marker)}
 .year-list a{text-decoration:none;color:inherit;display:block}
@@ -191,7 +192,7 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
   <div class="hero">
     <div>
       <h1>學測英文考古題，<br>錯了<span class="mark">馬上知道為什麼</span></h1>
-      <p class="lead">111～115 學測英文歷屆試題，在手機或電腦上直接作答。每個錯誤選項都有中文說明，每題都有完整詳解；選項每次重新打亂，練到真的懂，不是背答案。</p>
+      <p class="lead">100～115 學測英文歷屆試題，在手機或電腦上直接作答。每個錯誤選項都有中文說明，每題都有完整詳解；選項每次重新打亂，練到真的懂，不是背答案。</p>
       <div class="cta-row">
         <a class="btn btn-main" href="https://winglish.tw/practice.html">免費開始練習</a>
       </div>
@@ -216,8 +217,19 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
 <div class="years">
   <div class="wrap">
     <div class="years-grid">
-      <h2>五個年度的學測英文，<span>一題都沒少</span></h2>
+      <h2>十六個年度的學測英文，<span>一題都沒少</span></h2>
       <ul class="year-list" aria-label="收錄年度">
+        <li><a href="100.html">100<small>學年度</small></a></li>
+        <li><a href="101.html">101<small>學年度</small></a></li>
+        <li><a href="102.html">102<small>學年度</small></a></li>
+        <li><a href="103.html">103<small>學年度</small></a></li>
+        <li><a href="104.html">104<small>學年度</small></a></li>
+        <li><a href="105.html">105<small>學年度</small></a></li>
+        <li><a href="106.html">106<small>學年度</small></a></li>
+        <li><a href="107.html">107<small>學年度</small></a></li>
+        <li><a href="108.html">108<small>學年度</small></a></li>
+        <li><a href="109.html">109<small>學年度</small></a></li>
+        <li><a href="110.html">110<small>學年度</small></a></li>
         <li><a href="111.html">111<small>學年度</small></a></li>
         <li><a href="112.html">112<small>學年度</small></a></li>
         <li><a href="113.html">113<small>學年度</small></a></li>
@@ -225,7 +237,7 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
         <li><a href="115.html">115<small>學年度</small></a></li>
       </ul>
     </div>
-    <p class="parts">每一年都有詞彙題、綜合測驗、文意選填、篇章結構、閱讀測驗、混合題，以及翻譯和作文的寫作指引。點年度可以看詳解。</p>
+    <p class="parts">111 年以後：詞彙、綜合測驗、文意選填、篇章結構、閱讀測驗、混合題；110 年以前：詞彙、綜合測驗、文意選填、閱讀測驗。每一年都有翻譯和作文的寫作指引。點年度可以看詳解。</p>
   </div>
 </div>
 
