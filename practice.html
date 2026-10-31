@@ -250,7 +250,7 @@ details.tr p{text-indent:0;font-family:var(--f-zh);color:var(--muted);margin:.5e
     <button class="tab" role="tab" id="tab-st" aria-selected="false" data-sec="st">篇章結構<small id="sc-st">讀取中</small></button>
     <button class="tab" role="tab" id="tab-rd" aria-selected="false" data-sec="rd">閱讀測驗<small id="sc-rd">讀取中</small></button>
     <button class="tab" role="tab" id="tab-mx" aria-selected="false" data-sec="mx">混合題<small id="sc-mx">讀取中</small></button>
-    <button class="tab" role="tab" id="tab-write" aria-selected="false" data-sec="write">翻譯作文<small id="sc-write">老師批改</small></button>
+    <button class="tab" role="tab" id="tab-write" aria-selected="false" data-sec="write">翻譯作文<small id="sc-write">AI 批改</small></button>
     </div>
     <div class="timer" id="timer">
       <span class="clock" id="clock" aria-live="off">10:00</span>
@@ -753,7 +753,7 @@ document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>{
   window.scrollTo({top:0});
 }));
 
-/* ========== 三、翻譯與作文（老師親改） ========== */
+/* ========== 三、翻譯與作文（AI 即時批改） ========== */
 const OLDFMT={"110":1,"109":1,"108":1,"107":1,"106":1,"105":1,"104":1,"103":1,"102":1,"101":1,"100":1};
 function doneLabel(y){const K=OLDFMT[y]?["vocab","cloze","wb","rd"]:["vocab","cloze","wb","st","rd","mx"];let n=0;K.forEach(k=>{try{if(localStorage.getItem("gsat-done-"+y+"-"+k))n++}catch(e){}});return n===K.length?"　✓ 已完成":n?"　（完成 "+n+" / "+K.length+"）":""}
 function fillYears(){const sel=document.getElementById("ysel");sel.innerHTML=YLIST.map(y=>`<option value="${y}"${y===YEAR?" selected":""}>${y} 年學測${doneLabel(y)}</option>`).join("")}
@@ -773,7 +773,7 @@ function draftKey(k){return "gsat-draft-"+k}
 function getDraft(k){try{return localStorage.getItem(draftKey(k))||""}catch(e){return ""}}
 function setDraft(k,v){try{localStorage.setItem(draftKey(k),v)}catch(e){}}
 function renderWriteLock(){
-  WINFO=null;$("sc-write").textContent="老師批改";
+  WINFO=null;$("sc-write").textContent="AI 批改";
   $("sec-write").innerHTML=`<div class="lock"><h2>翻譯和作文的寫作指引</h2><p>先在紙上寫，再對照指引自己檢查，知道哪裡寫得好、哪裡要改。</p>
   <ul><li>中譯英：參考譯法、每個關鍵詞怎麼翻、學生最常犯的錯</li><li>英文作文：兩段怎麼安排、實用單字和句型、一篇完整的範文</li></ul>
   <p>訂閱後就可以使用。</p><button class="btn primary" id="wLogin">已經訂閱？登入</button></div>`;
@@ -786,7 +786,7 @@ async function loadWriting(){
 }
 function wcount(t){return (t.match(/[A-Za-z]+(?:['’-][A-Za-z]+)*/g)||[]).length}
 function renderWrite(){
-  const r=WINFO,d=r.data,left=Math.max(0,r.quota-r.used);
+  const r=WINFO,d=r.data,left=Math.max(0,r.quota-r.used),dayLeft=Math.max(0,Math.min(left,(r.perDay||99)-(r.usedToday||0)));
   const open=r.quota>0;
   $("sc-write").textContent=open?`本月剩 ${left} 篇`:"寫作指引";
   const tr=d.translation,es=d.essay;
@@ -794,7 +794,7 @@ function renderWrite(){
      <details><summary>${h.done?"看批改結果":"看我送出的內容"}</summary>${h.done&&h.teacher?`<p class="fbtext"><b>老師的話：</b>${esc(h.teacher)}</p>`:""}<div class="ans">${esc(h.answer)}</div>${h.done?`<p class="fbtext">${esc(h.feedback)}</p>`:""}</details></div>`).join("")
     :`<p class="muted" style="margin:0">還沒有送出過。</p>`;
   $("sec-write").innerHTML=`
-  ${open?`<div class="quota">本月還可以送出 <b>${left} / ${r.quota}</b> 篇（中譯英一組算一篇）。送出後${esc(r.turnaround)}批改完成，結果會寄到你的信箱，也會出現在這一頁最下面。</div>`:`<div class="quota">建議先在紙上寫，限時 30 分鐘左右，寫完再打開下面的寫作指引對照。</div>`}
+  ${open?`<div class="quota">本月還可以送出 <b>${left} / ${r.quota}</b> 篇，今天還可以送 <b>${dayLeft}</b> 篇（中譯英一組算一篇）。送出後${esc(r.turnaround)}就會看到 AI 批改結果，也會保存在這一頁最下面。<br><span class="small muted">批改由 AI 依大考評分原則完成，分數是預估。請不要在作答裡寫真實姓名、學校等個人資料。</span></div>`:r.needLogin?`<div class="quota">寫完可以送給 AI 批改，大約 30 秒就有結果：預估分數、逐句修改和改寫示範。<b>用 Google 免費登入</b>就能使用。<div class="row" style="margin-top:8px"><button class="btn primary" id="wLogin2">免費登入</button></div></div>`:`<div class="quota">建議先在紙上寫，限時 30 分鐘左右，寫完再打開下面的寫作指引對照。</div>`}
   <div class="wcard"><h2>${esc(tr.title)}</h2><p class="note">${esc(tr.note)}</p>
     ${tr.items.map((x,i)=>`<p class="wq">${i+1}. ${esc(x)}</p>${open?`<label class="sr" for="wt${i}">第 ${i+1} 題翻譯</label><textarea id="wt${i}" data-k="tr${i}" spellcheck="false" placeholder="在這裡寫英文翻譯"></textarea>`:""}`).join("")}
     ${open?`<div class="row" style="margin-top:10px"><button class="btn primary" data-send="translation">送出翻譯</button></div><div data-box="translation"></div>`:""}
@@ -810,6 +810,7 @@ function renderWrite(){
   function updCount(){if(!$("we"))return;const n=wcount($("we").value);$("wc").textContent=`已寫 ${n} 個單詞（至少 ${es.minWords}）`;$("wc").className="wcount"+(n>=es.minWords?" ok":"")}
   updCount();
   document.querySelectorAll("[data-send]").forEach(b=>b.onclick=()=>askSend(b.dataset.send));
+  if($("wLogin2"))$("wLogin2").onclick=()=>{window.scrollTo({top:0,behavior:"smooth"});showLogin(true);};
 }
 function trGuide(tr){
   if(!tr.guide)return "";
@@ -830,6 +831,7 @@ function esGuide(es){
 function askSend(kind){
   const box=document.querySelector(`[data-box="${kind}"]`),r=WINFO;
   if(r.used>=r.quota){box.innerHTML=`<p class="wmsg err">這個月的批改篇數已經用完，下個月 1 號會恢復。草稿會留在這台裝置上。</p>`;return}
+  if(r.perDay&&(r.usedToday||0)>=r.perDay){box.innerHTML=`<p class="wmsg err">今天已經送出 ${r.perDay} 篇了，明天再來。草稿會留在這台裝置上。</p>`;return}
   if(kind==="translation"&&[0,1].some(i=>!$("wt"+i).value.trim())){box.innerHTML=`<p class="wmsg err">每一題都要寫完才能送出。</p>`;return}
   if(kind==="essay"){const n=wcount($("we").value);if(n<40){box.innerHTML=`<p class="wmsg err">作文太短了，寫完整再送出。</p>`;return}}
   const warn=kind==="essay"&&wcount($("we").value)<WINFO.data.essay.minWords?`<br>目前還不到 ${WINFO.data.essay.minWords} 個單詞，正式考試會扣分。`:"";
@@ -837,15 +839,26 @@ function askSend(kind){
   box.querySelector("[data-no]").onclick=()=>{box.innerHTML=""};
   box.querySelector("[data-ok]").onclick=async e=>{
     e.currentTarget.disabled=true;
+    document.querySelectorAll("[data-send]").forEach(b=>b.disabled=true);
     const ans=kind==="translation"?[0,1].map(i=>$("wt"+i).value):$("we").value;
+    let sec=0;const tick=()=>{box.innerHTML=`<div class="confirm" aria-live="polite">AI 正在批改，通常 20 到 40 秒…（${sec} 秒）<br><span class="small muted">請不要關閉或重新整理這一頁。</span></div>`};
+    tick();const iv=setInterval(()=>{sec++;tick()},1000);
     try{const x=await gas("submitWriting",CODE,kind,ans,YEAR);
+      clearInterval(iv);
       if(x&&x.ok){
         (kind==="translation"?["tr0","tr1"]:["essay"]).forEach(k=>setDraft(k,""));
         await loadWriting();
-        const b2=document.querySelector(`[data-box="${kind}"]`);if(b2)b2.innerHTML=`<p class="wmsg good">已送出！${esc(WINFO.turnaround)}會收到批改結果。</p>`;
-      }else box.innerHTML=`<p class="wmsg err">${esc((x&&x.msg)||"送出失敗，請再試一次。")}</p>`;
-    }catch(err){box.innerHTML=`<p class="wmsg err">連線失敗，作答已經存成草稿，請稍後再試。</p>`}
+        const b2=document.querySelector(`[data-box="${kind}"]`);
+        if(b2)b2.innerHTML=`<div class="wcard" style="margin-top:12px;border-color:var(--ok)"><p class="wmsg good" style="margin-top:0"><b>批改完成！</b>結果也存在這一頁最下面的「我的批改紀錄」。</p><p class="fbtext">${esc(x.feedback)}</p><p class="small muted">批改由 AI 完成，分數是依大考評分原則的預估，實際閱卷結果可能有差異。</p></div>`;
+      }else{
+        document.querySelectorAll("[data-send]").forEach(b=>b.disabled=false);
+        box.innerHTML=`<p class="wmsg err">${esc((x&&x.msg)||"送出失敗，請再試一次。")}</p>`;
+      }
+    }catch(err){clearInterval(iv);document.querySelectorAll("[data-send]").forEach(b=>b.disabled=false);box.innerHTML=`<p class="wmsg err">連線中斷了。作答還在框框裡，請過一下再試。如果下面的批改紀錄已經出現這一篇，就不用重送。</p>`;loadWritingKeep(kind)}
   };
+}
+function loadWritingKeep(kind){/* 連線中斷時不清空作答，只更新紀錄 */
+  gas("getWritingInfo",CODE,YEAR).then(r=>{if(r&&r.ok){const msg=document.querySelector(`[data-box="${kind}"]`).innerHTML;WINFO=r;renderWrite();const b=document.querySelector(`[data-box="${kind}"]`);if(b)b.innerHTML=msg}}).catch(()=>{});
 }
 
 fillYears();build("vocab",null);setFree();
