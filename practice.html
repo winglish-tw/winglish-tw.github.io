@@ -226,7 +226,7 @@ details.tr p{text-indent:0;font-family:var(--f-zh);color:var(--muted);margin:.5e
     <span class="row" id="uact"><button class="btn primary" id="openlogin">已訂閱？登入</button></span>
   </div>
   <form class="login" id="gform" hidden>
-    <div id="gwrap"><a class="btn primary gbtn" id="googleLogin" target="_top">用 Google 登入</a><p class="small muted" style="margin:6px 0 12px">請選擇付款時填寫的 Gmail 帳號。</p></div>
+    <div id="gwrap"><a class="btn primary gbtn" id="googleLogin" target="_top">用 Google 登入</a><p class="small muted" style="margin:6px 0 12px">請選擇付款時填寫的 Gmail 帳號。<br><b>手機或瀏覽器登入了好幾個 Google 帳號？</b>按了登入如果出現「很抱歉，目前無法開啟這個檔案」，請改用<b>無痕視窗</b>打開 winglish.tw 再登入，就可以了。</p></div>
     <label for="gcode">或輸入訂閱者代碼（開通信裡的那組代碼）</label>
     <div class="grow"><input id="gcode" autocomplete="off" autocapitalize="characters" placeholder="例如 G7K2QX" required><button class="btn primary" id="gbtn" type="submit">解鎖</button><button class="btn" id="gcancel" type="button">取消</button></div>
     <p class="gmsg" id="gmsg" role="status"></p>
@@ -872,5 +872,6 @@ if(LT){try{history.replaceState(null,"",location.pathname)}catch(e){}
     else{showLogin(true);gmsg.className="gmsg err";gmsg.textContent="登入逾時了，請再按一次「用 Google 登入」。"}}).catch(()=>{gmsg.className="gmsg err";gmsg.textContent="連線失敗，請重新整理頁面。"});}
 else if(SESSION){enter(SESSION,true);}
 else{try{const c=localStorage.getItem("gsat-code");if(c){if(c.indexOf("S.")!==0)$("gcode").value=c;enter(c,true)}}catch(e){}}
+if(location.hash==="#write"){const tw=document.getElementById("tab-write");if(tw)setTimeout(()=>tw.click(),0);}
 </script>
 
