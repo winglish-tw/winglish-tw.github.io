@@ -101,15 +101,156 @@ const FIGS = {
 };
 
 const QUIZ = [
-  { q:"1. What is the passage mainly about?", tag:"主旨",
-    opts:["How to grow tomatoes at home","A Spanish festival where people throw tomatoes at each other","Why tomatoes are good for your health","The history of parades in Spain"],
-    a:1, exp:"文章介紹西班牙布尼奧爾的番茄節：它怎麼開始、怎麼進行、有哪些規則，主旨是 (B)。"},
-  { q:"2. Which of the following is TRUE?", tag:"細節",
-    opts:["The tomato fight lasts for a whole week.","People must squash the tomatoes before throwing them.","The tomatoes are eaten after the fight.","The festival started in 2013."],
-    a:1, exp:"(B) 正確：規則是番茄要先捏爛再丟。(A) 大戰只有一個小時；(C) 這些番茄過熟、不適合吃；(D) 番茄節始於 1945 年，2013 年是開始限量售票。"},
-  { q:"3. What happens after the fight is over?", tag:"細節",
-    opts:["Everyone eats the tomatoes together.","Fire trucks wash the streets.","The town is closed for a week.","People start throwing eggs instead."],
-    a:1, exp:"大戰結束後，消防車會沖洗街道，小鎮很快就恢復乾淨，答案是 (B)。"}
+ [
+  {
+   "q": "1. What is La Tomatina?",
+   "tag": "主旨",
+   "opts": [
+    "A Spanish tomato soup",
+    "A festival in Spain where people throw tomatoes",
+    "A kind of tomato farm",
+    "A parade with fire trucks"
+   ],
+   "a": 1,
+   "exp": "第一、二段：La Tomatina 是西班牙布尼奧爾鎮大家互丟番茄的節慶，答案是 (B)。"
+  },
+  {
+   "q": "2. How did the festival begin?",
+   "tag": "細節",
+   "opts": [
+    "Young people in a fight grabbed tomatoes from a vegetable stand.",
+    "A farmer had too many tomatoes.",
+    "The king asked people to throw tomatoes.",
+    "Children played a game at school."
+   ],
+   "a": 0,
+   "exp": "第三段：1945 年遊行時有年輕人打架，從菜攤抓番茄來丟，答案是 (A)。"
+  },
+  {
+   "q": "3. Why must people squash a tomato before they throw it?",
+   "tag": "因果",
+   "opts": [
+    "So it flies farther",
+    "So it tastes better",
+    "So it turns red",
+    "So it won't hurt anyone"
+   ],
+   "a": 3,
+   "exp": "第四段：丟之前要先捏爛番茄，才不會打傷人，答案是 (D)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Grow Tomatoes in Spain",
+    "Why Fire Trucks Are Red",
+    "La Tomatina: The World's Biggest Food Fight",
+    "The History of the Spanish Ham"
+   ],
+   "a": 2,
+   "exp": "全文介紹被稱為「全世界最大食物大戰」的番茄節，(C) 最適合。"
+  },
+  {
+   "q": "2. What traditionally happens before the fight begins?",
+   "tag": "細節",
+   "opts": [
+    "Someone climbs a greasy pole to get a ham.",
+    "A band plays the national song.",
+    "Everyone eats a tomato.",
+    "The mayor throws the first tomato."
+   ],
+   "a": 0,
+   "exp": "第三段：傳統上，要有人爬上塗了油的柱子拿到綁在頂端的火腿，大戰才開始，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "The town tried once to ban the event and succeeded.",
+    "The tomatoes used are fresh and good to eat.",
+    "Bunol has about 40,000 residents.",
+    "Organizers started selling tickets in 2013."
+   ],
+   "a": 3,
+   "exp": "(D) 正確（第四段）。(A) 錯，試著禁止好幾次都沒成功；(B) 錯，是過熟不能吃的；(C) 錯，居民約 9,000 人，四萬多是參加人數。"
+  },
+  {
+   "q": "4. Why did organizers start selling a limited number of tickets?",
+   "tag": "因果",
+   "opts": [
+    "They wanted to buy more tomatoes.",
+    "The crowds had grown far too large for the small town.",
+    "Fewer people were coming each year.",
+    "Tourists asked for tickets as souvenirs."
+   ],
+   "a": 1,
+   "exp": "第四段：人潮一度超過四萬，而鎮上只有約九千居民，所以開始限量售票，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. What is the main purpose of the passage?",
+   "tag": "作者用意",
+   "opts": [
+    "To describe the origins, rules and challenges of a famous tomato-throwing festival",
+    "To argue that food should never be wasted",
+    "To compare festivals in different countries",
+    "To explain how tomatoes are grown in Valencia"
+   ],
+   "a": 0,
+   "exp": "文章介紹番茄節的起源、規則和人潮帶來的問題，答案是 (A)。"
+  },
+  {
+   "q": "2. The word \"futile\" in the second paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "violent",
+    "popular",
+    "unsuccessful",
+    "expensive"
+   ],
+   "a": 2,
+   "exp": "當局多次想禁止都沒用，最後反而接受了這個活動。futile ＝ 徒勞無功的，答案是 (C)。"
+  },
+  {
+   "q": "3. Which of the following best describes the battle, according to the third paragraph?",
+   "tag": "推論",
+   "opts": [
+    "It has no rules at all.",
+    "Only local residents may join.",
+    "It can go on for as long as people want.",
+    "It looks wild but follows strict rules."
+   ],
+   "a": 3,
+   "exp": "第三段開頭：雖然看起來很混亂，大戰其實遵守相當嚴格的規則，例如先捏爛番茄、不能撕衣服、聽到第二聲信號就停，答案是 (D)。"
+  },
+  {
+   "q": "4. What problem did the festival's success bring?",
+   "tag": "因果",
+   "opts": [
+    "The town ran out of fire trucks.",
+    "Huge crowds put too much pressure on the small town.",
+    "Farmers refused to sell tomatoes.",
+    "Tourists stopped visiting Valencia."
+   ],
+   "a": 1,
+   "exp": "第四段：2010 年代初人潮超過四萬，壓垮只有約九千居民的小鎮的公共設施，答案是 (B)。"
+  },
+  {
+   "q": "5. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Local residents can take part for free.",
+    "The tomatoes are grown in Bunol.",
+    "The fight lasts for three hours.",
+    "La Tomatina is held on the first Monday of August."
+   ],
+   "a": 0,
+   "exp": "(A) 正確（第四段）。(B) 錯，番茄來自西班牙其他地區的農場；(C) 錯，只有六十分鐘；(D) 錯，是八月最後一個星期三。"
+  }
+ ]
 ];
 
 const META = {

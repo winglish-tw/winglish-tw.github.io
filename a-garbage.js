@@ -329,42 +329,156 @@ const GLOSS = {"plastic": ["n.", "塑膠"], "float": ["v.", "漂浮"], "floating
 const KEY = [["plastic", "float", "garbage", "current", "tiny", "net", "swallow", "disappear", "recycle"], ["solid", "vast", "scatter", "gyre", "whirlpool", "estimate", "fragment", "microplastic", "gear"], ["vivid", "debris", "diffuse", "disperse", "composition", "substantial", "entangle", "ingest", "implication", "upstream"]];
 const FIGS = {"gyre": {"svg": "<svg viewBox=\"0 0 600 300\" role=\"img\" aria-label=\"Great Pacific Garbage Patch facts\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F2FAFB\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"24\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#1F7A8C\">The Garbage Patch Is a Plastic Soup</text><text x=\"300\" y=\"42\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >太平洋垃圾帶：不是島，是一鍋「塑膠湯」</text>\n<rect x=\"20\" y=\"54\" width=\"290\" height=\"236\" rx=\"10\" fill=\"#CFE9EE\"/>\n<text x=\"160\" y=\"76\" font-size=\"12\" text-anchor=\"middle\" fill=\"#1F7A8C\" font-weight=\"700\">Currents push trash to the center</text><text x=\"160\" y=\"91\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >洋流繞圈，把垃圾集中到中間</text>\n<ellipse cx=\"160\" cy=\"176\" rx=\"100\" ry=\"66\" fill=\"none\" stroke=\"#1F7A8C\" stroke-width=\"4\" stroke-dasharray=\"14 10\"/>\n<path d=\"M256 158 l8 18 l-18 -4z M64 194 l-8 -18 l18 4z\" fill=\"#1F7A8C\"/>\n<g fill=\"#E36414\"><circle cx=\"150\" cy=\"166\" r=\"3\"/><circle cx=\"170\" cy=\"184\" r=\"2.5\"/><circle cx=\"140\" cy=\"188\" r=\"2\"/><circle cx=\"182\" cy=\"162\" r=\"2\"/><circle cx=\"160\" cy=\"200\" r=\"2.5\"/><circle cx=\"128\" cy=\"168\" r=\"2\"/><circle cx=\"196\" cy=\"182\" r=\"2\"/><circle cx=\"160\" cy=\"152\" r=\"2\"/></g>\n<path d=\"M290 104 Q300 150 296 210 L310 210 L310 104Z\" fill=\"#C9B38A\"/><text x=\"286\" y=\"232\" font-size=\"12\" text-anchor=\"end\">California</text><text x=\"286\" y=\"246\" font-size=\"10\" text-anchor=\"end\" fill=\"#5A6478\" >加州</text>\n<path d=\"M46 262 l8 -4 l6 6 l-6 4z\" fill=\"#C9B38A\"/><text x=\"66\" y=\"270\" font-size=\"12\">Hawaii</text><text x=\"108\" y=\"270\" font-size=\"10\" text-anchor=\"start\" fill=\"#5A6478\" >夏威夷</text>\n<g font-size=\"14\">\n<text x=\"330\" y=\"74\" font-weight=\"900\">By number</text><text x=\"408\" y=\"74\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >以數量來看</text>\n<rect x=\"330\" y=\"84\" width=\"240\" height=\"22\" rx=\"4\" fill=\"#E9EEF5\"/><rect x=\"330\" y=\"84\" width=\"226\" height=\"22\" rx=\"4\" fill=\"#E36414\"/><text x=\"336\" y=\"100\" fill=\"#fff\" font-weight=\"700\" font-size=\"13\">94% are tiny pieces</text><text x=\"330\" y=\"122\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >94% 是很小的塑膠碎片</text>\n<text x=\"330\" y=\"152\" font-weight=\"900\">By weight</text><text x=\"404\" y=\"152\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >以重量來看</text>\n<rect x=\"330\" y=\"162\" width=\"240\" height=\"22\" rx=\"4\" fill=\"#E9EEF5\"/><rect x=\"330\" y=\"162\" width=\"118\" height=\"22\" rx=\"4\" fill=\"#1F7A8C\"/><text x=\"336\" y=\"178\" fill=\"#fff\" font-weight=\"700\" font-size=\"13\">46%+ fishing nets</text><text x=\"330\" y=\"200\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >至少 46% 是漁網</text>\n<text x=\"330\" y=\"230\" font-size=\"12\">1.6 million km² ≈ 3 × France</text><text x=\"330\" y=\"245\" font-size=\"10\" text-anchor=\"start\" fill=\"#5A6478\" >面積約 160 萬平方公里，約 3 個法國大</text>\n<text x=\"330\" y=\"266\" font-size=\"12\">at least 79,000 tonnes</text><text x=\"330\" y=\"281\" font-size=\"10\" text-anchor=\"start\" fill=\"#5A6478\" >至少 79,000 公噸塑膠</text>\n</g></g></svg>", "cap": "洋流把垃圾集中在加州和夏威夷之間；大多數碎片很小，但大部分重量來自漁網。", "credit": "圖解：Winglish（資料：The Ocean Cleanup, 2018）"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How to build an island in the ocean",
-   "What the Great Pacific Garbage Patch really is and why it matters",
-   "Why people like to sail to Hawaii",
-   "How fishing nets are made"
-  ],
-  "a": 1,
-  "exp": "全文說明垃圾帶不是一座島，而是一大片漂浮的塑膠，以及它帶來的問題與解方。"
- },
- {
-  "q": "2. What is the garbage patch really like?",
-  "tag": "細節",
-  "opts": [
-   "A solid island that people can walk on",
-   "A huge area of floating plastic, like a soup",
-   "A mountain of trash on land",
-   "A clean part of the ocean"
-  ],
-  "a": 1,
-  "exp": "文中說它不是島，比較像一大鍋塑膠湯，是一大片漂浮塑膠的海域。"
- },
- {
-  "q": "3. Which of the following is true about the plastic in the patch?",
-  "tag": "細節",
-  "opts": [
-   "Most of the pieces are very small",
-   "It disappears after a few months",
-   "It is all plastic straws",
-   "It is safe for sea animals"
-  ],
-  "a": 0,
-  "exp": "大部分碎片都很小（塑膠微粒），而且塑膠不會消失，只會越碎越小。"
- }
+ [
+  {
+   "q": "1. What is the Great Pacific Garbage Patch really like?",
+   "tag": "主旨",
+   "opts": [
+    "A big island you can walk on",
+    "A huge area of plastic soup in the ocean",
+    "A beach full of trash",
+    "A factory that makes plastic"
+   ],
+   "a": 1,
+   "exp": "第一、二段：它不是可以走上去的島，比較像一大鍋塑膠湯，答案是 (B)。"
+  },
+  {
+   "q": "2. Where does most of the patch's weight come from?",
+   "tag": "細節",
+   "opts": [
+    "Plastic straws",
+    "Tiny pieces smaller than an eraser",
+    "Plastic bottles from ships",
+    "Bigger things, especially old fishing nets"
+   ],
+   "a": 3,
+   "exp": "第三段：碎片大多很小，但大部分的重量來自較大的東西，特別是舊漁網，答案是 (D)。"
+  },
+  {
+   "q": "3. Why might sea turtles eat plastic bags?",
+   "tag": "因果",
+   "opts": [
+    "The bags look like jellyfish.",
+    "The bags smell like fish.",
+    "The turtles are very hungry in winter.",
+    "The bags are sweet."
+   ],
+   "a": 0,
+   "exp": "第四段：塑膠袋看起來像水母，海龜會誤吃，答案是 (A)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "A New Island in the Pacific",
+    "How Fishing Nets Are Made",
+    "The Truth About the Ocean's Plastic Soup",
+    "Why People Love Snow Globes"
+   ],
+   "a": 2,
+   "exp": "文章破除「垃圾島」的迷思，說明塑膠湯的真相和解決方法，(C) 最適合。"
+  },
+  {
+   "q": "2. What is a gyre?",
+   "tag": "字義",
+   "opts": [
+    "A huge system of rotating ocean currents",
+    "A kind of fishing net",
+    "A tiny piece of plastic",
+    "A ship that collects trash"
+   ],
+   "a": 0,
+   "exp": "第二段直接定義：gyre 是一個巨大、旋轉的洋流系統，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the 2018 study?",
+   "tag": "細節",
+   "opts": [
+    "Fishing nets made up only 8 percent of the weight.",
+    "The patch is about the same size as France.",
+    "The patch contains about 1.8 million pieces of plastic.",
+    "Microplastics made up about 94 percent of the pieces but only 8 percent of the weight."
+   ],
+   "a": 3,
+   "exp": "(D) 正確（第三段）。(A) 漁網至少占重量 46%；(B) 約法國的三倍大；(C) 是 1.8 兆片，不是百萬。"
+  },
+  {
+   "q": "4. What do scientists mean by \"mopping the floor while the tap is still running\"?",
+   "tag": "字義",
+   "opts": [
+    "Ships use too much water to clean the ocean.",
+    "Cleaning up is not enough if plastic keeps entering the ocean.",
+    "People should clean their homes more often.",
+    "The ocean is too big to measure."
+   ],
+   "a": 1,
+   "exp": "水龍頭還開著就拖地，地永遠拖不乾。意思是塑膠還一直流進海裡，光清理不夠，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. What is the main purpose of the passage?",
+   "tag": "作者用意",
+   "opts": [
+    "To describe a new island formed in the Pacific",
+    "To praise the fishing industry",
+    "To explain how satellites take photos",
+    "To correct a common image of the patch and argue for stopping plastic at its source"
+   ],
+   "a": 3,
+   "exp": "作者先指出「漂浮的垃圾大陸」是誤導，再用研究數據說明真相，最後主張從源頭減少塑膠，答案是 (D)。"
+  },
+  {
+   "q": "2. The word \"diffuse\" in the first paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "spread out",
+    "solid",
+    "colorful",
+    "shallow"
+   ],
+   "a": 0,
+   "exp": "前面說衛星拍不到一整塊、船開過去也只看到零散碎片，diffuse ＝ 分散的，答案是 (A)。"
+  },
+  {
+   "q": "3. How did the 2018 researchers measure the patch?",
+   "tag": "細節",
+   "opts": [
+    "They used satellite photos only.",
+    "They asked fishermen to report what they saw.",
+    "They combined net samples from ships with surveys from aircraft.",
+    "They counted every piece of plastic by hand."
+   ],
+   "a": 2,
+   "exp": "第二段：結合船隊撈網的樣本和飛機的空中調查，答案是 (C)。(A) 錯，第一段說衛星拍不到。"
+  },
+  {
+   "q": "4. Which common assumption does the study challenge?",
+   "tag": "推論",
+   "opts": [
+    "That plastic floats in the ocean",
+    "That straws and shopping bags are the main source of the plastic",
+    "That ocean currents move in circles",
+    "That turtles live in the ocean"
+   ],
+   "a": 1,
+   "exp": "第三段：宣傳活動常聚焦吸管和購物袋，但重量最多的其實是漁網（至少 46%），答案是 (B)。"
+  },
+  {
+   "q": "5. According to the last paragraph, why should large items be removed quickly?",
+   "tag": "因果",
+   "opts": [
+    "Before sunlight and waves break them into microplastics that are almost impossible to remove",
+    "Because they are worth a lot of money",
+    "Because they block ships",
+    "Because they sink to the ocean floor"
+   ],
+   "a": 0,
+   "exp": "最後一段：大型物品要趁陽光和海浪把它們分解成微塑膠之前清掉，因為微塑膠幾乎無法清除（第四段），答案是 (A)。"
+  }
+ ]
 ];
 const META = {
  "title": "The Island That Isn't There",

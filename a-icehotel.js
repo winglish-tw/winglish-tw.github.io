@@ -114,15 +114,156 @@ const FIGS = {
 };
 
 const QUIZ = [
-  { q:"1. What is the passage mainly about?", tag:"主旨",
-    opts:["How to build a snowman","A hotel made of river ice that is rebuilt every year","Why Sweden is so cold in winter","How artists sell their ice art"],
-    a:1, exp:"整篇文章介紹瑞典冰旅館：冰從河裡切下來、每年重蓋、春天又融回河裡，所以主旨是 (B)。"},
-  { q:"2. Which of the following is TRUE?", tag:"細節",
-    opts:["The hotel looks exactly the same every year.","The ice for the hotel comes from a nearby river.","Guests sleep in warm rooms with heaters.","The hotel is built in the middle of summer."],
-    a:1, exp:"(B) 正確：冰塊是從托爾訥河切下來的。(A) 每年由不同藝術家設計，樣子都不同；(C) 裡面在零度以下，客人睡在睡袋裡；(D) 冬天才蓋，夏天只是存放冰塊。"},
-  { q:"3. What happens to the hotel in spring?", tag:"細節",
-    opts:["It is painted a new color.","It is moved to another town.","It melts, and the water goes back into the river.","It is sold to another company."],
-    a:2, exp:"春天天氣變暖，整間旅館會慢慢融化，水流回托爾訥河，所以答案是 (C)。"}
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to keep warm in Sweden",
+    "Why rivers freeze in winter",
+    "A hotel made of ice that is built again every winter",
+    "A famous art museum in Paris"
+   ],
+   "a": 2,
+   "exp": "文章介紹瑞典每年冬天用冰重建的冰旅館，答案是 (C)。"
+  },
+  {
+   "q": "2. Where does the ice for the hotel come from?",
+   "tag": "細節",
+   "opts": [
+    "The frozen Torne River",
+    "The sea near the Arctic Circle",
+    "A big ice factory",
+    "Mountains in Norway"
+   ],
+   "a": 0,
+   "exp": "第二段：每年春天從結冰的 Torne 河切下大冰塊，答案是 (A)。"
+  },
+  {
+   "q": "3. Why does the hotel look different every year?",
+   "tag": "因果",
+   "opts": [
+    "The ice changes color every summer.",
+    "Guests build their own rooms.",
+    "The hotel moves to a new village.",
+    "Artists from around the world design the rooms."
+   ],
+   "a": 3,
+   "exp": "第三段：世界各地的藝術家設計房間，所以每年看起來都不一樣，答案是 (D)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "The Best Ski Resorts in Sweden",
+    "A Hotel That Melts Every Spring",
+    "How to Make Ice Glasses",
+    "Famous Artists of Lapland"
+   ],
+   "a": 1,
+   "exp": "全文講每年春天融化、冬天再蓋的冰旅館，(B) 最適合。"
+  },
+  {
+   "q": "2. What is \"snice\" used for?",
+   "tag": "細節",
+   "opts": [
+    "Holding the ice blocks together",
+    "Making the drinks colder",
+    "Keeping guests warm at night",
+    "Painting the walls"
+   ],
+   "a": 0,
+   "exp": "第二段：snice 是雪和冰的混合物，作用有點像水泥，把冰塊黏在一起，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Construction starts in spring.",
+    "Each ice block weighs about 20 kilograms.",
+    "The hotel began as a ski school.",
+    "The ice is stored in a cold hall during the summer."
+   ],
+   "a": 3,
+   "exp": "(D) 正確（第二段）。(A) 錯，春天是採冰，十一月才開始蓋；(B) 錯，每塊可達兩噸；(C) 錯，一開始是冰的藝廊。"
+  },
+  {
+   "q": "4. What does the writer mean by \"borrowing a piece of the river for a night\"?",
+   "tag": "字義",
+   "opts": [
+    "Guests must pay to swim in the river.",
+    "The hotel is built on a boat.",
+    "The hotel is made from river ice that returns to the river.",
+    "Guests take ice home as a gift."
+   ],
+   "a": 2,
+   "exp": "冰從河裡切來，春天又融回同一條河，住一晚就像向河「借」了一塊，答案是 (C)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "Ice is the strongest building material in the world.",
+    "Tourists prefer permanent hotels to temporary ones.",
+    "Sweden plans to stop building the ICEHOTEL.",
+    "The ICEHOTEL is designed not to last, and its impermanence is what makes it special."
+   ],
+   "a": 3,
+   "exp": "文章開頭就說它和「追求永久」的建築相反，結尾強調它的魅力正是在於「無常」，答案是 (D)。"
+  },
+  {
+   "q": "2. The word \"ephemeral\" in the last paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "lasting a very short time",
+    "extremely expensive",
+    "very large",
+    "newly built"
+   ],
+   "a": 0,
+   "exp": "ephemeral 和前面的 permanent sister building（常年營業的建築）對比，意思是短暫的，答案是 (A)。"
+  },
+  {
+   "q": "3. Why must engineers calculate with care?",
+   "tag": "因果",
+   "opts": [
+    "The river might flood the building.",
+    "Ice is strong when pressed but cracks easily when stretched.",
+    "Artists often change their designs.",
+    "Snice is more expensive than cement."
+   ],
+   "a": 1,
+   "exp": "第二段：冰受壓時很堅固，但被拉伸就容易裂，所以工程師要小心計算，答案是 (B)。"
+  },
+  {
+   "q": "4. What was the original purpose of the ice-sculpture workshop in 1989?",
+   "tag": "細節",
+   "opts": [
+    "To train young engineers",
+    "To test how long ice can last",
+    "To attract tourists to a remote village during its darkest months",
+    "To build a home for local artists"
+   ],
+   "a": 2,
+   "exp": "第三段：1989 年的冰雕工作坊，是為了在最黑暗的月份把遊客吸引到偏遠村莊，答案是 (C)。"
+  },
+  {
+   "q": "5. What does the author suggest by saying guests discover that \"comfort is less a matter of temperature than of preparation\"?",
+   "tag": "推論",
+   "opts": [
+    "With the right equipment, people can sleep well even in freezing rooms.",
+    "The rooms are actually quite warm.",
+    "Guests should not stay more than one night.",
+    "Most guests feel cold and leave early."
+   ],
+   "a": 0,
+   "exp": "房內一直低於零度，但睡在專業睡袋和馴鹿皮上一樣舒服，意思是舒適靠準備而不是溫度，答案是 (A)。(B) 和「低於冰點」矛盾。"
+  }
+ ]
 ];
 
 const META = {

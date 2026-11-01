@@ -120,15 +120,156 @@ const FIGS = {
 };
 
 const QUIZ = [
-  { q:"1. What is the passage mainly about?", tag:"主旨",
-    opts:["How octopuses escape from aquariums","The unusual bodies and clever minds of octopuses","Why blue blood is better than red blood","How to keep an octopus as a pet"],
-    a:1, exp:"文章從三顆心臟、藍色的血，談到會思考、會嚐味道的手臂，最後用 Inky 脫逃的故事說明章魚有多聰明，所以主旨是 (B)。(A) 只是最後一段的例子。"},
-  { q:"2. Which of the following is TRUE?", tag:"細節",
-    opts:["An octopus has one heart and red blood.","An octopus's arms can taste the things they touch.","Octopuses prefer swimming to crawling.","Inky was caught and brought back to the aquarium."],
-    a:1, exp:"(B) 正確：章魚手臂上的吸盤摸到東西就能嚐出味道。(A) 章魚有三顆心臟、藍色的血；(C) 游泳會讓主心臟停止跳動，所以牠們比較喜歡爬行；(D) Inky 再也沒有被找到。"},
-  { q:"3. Why do octopuses usually crawl instead of swim?", tag:"因果",
-    opts:["Their arms are too short to swim.","Their main heart stops beating when they swim, so swimming tires them out.","They cannot see well in the water.","Their blue blood is too heavy."],
-    a:1, exp:"文章提到章魚游泳時，負責把血送到全身的那顆心臟會停止跳動，所以游泳很累，牠們寧可在海底爬行。"}
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to catch an octopus",
+    "Animals that live on land",
+    "The strange and amazing body of the octopus",
+    "How aquariums take care of fish"
+   ],
+   "a": 2,
+   "exp": "文章介紹章魚三顆心、藍色血液、會思考的手臂等奇特之處，答案是 (C)。"
+  },
+  {
+   "q": "2. Why do octopuses usually crawl instead of swim?",
+   "tag": "因果",
+   "opts": [
+    "Their main heart stops beating when they swim, so they get tired quickly.",
+    "They do not have any arms.",
+    "The water is too cold.",
+    "They are afraid of fish."
+   ],
+   "a": 0,
+   "exp": "第二段：游泳時主要的心臟會停止跳動，很快就累，所以章魚通常在海底爬，答案是 (A)。"
+  },
+  {
+   "q": "3. How did Inky escape?",
+   "tag": "細節",
+   "opts": [
+    "A worker carried him to the ocean.",
+    "He climbed out of his tank and went down a pipe into the sea.",
+    "He jumped into a boat.",
+    "He broke the glass of his tank."
+   ],
+   "a": 1,
+   "exp": "第四段：水族箱蓋子沒關緊，Inky 爬出來、穿過地板，從一條長管子溜進大海，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Build a Better Aquarium",
+    "Why Fish Have Red Blood",
+    "The Longest Pipes in New Zealand",
+    "The Octopus: An Alien of Our Oceans"
+   ],
+   "a": 3,
+   "exp": "全文講章魚種種「像外星生物」的特點，(D) 最適合。"
+  },
+  {
+   "q": "2. Why is an octopus's blood blue?",
+   "tag": "因果",
+   "opts": [
+    "It carries oxygen with copper instead of iron.",
+    "It drinks a lot of seawater.",
+    "It eats blue fish.",
+    "It has no hearts."
+   ],
+   "a": 0,
+   "exp": "第二段：章魚的血用銅而不是鐵來攜帶氧氣，所以是藍色的，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "An octopus has two hearts.",
+    "An octopus can taste only with its mouth.",
+    "About two-thirds of an octopus's nerve cells are in its arms.",
+    "Inky was found a week after he escaped."
+   ],
+   "a": 2,
+   "exp": "(C) 正確（第三段）。(A) 錯，有三顆心；(B) 錯，吸盤可以嚐味道；(D) 錯，從此沒找到他。"
+  },
+  {
+   "q": "4. How could Inky fit through such a small space?",
+   "tag": "推論",
+   "opts": [
+    "He was a very young octopus.",
+    "An octopus has no bones.",
+    "The pipe was very wide.",
+    "He changed his color."
+   ],
+   "a": 1,
+   "exp": "第四段：章魚沒有骨頭，可以擠過出奇小的空間，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. What point does the author make in the last sentence?",
+   "tag": "主旨",
+   "opts": [
+    "Octopuses are smarter than humans.",
+    "Aquariums should not keep octopuses.",
+    "Octopuses are really aliens from space.",
+    "The octopus makes us question whether intelligence must be centered in one brain."
+   ],
+   "a": 3,
+   "exp": "最後一句：章魚迫使我們重新思考「智慧一定要集中在單一大腦嗎」，答案是 (D)。(C) 錯，「外星生物」只是比喻。"
+  },
+  {
+   "q": "2. The word \"autonomy\" in the third paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "the ability to act independently",
+    "great physical strength",
+    "a strong sense of taste",
+    "the power to change color"
+   ],
+   "a": 0,
+   "exp": "三分之二的神經元在手臂裡，讓每隻手臂有很高的 autonomy，後面舉例手臂不用等大腦指令就能嚐到螃蟹。autonomy ＝ 自主性，答案是 (A)。"
+  },
+  {
+   "q": "3. What is the job of the branchial hearts?",
+   "tag": "細節",
+   "opts": [
+    "Sending blood to the arms only",
+    "Making the blood blue",
+    "Pumping blood through the gills",
+    "Helping the octopus swim faster"
+   ],
+   "a": 2,
+   "exp": "第二段：兩顆鰓心（branchial hearts）負責把血送過鰓，答案是 (C)。把含氧血送到全身的是體心（systemic heart）。"
+  },
+  {
+   "q": "4. What can be inferred from the example of an arm tasting a hidden crab?",
+   "tag": "推論",
+   "opts": [
+    "An octopus's arms can respond without waiting for the brain.",
+    "Crabs are an octopus's favorite food.",
+    "Octopuses cannot see in dark places.",
+    "The brain controls every movement of the arms."
+   ],
+   "a": 0,
+   "exp": "手臂靠吸盤上的受器碰到就能嚐到味道，不用等大腦下指令，說明手臂能自主反應，答案是 (A)。(D) 和文意相反。"
+  },
+  {
+   "q": "5. Which of the following is NOT true according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Hemocyanin contains copper.",
+    "An octopus's systemic heart beats faster when it swims.",
+    "An octopus can squeeze through any opening larger than its beak.",
+    "Inky left wet tracks on the floor."
+   ],
+   "a": 1,
+   "exp": "第二段說體心在游泳時會「停止跳動」，不是跳得更快，所以 (B) 不正確。其他三項文中都有提到。"
+  }
+ ]
 ];
 
 const META = {

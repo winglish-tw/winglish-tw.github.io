@@ -327,42 +327,156 @@ const GLOSS = {"flood": ["n.", "洪水"], "snake": ["n.", "蛇"], "sandbar": ["n
 const KEY = [["flood", "snake", "sandbar", "shade", "plant", "bamboo", "forest", "honor", "patience"], ["bare", "elder", "spread", "herd", "species", "habitat", "destroy", "civilian", "seedling"], ["monsoon", "relentless", "erosion", "perish", "reforestation", "stabilize", "succession", "refuge", "persistence", "ultimately"]];
 const FIGS = {"sandbar": {"svg": "<svg viewBox=\"0 0 600 318\" role=\"img\" aria-label=\"From sandbar to forest\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F3FAF6\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"24\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#17875C\">One Man, 40+ Years, One Forest</text><text x=\"300\" y=\"42\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >一個人，四十多年，一座森林</text>\n<g>\n<rect x=\"20\" y=\"54\" width=\"270\" height=\"200\" rx=\"10\" fill=\"#CFE9EE\"/>\n<ellipse cx=\"155\" cy=\"170\" rx=\"110\" ry=\"40\" fill=\"#E8D7A8\"/>\n<path d=\"M120 168 q10 -8 20 0 q10 8 20 0\" stroke=\"#8C5A2B\" stroke-width=\"3\" fill=\"none\"/>\n<text x=\"155\" y=\"84\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\">1979</text>\n<text x=\"155\" y=\"230\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">A bare sandbar, no shade</text><text x=\"155\" y=\"246\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >光禿禿的沙洲，沒有樹蔭</text>\n<circle cx=\"250\" cy=\"82\" r=\"16\" fill=\"#F2B705\"/>\n</g>\n<path d=\"M298 154 h16\" stroke=\"#17875C\" stroke-width=\"4\"/><path d=\"M312 146 l10 8 l-10 8z\" fill=\"#17875C\"/>\n<g>\n<rect x=\"330\" y=\"54\" width=\"250\" height=\"200\" rx=\"10\" fill=\"#CFE9EE\"/>\n<ellipse cx=\"455\" cy=\"186\" rx=\"110\" ry=\"34\" fill=\"#9BC48A\"/>\n<g fill=\"#17875C\"><circle cx=\"390\" cy=\"146\" r=\"26\"/><circle cx=\"430\" cy=\"132\" r=\"30\"/><circle cx=\"476\" cy=\"136\" r=\"30\"/><circle cx=\"518\" cy=\"148\" r=\"24\"/><circle cx=\"455\" cy=\"158\" r=\"26\"/></g>\n<text x=\"420\" y=\"194\" font-size=\"22\">🐘</text><text x=\"486\" y=\"198\" font-size=\"18\">🦌</text>\n<text x=\"455\" y=\"84\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\">Today</text>\n<text x=\"455\" y=\"230\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">A forest of about 550 hectares</text><text x=\"455\" y=\"246\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >約 550 公頃的森林</text>\n</g>\n<rect x=\"50\" y=\"264\" width=\"500\" height=\"44\" rx=\"22\" fill=\"#DDF3E9\"/>\n<text x=\"300\" y=\"283\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">Bigger than Central Park in New York (about 340 ha)</text><text x=\"300\" y=\"299\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >比紐約中央公園（約 340 公頃）還大</text></g></svg>", "cap": "帕揚一棵一棵地種，把光禿禿的沙洲變成大象和老虎的家。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How elephants find food",
-   "A man who created a forest by planting trees",
-   "Why rivers in India flood",
-   "How to grow bamboo at home"
-  ],
-  "a": 1,
-  "exp": "全文講述帕揚從 1979 年開始在沙洲上種樹，最後造出一整座森林的故事。"
- },
- {
-  "q": "2. Why did Jadav Payeng start planting trees?",
-  "tag": "細節",
-  "opts": [
-   "He saw snakes die because there was no shade",
-   "He wanted to sell the wood",
-   "The government paid him to do it",
-   "He wanted to build a house"
-  ],
-  "a": 0,
-  "exp": "洪水後，蛇因為沙洲上沒有樹蔭而熱死，這個景象讓他決定種樹。"
- },
- {
-  "q": "3. What lesson does the story teach?",
-  "tag": "推論",
-  "opts": [
-   "Forests are dangerous for people",
-   "One person with patience can make a big difference",
-   "Only governments can plant trees",
-   "Elephants should live in cities"
-  ],
-  "a": 1,
-  "exp": "帕揚一個人持續種樹四十多年，展現了耐心與個人行動能帶來的改變。"
- }
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to take care of snakes",
+    "Why rivers flood every year",
+    "The animals in Central Park",
+    "A man who planted a whole forest by himself"
+   ],
+   "a": 3,
+   "exp": "文章講 Jadav Payeng 幾十年來一個人在沙洲上種出一整片森林，答案是 (D)。"
+  },
+  {
+   "q": "2. Why did Jadav decide to plant trees?",
+   "tag": "因果",
+   "opts": [
+    "Snakes on the sandbar died because there was no shade.",
+    "He wanted to sell the wood.",
+    "The government asked him to.",
+    "He wanted to build a park for tourists."
+   ],
+   "a": 0,
+   "exp": "第一、二段：洪水後蛇被沖到沒有樹的沙洲，沒有遮蔭被曬死。他明白沒有樹動物就活不下去，答案是 (A)。"
+  },
+  {
+   "q": "3. How did people find the forest in 2008?",
+   "tag": "細節",
+   "opts": [
+    "Jadav put it on the news.",
+    "Children found it while playing.",
+    "Forest officials followed a group of elephants.",
+    "Someone saw it from an airplane."
+   ],
+   "a": 2,
+   "exp": "第四段：2008 年林務官員跟著一群大象，才發現這片森林，答案是 (C)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Grow Bamboo Quickly",
+    "The Forest Man of India",
+    "Elephants That Damage Villages",
+    "The Longest River in Asia"
+   ],
+   "a": 1,
+   "exp": "全文講被稱為「印度森林人」的 Payeng 和他種的森林，(B) 最適合。(C) 只是其中一段。"
+  },
+  {
+   "q": "2. Why did Payeng bring red ants from his village?",
+   "tag": "細節",
+   "opts": [
+    "He wanted to feed the birds.",
+    "He used them to keep snakes away.",
+    "He planned to sell them.",
+    "He believed they would improve the soil."
+   ],
+   "a": 3,
+   "exp": "第二段：他相信紅螞蟻能改善土壤，答案是 (D)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Payeng started planting trees in 2008.",
+    "Village elders told him to plant rice.",
+    "The forest is named after Payeng's nickname.",
+    "The forest is home to only a few kinds of birds."
+   ],
+   "a": 2,
+   "exp": "(C) 正確，Molai 是他的小名。(A) 錯，他 1979 年開始種，2008 年是被發現；(B) 錯，長輩說只有樹能救沙洲；(D) 錯，有數百種鳥。"
+  },
+  {
+   "q": "4. How does Payeng think the conflict between elephants and villagers should be solved?",
+   "tag": "推論",
+   "opts": [
+    "By protecting the animals' habitat",
+    "By cutting down the forest",
+    "By moving the villagers away",
+    "By keeping the elephants in a zoo"
+   ],
+   "a": 0,
+   "exp": "第四段：他主張真正的解法是保護動物的棲地，而不是砍掉森林，答案是 (A)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "Floods on the Brahmaputra are impossible to control.",
+    "Elephants should be removed from Assam.",
+    "One man's reforestation shows what is possible, though lasting protection needs shared responsibility.",
+    "Bamboo is the most useful plant in India."
+   ],
+   "a": 2,
+   "exp": "文章講 Payeng 一人造林的成就和衍生的衝突，結尾提出「個人能示範可能性，長久保護需要社群和政府共同承擔」，答案是 (C)。"
+  },
+  {
+   "q": "2. The word \"relentless\" in the first paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "never stopping",
+    "gentle",
+    "rare",
+    "sudden"
+   ],
+   "a": 0,
+   "exp": "每年雨季洪水都在侵蝕河岸，Majuli 已失去大量土地，relentless erosion ＝ 持續不斷的侵蝕，答案是 (A)。"
+  },
+  {
+   "q": "3. Why did Payeng start with bamboo?",
+   "tag": "因果",
+   "opts": [
+    "It was the only plant he could afford.",
+    "Elephants prefer to eat bamboo.",
+    "Village elders said bamboo was sacred.",
+    "It grows fast and can hold loose, sandy soil in place."
+   ],
+   "a": 3,
+   "exp": "第二段：竹子是生長快速的先驅物種，能穩定鬆散的沙土，答案是 (D)。"
+  },
+  {
+   "q": "4. What does the term \"succession\" refer to in the passage?",
+   "tag": "字義",
+   "opts": [
+    "The passing of land from parents to children",
+    "The gradual change that allows more kinds of trees to grow",
+    "A series of floods that reshape the island",
+    "The order in which awards are given"
+   ],
+   "a": 1,
+   "exp": "第二段：遮蔭和有機物慢慢累積，環境逐漸適合更多種樹木生長，生態學家稱為 succession（演替），答案是 (B)。"
+  },
+  {
+   "q": "5. What question does the author raise in the last paragraph?",
+   "tag": "作者用意",
+   "opts": [
+    "Whether protecting the environment should depend only on remarkable individuals",
+    "Whether Payeng deserved the Padma Shri",
+    "Whether the forest is really 550 hectares",
+    "Whether elephants are dangerous animals"
+   ],
+   "a": 0,
+   "exp": "最後一段問：環境復育是否該依賴少數堅持的個人？作者認為最終需要社群和政府分擔責任，答案是 (A)。"
+  }
+ ]
 ];
 const META = {
  "title": "The Boy Who Planted a Forest",

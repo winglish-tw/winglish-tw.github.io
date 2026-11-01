@@ -332,42 +332,156 @@ const GLOSS = {"ancient": ["adj.", "古老的"], "pine": ["n.", "松樹"], "bris
 const KEY = [["pyramid", "soil", "survive", "insect", "disease", "bark", "root", "exact", "steady"], ["fierce", "competition", "threat", "dense", "resin", "drought", "erosion", "remarkable", "patience"], ["longevity", "elevation", "endure", "scant", "imperceptible", "sparse", "ingenious", "adaptation", "sacrifice", "scarce"]];
 const FIGS = {"strip": {"svg": "<svg viewBox=\"0 0 600 304\" role=\"img\" aria-label=\"How a bristlecone survives with a strip of bark\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F3FAF6\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#17875C\">How a Bristlecone Survives</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >刺果松的求生術：放棄一部分，保住其他部分</text>\n<path d=\"M40 248 H560\" stroke=\"#8C5A2B\" stroke-width=\"4\"/>\n<path d=\"M250 248 C240 200 236 170 214 134 C200 112 206 92 224 78 M300 248 C304 196 318 150 350 112\" stroke=\"#C9CED6\" stroke-width=\"34\" fill=\"none\" stroke-linecap=\"round\"/>\n<path d=\"M300 248 C304 196 318 150 350 112\" stroke=\"#8C5A2B\" stroke-width=\"12\" fill=\"none\" stroke-linecap=\"round\"/>\n<g fill=\"#17875C\"><ellipse cx=\"362\" cy=\"98\" rx=\"34\" ry=\"18\"/><ellipse cx=\"390\" cy=\"118\" rx=\"22\" ry=\"12\"/></g>\n<path d=\"M250 250 q-30 18 -70 20 M300 250 q20 20 60 22 M300 250 q4 18 -4 30\" stroke=\"#8C5A2B\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n<path d=\"M250 250 q-12 16 -30 26\" stroke=\"#C9CED6\" stroke-width=\"5\" fill=\"none\" stroke-linecap=\"round\"/>\n<g font-size=\"14\">\n<text x=\"70\" y=\"112\" fill=\"#5A6478\" font-weight=\"700\">Dead part</text><text x=\"70\" y=\"128\" font-size=\"12\" fill=\"#5A6478\">bare gray wood</text><text x=\"70\" y=\"144\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >枯死的部分（灰白色木頭）</text><path d=\"M160 116 l50 4\" stroke=\"#5A6478\" stroke-width=\"2\"/>\n<text x=\"420\" y=\"94\" fill=\"#17875C\" font-weight=\"700\">Living branches</text><text x=\"420\" y=\"110\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >還活著的綠枝</text>\n<text x=\"420\" y=\"168\" fill=\"#8C5A2B\" font-weight=\"700\">A strip of living bark</text><text x=\"420\" y=\"184\" fill=\"#8C5A2B\" font-size=\"12\">carries water up</text><text x=\"420\" y=\"200\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >一條活樹皮，把水送到樹枝</text><path d=\"M416 172 l-96 0\" stroke=\"#8C5A2B\" stroke-width=\"2\"/>\n<text x=\"372\" y=\"292\" fill=\"#8C5A2B\" font-size=\"12\">Living root</text><text x=\"440\" y=\"292\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >還活著的根</text>\n<text x=\"110\" y=\"292\" fill=\"#5A6478\" font-size=\"12\">Dead root</text><text x=\"170\" y=\"292\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >死掉的根</text>\n</g></g></svg>", "cap": "老刺果松常常大半枯死，只靠一條活的樹皮把水和養分送到少數綠枝上。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How to plant pine trees",
-   "A very old tree and how it survives",
-   "How the pyramids were built",
-   "Why mountains are cold"
-  ],
-  "a": 1,
-  "exp": "全文介紹將近 5,000 歲的瑪土撒拉，以及刺果松在嚴酷環境中的生存方式。"
- },
- {
-  "q": "2. How do old bristlecone pines survive when part of the tree dies?",
-  "tag": "細節",
-  "opts": [
-   "They quickly grow new roots",
-   "The rest of the tree keeps living through a strip of bark",
-   "They move to a better place",
-   "People water them every day"
-  ],
-  "a": 1,
-  "exp": "部分死去時，其他部分靠一條活的樹皮把水從根送到樹枝，繼續存活。"
- },
- {
-  "q": "3. Why is Methuselah's exact location kept secret?",
-  "tag": "推論",
-  "opts": [
-   "To protect the tree",
-   "Because nobody has found it",
-   "Because the area is dangerous",
-   "Because it was cut down"
-  ],
-  "a": 0,
-  "exp": "政府／林務局把位置保密，是為了保護這棵樹不被遊客破壞。"
- }
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to plant pine trees",
+    "A very old tree and how it survives",
+    "The history of Egypt",
+    "Why mountains are cold"
+   ],
+   "a": 1,
+   "exp": "文章介紹將近 4,850 歲的老樹 Methuselah，以及它如何在惡劣環境活下來，答案是 (B)。"
+  },
+  {
+   "q": "2. Why can't insects easily get inside the tree?",
+   "tag": "因果",
+   "opts": [
+    "Its leaves are poisonous.",
+    "The wind blows the insects away.",
+    "It is covered with snow all year.",
+    "It grows very slowly, so its wood is very hard."
+   ],
+   "a": 3,
+   "exp": "第二段：長得非常慢，所以木頭很硬，蟲和疾病不容易進去，答案是 (D)。"
+  },
+  {
+   "q": "3. Why is Methuselah's exact location kept a secret?",
+   "tag": "細節",
+   "opts": [
+    "To protect the tree",
+    "Because nobody has found it",
+    "Because the tree is already dead",
+    "To make visitors pay more"
+   ],
+   "a": 0,
+   "exp": "第四段：為了保護它，政府把確切位置保密，答案是 (A)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Visit the White Mountains",
+    "Trees That Grow the Fastest",
+    "The Secrets of a 4,850-Year-Old Tree",
+    "A Man Who Lived 969 Years"
+   ],
+   "a": 2,
+   "exp": "全文講老樹 Methuselah 長壽的秘密，(C) 最適合。(D) 只是名字的由來。"
+  },
+  {
+   "q": "2. What does \"By giving up what it cannot save, the tree protects what remains\" mean?",
+   "tag": "字義",
+   "opts": [
+    "The tree lets damaged parts die so that the rest can live.",
+    "The tree drops all its leaves every winter.",
+    "The tree stops growing for many years.",
+    "The tree moves its roots to better soil."
+   ],
+   "a": 0,
+   "exp": "前面說根受損時，連著的樹皮也會死，但其他部分繼續活。放掉救不了的部分、保住剩下的，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Methuselah was named after a scientist.",
+    "Bristlecones grow best in rich forests full of insects.",
+    "Visitors are allowed to know which tree is Methuselah.",
+    "Edmund Schulman found the tree's age by counting its rings."
+   ],
+   "a": 3,
+   "exp": "(D) 正確（第四段）。(A) 錯，名字來自聖經人物；(B) 錯，它們長在乾燥高山；(C) 錯，位置是保密的。"
+  },
+  {
+   "q": "4. Why does the harsh environment actually help bristlecones?",
+   "tag": "推論",
+   "opts": [
+    "The cold makes them grow faster.",
+    "There are fewer plants and insects to threaten them.",
+    "Strong winds bring them more water.",
+    "Rocky soil gives them more food."
+   ],
+   "a": 1,
+   "exp": "第二段：能活在這裡的植物和蟲很少，競爭和威脅都比較少，答案是 (B)。(A) 錯，它們長得非常慢。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "Scientists should never study tree rings.",
+    "The White Mountains are the coldest place in the United States.",
+    "Bristlecones live long partly because of their harsh environment and special adaptations.",
+    "Methuselah is the only bristlecone still alive."
+   ],
+   "a": 2,
+   "exp": "文章說明惡劣環境和「分區結構」等適應方式讓刺果松特別長壽，答案是 (C)。"
+  },
+  {
+   "q": "2. The word \"scant\" in the second paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "very little",
+    "heavy",
+    "seasonal",
+    "acidic"
+   ],
+   "a": 0,
+   "exp": "scant rainfall ＝ 雨量稀少，後面還提到土壤薄、生長季只有六週，都在講資源少，答案是 (A)。"
+  },
+  {
+   "q": "3. What is \"sectored architecture\"?",
+   "tag": "細節",
+   "opts": [
+    "The tree grows in many separate pieces underground.",
+    "The branches are shaped by the strong wind.",
+    "Nearby trees share their roots with each other.",
+    "Each root supports a particular section of the tree, so damage stays limited."
+   ],
+   "a": 3,
+   "exp": "第三段：每條根連著樹幹和樹冠的特定部分，一條根死了，只有對應的那條樹皮和枝條會死，答案是 (D)。"
+  },
+  {
+   "q": "4. Why does the author mention the story of Prometheus?",
+   "tag": "作者用意",
+   "opts": [
+    "To praise the student's careful research",
+    "To show how valuable these trees are and why they need protection",
+    "To prove that Nevada trees are older than California trees",
+    "To explain how ring counting works"
+   ],
+   "a": 1,
+   "exp": "一棵將近 4,900 歲的樹被誤砍，作者說這讓大家「悲慘地」看清這些樹的價值，接著提到 Methuselah 的位置要保密，答案是 (B)。"
+  },
+  {
+   "q": "5. Which statement would the author most likely agree with?",
+   "tag": "推論",
+   "opts": [
+    "Endurance can mean accepting loss and focusing on what matters.",
+    "Bigger trees always live longer.",
+    "Harsh environments only harm living things.",
+    "Trees should be cut down to learn their exact ages."
+   ],
+   "a": 0,
+   "exp": "最後一段：忍耐有時代表接受失去，把有限的力量放在真正重要的地方，答案是 (A)。(C) 和第二段「惡劣環境反而幫助長壽」相反。"
+  }
+ ]
 ];
 const META = {
  "title": "The Tree That Refused to Die",

@@ -321,42 +321,156 @@ const GLOSS = {"gate": ["n.", "大門"], "clean": ["v.", "清潔"], "poor": ["ad
 const KEY = [["gate", "poor", "engineer", "forced", "rescue", "factory", "dangerous", "march", "labor"], ["polish", "cobbler", "satisfy", "afford", "career", "raid", "debt", "label", "participant"], ["formative", "abandon", "bonded", "rehabilitation", "exploitation", "certification", "persuade", "convention", "perpetuate", "immense"]];
 const FIGS = {"ktl": {"svg": "<svg viewBox=\"0 0 600 310\" role=\"img\" aria-label=\"Timeline of Kailash Satyarthi's work\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFF8F2\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2571A\">From One Question to a World Movement</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >從一個問題，到一場全球運動</text>\n<line x1=\"40\" y1=\"132\" x2=\"570\" y2=\"132\" stroke=\"#C2571A\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n<g text-anchor=\"middle\">\n<circle cx=\"80\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"80\" y=\"172\" font-weight=\"900\" font-size=\"15\">Age 5</text><text x=\"80\" y=\"188\" font-size=\"11\" fill=\"#5A6478\">first school day</text><text x=\"80\" y=\"205\" font-size=\"12\" font-weight=\"700\">Asks “Why?”</text><text x=\"80\" y=\"220\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >上學第一天問「為什麼？」</text>\n<circle cx=\"225\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"225\" y=\"62\" font-weight=\"900\" font-size=\"15\">1980</text><text x=\"225\" y=\"78\" font-size=\"11\" fill=\"#5A6478\">age 26</text><text x=\"225\" y=\"95\" font-size=\"12\" font-weight=\"700\">Starts his movement</text><text x=\"225\" y=\"110\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >創立「拯救童年運動」</text>\n<circle cx=\"375\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"375\" y=\"172\" font-weight=\"900\" font-size=\"15\">1998</text><text x=\"375\" y=\"188\" font-size=\"11\" fill=\"#5A6478\">103 countries</text><text x=\"375\" y=\"205\" font-size=\"12\" font-weight=\"700\">Global March</text><text x=\"375\" y=\"220\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >全球反童工大遊行</text>\n<circle cx=\"520\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"520\" y=\"62\" font-weight=\"900\" font-size=\"15\">2014</text><text x=\"520\" y=\"78\" font-size=\"11\" fill=\"#5A6478\">with Malala</text><text x=\"520\" y=\"95\" font-size=\"12\" font-weight=\"700\">Nobel Peace Prize</text><text x=\"520\" y=\"110\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >與馬拉拉共獲和平獎</text>\n</g>\n<rect x=\"90\" y=\"252\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#FDECDD\"/>\n<text x=\"300\" y=\"272\" font-size=\"15\" text-anchor=\"middle\" font-weight=\"700\">More than 80,000 children freed from work</text><text x=\"300\" y=\"289\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >超過 8 萬名孩子被救出、重回校園</text></g></svg>", "cap": "校門口的一個問題，讓沙蒂亞提投入一輩子的反童工運動。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How to become an engineer",
-   "A man who works to free children from labor and send them to school",
-   "The history of shoe cleaning in India",
-   "Why factories need workers"
-  ],
-  "a": 1,
-  "exp": "全文介紹沙蒂亞提如何救出童工、推動反童工運動，讓孩子回到學校。"
- },
- {
-  "q": "2. What did Kailash see on his first day of school?",
-  "tag": "細節",
-  "opts": [
-   "A teacher giving out free books",
-   "A boy his age cleaning shoes outside the school",
-   "A factory next to his classroom",
-   "A march against child labor"
-  ],
-  "a": 1,
-  "exp": "他在校門口看到同齡男孩和父親一起擦鞋，而沒有進教室上課。"
- },
- {
-  "q": "3. Which of the following is true?",
-  "tag": "細節",
-  "opts": [
-   "Kailash never went to school",
-   "Kailash shared the Nobel Peace Prize with Malala",
-   "Kailash worked as an engineer all his life",
-   "Kailash's march visited only one country"
-  ],
-  "a": 1,
-  "exp": "2014 年他和馬拉拉共同獲得諾貝爾和平獎。"
- }
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "A boy who became a famous shoemaker",
+    "How to become an engineer",
+    "The history of schools in India",
+    "A man who fought to free children from work"
+   ],
+   "a": 3,
+   "exp": "文章講 Kailash Satyarthi 一生致力讓童工回到學校，答案是 (D)。"
+  },
+  {
+   "q": "2. What did Kailash see on his first day of school?",
+   "tag": "細節",
+   "opts": [
+    "A boy his age cleaning shoes outside the school gate",
+    "A teacher fixing a machine",
+    "Children playing soccer",
+    "His father working in a factory"
+   ],
+   "a": 0,
+   "exp": "第一段：他看到一個同齡男孩在校門外跟爸爸一起擦鞋，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE?",
+   "tag": "細節",
+   "opts": [
+    "He stayed an engineer all his life.",
+    "His team freed about 800 children.",
+    "He shared the Nobel Peace Prize with Malala Yousafzai.",
+    "He started his group when he was 10."
+   ],
+   "a": 2,
+   "exp": "(C) 正確（最後一段）。(A) 錯，他 26 歲就放棄工作；(B) 錯，是八萬多名；(D) 錯，是 1980 年、26 歲。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Polish Shoes",
+    "From the School Gate to the Nobel Prize: Fighting Child Labor",
+    "The Life of a Cobbler",
+    "Engineering Jobs in India"
+   ],
+   "a": 1,
+   "exp": "全文從他在校門口看到擦鞋童，一路講到他對抗童工、獲得諾貝爾和平獎，(B) 最適合。"
+  },
+  {
+   "q": "2. Why were some children kept as workers?",
+   "tag": "因果",
+   "opts": [
+    "To pay off their families' debts",
+    "To learn a useful skill",
+    "Because schools were closed",
+    "Because they wanted to earn pocket money"
+   ],
+   "a": 0,
+   "exp": "第三段：有些孩子被留下工作，是為了替家人還債，答案是 (A)。"
+  },
+  {
+   "q": "3. Why did he help create a label for rugs?",
+   "tag": "細節",
+   "opts": [
+    "To make rugs more expensive",
+    "To advertise his own factory",
+    "To help children design rugs",
+    "So shoppers could choose rugs made without child labor"
+   ],
+   "a": 3,
+   "exp": "第三段：這個標籤讓消費者知道哪些地毯沒有使用童工，可以做出更好的選擇，答案是 (D)。"
+  },
+  {
+   "q": "4. What does \"they were always the same fight\" mean in the last paragraph?",
+   "tag": "推論",
+   "opts": [
+    "Kailash and Malala often argued.",
+    "All Nobel Prize winners fight for the same thing.",
+    "Getting children out of work and getting them into school go together.",
+    "Children must fight to go to school."
+   ],
+   "a": 2,
+   "exp": "前一句說得獎連結了兩件事：讓孩子離開工作、讓孩子進學校。對 Kailash 來說這兩件事本來就是同一件事，答案是 (C)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "Satyarthi became famous as an electrical engineer.",
+    "Child labor has been completely solved since 2014.",
+    "Carpet companies are the main cause of poverty in India.",
+    "Satyarthi fought child labor through rescues, consumer pressure and global action, linking it to education."
+   ],
+   "a": 3,
+   "exp": "文章介紹他用救援、認證標籤、全球遊行對抗童工，並把它和教育連在一起，答案是 (D)。(B) 錯，2024 年仍有約 1.38 億童工。"
+  },
+  {
+   "q": "2. What is \"bonded labor\"?",
+   "tag": "字義",
+   "opts": [
+    "A system in which children are forced to work to repay family loans",
+    "Work that children choose to do after school",
+    "A program that trains engineers",
+    "A kind of carpet made by hand"
+   ],
+   "a": 0,
+   "exp": "第二段直接定義：孩子被迫工作，常常一做好幾年，用來償還家人借的錢，答案是 (A)。"
+  },
+  {
+   "q": "3. Why did the movement provide rehabilitation and education after rescues?",
+   "tag": "因果",
+   "opts": [
+    "So that the children could become police officers",
+    "So that freed children would not drift back into exploitation",
+    "Because the factories asked them to",
+    "To earn money for the organization"
+   ],
+   "a": 1,
+   "exp": "第二段：提供復健和教育，是為了讓獲救的孩子不會又回到被剝削的處境，答案是 (B)。"
+  },
+  {
+   "q": "4. According to Satyarthi, how is child labor connected to poverty?",
+   "tag": "推論",
+   "opts": [
+    "It is only a result of poverty.",
+    "It has nothing to do with poverty.",
+    "It is both a result and a cause of poverty, creating a cycle.",
+    "It helps families escape poverty."
+   ],
+   "a": 2,
+   "exp": "第四段：童工不只是貧窮的結果，也是原因。工作的孩子長大後技能少、收入低，他們的孩子又更可能被送去工作，形成循環，答案是 (C)。"
+  },
+  {
+   "q": "5. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "The ILO adopted a convention against the worst forms of child labor the year after the 1998 march.",
+    "GoodWeave is a label for shoes made without child labor.",
+    "Satyarthi received the Nobel Prize alone.",
+    "About 138 million children were freed by 2024."
+   ],
+   "a": 0,
+   "exp": "(A) 正確（第三段）。(B) 錯，是地毯；(C) 錯，和 Malala 共同獲獎；(D) 錯，1.38 億是 2024 年「仍在」從事童工的人數。"
+  }
+ ]
 ];
 const META = {
  "title": "The Boy at the School Gate",

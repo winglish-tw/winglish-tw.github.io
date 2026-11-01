@@ -103,15 +103,156 @@ const FIGS = {
 };
 
 const QUIZ = [
-  { q:"1. What is the passage mainly about?", tag:"主旨",
-    opts:["How to grow tomatoes at home","A study showing that stressed plants make sounds","Why bats like to eat tomatoes","How microphones are made"],
-    a:1, exp:"文章介紹 2023 年的研究：缺水或受傷的植物會發出人類聽不到的超音波喀喀聲，主旨是 (B)。"},
-  { q:"2. Which of the following is TRUE?", tag:"細節",
-    opts:["Humans can easily hear the sounds plants make.","Healthy plants made more sounds than thirsty plants.","A computer program could tell whether a plant was thirsty or cut.","The study used only cactus plants."],
-    a:2, exp:"(C) 正確：電腦程式（人工智慧）能分辨植物是缺水還是被剪斷。(A) 聲音太高，人類聽不到；(B) 健康的植物幾乎不發聲；(D) 主要是番茄和菸草。"},
-  { q:"3. How might this discovery help farmers?", tag:"推論",
-    opts:["They could sell recordings of plant sounds.","They could know when their plants need water.","They could make plants grow faster with music.","They could keep insects away from crops."],
-    a:1, exp:"口渴的植物在看起來乾枯之前就會發聲，所以未來農夫可以用麥克風或感測器知道什麼時候該澆水，答案是 (B)。"}
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to grow tomatoes at home",
+    "Why bats like to eat insects",
+    "How microphones are made",
+    "Scientists found that some plants make sounds."
+   ],
+   "a": 3,
+   "exp": "文章介紹科學家發現植物會發出聲音，答案是 (D)。"
+  },
+  {
+   "q": "2. When did plants make more sounds?",
+   "tag": "細節",
+   "opts": [
+    "When they were thirsty or hurt",
+    "When they were healthy",
+    "When people talked to them",
+    "When it was very dark"
+   ],
+   "a": 0,
+   "exp": "第二段：健康的植物很安靜，缺水或受傷的植物每小時會發出好幾十個「啵」聲，答案是 (A)。"
+  },
+  {
+   "q": "3. Why can't we hear these sounds?",
+   "tag": "因果",
+   "opts": [
+    "They are too loud.",
+    "They are too high for human ears.",
+    "Plants make them only at night.",
+    "They happen under the ground."
+   ],
+   "a": 1,
+   "exp": "第三段：這些聲音太高，人的耳朵聽不到，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Build a Soundproof Box",
+    "Why Farmers Love Bats",
+    "The Secret Sounds of Stressed Plants",
+    "The History of Tel Aviv University"
+   ],
+   "a": 2,
+   "exp": "全文講植物在缺水或受傷時會發出人聽不到的聲音，(C) 最適合。"
+  },
+  {
+   "q": "2. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Healthy plants made less than one sound per hour.",
+    "The experiment worked only in a soundproof box.",
+    "Only tomato plants made sounds.",
+    "Adults can easily hear sounds of 60 kilohertz."
+   ],
+   "a": 0,
+   "exp": "(A) 正確（第二段）。(B) 錯，在吵雜的溫室重做也有類似結果；(C) 錯，菸草、玉米、小麥、仙人掌也有；(D) 錯，40–80 kHz 遠超過人能聽到的範圍。"
+  },
+  {
+   "q": "3. What do scientists think causes the clicking sounds?",
+   "tag": "因果",
+   "opts": [
+    "Insects moving inside the plant",
+    "Leaves hitting each other in the wind",
+    "Roots growing in the soil",
+    "Tiny air bubbles forming and bursting in the plant's water tubes"
+   ],
+   "a": 3,
+   "exp": "第三段：科學家認為是植物輸水管裡的小氣泡形成又破掉時發出的，答案是 (D)。"
+  },
+  {
+   "q": "4. How might this discovery help farmers?",
+   "tag": "推論",
+   "opts": [
+    "They could make plants grow faster with music.",
+    "They could water crops only when the plants need it.",
+    "They could keep bats away from their fields.",
+    "They could sell plant sounds as music."
+   ],
+   "a": 1,
+   "exp": "最後一段：缺水的植物在看起來變乾之前就會發出聲音，農夫未來也許能只在植物「要水」時才澆，節省用水，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. What is the main purpose of the passage?",
+   "tag": "作者用意",
+   "opts": [
+    "To describe a study showing that stressed plants emit sounds and to explain its possible uses",
+    "To prove that plants can understand human speech",
+    "To compare different kinds of microphones",
+    "To argue that bats harm crops"
+   ],
+   "a": 0,
+   "exp": "文章介紹 2023 年的研究：受壓力的植物會發出超音波，並說明可能的機制與應用，答案是 (A)。(B) 錯，第一段說「植物會說話」原本被視為民間傳說。"
+  },
+  {
+   "q": "2. The word \"mute\" in the second paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "healthy",
+    "tall",
+    "silent",
+    "dry"
+   ],
+   "a": 2,
+   "exp": "和受壓力植物發出一連串喀聲相對比，沒受壓力的植物「幾乎完全 mute」，mute ＝ 無聲的，答案是 (C)。"
+  },
+  {
+   "q": "3. Why is it important that the sounds could be detected from more than a meter away?",
+   "tag": "推論",
+   "opts": [
+    "It means the microphones were broken.",
+    "It means other living things could, in principle, hear them.",
+    "It shows that plants are louder than animals.",
+    "It proves that humans can hear plants."
+   ],
+   "a": 1,
+   "exp": "第二段：聲音透過空氣傳出、一公尺外也測得到，代表原則上其他生物可以接收到，答案是 (B)。(D) 錯，人聽不到這個頻率。"
+  },
+  {
+   "q": "4. What is \"cavitation\"?",
+   "tag": "字義",
+   "opts": [
+    "A way of training computer programs",
+    "The process of plants growing roots",
+    "Damage caused by cutting stems",
+    "The forming and collapse of air bubbles in the xylem"
+   ],
+   "a": 3,
+   "exp": "第三段：cavitation 是木質部（輸水管）裡氣泡形成又破裂的過程，答案是 (D)。"
+  },
+  {
+   "q": "5. Which of the following is NOT true according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Scientists have proven that plants respond to each other's clicks.",
+    "The algorithm could tell dry plants from injured ones.",
+    "Sounds peaked after about five days without water.",
+    "Adult human hearing tapers off at around 16 kilohertz."
+   ],
+   "a": 0,
+   "exp": "最後一段說植物是否會回應彼此的聲音「仍是未解的問題」，所以 (A) 不正確。其他三項文中都有提到。"
+  }
+ ]
 ];
 
 const META = {

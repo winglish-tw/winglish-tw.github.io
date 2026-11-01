@@ -333,42 +333,156 @@ const GLOSS = {"bowl": ["n.", "碗"], "kintsugi": ["n.", "金繼（日本修補�
 const KEY = [["bowl", "glue", "lacquer", "sap", "crack", "powder", "useless", "heal"], ["shatter", "humid", "seam", "legend", "clumsy", "elegant", "imperfect", "highlight", "metaphor"], ["conceal", "conspicuous", "fracture", "artisan", "anecdote", "aesthetic", "discard", "resilience", "genuine"]];
 const FIGS = {"steps": {"svg": "<svg viewBox=\"0 0 600 292\" role=\"img\" aria-label=\"Four steps of kintsugi\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFFBF2\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#B07D10\">Four Steps of Kintsugi</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >金繼的四個步驟</text>\n<g text-anchor=\"middle\">\n<g transform=\"translate(-6 10)\"><path d=\"M40 90 L70 92 L64 136 Q52 132 44 120Z\" fill=\"#E9EEF5\" stroke=\"#1A2238\" stroke-width=\"3\"/><path d=\"M80 92 L120 90 Q118 128 96 136 L74 136Z\" fill=\"#E9EEF5\" stroke=\"#1A2238\" stroke-width=\"3\"/></g>\n<text x=\"80\" y=\"176\" font-weight=\"900\" font-size=\"14\">① Gather</text><text x=\"80\" y=\"194\" font-size=\"12\">every piece</text><text x=\"80\" y=\"211\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >收集碎片，一片都不丟</text>\n<path d=\"M185 100 Q187 144 225 146 Q263 144 265 100Z\" fill=\"#E9EEF5\" stroke=\"#1A2238\" stroke-width=\"3\"/><path d=\"M211 100 L219 118 L211 130 L221 144\" fill=\"none\" stroke=\"#1A2238\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><text x=\"225\" y=\"176\" font-weight=\"900\" font-size=\"14\">② Glue</text><text x=\"225\" y=\"194\" font-size=\"12\">with lacquer (tree sap)</text><text x=\"225\" y=\"211\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >用漆黏合（漆＝樹液）</text>\n<path d=\"M335 100 Q337 144 375 146 Q413 144 415 100Z\" fill=\"#E9EEF5\" stroke=\"#1A2238\" stroke-width=\"3\"/><path d=\"M361 100 L369 118 L361 130 L371 144\" fill=\"none\" stroke=\"#1A2238\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><path d=\"M352 84 q8 -12 0 -22 M375 84 q8 -12 0 -22 M398 84 q8 -12 0 -22\" stroke=\"#4A90C2\" stroke-width=\"3\" fill=\"none\"/><text x=\"375\" y=\"176\" font-weight=\"900\" font-size=\"14\">③ Wait</text><text x=\"375\" y=\"194\" font-size=\"12\">warm, humid, weeks</text><text x=\"375\" y=\"211\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >在潮濕處等它變硬</text>\n<path d=\"M485 100 Q487 144 525 146 Q563 144 565 100Z\" fill=\"#E9EEF5\" stroke=\"#1A2238\" stroke-width=\"3\"/><path d=\"M511 100 L519 118 L511 130 L521 144\" fill=\"none\" stroke=\"#D4A017\" stroke-width=\"5\" stroke-linecap=\"round\"/><circle cx=\"560\" cy=\"88\" r=\"3\" fill=\"#D4A017\"/><circle cx=\"570\" cy=\"102\" r=\"2.5\" fill=\"#D4A017\"/><circle cx=\"552\" cy=\"106\" r=\"2\" fill=\"#D4A017\"/><text x=\"525\" y=\"176\" font-weight=\"900\" font-size=\"14\">④ Add gold</text><text x=\"525\" y=\"194\" font-size=\"12\">cracks turn golden</text><text x=\"525\" y=\"211\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >撒上金粉，裂痕變金線</text>\n</g>\n<g stroke=\"#B07D10\" stroke-width=\"3\" fill=\"#B07D10\"><path d=\"M140 122 h26\"/><path d=\"M166 116 l8 6 l-8 6z\"/><path d=\"M290 122 h26\"/><path d=\"M316 116 l8 6 l-8 6z\"/><path d=\"M440 122 h26\"/><path d=\"M466 116 l8 6 l-8 6z\"/></g>\n<rect x=\"90\" y=\"232\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#FBF1D6\"/>\n<text x=\"300\" y=\"252\" font-size=\"15\" text-anchor=\"middle\" font-weight=\"700\">Don't hide the cracks. Make them shine.</text><text x=\"300\" y=\"269\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >不隱藏裂痕，而是讓它成為最美的地方</text></g></svg>", "cap": "傳統金繼要一層一層慢慢做，每一層都要在潮濕的環境中等它變硬。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is kintsugi?",
-  "tag": "主旨",
-  "opts": [
-   "A way to make new bowls out of clay",
-   "A way to repair broken objects with gold",
-   "A kind of Japanese tea",
-   "A type of Chinese metal"
-  ],
-  "a": 1,
-  "exp": "金繼是用漆把碎片接起來，再在裂痕上加金粉的修補工藝。"
- },
- {
-  "q": "2. According to the old story, why did Japanese craftsmen look for a new way to repair bowls?",
-  "tag": "細節",
-  "opts": [
-   "The repaired bowl came back with ugly metal pieces",
-   "Gold was too cheap in Japan",
-   "China refused to fix the bowl",
-   "The leader wanted a brand-new bowl"
-  ],
-  "a": 0,
-  "exp": "傳說中茶碗從中國送回來時，是用難看的金屬片（釘）固定的，將軍很失望。"
- },
- {
-  "q": "3. What lesson does kintsugi teach?",
-  "tag": "推論",
-  "opts": [
-   "We should hide our mistakes",
-   "It is better to buy new things",
-   "Damage and history can be part of beauty",
-   "Gold is the most important thing in life"
-  ],
-  "a": 2,
-  "exp": "金繼不隱藏裂痕，而把它當作美麗與歷史的一部分，也被用來比喻人的成長。"
- }
+ [
+  {
+   "q": "1. What is kintsugi?",
+   "tag": "主旨",
+   "opts": [
+    "A kind of Japanese tea",
+    "A Japanese way of fixing broken things with gold",
+    "A new way to make bowls",
+    "A Chinese metal tool"
+   ],
+   "a": 1,
+   "exp": "第一、二段：kintsugi 是日本用金粉修補破碗的方法，答案是 (B)。"
+  },
+  {
+   "q": "2. What is lacquer made from?",
+   "tag": "細節",
+   "opts": [
+    "Tree sap",
+    "Gold powder",
+    "Metal pieces",
+    "Rice"
+   ],
+   "a": 0,
+   "exp": "第二段：lacquer 是用樹液做的一種膠，答案是 (A)。金粉是最後才塗在裂縫上的。"
+  },
+  {
+   "q": "3. What idea does kintsugi teach us?",
+   "tag": "推論",
+   "opts": [
+    "We should always buy new things.",
+    "Broken things are useless.",
+    "Gold is the most important thing in life.",
+    "Our mistakes and hurts can make us stronger and more special."
+   ],
+   "a": 3,
+   "exp": "最後一段：破掉的東西不是沒用，人也一樣，我們的「裂痕」能讓我們更堅強、更特別，答案是 (D)。(B) 和文意相反。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Make a Chinese Tea Bowl",
+    "The Life of a Japanese Shogun",
+    "Kintsugi: Finding Beauty in the Cracks",
+    "Why Gold Is So Expensive"
+   ],
+   "a": 2,
+   "exp": "全文講用金修補、不掩飾裂痕的 kintsugi 和它的意義，(C) 最適合。"
+  },
+  {
+   "q": "2. Why can a single kintsugi repair take weeks or even months?",
+   "tag": "因果",
+   "opts": [
+    "Each layer of lacquer must harden slowly in a warm, humid place.",
+    "Gold is very hard to find.",
+    "Craftsmen only work one day a week.",
+    "The pieces must be sent to China."
+   ],
+   "a": 0,
+   "exp": "第二段：每一層漆都要在溫暖潮濕的地方慢慢硬化，所以修一件要好幾週甚至好幾個月，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "The shogun's bowl came back with gold lines.",
+    "Kintsugi tries to hide the break.",
+    "Kintsugi began in the 20th century.",
+    "Some repaired pieces became more valuable than before they broke."
+   ],
+   "a": 3,
+   "exp": "(D) 正確（第四段）。(A) 錯，是用難看的金屬釘接回來；(B) 錯，kintsugi 是突顯裂痕；(C) 錯，傳說是 15 世紀末。"
+  },
+  {
+   "q": "4. How does kintsugi treat damage?",
+   "tag": "推論",
+   "opts": [
+    "As a reason to throw the object away",
+    "As part of an object's history, not something to be ashamed of",
+    "As a secret that must be hidden",
+    "As proof that the object was cheap"
+   ],
+   "a": 1,
+   "exp": "第四段：不隱藏破損，反而突顯它，把裂痕當成物品歷史的一部分，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. What is the author's main purpose in the passage?",
+   "tag": "作者用意",
+   "opts": [
+    "To explain the techniques, history and ideas behind kintsugi and what it means today",
+    "To teach readers how to use a kintsugi kit at home",
+    "To compare Chinese and Japanese pottery",
+    "To warn people about the dangers of poison ivy"
+   ],
+   "a": 0,
+   "exp": "文章介紹 kintsugi 的材料技法、起源、相關的日本觀念，以及它今天被當作韌性的比喻，答案是 (A)。"
+  },
+  {
+   "q": "2. The word \"conspicuous\" in the first paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "hidden",
+    "fragile",
+    "easy to notice",
+    "ordinary"
+   ],
+   "a": 2,
+   "exp": "前面說 kintsugi「不掩飾破損」，用金修補讓裂痕成為最 conspicuous 的特色，意思是最顯眼，答案是 (C)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE about urushi?",
+   "tag": "細節",
+   "opts": [
+    "It dries quickly in the open air.",
+    "It is completely safe to touch.",
+    "It comes from the poison ivy plant.",
+    "It hardens only in warm, humid conditions."
+   ],
+   "a": 3,
+   "exp": "第二段：urushi 不是靠空氣乾燥，只有在溫暖潮濕的環境才會硬化，答案是 (D)。(B) 錯，生漆會讓皮膚起疹子；(C) 錯，漆樹只是和毒葛「有親緣關係」。"
+  },
+  {
+   "q": "4. How do the ideas of mottainai and mushin relate to kintsugi?",
+   "tag": "推論",
+   "opts": [
+    "They teach people to replace broken objects quickly.",
+    "They encourage valuing objects and accepting change, so a crack is seen as part of an object's story.",
+    "They explain how to mix gold with lacquer.",
+    "They are rules of the Chinese tea ceremony."
+   ],
+   "a": 1,
+   "exp": "第四段：mottainai 是惋惜浪費、珍惜物品；mushin 是平靜接受變化。從這兩個角度看，裂痕不是結束，而是物品生命中的一件事，答案是 (B)。"
+  },
+  {
+   "q": "5. Why do some purists criticize popular \"kintsugi kits\"?",
+   "tag": "因果",
+   "opts": [
+    "They are too expensive for most people.",
+    "They use too much real gold.",
+    "They use quick-drying glue instead of urushi and skip the slow process.",
+    "They can only repair Chinese bowls."
+   ],
+   "a": 2,
+   "exp": "最後一段：市售套組多半用快乾環氧樹脂代替 urushi。對純粹主義者來說，真正的藝術在於緩慢、用心的修復過程，答案是 (C)。"
+  }
+ ]
 ];
 const META = {
  "title": "Golden Cracks",

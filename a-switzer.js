@@ -326,42 +326,156 @@ const GLOSS = {"marathon": ["n.", "馬拉松"], "weak": ["adj.", "虛弱的"], "
 const KEY = [["marathon", "weak", "train", "official", "grab", "tear", "crawl", "symbol", "fearless"], ["journalism", "bib", "athlete", "determined", "quit", "activist", "campaign", "retire", "confidence"], ["prejudice", "evidence", "companion", "emblem", "conviction", "stereotype", "reformer", "lobby", "reconciliation", "boundary"]];
 const FIGS = {"tl261": {"svg": "<svg viewBox=\"0 0 600 294\" role=\"img\" aria-label=\"Timeline from 1967 to 2017\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FAF7FD\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#7A4FB5\">Changes That Began with No. 261</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >從 261 號開始的改變</text>\n<line x1=\"50\" y1=\"130\" x2=\"560\" y2=\"130\" stroke=\"#7A4FB5\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n<g font-size=\"13\" text-anchor=\"middle\">\n<rect x=\"58\" y=\"62\" width=\"64\" height=\"44\" rx=\"6\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2.5\"/><text x=\"90\" y=\"92\" font-size=\"22\" font-weight=\"900\" fill=\"#C2387A\">261</text>\n<circle cx=\"90\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"90\" y=\"164\" font-weight=\"900\" font-size=\"16\">1967</text><text x=\"90\" y=\"184\">Ran Boston</text><text x=\"90\" y=\"200\">wearing 261</text><text x=\"90\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >戴 261 號跑完波士頓</text>\n<circle cx=\"230\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"230\" y=\"164\" font-weight=\"900\" font-size=\"16\">1972</text><text x=\"230\" y=\"184\">Boston opens</text><text x=\"230\" y=\"200\">to women</text><text x=\"230\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >波士頓正式開放女性</text>\n<circle cx=\"370\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"370\" y=\"164\" font-weight=\"900\" font-size=\"16\">1984</text><text x=\"370\" y=\"184\">First Olympic</text><text x=\"370\" y=\"200\">women's marathon</text><text x=\"370\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >奧運首度有女子馬拉松</text>\n<circle cx=\"510\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"510\" y=\"164\" font-weight=\"900\" font-size=\"16\">2017</text><text x=\"510\" y=\"184\">No. 261</text><text x=\"510\" y=\"200\">is retired</text><text x=\"510\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >261 號永久退休</text>\n<text x=\"230\" y=\"98\" font-size=\"26\">🏃‍♀️</text><text x=\"370\" y=\"98\" font-size=\"26\">🏅</text><text x=\"510\" y=\"98\" font-size=\"26\">⭐</text>\n</g>\n<rect x=\"150\" y=\"236\" width=\"300\" height=\"46\" rx=\"23\" fill=\"#EEE6F7\"/>\n<text x=\"300\" y=\"256\" font-size=\"16\" text-anchor=\"middle\" font-weight=\"900\">261 = Fearless</text><text x=\"300\" y=\"273\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >261 ＝ 無所畏懼</text></g></svg>", "cap": "1967 年的一場比賽，帶動了女性跑步的一連串改變。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How to train for a marathon",
-   "A woman runner who helped change the rules for women",
-   "The history of the city of Boston",
-   "Why a marathon is 42 kilometers long"
-  ],
-  "a": 1,
-  "exp": "全文講述 Switzer 1967 年參賽的經過，以及她如何推動女性參加馬拉松的改變。"
- },
- {
-  "q": "2. What happened to Switzer during the 1967 race?",
-  "tag": "細節",
-  "opts": [
-   "She won the race",
-   "An official tried to take away her number",
-   "She stopped running and went home",
-   "She was not allowed to start the race"
-  ],
-  "a": 1,
-  "exp": "比賽負責人（工作人員）衝上來抓住她，想撕下她的號碼布。"
- },
- {
-  "q": "3. What does the number 261 stand for today?",
-  "tag": "推論",
-  "opts": [
-   "Being fast",
-   "Being fearless",
-   "Breaking the law",
-   "Winning a race"
-  ],
-  "a": 1,
-  "exp": "261 號如今是「無所畏懼（fearless）」的象徵，她的組織也叫 261 Fearless。"
- }
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to train for a marathon",
+    "The history of the Olympic Games",
+    "A woman who ran the Boston Marathon when women were not welcome",
+    "A man who won the Boston Marathon"
+   ],
+   "a": 2,
+   "exp": "文章講 1967 年女性還不被接受時，Kathrine Switzer 跑完波士頓馬拉松的故事，答案是 (C)。"
+  },
+  {
+   "q": "2. What happened during the race?",
+   "tag": "細節",
+   "opts": [
+    "An angry official tried to tear off her number.",
+    "She fell and hurt her leg.",
+    "Her boyfriend told her to stop.",
+    "She won first place."
+   ],
+   "a": 0,
+   "exp": "第二段：一位生氣的工作人員抓住她，想扯掉她的號碼布，答案是 (A)。"
+  },
+  {
+   "q": "3. What happened in 1972?",
+   "tag": "細節",
+   "opts": [
+    "The women's marathon became an Olympic event.",
+    "Kathrine ran her first marathon.",
+    "The number 261 was retired.",
+    "Women were allowed to run the Boston Marathon officially."
+   ],
+   "a": 3,
+   "exp": "最後一段：1972 年女性終於可以正式參加波士頓馬拉松，答案是 (D)。(A) 是 1984 年。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Become a Journalist",
+    "Runner 261: The Woman Who Changed the Marathon",
+    "The Life of Jock Semple",
+    "Why Running Is Dangerous for Women"
+   ],
+   "a": 1,
+   "exp": "全文講 Switzer 跑馬拉松的經過，以及她如何改變女性參賽的規則，(B) 最適合。(D) 正是文中要推翻的錯誤觀念。"
+  },
+  {
+   "q": "2. Why did Switzer keep running after the attack?",
+   "tag": "因果",
+   "opts": [
+    "If she quit, people would say women could not finish a marathon.",
+    "She wanted to win prize money.",
+    "Her coach would be angry if she stopped.",
+    "Semple told her to keep going."
+   ],
+   "a": 0,
+   "exp": "第三段：她知道如果放棄，大家就會說女人跑不完馬拉松，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Switzer and Semple never spoke again.",
+    "Tom Miller was the race manager.",
+    "Switzer registered with her full first name.",
+    "Switzer won the women's race at the New York City Marathon in 1974."
+   ],
+   "a": 3,
+   "exp": "(D) 正確（第四段）。(A) 錯，他們後來成為朋友；(B) 錯，Semple 才是賽事經理，Miller 是她男朋友；(C) 錯，她用 K. V. Switzer 報名。"
+  },
+  {
+   "q": "4. What does 261 Fearless do today?",
+   "tag": "細節",
+   "opts": [
+    "It organizes races only for men.",
+    "It trains journalists.",
+    "It helps women gain confidence through running.",
+    "It sells running shoes."
+   ],
+   "a": 2,
+   "exp": "最後一段：她的非營利組織 261 Fearless 幫助世界各地的女性透過跑步建立自信，答案是 (C)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "Bobbi Gibb was the first woman to win the Boston Marathon.",
+    "Marathons are harmful to women's health.",
+    "Switzer's 1967 run challenged prejudice and helped open distance running to women.",
+    "Race officials should be stricter about registration."
+   ],
+   "a": 2,
+   "exp": "文章說明 Switzer 1967 年的參賽如何挑戰偏見，並推動女性正式參與長跑，答案是 (C)。(B) 正是作者說的「偽裝成醫學考量的偏見」。"
+  },
+  {
+   "q": "2. What does the author mean by \"prejudice dressed up as medical caution\"?",
+   "tag": "字義",
+   "opts": [
+    "Unfair beliefs were made to look like health concerns.",
+    "Doctors carefully proved that running was harmful.",
+    "Women had to wear special clothes to run.",
+    "Medical workers were not allowed to run."
+   ],
+   "a": 0,
+   "exp": "第一段：禁止女性長跑不是根據證據，而是把偏見包裝成醫學上的謹慎，答案是 (A)。"
+  },
+  {
+   "q": "3. How was Switzer's 1967 run different from Bobbi Gibb's in 1966?",
+   "tag": "比較",
+   "opts": [
+    "Gibb was attacked by officials, but Switzer was not.",
+    "Gibb finished faster than any man.",
+    "Switzer hid near the start line.",
+    "Switzer registered and wore an official number, while Gibb ran without one."
+   ],
+   "a": 3,
+   "exp": "第一、二段：Gibb 躲在起跑點附近、沒號碼就加入；Switzer 則正式報名、戴官方號碼布，更公開，答案是 (D)。"
+  },
+  {
+   "q": "4. Why does the author call the reconciliation \"the most striking detail\"?",
+   "tag": "作者用意",
+   "opts": [
+    "It proves that Semple was right all along.",
+    "It shows that people's attitudes, like rules, can change.",
+    "It explains why the number 261 was retired.",
+    "It shows that Switzer forgave Miller."
+   ],
+   "a": 1,
+   "exp": "第四段：曾是對手的 Semple 後來成了她的朋友，提醒我們人的態度和制度一樣可以改變，答案是 (B)。"
+  },
+  {
+   "q": "5. What does the last sentence suggest?",
+   "tag": "推論",
+   "opts": [
+    "Some limits seem natural only because no one has tried to cross them yet.",
+    "People should always follow the rules of sports.",
+    "Every boundary in life is dangerous to cross.",
+    "Only famous athletes can change the rules."
+   ],
+   "a": 0,
+   "exp": "最後一句：我們以為天經地義的界線，有時只是還沒人敢跨越，答案是 (A)。"
+  }
+ ]
 ];
 const META = {
  "title": "Runner Number 261",

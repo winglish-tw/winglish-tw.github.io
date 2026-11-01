@@ -327,42 +327,156 @@ const GLOSS = {"court": ["n.", "法院"], "attend": ["v.", "就讀；出席"], "
 const KEY = [["court", "attend", "federal", "marshal", "crowd", "shout", "agree", "kindness", "brave"], ["ruling", "refuse", "safety", "insult", "exception", "cafeteria", "recess", "fairness", "hatred"], ["unconstitutional", "segregated", "integration", "resist", "escort", "boycott", "hostility", "resilience", "solidarity", "paradox"]];
 const FIGS = {"ruby": {"svg": "<svg viewBox=\"0 0 600 292\" role=\"img\" aria-label=\"Ruby Bridges' first year in numbers\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFF8F2\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2571A\">Ruby's First Year in Numbers</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >露比的一年級，用數字來看</text>\n<circle cx=\"80\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#C2571A\" stroke-width=\"5\"/><text x=\"80\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2571A\">6</text><text x=\"80\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">years old</text><text x=\"80\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >6 歲上一年級</text>\n<circle cx=\"225\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#1F5C8C\" stroke-width=\"5\"/><text x=\"225\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#1F5C8C\">4</text><text x=\"225\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">federal marshals</text><text x=\"225\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >4 名聯邦法警護送</text>\n<circle cx=\"375\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#7A4FB5\" stroke-width=\"5\"/><text x=\"375\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#7A4FB5\">1</text><text x=\"375\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">student in class</text><text x=\"375\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >全班只有她 1 人</text>\n<circle cx=\"520\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#17875C\" stroke-width=\"5\"/><text x=\"520\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#17875C\">0</text><text x=\"520\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">days missed</text><text x=\"520\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >一天也沒缺課</text>\n<rect x=\"90\" y=\"232\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#FDECDD\"/>\n<text x=\"300\" y=\"252\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">Only one teacher, Barbara Henry, agreed to teach her.</text><text x=\"300\" y=\"269\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >只有一位老師芭芭拉・亨利願意教她</text></g></svg>", "cap": "露比的一年級：6 歲、4 名法警、全班 1 人、0 天缺課。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How to become a good teacher",
-   "A brave girl who helped change segregated schools",
-   "The history of New Orleans food",
-   "Why marshals work in schools"
-  ],
-  "a": 1,
-  "exp": "全文講述 6 歲的露比如何走進只收白人的學校，推動學校種族融合。"
- },
- {
-  "q": "2. Why did federal marshals walk with Ruby to school?",
-  "tag": "細節",
-  "opts": [
-   "To keep her safe",
-   "To check her homework",
-   "To take her to another city",
-   "To stop her from going to school"
-  ],
-  "a": 0,
-  "exp": "學校外有憤怒的群眾，法警是為了保護她的安全。"
- },
- {
-  "q": "3. Which of the following is true?",
-  "tag": "細節",
-  "opts": [
-   "Every teacher wanted to teach Ruby",
-   "Ruby was the only student in her class that year",
-   "Ruby missed many days of school",
-   "Ruby's school was only for Black children"
-  ],
-  "a": 1,
-  "exp": "白人家長把孩子帶走，整整一年露比都是班上唯一的學生。"
- }
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "A teacher who moved to Boston",
+    "A brave young girl who helped change American schools",
+    "How to become a federal marshal",
+    "The history of New Orleans"
+   ],
+   "a": 1,
+   "exp": "文章講六歲的 Ruby Bridges 勇敢進入只收白人的學校，答案是 (B)。"
+  },
+  {
+   "q": "2. Why did four federal marshals walk beside Ruby?",
+   "tag": "因果",
+   "opts": [
+    "To keep her safe",
+    "To teach her",
+    "To carry her books",
+    "To take her home early"
+   ],
+   "a": 0,
+   "exp": "第二段：四位聯邦法警走在她身邊保護她的安全，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE?",
+   "tag": "細節",
+   "opts": [
+    "All the teachers wanted to teach Ruby.",
+    "Ruby missed many days of school.",
+    "Ruby was the only student in her class for the whole year.",
+    "Ruby's class had many white students."
+   ],
+   "a": 2,
+   "exp": "(C) 正確（第三段）。(A) 錯，只有 Barbara Henry 願意；(B) 錯，她一天都沒缺席；(D) 錯，白人家長把孩子帶走了。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "The Life of Norman Rockwell",
+    "Lunch Rules in American Schools",
+    "Why Teachers Move to Boston",
+    "Ruby Bridges: A Small Girl's Big Walk"
+   ],
+   "a": 3,
+   "exp": "全文講 Ruby 走進學校的那段歷史和她的勇氣，(D) 最適合。"
+  },
+  {
+   "q": "2. Why was Ruby not allowed to eat in the cafeteria or play at recess?",
+   "tag": "因果",
+   "opts": [
+    "It was considered too dangerous.",
+    "She did not finish her homework.",
+    "Her teacher punished her.",
+    "She was too young."
+   ],
+   "a": 0,
+   "exp": "第三段：因為被認為太危險，Ruby 不能在餐廳吃午餐，也不能下課到外面玩，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "The Supreme Court ruling was made in 1960.",
+    "Ruby's father lost his job.",
+    "Barbara Henry was from New Orleans.",
+    "Norman Rockwell painted Ruby in 1954."
+   ],
+   "a": 1,
+   "exp": "(B) 正確（第四段）。(A) 錯，最高法院判決在 1954 年；(C) 錯，她來自波士頓；(D) 錯，畫是 1964 年。"
+  },
+  {
+   "q": "4. What does \"hatred is learned, and so is courage\" mean?",
+   "tag": "推論",
+   "opts": [
+    "Courage is easier to learn than hatred.",
+    "Children should learn to hate their enemies.",
+    "People are not born hating or brave; they learn both.",
+    "Only adults can be brave."
+   ],
+   "a": 2,
+   "exp": "仇恨不是天生的，是學來的；勇氣也一樣可以學，答案是 (C)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "The Supreme Court quickly ended segregation in 1954.",
+    "Norman Rockwell was the most important artist of the 1960s.",
+    "Robert Coles was Ruby's teacher.",
+    "Ruby Bridges' integration of a New Orleans school showed both great hostility and great courage."
+   ],
+   "a": 3,
+   "exp": "文章描述 Ruby 進入白人學校時遭遇的敵意，以及她和身邊人的勇氣與支持，答案是 (D)。(A) 錯，南方抗拒了好幾年。"
+  },
+  {
+   "q": "2. The word \"boycott\" in the third paragraph refers to ______.",
+   "tag": "字義",
+   "opts": [
+    "people refusing to take part, to show they did not accept her",
+    "a school sports event",
+    "a new rule from the court",
+    "a kind of entrance exam"
+   ],
+   "a": 0,
+   "exp": "後面說白人家長把孩子帶走、大多數老師拒絕教她，boycott ＝ 抵制，答案是 (A)。"
+  },
+  {
+   "q": "3. How did the school board respond to the federal court order?",
+   "tag": "細節",
+   "opts": [
+    "It closed all its schools.",
+    "It hired more Black teachers.",
+    "It required Black first graders to pass an entrance exam.",
+    "It allowed all Black children to enter immediately."
+   ],
+   "a": 2,
+   "exp": "第二段：學校董事會要求黑人一年級生通過入學考試，只有少數幾個被選上，答案是 (C)。"
+  },
+  {
+   "q": "4. Why does the author mention neighbors who watched the house and walked behind the marshals' car?",
+   "tag": "作者用意",
+   "opts": [
+    "To show that the neighbors were part of the protest",
+    "To show that there were also quiet acts of support",
+    "To explain why Ruby's father lost his job",
+    "To prove that the marshals were not needed"
+   ],
+   "a": 1,
+   "exp": "第四段：作者用這些例子說明當時也有「比較安靜的團結」，不同種族的鄰居都伸出援手，答案是 (B)。"
+  },
+  {
+   "q": "5. What \"paradox\" does Rockwell's painting capture?",
+   "tag": "推論",
+   "opts": [
+    "The most powerful figure is the small girl, not the adults with badges.",
+    "The marshals look smaller than Ruby.",
+    "The painting shows a happy school day.",
+    "Ruby is shown wearing a police badge."
+   ],
+   "a": 0,
+   "exp": "最後一段：畫中最有力量的不是佩戴徽章的大人，而是走在中間、神情平靜的小女孩，這就是矛盾之處，答案是 (A)。"
+  }
+ ]
 ];
 const META = {
  "title": "The Long Walk to First Grade",

@@ -322,42 +322,156 @@ const GLOSS = {"jeans": ["n.", "牛仔褲"], "liter": ["n.", "公升"], "cotton"
 const KEY = [["jeans", "cotton", "thirsty", "dye", "factory", "impact", "environment", "closet"], ["resource", "crop", "fabric", "faded", "consumer", "landfill", "swap", "donate", "sustainable"], ["lifecycle", "assessment", "cultivate", "irrigation", "divert", "counterintuitive", "footprint", "garment", "insufficient", "perspective"]];
 const FIGS = {"drop": {"svg": "<svg viewBox=\"0 0 600 304\" role=\"img\" aria-label=\"Water used in the life of a pair of jeans\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F2FAFB\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#1F7A8C\">How Much Water Does One Pair of Jeans Use?</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >一條牛仔褲的一生，用了多少水？</text>\n<path d=\"M90 64 C90 64 40 134 40 174 a50 50 0 0 0 100 0 C140 134 90 64 90 64Z\" fill=\"#4A90C2\"/>\n<text x=\"90\" y=\"180\" font-size=\"20\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#fff\">3,781</text><text x=\"90\" y=\"200\" font-size=\"13\" text-anchor=\"middle\" fill=\"#fff\">liters 公升</text>\n<g font-size=\"14\">\n<rect x=\"180\" y=\"70\" width=\"380\" height=\"44\" rx=\"6\" fill=\"#E9EEF5\"/><rect x=\"180\" y=\"70\" width=\"258\" height=\"44\" rx=\"6\" fill=\"#17875C\"/>\n<text x=\"192\" y=\"97\" fill=\"#fff\" font-weight=\"900\">🌱 Growing cotton 68%</text><text x=\"446\" y=\"97\" font-size=\"12\" fill=\"#5A6478\">種棉花</text>\n<rect x=\"180\" y=\"128\" width=\"380\" height=\"44\" rx=\"6\" fill=\"#E9EEF5\"/><rect x=\"180\" y=\"128\" width=\"87\" height=\"44\" rx=\"6\" fill=\"#4A90C2\"/>\n<text x=\"192\" y=\"155\" fill=\"#fff\" font-weight=\"900\">🧺 23%</text><text x=\"280\" y=\"152\" font-weight=\"700\">Washing at home</text><text x=\"280\" y=\"167\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >買回家後的清洗</text>\n<rect x=\"180\" y=\"186\" width=\"380\" height=\"44\" rx=\"6\" fill=\"#E9EEF5\"/><rect x=\"180\" y=\"186\" width=\"34\" height=\"44\" rx=\"6\" fill=\"#8C96A8\"/>\n<text x=\"224\" y=\"210\" font-weight=\"700\">9% Making fabric, etc.</text><text x=\"224\" y=\"225\" font-size=\"11\" text-anchor=\"start\" fill=\"#5A6478\" >布料製造、加工等</text>\n</g>\n<rect x=\"40\" y=\"246\" width=\"520\" height=\"46\" rx=\"23\" fill=\"#DFF2F4\"/>\n<text x=\"300\" y=\"266\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">Wash after 10 wears, not 2: up to 80% less impact</text><text x=\"300\" y=\"283\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >穿 10 次再洗（而不是 2 次），影響最多可減少約 80%</text></g></svg>", "cap": "一條牛仔褲的用水，大部分花在種棉花，但也有將近四分之一是在家裡洗衣服時用掉的。", "credit": "圖解：Winglish（資料：Levi Strauss & Co., 2015）"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How to choose the right size of jeans",
-   "How much water jeans use and how we can save it",
-   "Why blue is the most popular color",
-   "How cotton farmers become rich"
-  ],
-  "a": 1,
-  "exp": "全文說明一條牛仔褲一生的用水量、水用在哪裡，以及我們能怎麼減少。"
- },
- {
-  "q": "2. Which stage uses the most water?",
-  "tag": "細節",
-  "opts": [
-   "Growing cotton",
-   "Washing jeans at home",
-   "Selling jeans in stores",
-   "Throwing jeans away"
-  ],
-  "a": 0,
-  "exp": "約 68% 的水用在種棉花，是最大的部分。"
- },
- {
-  "q": "3. According to the passage, what is one easy way to reduce the impact of our jeans?",
-  "tag": "推論",
-  "opts": [
-   "Wash them after every wear",
-   "Wash them less often",
-   "Buy new jeans every month",
-   "Use hot water to wash them"
-  ],
-  "a": 1,
-  "exp": "研究發現穿十次再洗（而不是兩次）可以把影響減少多達 80%，所以少洗是簡單的方法。"
- }
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How much water a pair of jeans uses and how we can save it",
+    "How to choose the right size of jeans",
+    "The history of the color blue",
+    "Why cotton grows in hot places"
+   ],
+   "a": 0,
+   "exp": "文章講一條牛仔褲一生用掉多少水，以及我們能怎麼省水，答案是 (A)。"
+  },
+  {
+   "q": "2. Where does most of the water go?",
+   "tag": "細節",
+   "opts": [
+    "Washing the jeans",
+    "Growing cotton",
+    "Dyeing the jeans blue",
+    "Drinking water for workers"
+   ],
+   "a": 1,
+   "exp": "第二段：大約 68% 的水用來種棉花，答案是 (B)。洗牛仔褲大約占 23%。"
+  },
+  {
+   "q": "3. Which of these is a way to save water, according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Wash jeans after every wear.",
+    "Buy new jeans every month.",
+    "Throw old jeans away.",
+    "Wash jeans less often and use cold water."
+   ],
+   "a": 3,
+   "exp": "最後一段：少洗幾次、用冷水，買少一點、穿久一點，答案是 (D)。其他三個都和文章建議相反。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How Levi's Became Famous",
+    "Fashion Trends of 2015",
+    "The Hidden Water Cost of Your Jeans",
+    "Why Cotton Is Better Than Silk"
+   ],
+   "a": 2,
+   "exp": "文章揭露一條牛仔褲背後隱藏的用水量，(C) 最適合。"
+  },
+  {
+   "q": "2. What was the most surprising finding of the study?",
+   "tag": "細節",
+   "opts": [
+    "About 23 percent of the water is used after people buy the jeans.",
+    "Cotton needs very little water.",
+    "Factories use no water at all.",
+    "Jeans last only a few weeks."
+   ],
+   "a": 0,
+   "exp": "第三段一開始說「最令人驚訝的發現」和消費者有關：約 23% 的水是在買回家之後（主要是洗衣服）用掉的，答案是 (A)。"
+  },
+  {
+   "q": "3. What is \"fast fashion\"?",
+   "tag": "字義",
+   "opts": [
+    "Clothes made for running",
+    "Jeans that dry quickly",
+    "A way to repair clothes quickly",
+    "Clothing brands that sell new, cheap styles every few weeks"
+   ],
+   "a": 3,
+   "exp": "第四段：快時尚品牌每幾週就推出新款、價格便宜，鼓勵人常買、快丟，答案是 (D)。"
+  },
+  {
+   "q": "4. What does the writer mean by \"The most sustainable pair of jeans is often the one already in your closet\"?",
+   "tag": "推論",
+   "opts": [
+    "You should hide your jeans in the closet.",
+    "Keeping and wearing clothes you have is better than buying new ones.",
+    "New jeans are made with less water.",
+    "Closets help jeans last longer."
+   ],
+   "a": 1,
+   "exp": "作者主張買少一點、修補或捐出，把已經有的衣服穿久，這才最環保，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. What is the main purpose of the passage?",
+   "tag": "作者用意",
+   "opts": [
+    "To advertise Levi's 501 jeans",
+    "To use a lifecycle assessment to show that extending the life of clothing is the best way to reduce its impact",
+    "To explain how the Aral Sea was formed",
+    "To argue that people should stop wearing cotton"
+   ],
+   "a": 1,
+   "exp": "文章用生命週期評估說明牛仔褲各階段的用水，最後結論是延長衣物的使用壽命最有效，答案是 (B)。(D) 錯，作者沒有說不要穿棉。"
+  },
+  {
+   "q": "2. What is a \"lifecycle assessment\"?",
+   "tag": "字義",
+   "opts": [
+    "A method that measures environmental impact at every stage of a product's life",
+    "A test of how long jeans can be worn",
+    "A survey of customers' shopping habits",
+    "A way of recycling old cotton"
+   ],
+   "a": 0,
+   "exp": "第一段直接定義：衡量產品從生產、運輸、使用到丟棄各階段環境影響的方法，答案是 (A)。"
+  },
+  {
+   "q": "3. Why does the author mention the Aral Sea?",
+   "tag": "作者用意",
+   "opts": [
+    "To describe a popular tourist spot",
+    "To compare different kinds of lakes",
+    "To explain where Levi's factories are",
+    "To show how serious the effects of cotton's water demand can be"
+   ],
+   "a": 3,
+   "exp": "第二段：蘇聯為了灌溉棉田改道河流，讓鹹海大幅縮小，作者用這個例子說明種棉花的用水後果可能很嚴重，答案是 (D)。"
+  },
+  {
+   "q": "4. Why does the author call the consumer-phase finding \"counterintuitive\"?",
+   "tag": "推論",
+   "opts": [
+    "Washing jeans actually saves water.",
+    "Consumers use no energy at all.",
+    "People don't expect washing at home to be such a large part of the impact.",
+    "The finding required new technology."
+   ],
+   "a": 2,
+   "exp": "一般人以為環境衝擊主要來自工廠和農場，沒想到在家洗衣也占約 23%，而且只要少洗就能大幅減少，答案是 (C)。(D) 錯，文中說「完全不需要新技術」。"
+  },
+  {
+   "q": "5. Which of the following is NOT mentioned as a way to extend the life of clothing?",
+   "tag": "細節",
+   "opts": [
+    "Using new finishing techniques in factories",
+    "Careful washing",
+    "Repair",
+    "Resale"
+   ],
+   "a": 0,
+   "exp": "最後一段延長衣物壽命的方法是：小心清洗、修補、轉賣、回收。工廠的新後製技術雖有提到，但作者說它「有價值但不夠」，不是延長壽命的方法，答案是 (A)。"
+  }
+ ]
 ];
 const META = {
  "title": "The Thirsty Jeans",

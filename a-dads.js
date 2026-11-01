@@ -331,42 +331,156 @@ const GLOSS = {"stroller": ["n.", "嬰兒推車"], "latte": ["n.", "拿鐵咖啡
 const KEY = [["stroller", "parental", "leave", "paid", "share", "percent", "government", "diaper"], ["unemployed", "maternity", "responsibility", "available", "reserve", "transfer", "extend", "policy", "attitude"], ["phenomenon", "coincidence", "compensate", "egalitarian", "entrenched", "incentive", "quota", "forfeit", "persistent", "underlie"]];
 const FIGS = {"bars": {"svg": "<svg viewBox=\"0 0 600 342\" role=\"img\" aria-label=\"Days of parental leave reserved for fathers in Sweden\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FAF7FD\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#7A4FB5\">Leave Days Just for Dads in Sweden</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >瑞典「爸爸專屬」育嬰假天數</text>\n<line x1=\"80\" y1=\"236\" x2=\"540\" y2=\"236\" stroke=\"#1A2238\" stroke-width=\"2\"/>\n<g font-size=\"14\" text-anchor=\"middle\">\n<rect x=\"110\" y=\"232\" width=\"70\" height=\"4\" fill=\"#C9CED6\"/><text x=\"145\" y=\"220\" font-weight=\"900\">0 days</text><text x=\"145\" y=\"258\" font-weight=\"700\">1974</text><text x=\"145\" y=\"275\" font-size=\"12\">shared leave</text><text x=\"145\" y=\"290\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >爸媽可共享</text>\n<rect x=\"215\" y=\"186\" width=\"70\" height=\"50\" rx=\"4\" fill=\"#B79BDB\"/><text x=\"250\" y=\"176\" font-weight=\"900\">30 days</text><text x=\"250\" y=\"258\" font-weight=\"700\">1995</text>\n<rect x=\"320\" y=\"136\" width=\"70\" height=\"100\" rx=\"4\" fill=\"#9874CB\"/><text x=\"355\" y=\"126\" font-weight=\"900\">60 days</text><text x=\"355\" y=\"258\" font-weight=\"700\">2002</text>\n<rect x=\"425\" y=\"86\" width=\"70\" height=\"150\" rx=\"4\" fill=\"#7A4FB5\"/><text x=\"460\" y=\"76\" font-weight=\"900\">90 days</text><text x=\"460\" y=\"258\" font-weight=\"700\">2016–</text>\n</g>\n<text x=\"300\" y=\"314\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">480 days per child. If dad doesn't use his days, they're lost.</text><text x=\"300\" y=\"331\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >每個孩子共 480 天；爸爸專屬的天數不用就會消失</text></g></svg>", "cap": "瑞典一步步增加「爸爸專屬」的育嬰假，讓更多爸爸願意回家帶孩子。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "Why Swedish people love coffee",
-   "How Sweden encourages fathers to stay home with their babies",
-   "How to take care of a newborn baby",
-   "Why mothers in Sweden do not work"
-  ],
-  "a": 1,
-  "exp": "全文說明瑞典的育嬰假制度，以及如何用政策鼓勵爸爸回家照顧孩子。"
- },
- {
-  "q": "2. Why did the government save some leave days only for fathers?",
-  "tag": "細節",
-  "opts": [
-   "Because very few fathers were using the leave",
-   "Because mothers did not want any leave",
-   "Because babies prefer their fathers",
-   "Because the government wanted to save money"
-  ],
-  "a": 0,
-  "exp": "1974 年開放共享後，爸爸只用了約 0.5% 的天數，所以政府保留爸爸專屬天數。"
- },
- {
-  "q": "3. What is a \"latte dad\"?",
-  "tag": "推論",
-  "opts": [
-   "A father who works in a coffee shop",
-   "A father on parental leave who spends time with his baby",
-   "A father who drinks too much coffee",
-   "A father who has lost his job"
-  ],
-  "a": 1,
-  "exp": "拿鐵爸爸是在休育嬰假、推著嬰兒車、在咖啡館或公園陪孩子的爸爸。"
- }
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "Why many Swedish fathers stay home with their babies",
+    "How to make good coffee",
+    "Why Swedish mothers do not work",
+    "The best parks in Stockholm"
+   ],
+   "a": 0,
+   "exp": "文章說明瑞典為什麼有很多爸爸在家帶寶寶（有薪育嬰假），答案是 (A)。"
+  },
+  {
+   "q": "2. How many days of paid parental leave do Swedish parents get for each child?",
+   "tag": "細節",
+   "opts": [
+    "90",
+    "180",
+    "480",
+    "365"
+   ],
+   "a": 2,
+   "exp": "第二段：每個孩子父母一共有 480 天，答案是 (C)。90 天是保留給爸爸或媽媽各自的天數。"
+  },
+  {
+   "q": "3. What did the government do to get more fathers to take leave?",
+   "tag": "因果",
+   "opts": [
+    "It paid dads more money than moms.",
+    "It saved some days only for dads.",
+    "It closed the cafés.",
+    "It made all mothers stay home."
+   ],
+   "a": 1,
+   "exp": "第三段：保留一些只給爸爸的天數，爸爸不用就會失去，答案是 (B)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "The Best Cafés in Stockholm",
+    "Why Swedish Men Lose Their Jobs",
+    "Mothers Who Love Coffee",
+    "How Sweden Got Fathers to Stay Home"
+   ],
+   "a": 3,
+   "exp": "全文講瑞典用政策讓爸爸也請育嬰假，(D) 最適合。"
+  },
+  {
+   "q": "2. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "\"Latte dads\" are fathers without jobs.",
+    "Since 2016, 90 days have been reserved for each parent.",
+    "The \"daddy month\" was introduced in 1974.",
+    "Fathers now take most of the leave days."
+   ],
+   "a": 1,
+   "exp": "(B) 正確（第三段）。(A) 錯，他們是在請育嬰假；(C) 錯，爸爸月是 1995 年；(D) 錯，爸爸大約占 30%。"
+  },
+  {
+   "q": "3. What does \"could not be transferred to the other\" mean?",
+   "tag": "字義",
+   "opts": [
+    "could not be given to the other parent",
+    "could not be paid",
+    "could not be used in Sweden",
+    "could not be shared with grandparents"
+   ],
+   "a": 0,
+   "exp": "保留給爸爸的天數不能「轉給」媽媽用，答案是 (A)。transfer ＝ 轉讓。"
+  },
+  {
+   "q": "4. Which statement would the writer most likely agree with?",
+   "tag": "推論",
+   "opts": [
+    "Parental leave should only be for mothers.",
+    "Sweden has already achieved complete equality.",
+    "Laws can help change what people think is normal.",
+    "Fathers should not take time off work."
+   ],
+   "a": 2,
+   "exp": "最後一段：法律不只給人選擇，也能改變社會認為「正常」的事，答案是 (C)。(D) 錯，文中說瑞典還不完全平等。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "Swedish fathers drink more coffee than other Europeans.",
+    "Norway's leave system is better than Sweden's.",
+    "Gender-neutral rules are enough to create equality.",
+    "Sweden's reserved leave changed both fathers' behavior and social expectations."
+   ],
+   "a": 3,
+   "exp": "文章說明光有中性規定沒用，保留給每位家長的天數才真正改變行為和觀念，答案是 (D)。(C) 正好和作者的結論相反。"
+  },
+  {
+   "q": "2. The phrase \"entrenched expectations\" in the second paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "deeply fixed beliefs",
+    "new hopes",
+    "legal rules",
+    "unclear ideas"
+   ],
+   "a": 0,
+   "exp": "entrenched ＝ 根深蒂固的。指「嬰兒該由誰照顧」的傳統觀念很難改變，答案是 (A)。"
+  },
+  {
+   "q": "3. Why did the 1974 reform have little effect at first?",
+   "tag": "因果",
+   "opts": [
+    "The leave was unpaid.",
+    "Only mothers were allowed to use it.",
+    "Old ideas about childcare and men's fear for their careers remained.",
+    "The law was cancelled a year later."
+   ],
+   "a": 2,
+   "exp": "第二段：法律允許了，卻克服不了「誰該照顧嬰兒」的舊觀念，以及男性怕影響工作，答案是 (C)。"
+  },
+  {
+   "q": "4. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "Sweden was the first country to reserve leave for fathers.",
+    "Norway introduced a reserved quota before Sweden did.",
+    "The quota was expanded to three months in 2002.",
+    "Fathers now take about half of all leave days."
+   ],
+   "a": 1,
+   "exp": "第三段說 1995 年是在「挪威率先實施的兩年後」，所以 (B) 正確，(A) 錯。(C) 2002 年是兩個月；(D) 只有約 30%。"
+  },
+  {
+   "q": "5. If a father earns much more than the mother, what would the family most likely do?",
+   "tag": "推論",
+   "opts": [
+    "Let the mother take more of the leave to lose less income",
+    "Let the father take all of the leave",
+    "Give up parental leave completely",
+    "Ask the government for a higher salary"
+   ],
+   "a": 0,
+   "exp": "第四段：薪資差距讓爸爸請假時家庭損失較多收入，所以通常由媽媽請比較多，答案是 (A)。"
+  }
+ ]
 ];
 const META = {
  "title": "The Latte Dads of Sweden",

@@ -346,42 +346,156 @@ const GLOSS = {"study": ["n.", "研究"], "relationship": ["n.", "人際關係"]
 const KEY = [["study", "relationship", "lonely", "healthy", "famous", "neighbor", "caring", "director"], ["track", "interview", "satisfied", "predict", "quality", "quantity", "toxic", "decline", "investment"], ["longitudinal", "participant", "predictor", "midlife", "buffer", "inflammation", "regulator", "chronic", "sample"]];
 const FIGS = {"timeline": {"svg": "<svg viewBox=\"0 0 600 296\" role=\"img\" aria-label=\"Harvard study timeline\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F3FAF6\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#17875C\">An 85-Year Study</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >一個追蹤了 85 年以上的研究</text>\n<line x1=\"60\" y1=\"130\" x2=\"550\" y2=\"130\" stroke=\"#17875C\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n<path d=\"M550 118 L574 130 L550 142Z\" fill=\"#17875C\"/>\n<g font-size=\"13\" text-anchor=\"middle\">\n<circle cx=\"80\" cy=\"130\" r=\"14\" fill=\"#fff\" stroke=\"#17875C\" stroke-width=\"5\"/><text x=\"80\" y=\"98\" font-weight=\"900\" font-size=\"17\">1938</text>\n<text x=\"80\" y=\"170\" font-weight=\"700\">Study begins</text><text x=\"80\" y=\"187\">724 men</text><text x=\"80\" y=\"203\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >研究開始・724 位男性</text>\n<circle cx=\"230\" cy=\"130\" r=\"14\" fill=\"#fff\" stroke=\"#17875C\" stroke-width=\"5\"/><text x=\"230\" y=\"98\" font-weight=\"900\" font-size=\"17\">Age 50</text>\n<text x=\"230\" y=\"170\" font-weight=\"700\">Most satisfied</text><text x=\"230\" y=\"187\">with relationships…</text><text x=\"230\" y=\"203\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >對人際關係最滿意的人…</text>\n<circle cx=\"385\" cy=\"130\" r=\"14\" fill=\"#17875C\"/><text x=\"385\" y=\"98\" font-weight=\"900\" font-size=\"17\">Age 80</text>\n<text x=\"385\" y=\"170\">…were the</text><text x=\"385\" y=\"187\" font-weight=\"900\" fill=\"#17875C\">healthiest</text><text x=\"385\" y=\"203\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >…到老年最健康</text>\n<circle cx=\"525\" cy=\"130\" r=\"14\" fill=\"#fff\" stroke=\"#17875C\" stroke-width=\"5\"/><text x=\"525\" y=\"98\" font-weight=\"900\" font-size=\"17\">Today</text>\n<text x=\"525\" y=\"170\" font-weight=\"700\">Still going</text><text x=\"525\" y=\"187\">1,300+ children</text><text x=\"525\" y=\"203\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >繼續追蹤 1,300+ 位子女</text>\n</g>\n<rect x=\"90\" y=\"232\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#DDF3E9\"/>\n<text x=\"300\" y=\"252\" font-size=\"15\" text-anchor=\"middle\" font-weight=\"700\">Quality matters more than quantity.</text><text x=\"300\" y=\"269\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >關係的「品質」比「數量」更重要</text></g></svg>", "cap": "研究從 1938 年開始，追蹤同一群人到老年，現在連他們的子女也一起研究。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- {
-  "q": "1. What is the passage mainly about?",
-  "tag": "主旨",
-  "opts": [
-   "How Harvard students became rich",
-   "What a very long study found about happiness",
-   "Why some boys in Boston were poor",
-   "How to become famous"
-  ],
-  "a": 1,
-  "exp": "全文介紹哈佛長達 85 年以上的研究，以及它對「快樂與健康」的發現。"
- },
- {
-  "q": "2. According to the passage, what matters most for a happy and healthy life?",
-  "tag": "細節",
-  "opts": [
-   "Having a large number of friends",
-   "Earning a lot of money",
-   "Having close, caring relationships",
-   "Going to a famous university"
-  ],
-  "a": 2,
-  "exp": "文中指出重要的是關係的品質（親近、關懷），而不是朋友的數量或金錢。"
- },
- {
-  "q": "3. What does the passage say about loneliness?",
-  "tag": "推論",
-  "opts": [
-   "It helps people think more clearly",
-   "It is harmful to people's health",
-   "It only affects young people",
-   "It makes people more successful"
-  ],
-  "a": 1,
-  "exp": "各級文章都提到孤單對身心有害（bad for body and mind / toxic / damaging health）。"
- }
+ [
+  {
+   "q": "1. According to the study, what makes people happy?",
+   "tag": "主旨",
+   "opts": [
+    "A lot of money",
+    "Being famous",
+    "Good relationships",
+    "Going to Harvard"
+   ],
+   "a": 2,
+   "exp": "第三段：答案很簡單，就是良好的人際關係，答案是 (C)。"
+  },
+  {
+   "q": "2. Who was in the study?",
+   "tag": "細節",
+   "opts": [
+    "724 young men, including Harvard students and poor boys from Boston",
+    "Only Harvard students",
+    "Only famous people",
+    "724 women from Boston"
+   ],
+   "a": 0,
+   "exp": "第一段：追蹤了 724 位年輕男性，有哈佛學生也有波士頓的窮困男孩，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE?",
+   "tag": "細節",
+   "opts": [
+    "People with many friends are always the happiest.",
+    "Feeling lonely is good for the mind.",
+    "The study ended in 1938.",
+    "How close your relationships are matters more than how many friends you have."
+   ],
+   "a": 3,
+   "exp": "第四段：朋友的數量不重要，重要的是關係有多親近，答案是 (D)。(C) 錯，研究 1938 年開始，至今仍在進行。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "How to Get into Harvard",
+    "What an 85-Year Study Says About Happiness",
+    "The Life of John F. Kennedy",
+    "Why Money Is the Key to Health"
+   ],
+   "a": 1,
+   "exp": "全文講哈佛一項長期研究對幸福的發現，(B) 最適合。(D) 和研究結果相反。"
+  },
+  {
+   "q": "2. Which of the following best predicted a long, healthy life?",
+   "tag": "細節",
+   "opts": [
+    "Being satisfied with relationships at age 50",
+    "Having a lot of money",
+    "Becoming famous",
+    "Having low cholesterol"
+   ],
+   "a": 0,
+   "exp": "第三段：50 歲時對人際關係最滿意的人，到 80 歲最健康，比金錢、名氣甚至膽固醇更能預測健康，答案是 (A)。"
+  },
+  {
+   "q": "3. What does \"one person you can truly count on\" mean?",
+   "tag": "字義",
+   "opts": [
+    "Someone who is good at math",
+    "Someone who counts your money",
+    "Someone you meet only once",
+    "Someone you can really depend on"
+   ],
+   "a": 3,
+   "exp": "count on ＝ 依靠、信賴，答案是 (D)。"
+  },
+  {
+   "q": "4. What does the writer suggest we do?",
+   "tag": "推論",
+   "opts": [
+    "Study harder to get better grades",
+    "Get more likes on social media",
+    "Spend more time with people we care about",
+    "Make as many friends as possible"
+   ],
+   "a": 2,
+   "exp": "最後一段：與其追求成績、金錢、按讚數，不如把時間投資在在乎的人身上，答案是 (C)。(D) 錯，品質比數量重要。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "A long-running study found that close relationships strongly protect health and happiness.",
+    "Harvard students live longer than other people.",
+    "Cholesterol is the best predictor of aging.",
+    "Psychological studies should only use surveys."
+   ],
+   "a": 0,
+   "exp": "文章介紹這項追蹤八十多年的研究，核心發現是親密可靠的關係能保護身心健康，答案是 (A)。"
+  },
+  {
+   "q": "2. The word \"longitudinal\" in the first paragraph refers to a study that ______.",
+   "tag": "字義",
+   "opts": [
+    "asks many people one question",
+    "takes place in many countries",
+    "uses only brain scans",
+    "follows the same people over a long period"
+   ],
+   "a": 3,
+   "exp": "後面直接解釋：它追蹤同一批人超過八十年，和「只捕捉單一時刻」的研究不同，答案是 (D)。"
+  },
+  {
+   "q": "3. According to Waldinger, how do relationships help our bodies?",
+   "tag": "因果",
+   "opts": [
+    "They lower the cost of medical care.",
+    "They help the body return to calm after stress.",
+    "They make people exercise more.",
+    "They help people sleep longer."
+   ],
+   "a": 1,
+   "exp": "第三段：獨自面對問題時身體長期處於警戒；可信任的人能幫身體回到平靜，像生理調節器，答案是 (B)。"
+  },
+  {
+   "q": "4. What is one limitation of the study mentioned in the passage?",
+   "tag": "細節",
+   "opts": [
+    "It lasted too short a time.",
+    "It included too many women.",
+    "The original group was made up only of white American men.",
+    "It did not include any poor participants."
+   ],
+   "a": 2,
+   "exp": "第四段：最初的樣本全是美國白人男性，結論不能直接套用到所有人，答案是 (C)。(D) 錯，有來自波士頓貧困地區的男孩。"
+  },
+  {
+   "q": "5. Why does the research team now study the participants' children?",
+   "tag": "推論",
+   "opts": [
+    "To make the findings apply to a wider group of people, including women",
+    "Because the original participants refused to continue",
+    "To find out who inherited money",
+    "Because the children asked to join"
+   ],
+   "a": 0,
+   "exp": "第四段：為了彌補樣本只有男性的限制，研究擴大到參與者的子女（包含兒子和女兒），答案是 (A)。"
+  }
+ ]
 ];
 const META = {
  "title": "The 85-Year Secret to Happiness",

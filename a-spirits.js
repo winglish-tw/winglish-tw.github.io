@@ -155,15 +155,156 @@ const FIGS = {
     credit:"插圖：Winglish"}
 };
 const QUIZ = [
-  { q:"1. What is the passage mainly about?", tag:"主旨",
-    opts:["How to make animals out of vegetables","Different ways people welcome back the spirits of the dead","Why Mexico's Day of the Dead is famous","How to travel to Japan and Madagascar"],
-    a:1, exp:"文章介紹日本盂蘭盆節和馬達加斯加翻屍節兩種迎接亡靈的方式，所以主旨是 (B)。(A) 只是盂蘭盆節裡的一個細節。"},
-  { q:"2. Which of the following is TRUE?", tag:"細節",
-    opts:["The eggplant cow carries the spirits home quickly.","Families in Madagascar open the tomb every year.","Paper lanterns are put on rivers to say goodbye to the spirits.","Famadihana is a sad and quiet ceremony."],
-    a:2, exp:"(C) 正確：節日最後把燈籠放到河上送靈魂回去。(A) 茄子牛是「慢慢」載回去；(B) 是每隔幾年，不是每年；(D) 翻屍節是歡樂、有音樂跳舞的家族團聚。"},
-  { q:"3. Why do people in Japan make a cucumber horse?", tag:"推論",
-    opts:["To cook it for dinner","So the spirits can come home fast","So the spirits can leave slowly","To give children a toy"],
-    a:1, exp:"馬跑得快，小黃瓜馬是讓祖先的靈魂「快點回家」。慢慢離開的是茄子做的牛。"}
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to make toys from vegetables",
+    "Why Mexico is famous",
+    "Holidays in other countries for family members who have died",
+    "How to make paper lanterns"
+   ],
+   "a": 2,
+   "exp": "第一句就說：墨西哥不是唯一有紀念亡者節日的國家，接著介紹日本和馬達加斯加，答案是 (C)。"
+  },
+  {
+   "q": "2. Why do families make a horse from a cucumber?",
+   "tag": "因果",
+   "opts": [
+    "So the spirits can come home quickly",
+    "So children have a toy",
+    "Because cucumbers are cheap",
+    "So the spirits stay longer"
+   ],
+   "a": 0,
+   "exp": "第三段：馬跑得快，祖先的靈魂可以快點回家，答案是 (A)。讓靈魂慢慢離開的是茄子做的牛。"
+  },
+  {
+   "q": "3. What do some families in Madagascar do every few years?",
+   "tag": "細節",
+   "opts": [
+    "Put lanterns on the river",
+    "Make cows from eggplants",
+    "Paint skulls",
+    "Take out their ancestors' bodies, wrap them in new cloth and dance"
+   ],
+   "a": 3,
+   "exp": "第四段：打開家族墳墓，把祖先的遺體拿出來、包上新布，然後唱歌跳舞，答案是 (D)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "The History of Mexican Food",
+    "Welcoming the Dead Around the World",
+    "How to Grow Cucumbers and Eggplants",
+    "Silk Making in Madagascar"
+   ],
+   "a": 1,
+   "exp": "文章介紹日本和馬達加斯加迎接、紀念亡者的習俗，(B) 最適合。"
+  },
+  {
+   "q": "2. Why is an eggplant turned into a slow-moving cow?",
+   "tag": "因果",
+   "opts": [
+    "So the spirits can take their time going back, carrying the gifts they received",
+    "Because eggplants are heavier than cucumbers",
+    "So the spirits can arrive quickly",
+    "Because cows are holy animals in Japan"
+   ],
+   "a": 0,
+   "exp": "第三段：牛走得慢，靈魂回去時可以慢慢走，還背著收到的禮物，答案是 (A)。"
+  },
+  {
+   "q": "3. Which of the following is TRUE about Famadihana?",
+   "tag": "細節",
+   "opts": [
+    "Its name means \"the festival of lanterns.\"",
+    "It is a quiet and sad ceremony.",
+    "It takes place during the rainy summer.",
+    "It is usually held every five to seven years."
+   ],
+   "a": 3,
+   "exp": "(D) 正確（第四段）。(A) 錯，意思是「翻轉骨頭」；(B) 錯，充滿音樂和舞蹈；(C) 錯，是在乾燥的冬季。"
+  },
+  {
+   "q": "4. What belief do these customs share, according to the last paragraph?",
+   "tag": "推論",
+   "opts": [
+    "The dead should be forgotten quickly.",
+    "Only Mexico truly honors the dead.",
+    "Death cannot break the bonds of family.",
+    "Spirits are dangerous to the living."
+   ],
+   "a": 2,
+   "exp": "最後一段：死亡可能讓家人分開，但無法切斷彼此的連結，答案是 (C)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following best states the main idea of the passage?",
+   "tag": "主旨",
+   "opts": [
+    "The Day of the Dead is the only festival for the dead.",
+    "Obon and Famadihana are both Buddhist ceremonies.",
+    "Many cultures see the line between the living and the dead as open, and keep the dead as part of the family.",
+    "Outsiders should not watch these ceremonies."
+   ],
+   "a": 2,
+   "exp": "文章從墨西哥延伸到日本和馬達加斯加，說明很多文化把生死界線視為可以互通，亡者仍是家人，答案是 (C)。"
+  },
+  {
+   "q": "2. The word \"porous\" in the first paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "allowing things to pass through",
+    "completely closed",
+    "very dangerous",
+    "clearly marked"
+   ],
+   "a": 0,
+   "exp": "porous 和後面的 absolute（絕對的）相對：生死之間的界線不是完全封閉，而是可以穿越的，答案是 (A)。"
+  },
+  {
+   "q": "3. How does the author contrast Obon with Famadihana?",
+   "tag": "作者用意",
+   "opts": [
+    "Obon is joyful, while Famadihana is sad.",
+    "Obon takes place in winter, while Famadihana takes place in summer.",
+    "Obon involves dancing with the dead, while Famadihana uses vegetables.",
+    "Obon treats the dead as honored guests, while Famadihana treats them as participants."
+   ],
+   "a": 3,
+   "exp": "第四段第一句：如果說 Obon 把亡者當成貴賓，Famadihana 就是把他們當成參與者，答案是 (D)。"
+  },
+  {
+   "q": "4. What is the purpose of the shoryo-uma?",
+   "tag": "細節",
+   "opts": [
+    "To decorate the family tomb",
+    "To carry the spirits home quickly and take them back slowly",
+    "To feed the family during Obon",
+    "To guide boats on the river"
+   ],
+   "a": 1,
+   "exp": "第三段：小黃瓜馬讓祖先快點回家，茄子牛讓他們慢慢離開、帶回供品，答案是 (B)。"
+  },
+  {
+   "q": "5. What does the author suggest is \"the true loss\"?",
+   "tag": "推論",
+   "opts": [
+    "Forgetting the dead",
+    "Opening a family tomb",
+    "Spending money on festivals",
+    "Leaving one's hometown"
+   ],
+   "a": 0,
+   "exp": "最後一段：這些儀式強調延續，亡者仍是家人，忘記他們才是真正的失去，答案是 (A)。"
+  }
+ ]
 ];
 
 
