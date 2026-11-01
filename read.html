@@ -1,0 +1,464 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<title>Winglish 閱讀館</title>
+<style>
+:root{
+  --ink:#1A2238; --ink-soft:#4A536B; --paper:#F7F9FC; --white:#FFFFFF; --mist:#E4E9F2;
+  --red:#D23F57; --red-soft:#F7D9DF; --marker:#FFE14D; --marker-soft:#FFF6C9;
+  --ok:#17875C; --ok-soft:#DDF3E9; --bad-soft:#FCE6EA; --fs:20px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--white);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font:inherit;color:inherit}
+.bf{font-family:"Bricolage Grotesque","Noto Sans TC",sans-serif}
+
+/* top site bar */
+.site{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid var(--mist)}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo b{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;font-weight:800;letter-spacing:-.5px;line-height:1}
+.logo small{display:block;font-size:12px;font-weight:700;color:var(--red);letter-spacing:4px;margin-top:2px}
+.site nav{display:flex;gap:18px;font-size:15px}
+.site nav a{text-decoration:none;color:var(--ink-soft)}
+.site nav a.on{color:var(--ink);font-weight:700;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+
+/* sticky reading controls (like Newsela's Language / Reading level bar) */
+.controls{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--mist);padding:10px 20px;display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
+.ctl label{display:block;font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:2px}
+.ctl select{font:inherit;font-size:15px;border:1.5px solid var(--mist);border-radius:10px;padding:7px 30px 7px 12px;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A2238' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 10px center;-webkit-appearance:none;appearance:none;color:var(--ink)}
+.controls .spacer{flex:1}
+.listen-big{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:0;border-radius:999px;padding:9px 18px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #9E2A3E}
+.listen-big.playing{background:var(--ink);box-shadow:0 4px 0 #000}
+
+/* layout */
+.layout{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:40px;padding:24px 20px 80px}
+@media (max-width:960px){.layout{grid-template-columns:1fr;gap:24px}}
+.article{max-width:740px;margin:0 auto;width:100%}
+
+.crumb{font-size:14px;color:var(--ink-soft);margin-bottom:6px}
+.crumb a{text-decoration:none;color:var(--red);font-weight:700}
+h1{font-family:"Bricolage Grotesque",sans-serif;font-size:clamp(32px,5vw,46px);line-height:1.12;font-weight:800;letter-spacing:-.5px;margin:0 0 10px}
+.dek{font-size:18px;color:var(--ink-soft);margin:0 0 20px}
+figure{margin:0 0 6px}
+figure svg{display:block;width:100%;height:auto;border-radius:6px}
+figcaption{font-size:14px;color:var(--ink-soft);padding:8px 0 0}
+.byline{border-top:1px solid var(--mist);margin-top:18px}
+.byline > div{padding:10px 0;border-bottom:1px solid var(--mist);font-size:16px}
+.cap{font-size:12px;letter-spacing:1.5px;color:var(--ink-soft);text-transform:uppercase;margin-right:6px}
+.metas{display:flex;flex-wrap:wrap}
+.metas span{padding-right:18px;margin-right:18px;border-right:1px solid var(--mist)}
+.metas span:last-child{border:0}
+.metas b{font-size:18px;font-weight:600}
+
+/* tool icons row */
+.tools{display:flex;gap:6px;margin:18px 0 8px;flex-wrap:wrap}
+.tool{display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:0;border-radius:12px;padding:8px 12px;cursor:pointer;font-size:12px;color:var(--ink-soft);min-width:64px}
+.tool svg{width:26px;height:26px}
+.tool:hover{background:var(--paper)}
+.tool.on{background:var(--marker-soft);color:var(--ink)}
+.tip{font-size:14px;background:var(--paper);border-radius:12px;padding:10px 14px;color:var(--ink-soft);margin:6px 0 22px}
+.tip b{color:var(--ink)}
+
+/* article text */
+.text{font-family:"Literata",Georgia,serif;font-size:var(--fs);line-height:1.8}
+.text h2{font-family:"Bricolage Grotesque",sans-serif;font-size:1.15em;margin:1.4em 0 .4em;font-weight:800}
+.text p{margin:0 0 1.1em}
+.s{border-radius:4px;transition:background .2s;cursor:pointer}
+.s.reading{background:var(--marker)}
+.s.sel{background:var(--marker-soft);box-shadow:0 2px 0 var(--marker)}
+.w.gl{border-bottom:2px dotted var(--red)}
+.w.good{color:var(--ok);background:var(--ok-soft)}
+.w.miss{color:var(--red);background:var(--bad-soft)}
+.pzh{display:none;font-family:"Noto Sans TC",sans-serif;font-size:.78em;line-height:1.7;color:var(--ink-soft);background:var(--paper);border-left:4px solid var(--marker);border-radius:8px;padding:8px 12px;margin:-.5em 0 1.2em}
+.showzh .pzh{display:block}
+
+.fact{background:var(--marker-soft);border-radius:16px;padding:16px 18px;margin:26px 0;display:flex;gap:14px;align-items:flex-start}
+.fact .ic{flex:none;width:42px;height:42px;border-radius:12px;background:var(--marker);display:grid;place-items:center;font-size:22px}
+.fact b{display:block;font-size:16px}
+
+/* quiz */
+.quiz{border-top:8px solid var(--red);background:var(--white);border-radius:20px;box-shadow:0 1px 0 var(--mist),0 24px 50px -28px rgba(26,34,56,.35);padding:22px;margin-top:30px}
+.quiz h2{margin:0 0 4px;font-size:22px}
+.quiz .sub{color:var(--ink-soft);font-size:14px;margin:0 0 10px}
+.q{margin:18px 0}
+.q p{font-weight:700;margin:0 0 8px}
+.opt{display:flex;gap:10px;align-items:center;width:100%;text-align:left;border:1.5px solid var(--mist);background:var(--white);border-radius:10px;padding:9px 12px;margin:6px 0;font-size:16px;cursor:pointer}
+.opt .bub{flex:none;width:30px;height:18px;border:2px solid var(--red);border-radius:50%;font-size:11px;font-weight:700;color:var(--red);display:grid;place-items:center;font-family:"Bricolage Grotesque"}
+.opt.right{border-color:var(--ok);background:var(--ok-soft)}
+.opt.wrong{border-color:var(--red);background:var(--bad-soft)}
+.exp{display:none;font-size:15px;border-radius:10px;padding:10px 14px;background:var(--ok-soft);border-left:5px solid var(--ok)}
+.exp.bad{background:var(--bad-soft);border-left-color:var(--red)}
+.exp.show{display:block}
+.qscore{font-weight:800;font-size:18px;color:var(--red);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.again{border:2px solid var(--ink);background:none;border-radius:999px;padding:5px 16px;font-weight:700;cursor:pointer;font-size:15px}
+
+/* side panel */
+.side{display:flex;flex-direction:column;gap:18px}
+@media (min-width:961px){.side{position:sticky;top:84px;align-self:start;max-height:calc(100vh - 100px);overflow:auto}}
+.panel{border:1.5px solid var(--mist);border-radius:18px;padding:18px;background:var(--white)}
+.panel h3{margin:0 0 10px;font-size:18px;display:flex;align-items:center;gap:8px}
+.task{display:flex;align-items:center;gap:12px;border:1.5px solid var(--mist);border-radius:12px;padding:10px 12px;margin:8px 0}
+.task .tic{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-size:17px;flex:none}
+.task .tt{flex:1;line-height:1.35}
+.task small{display:block;color:var(--ink-soft);font-size:13px}
+.task .chk{width:24px;height:24px;border-radius:7px;border:2px solid var(--mist);display:grid;place-items:center;color:#fff;font-weight:900;font-size:14px}
+.task.done{border-color:var(--ok)}
+.task.done .chk{background:var(--ok);border-color:var(--ok)}
+.prog{height:8px;border-radius:4px;background:var(--mist);overflow:hidden;margin-top:6px}
+.prog i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
+.vocab{list-style:none;margin:0;padding:0}
+.vocab li{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed var(--mist)}
+.vocab li:last-child{border:0}
+.vocab .vw{font-family:"Bricolage Grotesque";font-weight:700;font-size:17px}
+.vocab .vp{color:var(--red);font-size:13px;font-weight:700}
+.vocab .vz{color:var(--ink-soft);font-size:14px;flex:1}
+.spk{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--mist);background:var(--white);cursor:pointer;flex:none;font-size:13px}
+
+
+figure img.photo{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:6px;background:var(--mist)}
+figure img.photo + svg{display:none}
+.credit{display:block;font-size:12px;color:#8a93a8;margin-top:2px}
+.credit a{color:#8a93a8}
+.text figure{margin:.4em 0 1.4em;font-family:"Noto Sans TC",sans-serif}
+.text figure img.photo{aspect-ratio:3/2}
+.text figcaption{font-size:14px;line-height:1.6}
+.ph-fallback{display:flex;align-items:center;justify-content:center;aspect-ratio:3/2;border-radius:6px;font-size:15px;color:var(--ink-soft);background:repeating-linear-gradient(45deg,var(--paper) 0 12px,var(--mist) 12px 13px)}
+
+.voicebar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:4px 0 8px;font-size:14px}
+.voicebar label{font-weight:700}
+.voicebar select{font:inherit;font-size:14px;border:1.5px solid var(--mist);border-radius:10px;padding:6px 10px;background:var(--white);max-width:100%;color:var(--ink)}
+.vb-note{color:var(--ink-soft);font-size:13px}
+.vtip{display:none;font-size:14px;line-height:1.7;background:#FFF6C9;border-radius:12px;padding:10px 14px;margin:0 0 8px;color:var(--ink)}
+/* bottom sheet: word + sentence tools */
+.sheet{position:fixed;left:50%;bottom:14px;transform:translate(-50%,140%);width:min(94vw,560px);background:var(--white);border-radius:20px;box-shadow:0 18px 50px rgba(26,34,56,.28);border:1px solid var(--mist);z-index:40;transition:transform .25s;overflow:hidden}
+.sheet.show{transform:translate(-50%,0)}
+.sheet .wordrow{display:flex;align-items:center;gap:10px;padding:14px 16px 10px}
+.sheet .wd{font-family:"Bricolage Grotesque";font-size:26px;font-weight:800;line-height:1}
+.sheet .wm{flex:1;font-size:15px}
+.sheet .wm .pos{color:var(--red);font-weight:700;margin-right:6px}
+.sheet .x{border:0;background:none;font-size:24px;cursor:pointer;color:var(--ink-soft);align-self:flex-start}
+.sheet .srow{display:flex;gap:8px;align-items:center;padding:10px 16px;background:var(--paper);border-top:1px solid var(--mist);flex-wrap:wrap}
+.sheet .srow span{font-size:13px;color:var(--ink-soft);margin-right:auto}
+.pill{border:1.5px solid var(--ink);background:var(--white);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px;cursor:pointer}
+.pill.rec{border-color:var(--red);color:var(--red)}
+.pill.recording{background:var(--red);color:#fff;animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.6}}
+.sheet .sz,.sheet .sres{display:none;padding:10px 16px;font-size:15px;border-top:1px solid var(--mist)}
+.sheet .sz.show,.sheet .sres.show{display:block}
+.sres b.sc{font-family:"Bricolage Grotesque";font-size:26px;margin-right:8px}
+
+@media (max-width:600px){
+ .controls{gap:8px;padding:8px 14px;flex-wrap:nowrap;align-items:center}
+ .ctl label{display:none}
+ .ctl select{font-size:14px;padding:7px 26px 7px 10px}
+ .listen-big{padding:8px 12px;font-size:14px;white-space:nowrap}
+ .tool{flex:1;min-width:0;padding:8px 2px}
+ .tools{flex-wrap:nowrap;gap:2px}
+ .metas span{padding-right:10px;margin-right:10px}
+ .metas b{font-size:16px}
+ .layout{padding-top:16px}
+}
+.back{display:flex;align-items:center;gap:12px;text-decoration:none;background:var(--ink);color:#fff;border-radius:18px;padding:16px 20px;margin-top:30px}
+.back span{opacity:.75;font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="logo" href="index.html" aria-label="Winglish 必英 首頁">
+    <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#1A2238"/><path d="M7 12c5 1 8 4 9.5 10L20 13l3.5 9c1.5-6 4.5-9 9.5-10-3.5 4-5 9-6 16h-3.2L20 20.5 16.2 28H13c-1-7-2.5-12-6-16z" fill="#fff"/><ellipse cx="31" cy="30" rx="4" ry="2.4" fill="#FFE14D"/></svg>
+    <span><b>Winglish</b><small>必英</small></span>
+  </a>
+  <nav><a href="index.html">學測練習</a><a href="reading.html" class="on">閱讀館</a></nav>
+</header>
+
+<div class="controls">
+  <div class="ctl"><label for="lv">閱讀難度</label>
+    <select id="lv"><option value="0">Level 1・國三</option><option value="1">Level 2・高二</option><option value="2">Level 3・超越學測</option></select></div>
+  <div class="ctl"><label for="rate">朗讀速度</label>
+    <select id="rate"><option value="0.7">0.7x 慢速</option><option value="0.85" selected>0.85x 稍慢</option><option value="1">1x 正常</option></select></div>
+  <div class="spacer"></div>
+  <button class="listen-big" id="listenBig">🎧 <span>朗讀全文</span></button>
+</div>
+
+<div class="layout">
+  <article class="article">
+    <div class="crumb"><a href="reading.html">閱讀館</a>　›　<span id="aCat"></span></div>
+    <h1 id="aTitle"></h1>
+    <p class="dek" id="aDek"></p>
+
+    <figure class="hero-fig" id="aHero"></figure>
+
+    <div class="byline">
+      <div>By Winglish 編輯部</div>
+      <div><span class="cap">適合</span><span id="recFor">高一（國中基礎加強）</span></div>
+      <div class="metas"><span><span class="cap">字數</span><b class="bf" id="mWords">0</b></span><span><span class="cap">難度</span><b class="bf" id="mLevel">Level 1</b></span><span><span class="cap">發布</span><b class="bf" id="aDate"></b></span></div>
+    </div>
+
+    <div class="tools">
+      <button class="tool" id="tListen"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 15v-3a8 8 0 0 1 16 0v3"/><rect x="3" y="14" width="4" height="7" rx="1.5"/><rect x="17" y="14" width="4" height="7" rx="1.5"/></svg>朗讀</button>
+      <button class="tool" id="tZh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h10M8 3v2M5 5c1 4 4 7 7 8M11 5c-1 4-4 7-7 8"/><path d="M13 21l4-9 4 9M14.5 18h5"/></svg>中譯</button>
+      <button class="tool" id="tSize"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l5-13 5 13M4.8 15h6.4"/><path d="M15 19l3-8 3 8M16 16.5h4"/></svg>字體大小</button>
+      <button class="tool" id="tMark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>收藏</span></button>
+      <button class="tool" id="tQuiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>測驗</button>
+    </div>
+    <div class="voicebar"><label for="voiceSel">🗣 朗讀聲音</label><select id="voiceSel"><option>載入中…</option></select><span class="vb-note">有 ⭐ 的最像真人</span></div>
+    <div class="vtip" id="voiceTip"><b>聲音聽起來很機械？</b>免費換成高品質聲音：<br>
+      ・<b>iPhone / iPad</b>：設定 → 輔助使用 → 朗讀內容 → 聲音 → 英文，下載標示「高品質」或「加強版」的聲音（例如 Ava、Zoe），回來重新整理網頁。<br>
+      ・<b>電腦</b>：用 <b>Microsoft Edge</b> 瀏覽器開這個網站，會自動用最像真人的「Natural」聲音。</div>
+    <div class="tip">👆 <b>點文章裡任何一個字</b>：看中文意思，還能聽這一句、跟讀這一句。紅色虛線是這一級的重點單字（右邊／下方「本篇單字」有整理）。</div>
+
+    <div class="text" id="text"></div>
+
+    <div class="fact"><div class="ic">💡</div><div><b>冷知識</b><span id="aFact"></span></div></div>
+
+    <section class="quiz" id="quiz">
+      <h2>讀完測驗</h2>
+      <p class="sub">三種難度都做同一份題目，答完立刻看詳解。</p>
+      <div id="qs"></div>
+      <div class="qscore" id="qscore"></div>
+    </section>
+
+    <a class="back" id="aNext" href="reading.html"><div><b>回到閱讀館</b><br><span id="aNextT"></span></div><span style="margin-left:auto;font-size:22px">→</span></a>
+  </article>
+
+  <aside class="side">
+    <div class="panel">
+      <h3>✅ 本篇任務</h3>
+      <div class="task" id="k1"><div class="tic" style="background:var(--marker-soft)">🎧</div><div class="tt">聽完全文<small>按「朗讀全文」聽到最後一句</small></div><div class="chk">✓</div></div>
+      <div class="task" id="k2"><div class="tic" style="background:var(--red-soft)">🎤</div><div class="tt">跟讀 3 句<small id="k2s">已完成 0 / 3 句（70 分以上）</small></div><div class="chk">✓</div></div>
+      <div class="task" id="k3"><div class="tic" style="background:var(--ok-soft)">📝</div><div class="tt">完成閱讀測驗<small id="k3s">0 / 3 題</small></div><div class="chk">✓</div></div>
+      <div class="prog"><i id="progBar"></i></div>
+    </div>
+    <div class="panel">
+      <h3>📒 本篇單字</h3>
+      <ul class="vocab" id="vocab"></ul>
+    </div>
+  </aside>
+</div>
+
+<div class="sheet" id="sheet" role="dialog" aria-label="單字與句子工具">
+  <div class="wordrow">
+    <div style="flex:1"><div class="wd" id="wd"></div><div class="wm" id="wm"></div></div>
+    <button class="spk" id="wSpk" title="念這個字">🔊</button>
+    <button class="x" id="sx" aria-label="關閉">×</button>
+  </div>
+  <div class="srow">
+    <span>這一句</span>
+    <button class="pill" id="sPlay">▶ 聽</button>
+    <button class="pill rec" id="sRec">🎤 跟讀</button>
+    <button class="pill" id="sZhBtn">中譯</button>
+  </div>
+  <div class="sz" id="sz"></div>
+  <div class="sres" id="sres"></div>
+</div>
+
+<script>
+function initArticle(){
+const A=window.ARTICLE; const {LEVELS,GLOSS,KEY,FIGS,QUIZ}=A;
+document.title=A.title+"｜Winglish 閱讀館";
+document.getElementById("aCat").textContent=A.category; document.getElementById("aTitle").textContent=A.title;
+document.getElementById("aDek").textContent=A.dek; document.getElementById("aHero").innerHTML=A.hero;
+document.getElementById("aDate").textContent=A.date; document.getElementById("aFact").textContent=A.fact;
+if(A.next){ document.getElementById("aNext").href=A.next.href||"reading.html"; document.getElementById("aNextT").textContent="下一篇："+A.next.title+(A.next.soon?"（即將推出）":""); if(A.next.soon) document.getElementById("aNext").href="reading.html"; }
+function lookup(w){ w=w.replace(/['’]s$/,"");
+  const c=[w,w.replace(/ies$/,"y"),w.replace(/es$/,""),w.replace(/s$/,""),w.replace(/ed$/,""),w.replace(/d$/,""),w.replace(/ing$/,""),w.replace(/ing$/,"e")];
+  for(const k of c){ if(GLOSS[k]) return [k,...GLOSS[k]]; } return null;
+}
+
+function figHTML(k){ const f=FIGS[k];
+  if(f.svg) return `<figure>${f.svg}<figcaption>${f.cap}<span class="credit">${f.credit}</span></figcaption></figure>`;
+  return `<figure><img class="photo" src="${f.src}" data-local="${f.local}" alt="${f.alt}" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.outerHTML='<div class=&quot;ph-fallback&quot;>${f.fb}</div>'}"><figcaption>${f.cap}<span class="credit">${f.credit}</span></figcaption></figure>`; }
+
+const $=s=>document.querySelector(s);
+let level=0, selS=null, playing=false, stopFlag=false, voice=null;
+let state={listened:false, recOk:new Set(), answered:{}};
+
+/* ---------- speech ---------- */
+const NOVELTY=/Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Fred|Junior|Ralph|Kathy|Grandma|Grandpa|Rocko|Shelley|Sandy|Flo|Eddy|Reed/i;
+function vScore(v){ let n=v.name, s=0;
+  if(/Natural|Online/i.test(n)) s+=100;          // Edge 的自然語音（最像真人）
+  if(/Premium/i.test(n)) s+=90;                  // Apple 高品質語音
+  if(/Enhanced|Neural|WaveNet/i.test(n)) s+=80;
+  if(/^Google/i.test(n)) s+=60;                  // Chrome 的 Google 語音
+  if(/Ava|Zoe|Evan|Nathan|Allison|Susan|Aria|Jenny|Guy|Emma|Andrew|Brian|Samantha/i.test(n)) s+=15;
+  if(/en[-_]US/i.test(v.lang)) s+=10; else if(/en[-_](GB|AU|CA)/i.test(v.lang)) s+=5;
+  return s; }
+let VOICES=[];
+const IS_IOS=/iP(hone|ad|od)/.test(navigator.userAgent)||(navigator.platform==="MacIntel"&&navigator.maxTouchPoints>1);
+function loadVoices(){ try{
+  VOICES=speechSynthesis.getVoices().filter(v=>/^en[-_]/i.test(v.lang)&&!NOVELTY.test(v.name)).sort((a,b)=>vScore(b)-vScore(a));
+  let saved=null; try{ saved=localStorage.getItem("wg-voice"); }catch(e){}
+  // iPhone/iPad：沒自己選過就用裝置預設聲音（最穩定）；其他裝置自動挑最像真人的
+  voice=VOICES.find(v=>v.name===saved)||(IS_IOS?null:VOICES[0])||null;
+  const sel=document.getElementById("voiceSel"); if(!sel) return;
+  sel.innerHTML=(voice?"":'<option value="" selected>裝置預設聲音</option>')+VOICES.slice(0,10).map(v=>`<option value="${v.name}"${voice&&v.name===voice.name?" selected":""}>${v.name.replace(/Microsoft |Google |\(.*?\)| Online| - English.*$/g,"").trim()}${vScore(v)>=80?" ⭐":""}（${v.lang.replace("_","-")}）</option>`).join("")||"<option>預設聲音</option>";
+  const best=VOICES[0]?vScore(VOICES[0]):0;
+  document.getElementById("voiceTip").style.display = best>=80 ? "none" : "block";
+}catch(e){} }
+if("speechSynthesis" in window){ loadVoices(); speechSynthesis.onvoiceschanged=loadVoices; setTimeout(loadVoices,800); }
+document.addEventListener("change",e=>{ if(e.target.id!=="voiceSel") return; voiceOK=false; voice=e.target.value?(VOICES.find(v=>v.name===e.target.value)||null):null; try{ voice?localStorage.setItem("wg-voice",voice.name):localStorage.removeItem("wg-voice"); }catch(_){} stopAll(); speak("Hi! This is how I sound."); });
+let voiceOK=false;
+function speak(t,end,plain){ if(!("speechSynthesis" in window)){ end&&end(); return; }
+  const u=new SpeechSynthesisUtterance(t); u.lang="en-US"; u.rate=+$("#rate").value;
+  const useV = voice && !plain;
+  if(useV){ u.voice=voice; u.lang=voice.lang.replace("_","-"); }
+  let started=false, done=false;
+  u.onstart=()=>{ started=true; if(useV) voiceOK=true; };
+  u.onend=()=>{ if(done) return; done=true; end&&end(); };
+  u.onerror=e=>{ if(done) return;
+    if(useV && !started && e.error!=="interrupted" && e.error!=="canceled"){ done=true; badVoice(); speak(t,end,true); return; }
+    done=true; end&&end(); };
+  try{ speechSynthesis.resume(); }catch(e){}
+  speechSynthesis.speak(u);
+  // 保險：選到的聲音 1.2 秒內沒開始念，就改用裝置預設聲音
+  if(useV && !voiceOK) setTimeout(()=>{ if(!started && !done){ done=true; try{speechSynthesis.cancel();}catch(e){} badVoice(); speak(t,end,true); } },1200);
+}
+function badVoice(){ voice=null; try{ localStorage.removeItem("wg-voice"); }catch(e){}
+  const sel=document.getElementById("voiceSel"); if(sel){ const o=document.createElement("option"); o.textContent="裝置預設聲音"; o.selected=true; sel.prepend(o); } }
+function stopAll(){ stopFlag=true; playing=false; try{speechSynthesis.cancel();}catch(e){} document.querySelectorAll(".s.reading").forEach(e=>e.classList.remove("reading")); setListenUI(); }
+function setListenUI(){ $("#listenBig").classList.toggle("playing",playing); $("#listenBig span").textContent=playing?"停止朗讀":"朗讀全文"; $("#tListen").classList.toggle("on",playing); }
+function playAll(){
+  if(playing){ stopAll(); return; }
+  stopAll(); stopFlag=false; playing=true; setListenUI(); hideSheet();
+  const L=LEVELS[level]; let i=0;
+  const next=()=>{ document.querySelectorAll(".s.reading").forEach(e=>e.classList.remove("reading"));
+    if(stopFlag) return;
+    if(i>=L.sents.length){ playing=false; setListenUI(); state.listened=true; updTasks(); return; }
+    const el=$("#s"+i); el.classList.add("reading"); el.scrollIntoView({block:"center",behavior:"smooth"});
+    speak(L.sents[i++][0],next); };
+  next();
+}
+$("#listenBig").onclick=playAll; $("#tListen").onclick=playAll;
+
+/* ---------- render ---------- */
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+function sentHTML(txt,i){
+  const re=/([A-Za-z]+(?:['’][A-Za-z]+)*)|([^A-Za-z]+)/g; let m,out="";
+  while((m=re.exec(txt))){ if(m[2]){ out+=esc(m[2]); continue; }
+    const g=lookup(m[1].toLowerCase()); out+=`<span class="w${g&&KEY[level].includes(g[0])?' gl':''}" data-w="${m[1]}">${m[1]}</span>`; }
+  return `<span class="s" id="s${i}" data-i="${i}">${out}</span>`;
+}
+function render(){
+  const L=LEVELS[level];
+  let html="";
+  L.paras.forEach((p,pi)=>{
+    if(L.heads[pi]) html+=`<h2>${L.heads[pi]}</h2>`;
+    html+=`<p>${p.map(i=>sentHTML(L.sents[i][0],i)).join(" ")}</p><div class="pzh">${p.map(i=>L.sents[i][1]).join("")}</div>`;
+    if(L.figs&&L.figs[pi]) html+=figHTML(L.figs[pi]);
+  });
+  $("#text").innerHTML=html;
+  $("#mWords").textContent=L.sents.reduce((n,s)=>n+s[0].split(/\s+/).length,0);
+  $("#mLevel").textContent=L.name; $("#recFor").textContent=L.rec;
+  $("#vocab").innerHTML=KEY[level].map(k=>`<li><span class="vw">${k}</span><span class="vp">${GLOSS[k][0]}</span><span class="vz">${GLOSS[k][1]}</span><button class="spk" data-say="${k}">🔊</button></li>`).join("");
+  $("#vocab").querySelectorAll("[data-say]").forEach(b=>b.onclick=()=>{ stopAll(); speak(b.dataset.say); });
+  $("#text").querySelectorAll(".w").forEach(w=>w.onclick=e=>{ e.stopPropagation(); openSheet(w.closest(".s"),w.dataset.w); });
+  $("#text").querySelectorAll(".s").forEach(s=>s.onclick=()=>openSheet(s,null));
+  state.recOk=new Set(); updTasks();
+}
+$("#lv").onchange=e=>{ stopAll(); hideSheet(); level=+e.target.value; render(); };
+
+/* ---------- tools ---------- */
+$("#tZh").onclick=()=>{ const on=$("#text").classList.toggle("showzh"); $("#tZh").classList.toggle("on",on); };
+let big=false; $("#tSize").onclick=()=>{ big=!big; document.documentElement.style.setProperty("--fs",big?"23px":"20px"); $("#tSize").classList.toggle("on",big); };
+let marked=false; try{ marked=localStorage.getItem("wg-mark-"+A.id)==="1"; }catch(e){}
+function setMark(){ $("#tMark").classList.toggle("on",marked); $("#tMark span").textContent=marked?"已收藏":"收藏"; }
+$("#tMark").onclick=()=>{ marked=!marked; try{ localStorage.setItem("wg-mark-"+A.id,marked?"1":"0"); }catch(e){} setMark(); }; setMark();
+$("#tQuiz").onclick=()=>$("#quiz").scrollIntoView({behavior:"smooth"});
+
+/* ---------- bottom sheet ---------- */
+function openSheet(sEl,word){
+  if(playing) stopAll();
+  document.querySelectorAll(".s.sel").forEach(e=>e.classList.remove("sel"));
+  selS=+sEl.dataset.i; sEl.classList.add("sel");
+  const wr=$("#sheet .wordrow");
+  if(word){
+    const g=lookup(word.toLowerCase());
+    $("#wd").textContent = g?(/^[A-Z]/.test(word)&&g[0]===word.toLowerCase()?word:g[0]):word;
+    $("#wm").innerHTML = g?`<span class="pos">${g[1]}</span>${g[2]}`:`<span style="color:var(--ink-soft)">本篇單字表沒有收這個字，可以先聽發音。</span>`;
+    $("#wSpk").onclick=()=>{ try{speechSynthesis.cancel();}catch(e){} speak(g?g[0]:word); };
+    wr.style.display="flex"; try{speechSynthesis.cancel();}catch(e){} speak(g?g[0]:word);
+  } else { wr.style.display="flex"; $("#wd").textContent="這一句"; $("#wm").innerHTML=`<span style="color:var(--ink-soft)">可以聽、跟讀或看中譯</span>`; $("#wSpk").onclick=()=>$("#sPlay").click(); }
+  $("#sz").classList.remove("show"); $("#sz").textContent=LEVELS[level].sents[selS][1];
+  $("#sres").classList.remove("show");
+  $("#sheet").classList.add("show");
+}
+function hideSheet(){ $("#sheet").classList.remove("show"); document.querySelectorAll(".s.sel").forEach(e=>e.classList.remove("sel")); }
+$("#sx").onclick=hideSheet;
+$("#sPlay").onclick=()=>{ if(selS===null) return; try{speechSynthesis.cancel();}catch(e){} const el=$("#s"+selS); el.classList.add("reading"); speak(LEVELS[level].sents[selS][0],()=>el.classList.remove("reading")); };
+$("#sZhBtn").onclick=()=>$("#sz").classList.toggle("show");
+
+/* ---------- 跟讀 ---------- */
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+function norm(s){ return s.toLowerCase().replace(/[’']/g,"").replace(/[^a-z0-9 ]+/g," ").split(/\s+/).filter(Boolean); }
+function lcs(a,b){ const n=a.length,m=b.length,dp=Array.from({length:n+1},()=>new Array(m+1).fill(0));
+  for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--) dp[i][j]=a[i]===b[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
+  const hit=new Array(n).fill(false); let i=0,j=0;
+  while(i<n&&j<m){ if(a[i]===b[j]){hit[i]=true;i++;j++;} else if(dp[i+1][j]>=dp[i][j+1]) i++; else j++; } return hit; }
+let rec=null;
+$("#sRec").onclick=()=>{
+  const res=$("#sres"); res.classList.add("show");
+  if(!SR){ res.innerHTML="這個瀏覽器不支援語音辨識，建議用電腦或 Android 的 Chrome。"; return; }
+  if(rec){ try{rec.stop();}catch(e){} return; }
+  if(selS===null) return; try{speechSynthesis.cancel();}catch(e){}
+  const idx=selS, sEl=$("#s"+idx), words=[...sEl.querySelectorAll(".w")];
+  const target=words.map(w=>norm(w.dataset.w).join(""));
+  rec=new SR(); rec.lang="en-US"; rec.interimResults=false; rec.maxAlternatives=3;
+  $("#sRec").classList.add("recording"); $("#sRec").textContent="● 錄音中"; res.innerHTML="請念出這一句…（念完會自動停止）";
+  rec.onresult=e=>{
+    let best=null,bn=-1,bt="";
+    [...e.results[0]].forEach(r=>{ const h=lcs(target,norm(r.transcript)); const n=h.filter(Boolean).length; if(n>bn){bn=n;best=h;bt=r.transcript;} });
+    words.forEach((w,k)=>{ w.classList.remove("good","miss"); w.classList.add(best[k]?"good":"miss"); });
+    const pct=Math.round(bn/words.length*100);
+    if(pct>=70){ state.recOk.add(idx); updTasks(); }
+    res.innerHTML=`<b class="sc" style="color:${pct>=70?'var(--ok)':'var(--red)'}">${pct}</b>分　${pct>=90?"很棒！幾乎全對 🎉":pct>=70?"不錯！紅色的字再念一次":"再試一次，可以先按 ▶ 聽一遍"}<br><span style="color:var(--ink-soft);font-size:14px">系統聽到：「${esc(bt)}」</span>`;
+  };
+  rec.onerror=e=>{ res.innerHTML = (e.error==="not-allowed"||e.error==="service-not-allowed")
+      ? "麥克風被擋住了。預覽頁面不能用麥克風；放到 winglish.tw 後，瀏覽器問是否允許麥克風時按「允許」即可。"
+      : e.error==="no-speech" ? "沒有聽到聲音，再按一次 🎤 試試。" : "辨識失敗（"+e.error+"），再試一次。"; };
+  rec.onend=()=>{ $("#sRec").classList.remove("recording"); $("#sRec").textContent="🎤 跟讀"; rec=null; };
+  try{ rec.start(); }catch(err){ rec=null; $("#sRec").classList.remove("recording"); $("#sRec").textContent="🎤 跟讀"; res.innerHTML="無法啟動錄音。"; }
+};
+
+/* ---------- quiz ---------- */
+function renderQuiz(){
+  $("#qs").innerHTML=QUIZ.map((q,i)=>`<div class="q"><p>${q.q} <span style="color:var(--red);font-size:13px">${q.tag}</span></p>${q.opts.map((o,j)=>`<button class="opt" data-q="${i}" data-o="${j}"><span class="bub">${"ABCD"[j]}</span>${esc(o)}</button>`).join("")}<div class="exp" id="e${i}"></div></div>`).join("");
+  $("#qs").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
+    const qi=+b.dataset.q, oi=+b.dataset.o; if(state.answered[qi]!==undefined) return;
+    state.answered[qi]=oi; const q=QUIZ[qi];
+    $("#qs").querySelectorAll(`.opt[data-q="${qi}"]`).forEach(x=>{ const j=+x.dataset.o; if(j===q.a) x.classList.add("right"); else if(j===oi) x.classList.add("wrong"); });
+    const e=$("#e"+qi); e.innerHTML=`<b>${oi===q.a?"✅ 答對了！":"❌ 正確答案是 ("+"ABCD"[q.a]+")"}</b><br>${q.exp}`; e.classList.add("show"); e.classList.toggle("bad",oi!==q.a);
+    updTasks();
+    if(Object.keys(state.answered).length===QUIZ.length){ const c=QUIZ.filter((q,k)=>state.answered[k]===q.a).length;
+      $("#qscore").innerHTML=`得分 ${c} / ${QUIZ.length}<button class="again" id="again">再做一次</button>`;
+      $("#again").onclick=()=>{ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); }; }
+  });
+}
+function updTasks(){
+  const r=Math.min(state.recOk.size,3), a=Object.keys(state.answered).length;
+  $("#k1").classList.toggle("done",state.listened);
+  $("#k2").classList.toggle("done",r>=3); $("#k2s").textContent=`已完成 ${r} / 3 句（70 分以上）`;
+  $("#k3").classList.toggle("done",a>=QUIZ.length); $("#k3s").textContent=`${a} / ${QUIZ.length} 題`;
+  $("#progBar").style.width=Math.round(((state.listened?1:0)+r/3+a/QUIZ.length)/3*100)+"%";
+}
+render(); renderQuiz();
+}
+</script>
+<script>
+(function(){
+  var id=(location.hash.slice(1)||"spirits").replace(/[^a-z0-9-]/g,"");
+  var sc=document.createElement("script"); sc.src="a-"+id+".js";
+  sc.onload=function(){ initArticle(); };
+  sc.onerror=function(){ document.getElementById("text").innerHTML='<p>找不到這篇文章。<a href="reading.html">回到閱讀館</a></p>'; };
+  document.body.appendChild(sc);
+  window.addEventListener("hashchange",function(){ location.reload(); });
+})();
+</script>
+</body>
+</html>
