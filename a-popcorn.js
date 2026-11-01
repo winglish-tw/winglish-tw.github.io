@@ -111,15 +111,156 @@ const FIGS = {
 };
 
 const QUIZ = [
-  { q:"1. What is the passage mainly about?", tag:"主旨",
-    opts:["The history of movie theaters","What happens inside a corn kernel when it pops","How to cook healthy snacks at home","Why corn is yellow"],
-    a:1, exp:"文章從玉米粒裡的水、加熱後的壓力，講到外殼爆開和「啵」聲的來源，主旨是 (B)。"},
-  { q:"2. Which of the following is TRUE?", tag:"細節",
-    opts:["Any kind of corn can become popcorn.","The \"pop\" sound comes from the steam rushing out.","The shell usually breaks at about 100 degrees Celsius.","Popcorn jumps because someone shakes the pan."],
-    a:1, exp:"(B) 正確：法國科學家發現「啵」聲來自水蒸氣衝出來的時候，不是外殼破掉的瞬間。(A) 只有特定品種的玉米能爆；(C) 大約是 180 度；(D) 是澱粉形成的「腳」把爆米花彈起來。"},
-  { q:"3. Why does the pressure build up inside the kernel?", tag:"因果",
-    opts:["The steam cannot get out of the hard shell.","The kernel grows bigger in the sun.","Air is pumped into the kernel.","The starch turns into water."],
-    a:0, exp:"玉米粒的外殼非常堅硬，水變成水蒸氣後跑不出去，所以壓力越來越大，直到外殼撐破，答案是 (A)。"}
+ [
+  {
+   "q": "1. What is the passage mainly about?",
+   "tag": "主旨",
+   "opts": [
+    "How to sell popcorn at the movies",
+    "Why popcorn pops",
+    "Different colors of corn",
+    "How to make a fast camera"
+   ],
+   "a": 1,
+   "exp": "整篇從玉米粒裡的水、加熱、外殼破掉，一路講到「啵」聲的來源，主旨是 (B) 爆米花為什麼會爆。"
+  },
+  {
+   "q": "2. What is inside a popcorn kernel?",
+   "tag": "細節",
+   "opts": [
+    "Air and salt",
+    "Oil and sugar",
+    "Soft starch and a little water",
+    "Many small seeds"
+   ],
+   "a": 2,
+   "exp": "第二段說：硬殼裡面有軟軟的澱粉（soft starch）和一點點水（a little water），答案是 (C)。"
+  },
+  {
+   "q": "3. Why do some kernels NOT pop?",
+   "tag": "因果",
+   "opts": [
+    "Their shells have tiny cracks.",
+    "They are too big.",
+    "They are heated for too long.",
+    "They are a different color."
+   ],
+   "a": 0,
+   "exp": "第三段最後一句：有些外殼有小裂縫，水蒸氣跑掉了，壓力撐不起來，所以不會爆，答案是 (A)。"
+  }
+ ],
+ [
+  {
+   "q": "1. Which of the following is the best title for the passage?",
+   "tag": "主旨",
+   "opts": [
+    "Popcorn: A Healthy Snack",
+    "The Science Behind the Pop",
+    "How Movie Theaters Make Money",
+    "The Lives of Two French Engineers"
+   ],
+   "a": 1,
+   "exp": "文章講的是玉米粒爆開背後的物理：水、壓力、外殼爆裂、聲音和跳躍，最適合的標題是 (B)。(D) 雖然提到兩位工程師，但只是其中一段。"
+  },
+  {
+   "q": "2. What does the writer mean by \"each kernel becomes a tiny pressure cooker\"?",
+   "tag": "字義",
+   "opts": [
+    "Each kernel can be used to cook other foods.",
+    "Steam builds up inside each kernel because it cannot get out.",
+    "Each kernel gets smaller when it is heated.",
+    "Each kernel must be cooked in a pressure cooker."
+   ],
+   "a": 1,
+   "exp": "前一句說水變成水蒸氣，但外殼太硬、蒸氣被困在裡面。像壓力鍋一樣「裡面壓力越來越大」，答案是 (B)。這是比喻，不是真的要用壓力鍋煮。"
+  },
+  {
+   "q": "3. Which of the following is TRUE according to the passage?",
+   "tag": "細節",
+   "opts": [
+    "The water in a kernel is about 40 percent of its weight.",
+    "The \"pop\" is heard at the exact moment the hull cracks.",
+    "The engineers' camera shot 2,900 frames per second.",
+    "Kernels with cracked hulls pop more loudly."
+   ],
+   "a": 2,
+   "exp": "(C) 正確，第四段提到每秒 2,900 格。(A) 是約 14%；(B) 「啵」聲是在外殼裂開後一瞬間、蒸氣衝出時才出現；(D) 外殼有裂縫的常常根本不會爆。"
+  },
+  {
+   "q": "4. What would most likely happen to kernels that have been kept in a very dry place for a long time?",
+   "tag": "推論",
+   "opts": [
+    "They may not pop well.",
+    "They will pop at a lower temperature.",
+    "They will turn into bigger popcorn.",
+    "They will make a louder sound."
+   ],
+   "a": 0,
+   "exp": "第三段說太乾的玉米粒常常爆不起來。放在很乾的地方很久，裡面的水分會變少，推論是 (A) 可能爆不好。"
+  }
+ ],
+ [
+  {
+   "q": "1. What is the author's main purpose in writing this passage?",
+   "tag": "作者目的",
+   "opts": [
+    "To persuade readers to eat less popcorn",
+    "To explain the physics of popping, including some surprising recent findings",
+    "To compare popcorn with other snacks",
+    "To criticize scientists for ignoring everyday foods"
+   ],
+   "a": 1,
+   "exp": "作者從壓力、爆裂、跳躍一路講到聲音的來源，還強調幾個「出乎意料」的研究發現，目的是 (B) 說明爆米花背後的物理。"
+  },
+  {
+   "q": "2. The word \"elusive\" in the first paragraph is closest in meaning to ______.",
+   "tag": "字義",
+   "opts": [
+    "hard to understand or explain",
+    "widely known",
+    "dangerous to study",
+    "too expensive to research"
+   ],
+   "a": 0,
+   "exp": "原句說爆米花背後的物理「直到最近仍然 elusive」，意思是一直沒被弄清楚。elusive ＝ 難以理解、難以捉摸，答案是 (A)。"
+  },
+  {
+   "q": "3. According to the passage, what actually makes popcorn jump into the air?",
+   "tag": "細節",
+   "opts": [
+    "Gas escaping from the broken hull",
+    "A \"leg\" of starch pressing against the pan and springing back",
+    "The pan shaking as it gets hotter",
+    "Sound waves produced by the pop"
+   ],
+   "a": 1,
+   "exp": "這題考常見的誤解。第三段特別說跳起來「不是」靠噴出的氣體（not propelled by escaping gas），而是一隻澱粉形成的「腳」壓住鍋子再彈回來，答案是 (B)。選 (A) 就是掉進作者說的 as one might assume 陷阱。"
+  },
+  {
+   "q": "4. Which statement would the researchers most likely agree with?",
+   "tag": "推論",
+   "opts": [
+    "The size of a kernel decides the temperature at which it pops.",
+    "The pop is heard slightly after the hull cracks, not at the same moment.",
+    "Popcorn physics is too complicated for school classrooms.",
+    "Water plays only a minor role in popping."
+   ],
+   "a": 1,
+   "exp": "第四段說聲音和外殼裂開「不同時」，是蒸氣釋放時才發出，所以 (B) 正確。(A) 文中說不管大小，大約都在 180°C 爆開；(C) 他們反而希望給物理老師當示範；(D) 水是整個過程的關鍵。"
+  },
+  {
+   "q": "5. Which of the following is NOT mentioned in the passage?",
+   "tag": "未提及",
+   "opts": [
+    "The percentage of water in a kernel",
+    "The pressure inside a kernel when it bursts",
+    "The year the French study was published",
+    "The country that grows the most popcorn"
+   ],
+   "a": 3,
+   "exp": "(A) 約 14%、(B) 約十倍大氣壓、(C) 2015 年，文中都有提到。只有 (D) 哪個國家種最多爆米花玉米，文章完全沒提，答案是 (D)。"
+  }
+ ]
 ];
 
 const META = {

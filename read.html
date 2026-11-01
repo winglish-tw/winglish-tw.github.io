@@ -220,7 +220,7 @@ figure img.photo + svg{display:none !important}
 
     <section class="quiz" id="quiz">
       <h2>讀完測驗</h2>
-      <p class="sub">三種難度都做同一份題目，答完立刻看詳解。</p>
+      <p class="sub" id="qsub">依你選的難度出題，答完立刻看詳解。</p>
       <div id="qs"></div>
       <div class="qscore" id="qscore"></div>
     </section>
@@ -362,7 +362,7 @@ function render(){
   $("#text").querySelectorAll(".s").forEach(s=>s.onclick=()=>openSheet(s,null));
   state.recOk=new Set(); updTasks();
 }
-$("#lv").onchange=e=>{ stopAll(); hideSheet(); level=+e.target.value; render(); };
+$("#lv").onchange=e=>{ stopAll(); hideSheet(); level=+e.target.value; render(); if(Array.isArray(QUIZ[0])){ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); } };
 
 /* ---------- tools ---------- */
 $("#tZh").onclick=()=>{ const on=$("#text").classList.toggle("showzh"); $("#tZh").classList.toggle("on",on); };
@@ -427,7 +427,10 @@ $("#sRec").onclick=()=>{
 };
 
 /* ---------- quiz ---------- */
+function QZ(){ return Array.isArray(QUIZ[0])?(QUIZ[level]||QUIZ[0]):QUIZ; }
 function renderQuiz(){
+  const QUIZ=QZ();
+  $("#qsub").textContent=Array.isArray(A.QUIZ[0])?"依你選的難度出題，換難度題目也會跟著換；答完立刻看詳解。":"答完立刻看詳解。";
   $("#qs").innerHTML=QUIZ.map((q,i)=>`<div class="q"><p>${q.q} <span style="color:var(--red);font-size:13px">${q.tag}</span></p>${q.opts.map((o,j)=>`<button class="opt" data-q="${i}" data-o="${j}"><span class="bub">${"ABCD"[j]}</span>${esc(o)}</button>`).join("")}<div class="exp" id="e${i}"></div></div>`).join("");
   $("#qs").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{
     const qi=+b.dataset.q, oi=+b.dataset.o; if(state.answered[qi]!==undefined) return;
@@ -441,6 +444,7 @@ function renderQuiz(){
   });
 }
 function updTasks(){
+  const QUIZ=QZ();
   const r=Math.min(state.recOk.size,3), a=Object.keys(state.answered).length;
   $("#k1").classList.toggle("done",state.listened);
   $("#k2").classList.toggle("done",r>=3); $("#k2s").textContent=`已完成 ${r} / 3 句（70 分以上）`;
