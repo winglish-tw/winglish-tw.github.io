@@ -371,8 +371,8 @@ const META = {
  "hero": "<img class=\"photo\" src=\"https://images.unsplash.com/photo-1766939366704-e4df32f3837a?auto=format&fit=crop&w=1600&q=70\" data-local=\"forest-hero.jpg\" alt=\"Sunlight shining through a green forest\" onerror=\"if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}\"><svg viewBox=\"0 0 800 420\" aria-hidden=\"true\"><rect width=\"800\" height=\"420\" fill=\"#DFF2F4\"/><circle cx=\"400\" cy=\"190\" r=\"110\" fill=\"#fff\" opacity=\".8\"/><text x=\"400\" y=\"230\" text-anchor=\"middle\" font-size=\"120\">🌍</text></svg><figcaption>一片森林，可以從一個人、一棵樹開始。<span class=\"credit\">Photo: Unsplash</span></figcaption>",
  "fact": "帕揚剛開始種樹時，還從村子裡帶了紅螞蟻到沙洲上。他相信螞蟻能幫忙改變土壤，讓樹木更容易生長。",
  "next": {
-  "title": "One Girl, One Pen",
-  "href": "read.html#malala"
+  "title": "The Boy at the School Gate",
+  "href": "read.html#kailash"
  },
  "id": "forest",
  "date": "2026/11/1"
