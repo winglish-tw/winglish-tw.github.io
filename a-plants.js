@@ -118,9 +118,9 @@ const META = {
  id:"plants", title:"Can Plants Talk?", category:"科學",
  dek:"番茄缺水的時候，真的會「喀喀」叫嗎？以色列科學家把植物放進隔音箱，錄到了人類耳朵聽不見的聲音。",
  date:"2026/11/1",
- hero:`<img class="photo" src="https://images.unsplash.com/photo-1758487405872-8e179dfe703e?auto=format&fit=crop&w=1600&q=70" data-local="plants-hero.jpg" alt="Ripe red tomatoes on the vine" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}">
+ hero:`<img class="photo" src="https://images.unsplash.com/photo-1584748129055-7128427c30f2?auto=format&fit=crop&w=1600&q=70" data-local="plants-hero.jpg" alt="Green leaves of a potted plant" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}">
 <svg viewBox="0 0 800 420" aria-hidden="true"><rect width="800" height="420" fill="#DDF3E9"/><path d="M0 350 H800 V420 H0Z" fill="#8C5A2B"/><path d="M400 350 V170" stroke="#17875C" stroke-width="10" stroke-linecap="round"/><g fill="#17875C"><path d="M400 260 C330 260 280 220 270 170 C330 166 390 200 400 260Z"/><path d="M400 226 C470 226 520 186 534 136 C474 132 414 166 400 226Z"/><path d="M400 190 C376 150 380 110 404 80 C428 116 424 156 400 190Z"/></g><g fill="none" stroke="#1A2238" stroke-width="6" stroke-linecap="round" opacity=".7"><path d="M580 170 q24 34 0 68"/><path d="M620 146 q44 58 0 116"/><path d="M220 170 q-24 34 0 68"/><path d="M180 146 q-44 58 0 116"/></g></svg>
-<figcaption>番茄是這項研究的主角之一。缺水的時候，番茄植株會發出我們聽不到的聲音。<span class="credit">Photo: Yen Vu / Unsplash</span></figcaption>`,
+<figcaption>植物看起來安安靜靜，其實可能一直在發出我們聽不到的聲音。<span class="credit">Photo: Unsplash</span></figcaption>`,
  fact:"研究人員把植物的錄音放慢、降低音調後，聽起來就像有人在捏氣泡紙，啵、啵、啵！",
  next:{title:"The 85-Year Secret to Happiness", href:"read.html#happiness"}
 };

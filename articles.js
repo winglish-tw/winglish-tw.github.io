@@ -55,7 +55,7 @@ window.ARTICLES = [
   "catName": "科學",
   "title": "Can Plants Talk?",
   "blurb": "番茄缺水的時候，真的會「喀喀」叫嗎？",
-  "photo": "photo-1758487405872-8e179dfe703e",
+  "photo": "photo-1584748129055-7128427c30f2",
   "svg": "<svg viewBox=\"0 0 320 170\" aria-hidden=\"true\"><rect width=\"320\" height=\"170\" fill=\"#DDF3E9\"/><path d=\"M0 140 H320 V170 H0Z\" fill=\"#8C5A2B\"/><path d=\"M160 140 V70\" stroke=\"#17875C\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n          <g fill=\"#17875C\"><path d=\"M160 100 C130 100 110 84 106 64 C130 62 154 76 160 100Z\"/><path d=\"M160 86 C188 86 208 70 214 50 C190 48 166 62 160 86Z\"/><path d=\"M160 72 C150 56 152 40 162 28 C172 42 170 58 160 72Z\"/></g>\n          <g fill=\"none\" stroke=\"#1A2238\" stroke-width=\"3\" stroke-linecap=\"round\" opacity=\".7\"><path d=\"M232 70 q10 14 0 28\"/><path d=\"M248 60 q18 24 0 48\"/><path d=\"M88 70 q-10 14 0 28\"/><path d=\"M72 60 q-18 24 0 48\"/></g></svg>"
  },
  {
