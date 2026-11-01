@@ -278,7 +278,7 @@ footer a{text-decoration:none}
   document.getElementById('artCount').textContent=A.length;
   var used={}; A.forEach(function(a){used[a.cat]=1;});
   document.getElementById('filters').innerHTML=C.filter(function(c){return c[0]==='all'||used[c[0]];}).map(function(c,i){return '<button class="'+(i===0?'on':'')+'" data-c="'+c[0]+'">'+c[1]+'</button>';}).join('');
-  var CI={life:['#DDF3E9','#17875C','🌱'],gender:['#EEE6F7','#7A4FB5','🤝'],eco:['#DFF2F4','#1F7A8C','🌍'],people:['#FDECDD','#C2571A','⭐'],social:['#FDE8EE','#C2385A','💗'],bio:['#E3F1FB','#1F6FAE','🧬']};
+  var CI={life:['#DDF3E9','#17875C','🌱'],gender:['#EEE6F7','#7A4FB5','🤝'],eco:['#DFF2F4','#1F7A8C','🌍'],people:['#FDECDD','#C2571A','⭐'],social:['#FDE8EE','#C2385A','💗'],bio:['#E3F1FB','#1F6FAE','🧬'],psych:['#FFF1DC','#B4690E','🧠']};
   function fallbackSvg(a){var c=CI[a.cat]||['#E4E9F2','#1A2238','📖'];
     return '<svg viewBox="0 0 320 170" aria-hidden="true"><rect width="320" height="170" fill="'+c[0]+'"/><circle cx="160" cy="78" r="44" fill="#fff" opacity=".8"/><text x="160" y="94" text-anchor="middle" font-size="44">'+c[2]+'</text><text x="160" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="'+c[1]+'" font-family="Noto Sans TC,sans-serif">'+esc(a.catName)+'</text></svg>';}
   document.getElementById('grid').innerHTML=A.map(function(a){
