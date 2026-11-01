@@ -106,10 +106,11 @@ const FIGS = {
 <path d="M300 150 c-16 -20 -42 -4 -24 20 l24 22 24 -22 c18 -24 -8 -40 -24 -20Z" fill="#B0263C"/>
 <g stroke="#1A2238" stroke-width="2" fill="none" marker-end="url(#ah)"><path d="M262 196 Q246 186 240 170"/><path d="M338 196 Q354 186 360 170"/><path d="M250 110 Q275 115 286 140"/><path d="M350 110 Q325 115 314 140"/><path d="M300 192 L300 228"/></g>
 <g font-family="Noto Sans TC,sans-serif" font-size="15" fill="#1A2238">
-<text x="20" y="150" font-weight="700">鰓 gills</text><path d="M86 146 H210" stroke="#5E9C80" stroke-width="1.5"/>
-<text x="20" y="226" font-weight="700" fill="#D23F57">鰓心 ×2</text><text x="20" y="246" font-size="13">branchial hearts</text><text x="20" y="264" font-size="13">把血打進鰓吸收氧氣</text><path d="M110 222 H246" stroke="#D23F57" stroke-width="1.5"/>
-<text x="430" y="80" font-weight="700" fill="#B0263C">體心 ×1</text><text x="430" y="100" font-size="13">systemic heart</text><text x="430" y="118" font-size="13">把含氧的血送到全身</text><text x="430" y="136" font-size="13">（游泳時會停止跳動）</text><path d="M428 92 Q360 100 322 152" stroke="#B0263C" stroke-width="1.5" fill="none"/>
-<text x="300" y="300" text-anchor="middle" font-size="14">血液含銅（血藍蛋白），所以是藍色的</text></g>
+<text x="20" y="146" font-weight="700">Gills</text><text x="20" y="162" font-size="11" text-anchor="start" fill="#5A6478" >鰓</text><path d="M66 142 H210" stroke="#5E9C80" stroke-width="1.5"/>
+<text x="20" y="214" font-weight="700" fill="#D23F57">Branchial hearts ×2</text><text x="20" y="232" font-size="12">pump blood to the gills</text><text x="20" y="248" font-size="11" text-anchor="start" fill="#5A6478" >鰓心：把血打進鰓吸收氧氣</text><path d="M168 210 H246" stroke="#D23F57" stroke-width="1.5"/>
+<text x="430" y="70" font-weight="700" fill="#B0263C">Systemic heart ×1</text><text x="430" y="88" font-size="12">pumps blood to the body</text><text x="430" y="104" font-size="12">stops while swimming</text><text x="430" y="120" font-size="11" text-anchor="start" fill="#5A6478" >體心：把血送到全身</text><text x="430" y="135" font-size="11" text-anchor="start" fill="#5A6478" >（游泳時會停止跳動）</text><path d="M428 82 Q360 96 322 152" stroke="#B0263C" stroke-width="1.5" fill="none"/>
+<rect x="120" y="284" width="360" height="42" rx="10" fill="#EEF6FB" opacity=".92"/>
+<text x="300" y="300" text-anchor="middle" font-size="13" font-weight="700">Copper in the blood (hemocyanin) makes it blue.</text><text x="300" y="318" font-size="11" text-anchor="middle" fill="#5A6478" >血液含銅（血藍蛋白），所以是藍色的</text></g>
 </svg>`,
     cap:"章魚的三顆心臟：兩顆鰓心負責把血打進鰓，一顆體心負責把血送到全身。",
     credit:"圖解：Winglish"},

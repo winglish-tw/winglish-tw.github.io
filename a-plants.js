@@ -87,18 +87,16 @@ const KEY = [["scientist","microphone","stem","healthy","thirsty","insect","prog
              ["notion","relegate","folklore","credibility","drought","sever","barrage","airborne","perceive","eavesdrop","cavitation","distinguish","wilt","tranquil"]];
 
 const FIGS = {
-  freq:{svg:`<svg viewBox="0 0 600 280" role="img" aria-label="Who can hear plant sounds" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF7F1">
+  freq:{svg:`<svg viewBox="0 0 600 300" role="img" aria-label="Who can hear plant sounds" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF7F1">
 <g font-family="Noto Sans TC,sans-serif" fill="#1A2238">
-<text x="300" y="32" font-size="18" font-weight="900" text-anchor="middle" fill="#17875C">誰聽得到植物的聲音？</text>
-<line x1="90" y1="230" x2="560" y2="230" stroke="#1A2238" stroke-width="2"/>
-<g font-size="12" text-anchor="middle"><text x="90" y="250">0</text><text x="184" y="250">20</text><text x="278" y="250">40</text><text x="372" y="250">60</text><text x="466" y="250">80</text><text x="560" y="250">100</text></g>
-<text x="325" y="272" font-size="12" text-anchor="middle">頻率（千赫 kHz）</text>
-<g stroke="#1A2238" stroke-width="1"><line x1="184" y1="226" x2="184" y2="234"/><line x1="278" y1="226" x2="278" y2="234"/><line x1="372" y1="226" x2="372" y2="234"/><line x1="466" y1="226" x2="466" y2="234"/><line x1="560" y1="226" x2="560" y2="234"/></g>
-<text x="80" y="76" font-size="14" font-weight="700" text-anchor="end">人類</text><rect x="90" y="62" width="75" height="20" rx="6" fill="#9FC3DE"/><text x="172" y="77" font-size="12">約 16 kHz 以下</text>
-<text x="80" y="120" font-size="14" font-weight="700" text-anchor="end">植物聲</text><rect x="278" y="106" width="188" height="20" rx="6" fill="#17875C"/><text x="372" y="121" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">40–80 kHz</text>
-<text x="80" y="164" font-size="14" font-weight="700" text-anchor="end">老鼠</text><rect x="90" y="150" width="400" height="20" rx="6" fill="#E8B500" opacity=".85"/>
-<text x="80" y="208" font-size="14" font-weight="700" text-anchor="end">蝙蝠</text><rect x="110" y="194" width="450" height="20" rx="6" fill="#D23F57" opacity=".8"/>
-<rect x="278" y="50" width="188" height="172" fill="#17875C" opacity=".08"/></g>
+<text x="300" y="28" font-size="18" font-weight="900" text-anchor="middle" fill="#17875C">Who Can Hear Plant Sounds?</text><text x="300" y="46" font-size="12" text-anchor="middle" fill="#5A6478" >誰聽得到植物的聲音？</text>
+<rect x="278" y="58" width="188" height="186" fill="#17875C" opacity=".08"/>
+<line x1="90" y1="246" x2="560" y2="246" stroke="#1A2238" stroke-width="2"/>
+<g font-size="12" text-anchor="middle"><text x="90" y="264">0</text><text x="184" y="264">20</text><text x="278" y="264">40</text><text x="372" y="264">60</text><text x="466" y="264">80</text><text x="560" y="264">100</text></g>
+<text x="325" y="283" font-size="12" text-anchor="middle" font-weight="700">Frequency (kHz)</text><text x="325" y="297" font-size="10" text-anchor="middle" fill="#5A6478" >頻率（千赫）</text>
+<g stroke="#1A2238" stroke-width="1"><line x1="184" y1="242" x2="184" y2="250"/><line x1="278" y1="242" x2="278" y2="250"/><line x1="372" y1="242" x2="372" y2="250"/><line x1="466" y1="242" x2="466" y2="250"/><line x1="560" y1="242" x2="560" y2="250"/></g>
+<text x="80" y="84" font-size="14" font-weight="700" text-anchor="end">Humans</text><text x="80" y="98" font-size="10" text-anchor="end" fill="#5A6478" >人類</text><rect x="90" y="70" width="75" height="20" rx="6" fill="#9FC3DE"/><text x="172" y="85" font-size="12">below ~16 kHz 約 16 kHz 以下</text><text x="80" y="130" font-size="14" font-weight="700" text-anchor="end">Plants</text><text x="80" y="144" font-size="10" text-anchor="end" fill="#5A6478" >植物聲</text><rect x="278" y="116" width="188" height="20" rx="6" fill="#17875C"/><text x="372.0" y="131" font-size="12" text-anchor="middle" fill="#fff" font-weight="700">40–80 kHz</text><text x="80" y="176" font-size="14" font-weight="700" text-anchor="end">Mice</text><text x="80" y="190" font-size="10" text-anchor="end" fill="#5A6478" >老鼠</text><rect x="90" y="162" width="400" height="20" rx="6" fill="#E8B500"/><text x="80" y="222" font-size="14" font-weight="700" text-anchor="end">Bats</text><text x="80" y="236" font-size="10" text-anchor="end" fill="#5A6478" >蝙蝠</text><rect x="110" y="208" width="450" height="20" rx="6" fill="#D23F57"/>
+</g>
 </svg>`,
     cap:"植物的喀喀聲在 4 萬到 8 萬赫之間，人類完全聽不到，但老鼠、蝙蝠等動物聽得到（長條為大致範圍）。",
     credit:"圖解：Winglish"}

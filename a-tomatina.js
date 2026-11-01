@@ -91,19 +91,10 @@ const KEY = [["festival","throw","truck","ripe","last","parade","grab","traditio
              ["frenzied","pelt","originate","scuffle","ammunition","quell","futile","anarchic","protocol","commence","deem","refrain","infrastructure","mayhem"]];
 
 const FIGS = {
-  rules:{svg:`<svg viewBox="0 0 600 300" role="img" aria-label="The rules of La Tomatina" style="display:block;width:100%;height:auto;border-radius:6px;background:#FCE6EA">
+  rules:{svg:`<svg viewBox="0 0 600 330" role="img" aria-label="The rules of La Tomatina" style="display:block;width:100%;height:auto;border-radius:6px;background:#FCE6EA">
 <g font-family="Noto Sans TC,sans-serif" fill="#1A2238" text-anchor="middle">
-<text x="300" y="38" font-size="20" font-weight="900" fill="#B8322E">番茄節的規則 Rules of La Tomatina</text>
-<g transform="translate(100,0)"><rect x="-82" y="60" width="164" height="200" rx="16" fill="#fff" stroke="#D23F57" stroke-width="3"/>
-<circle cx="0" cy="118" r="34" fill="#D23F57"/><path d="M-22 112 q22 22 44 0" stroke="#fff" stroke-width="5" fill="none"/><path d="M-6 90 l6 -10 l6 10" fill="#2E7D4F"/>
-<text x="0" y="186" font-size="16" font-weight="700">先捏爛再丟</text><text x="0" y="210" font-size="12">Squash it first,</text><text x="0" y="228" font-size="12">so no one gets hurt.</text></g>
-<g transform="translate(300,0)"><rect x="-82" y="60" width="164" height="200" rx="16" fill="#fff" stroke="#D23F57" stroke-width="3"/>
-<path d="M-30 96 l14 -10 h32 l14 10 l-8 16 h-6 v42 h-32 v-42 h-6Z" fill="#9FC3DE" stroke="#1A2238" stroke-width="2"/><path d="M-40 150 l80 -60" stroke="#D23F57" stroke-width="6"/>
-<text x="0" y="186" font-size="16" font-weight="700">不撕別人衣服</text><text x="0" y="210" font-size="12">Don't tear</text><text x="0" y="228" font-size="12">other people's shirts.</text></g>
-<g transform="translate(500,0)"><rect x="-82" y="60" width="164" height="200" rx="16" fill="#fff" stroke="#D23F57" stroke-width="3"/>
-<circle cx="0" cy="118" r="34" fill="#fff" stroke="#1A2238" stroke-width="3"/><path d="M0 118 V94 M0 118 L16 126" stroke="#1A2238" stroke-width="4" stroke-linecap="round"/><text x="0" y="146" font-size="11" font-weight="700">1 小時</text>
-<text x="0" y="186" font-size="16" font-weight="700">第二聲信號就停</text><text x="0" y="210" font-size="12">Stop at the</text><text x="0" y="228" font-size="12">second signal.</text></g>
-<text x="300" y="288" font-size="13">另外：只能丟番茄，不能丟其他東西；看到卡車要讓路。</text></g>
+<text x="300" y="32" font-size="20" font-weight="900" fill="#B8322E">Rules of La Tomatina</text><text x="300" y="52" font-size="12" text-anchor="middle" fill="#5A6478" >番茄節的規則</text><g transform="translate(100,0)"><rect x="-84" y="64" width="168" height="206" rx="16" fill="#fff" stroke="#D23F57" stroke-width="3"/><circle cx="0" cy="122" r="34" fill="#D23F57"/><path d="M-22 116 q22 22 44 0" stroke="#fff" stroke-width="5" fill="none"/><path d="M-6 94 l6 -10 l6 10" fill="#2E7D4F"/><text x="0" y="192" font-size="15" font-weight="700">Squash it first</text><text x="0" y="212" font-size="12">so no one gets hurt</text><text x="0" y="236" font-size="12" text-anchor="middle" fill="#5A6478" >先捏爛再丟</text></g><g transform="translate(300,0)"><rect x="-84" y="64" width="168" height="206" rx="16" fill="#fff" stroke="#D23F57" stroke-width="3"/><path d="M-30 100 l14 -10 h32 l14 10 l-8 16 h-6 v42 h-32 v-42 h-6Z" fill="#9FC3DE" stroke="#1A2238" stroke-width="2"/><path d="M-40 154 l80 -60" stroke="#D23F57" stroke-width="6"/><text x="0" y="192" font-size="15" font-weight="700">Don't tear shirts</text><text x="0" y="212" font-size="12">of other people</text><text x="0" y="236" font-size="12" text-anchor="middle" fill="#5A6478" >不撕別人的衣服</text></g><g transform="translate(500,0)"><rect x="-84" y="64" width="168" height="206" rx="16" fill="#fff" stroke="#D23F57" stroke-width="3"/><circle cx="0" cy="122" r="34" fill="#fff" stroke="#1A2238" stroke-width="3"/><path d="M0 122 V98 M0 122 L16 130" stroke="#1A2238" stroke-width="4" stroke-linecap="round"/><text x="0" y="174" font-size="12" font-weight="700">1 hour</text><text x="0" y="192" font-size="15" font-weight="700">Stop at the</text><text x="0" y="212" font-size="12">second signal</text><text x="0" y="236" font-size="12" text-anchor="middle" fill="#5A6478" >第二聲信號就停</text></g>
+<text x="300" y="298" font-size="13" font-weight="700">Also: throw only tomatoes, and make way for the trucks.</text><text x="300" y="316" font-size="11" text-anchor="middle" fill="#5A6478" >另外：只能丟番茄，不能丟其他東西；看到卡車要讓路</text></g>
 </svg>`,
     cap:"番茄節看起來很亂，其實有幾條大家都要遵守的規則。",
     credit:"圖解：Winglish"}

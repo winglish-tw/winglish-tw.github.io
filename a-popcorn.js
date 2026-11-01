@@ -86,25 +86,25 @@ const KEY = [["snack","wonder","kernel","shell","heat","steam","pressure","escap
              ["theatrical","inert","elusive","robust","impermeable","accumulate","rupture","liberate","solidify","propel","catapult","counterintuitive","coincide","resonate"]];
 
 const FIGS = {
-  kernel:{svg:`<svg viewBox="0 0 600 300" role="img" aria-label="What happens inside a popcorn kernel" style="display:block;width:100%;height:auto;border-radius:6px;background:#FFF8D6">
+  kernel:{svg:`<svg viewBox="0 0 600 310" role="img" aria-label="What happens inside a popcorn kernel" style="display:block;width:100%;height:auto;border-radius:6px;background:#FFF8D6">
 <defs><marker id="pa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2238"/></marker></defs>
-<g transform="translate(110,135)">
+<g transform="translate(110,130)">
 <path d="M0 -70 C48 -70 62 -20 56 20 C48 64 22 80 0 80 C-22 80 -48 64 -56 20 C-62 -20 -48 -70 0 -70Z" fill="#E8A33D" stroke="#9A5E12" stroke-width="5"/>
 <path d="M0 -56 C36 -56 46 -16 42 16 C36 52 16 64 0 64 C-16 64 -36 52 -42 16 C-46 -16 -36 -56 0 -56Z" fill="#FFF3D6"/>
 <g fill="#5BA7E0"><circle cx="-14" cy="-10" r="6"/><circle cx="12" cy="6" r="5"/><circle cx="-6" cy="26" r="5"/><circle cx="16" cy="-26" r="4"/></g></g>
-<g stroke="#1A2238" stroke-width="2.5" fill="none" marker-end="url(#pa)"><path d="M190 135 H262"/><path d="M380 135 H442"/></g>
-<g transform="translate(320,135)">
+<g stroke="#1A2238" stroke-width="2.5" fill="none" marker-end="url(#pa)"><path d="M190 130 H262"/><path d="M380 130 H442"/></g>
+<g transform="translate(320,130)">
 <rect x="-10" y="-70" width="20" height="110" rx="10" fill="#fff" stroke="#1A2238" stroke-width="2"/><rect x="-5" y="-55" width="10" height="90" rx="5" fill="#D23F57"/><circle cx="0" cy="48" r="18" fill="#D23F57" stroke="#1A2238" stroke-width="2"/></g>
-<g transform="translate(510,128)" fill="#FFFDF5" stroke="#E2C27A" stroke-width="3">
+<g transform="translate(510,123)" fill="#FFFDF5" stroke="#E2C27A" stroke-width="3">
 <circle cx="-24" cy="-10" r="26"/><circle cx="20" cy="-20" r="30"/><circle cx="6" cy="20" r="28"/><circle cx="-30" cy="26" r="20"/><circle cx="34" cy="22" r="20"/></g>
 <g font-family="Noto Sans TC,sans-serif" fill="#1A2238" text-anchor="middle">
-<text x="110" y="246" font-size="15" font-weight="700">玉米粒</text>
-<text x="110" y="268" font-size="12">硬殼（種皮）＋澱粉＋約 14% 的水</text>
-<text x="320" y="246" font-size="15" font-weight="700">加熱到約 180°C</text>
-<text x="320" y="268" font-size="12">水變成水蒸氣，壓力約 10 倍大氣壓</text>
-<text x="510" y="246" font-size="15" font-weight="700">啵！</text>
-<text x="510" y="268" font-size="12">外殼破裂，澱粉膨脹成爆米花</text>
-<text x="226" y="122" font-size="12" fill="#5BA7E0" font-weight="700">💧→蒸氣</text></g>
+<text x="110" y="240" font-size="15" font-weight="700">A kernel</text>
+<text x="110" y="259" font-size="12">hull + starch + ~14% water</text><text x="110" y="276" font-size="10" text-anchor="middle" fill="#5A6478" >玉米粒：硬殼＋澱粉＋約 14% 的水</text>
+<text x="320" y="240" font-size="15" font-weight="700">Heat to about 180°C</text>
+<text x="320" y="259" font-size="12">water turns into steam</text><text x="320" y="276" font-size="10" text-anchor="middle" fill="#5A6478" >加熱到約 180°C，水變成水蒸氣</text><text x="320" y="291" font-size="10" text-anchor="middle" fill="#5A6478" >壓力約 10 倍大氣壓</text>
+<text x="510" y="240" font-size="15" font-weight="700">POP!</text>
+<text x="510" y="259" font-size="12">hull bursts, starch puffs up</text><text x="510" y="276" font-size="10" text-anchor="middle" fill="#5A6478" >啵！外殼破裂，澱粉膨脹</text>
+<text x="226" y="98" font-size="12" fill="#3B82B8" font-weight="700">💧→ steam</text><text x="226" y="113" font-size="10" text-anchor="middle" fill="#5A6478" >水→蒸氣</text></g>
 </svg>`,
     cap:"一顆玉米粒變成爆米花的三個步驟。藍色小點就是藏在裡面的水分。",
     credit:"圖解：Winglish"}

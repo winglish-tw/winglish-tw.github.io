@@ -91,20 +91,23 @@ const KEY = [["imagine","village","block","frozen","river","design","melt","gues
              ["permanence","embrace","dismantle","paradoxically","colossal","dormant","plunge","resume","lure","incarnation","cocoon","ephemeral","captivate","impermanence"]];
 
 const FIGS = {
-  cycle:{svg:`<svg viewBox="0 0 600 360" role="img" aria-label="The yearly cycle of the ICEHOTEL" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF5FB">
+  cycle:{svg:`<svg viewBox="0 0 600 420" role="img" aria-label="The yearly cycle of the ICEHOTEL" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF5FB">
 <defs><marker id="ca" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2238"/></marker></defs>
+<g font-family="Noto Sans TC,sans-serif" fill="#1A2238" text-anchor="middle">
+<text x="300" y="20" font-size="14" font-weight="700">Spring: ice is cut from the Torne River</text><text x="300" y="37" font-size="11" text-anchor="middle" fill="#5A6478" >春天：從托爾訥河切下冰塊</text>
+<g transform="translate(0,34)">
 <circle cx="300" cy="180" r="118" fill="none" stroke="#9FC3DE" stroke-width="14"/>
 <g fill="none" stroke="#1A2238" stroke-width="2.5" marker-end="url(#ca)"><path d="M352 78 A118 118 0 0 1 404 128"/><path d="M412 236 A118 118 0 0 1 356 284"/><path d="M244 284 A118 118 0 0 1 190 236"/><path d="M190 126 A118 118 0 0 1 244 78"/></g>
-<g font-family="Noto Sans TC,sans-serif" fill="#1A2238" text-anchor="middle">
-<circle cx="300" cy="62" r="34" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="300" y="58" font-size="20">🪚</text><text x="300" y="80" font-size="11" font-weight="700">3 月</text>
-<text x="300" y="20" font-size="14" font-weight="700">春天：從托爾訥河切下冰塊</text>
-<circle cx="418" cy="180" r="34" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="418" y="176" font-size="20">🧊</text><text x="418" y="198" font-size="11" font-weight="700">夏天</text>
-<text x="510" y="176" font-size="14" font-weight="700">存放在</text><text x="510" y="196" font-size="14" font-weight="700">冷藏廠房</text>
-<circle cx="300" cy="298" r="34" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="300" y="294" font-size="20">🏗️</text><text x="300" y="316" font-size="11" font-weight="700">11 月</text>
-<text x="300" y="352" font-size="14" font-weight="700">冬天：用冰蓋旅館，12 月開放</text>
-<circle cx="182" cy="180" r="34" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="182" y="176" font-size="20">💧</text><text x="182" y="198" font-size="11" font-weight="700">4 月</text>
-<text x="86" y="176" font-size="14" font-weight="700">春天融化</text><text x="86" y="196" font-size="14" font-weight="700">流回河裡</text>
-<text x="300" y="176" font-size="15" font-weight="900" fill="#1F5C8C">每年一次</text><text x="300" y="198" font-size="15" font-weight="900" fill="#1F5C8C">的循環</text></g>
+<circle cx="300" cy="62" r="36" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="300" y="56" font-size="20">🪚</text><text x="300" y="76" font-size="11" font-weight="700">March</text><text x="300" y="88" font-size="9" text-anchor="middle" fill="#5A6478" >3 月</text>
+<circle cx="418" cy="180" r="36" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="418" y="174" font-size="20">🧊</text><text x="418" y="194" font-size="11" font-weight="700">Summer</text><text x="418" y="206" font-size="9" text-anchor="middle" fill="#5A6478" >夏天</text>
+<text x="512" y="164" font-size="13" font-weight="700">Stored in a</text><text x="512" y="181" font-size="13" font-weight="700">cold warehouse</text><text x="512" y="198" font-size="11" text-anchor="middle" fill="#5A6478" >存放在冷藏廠房</text>
+<circle cx="300" cy="298" r="36" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="300" y="292" font-size="20">🏗️</text><text x="300" y="312" font-size="11" font-weight="700">November</text><text x="300" y="324" font-size="9" text-anchor="middle" fill="#5A6478" >11 月</text>
+<circle cx="182" cy="180" r="36" fill="#fff" stroke="#1A2238" stroke-width="2"/><text x="182" y="174" font-size="20">💧</text><text x="182" y="194" font-size="11" font-weight="700">April</text><text x="182" y="206" font-size="9" text-anchor="middle" fill="#5A6478" >4 月</text>
+<text x="84" y="156" font-size="13" font-weight="700">Melts in spring</text><text x="84" y="173" font-size="13" font-weight="700">and flows back</text><text x="84" y="190" font-size="13" font-weight="700">into the river</text><text x="84" y="207" font-size="11" text-anchor="middle" fill="#5A6478" >春天融化，流回河裡</text>
+<text x="300" y="178" font-size="15" font-weight="900" fill="#1F5C8C">Once a year</text><text x="300" y="197" font-size="12" text-anchor="middle" fill="#5A6478" font-weight="700">每年一次的循環</text>
+</g>
+<text x="300" y="392" font-size="14" font-weight="700">Winter: built from ice, opens in December</text><text x="300" y="410" font-size="11" text-anchor="middle" fill="#5A6478" >冬天：用冰蓋旅館，12 月開放</text>
+</g>
 </svg>`,
     cap:"冰旅館的一年：冰從河裡來，春天又融回河裡。",
     credit:"圖解：Winglish"}
