@@ -368,7 +368,7 @@ const META = {
  "title": "The Toughest Tiny Animal",
  "category": "醫學生物",
  "dek": "牠只有半公釐長，卻能在接近絕對零度的低溫和太空中活下來。不過，這種「最強生物」其實有一個弱點。",
- "hero": "<img class=\"photo\" src=\"https://images.unsplash.com/photo-1760453968378-8daa46805fcd?auto=format&fit=crop&w=1600&q=70\" data-local=\"waterbear-hero.jpg\" alt=\"Green moss with water droplets\" onerror=\"if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}\"><svg viewBox=\"0 0 800 420\" aria-hidden=\"true\"><rect width=\"800\" height=\"420\" fill=\"#E3F1FB\"/><circle cx=\"400\" cy=\"190\" r=\"110\" fill=\"#fff\" opacity=\".8\"/><text x=\"400\" y=\"230\" text-anchor=\"middle\" font-size=\"120\">🧬</text></svg><figcaption>水熊蟲最常住在潮濕的苔蘚裡，你家附近的青苔裡可能就有。<span class=\"credit\">Photo: Haberdoedas / Unsplash</span></figcaption>",
+ "hero": "<img class=\"photo\" src=\"https://images.unsplash.com/photo-1725714871758-aed5cd8e8745?auto=format&fit=crop&w=1600&q=70\" data-local=\"waterbear-hero.jpg\" alt=\"A moss-covered rock in a forest\" onerror=\"if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}\"><svg viewBox=\"0 0 800 420\" aria-hidden=\"true\"><rect width=\"800\" height=\"420\" fill=\"#E3F1FB\"/><circle cx=\"400\" cy=\"190\" r=\"110\" fill=\"#fff\" opacity=\".8\"/><text x=\"400\" y=\"230\" text-anchor=\"middle\" font-size=\"120\">🧬</text></svg><figcaption>森林裡長滿青苔的石頭。水熊蟲最常住在這種潮濕的苔蘚裡，你家附近的青苔裡也可能有。<span class=\"credit\">Photo: K8 / Unsplash</span></figcaption>",
  "fact": "2019 年，以色列的登月艇「創世紀號」墜毀在月球上，船上載著數千隻乾燥的水熊蟲。不過科學家認為，就算牠們撐過撞擊，月球上沒有液態水，也不可能「醒來」。",
  "next": {
   "title": "You Are Not Alone",
