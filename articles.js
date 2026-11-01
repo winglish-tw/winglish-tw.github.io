@@ -1,6 +1,9 @@
 /* Winglish 閱讀館：文章清單（書架會自動依照這裡排出卡片）
    新增文章：加一筆資料＋上傳 a-<id>.js 即可 */
 window.ARTICLES = [
+ {"id":"bench","cat":"social","catName":"社會關懷","title":"A Seat for a New Friend","blurb":"下課沒人陪？一個二年級男孩想出了「友誼長椅」。","photo":"photo-1727600168098-9288d5be2cac"},
+ {"id":"lfl","cat":"social","catName":"社會關懷","title":"Take a Book, Share a Book","blurb":"家門口的一個小書箱，變成全世界十七萬座小圖書館。","photo":"photo-1773224811488-070c7dce2657"},
+ {"id":"shokudo","cat":"social","catName":"社會關懷","title":"A Table for Every Child","blurb":"不讓孩子一個人餓著肚子吃飯：日本的兒童食堂。","photo":"photo-1680137248903-7af5d51a3350"},
  {"id":"kailash","cat":"people","catName":"人物","title":"The Boy at the School Gate","blurb":"校門口擦鞋的男孩，讓他救出八萬多名童工，還和馬拉拉同獲諾貝爾獎。","photo":"photo-1761322572550-967ea8c0bfd9"},
  {"id":"ruby","cat":"people","catName":"人物","title":"The Long Walk to First Grade","blurb":"6 歲的她在 4 名法警保護下走進學校，全班只有她一個人。","photo":"photo-1580582932707-520aed937b7b"},
  {"id":"braille","cat":"people","catName":"人物","title":"Six Dots That Changed the World","blurb":"3 歲失明的男孩，15 歲發明了全世界盲人都在用的點字。","photo":"photo-1618411525737-a00b36264665"},
@@ -131,4 +134,4 @@ window.ARTICLES = [
   "photo": "photo-1766939366704-e4df32f3837a"
  }
 ];
-window.CATS = [["all", "全部"], ["people", "人物"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];
+window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];

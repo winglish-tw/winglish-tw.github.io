@@ -330,156 +330,42 @@ const GLOSS = {"imagine": ["v.", "想像"], "blind": ["adj.", "失明的"], "vil
 const KEY = [["blind", "village", "workshop", "sharp", "injury", "raised", "soldier", "code", "fingertip"], ["leather", "infection", "sight", "institute", "represent", "potential", "punctuation", "simplify", "combination", "adopt"], ["profoundly", "devise", "decipher", "painstakingly", "breakthrough", "tactile", "perceive", "flaw", "refine", "accessibility"]];
 const FIGS = {"br": {"svg": "<svg viewBox=\"0 0 600 310\" role=\"img\" aria-label=\"How braille works\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFF8F2\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2571A\">How Braille Works</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >點字怎麼運作？</text>\n<g text-anchor=\"middle\">\n<circle cx=\"70\" cy=\"74\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"70\" cy=\"92\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"70\" cy=\"110\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"70\" cy=\"128\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"70\" cy=\"146\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"70\" cy=\"164\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"88\" cy=\"74\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"88\" cy=\"92\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"88\" cy=\"110\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"88\" cy=\"128\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"88\" cy=\"146\" r=\"6\" fill=\"#8C96A8\"/><circle cx=\"88\" cy=\"164\" r=\"6\" fill=\"#8C96A8\"/><text x=\"79\" y=\"198\" font-size=\"13\" font-weight=\"700\">Barbier: 12 dots</text><text x=\"79\" y=\"214\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >巴比耶：12 個點</text>\n<text x=\"79\" y=\"230\" font-size=\"11\" fill=\"#5A6478\">too big for one finger</text>\n<path d=\"M120 128 h30\" stroke=\"#C2571A\" stroke-width=\"4\"/><path d=\"M148 120 l12 8 l-12 8z\" fill=\"#C2571A\"/>\n<circle cx=\"200\" cy=\"84\" r=\"15\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"200\" cy=\"124\" r=\"15\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"200\" cy=\"164\" r=\"15\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"240\" cy=\"84\" r=\"15\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"240\" cy=\"124\" r=\"15\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"240\" cy=\"164\" r=\"15\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><text x=\"200\" y=\"90\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#fff\">1</text><text x=\"200\" y=\"130\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#fff\">2</text><text x=\"200\" y=\"170\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#fff\">3</text><text x=\"240\" y=\"90\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#fff\">4</text><text x=\"240\" y=\"130\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#fff\">5</text><text x=\"240\" y=\"170\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#fff\">6</text><text x=\"220\" y=\"198\" font-size=\"13\" font-weight=\"700\">Braille: 6 dots</text><text x=\"220\" y=\"214\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >布萊葉：6 個點</text>\n<text x=\"220\" y=\"230\" font-size=\"11\" fill=\"#5A6478\">one fingertip reads it</text>\n<line x1=\"300\" y1=\"70\" x2=\"300\" y2=\"240\" stroke=\"#E2D6CC\" stroke-width=\"2\"/>\n<circle cx=\"340\" cy=\"92\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"340\" cy=\"116\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"340\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"364\" cy=\"92\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"364\" cy=\"116\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"364\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><text x=\"352\" y=\"176\" font-size=\"22\" font-weight=\"900\">a</text>\n<circle cx=\"400\" cy=\"92\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"400\" cy=\"116\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"400\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"424\" cy=\"92\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"424\" cy=\"116\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"424\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><text x=\"412\" y=\"176\" font-size=\"22\" font-weight=\"900\">b</text>\n<circle cx=\"460\" cy=\"92\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"460\" cy=\"116\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"460\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"484\" cy=\"92\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"484\" cy=\"116\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"484\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><text x=\"472\" y=\"176\" font-size=\"22\" font-weight=\"900\">c</text>\n<circle cx=\"520\" cy=\"92\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"520\" cy=\"116\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"520\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"544\" cy=\"92\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"544\" cy=\"116\" r=\"9\" fill=\"#C2571A\" stroke=\"#1A2238\" stroke-width=\"2\"/><circle cx=\"544\" cy=\"140\" r=\"9\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2\"/><text x=\"532\" y=\"176\" font-size=\"22\" font-weight=\"900\">d</text>\n<text x=\"436\" y=\"210\" font-size=\"13\" font-weight=\"700\">Different dots = different letters</text><text x=\"436\" y=\"226\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >不同的凸點組合＝不同的字母</text>\n</g>\n<rect x=\"90\" y=\"250\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#FDECDD\"/>\n<text x=\"300\" y=\"270\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">6 dots make 63 different patterns.</text><text x=\"300\" y=\"287\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >6 個點可以組合出 63 種不同的符號</text></g></svg>", "cap": "布萊葉把巴比耶的 12 點縮減成 6 點，一根指尖就能摸出一個字母。", "credit": "圖解：Winglish"}};
 const QUIZ = [
- [
-  {
-   "q": "1. What is the passage mainly about?",
-   "tag": "主旨",
-   "opts": [
-    "How blind people learned to see again",
-    "The history of French soldiers",
-    "How a blind boy created a way for blind people to read",
-    "How to make books with big letters"
-   ],
-   "a": 2,
-   "exp": "文章講 Louis Braille 失明後，發明讓盲人用手指閱讀的點字，主旨是 (C)。"
-  },
-  {
-   "q": "2. How did Louis lose his sight?",
-   "tag": "細節",
-   "opts": [
-    "He hurt his eye with a sharp tool in his father's workshop.",
-    "He was born blind.",
-    "He read too many books in the dark.",
-    "He was hurt in a war."
-   ],
-   "a": 0,
-   "exp": "第二段：三歲時在爸爸的工作室玩，被尖銳的工具弄傷眼睛，後來越來越嚴重，答案是 (A)。"
-  },
-  {
-   "q": "3. Why was Barbier's \"night writing\" hard to use?",
-   "tag": "因果",
-   "opts": [
-    "It could only be read in the daytime.",
-    "It used big raised letters.",
-    "It had only six dots.",
-    "It used up to 12 dots for each sound."
-   ],
-   "a": 3,
-   "exp": "第三段：夜間文字每個音最多要用 12 個點，太難使用，答案是 (D)。只有六個點的是 Louis 後來改良的版本。"
-  }
- ],
- [
-  {
-   "q": "1. Which of the following is the best title for the passage?",
-   "tag": "主旨",
-   "opts": [
-    "Louis Braille: Turning Darkness into Reading",
-    "Night Writing for Soldiers",
-    "The Royal Institute for Blind Youth",
-    "Why Leather Tools Are Dangerous"
-   ],
-   "a": 0,
-   "exp": "全文講 Louis Braille 如何把失明的悲劇變成讓數百萬人能閱讀的工具，(A) 最適合。(B)(C) 只是文中一小部分。"
-  },
-  {
-   "q": "2. Which of the following is TRUE according to the passage?",
-   "tag": "細節",
-   "opts": [
-    "Braille's code was used in France as soon as he created it.",
-    "Barbier's night writing included numbers and punctuation.",
-    "A braille cell has six dots in two columns of three.",
-    "Louis finished his code when he was 21."
-   ],
-   "a": 2,
-   "exp": "(C) 正確（第三段）。(A) 錯，法國到 1854 年才正式採用；(B) 錯，文中說夜間文字沒有標點和數字；(D) 錯，他 15 歲就完成了。"
-  },
-  {
-   "q": "3. Why did some sighted teachers prefer raised letters?",
-   "tag": "因果",
-   "opts": [
-    "Raised letters were cheaper to make.",
-    "They could read raised letters themselves.",
-    "Students liked raised letters more.",
-    "Raised letters were faster to read."
-   ],
-   "a": 1,
-   "exp": "第四段：有些看得見的老師比較喜歡凸起字母，因為「他們自己看得懂」，答案是 (B)。"
-  },
-  {
-   "q": "4. What can be inferred about Louis Braille?",
-   "tag": "推論",
-   "opts": [
-    "He invented night writing for the army.",
-    "He stopped working on his code after 1824.",
-    "He was famous all over the world during his life.",
-    "He did not live to see France officially adopt his system."
-   ],
-   "a": 3,
-   "exp": "法國在 1854 年正式採用點字，是他過世（1852）兩年後，所以他生前沒看到，答案是 (D)。(B) 錯，他後來還加入數字和音樂。"
-  }
- ],
- [
-  {
-   "q": "1. Which of the following best states the main idea of the passage?",
-   "tag": "主旨",
-   "opts": [
-    "Braille's system was quickly accepted everywhere.",
-    "A young blind inventor created a reading system that expanded freedom, despite years of resistance.",
-    "Soldiers needed a better way to communicate at night.",
-    "Schools for the blind in Paris were too expensive."
-   ],
-   "a": 1,
-   "exp": "文章從發明過程講到被抗拒多年、最後普及全世界，主旨是 (B)。(A) 和文意相反。"
-  },
-  {
-   "q": "2. The phrase \"deciphered painstakingly\" in the second paragraph is closest in meaning to ______.",
-   "tag": "字義",
-   "opts": [
-    "figured out slowly and with great effort",
-    "copied quickly",
-    "ignored completely",
-    "read aloud happily"
-   ],
-   "a": 0,
-   "exp": "decipher ＝ 辨認、解讀；painstakingly ＝ 費盡心力地。學生得用手一個字一個字慢慢摸，答案是 (A)。"
-  },
-  {
-   "q": "3. According to the passage, what was one weakness of Barbier's system?",
-   "tag": "細節",
-   "opts": [
-    "It represented letters instead of sounds.",
-    "It could only be used in daylight.",
-    "It had too few combinations for the alphabet.",
-    "Its cells were too large to be felt with a single touch."
-   ],
-   "a": 3,
-   "exp": "第三段：最多十二個點的格子太大，一根手指摸不完，答案是 (D)。(A) 剛好說反了，夜間文字是代表「聲音」不是字母。"
-  },
-  {
-   "q": "4. Why does the author mention that students \"continued to learn it among themselves\"?",
-   "tag": "作者用意",
-   "opts": [
-    "To criticize students for breaking school rules",
-    "To explain why the institute was closed",
-    "To show that students found the system valuable even without official support",
-    "To prove that teachers secretly taught braille"
-   ],
-   "a": 2,
-   "exp": "學校一度不鼓勵用點字，學生卻私下繼續學，代表他們真的覺得點字有用，答案是 (C)。"
-  },
-  {
-   "q": "5. Which of the following is NOT true according to the passage?",
-   "tag": "細節",
-   "opts": [
-    "Braille received a scholarship in 1819.",
-    "France officially adopted braille in 1852.",
-    "Braille died of tuberculosis at 43.",
-    "The six-dot cell allows 63 combinations."
-   ],
-   "a": 1,
-   "exp": "1852 年是 Braille 過世的年份，法國正式採用是兩年後的 1854 年，所以 (B) 不正確。其他三項文中都有提到。"
-  }
- ]
+ {
+  "q": "1. What is the passage mainly about?",
+  "tag": "主旨",
+  "opts": [
+   "How soldiers send secret messages",
+   "How a blind boy created a way for blind people to read",
+   "Why Paris has many special schools",
+   "How to make leather goods"
+  ],
+  "a": 1,
+  "exp": "全文講述失明的布萊葉如何發明點字，讓盲人能夠讀寫。"
+ },
+ {
+  "q": "2. How did Louis make Barbier's system easier to use?",
+  "tag": "細節",
+  "opts": [
+   "He made the letters bigger",
+   "He used only six dots",
+   "He added colors to the dots",
+   "He used sounds instead of letters"
+  ],
+  "a": 1,
+  "exp": "巴比耶的系統最多用 12 個點，布萊葉把它簡化成 6 個點，一根指尖就能摸到。"
+ },
+ {
+  "q": "3. Which of the following is true?",
+  "tag": "細節",
+  "opts": [
+   "Louis was born blind",
+   "Braille is used around the world today",
+   "Louis invented braille when he was 40",
+   "Braille was invented for soldiers"
+  ],
+  "a": 1,
+  "exp": "點字今天在全世界都被使用；布萊葉是 3 歲意外受傷後失明、15 歲完成點字。"
+ }
 ];
 const META = {
  "title": "Six Dots That Changed the World",
@@ -488,8 +374,8 @@ const META = {
  "hero": "<img class=\"photo\" src=\"https://images.unsplash.com/photo-1618411525737-a00b36264665?auto=format&fit=crop&w=1600&q=70\" data-local=\"braille-hero.jpg\" alt=\"A sign written in braille\" onerror=\"if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}\"><svg viewBox=\"0 0 800 420\" aria-hidden=\"true\"><rect width=\"800\" height=\"420\" fill=\"#FDECDD\"/><circle cx=\"400\" cy=\"190\" r=\"110\" fill=\"#fff\" opacity=\".8\"/><text x=\"400\" y=\"230\" text-anchor=\"middle\" font-size=\"120\">⭐</text></svg><figcaption>電梯按鈕、藥盒、景點的告示牌上，都可能找到點字。<span class=\"credit\">Photo: Gabriella Clare Marino / Unsplash</span></figcaption>",
  "fact": "布萊葉去世 100 年後（1952 年），法國把他的遺體移到巴黎的先賢祠，和許多偉人葬在一起。但家鄉的居民要求留下他的雙手，所以他的雙手至今仍安葬在故鄉庫普夫賴。",
  "next": {
-  "title": "When Spirits Come Home",
-  "href": "read.html#spirits"
+  "title": "A Seat for a New Friend",
+  "href": "read.html#bench"
  },
  "id": "braille",
  "date": "2026/11/1"
