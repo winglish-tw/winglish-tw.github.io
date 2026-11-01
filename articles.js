@@ -1,6 +1,9 @@
 /* Winglish 閱讀館：文章清單（書架會自動依照這裡排出卡片）
    新增文章：加一筆資料＋上傳 a-<id>.js 即可 */
 window.ARTICLES = [
+ {"id":"penicillin","cat":"bio","catName":"醫學生物","title":"The Mold That Saved Millions","blurb":"一個沒收拾的培養皿，變成人類第一種抗生素。","photo":"photo-1581091007718-0c50d599bfd0"},
+ {"id":"waterbear","cat":"bio","catName":"醫學生物","title":"The Toughest Tiny Animal","blurb":"半公釐長、上過太空的水熊蟲，其實也有弱點。","photo":"photo-1760453968378-8daa46805fcd"},
+ {"id":"microbes","cat":"bio","catName":"醫學生物","title":"You Are Not Alone","blurb":"細菌比人體細胞多 10 倍？科學家重算後發現不是這樣。","photo":"photo-1614308459036-779d0dfe51ff"},
  {"id":"bench","cat":"social","catName":"社會關懷","title":"A Seat for a New Friend","blurb":"下課沒人陪？一個二年級男孩想出了「友誼長椅」。","photo":"photo-1727600168098-9288d5be2cac"},
  {"id":"lfl","cat":"social","catName":"社會關懷","title":"Take a Book, Share a Book","blurb":"家門口的一個小書箱，變成全世界十七萬座小圖書館。","photo":"photo-1773224811488-070c7dce2657"},
  {"id":"shokudo","cat":"social","catName":"社會關懷","title":"A Table for Every Child","blurb":"不讓孩子一個人餓著肚子吃飯：日本的兒童食堂。","photo":"photo-1680137248903-7af5d51a3350"},
@@ -134,4 +137,4 @@ window.ARTICLES = [
   "photo": "photo-1766939366704-e4df32f3837a"
  }
 ];
-window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];
+window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["bio", "醫學生物"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];

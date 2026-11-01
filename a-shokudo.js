@@ -358,8 +358,8 @@ const META = {
  "hero": "<img class=\"photo\" src=\"https://images.unsplash.com/photo-1680137248903-7af5d51a3350?auto=format&fit=crop&w=1600&q=70\" data-local=\"shokudo-hero.jpg\" alt=\"A bowl of miso soup with chopsticks on a wooden table\" onerror=\"if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}\"><svg viewBox=\"0 0 800 420\" aria-hidden=\"true\"><rect width=\"800\" height=\"420\" fill=\"#FDE8EE\"/><circle cx=\"400\" cy=\"190\" r=\"110\" fill=\"#fff\" opacity=\".8\"/><text x=\"400\" y=\"230\" text-anchor=\"middle\" font-size=\"120\">💗</text></svg><figcaption>一碗熱湯、一張有人陪的餐桌，就是兒童食堂想給孩子的東西。<span class=\"credit\">Photo: Seiya Maeda / Unsplash</span></figcaption>",
  "fact": "第一間兒童食堂開在一家叫「だんだん」（Dandan）的蔬菜店裡。「だんだん」是老闆娘故鄉島根縣出雲地區的方言，意思是「謝謝」。",
  "next": {
-  "title": "When Spirits Come Home",
-  "href": "read.html#spirits"
+  "title": "The Mold That Saved Millions",
+  "href": "read.html#penicillin"
  },
  "id": "shokudo",
  "date": "2026/11/1"
