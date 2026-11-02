@@ -1,6 +1,8 @@
 <!doctype html>
 <html lang="zh-Hant">
 <head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-42J5R61SED"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-42J5R61SED',{send_page_view:false});</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -458,7 +460,7 @@ render(); renderQuiz();
 (function(){
   var id=(location.hash.slice(1)||"spirits").replace(/[^a-z0-9-]/g,"");
   var sc=document.createElement("script"); sc.src="a-"+id+".js?v="+Math.floor(Date.now()/300000);
-  sc.onload=function(){ initArticle(); };
+  sc.onload=function(){ initArticle(); try{ gtag("event","page_view",{page_title:document.title,page_location:location.origin+"/read.html?a="+id}); }catch(e){} };
   sc.onerror=function(){ document.getElementById("text").innerHTML='<p>找不到這篇文章。<a href="reading.html">回到閱讀館</a></p>'; };
   document.body.appendChild(sc);
   window.addEventListener("hashchange",function(){ location.reload(); });
