@@ -1,4 +1,4 @@
-/* Winglish 閱讀館文章資料：Three Hearts and Blue Blood */
+/* winglish 閱讀館文章資料：Three Hearts and Blue Blood */
 window.ARTICLE = (function(){
 const LEVELS = [
  { name:"Level 1", rec:"國三（會考程度）",
@@ -113,7 +113,7 @@ const FIGS = {
 <text x="300" y="300" text-anchor="middle" font-size="13" font-weight="700">Copper in the blood (hemocyanin) makes it blue.</text><text x="300" y="318" font-size="11" text-anchor="middle" fill="#5A6478" >血液含銅（血藍蛋白），所以是藍色的</text></g>
 </svg>`,
     cap:"章魚的三顆心臟：兩顆鰓心負責把血打進鰓，一顆體心負責把血送到全身。",
-    credit:"圖解：Winglish"},
+    credit:"圖解：winglish"},
   photo:{src:"https://images.unsplash.com/photo-1561479639-747efc0d0bf2?auto=format&fit=crop&w=1400&q=70", local:"octopus-2.jpg", alt:"An octopus on the sea floor", fb:"（章魚在海底的照片）",
     cap:"章魚的每隻手臂上都有一排排吸盤，摸到東西就能「嚐」出味道。",
     credit:'Photo: NOAA / <a href="https://unsplash.com/photos/jLGcQB_CSns" target="_blank" rel="noopener">Unsplash</a>（公有領域）'}

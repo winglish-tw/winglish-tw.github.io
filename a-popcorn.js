@@ -1,4 +1,4 @@
-/* Winglish 閱讀館文章資料：Why Does Popcorn Pop? */
+/* winglish 閱讀館文章資料：Why Does Popcorn Pop? */
 window.ARTICLE = (function(){
 const LEVELS = [
  { name:"Level 1", rec:"國三（會考程度）",
@@ -107,7 +107,7 @@ const FIGS = {
 <text x="226" y="98" font-size="12" fill="#3B82B8" font-weight="700">💧→ steam</text><text x="226" y="113" font-size="10" text-anchor="middle" fill="#5A6478" >水→蒸氣</text></g>
 </svg>`,
     cap:"一顆玉米粒變成爆米花的三個步驟。藍色小點就是藏在裡面的水分。",
-    credit:"圖解：Winglish"}
+    credit:"圖解：winglish"}
 };
 
 const QUIZ = [

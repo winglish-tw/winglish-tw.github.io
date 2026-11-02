@@ -1,4 +1,4 @@
-/* Winglish 閱讀館文章資料：Can Plants Talk? */
+/* winglish 閱讀館文章資料：Can Plants Talk? */
 window.ARTICLE = (function(){
 const LEVELS = [
  { name:"Level 1", rec:"國三（會考程度）",
@@ -99,7 +99,7 @@ const FIGS = {
 </g>
 </svg>`,
     cap:"植物的喀喀聲在 4 萬到 8 萬赫之間，人類完全聽不到，但老鼠、蝙蝠等動物聽得到（長條為大致範圍）。",
-    credit:"圖解：Winglish"}
+    credit:"圖解：winglish"}
 };
 
 const QUIZ = [

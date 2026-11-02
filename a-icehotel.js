@@ -1,4 +1,4 @@
-/* Winglish 閱讀館文章資料：A Hotel That Melts Every Spring */
+/* winglish 閱讀館文章資料：A Hotel That Melts Every Spring */
 window.ARTICLE = (function(){
 const LEVELS = [
  { name:"Level 1", rec:"國三（會考程度）",
@@ -110,7 +110,7 @@ const FIGS = {
 </g>
 </svg>`,
     cap:"冰旅館的一年：冰從河裡來，春天又融回河裡。",
-    credit:"圖解：Winglish"}
+    credit:"圖解：winglish"}
 };
 
 const QUIZ = [

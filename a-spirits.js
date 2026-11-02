@@ -1,4 +1,4 @@
-/* Winglish 閱讀館文章資料：When Spirits Come Home */
+/* winglish 閱讀館文章資料：When Spirits Come Home */
 window.ARTICLE = (function(){
 const LEVELS = [
  { name:"Level 1", rec:"國三（會考程度）",
@@ -152,7 +152,7 @@ const FIGS = {
 <g font-family="serif" font-size="22" fill="#1A2238" opacity=".75"><text x="110" y="226">♪</text><text x="300" y="206">♫</text><text x="470" y="216">♪</text></g>
 </svg>`,
     cap:"馬達加斯加的翻屍節：銅管樂隊演奏，親友們一起跳舞，是熱鬧的家族團聚。",
-    credit:"插圖：Winglish"}
+    credit:"插圖：winglish"}
 };
 const QUIZ = [
  [
