@@ -1,4 +1,4 @@
-/* winglish 閱讀館文章資料：The Biggest Food Fight on Earth */
+/* winglish.tw 閱讀館文章資料：The Biggest Food Fight on Earth */
 window.ARTICLE = (function(){
 const LEVELS = [
  { name:"Level 1", rec:"國三（會考程度）",
@@ -97,7 +97,7 @@ const FIGS = {
 <text x="300" y="298" font-size="13" font-weight="700">Also: throw only tomatoes, and make way for the trucks.</text><text x="300" y="316" font-size="11" text-anchor="middle" fill="#5A6478" >另外：只能丟番茄，不能丟其他東西；看到卡車要讓路</text></g>
 </svg>`,
     cap:"番茄節看起來很亂，其實有幾條大家都要遵守的規則。",
-    credit:"圖解：winglish"}
+    credit:"圖解：winglish.tw"}
 };
 
 const QUIZ = [

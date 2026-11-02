@@ -1,4 +1,4 @@
-/* winglish 閱讀館：文章清單（書架會自動依照這裡排出卡片）
+/* winglish.tw 閱讀館：文章清單（書架會自動依照這裡排出卡片）
    新增文章：加一筆資料＋上傳 a-<id>.js 即可 */
 window.ARTICLES = [
  {"id":"procrastinate","cat":"psych","catName":"心理學","title":"Why We Put Things Off","blurb":"明天要考試卻一直滑手機？拖延其實不是因為懶。","photo":"photo-1492640728264-201e1aac3504"},
