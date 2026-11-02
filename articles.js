@@ -1,6 +1,12 @@
 /* winglish.tw 閱讀館：文章清單（書架會自動依照這裡排出卡片）
    新增文章：加一筆資料＋上傳 a-<id>.js 即可 */
 window.ARTICLES = [
+ {"id": "axolotl", "cat": "animal", "catName": "動物冷知識", "title": "The Animal That Never Grows Up", "blurb": "斷了腳會長回來、連心臟都能修補，一輩子長不大的「六角恐龍」。", "photo": "photo-1578999621243-9381851a6a84"},
+ {"id": "crows", "cat": "animal", "catName": "動物冷知識", "title": "Never Forget a Face", "blurb": "戴面具抓了七隻烏鴉，結果整個校園的烏鴉罵了他十幾年。", "photo": "photo-1559649191-b9d89ad31819"},
+ {"id": "chili", "cat": "food", "catName": "食物", "title": "Why Does Spicy Food Feel Hot?", "blurb": "辣不是一種味道，是大腦被騙了。解辣為什麼要喝牛奶？", "photo": "photo-1741963201583-390e6aeb0166"},
+ {"id": "noodles", "cat": "food", "catName": "食物", "title": "The Man Who Invented Instant Noodles", "blurb": "出生在嘉義的吳百福，48 歲在後院小屋發明了泡麵。", "photo": "photo-1766871138762-51db92945bbc"},
+ {"id": "uyuni", "cat": "travel", "catName": "旅行", "title": "The World's Biggest Mirror", "blurb": "下過雨的烏尤尼鹽沼，天和地連成一片，還能幫人造衛星校正儀器。", "photo": "photo-1583901370237-2befec865f88"},
+ {"id": "jetlag", "cat": "travel", "catName": "旅行", "title": "Why Flying East Is Harder", "blurb": "飛歐洲還好，飛回台灣卻累好幾天？時差的祕密在大腦的時鐘。", "photo": "photo-1751698158488-9faa95a179f8"},
  {"id":"procrastinate","cat":"psych","catName":"心理學","title":"Why We Put Things Off","blurb":"明天要考試卻一直滑手機？拖延其實不是因為懶。","photo":"photo-1492640728264-201e1aac3504"},
  {"id":"memory","cat":"psych","catName":"心理學","title":"The Forgetting Curve","blurb":"背完一天就忘三分之二？教你對抗遺忘的讀書法。","photo":"photo-1622575402739-6e9edf8073c4"},
  {"id":"sleep","cat":"psych","catName":"心理學","title":"Why Teens Need More Sleep","blurb":"晚上睡不著、早上爬不起來，是生理時鐘在作怪。","photo":"photo-1541697030313-c55aac74fbae"},
@@ -138,12 +144,6 @@ window.ARTICLES = [
   "title": "The Boy Who Planted a Forest",
   "blurb": "一個 16 歲少年，花了四十年種出一整座森林。",
   "photo": "photo-1766939366704-e4df32f3837a"
- },
- {"id": "axolotl", "cat": "animal", "catName": "動物冷知識", "title": "The Animal That Never Grows Up", "blurb": "斷了腳會長回來、連心臟都能修補，一輩子長不大的「六角恐龍」。", "photo": "photo-1578999621243-9381851a6a84"},
- {"id": "crows", "cat": "animal", "catName": "動物冷知識", "title": "Never Forget a Face", "blurb": "戴面具抓了七隻烏鴉，結果整個校園的烏鴉罵了他十幾年。", "photo": "photo-1559649191-b9d89ad31819"},
- {"id": "chili", "cat": "food", "catName": "食物", "title": "Why Does Spicy Food Feel Hot?", "blurb": "辣不是一種味道，是大腦被騙了。解辣為什麼要喝牛奶？", "photo": "photo-1741963201583-390e6aeb0166"},
- {"id": "noodles", "cat": "food", "catName": "食物", "title": "The Man Who Invented Instant Noodles", "blurb": "出生在嘉義的吳百福，48 歲在後院小屋發明了泡麵。", "photo": "photo-1766871138762-51db92945bbc"},
- {"id": "uyuni", "cat": "travel", "catName": "旅行", "title": "The World's Biggest Mirror", "blurb": "下過雨的烏尤尼鹽沼，天和地連成一片，還能幫人造衛星校正儀器。", "photo": "photo-1583901370237-2befec865f88"},
- {"id": "jetlag", "cat": "travel", "catName": "旅行", "title": "Why Flying East Is Harder", "blurb": "飛歐洲還好，飛回台灣卻累好幾天？時差的祕密在大腦的時鐘。", "photo": "photo-1751698158488-9faa95a179f8"}
+ }
 ];
 window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["bio", "醫學生物"], ["psych", "心理學"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];
