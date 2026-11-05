@@ -274,6 +274,99 @@ SETS.push({
   ]
 });
 
+const BUBBLE=`<svg viewBox="0 0 520 200" role="img" aria-label="時間軸：1957 壁紙、1950 年代末溫室、1960 成立公司、1960 年代初保護電腦">
+<defs><filter id="hand4"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="5"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter></defs>
+<g font-family="Noto Sans TC, sans-serif" fill="#1A2238" text-anchor="middle">
+<text x="260" y="20" font-size="15" font-weight="700">From Wallpaper to Packaging</text>
+<g filter="url(#hand4)" stroke="#1A2238" stroke-width="2.2" stroke-linecap="round" fill="none">
+ <path d="M40 96 C160 93 360 99 490 95"/><path d="M480 87 C484 91 487 93 492 95 C487 97 484 100 480 103"/>
+ <circle cx="70" cy="95" r="9" fill="#fff"/><circle cx="190" cy="95" r="9" fill="#fff"/><circle cx="310" cy="95" r="9" fill="#fff"/><circle cx="430" cy="95" r="9" fill="#4A7BB7"/>
+</g>
+<g font-size="14" font-weight="700"><text x="70" y="66">1957</text><text x="190" y="66">Late 1950s</text><text x="310" y="66">1960</text><text x="430" y="66">Early 1960s</text></g>
+<g font-size="12.5" fill="#4A536B">
+<text x="70" y="128">Sold as</text><text x="70" y="145">wallpaper</text><text x="70" y="162">(failed)</text>
+<text x="190" y="128">Tried as</text><text x="190" y="145">greenhouse</text><text x="190" y="162">insulation (failed)</text>
+<text x="310" y="128">Company</text><text x="310" y="145">Sealed Air</text><text x="310" y="162">founded</text>
+<text x="430" y="128">Used to protect</text><text x="430" y="145">IBM computers</text><text x="430" y="162">during shipping</text></g>
+</g></svg>`;
+
+const HABIT=`<svg viewBox="0 0 440 280" role="img" aria-label="長條圖：喝水約 20 天、吃水果約 65 天、每天運動約 90 天">
+<g font-family="Noto Sans TC, sans-serif" fill="#1A2238">
+<text x="230" y="20" font-size="15" font-weight="700" text-anchor="middle">Days Until a Habit Felt Automatic</text>
+<line x1="70" y1="40" x2="70" y2="220" stroke="#4A536B" stroke-width="1.5"/><line x1="70" y1="220" x2="420" y2="220" stroke="#4A536B" stroke-width="1.5"/>
+<g stroke="#E4E9F2"><line x1="71" y1="175" x2="420" y2="175"/><line x1="71" y1="130" x2="420" y2="130"/><line x1="71" y1="85" x2="420" y2="85"/><line x1="71" y1="40" x2="420" y2="40"/></g>
+<g font-size="12" fill="#4A536B" text-anchor="end"><text x="62" y="224">0</text><text x="62" y="179">25</text><text x="62" y="134">50</text><text x="62" y="89">75</text><text x="62" y="44">100</text></g>
+<rect x="100" y="184" width="70" height="36" fill="#4A7BB7" rx="3"/>
+<rect x="210" y="103" width="70" height="117" fill="#4A7BB7" rx="3"/>
+<rect x="320" y="58" width="70" height="162" fill="#D23F57" rx="3"/>
+<g font-size="14" font-weight="700" text-anchor="middle"><text x="135" y="177">20</text><text x="245" y="96">65</text><text x="355" y="51">90</text></g>
+<g font-size="13" text-anchor="middle"><text x="135" y="240">Drinking water</text><text x="245" y="240">Eating fruit</text><text x="355" y="240">Daily exercise</text></g>
+<text x="18" y="130" font-size="12" fill="#4A536B" transform="rotate(-90 18 130)" text-anchor="middle">days</text>
+<text x="245" y="268" font-size="11" fill="#4A536B" text-anchor="middle">(Example values, simplified)</text>
+</g></svg>`;
+
+SETS.push({
+  title:"The Accidental Success of Bubble Wrap",img:"",
+  p:[
+"Few people can resist popping bubble wrap. Yet the plastic sheet that now protects packages around the world was never meant for shipping at all.",
+"In 1957, two American engineers, Alfred Fielding and Marc Chavannes, sealed two shower curtains together, trapping air bubbles between them. They hoped to sell the result as a new kind of textured wallpaper. Unfortunately, few customers were interested in covering their walls with plastic.",
+"Refusing to give up, the inventors tried selling their product as insulation for greenhouses. That idea failed too. Then, in 1960, they started a company called Sealed Air and soon found the customer they needed. IBM had just launched a new computer and was looking for a way to protect it during shipping. The bubbles worked perfectly. The timeline below shows how the product found its purpose.",
+"Since then, bubble wrap has protected everything from glasses to electronics. It has also become a popular stress reliever; many people find popping the bubbles strangely calming. There is even a Bubble Wrap Appreciation Day, held on the last Monday of January.",
+"The story of bubble wrap shows that a failed idea can still become a great success if it finds the right use."],
+  chartAfter:2,chart:BUBBLE,
+  tr:[
+"很少人能忍住不去戳氣泡紙。然而，這種如今在世界各地保護包裹的塑膠片，當初根本不是為了運送東西而發明的。",
+"1957 年，兩位美國工程師 Alfred Fielding 和 Marc Chavannes 把兩片浴簾黏在一起，中間封住了一個個空氣泡泡。他們希望把這個成品當成一種新的立體壁紙來賣。可惜的是，沒什麼顧客想用塑膠來貼牆壁。",
+"兩人不肯放棄，又試著把產品當作溫室的隔熱材料來賣，結果也失敗了。後來在 1960 年，他們成立了一家叫做 Sealed Air 的公司，很快就找到了需要的客戶。IBM 當時剛推出一台新電腦，正在找方法在運送時保護它。這些氣泡的效果好極了。下方的時間軸顯示這項產品如何找到它的用途。",
+"從那時起，氣泡紙保護過的東西從玻璃杯到電子產品都有。它也成了很受歡迎的紓壓小物，很多人覺得戳泡泡有種說不出的療癒感。甚至還有一個「氣泡紙感謝日」，訂在每年一月的最後一個星期一。",
+"氣泡紙的故事告訴我們：一個失敗的點子，只要找到對的用途，還是可以大大成功。"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化，使句子合乎文法且語意完整。",
+    s:"Maria {A} to give up after her first plan failed, and she will {B} her online shop next month.",
+    blanks:{A:{ans:["refused"],src:"refusing",hint:"看第 3 段第一句，「不肯」放棄用哪個動詞？",k:"第 3 段 Refusing to give up。句子講過去的事，要用過去式 refused。"},
+            B:{ans:["launch"],src:"launched",hint:"看第 3 段，IBM「推出」新電腦用哪個動詞？",k:"第 3 段 IBM had just launched a new computer。will 後面接原形動詞，所以是 launch。"}}},
+   {type:"multi",n:2,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["Bubble wrap was first designed to protect packages.","The inventors first hoped people would put bubble wrap on their walls.","Selling bubble wrap for greenhouses was a great success.","IBM used bubble wrap to protect a new computer during shipping.","Bubble Wrap Appreciation Day is held at the end of the year."],
+    a:[1,3],why:["錯。第 1 段：它當初根本不是為了運送東西而發明的。","對。第 2 段：他們想把它當成立體壁紙來賣。","錯。第 3 段：溫室的點子也失敗了。","對。第 3 段：IBM 用它在運送時保護新電腦。","錯。第 4 段：是在一月的最後一個星期一，在年初不是年底。"]},
+   {type:"single",n:3,pts:"2 分",q:"Which of the following is supported by the timeline?",
+    opts:["The company Sealed Air was founded before the wallpaper idea.","Bubble wrap was used for greenhouses after IBM started using it.","The inventors tried the greenhouse idea before starting their company.","Many people find popping bubble wrap calming."],
+    a:2,why:["錯。壁紙是 1957 年，公司是 1960 年才成立。","錯。溫室是 1950 年代末，IBM 是 1960 年代初，順序相反。","對。時間軸上溫室在 1950 年代末，公司在 1960 年成立。","錯。這是第 4 段文字的內容，時間軸上沒有。這種「文章有寫、圖沒有」的選項是常見陷阱。"]},
+   {type:"short",n:4,pts:"2 分",inst:"請以英文作答。",q:"What was the name of the company the two inventors started in 1960?",
+    check:v=>/sealed\s*air/.test(v),model:"(It was called) Sealed Air.",hint:"回到第 3 段，找 1960 年成立的公司名稱。",k:"答案在第 3 段：in 1960, they started a company called Sealed Air。"}
+  ]
+});
+
+SETS.push({
+  title:"How Long Does a New Habit Take?",img:"",
+  p:[
+"Many people believe that it takes 21 days to form a new habit. This popular idea has appeared in countless self-help books, but scientists say the truth is more complicated.",
+"In a well-known study from University College London, 96 volunteers each chose a new daily behavior, such as drinking a glass of water at lunch or going for a run before dinner. Every day, they reported how automatic the behavior felt, that is, how easily they could do it without thinking.",
+"On average, it took 66 days for a new behavior to become automatic. However, the time varied greatly from person to person, from as few as 18 days to as many as 254. The type of habit also mattered. Simple actions, like drinking water, became automatic much faster than harder ones, like daily exercise. The chart below gives an example.",
+"The study also brought some good news. Missing a day now and then did not seriously affect the process. What counted most was repeating the behavior in the same situation, such as at the same time or in the same place each day.",
+"So if your new habit still feels hard after three weeks, don't give up. You may simply need more time."],
+  chartAfter:2,chart:HABIT,
+  tr:[
+"很多人相信，養成一個新習慣需要 21 天。這個說法出現在無數本勵志書裡，但科學家說，真相比這複雜得多。",
+"在倫敦大學學院一項著名的研究中，96 位志願者各自選了一個新的每日行為，例如午餐時喝一杯水，或晚餐前去跑步。他們每天回報這個行為感覺有多「自動」，也就是不用想就能做到的程度。",
+"平均來說，一個新行為要 66 天才會變成自動的。不過，每個人花的時間差很多，最少只要 18 天，最多要 254 天。習慣的種類也有影響。像喝水這種簡單的動作，比每天運動這種比較難的事，更快變成自動。下方的圖表舉了一個例子。",
+"這項研究也帶來一些好消息。偶爾漏掉一天，並不會嚴重影響習慣的養成。最重要的是在同樣的情境下重複這個行為，例如每天在同一個時間或同一個地點做。",
+"所以，如果你的新習慣過了三週還是覺得很難，不要放棄。你可能只是需要更多時間。"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化，使句子合乎文法且語意完整。",
+    s:"Because sleep needs {A} from person to person, doctors suggest that you {B} the same bedtime routine every night.",
+    blanks:{A:{ans:["vary"],src:"varied",hint:"看第 3 段，時間因人而「異」用哪個動詞？",k:"第 3 段 the time varied greatly from person to person。這句是一般事實，主詞 needs 是複數，用現在式 vary。"},
+            B:{ans:["repeat"],src:"repeating",hint:"看第 4 段，最重要的是「重複」這個行為，用哪個動詞？",k:"第 4 段 repeating the behavior。suggest that 後面用原形動詞，所以是 repeat。"}}},
+   {type:"multi",n:2,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["Scientists have proved that every habit takes exactly 21 days.","The volunteers in the study chose their own new behaviors.","Missing a single day completely ruined the process.","Doing a behavior in the same situation helped it become automatic.","Every volunteer formed a habit in about 66 days."],
+    a:[1,3],why:["錯。第 1 段：科學家說 21 天的說法太簡單了。","對。第 2 段：志願者各自選了一個新行為。","錯。第 4 段：偶爾漏掉一天不會嚴重影響。","對。第 4 段：在同樣的時間或地點重複最重要。","錯。第 3 段：66 天是平均，每個人從 18 天到 254 天都有。"]},
+   {type:"single",n:3,pts:"2 分",q:"According to the chart, which of the following is true?",
+    opts:["Daily exercise took the shortest time to become automatic.","Drinking water became automatic in fewer than 30 days.","Eating fruit took more than twice as long as daily exercise.","Missing a day slowed down habit formation."],
+    a:1,why:["錯。每天運動要 90 天，是最久的。","對。喝水是 20 天，少於 30 天。","錯。吃水果 65 天，比運動 90 天還短。","錯。圖表沒有漏掉一天的資料，這是第 4 段文字的內容，而且文章說漏一天影響不大。"]},
+   {type:"short",n:4,pts:"2 分",inst:"請以英文作答。",q:"According to the study, on average, how many days did it take for a new behavior to become automatic?",
+    check:v=>/(66|sixty[- ]six)/.test(v),model:"(It took) 66 days (on average).",hint:"回到第 3 段第一句，找 on average（平均）。",k:"答案在第 3 段：On average, it took 66 days。注意不是一般人以為的 21 天。"}
+  ]
+});
+
 const $=s=>document.querySelector(s);
 const L="ABCDE";
 const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
