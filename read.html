@@ -262,8 +262,15 @@ figure img.photo + svg{display:none !important}
 </div>
 
 <script>
+/* 使用紀錄（寫進 Winglish 後台「使用統計」） */
+const WG_API="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec";
+const WG_VID=(()=>{try{let v=localStorage.getItem("wg-vid");if(!v){v=Math.random().toString(36).slice(2,10);localStorage.setItem("wg-vid",v)}return v}catch(e){return "anon"}})();
+const WG_MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+function logUse(ev,area,sec,first,total){try{let login=false;try{login=!!localStorage.getItem("gsat-code")}catch(e){}
+  fetch(WG_API,{method:"POST",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:"logUse",args:[{ev,vid:WG_VID,year:area,sec:sec||"",first:first||0,total:total||0,login,mobile:WG_MOBILE}]})}).catch(()=>{})}catch(e){}}
 function initArticle(){
 const A=window.ARTICLE; const {LEVELS,GLOSS,KEY,FIGS,QUIZ}=A;
+setTimeout(()=>logUse("open","閱讀館",A.title),1500);
 document.title=A.title+"｜winglish.tw 閱讀館";
 document.getElementById("aCat").textContent=A.category; document.getElementById("aTitle").textContent=A.title;
 document.getElementById("aDek").textContent=A.dek; document.getElementById("aHero").innerHTML=A.hero;
@@ -441,6 +448,7 @@ function renderQuiz(){
     const e=$("#e"+qi); e.innerHTML=`<b>${oi===q.a?"✅ 答對了！":"❌ 正確答案是 ("+"ABCD"[q.a]+")"}</b><br>${q.exp}`; e.classList.add("show"); e.classList.toggle("bad",oi!==q.a);
     updTasks();
     if(Object.keys(state.answered).length===QUIZ.length){ const c=QUIZ.filter((q,k)=>state.answered[k]===q.a).length;
+      logUse("done","閱讀館",A.title+"（"+LEVELS[level].name+"）",c,QUIZ.length);
       $("#qscore").innerHTML=`得分 ${c} / ${QUIZ.length}<button class="again" id="again">再做一次</button>`;
       $("#again").onclick=()=>{ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); }; }
   });

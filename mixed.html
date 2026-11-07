@@ -113,6 +113,13 @@ table.tb{border-collapse:collapse;width:100%;margin:6px 0;font-size:16px}
 </main>
 
 <script>
+/* 使用紀錄（寫進 Winglish 後台「使用統計」） */
+const WG_API="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec";
+const WG_VID=(()=>{try{let v=localStorage.getItem("wg-vid");if(!v){v=Math.random().toString(36).slice(2,10);localStorage.setItem("wg-vid",v)}return v}catch(e){return "anon"}})();
+const WG_MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+function logUse(ev,area,sec,first,total){try{let login=false;try{login=!!localStorage.getItem("gsat-code")}catch(e){}
+  fetch(WG_API,{method:"POST",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:"logUse",args:[{ev,vid:WG_VID,year:area,sec:sec||"",first:first||0,total:total||0,login,mobile:WG_MOBILE}]})}).catch(()=>{})}catch(e){}}
+setTimeout(()=>logUse("open","混合題"),1500);
 /* 每一組題目放在 SETS 裡，之後新增題組只要往下加一組 */
 const IMG_CLASS=`<svg viewBox="0 0 520 210" role="img" aria-label="教室裡三個學生，一個接一個打哈欠">
 <defs><filter id="hand"><feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="2" seed="4"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter></defs>
@@ -437,7 +444,7 @@ function build(){
   $("#app").innerHTML=`<div class="card passage"><h2>閱讀下文，回答第 1 至 ${total} 題</h2><h3>${esc(S.title)}</h3>${S.img?`<figure>${S.img}</figure>`:""}${ph}
   <details class="tr" id="tr" hidden><summary>看全文翻譯</summary>${S.tr.map(t=>`<p>${t}</p>`).join("")}</details></div>
   <div class="card" id="qs">${S.q.map((q,i)=>`<div class="q" id="q${i}"></div>`).join("")}<div id="end"></div></div>`;
-  const finish=()=>{done++;if(done===total){$("#tr").hidden=false;$("#end").innerHTML=`<p class="done">全部完成！可以打開上面的「看全文翻譯」再讀一次。</p>${cur<SETS.length-1?`<div class="row" style="justify-content:center"><button class="b main" id="nextSet">做下一組 →</button></div>`:""}`;const nx=document.getElementById("nextSet");if(nx)nx.onclick=()=>{cur++;build();window.scrollTo({top:0})}}};
+  let firstOk=0;const finish=f=>{done++;if(f)firstOk++;if(done===total){logUse("done","混合題","第 "+(cur+1)+" 組："+S.title,firstOk,total);$("#tr").hidden=false;$("#end").innerHTML=`<p class="done">全部完成！可以打開上面的「看全文翻譯」再讀一次。</p>${cur<SETS.length-1?`<div class="row" style="justify-content:center"><button class="b main" id="nextSet">做下一組 →</button></div>`:""}`;const nx=document.getElementById("nextSet");if(nx)nx.onclick=()=>{cur++;build();window.scrollTo({top:0})}}};
   S.q.forEach((q,i)=>{
     const el=$("#q"+i);let tries=0,over=false;
     el.innerHTML=`<div class="qmain"></div>${noteHTML(q)}`;const qm=el.querySelector(".qmain");
@@ -445,7 +452,7 @@ function build(){
     const head=`<p class="qt">${q.n}. ${q.type==="fill"?"填充題":q.type==="short"?"簡答題":q.type==="multi"?"多選題":"單選題"}<span class="pts">${q.pts}</span></p>${q.inst?`<p class="inst">${q.inst}</p>`:""}`;
     const btns=`<div class="row"><button class="b main" data-c>檢查答案</button><button class="b" data-s hidden>看答案</button></div><div class="fbw"></div>`;
     const fbw=()=>el.querySelector(".fbw");
-    const end=()=>{over=true;el.querySelector("[data-c]").hidden=true;el.querySelector("[data-s]").hidden=true;finish()};
+    const end=f=>{over=true;el.querySelector("[data-c]").hidden=true;el.querySelector("[data-s]").hidden=true;finish(f)};
     if(q.type==="fill"){
       qm.innerHTML=head+`<p class="en">${esc(q.s).replace(/\{(\w)\}/g,(m,k)=>`<b>(${k})</b> <input class="in" data-k="${k}" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="空格 ${k}">`)}</p>`+btns;
       const run=show=>{let out="";if(!show)tries++;
@@ -454,7 +461,7 @@ function build(){
           if(B.ans.includes(v)){inp.classList.remove("bad");inp.classList.add("ok");inp.disabled=true;out+=`<div class="fb good"><b class="t">(${inp.dataset.k}) 答對了！</b>${B.k}</div>`;return}
           inp.classList.add("bad");out+=`<div class="fb bad"><b class="t">(${inp.dataset.k}) 再想想看</b>${v===B.src?"字找對了！但要做<b>字形變化</b>。":""}${B.hint}</div>`});
         fbw().innerHTML=out;
-        if([...el.querySelectorAll(".in")].every(x=>x.classList.contains("ok")))end();else if(tries>=2)el.querySelector("[data-s]").hidden=false};
+        if([...el.querySelectorAll(".in")].every(x=>x.classList.contains("ok")))end(!show&&tries===1);else if(tries>=2)el.querySelector("[data-s]").hidden=false};
       el.querySelector("[data-c]").onclick=()=>run(false);el.querySelector("[data-s]").onclick=()=>run(true);
     }else if(q.type==="multi"||q.type==="single"){
       const tp=q.type==="multi"?"checkbox":"radio";
@@ -462,7 +469,7 @@ function build(){
       const ans=[].concat(q.a);
       const reveal=ok=>{el.querySelectorAll("input").forEach(c=>{c.disabled=true;c.checked=ans.includes(+c.value)});
         el.querySelectorAll("label").forEach((l,k)=>{l.classList.remove("bad");if(ans.includes(k))l.classList.add("ok")});
-        fbw().innerHTML=`<div class="fb good"><b class="t">${ok?"答對了！":"答案："}${ans.map(k=>"("+L[k]+")").join("")}</b><ul>${q.why.map((w,k)=>`<li>(${L[k]}) ${w}</li>`).join("")}</ul></div>`;end()};
+        fbw().innerHTML=`<div class="fb good"><b class="t">${ok?"答對了！":"答案："}${ans.map(k=>"("+L[k]+")").join("")}</b><ul>${q.why.map((w,k)=>`<li>(${L[k]}) ${w}</li>`).join("")}</ul></div>`;end(ok&&tries===1)};
       el.querySelector("[data-c]").onclick=()=>{const sel=[...el.querySelectorAll("input:checked")].map(c=>+c.value);
         if(!sel.length){fbw().innerHTML=`<div class="fb bad"><b class="t">還沒選答案</b></div>`;return}
         tries++;const ok=sel.length===ans.length&&sel.every(k=>ans.includes(k));
@@ -474,7 +481,7 @@ function build(){
     }else{
       qm.innerHTML=head+`<p class="en">${esc(q.q)}</p><input class="in long" autocomplete="off" spellcheck="false" aria-label="簡答">`+btns;
       const inp=el.querySelector(".in");
-      const show=ok=>{inp.disabled=true;inp.classList.remove("bad");if(ok)inp.classList.add("ok");fbw().innerHTML=`<div class="fb good"><b class="t">${ok?"答對了！":"參考答案"}</b>參考答案：${q.model}<br>${q.k}</div>`;end()};
+      const show=ok=>{inp.disabled=true;inp.classList.remove("bad");if(ok)inp.classList.add("ok");fbw().innerHTML=`<div class="fb good"><b class="t">${ok?"答對了！":"參考答案"}</b>參考答案：${q.model}<br>${q.k}</div>`;end(ok&&tries===1)};
       el.querySelector("[data-c]").onclick=()=>{const v=norm(inp.value);if(!v){fbw().innerHTML=`<div class="fb bad"><b class="t">還沒作答</b></div>`;return}
         tries++;if(q.check(v))return show(true);inp.classList.add("bad");fbw().innerHTML=`<div class="fb bad"><b class="t">再想想看</b>${q.hint}</div>`;if(tries>=2)el.querySelector("[data-s]").hidden=false};
       el.querySelector("[data-s]").onclick=()=>show(false);
