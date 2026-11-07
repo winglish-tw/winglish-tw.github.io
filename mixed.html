@@ -402,12 +402,169 @@ SETS.push({
   ]
 });
 
+const ZEBRA=`<svg viewBox="0 0 440 280" role="img" aria-label="長條圖：黑色外套約 60 次、白色外套約 45 次、條紋外套約 15 次蒼蠅降落">
+<g font-family="Noto Sans TC, sans-serif" fill="#1A2238">
+<text x="230" y="20" font-size="15" font-weight="700" text-anchor="middle">Fly Landings on Horses in Coats</text>
+<line x1="70" y1="40" x2="70" y2="220" stroke="#4A536B" stroke-width="1.5"/><line x1="70" y1="220" x2="420" y2="220" stroke="#4A536B" stroke-width="1.5"/>
+<g stroke="#E4E9F2"><line x1="71" y1="175" x2="420" y2="175"/><line x1="71" y1="130" x2="420" y2="130"/><line x1="71" y1="85" x2="420" y2="85"/><line x1="71" y1="40" x2="420" y2="40"/></g>
+<g font-size="12" fill="#4A536B" text-anchor="end"><text x="62" y="224">0</text><text x="62" y="179">20</text><text x="62" y="134">40</text><text x="62" y="89">60</text><text x="62" y="44">80</text></g>
+<defs><pattern id="zstripe" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(20)"><rect width="14" height="14" fill="#fff"/><rect width="7" height="14" fill="#1A2238"/></pattern></defs>
+<rect x="100" y="85" width="70" height="135" fill="#1A2238" rx="3"/>
+<rect x="210" y="118.75" width="70" height="101.25" fill="#fff" stroke="#1A2238" stroke-width="1.5" rx="3"/>
+<rect x="320" y="186.25" width="70" height="33.75" fill="url(#zstripe)" stroke="#1A2238" stroke-width="1.5" rx="3"/>
+<g font-size="14" font-weight="700" text-anchor="middle"><text x="135" y="78">60</text><text x="245" y="111">45</text><text x="355" y="179">15</text></g>
+<g font-size="13" text-anchor="middle"><text x="135" y="240">Black coat</text><text x="245" y="240">White coat</text><text x="355" y="240">Striped coat</text></g>
+<text x="18" y="130" font-size="12" fill="#4A536B" transform="rotate(-90 18 130)" text-anchor="middle">fly landings in 30 minutes</text>
+<text x="245" y="268" font-size="11" fill="#4A536B" text-anchor="middle">(Example values, simplified)</text>
+</g></svg>`;
+
+const HUDDLE=`<svg viewBox="0 0 480 320" role="img" aria-label="示意圖：外圈的企鵝吹冷風，慢慢往中間移動；中間很溫暖，超過 20 度；再慢慢移回外圈">
+<defs><filter id="hand6"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="9"/><feDisplacementMap in="SourceGraphic" scale="2.2"/></filter></defs>
+<text x="240" y="20" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="15" font-weight="700" fill="#1A2238">Taking Turns in a Huddle</text>
+<g filter="url(#hand6)" fill="none" stroke="#1A2238" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M240 72 C340 70 420 112 420 172 C420 232 340 274 240 274 C140 276 62 232 62 172 C60 112 140 74 240 72Z" stroke-dasharray="7 5" stroke-width="1.6"/>
+ <path d="M240 136 C288 135 318 152 318 176 C318 200 288 214 240 214 C192 215 162 200 162 176 C162 152 192 136 240 136Z" fill="#FBE3C4" stroke-width="1.8"/>
+ <path d="M118.0 131.3 C112.0 131.3 110.3 137.2 111.2 141.5 C107.0 146.6 106.1 156.8 108.7 163.6 C111.2 168.7 124.8 168.7 127.3 163.6 C129.9 156.8 129.1 146.6 124.8 141.5 C125.7 137.2 124.0 131.3 118.0 131.3Z" fill="#fff"/><path d="M114.6 143.2 C111.2 150.0 112.0 160.2 115.5 164.4 M121.4 143.2 C124.8 150.0 124.0 160.2 120.5 164.4" stroke-width="1.3"/><path d="M117.2 136.4 C119.7 135.6 122.2 136.4 124.0 137.2" stroke-width="1.4"/><path d="M108.7 148.3 C104.4 153.4 103.5 158.5 105.2 161.1 M127.3 148.3 C131.6 153.4 132.4 158.5 130.8 161.1" stroke-width="1.5"/><path d="M112.0 167.8 C114.6 169.6 116.3 169.6 117.2 167.8 M118.8 167.8 C119.7 169.6 122.2 169.6 124.0 167.8" stroke-width="1.4"/>
+ <path d="M150.0 93.3 C144.1 93.3 142.3 99.2 143.2 103.5 C138.9 108.6 138.1 118.8 140.7 125.6 C143.2 130.7 156.8 130.7 159.3 125.6 C161.9 118.8 161.1 108.6 156.8 103.5 C157.7 99.2 155.9 93.3 150.0 93.3Z" fill="#fff"/><path d="M146.6 105.2 C143.2 112.0 144.1 122.2 147.4 126.5 M153.4 105.2 C156.8 112.0 155.9 122.2 152.6 126.5" stroke-width="1.3"/><path d="M149.2 98.4 C151.7 97.5 154.2 98.4 155.9 99.2" stroke-width="1.4"/><path d="M140.7 110.3 C136.4 115.4 135.6 120.5 137.2 123.0 M159.3 110.3 C163.6 115.4 164.4 120.5 162.8 123.0" stroke-width="1.5"/><path d="M144.1 129.8 C146.6 131.6 148.3 131.6 149.2 129.8 M150.8 129.8 C151.7 131.6 154.2 131.6 155.9 129.8" stroke-width="1.4"/>
+ <path d="M118.0 193.3 C112.0 193.3 110.3 199.2 111.2 203.5 C107.0 208.6 106.1 218.8 108.7 225.6 C111.2 230.7 124.8 230.7 127.3 225.6 C129.9 218.8 129.1 208.6 124.8 203.5 C125.7 199.2 124.0 193.3 118.0 193.3Z" fill="#fff"/><path d="M114.6 205.2 C111.2 212.0 112.0 222.2 115.5 226.4 M121.4 205.2 C124.8 212.0 124.0 222.2 120.5 226.4" stroke-width="1.3"/><path d="M117.2 198.4 C119.7 197.6 122.2 198.4 124.0 199.2" stroke-width="1.4"/><path d="M108.7 210.3 C104.4 215.4 103.5 220.5 105.2 223.1 M127.3 210.3 C131.6 215.4 132.4 220.5 130.8 223.1" stroke-width="1.5"/><path d="M112.0 229.8 C114.6 231.6 116.3 231.6 117.2 229.8 M118.8 229.8 C119.7 231.6 122.2 231.6 124.0 229.8" stroke-width="1.4"/>
+ <path d="M330.0 93.3 C324.1 93.3 322.4 99.2 323.2 103.5 C318.9 108.6 318.1 118.8 320.6 125.6 C323.2 130.7 336.8 130.7 339.4 125.6 C341.9 118.8 341.1 108.6 336.8 103.5 C337.6 99.2 335.9 93.3 330.0 93.3Z" fill="#fff"/><path d="M326.6 105.2 C323.2 112.0 324.1 122.2 327.4 126.5 M333.4 105.2 C336.8 112.0 335.9 122.2 332.6 126.5" stroke-width="1.3"/><path d="M329.1 98.4 C331.7 97.5 334.2 98.4 335.9 99.2" stroke-width="1.4"/><path d="M320.6 110.3 C316.4 115.4 315.6 120.5 317.2 123.0 M339.4 110.3 C343.6 115.4 344.4 120.5 342.8 123.0" stroke-width="1.5"/><path d="M324.1 129.8 C326.6 131.6 328.3 131.6 329.1 129.8 M330.9 129.8 C331.7 131.6 334.2 131.6 335.9 129.8" stroke-width="1.4"/>
+ <path d="M372.0 131.3 C366.1 131.3 364.4 137.2 365.2 141.5 C360.9 146.6 360.1 156.8 362.6 163.6 C365.2 168.7 378.8 168.7 381.4 163.6 C383.9 156.8 383.1 146.6 378.8 141.5 C379.6 137.2 377.9 131.3 372.0 131.3Z" fill="#fff"/><path d="M368.6 143.2 C365.2 150.0 366.1 160.2 369.4 164.4 M375.4 143.2 C378.8 150.0 377.9 160.2 374.6 164.4" stroke-width="1.3"/><path d="M371.1 136.4 C373.7 135.6 376.2 136.4 377.9 137.2" stroke-width="1.4"/><path d="M362.6 148.3 C358.4 153.4 357.6 158.5 359.2 161.1 M381.4 148.3 C385.6 153.4 386.4 158.5 384.8 161.1" stroke-width="1.5"/><path d="M366.1 167.8 C368.6 169.6 370.3 169.6 371.1 167.8 M372.9 167.8 C373.7 169.6 376.2 169.6 377.9 167.8" stroke-width="1.4"/>
+ <path d="M360.0 195.3 C354.1 195.3 352.4 201.2 353.2 205.5 C348.9 210.6 348.1 220.8 350.6 227.6 C353.2 232.7 366.8 232.7 369.4 227.6 C371.9 220.8 371.1 210.6 366.8 205.5 C367.6 201.2 365.9 195.3 360.0 195.3Z" fill="#fff"/><path d="M356.6 207.2 C353.2 214.0 354.1 224.2 357.4 228.4 M363.4 207.2 C366.8 214.0 365.9 224.2 362.6 228.4" stroke-width="1.3"/><path d="M359.1 200.4 C361.7 199.6 364.2 200.4 365.9 201.2" stroke-width="1.4"/><path d="M350.6 212.3 C346.4 217.4 345.6 222.5 347.2 225.1 M369.4 212.3 C373.6 217.4 374.4 222.5 372.8 225.1" stroke-width="1.5"/><path d="M354.1 231.8 C356.6 233.6 358.3 233.6 359.1 231.8 M360.9 231.8 C361.7 233.6 364.2 233.6 365.9 231.8" stroke-width="1.4"/>
+ <path d="M240.0 79.3 C234.1 79.3 232.3 85.2 233.2 89.5 C228.9 94.6 228.1 104.8 230.7 111.6 C233.2 116.7 246.8 116.7 249.3 111.6 C251.9 104.8 251.1 94.6 246.8 89.5 C247.7 85.2 245.9 79.3 240.0 79.3Z" fill="#fff"/><path d="M236.6 91.2 C233.2 98.0 234.1 108.2 237.4 112.5 M243.4 91.2 C246.8 98.0 245.9 108.2 242.6 112.5" stroke-width="1.3"/><path d="M239.2 84.4 C241.7 83.5 244.2 84.4 245.9 85.2" stroke-width="1.4"/><path d="M230.7 96.3 C226.4 101.4 225.6 106.5 227.2 109.0 M249.3 96.3 C253.6 101.4 254.4 106.5 252.8 109.0" stroke-width="1.5"/><path d="M234.1 115.8 C236.6 117.5 238.3 117.5 239.2 115.8 M240.8 115.8 C241.7 117.5 244.2 117.5 245.9 115.8" stroke-width="1.4"/>
+ <path d="M240.0 231.3 C234.1 231.3 232.3 237.2 233.2 241.5 C228.9 246.6 228.1 256.8 230.7 263.6 C233.2 268.7 246.8 268.7 249.3 263.6 C251.9 256.8 251.1 246.6 246.8 241.5 C247.7 237.2 245.9 231.3 240.0 231.3Z" fill="#fff"/><path d="M236.6 243.2 C233.2 250.0 234.1 260.2 237.4 264.4 M243.4 243.2 C246.8 250.0 245.9 260.2 242.6 264.4" stroke-width="1.3"/><path d="M239.2 236.4 C241.7 235.6 244.2 236.4 245.9 237.2" stroke-width="1.4"/><path d="M230.7 248.3 C226.4 253.4 225.6 258.5 227.2 261.1 M249.3 248.3 C253.6 253.4 254.4 258.5 252.8 261.1" stroke-width="1.5"/><path d="M234.1 267.9 C236.6 269.6 238.3 269.6 239.2 267.9 M240.8 267.9 C241.7 269.6 244.2 269.6 245.9 267.9" stroke-width="1.4"/>
+ <path d="M180.0 217.3 C174.1 217.3 172.3 223.2 173.2 227.5 C168.9 232.6 168.1 242.8 170.7 249.6 C173.2 254.7 186.8 254.7 189.3 249.6 C191.9 242.8 191.1 232.6 186.8 227.5 C187.7 223.2 185.9 217.3 180.0 217.3Z" fill="#fff"/><path d="M176.6 229.2 C173.2 236.0 174.1 246.2 177.4 250.4 M183.4 229.2 C186.8 236.0 185.9 246.2 182.6 250.4" stroke-width="1.3"/><path d="M179.2 222.4 C181.7 221.6 184.2 222.4 185.9 223.2" stroke-width="1.4"/><path d="M170.7 234.3 C166.4 239.4 165.6 244.5 167.2 247.1 M189.3 234.3 C193.6 239.4 194.4 244.5 192.8 247.1" stroke-width="1.5"/><path d="M174.1 253.8 C176.6 255.6 178.3 255.6 179.2 253.8 M180.8 253.8 C181.7 255.6 184.2 255.6 185.9 253.8" stroke-width="1.4"/>
+ <path d="M222.0 151.3 C216.1 151.3 214.3 157.2 215.2 161.5 C210.9 166.6 210.1 176.8 212.7 183.6 C215.2 188.7 228.8 188.7 231.3 183.6 C233.9 176.8 233.1 166.6 228.8 161.5 C229.7 157.2 227.9 151.3 222.0 151.3Z" fill="#fff"/><path d="M218.6 163.2 C215.2 170.0 216.1 180.2 219.4 184.4 M225.4 163.2 C228.8 170.0 227.9 180.2 224.6 184.4" stroke-width="1.3"/><path d="M221.2 156.4 C223.7 155.6 226.2 156.4 227.9 157.2" stroke-width="1.4"/><path d="M212.7 168.3 C208.4 173.4 207.6 178.5 209.2 181.1 M231.3 168.3 C235.6 173.4 236.4 178.5 234.8 181.1" stroke-width="1.5"/><path d="M216.1 187.8 C218.6 189.6 220.3 189.6 221.2 187.8 M222.8 187.8 C223.7 189.6 226.2 189.6 227.9 187.8" stroke-width="1.4"/>
+ <path d="M260.0 151.3 C254.1 151.3 252.3 157.2 253.2 161.5 C248.9 166.6 248.1 176.8 250.7 183.6 C253.2 188.7 266.8 188.7 269.4 183.6 C271.9 176.8 271.1 166.6 266.8 161.5 C267.6 157.2 265.9 151.3 260.0 151.3Z" fill="#fff"/><path d="M256.6 163.2 C253.2 170.0 254.1 180.2 257.4 184.4 M263.4 163.2 C266.8 170.0 265.9 180.2 262.6 184.4" stroke-width="1.3"/><path d="M259.1 156.4 C261.7 155.6 264.2 156.4 265.9 157.2" stroke-width="1.4"/><path d="M250.7 168.3 C246.4 173.4 245.6 178.5 247.2 181.1 M269.4 168.3 C273.6 173.4 274.4 178.5 272.8 181.1" stroke-width="1.5"/><path d="M254.1 187.8 C256.6 189.6 258.3 189.6 259.1 187.8 M260.9 187.8 C261.7 189.6 264.2 189.6 265.9 187.8" stroke-width="1.4"/>
+ <path d="M8 140 C20 134 32 146 46 138 M8 172 C20 166 32 178 46 170 M8 204 C20 198 32 210 46 202" stroke-width="1.8" stroke-dasharray="4 4"/>
+ <path d="M168 112 C184 120 196 132 204 146" stroke="#4A7BB7" stroke-width="2.6"/>
+ <path d="M196 144 C199 145 202 146 205 148 C205 144 205 141 204 137" stroke="#4A7BB7" stroke-width="2.6"/>
+ <path d="M312 198 C318 214 326 226 336 236" stroke="#D23F57" stroke-width="2.6"/>
+ <path d="M328 239 C331 238 334 237 337 236 C335 233 333 231 331 228" stroke="#D23F57" stroke-width="2.6"/>
+</g>
+<g font-family="Noto Sans TC, sans-serif" fill="#1A2238" text-anchor="middle" font-size="13" font-weight="700">
+ <text x="40" y="112">① Edge:</text><text x="40" y="128">cold wind</text>
+ <text x="120" y="66">② Slowly move inward</text>
+ <text x="240" y="206" font-size="12">③ Center: over 20°C</text>
+ <text x="390" y="296">④ Gradually move</text><text x="390" y="312">back out</text>
+</g>
+</svg>`;
+
+const FORTUNE=`<svg viewBox="0 0 520 200" role="img" aria-label="時間軸：1800 年代京都辻占煎餅、1900 年代初加州日本麵包店、1940 年代華裔麵包師傅接手、1990 年代在中國試賣">
+<defs><filter id="hand7"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="6"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter></defs>
+<g font-family="Noto Sans TC, sans-serif" fill="#1A2238" text-anchor="middle">
+<text x="260" y="20" font-size="15" font-weight="700">A Cookie's Journey</text>
+<g filter="url(#hand7)" stroke="#1A2238" stroke-width="2.2" stroke-linecap="round" fill="none">
+ <path d="M40 96 C160 93 360 99 490 95"/><path d="M480 87 C484 91 487 93 492 95 C487 97 484 100 480 103"/>
+ <circle cx="70" cy="95" r="9" fill="#fff"/><circle cx="190" cy="95" r="9" fill="#fff"/><circle cx="310" cy="95" r="9" fill="#fff"/><circle cx="430" cy="95" r="9" fill="#E3A63B"/>
+</g>
+<g font-size="14" font-weight="700"><text x="70" y="66">1800s</text><text x="190" y="66">Early 1900s</text><text x="310" y="66">1940s</text><text x="430" y="66">1990s</text></g>
+<g font-size="12.5" fill="#4A536B">
+<text x="70" y="128">Similar crackers</text><text x="70" y="145">made near</text><text x="70" y="162">Kyoto, Japan</text>
+<text x="190" y="128">Sold in Japanese</text><text x="190" y="145">bakeries in</text><text x="190" y="162">California</text>
+<text x="310" y="128">Chinese American</text><text x="310" y="145">bakers take over</text>
+<text x="430" y="128">Tried in China</text><text x="430" y="145">(did not</text><text x="430" y="162">catch on)</text></g>
+</g></svg>`;
+
+SETS.push({
+  title:"Why Do Zebras Wear Stripes?",img:"",
+  p:[
+"Zebras are famous for their bold black-and-white stripes. No two zebras have exactly the same pattern; like human fingerprints, each set of stripes is unique. But why do these animals have stripes at all? Scientists have argued about this question for more than a hundred years.",
+"Many early explanations focused on lions and other hunters. Some scientists thought the stripes helped zebras hide in tall grass, while others believed that a running herd of striped animals made it hard for a lion to pick out a single target. Another idea was that the stripes helped zebras stay cool under the hot African sun. However, none of these ideas has strong evidence to support it.",
+"Today, the most popular explanation involves a much smaller enemy: biting flies. In Africa, these insects spread deadly diseases, and zebras, with their short hair, are easy targets. In one experiment, researchers in Britain dressed horses in coats of different colors and counted how many flies landed on them. The flies flew toward the striped coats, but they seemed to become confused and failed to land. The chart below shows the results.",
+"If this explanation is correct, stripes may play an important role in helping zebras survive. Some farmers have even tried painting stripes on their cows, and early tests suggest that the painted cows are bitten less often.",
+"Here is one more surprise: under their fur, zebras have black skin. So perhaps the better question is not why zebras have black stripes, but why they have white ones."],
+  chartAfter:2,chart:ZEBRA,
+  tr:[
+"斑馬以醒目的黑白條紋出名。沒有兩隻斑馬的花紋完全一樣；就像人類的指紋，每一隻斑馬的條紋都是獨一無二的。可是，這些動物到底為什麼會有條紋呢？科學家為了這個問題已經爭論了一百多年。",
+"早期的許多解釋都把焦點放在獅子和其他獵食者身上。有些科學家認為條紋能幫斑馬躲在高高的草叢裡，也有人認為一群奔跑中的條紋動物會讓獅子很難鎖定單一個目標。另一種說法是，條紋能幫斑馬在非洲的大太陽下保持涼爽。不過，這些說法都沒有強而有力的證據支持。",
+"現在最受歡迎的解釋，跟一個小得多的敵人有關：會叮咬的蒼蠅。在非洲，這些昆蟲會傳播致命的疾病，而斑馬的毛很短，很容易成為目標。在一項實驗中，英國的研究人員讓馬穿上不同顏色的外套，然後計算有多少蒼蠅降落在牠們身上。蒼蠅會朝條紋外套飛過去，但似乎被搞糊塗了，沒辦法順利降落。下方的圖表顯示了實驗結果。",
+"如果這個解釋是對的，條紋可能在幫助斑馬生存這件事上扮演重要的角色。有些農夫甚至試著在牛身上畫條紋，初步的測試顯示，畫了條紋的牛比較少被叮。",
+"還有一個驚喜：斑馬的毛底下其實是黑色的皮膚。所以，也許更好的問題不是斑馬為什麼有黑條紋，而是為什麼有白條紋。"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
+    s:"Stripes seem to cause {A} among biting flies, and this may be important for the zebra's {B} in Africa.",
+    blanks:{A:{ans:["confusion"],src:"confused",hint:"看第 3 段，蒼蠅碰到條紋外套時「被搞糊塗了」，用哪個字？cause 後面要接名詞。",k:"第 3 段 they seemed to become confused。cause 後面要接名詞，所以把形容詞 confused 改成名詞 confusion（困惑、混亂）。"},
+            B:{ans:["survival"],src:"survive",hint:"看第 4 段，條紋幫助斑馬「生存」用哪個動詞？the zebra's 後面要接名詞。",k:"第 4 段 helping zebras survive。所有格 the zebra's 後面要接名詞，所以把動詞 survive 改成名詞 survival（生存）。"}}},
+   {type:"multi",n:2,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["Every zebra's stripe pattern is different from the others'.","Scientists have long agreed on why zebras have stripes.","There is strong evidence that stripes help zebras hide from lions.","Biting flies can spread deadly diseases in Africa.","Zebras have white skin under their fur."],
+    a:[0,3],why:["對。第 1 段：沒有兩隻斑馬的花紋完全一樣，就像指紋。","錯。第 1 段：科學家已經爭論了一百多年，並沒有一致的看法。","錯。第 2 段：這些早期的說法都沒有強而有力的證據。","對。第 3 段：這些昆蟲在非洲會傳播致命的疾病。","錯。第 5 段：斑馬的毛底下是黑色的皮膚。"]},
+   {type:"single",n:3,pts:"2 分",q:"Which of the following is supported by the chart?",
+    opts:["The white coat attracted the most fly landings.","Fewer flies landed on the striped coat than on either of the other coats.","Flies landed on the black coat five times as often as on the striped coat.","Cows with painted stripes were bitten less often."],
+    a:1,why:["錯。黑色外套 60 次才是最多，白色外套是 45 次。","對。條紋外套只有 15 次，比黑色（60）和白色（45）都少。","錯。60 是 15 的四倍，不是五倍。看到倍數一定要自己算一次。","錯。這是第 4 段文字的內容，圖表裡沒有牛的資料。這種「文章有寫、圖表沒有」的選項是常見陷阱。"]},
+   {type:"short",n:4,pts:"2 分",inst:"請以英文作答。",q:"In the experiment described in the passage, what did the researchers dress the horses in?",
+    check:v=>/coat/.test(v),model:"(They dressed them in) coats of different colors.",hint:"回到第 3 段，找 researchers 和 horses 出現的那一句。",k:"答案在第 3 段：researchers in Britain dressed horses in coats of different colors。"}
+  ]
+});
+
+SETS.push({
+  title:"The Penguin Huddle",img:"",
+  p:[
+"Winter in Antarctica is one of the harshest environments on Earth. Temperatures can drop below minus 40°C, and strong winds blow across the ice for days. Yet this is exactly when emperor penguins raise their young.",
+"After a female lays a single egg, she passes it to her partner and heads to the sea to feed. The male then balances the egg on his feet and covers it with a warm fold of skin. For about two months, he stands on the ice without eating anything, so he must be extremely patient. By the time the chick hatches, he may have lost nearly half of his body weight.",
+"To survive the cold, the males gather in tight groups called huddles, sometimes made up of thousands of birds. Inside a huddle, it can be surprisingly warm, sometimes over 20°C, while the birds on the outside face the freezing wind. A huddle is not fixed, though. As the diagram below shows, the penguins take turns: those on the edge slowly move toward the center, and those in the warm middle gradually move back out.",
+"Scientists who filmed huddles discovered another secret. Every 30 to 60 seconds, all the penguins take a tiny step at the same time. These small steps travel through the group like a wave, allowing it to stay tightly packed while slowly shifting position.",
+"In the coldest place on Earth, no single penguin could stay warm alone. Together, however, they turn a crowd into a shelter."],
+  chartAfter:2,chart:HUDDLE,
+  tr:[
+"南極的冬天是地球上最嚴酷的環境之一。氣溫可能降到零下 40 度以下，強風一連好幾天吹過冰原。然而，皇帝企鵝正是在這個時候養育下一代。",
+"母企鵝生下唯一的一顆蛋後，會把蛋交給伴侶，然後前往海邊覓食。接著公企鵝把蛋放在腳上保持平衡，再用一層溫暖的皮膚皺褶蓋住它。大約兩個月的時間，牠站在冰上什麼都不吃，所以必須非常有耐心。等到小企鵝孵出來時，牠的體重可能已經掉了將近一半。",
+"為了在寒冷中活下來，公企鵝會緊緊聚在一起，形成所謂的「企鵝團」，有時多達好幾千隻。企鵝團裡面可能出奇地溫暖，有時超過 20 度，而外圈的企鵝則要面對刺骨的寒風。不過，企鵝團並不是固定不動的。如下方的示意圖所示，企鵝們會輪流：外圈的慢慢往中間移動，溫暖中心的則逐漸移回外面。",
+"拍攝企鵝團的科學家還發現了另一個祕密。每隔 30 到 60 秒，所有企鵝會同時踏出一小步。這些小步伐像波浪一樣傳過整個群體，讓企鵝團能保持緊密，同時慢慢移動位置。",
+"在地球上最冷的地方，沒有一隻企鵝能單獨保持溫暖。但只要聚在一起，牠們就能把一群企鵝變成一座避風港。"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
+    s:"Penguins at the center of a huddle enjoy plenty of {A}, and the fathers show great {B} as they wait about two months for their chicks.",
+    blanks:{A:{ans:["warmth"],src:"warm",hint:"看第 3 段，企鵝團的中間很「溫暖」，用哪個字？plenty of 後面要接名詞。",k:"第 3 段 the warm middle。plenty of 後面要接名詞，所以把形容詞 warm 改成名詞 warmth（溫暖）。"},
+            B:{ans:["patience"],src:"patient",hint:"看第 2 段，公企鵝必須非常「有耐心」，用哪個字？show great 後面要接名詞。",k:"第 2 段 he must be extremely patient。show great 後面要接名詞，所以把形容詞 patient 改成名詞 patience（耐心）。"}}},
+   {type:"multi",n:2,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["Emperor penguins raise their young during the Antarctic summer.","The female keeps the egg on her feet for about two months.","Male penguins do not eat while they keep the egg warm.","The penguins in a huddle stay in the same place all the time.","The inside of a huddle can be much warmer than the outside."],
+    a:[2,4],why:["錯。第 1 段：皇帝企鵝是在最冷的冬天養育下一代。","錯。第 2 段：母企鵝把蛋交給公企鵝後就去海邊覓食，孵蛋的是公企鵝。","對。第 2 段：大約兩個月站在冰上什麼都不吃。","錯。第 3、4 段：企鵝會輪流換位置，還會一起踏小步慢慢移動。","對。第 3 段：裡面有時超過 20 度，外圈卻要吹寒風。"]},
+   {type:"single",n:3,pts:"2 分",q:"According to the diagram, what happens after a penguin reaches the warm center?",
+    opts:["It leaves the huddle and heads to the sea to feed.","It gradually moves back out toward the edge.","It takes a tiny step every 30 to 60 seconds.","It passes its egg to another penguin."],
+    a:1,why:["錯。去海邊覓食的是母企鵝（第 2 段），圖裡沒有。","對。圖的第 ③ 步是到達溫暖的中心，接著第 ④ 步是逐漸移回外圈。","錯。這是第 4 段文字的內容，圖裡沒有畫出來。這種「文章有寫、圖沒有」的選項是常見陷阱。","錯。圖裡沒有交換蛋的步驟。"]},
+   {type:"short",n:4,pts:"2 分",inst:"請以英文作答。",q:"According to the passage, how often do all the penguins in a huddle take a tiny step at the same time?",
+    check:v=>/(30|thirty)/.test(v)&&/(60|sixty)/.test(v),model:"Every 30 to 60 seconds.",hint:"回到第 4 段，找 tiny step 出現的那一句。",k:"答案在第 4 段：Every 30 to 60 seconds, all the penguins take a tiny step at the same time。"}
+  ]
+});
+
+SETS.push({
+  title:"The Fortune Cookie's Surprising Journey",img:"",
+  p:[
+"At many Chinese restaurants in the United States, a meal ends with a crisp, folded cookie with a small piece of paper inside. The message might predict good luck or offer a bit of advice. Most Americans think of fortune cookies as a Chinese tradition, but if you ask for one in Beijing, you will probably get a puzzled look.",
+"Many historians now believe that the cookie was invented in Japan. As early as the 1800s, bakeries near Kyoto made a similar cracker called tsujiura senbei. It was larger and darker than today's cookie, it was flavored with sesame and miso instead of vanilla, and its paper fortune was tucked into the outside of the fold rather than hidden inside.",
+"Japanese immigrants brought the recipe to California in the early 1900s, and the cookies were sold in Japanese bakeries and tea gardens. During World War II, however, many Japanese Americans were forced to leave their homes and businesses. Chinese American bakers began making the cookies instead, and the cookies soon became a regular part of meals at Chinese restaurants. The timeline below shows the cookie's journey.",
+"Today, factories in the United States produce about three billion fortune cookies each year, and the cookies remain most popular in America. When one company tried selling them in China in the 1990s, they did not catch on; many people found them too American.",
+"So the next time you crack open a fortune cookie, remember that the real message inside may be about how foods travel and change as people move around the world."],
+  chartAfter:2,chart:FORTUNE,
+  tr:[
+"在美國的許多中式餐廳裡，一餐的最後會送上一塊酥脆、摺起來的餅乾，裡面藏著一張小紙條。紙條上的話可能是預言好運，或是給一點人生建議。大多數美國人以為幸運餅乾是中國的傳統，但如果你在北京跟人要一個，對方大概會一臉疑惑。",
+"現在許多歷史學家認為，這種餅乾其實是在日本發明的。早在 1800 年代，京都附近的店家就會做一種類似的煎餅，叫做「辻占煎餅」。它比現在的幸運餅乾更大、顏色更深，用的是芝麻和味噌調味而不是香草，而且籤紙是夾在摺口的外側，不是藏在裡面。",
+"1900 年代初期，日本移民把做法帶到加州，這種餅乾在日本人開的麵包店和茶園裡販售。然而在第二次世界大戰期間，許多日裔美國人被迫離開自己的家和店。華裔美國麵包師傅開始接手製作，這種餅乾很快就成了中式餐廳餐點的固定成員。下方的時間軸顯示了幸運餅乾的旅程。",
+"如今，美國的工廠每年生產大約三十億個幸運餅乾，而它們依然在美國最受歡迎。1990 年代有一家公司試著在中國販售，結果並沒有流行起來；很多人覺得它們太「美國」了。",
+"所以下次你掰開幸運餅乾時，記得：裡面真正的訊息，也許是關於食物如何隨著人們在世界各地移動而旅行、改變。"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
+    s:"Many historians believe that the {A} of the fortune cookie took place in Japan, yet today the cookie enjoys its greatest {B} in the United States.",
+    blanks:{A:{ans:["invention"],src:"invented",hint:"看第 2 段第一句，這種餅乾是在日本「發明」的，用哪個字？the 後面要接名詞。",k:"第 2 段 the cookie was invented in Japan。the 後面要接名詞，所以把動詞 invent 改成名詞 invention（發明）。"},
+            B:{ans:["popularity"],src:"popular",hint:"看第 4 段，幸運餅乾在美國最「受歡迎」，用哪個字？its greatest 後面要接名詞。",k:"第 4 段 the cookies remain most popular in America。its greatest 後面要接名詞，所以把形容詞 popular 改成名詞 popularity（受歡迎、普及）。"}}},
+   {type:"multi",n:2,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["Fortune cookies are a common dessert in Beijing.","The early Japanese crackers were larger and darker than today's cookies.","In the Japanese version, the paper fortune was hidden inside the cracker.","Fortune cookies were once sold in tea gardens in California.","Fortune cookies quickly became popular in China in the 1990s."],
+    a:[1,3],why:["錯。第 1 段：在北京要幸運餅乾，對方大概會一臉疑惑。","對。第 2 段：辻占煎餅比現在的幸運餅乾更大、顏色更深。","錯。第 2 段：籤紙夾在摺口的外側，不是藏在裡面。","對。第 3 段：餅乾在日本人開的麵包店和茶園裡販售。","錯。第 4 段：在中國並沒有流行起來。"]},
+   {type:"single",n:3,pts:"2 分",q:"Which of the following is supported by the timeline?",
+    opts:["Chinese American bakers made the cookies before Japanese bakeries in California did.","The cookies were tried in China after Chinese American bakers took them over.","The crackers made near Kyoto were flavored with sesame and miso.","About three billion fortune cookies are made each year."],
+    a:1,why:["錯。日本麵包店是 1900 年代初，華裔師傅是 1940 年代，順序相反。","對。華裔師傅接手是 1940 年代，在中國試賣是 1990 年代，在後面。","錯。芝麻和味噌是第 2 段文字的內容，時間軸上沒有。這種「文章有寫、圖沒有」的選項是常見陷阱。","錯。三十億是第 4 段文字的內容，時間軸上沒有這個數字。"]},
+   {type:"short",n:4,pts:"2 分",inst:"請以英文作答。",q:"What was the name of the cracker made near Kyoto that was similar to the fortune cookie?",
+    check:v=>/tsujiura/.test(v),model:"(It was called) tsujiura senbei.",hint:"回到第 2 段，找 Kyoto 出現的那一句。",k:"答案在第 2 段：a similar cracker called tsujiura senbei。"}
+  ]
+});
+
 /* 每種題型旁邊的解題便利貼 */
 const NOTES={
  fill:{t:"📝 填充題怎麼解？",s:[
   "先看空格<b>前後</b>：主詞後面通常填動詞，the / a 後面填名詞。",
   "抓句子的關鍵意思，回文章找<b>意思一樣</b>的句子，把那個字找出來。",
   "看<b>時態</b>：講過去的事 → 過去式；to / will / can / had to 後面 → 原形。",
+  "看<b>詞類</b>：the / 所有格 / plenty of 後面要名詞（confused → confusion、warm → warmth）。",
   "最後檢查<b>拼字</b>，例如 chop → chopped 要重複字尾。"]},
  multi:{t:"📝 多選題怎麼解？",s:[
   "把每個選項當成<b>一題是非題</b>，一個一個判斷。",
