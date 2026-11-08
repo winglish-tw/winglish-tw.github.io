@@ -319,6 +319,37 @@ const LEVELS = [
 ];
 const GLOSS = {"gate": ["n.", "大門"], "clean": ["v.", "清潔"], "poor": ["adj.", "貧窮的"], "engineer": ["n.", "工程師"], "electrical": ["adj.", "電的；電機的"], "forced": ["adj.", "被迫的"], "rescue": ["v.", "救援"], "factory": ["n.", "工廠"], "free": ["v.", "使自由；解救"], "dangerous": ["adj.", "危險的"], "attack": ["v.", "攻擊"], "march": ["n.", "遊行"], "labor": ["n.", "勞動"], "prize": ["n.", "獎"], "share": ["v.", "共享"], "polish": ["v.", "擦亮"], "cobbler": ["n.", "鞋匠"], "satisfy": ["v.", "使滿意"], "afford": ["v.", "負擔得起"], "textbook": ["n.", "課本"], "career": ["n.", "職業；事業"], "found": ["v.", "創立"], "raid": ["v.", "突襲"], "quarry": ["n.", "採石場"], "debt": ["n.", "債務"], "label": ["n.", "標籤"], "rug": ["n.", "地毯"], "enemy": ["n.", "敵人"], "organize": ["v.", "組織；發起"], "participant": ["n.", "參與者"], "adopt": ["v.", "通過；採用"], "agreement": ["n.", "協定"], "activist": ["n.", "社運人士"], "commitment": ["n.", "投入；承諾"], "formative": ["adj.", "形成性的；影響深遠的"], "abandon": ["v.", "放棄"], "bonded": ["adj.", "債役的；受契約束縛的"], "repay": ["v.", "償還"], "loan": ["n.", "貸款"], "conduct": ["v.", "進行"], "rehabilitation": ["n.", "復健；重建"], "drift": ["v.", "漂流；慢慢陷入"], "exploitation": ["n.", "剝削"], "sustain": ["v.", "支撐；維持"], "demand": ["n.", "需求"], "certification": ["n.", "認證"], "consumer": ["n.", "消費者"], "persuade": ["v.", "說服"], "convention": ["n.", "公約"], "merely": ["adv.", "僅僅"], "wage": ["n.", "薪資"], "perpetuate": ["v.", "使延續"], "cycle": ["n.", "循環"], "immense": ["adj.", "巨大的"], "emphasize": ["v.", "強調"], "ensure": ["v.", "確保"], "poverty": ["n.", "貧窮"]};
 const KEY = [["gate", "poor", "engineer", "forced", "rescue", "factory", "dangerous", "march", "labor"], ["polish", "cobbler", "satisfy", "afford", "career", "raid", "debt", "label", "participant"], ["formative", "abandon", "bonded", "rehabilitation", "exploitation", "certification", "persuade", "convention", "perpetuate", "immense"]];
+const DEFS = {
+  "gate": "a door in a fence or wall",
+  "poor": "having very little money",
+  "engineer": "a person whose job is to design or build machines, roads or bridges",
+  "forced": "done because someone has no choice",
+  "rescue": "to save someone from danger",
+  "factory": "a building where products are made, usually by machines",
+  "dangerous": "likely to cause harm or injury",
+  "march": "an organized walk by many people to show their opinion",
+  "labor": "work, especially hard physical work",
+  "polish": "to rub something to make it clean and shiny",
+  "cobbler": "a person whose job is to make or repair shoes",
+  "satisfy": "to please someone by giving them what they want",
+  "afford": "to have enough money to pay for something",
+  "career": "the series of jobs a person does during their working life",
+  "raid": "to make a sudden visit to a place to search it or arrest people",
+  "debt": "money that you owe to someone",
+  "label": "a piece of paper on a product that gives information about it",
+  "participant": "a person who takes part in an activity or study",
+  "formative": "having an important influence on how someone or something develops",
+  "abandon": "to stop doing or planning something before it is finished",
+  "bonded": "forced to work for someone in order to pay back money owed",
+  "rehabilitation": "the process of helping someone return to a healthy, normal life",
+  "exploitation": "unfair treatment of someone for your own benefit",
+  "certification": "official proof that something meets certain standards",
+  "persuade": "to make someone agree to do something by giving reasons",
+  "convention": "a formal agreement between countries",
+  "perpetuate": "to make a bad situation continue",
+  "immense": "extremely large or great"
+};
+
 const FIGS = {"ktl": {"svg": "<svg viewBox=\"0 0 600 310\" role=\"img\" aria-label=\"Timeline of Kailash Satyarthi's work\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFF8F2\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2571A\">From One Question to a World Movement</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >從一個問題，到一場全球運動</text>\n<line x1=\"40\" y1=\"132\" x2=\"570\" y2=\"132\" stroke=\"#C2571A\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n<g text-anchor=\"middle\">\n<circle cx=\"80\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"80\" y=\"172\" font-weight=\"900\" font-size=\"15\">Age 5</text><text x=\"80\" y=\"188\" font-size=\"11\" fill=\"#5A6478\">first school day</text><text x=\"80\" y=\"205\" font-size=\"12\" font-weight=\"700\">Asks “Why?”</text><text x=\"80\" y=\"220\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >上學第一天問「為什麼？」</text>\n<circle cx=\"225\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"225\" y=\"62\" font-weight=\"900\" font-size=\"15\">1980</text><text x=\"225\" y=\"78\" font-size=\"11\" fill=\"#5A6478\">age 26</text><text x=\"225\" y=\"95\" font-size=\"12\" font-weight=\"700\">Starts his movement</text><text x=\"225\" y=\"110\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >創立「拯救童年運動」</text>\n<circle cx=\"375\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"375\" y=\"172\" font-weight=\"900\" font-size=\"15\">1998</text><text x=\"375\" y=\"188\" font-size=\"11\" fill=\"#5A6478\">103 countries</text><text x=\"375\" y=\"205\" font-size=\"12\" font-weight=\"700\">Global March</text><text x=\"375\" y=\"220\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >全球反童工大遊行</text>\n<circle cx=\"520\" cy=\"132\" r=\"10\" fill=\"#C2571A\"/><text x=\"520\" y=\"62\" font-weight=\"900\" font-size=\"15\">2014</text><text x=\"520\" y=\"78\" font-size=\"11\" fill=\"#5A6478\">with Malala</text><text x=\"520\" y=\"95\" font-size=\"12\" font-weight=\"700\">Nobel Peace Prize</text><text x=\"520\" y=\"110\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >與馬拉拉共獲和平獎</text>\n</g>\n<rect x=\"90\" y=\"252\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#FDECDD\"/>\n<text x=\"300\" y=\"272\" font-size=\"15\" text-anchor=\"middle\" font-weight=\"700\">More than 80,000 children freed from work</text><text x=\"300\" y=\"289\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >超過 8 萬名孩子被救出、重回校園</text></g></svg>", "cap": "校門口的一個問題，讓沙蒂亞提投入一輩子的反童工運動。", "credit": "圖解：winglish.tw"}};
 const QUIZ = [
  [
@@ -485,5 +516,5 @@ const META = {
  "id": "kailash",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

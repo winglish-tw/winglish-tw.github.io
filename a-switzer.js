@@ -324,6 +324,37 @@ const LEVELS = [
 ];
 const GLOSS = {"marathon": ["n.", "馬拉松"], "weak": ["adj.", "虛弱的"], "kilometer": ["n.", "公里"], "train": ["v.", "訓練"], "official": ["n./adj.", "官員；正式的"], "officially": ["adv.", "正式地"], "grab": ["v.", "抓住"], "tear": ["v.", "撕"], "shout": ["v.", "大吼"], "shocked": ["adj.", "震驚的"], "crawl": ["v.", "爬"], "finish": ["v.", "完成"], "attack": ["n.", "攻擊"], "event": ["n.", "比賽項目"], "symbol": ["n.", "象徵"], "fearless": ["adj.", "無所畏懼的"], "journalism": ["n.", "新聞學"], "bib": ["n.", "號碼布"], "press": ["n.", "新聞媒體"], "rip": ["v.", "扯破"], "athlete": ["n.", "運動員"], "capture": ["v.", "拍下；捕捉"], "shaken": ["adj.", "驚魂未定的"], "determined": ["adj.", "堅決的"], "quit": ["v.", "放棄"], "activist": ["n.", "倡議者；運動人士"], "organize": ["v.", "籌辦"], "campaign": ["v.", "奔走爭取"], "retire": ["v.", "退休；（號碼）不再使用"], "honor": ["n.", "榮譽；敬意"], "nonprofit": ["adj.", "非營利的"], "confidence": ["n.", "自信"], "effectively": ["adv.", "實際上"], "bar": ["v.", "禁止"], "evidence": ["n.", "證據"], "prejudice": ["n.", "偏見"], "caution": ["n.", "謹慎"], "governing": ["adj.", "管理的"], "athletics": ["n.", "田徑運動"], "register": ["v.", "報名；登記"], "lunge": ["v.", "猛撲"], "companion": ["n.", "同伴"], "shove": ["v.", "推"], "sequence": ["n.", "一連串事件"], "enduring": ["adj.", "持久的"], "emblem": ["n.", "象徵"], "equality": ["n.", "平等"], "motivate": ["v.", "激勵"], "ambition": ["n.", "野心；抱負"], "conviction": ["n.", "信念"], "stereotype": ["n.", "刻板印象"], "subsequently": ["adv.", "後來"], "tireless": ["adj.", "不知疲倦的"], "reformer": ["n.", "改革者"], "lobby": ["v.", "遊說"], "authority": ["n.", "主管機關"], "admit": ["v.", "接納"], "striking": ["adj.", "引人注目的"], "reconciliation": ["n.", "和解"], "antagonist": ["n.", "對手"], "institutional": ["adj.", "制度的"], "confrontation": ["n.", "衝突；對峙"], "permanently": ["adv.", "永久地"], "foundation": ["n.", "基金會"], "boundary": ["n.", "界線"], "dare": ["v.", "敢"]};
 const KEY = [["marathon", "weak", "train", "official", "grab", "tear", "crawl", "symbol", "fearless"], ["journalism", "bib", "athlete", "determined", "quit", "activist", "campaign", "retire", "confidence"], ["prejudice", "evidence", "companion", "emblem", "conviction", "stereotype", "reformer", "lobby", "reconciliation", "boundary"]];
+const DEFS = {
+  "marathon": "a running race of about 42 kilometers",
+  "weak": "not physically strong",
+  "train": "to prepare for a sport by exercising and practicing",
+  "official": "a person with authority in an organization; approved by those in charge",
+  "grab": "to take hold of something suddenly",
+  "tear": "to pull something so that it breaks or comes off",
+  "crawl": "to move slowly along the ground",
+  "symbol": "something that represents an idea",
+  "fearless": "not afraid of anything",
+  "journalism": "the work of collecting and writing news",
+  "bib": "a piece of cloth with a number, worn by runners in a race",
+  "athlete": "a person who is good at sports",
+  "determined": "having made a firm decision to do something",
+  "quit": "to stop doing something",
+  "activist": "a person who works to bring about social or political change",
+  "campaign": "to work in an organized way to achieve something",
+  "retire": "to stop working because of age; to stop using a player's number",
+  "confidence": "the feeling that you can do things well",
+  "prejudice": "an unfair opinion about someone that is not based on facts",
+  "evidence": "facts or signs that show something is true",
+  "companion": "a person you spend time with",
+  "emblem": "an object that represents a group or idea",
+  "conviction": "a strong belief or opinion",
+  "stereotype": "a fixed idea about what a type of person is like, often untrue",
+  "reformer": "a person who works to improve society",
+  "lobby": "to try to persuade lawmakers to support something",
+  "reconciliation": "the act of becoming friendly again after a disagreement",
+  "boundary": "a line that marks the limit of an area or of what is allowed"
+};
+
 const FIGS = {"tl261": {"svg": "<svg viewBox=\"0 0 600 294\" role=\"img\" aria-label=\"Timeline from 1967 to 2017\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FAF7FD\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#7A4FB5\">Changes That Began with No. 261</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >從 261 號開始的改變</text>\n<line x1=\"50\" y1=\"130\" x2=\"560\" y2=\"130\" stroke=\"#7A4FB5\" stroke-width=\"6\" stroke-linecap=\"round\"/>\n<g font-size=\"13\" text-anchor=\"middle\">\n<rect x=\"58\" y=\"62\" width=\"64\" height=\"44\" rx=\"6\" fill=\"#fff\" stroke=\"#1A2238\" stroke-width=\"2.5\"/><text x=\"90\" y=\"92\" font-size=\"22\" font-weight=\"900\" fill=\"#C2387A\">261</text>\n<circle cx=\"90\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"90\" y=\"164\" font-weight=\"900\" font-size=\"16\">1967</text><text x=\"90\" y=\"184\">Ran Boston</text><text x=\"90\" y=\"200\">wearing 261</text><text x=\"90\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >戴 261 號跑完波士頓</text>\n<circle cx=\"230\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"230\" y=\"164\" font-weight=\"900\" font-size=\"16\">1972</text><text x=\"230\" y=\"184\">Boston opens</text><text x=\"230\" y=\"200\">to women</text><text x=\"230\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >波士頓正式開放女性</text>\n<circle cx=\"370\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"370\" y=\"164\" font-weight=\"900\" font-size=\"16\">1984</text><text x=\"370\" y=\"184\">First Olympic</text><text x=\"370\" y=\"200\">women's marathon</text><text x=\"370\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >奧運首度有女子馬拉松</text>\n<circle cx=\"510\" cy=\"130\" r=\"11\" fill=\"#7A4FB5\"/><text x=\"510\" y=\"164\" font-weight=\"900\" font-size=\"16\">2017</text><text x=\"510\" y=\"184\">No. 261</text><text x=\"510\" y=\"200\">is retired</text><text x=\"510\" y=\"216\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >261 號永久退休</text>\n<text x=\"230\" y=\"98\" font-size=\"26\">🏃‍♀️</text><text x=\"370\" y=\"98\" font-size=\"26\">🏅</text><text x=\"510\" y=\"98\" font-size=\"26\">⭐</text>\n</g>\n<rect x=\"150\" y=\"236\" width=\"300\" height=\"46\" rx=\"23\" fill=\"#EEE6F7\"/>\n<text x=\"300\" y=\"256\" font-size=\"16\" text-anchor=\"middle\" font-weight=\"900\">261 = Fearless</text><text x=\"300\" y=\"273\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >261 ＝ 無所畏懼</text></g></svg>", "cap": "1967 年的一場比賽，帶動了女性跑步的一連串改變。", "credit": "圖解：winglish.tw"}};
 const QUIZ = [
  [
@@ -490,5 +521,5 @@ const META = {
  "id": "switzer",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

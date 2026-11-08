@@ -96,6 +96,49 @@ const KEY = [["octopus","heart","blood","gill","crawl","arm","taste","hide","dan
              ["flexible","creature","pump","oxygen","copper","prefer","remarkable","nerve","sucker","texture","blend","squeeze","drainpipe"],
              ["defy","assumption","branchial","systemic","dispatch","cease","quirk","reside","autonomy","receptor","crevice","ingenuity","mischief","notorious","compel"]];
 
+const DEFS = {
+  "octopus": "a sea animal with a soft body and eight long arms",
+  "heart": "the organ in your chest that pumps blood around your body",
+  "blood": "the red liquid that flows through the body",
+  "gill": "the part of a fish or water animal's body that it uses to breathe",
+  "crawl": "to move slowly on hands and knees or close to the ground",
+  "arm": "one of the long parts of the body attached to the shoulder; one of an octopus's eight limbs",
+  "taste": "to sense the flavor of something",
+  "hide": "to put yourself where others cannot see or find you",
+  "danger": "the possibility of harm or death",
+  "aquarium": "a building where people can see fish and other water animals",
+  "tank": "a large container for holding water or gas",
+  "pipe": "a tube through which water or gas flows",
+  "flexible": "able to bend easily without breaking",
+  "creature": "a living thing, especially an animal",
+  "pump": "to push liquid or gas through a system",
+  "oxygen": "a gas in the air that people and animals need to live",
+  "copper": "a reddish-brown metal",
+  "prefer": "to like one thing more than another",
+  "remarkable": "unusual or surprising in a way that deserves attention",
+  "nerve": "a long thin fiber that carries messages between the brain and other parts of the body",
+  "sucker": "a part of an animal's body that can stick to surfaces",
+  "texture": "the way something feels when you touch it",
+  "blend": "to mix in so well that it is hard to see",
+  "squeeze": "to push into a small space",
+  "drainpipe": "a pipe that carries rainwater away from a building",
+  "defy": "to go against something; to show something is not true",
+  "assumption": "something you believe is true without proof",
+  "branchial": "connected with the gills",
+  "systemic": "affecting the whole body",
+  "dispatch": "to send something somewhere",
+  "cease": "to stop",
+  "quirk": "a strange habit or feature",
+  "reside": "to be present or exist in something",
+  "autonomy": "the ability to act or make decisions without being controlled",
+  "receptor": "a nerve ending or cell that receives signals such as heat, light or chemicals",
+  "crevice": "a narrow crack in rock or a wall",
+  "ingenuity": "the ability to think of clever new ideas",
+  "mischief": "behavior that causes small trouble, often for fun",
+  "notorious": "famous for something bad",
+  "compel": "to force someone to do something"
+};
+
 const FIGS = {
   hearts:{svg:`<svg viewBox="0 0 600 340" role="img" aria-label="Diagram of an octopus's three hearts" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF6FB">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2238"/></marker></defs>
@@ -284,5 +327,5 @@ const META = {
  fact:"章魚沒有骨頭，全身最硬的部分是嘴巴的「喙」。只要洞口比喙大，牠幾乎都鑽得過去，所以水族館都很怕章魚「越獄」！",
  next:{title:"A Hotel That Melts Every Spring", href:"read.html#icehotel"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

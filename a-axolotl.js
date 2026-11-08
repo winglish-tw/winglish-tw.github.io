@@ -102,6 +102,45 @@ const KEY = [["salamander","gill","breathe","repair","heart","brain","heal","wil
              ["feature","neoteny","regeneration","complete","nerve","scar","wound","rebuild","ironically","polluted","survive"],
              ["effortlessly","native","undergo","metamorphosis","retain","external","extract","blastema","indistinguishable","mend","decode","thrive","habitat","devour","inflict"]];
 
+const DEFS = {
+  "salamander": "an animal like a lizard with soft wet skin that lives on land and in water",
+  "gill": "the part of a fish or water animal's body that it uses to breathe",
+  "breathe": "to take air into your body and let it out again",
+  "repair": "to fix something that is broken or damaged",
+  "heart": "the organ in your chest that pumps blood around your body",
+  "brain": "the organ inside your head that controls thinking, feeling and movement",
+  "heal": "to become healthy again, or to make a wound or injury healthy again",
+  "wild": "living in nature without being controlled by people",
+  "canal": "a long passage dug in the ground and filled with water for boats to travel on",
+  "dirty": "not clean; covered with dust, mud or other unwanted things",
+  "feature": "a typical quality or an important part of something",
+  "neoteny": "keeping young features, such as a baby's body shape, as an adult",
+  "regeneration": "the natural process of growing again after being lost or damaged",
+  "complete": "having all the parts; whole",
+  "nerve": "a long thin fiber that carries messages between the brain and other parts of the body",
+  "scar": "a mark left on the skin after a wound has healed",
+  "wound": "an injury in which the skin is cut or broken",
+  "rebuild": "to build something again after it has been damaged or destroyed",
+  "ironically": "in a way that is the opposite of what you would expect",
+  "polluted": "made dirty and harmful by waste or chemicals",
+  "survive": "to continue to live or exist, especially in spite of danger or difficulty",
+  "effortlessly": "without needing any effort; very easily",
+  "native": "growing or living naturally in a particular place",
+  "undergo": "to experience something, especially a change or something unpleasant",
+  "metamorphosis": "a complete change of form, as when a tadpole becomes a frog",
+  "retain": "to keep or continue to have something",
+  "external": "on or from the outside",
+  "extract": "to remove or take out something, especially by effort",
+  "blastema": "a group of cells that forms where a body part was lost and can grow into a new one",
+  "indistinguishable": "so similar that you cannot see any difference",
+  "mend": "to repair something that is broken or damaged",
+  "decode": "to discover the meaning of something difficult or hidden",
+  "thrive": "to grow, develop or be very successful",
+  "habitat": "the natural home of an animal or plant",
+  "devour": "to eat something eagerly and quickly",
+  "inflict": "to make someone suffer something unpleasant, such as an injury"
+};
+
 const FIGS = {
   regen:{svg:`<svg viewBox="0 0 600 340" role="img" aria-label="Diagram of an axolotl's body and the parts it can regrow" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF6FB">
 <path d="M0 290 C120 276 220 296 330 284 S520 270 600 288 V340 H0Z" fill="#D9E8DF"/>
@@ -189,5 +228,5 @@ const META = {
  fact:"六角恐龍的基因組大約是人類的 10 倍大，是科學家定序過最大的動物基因組之一。科學家正在裡面尋找「再生」的祕密。",
  next:{title:"Never Forget a Face", href:"read.html#crows"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

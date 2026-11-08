@@ -85,6 +85,45 @@ const KEY = [["snack","wonder","kernel","shell","heat","steam","pressure","escap
              ["munch","tough","hull","trap","burst","expand","rapidly","crunchy","footage","reveal","release","somersault"],
              ["theatrical","inert","elusive","robust","impermeable","accumulate","rupture","liberate","solidify","propel","catapult","counterintuitive","coincide","resonate"]];
 
+const DEFS = {
+  "snack": "a small amount of food eaten between meals",
+  "wonder": "to want to know about something",
+  "kernel": "a single seed of corn",
+  "shell": "the hard outer covering of a seed or egg",
+  "heat": "to make something hot",
+  "steam": "the gas that water turns into when it boils",
+  "pressure": "the force produced when something presses on something else",
+  "escape": "to get out of a place",
+  "camera": "a device for taking photos or recording video",
+  "experiment": "a scientific test done to find out or prove something",
+  "munch": "to eat something noisily",
+  "tough": "strong and difficult to break",
+  "hull": "the outer covering of a seed",
+  "trap": "to keep something in a place from which it cannot escape",
+  "burst": "to break open suddenly",
+  "expand": "to become larger",
+  "rapidly": "very quickly",
+  "crunchy": "hard and making a noise when you bite it",
+  "footage": "part of a film or video recording",
+  "reveal": "to show something that was hidden",
+  "release": "to let a person or animal go free",
+  "somersault": "a movement in which you roll forward or backward over your head",
+  "theatrical": "exaggerated, like in a play",
+  "inert": "not moving or active",
+  "elusive": "difficult to find, catch or understand",
+  "robust": "strong and not easily broken",
+  "impermeable": "not allowing liquid or gas to pass through",
+  "accumulate": "to gradually increase in amount",
+  "rupture": "to break or burst suddenly",
+  "liberate": "to set something free",
+  "solidify": "to become solid or hard",
+  "propel": "to push something forward",
+  "catapult": "to throw something suddenly and with great force",
+  "counterintuitive": "the opposite of what you would naturally expect",
+  "coincide": "to happen at the same time",
+  "resonate": "to make a strong connection with people's feelings"
+};
+
 const FIGS = {
   kernel:{svg:`<svg viewBox="0 0 600 310" role="img" aria-label="What happens inside a popcorn kernel" style="display:block;width:100%;height:auto;border-radius:6px;background:#FFF8D6">
 <defs><marker id="pa" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2238"/></marker></defs>
@@ -274,5 +313,5 @@ const META = {
  fact:"好的爆米花玉米粒大約含 13–14.5% 的水。太乾，水蒸氣不夠撐破外殼；太濕，爆出來的爆米花又會軟軟的。所以爆米花玉米要好好密封保存喔！",
  next:{title:"The Biggest Food Fight on Earth", href:"read.html#tomatina"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

@@ -325,6 +325,37 @@ const LEVELS = [
 ];
 const GLOSS = {"court": ["n.", "法院"], "attend": ["v.", "就讀；出席"], "elementary": ["adj.", "初級的；小學的"], "federal": ["adj.", "聯邦的"], "marshal": ["n.", "法警"], "crowd": ["n.", "人群"], "shout": ["v.", "大喊"], "agree": ["v.", "同意"], "whole": ["adj.", "整個的"], "miss": ["v.", "錯過；缺（課）"], "famous": ["adj.", "有名的"], "kindness": ["n.", "善良"], "hate": ["n.", "仇恨"], "brave": ["adj.", "勇敢的"], "rule": ["v.", "裁定"], "ruling": ["n.", "裁決"], "separate": ["v.", "分開"], "refuse": ["v.", "拒絕"], "safety": ["n.", "安全"], "insult": ["n.", "辱罵"], "exception": ["n.", "例外"], "cafeteria": ["n.", "學校餐廳"], "recess": ["n.", "下課時間"], "neighbor": ["n.", "鄰居"], "painting": ["n.", "畫作"], "activist": ["n.", "倡議者"], "fairness": ["n.", "公平"], "hatred": ["n.", "仇恨"], "courage": ["n.", "勇氣"], "constitution": ["n.", "憲法"], "unconstitutional": ["adj.", "違憲的"], "segregated": ["adj.", "種族隔離的"], "integration": ["n.", "（種族）融合"], "swiftly": ["adv.", "迅速地"], "resist": ["v.", "抵制"], "preserve": ["v.", "維護"], "handful": ["n.", "少數"], "escort": ["v.", "護送"], "protester": ["n.", "抗議者"], "threat": ["n.", "威脅"], "grasp": ["v.", "理解"], "boycott": ["n.", "抵制"], "withdraw": ["v.", "退出；撤回"], "decline": ["v.", "拒絕"], "pupil": ["n.", "學生"], "psychiatrist": ["n.", "精神科醫師"], "endure": ["v.", "忍受；持續"], "hostility": ["n.", "敵意"], "resilience": ["n.", "韌性"], "retaliation": ["n.", "報復"], "solidarity": ["n.", "團結"], "flank": ["v.", "位於…兩側"], "slur": ["n.", "侮辱的話"], "scrawl": ["v.", "潦草塗寫"], "paradox": ["n.", "矛盾"], "badge": ["n.", "徽章"]};
 const KEY = [["court", "attend", "federal", "marshal", "crowd", "shout", "agree", "kindness", "brave"], ["ruling", "refuse", "safety", "insult", "exception", "cafeteria", "recess", "fairness", "hatred"], ["unconstitutional", "segregated", "integration", "resist", "escort", "boycott", "hostility", "resilience", "solidarity", "paradox"]];
+const DEFS = {
+  "court": "the place where legal cases are judged",
+  "attend": "to go to a school regularly; to be present at an event",
+  "federal": "connected with the national government of a country such as the U.S.",
+  "marshal": "an officer whose job is to protect courts and carry out their orders",
+  "crowd": "a large group of people in one place",
+  "shout": "to say something very loudly",
+  "agree": "to have the same opinion as someone",
+  "kindness": "the quality of being friendly, gentle and caring",
+  "brave": "willing to do things that are dangerous or difficult",
+  "ruling": "an official decision made by a court",
+  "refuse": "to say no to something",
+  "safety": "the state of being safe from harm",
+  "insult": "a rude remark that hurts someone's feelings",
+  "exception": "something that is not included in a rule",
+  "cafeteria": "a room in a school where students buy and eat meals",
+  "recess": "a short break between classes at school",
+  "fairness": "the quality of treating people equally",
+  "hatred": "a very strong feeling of dislike",
+  "unconstitutional": "not allowed by the constitution of a country",
+  "segregated": "separated by race, so that different groups must use different places",
+  "integration": "the act of bringing people of different races together",
+  "resist": "to fight against something or refuse to accept it",
+  "escort": "to go somewhere with someone to protect or guard them",
+  "boycott": "refusing to take part in something as a protest",
+  "hostility": "unfriendly or angry behavior",
+  "resilience": "the ability to recover quickly after difficulties",
+  "solidarity": "support among people who share the same aims",
+  "paradox": "a situation that seems impossible because it has two opposite features"
+};
+
 const FIGS = {"ruby": {"svg": "<svg viewBox=\"0 0 600 292\" role=\"img\" aria-label=\"Ruby Bridges' first year in numbers\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFF8F2\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2571A\">Ruby's First Year in Numbers</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >露比的一年級，用數字來看</text>\n<circle cx=\"80\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#C2571A\" stroke-width=\"5\"/><text x=\"80\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2571A\">6</text><text x=\"80\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">years old</text><text x=\"80\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >6 歲上一年級</text>\n<circle cx=\"225\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#1F5C8C\" stroke-width=\"5\"/><text x=\"225\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#1F5C8C\">4</text><text x=\"225\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">federal marshals</text><text x=\"225\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >4 名聯邦法警護送</text>\n<circle cx=\"375\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#7A4FB5\" stroke-width=\"5\"/><text x=\"375\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#7A4FB5\">1</text><text x=\"375\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">student in class</text><text x=\"375\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >全班只有她 1 人</text>\n<circle cx=\"520\" cy=\"118\" r=\"46\" fill=\"#fff\" stroke=\"#17875C\" stroke-width=\"5\"/><text x=\"520\" y=\"132\" font-size=\"40\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#17875C\">0</text><text x=\"520\" y=\"190\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">days missed</text><text x=\"520\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >一天也沒缺課</text>\n<rect x=\"90\" y=\"232\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#FDECDD\"/>\n<text x=\"300\" y=\"252\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">Only one teacher, Barbara Henry, agreed to teach her.</text><text x=\"300\" y=\"269\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >只有一位老師芭芭拉・亨利願意教她</text></g></svg>", "cap": "露比的一年級：6 歲、4 名法警、全班 1 人、0 天缺課。", "credit": "圖解：winglish.tw"}};
 const QUIZ = [
  [
@@ -491,5 +522,5 @@ const META = {
  "id": "ruby",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

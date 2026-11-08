@@ -85,6 +85,45 @@ const KEY = [["salt","flat","lake","layer","thick","thin","mirror","cloud","sate
              ["remote","plain","prehistoric","evaporate","crust","shallow","surface","landmark","adjust","beneath","treasure"],
              ["horizon","merge","altitude","remnant","accumulate","brine","crystallize","circulate","phenomenon","elevation","calibrate","contentious","surge","impurity","spoil"]];
 
+const DEFS = {
+  "salt": "a white substance that makes food taste salty",
+  "flat": "a large area of flat land; a salt flat is covered with dried salt",
+  "lake": "a large area of water surrounded by land",
+  "layer": "a sheet of material that covers a surface or lies between others",
+  "thick": "having a large distance between two sides",
+  "thin": "having a small distance between two sides",
+  "mirror": "a piece of special glass that reflects light and images",
+  "cloud": "a white or gray mass of water drops floating in the sky",
+  "satellite": "a machine sent into space to travel around the earth",
+  "battery": "a device that stores electricity",
+  "remote": "far away from towns and cities",
+  "plain": "a large area of flat land",
+  "prehistoric": "from the time before history was written down",
+  "evaporate": "to change from liquid into gas",
+  "crust": "a hard outer layer",
+  "shallow": "not deep",
+  "surface": "the outside or top layer of something",
+  "landmark": "a building or place that is easy to recognize",
+  "adjust": "to change slightly to get used to a new situation",
+  "beneath": "under something",
+  "treasure": "something very valuable",
+  "horizon": "the line where the sky seems to meet the land or sea",
+  "merge": "to combine or join together",
+  "altitude": "the height of something above sea level",
+  "remnant": "a small part that remains of something larger",
+  "accumulate": "to gradually increase in amount",
+  "brine": "water that contains a lot of salt",
+  "crystallize": "to form crystals",
+  "circulate": "to move around continuously",
+  "phenomenon": "a fact or event that can be observed, especially one that is unusual",
+  "elevation": "the height of a place above sea level",
+  "calibrate": "to adjust a measuring instrument so that it is accurate",
+  "contentious": "likely to cause argument",
+  "surge": "to increase suddenly and strongly",
+  "impurity": "an unwanted substance in something that makes it less pure",
+  "spoil": "to ruin or damage something"
+};
+
 const FIGS = {
   layers:{svg:`<svg viewBox="0 0 600 340" role="img" aria-label="Diagram of the Uyuni salt flat in the rainy and dry seasons" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF6FB">
 <path d="M0 0 H300 V150 H0Z" fill="#BFE0F5"/><path d="M300 0 H600 V150 H300Z" fill="#D6ECFA"/>
@@ -173,5 +212,5 @@ const META = {
  fact:"每年大約 11 月，智利紅鶴、安地斯紅鶴和詹氏紅鶴這三種紅鶴，會來到烏尤尼鹽沼一帶繁殖，讓白色的鹽原多了一點粉紅色。",
  next:{title:"Why Flying East Is Harder", href:"read.html#jetlag"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

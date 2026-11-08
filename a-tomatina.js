@@ -90,6 +90,45 @@ const KEY = [["festival","throw","truck","ripe","last","parade","grab","traditio
              ["transform","narrow","weapon","ban","recognize","greasy","overripe","participant","tear","resident","limited","encourage"],
              ["frenzied","pelt","originate","scuffle","ammunition","quell","futile","anarchic","protocol","commence","deem","refrain","infrastructure","mayhem"]];
 
+const DEFS = {
+  "festival": "a special day or period of celebration",
+  "throw": "to send something through the air with your hand",
+  "truck": "a large road vehicle for carrying goods",
+  "ripe": "fully grown and ready to eat",
+  "last": "to continue for a period of time",
+  "parade": "a public celebration in which people walk through the streets",
+  "grab": "to take hold of something quickly",
+  "tradition": "a custom or belief that has existed for a long time",
+  "squash": "to press something so that it becomes flat or soft",
+  "signal": "a sound or action that tells people to do something",
+  "transform": "to change something completely",
+  "narrow": "not wide",
+  "weapon": "an object used for fighting or attacking",
+  "ban": "to officially forbid something",
+  "recognize": "to officially accept something as important or true",
+  "greasy": "covered with oil or fat",
+  "overripe": "too ripe and starting to go bad",
+  "participant": "a person who takes part in an event",
+  "tear": "to pull something apart with force",
+  "resident": "a person who lives in a particular place",
+  "limited": "small in amount or number",
+  "encourage": "to give someone support or confidence to do something",
+  "frenzied": "wild and out of control",
+  "pelt": "to throw many things at someone or something",
+  "originate": "to begin or start from somewhere",
+  "scuffle": "a short, messy fight",
+  "ammunition": "things such as bullets that are fired from weapons",
+  "quell": "to stop something such as violence or disorder",
+  "futile": "having no chance of success; useless",
+  "anarchic": "without rules or order",
+  "protocol": "a set of rules about the correct way to behave",
+  "commence": "to begin",
+  "deem": "to consider or judge something in a particular way",
+  "refrain": "refrain from: to stop yourself from doing something",
+  "infrastructure": "the basic systems a country or city needs, such as roads and power",
+  "mayhem": "a situation of great confusion and disorder"
+};
+
 const FIGS = {
   rules:{svg:`<svg viewBox="0 0 600 330" role="img" aria-label="The rules of La Tomatina" style="display:block;width:100%;height:auto;border-radius:6px;background:#FCE6EA">
 <g font-family="Noto Sans TC,sans-serif" fill="#1A2238" text-anchor="middle">
@@ -263,5 +302,5 @@ const META = {
  fact:"番茄節當天，很多店家會在牆壁和門窗上鋪大塊塑膠布，免得被番茄汁弄髒；參加的人也常戴上泳鏡保護眼睛。",
  next:{title:"Can Plants Talk?", href:"read.html#plants"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

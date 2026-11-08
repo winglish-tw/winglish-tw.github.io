@@ -86,6 +86,43 @@ const KEY = [["scientist","microphone","stem","healthy","thirsty","insect","prog
              ["silent","publish","soundproof","ultrasonic","striking","stressed","greenhouse","frequency","bubble","species","visible","crop"],
              ["notion","relegate","folklore","credibility","drought","sever","barrage","airborne","perceive","eavesdrop","cavitation","distinguish","wilt","tranquil"]];
 
+const DEFS = {
+  "scientist": "a person who studies science",
+  "microphone": "a device that records or makes sound louder",
+  "stem": "the main long thin part of a plant",
+  "healthy": "physically and mentally strong and well",
+  "thirsty": "needing to drink",
+  "insect": "a small animal with six legs, such as an ant or a fly",
+  "program": "a set of instructions that makes a computer do something",
+  "farmer": "a person who grows crops or raises animals",
+  "silent": "making no sound",
+  "publish": "to make something available for people to read",
+  "soundproof": "not letting sound in or out",
+  "ultrasonic": "higher than humans can hear",
+  "striking": "very noticeable or impressive",
+  "stressed": "under pressure or difficult conditions",
+  "greenhouse": "a glass building for growing plants",
+  "frequency": "the number of sound waves per second, which decides how high a sound is",
+  "bubble": "a ball of air or gas in a liquid",
+  "species": "a group of animals or plants of the same kind",
+  "visible": "able to be seen",
+  "crop": "a plant grown in large amounts by farmers, such as rice or wheat",
+  "notion": "an idea or belief",
+  "relegate": "to put someone or something into a lower position",
+  "folklore": "traditional stories and beliefs of a group of people",
+  "credibility": "the quality of being believed or trusted",
+  "drought": "a long period of time with little or no rain",
+  "sever": "to cut through something completely",
+  "barrage": "a large number of things happening quickly one after another",
+  "airborne": "carried through the air",
+  "perceive": "to notice something with the senses",
+  "eavesdrop": "to secretly listen to other people's conversations",
+  "cavitation": "the forming and bursting of bubbles in a liquid",
+  "distinguish": "to see or recognize the difference between things",
+  "wilt": "to become weak and droop because of lack of water",
+  "tranquil": "quiet and peaceful"
+};
+
 const FIGS = {
   freq:{svg:`<svg viewBox="0 0 600 300" role="img" aria-label="Who can hear plant sounds" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF7F1">
 <g font-family="Noto Sans TC,sans-serif" fill="#1A2238">
@@ -265,5 +302,5 @@ const META = {
  fact:"研究人員把植物的錄音放慢、降低音調後，聽起來就像有人在捏氣泡紙，啵、啵、啵！",
  next:{title:"Hotter Than the Sun", href:"read.html#lightning"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

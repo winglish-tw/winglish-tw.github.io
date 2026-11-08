@@ -85,6 +85,43 @@ const KEY = [["lightning","powerful","giant","spark","surface","thunder","flash"
              ["strike","extreme","bolt","expand","shock","melt","hollow","estimate","gap","myth","pointed","rod"],
              ["phenomenon","underestimate","discharge","fraction","channel","fuse","fragile","interval","gauge","instantaneously","misconception","exploit","tendency","emerge"]];
 
+const DEFS = {
+  "lightning": "a flash of bright light in the sky during a storm",
+  "powerful": "very strong",
+  "giant": "extremely large",
+  "spark": "a very small flash of fire or electricity",
+  "surface": "the outside or top layer of something",
+  "thunder": "the loud noise that comes after lightning",
+  "flash": "a sudden bright light that lasts a very short time",
+  "storm": "very bad weather with strong winds, rain and often thunder",
+  "strike": "to hit something suddenly and with force",
+  "extreme": "very great or intense; far from ordinary",
+  "bolt": "a single flash of lightning",
+  "expand": "to become larger",
+  "shock": "a shock wave is a strong wave of pressure caused by a sudden powerful event",
+  "melt": "to change from solid to liquid because of great heat",
+  "hollow": "having an empty space inside",
+  "estimate": "to guess the size or amount of something using available information",
+  "gap": "the space or time between two things",
+  "myth": "an idea that many people believe but that is not true",
+  "pointed": "having a sharp end",
+  "rod": "a long thin bar; a lightning rod carries lightning safely to the ground",
+  "phenomenon": "a fact or event in nature or society, especially one that is studied",
+  "underestimate": "to think something is smaller or less important than it really is",
+  "discharge": "a flow of electricity from one place to another",
+  "fraction": "a small part of something; in a fraction of a second means almost instantly",
+  "channel": "a narrow passage through which something flows",
+  "fuse": "to join or melt together because of great heat",
+  "fragile": "easily broken or damaged",
+  "interval": "the period of time between two events",
+  "gauge": "to judge or measure something, especially by estimating",
+  "instantaneously": "happening immediately, with no delay at all",
+  "misconception": "a wrong idea or belief",
+  "exploit": "to use something to get an advantage from it",
+  "tendency": "a natural way of behaving or happening that is likely to be repeated",
+  "emerge": "to appear or come out from somewhere"
+};
+
 const FIGS = {
   count:{svg:`<svg viewBox="0 0 600 320" role="img" aria-label="Count the seconds to find the storm" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF2FA">
 <g font-family="Noto Sans TC,sans-serif" fill="#1A2238">
@@ -268,5 +305,5 @@ const META = {
  fact:"閃電打到沙地時，會把沙子熔成中空的玻璃管，叫做「閃電熔岩」（fulgurite），形狀就像閃電在地下留下的樹枝。",
  next:{title:"The Moon Is Running Away", href:"read.html#moon"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

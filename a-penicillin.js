@@ -325,6 +325,37 @@ const LEVELS = [
 ];
 const GLOSS = {"scientist": ["n.", "科學家"], "lab": ["n.", "實驗室"], "holiday": ["n.", "假期"], "tidy": ["adj.", "整齊的；愛整理的"], "bacteria": ["n.", "細菌（複數）"], "bench": ["n.", "實驗桌；長凳"], "strange": ["adj.", "奇怪的"], "mold": ["n.", "黴菌"], "realize": ["v.", "發現；了解"], "pure": ["adj.", "純的"], "melon": ["n.", "甜瓜"], "wounded": ["adj.", "受傷的"], "soldier": ["n.", "士兵"], "antibiotic": ["n.", "抗生素"], "survive": ["v.", "存活"], "wisely": ["adv.", "明智地"], "medicine": ["n.", "藥；醫學"], "deadly": ["adj.", "致命的"], "infection": ["n.", "感染"], "weapon": ["n.", "武器"], "patient": ["n.", "病人"], "untidy": ["adj.", "凌亂的"], "laboratory": ["n.", "實驗室"], "identify": ["v.", "鑑定；辨認"], "substance": ["n.", "物質"], "produce": ["v.", "產生；製造"], "attention": ["n.", "注意"], "purify": ["v.", "純化"], "recover": ["v.", "康復；回收"], "supply": ["n.", "供應量"], "urine": ["n.", "尿液"], "productive": ["adj.", "產量高的"], "cantaloupe": ["n.", "哈密瓜"], "dose": ["n.", "劑量；一劑"], "misuse": ["v.", "濫用"], "resistant": ["adj.", "有抵抗力的；抗藥的"], "illustrate": ["v.", "說明；印證"], "observant": ["adj.", "觀察力強的"], "culture": ["n.", "（細菌）培養"], "contaminate": ["v.", "汙染"], "fungus": ["n.", "真菌"], "languish": ["v.", "受冷落；停滯"], "unstable": ["adj.", "不穩定的"], "isolate": ["v.", "分離"], "expertise": ["n.", "專業知識"], "curiosity": ["n.", "新奇的東西；好奇心"], "unprecedented": ["adj.", "前所未有的"], "collaboration": ["n.", "合作"], "pharmaceutical": ["adj.", "製藥的"], "fermentation": ["n.", "發酵"], "strain": ["n.", "菌株"], "foresee": ["v.", "預見"], "mutation": ["n.", "突變"], "descendant": ["n.", "後代"], "selection": ["n.", "選擇；（天擇）"], "prescription": ["n.", "處方"], "livestock": ["n.", "牲畜"], "accelerate": ["v.", "加速"], "virtue": ["n.", "美德"], "discipline": ["n.", "自律；紀律"]};
 const KEY = [["scientist", "tidy", "bacteria", "strange", "mold", "realize", "antibiotic", "survive", "wisely"], ["deadly", "infection", "identify", "substance", "purify", "supply", "productive", "dose", "resistant"], ["observant", "contaminate", "fungus", "languish", "isolate", "unprecedented", "fermentation", "mutation", "prescription", "accelerate"]];
+const DEFS = {
+  "scientist": "a person who studies science",
+  "tidy": "liking to keep things neat and in order",
+  "bacteria": "very small living things, some of which cause disease",
+  "strange": "unusual or surprising; hard to understand",
+  "mold": "a soft green or gray growth that forms on old food or damp things",
+  "realize": "to suddenly understand or become aware of something",
+  "antibiotic": "a medicine that kills bacteria",
+  "survive": "to continue to live, especially in difficult conditions",
+  "wisely": "in a sensible way",
+  "deadly": "able to cause death",
+  "infection": "a disease caused by germs entering the body",
+  "identify": "to recognize and name someone or something",
+  "substance": "a particular type of solid, liquid or gas",
+  "purify": "to remove unwanted substances to make something pure",
+  "supply": "an amount of something available to be used",
+  "productive": "producing a large amount",
+  "dose": "the amount of a medicine taken at one time",
+  "resistant": "not harmed or affected by something",
+  "observant": "good at noticing things",
+  "contaminate": "to make something dirty or impure by adding a harmful substance",
+  "fungus": "a living thing such as a mushroom or mold",
+  "languish": "to stay in an unpleasant or forgotten state for a long time",
+  "isolate": "to separate a substance from others",
+  "unprecedented": "never having happened before",
+  "fermentation": "the chemical change caused by bacteria or yeast",
+  "mutation": "a change in the genes of a living thing",
+  "prescription": "a doctor's written order for medicine",
+  "accelerate": "to happen or make something happen faster"
+};
+
 const FIGS = {"pen": {"svg": "<svg viewBox=\"0 0 600 304\" role=\"img\" aria-label=\"Penicillin timeline\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F4F9FD\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#1F6FAE\">From a Messy Desk to a Miracle Drug</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >從一張凌亂的桌子到神奇的藥</text>\n<line x1=\"40\" y1=\"128\" x2=\"570\" y2=\"128\" stroke=\"#1F6FAE\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n<circle cx=\"75\" cy=\"128\" r=\"10\" fill=\"#1F6FAE\"/><text x=\"75\" y=\"168\" font-weight=\"900\" font-size=\"15\" text-anchor=\"middle\">1928</text><text x=\"75\" y=\"185\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Fleming finds</text><text x=\"75\" y=\"200\" font-size=\"11\" text-anchor=\"middle\">mold kills bacteria</text><text x=\"75\" y=\"215\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >弗萊明發現黴菌殺菌</text>\n<circle cx=\"190\" cy=\"128\" r=\"10\" fill=\"#1F6FAE\"/><text x=\"190\" y=\"64\" font-weight=\"900\" font-size=\"15\" text-anchor=\"middle\">1941</text><text x=\"190\" y=\"81\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">First patient</text><text x=\"190\" y=\"96\" font-size=\"11\" text-anchor=\"middle\">treated at Oxford</text><text x=\"190\" y=\"111\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >牛津首次用於病人</text>\n<circle cx=\"305\" cy=\"128\" r=\"10\" fill=\"#1F6FAE\"/><text x=\"305\" y=\"168\" font-weight=\"900\" font-size=\"15\" text-anchor=\"middle\">1943</text><text x=\"305\" y=\"185\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">A moldy melon</text><text x=\"305\" y=\"200\" font-size=\"11\" text-anchor=\"middle\">gives a better mold</text><text x=\"305\" y=\"215\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >發霉哈密瓜找到好菌株</text>\n<circle cx=\"420\" cy=\"128\" r=\"10\" fill=\"#1F6FAE\"/><text x=\"420\" y=\"64\" font-weight=\"900\" font-size=\"15\" text-anchor=\"middle\">1944</text><text x=\"420\" y=\"81\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">2.3 million doses</text><text x=\"420\" y=\"96\" font-size=\"11\" text-anchor=\"middle\">ready for D-Day</text><text x=\"420\" y=\"111\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >諾曼第登陸備妥230萬劑</text>\n<circle cx=\"530\" cy=\"128\" r=\"10\" fill=\"#1F6FAE\"/><text x=\"530\" y=\"168\" font-weight=\"900\" font-size=\"15\" text-anchor=\"middle\">1945</text><text x=\"530\" y=\"185\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">Nobel Prize</text><text x=\"530\" y=\"200\" font-size=\"11\" text-anchor=\"middle\">for three scientists</text><text x=\"530\" y=\"215\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >三位科學家獲諾貝爾獎</text>\n<rect x=\"70\" y=\"244\" width=\"460\" height=\"46\" rx=\"23\" fill=\"#E3F1FB\"/>\n<text x=\"300\" y=\"264\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">Warning: overuse lets bacteria become resistant.</text><text x=\"300\" y=\"281\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >注意：濫用抗生素，細菌就會產生抗藥性</text></g></svg>", "cap": "盤尼西林從被發現到大量生產，中間隔了十多年。", "credit": "圖解：winglish.tw"}};
 const QUIZ = [
  {
@@ -377,5 +408,5 @@ const META = {
  "id": "penicillin",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

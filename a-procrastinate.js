@@ -328,6 +328,37 @@ const LEVELS = [
 ];
 const GLOSS = {"test": ["n.", "考試"], "video": ["n.", "影片"], "procrastination": ["n.", "拖延"], "procrastinate": ["v.", "拖延"], "lazy": ["adj.", "懶惰的"], "psychologist": ["n.", "心理學家"], "feeling": ["n.", "感受"], "task": ["n.", "任務；工作"], "bored": ["adj.", "無聊的"], "worried": ["adj.", "擔心的"], "stressed": ["adj.", "有壓力的"], "escape": ["v.", "逃離"], "stranger": ["n.", "陌生人"], "future": ["n./adj.", "未來（的）"], "tiny": ["adj.", "極小的"], "guilty": ["adj.", "有罪惡感的"], "kind": ["adj.", "親切的；仁慈的"], "scroll": ["v.", "滑動（螢幕）"], "blame": ["v.", "責怪"], "manage": ["v.", "管理"], "emotion": ["n.", "情緒"], "anxious": ["adj.", "焦慮的"], "avoid": ["v.", "避免；逃避"], "relief": ["n.", "解脫；放鬆"], "mood": ["n.", "心情"], "repair": ["n./v.", "修復"], "puzzle": ["n.", "謎題"], "activity": ["n.", "活動"], "forgive": ["v.", "原諒"], "strategy": ["n.", "策略"], "threatening": ["adj.", "有威脅的"], "character": ["n.", "性格"], "habit": ["n.", "習慣"], "discipline": ["n.", "自律；紀律"], "remedy": ["n.", "解決方法"], "assumption": ["n.", "假設"], "stern": ["adj.", "嚴厲的"], "resolution": ["n.", "決心"], "misidentify": ["v.", "誤認"], "fundamentally": ["adv.", "根本上"], "regulation": ["n.", "調節"], "evoke": ["v.", "引起"], "prioritize": ["v.", "優先處理"], "expense": ["n.", "代價"], "reinforce": ["v.", "強化"], "neuroscience": ["n.", "神經科學"], "imaging": ["n.", "造影"], "burden": ["v.", "使負擔"], "backfire": ["v.", "適得其反"], "berate": ["v.", "嚴厲責罵"], "consistent": ["adj.", "一致的"], "implication": ["n.", "含意；應用"], "concrete": ["adj.", "具體的"], "vividly": ["adv.", "生動地"], "flaw": ["n.", "缺陷"]};
 const KEY = [["procrastination", "lazy", "psychologist", "task", "worried", "escape", "stranger", "tiny", "guilty"], ["scroll", "blame", "emotion", "anxious", "avoid", "relief", "forgive", "strategy", "habit"], ["discipline", "remedy", "assumption", "fundamentally", "evoke", "prioritize", "reinforce", "backfire", "implication", "concrete"]];
+const DEFS = {
+  "procrastination": "the act of delaying something you should do",
+  "lazy": "not wanting to work or make an effort",
+  "psychologist": "a person who studies the mind and behavior",
+  "task": "a piece of work you have to do",
+  "worried": "feeling that something bad may happen",
+  "escape": "to get away from something unpleasant",
+  "stranger": "a person you do not know",
+  "tiny": "extremely small",
+  "guilty": "feeling bad because you have done something wrong",
+  "scroll": "to move text or images up or down on a screen",
+  "blame": "to say that someone is responsible for something bad",
+  "emotion": "a strong feeling such as love or fear",
+  "anxious": "worried and nervous",
+  "avoid": "to stay away from something",
+  "relief": "a feeling of comfort when worry or pain ends",
+  "forgive": "to stop being angry with someone for a mistake",
+  "strategy": "a plan for achieving a goal",
+  "habit": "something you do often and regularly",
+  "discipline": "the ability to control yourself and follow rules",
+  "remedy": "a way of solving a problem",
+  "assumption": "something you believe is true without proof",
+  "fundamentally": "in the most basic way",
+  "evoke": "to bring a feeling or memory into someone's mind",
+  "prioritize": "to deal with the most important things first",
+  "reinforce": "to make something stronger",
+  "backfire": "to have the opposite result of what was intended",
+  "implication": "a possible effect or use of an idea or discovery",
+  "concrete": "clear and definite; based on real facts"
+};
+
 const FIGS = {"pro": {"svg": "<svg viewBox=\"0 0 600 294\" role=\"img\" aria-label=\"The procrastination loop\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFFAF2\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#B4690E\">The Procrastination Loop</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >拖延的惡性循環</text>\n<rect x=\"75.0\" y=\"56\" width=\"150\" height=\"52\" rx=\"12\" fill=\"#fff\" stroke=\"#B4690E\" stroke-width=\"2.5\"/><text x=\"150\" y=\"79\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">A task feels bad</text><text x=\"150\" y=\"97\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >任務讓人不舒服</text>\n<rect x=\"375.0\" y=\"56\" width=\"150\" height=\"52\" rx=\"12\" fill=\"#fff\" stroke=\"#B4690E\" stroke-width=\"2.5\"/><text x=\"450\" y=\"79\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Escape to the phone</text><text x=\"450\" y=\"97\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >逃去滑手機</text>\n<rect x=\"375.0\" y=\"166\" width=\"150\" height=\"52\" rx=\"12\" fill=\"#fff\" stroke=\"#B4690E\" stroke-width=\"2.5\"/><text x=\"450\" y=\"189\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Feel better... briefly</text><text x=\"450\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >暫時感覺變好</text>\n<rect x=\"75.0\" y=\"166\" width=\"150\" height=\"52\" rx=\"12\" fill=\"#fff\" stroke=\"#B4690E\" stroke-width=\"2.5\"/><text x=\"150\" y=\"189\" font-size=\"13\" font-weight=\"700\" text-anchor=\"middle\">Task + guilt grow</text><text x=\"150\" y=\"207\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >任務還在，又多了罪惡感</text>\n<path d=\"M228 82 L360.0 82.0\" stroke=\"#B4690E\" stroke-width=\"3\"/><path d=\"M372 82 L360.0 76.0 L360.0 88.0Z\" fill=\"#B4690E\"/><path d=\"M450 110 L450.0 152.0\" stroke=\"#B4690E\" stroke-width=\"3\"/><path d=\"M450 164 L456.0 152.0 L444.0 152.0Z\" fill=\"#B4690E\"/><path d=\"M372 192 L240.0 192.0\" stroke=\"#B4690E\" stroke-width=\"3\"/><path d=\"M228 192 L240.0 198.0 L240.0 186.0Z\" fill=\"#B4690E\"/><path d=\"M150 164 L150.0 122.0\" stroke=\"#B4690E\" stroke-width=\"3\"/><path d=\"M150 110 L144.0 122.0 L156.0 122.0Z\" fill=\"#B4690E\"/>\n<rect x=\"236\" y=\"116\" width=\"128\" height=\"50\" rx=\"25\" fill=\"#17875C\"/>\n<text x=\"300\" y=\"138\" font-size=\"13\" font-weight=\"900\" fill=\"#fff\" text-anchor=\"middle\">Break it:</text>\n<text x=\"300\" y=\"155\" font-size=\"12\" fill=\"#fff\" text-anchor=\"middle\">start for 5 minutes</text>\n<rect x=\"60\" y=\"234\" width=\"480\" height=\"46\" rx=\"23\" fill=\"#FFF1DC\"/>\n<text x=\"300\" y=\"254\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">Procrastination is about feelings, not laziness.</text><text x=\"300\" y=\"271\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >拖延的關鍵是情緒，而不是懶惰；打破循環：先做 5 分鐘</text></g></svg>", "cap": "逃避能讓人暫時舒服，卻讓任務和壓力越滾越大；打破循環最簡單的方法，是先做 5 分鐘。", "credit": "圖解：winglish.tw"}};
 const QUIZ = [
  {
@@ -380,5 +411,5 @@ const META = {
  "id": "procrastinate",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

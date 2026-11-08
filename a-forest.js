@@ -325,6 +325,37 @@ const LEVELS = [
 ];
 const GLOSS = {"flood": ["n.", "洪水"], "snake": ["n.", "蛇"], "sandbar": ["n.", "沙洲"], "shade": ["n.", "樹蔭"], "survive": ["v.", "生存"], "plant": ["v.", "種植"], "bamboo": ["n.", "竹子"], "empty": ["adj.", "空的"], "forest": ["n.", "森林"], "hectare": ["n.", "公頃"], "deer": ["n.", "鹿"], "official": ["n.", "官員"], "honor": ["n.", "榮譽"], "patience": ["n.", "耐心"], "difference": ["n.", "改變；差別"], "terrible": ["adj.", "可怕的"], "island": ["n.", "島"], "sweep": ["v.", "沖走；掃"], "swept": ["v.", "沖走（sweep 過去式）"], "bare": ["adj.", "光禿禿的"], "burning": ["adj.", "炙熱的"], "elder": ["n.", "長輩"], "spread": ["v.", "蔓延"], "soil": ["n.", "土壤"], "decade": ["n.", "十年"], "herd": ["n.", "（動物）群"], "thick": ["adj.", "茂密的"], "nickname": ["n.", "暱稱"], "species": ["n.", "物種"], "rhino": ["n.", "犀牛"], "challenge": ["n.", "挑戰"], "villager": ["n.", "村民"], "habitat": ["n.", "棲地"], "destroy": ["v.", "摧毀"], "civilian": ["adj.", "平民的"], "award": ["n./v.", "獎項；頒獎"], "seedling": ["n.", "幼苗"], "monsoon": ["n.", "季風"], "carve": ["v.", "切割；沖刷出"], "deposit": ["v.", "堆積"], "substantial": ["adj.", "相當大的"], "relentless": ["adj.", "無情的；持續不斷的"], "erosion": ["n.", "侵蝕"], "tribe": ["n.", "部落"], "strewn": ["adj.", "散布的"], "perish": ["v.", "死亡"], "strand": ["v.", "使受困"], "reforestation": ["n.", "重新造林"], "pioneer": ["adj.", "先驅的"], "stabilize": ["v.", "使穩定"], "organic": ["adj.", "有機的"], "accumulate": ["v.", "累積"], "ecologist": ["n.", "生態學家"], "succession": ["n.", "（生態）演替"], "subsequent": ["adj.", "隨後的"], "transformation": ["n.", "轉變"], "retreat": ["v.", "撤退"], "shelter": ["v.", "庇護"], "rhinoceros": ["n.", "犀牛"], "ecological": ["adj.", "生態的"], "generate": ["v.", "產生"], "conflict": ["n.", "衝突"], "refuge": ["n.", "避難所"], "raid": ["v.", "突襲"], "resident": ["n.", "居民"], "maintain": ["v.", "堅持主張"], "restore": ["v.", "恢復"], "persistence": ["n.", "堅持"], "demonstrate": ["v.", "證明；展示"], "ultimately": ["adv.", "最終"]};
 const KEY = [["flood", "snake", "sandbar", "shade", "plant", "bamboo", "forest", "honor", "patience"], ["bare", "elder", "spread", "herd", "species", "habitat", "destroy", "civilian", "seedling"], ["monsoon", "relentless", "erosion", "perish", "reforestation", "stabilize", "succession", "refuge", "persistence", "ultimately"]];
+const DEFS = {
+  "flood": "a large amount of water covering land that is usually dry",
+  "snake": "a long animal with no legs that slides along the ground",
+  "sandbar": "a long area of sand in a river or the sea",
+  "shade": "an area that is cooler and darker because the sun's light is blocked",
+  "plant": "to put seeds or young plants in the ground to grow",
+  "bamboo": "a tall tropical plant with hard hollow stems",
+  "forest": "a large area of land covered with trees",
+  "honor": "great respect, or something that brings respect and pride",
+  "patience": "the ability to wait calmly for a long time without getting upset",
+  "bare": "not covered by plants, trees or anything else",
+  "elder": "an older person who is respected in a family or community",
+  "spread": "to cover a larger and larger area",
+  "herd": "a large group of animals of one kind that live together",
+  "species": "a group of animals or plants of the same kind",
+  "habitat": "the natural home of an animal or plant",
+  "destroy": "to damage something so badly that it no longer exists",
+  "civilian": "connected with ordinary people rather than the army",
+  "seedling": "a very young plant that has grown from a seed",
+  "monsoon": "the season of heavy rain in South and Southeast Asia",
+  "relentless": "strong and never stopping",
+  "erosion": "the slow wearing away of soil or rock by water or wind",
+  "perish": "to die, especially in a terrible or sudden way",
+  "reforestation": "the planting of trees on land where forests were cut down",
+  "stabilize": "to make something firm and not likely to move or change",
+  "succession": "the gradual process by which one community of plants replaces another",
+  "refuge": "a place that gives shelter and protection from danger",
+  "persistence": "the quality of continuing to try even when something is difficult",
+  "ultimately": "in the end; finally"
+};
+
 const FIGS = {"sandbar": {"svg": "<svg viewBox=\"0 0 600 318\" role=\"img\" aria-label=\"From sandbar to forest\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F3FAF6\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"24\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#17875C\">One Man, 40+ Years, One Forest</text><text x=\"300\" y=\"42\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >一個人，四十多年，一座森林</text>\n<g>\n<rect x=\"20\" y=\"54\" width=\"270\" height=\"200\" rx=\"10\" fill=\"#CFE9EE\"/>\n<ellipse cx=\"155\" cy=\"170\" rx=\"110\" ry=\"40\" fill=\"#E8D7A8\"/>\n<path d=\"M120 168 q10 -8 20 0 q10 8 20 0\" stroke=\"#8C5A2B\" stroke-width=\"3\" fill=\"none\"/>\n<text x=\"155\" y=\"84\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\">1979</text>\n<text x=\"155\" y=\"230\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">A bare sandbar, no shade</text><text x=\"155\" y=\"246\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >光禿禿的沙洲，沒有樹蔭</text>\n<circle cx=\"250\" cy=\"82\" r=\"16\" fill=\"#F2B705\"/>\n</g>\n<path d=\"M298 154 h16\" stroke=\"#17875C\" stroke-width=\"4\"/><path d=\"M312 146 l10 8 l-10 8z\" fill=\"#17875C\"/>\n<g>\n<rect x=\"330\" y=\"54\" width=\"250\" height=\"200\" rx=\"10\" fill=\"#CFE9EE\"/>\n<ellipse cx=\"455\" cy=\"186\" rx=\"110\" ry=\"34\" fill=\"#9BC48A\"/>\n<g fill=\"#17875C\"><circle cx=\"390\" cy=\"146\" r=\"26\"/><circle cx=\"430\" cy=\"132\" r=\"30\"/><circle cx=\"476\" cy=\"136\" r=\"30\"/><circle cx=\"518\" cy=\"148\" r=\"24\"/><circle cx=\"455\" cy=\"158\" r=\"26\"/></g>\n<text x=\"420\" y=\"194\" font-size=\"22\">🐘</text><text x=\"486\" y=\"198\" font-size=\"18\">🦌</text>\n<text x=\"455\" y=\"84\" font-size=\"16\" font-weight=\"900\" text-anchor=\"middle\">Today</text>\n<text x=\"455\" y=\"230\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">A forest of about 550 hectares</text><text x=\"455\" y=\"246\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >約 550 公頃的森林</text>\n</g>\n<rect x=\"50\" y=\"264\" width=\"500\" height=\"44\" rx=\"22\" fill=\"#DDF3E9\"/>\n<text x=\"300\" y=\"283\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">Bigger than Central Park in New York (about 340 ha)</text><text x=\"300\" y=\"299\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >比紐約中央公園（約 340 公頃）還大</text></g></svg>", "cap": "帕揚一棵一棵地種，把光禿禿的沙洲變成大象和老虎的家。", "credit": "圖解：winglish.tw"}};
 const QUIZ = [
  [
@@ -491,5 +522,5 @@ const META = {
  "id": "forest",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

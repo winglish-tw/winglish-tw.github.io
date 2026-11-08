@@ -83,6 +83,42 @@ const KEY = [["slowly","astronaut","mirror","laser","ocean","tide","spin","dinos
              ["drift","fingernail","reflector","lunar","bounce","calculate","accuracy","gravity","bulge","friction","rotation","fossil"],
              ["recede","pace","deploy","array","pulse","fraction","culprit","tidal","transfer","nudge","preserve","extinct","eclipse"]];
 
+const DEFS = {
+  "slowly": "at a low speed; not quickly",
+  "astronaut": "a person who travels into space",
+  "mirror": "a piece of special glass that reflects light and images",
+  "laser": "a strong narrow beam of light",
+  "ocean": "the very large area of salt water that covers most of the earth",
+  "tide": "the regular rise and fall of the sea, caused by the moon",
+  "spin": "the act of turning around and around",
+  "dinosaur": "a large reptile that lived millions of years ago",
+  "drift": "to move slowly, especially farther away",
+  "fingernail": "the hard layer that covers the end of each finger",
+  "reflector": "an object that sends back light that hits it",
+  "lunar": "connected with the moon",
+  "bounce": "to come back after hitting a surface",
+  "calculate": "to find an answer by using numbers",
+  "accuracy": "the quality of being exact and correct",
+  "gravity": "the force that pulls things toward each other or toward the earth",
+  "bulge": "a part that curves outward or sticks out",
+  "friction": "the force that slows things down when they rub against each other",
+  "rotation": "the act of turning around a center point",
+  "fossil": "the remains of an animal or plant from long ago, preserved in rock",
+  "recede": "to move back or farther away",
+  "pace": "the speed at which something happens",
+  "deploy": "to put something in position so it is ready to be used",
+  "array": "a group of similar things arranged together",
+  "pulse": "a short burst of energy, light or sound",
+  "fraction": "a very small part of something",
+  "culprit": "the person or thing responsible for a problem",
+  "tidal": "connected with the tides of the sea",
+  "transfer": "to move something from one place or thing to another",
+  "nudge": "to push something gently",
+  "preserve": "to keep something in its original state",
+  "extinct": "no longer existing, because every member of the species has died",
+  "eclipse": "a time when the moon blocks the sun's light, or the earth blocks light to the moon"
+};
+
 const FIGS = {
   laser:{svg:`<svg viewBox="0 0 600 300" role="img" aria-label="Measuring the distance to the Moon with lasers" style="display:block;width:100%;height:auto;border-radius:6px;background:#141B33">
 <g font-family="Noto Sans TC,sans-serif" fill="#fff">
@@ -270,5 +306,5 @@ const META = {
  fact:"月亮永遠用同一面對著地球，所以站在地球上的人，從來沒有直接看過月亮的背面！",
  next:{title:"The 85-Year Secret to Happiness", href:"read.html#happiness"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

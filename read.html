@@ -115,7 +115,9 @@ figcaption{font-size:14px;color:var(--ink-soft);padding:8px 0 0}
 .prog{height:8px;border-radius:4px;background:var(--mist);overflow:hidden;margin-top:6px}
 .prog i{display:block;height:100%;background:var(--ok);width:0;transition:width .4s}
 .vocab{list-style:none;margin:0;padding:0}
-.vocab li{display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px dashed var(--mist)}
+.vocab li{display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;padding:8px 0;border-bottom:1px dashed var(--mist)}
+.vocab .ve{flex-basis:100%;font-size:13.5px;line-height:1.45;color:#4A536B;font-style:italic}
+.wdef{display:block;margin-top:4px;font-size:14px;line-height:1.45;color:#4A536B;font-style:italic}
 .vocab li:last-child{border:0}
 .vocab .vw{font-family:"Bricolage Grotesque";font-weight:700;font-size:17px}
 .vocab .vp{color:var(--red);font-size:13px;font-weight:700}
@@ -269,7 +271,7 @@ const WG_MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
 function logUse(ev,area,sec,first,total){try{let login=false;try{login=!!localStorage.getItem("gsat-code")}catch(e){}
   fetch(WG_API,{method:"POST",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:"logUse",args:[{ev,vid:WG_VID,year:area,sec:sec||"",first:first||0,total:total||0,login,mobile:WG_MOBILE}]})}).catch(()=>{})}catch(e){}}
 function initArticle(){
-const A=window.ARTICLE; const {LEVELS,GLOSS,KEY,FIGS,QUIZ}=A;
+const A=window.ARTICLE; const {LEVELS,GLOSS,KEY,FIGS,QUIZ}=A; const DEFS=A.DEFS||{};
 setTimeout(()=>logUse("open","閱讀館",A.title),1500);
 document.title=A.title+"｜winglish.tw 閱讀館";
 document.getElementById("aCat").textContent=A.category; document.getElementById("aTitle").textContent=A.title;
@@ -365,7 +367,7 @@ function render(){
   $("#text").innerHTML=html;
   $("#mWords").textContent=L.sents.reduce((n,s)=>n+s[0].split(/\s+/).length,0);
   $("#mLevel").textContent=L.name; $("#recFor").textContent=L.rec;
-  $("#vocab").innerHTML=KEY[level].map(k=>`<li><span class="vw">${k}</span><span class="vp">${GLOSS[k][0]}</span><span class="vz">${GLOSS[k][1]}</span><button class="spk" data-say="${k}">🔊</button></li>`).join("");
+  $("#vocab").innerHTML=KEY[level].map(k=>`<li><span class="vw">${k}</span><span class="vp">${GLOSS[k][0]}</span><span class="vz">${GLOSS[k][1]}</span><button class="spk" data-say="${k}">🔊</button>${DEFS[k]?`<span class="ve">${DEFS[k]}</span>`:""}</li>`).join("");
   $("#vocab").querySelectorAll("[data-say]").forEach(b=>b.onclick=()=>{ stopAll(); speak(b.dataset.say); });
   $("#text").querySelectorAll(".w").forEach(w=>w.onclick=e=>{ e.stopPropagation(); openSheet(w.closest(".s"),w.dataset.w); });
   $("#text").querySelectorAll(".s").forEach(s=>s.onclick=()=>openSheet(s,null));
@@ -390,7 +392,7 @@ function openSheet(sEl,word){
   if(word){
     const g=lookup(word.toLowerCase());
     $("#wd").textContent = g?(/^[A-Z]/.test(word)&&g[0]===word.toLowerCase()?word:g[0]):word;
-    $("#wm").innerHTML = g?`<span class="pos">${g[1]}</span>${g[2]}`:`<span style="color:var(--ink-soft)">本篇單字表沒有收這個字，可以先聽發音。</span>`;
+    $("#wm").innerHTML = g?`<span class="pos">${g[1]}</span>${g[2]}${DEFS[g[0]]?`<span class="wdef">${DEFS[g[0]]}</span>`:""}`:`<span style="color:var(--ink-soft)">本篇單字表沒有收這個字，可以先聽發音。</span>`;
     $("#wSpk").onclick=()=>{ try{speechSynthesis.cancel();}catch(e){} speak(g?g[0]:word); };
     wr.style.display="flex"; try{speechSynthesis.cancel();}catch(e){} speak(g?g[0]:word);
   } else { wr.style.display="flex"; $("#wd").textContent="這一句"; $("#wm").innerHTML=`<span style="color:var(--ink-soft)">可以聽、跟讀或看中譯</span>`; $("#wSpk").onclick=()=>$("#sPlay").click(); }

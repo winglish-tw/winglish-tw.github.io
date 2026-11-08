@@ -315,6 +315,38 @@ const LEVELS = [
 ];
 const GLOSS = {"tiny": ["adj.", "極小的"], "wooden": ["adj.", "木製的"], "remember": ["v.", "紀念；記得"], "post": ["n.", "柱子"], "yard": ["n.", "院子"], "neighbor": ["n.", "鄰居"], "free": ["adj.", "免費的"], "project": ["n.", "計畫"], "goal": ["n.", "目標"], "reach": ["v.", "達成"], "spread": ["v.", "擴散"], "register": ["v.", "登記"], "registered": ["adj.", "登記的"], "librarian": ["n.", "圖書館員"], "willing": ["adj.", "願意的"], "share": ["v.", "分享"], "honor": ["v.", "紀念；尊敬"], "reflect": ["v.", "反映"], "garage": ["n.", "車庫"], "delighted": ["adj.", "高興的"], "borrow": ["v.", "借入"], "community": ["n.", "社區"], "nonprofit": ["adj.", "非營利的"], "organization": ["n.", "組織"], "ambitious": ["adj.", "遠大的；有雄心的"], "target": ["n.", "目標"], "fund": ["v.", "資助"], "supporter": ["n.", "支持者"], "stranger": ["n.", "陌生人"], "legacy": ["n.", "遺產；留下的影響"], "grassroots": ["adj.", "草根的；基層的"], "gesture": ["n.", "舉動"], "tribute": ["n.", "紀念；致敬"], "devoted": ["adj.", "熱愛的；忠實的"], "mount": ["v.", "固定；安裝"], "passerby": ["n.", "路人"], "passersby": ["n.", "路人（複數）"], "collaborator": ["n.", "合作者"], "formalize": ["v.", "使正式化"], "benchmark": ["n.", "標竿"], "industrialist": ["n.", "實業家"], "surpass": ["v.", "超越"], "advocate": ["n.", "支持者；倡導者"], "access": ["n.", "取得的機會"], "foster": ["v.", "培養"], "sociologist": ["n.", "社會學家"], "capital": ["n.", "資本"], "familiarity": ["n.", "熟悉"], "uncritically": ["adv.", "不加批判地"], "concentrated": ["adj.", "集中的"], "identity": ["n.", "認同；身分"], "inequality": ["n.", "不平等"], "underserved": ["adj.", "資源不足的"], "generosity": ["n.", "慷慨"]};
 const KEY = [["tiny", "wooden", "post", "yard", "neighbor", "free", "goal", "spread", "willing"], ["honor", "reflect", "garage", "delighted", "community", "nonprofit", "ambitious", "fund", "stranger", "supporter"], ["grassroots", "tribute", "collaborator", "benchmark", "surpass", "foster", "familiarity", "concentrated", "inequality", "generosity"]];
+const DEFS = {
+  "tiny": "extremely small",
+  "wooden": "made of wood",
+  "post": "a strong stick fixed in the ground to support something",
+  "yard": "an area of land next to a house",
+  "neighbor": "a person who lives near you",
+  "free": "not costing any money",
+  "goal": "something that you hope to achieve",
+  "spread": "to move to cover a larger area or reach more people",
+  "willing": "happy and ready to do something",
+  "honor": "to show great respect for someone, especially by remembering them",
+  "reflect": "to show or be a sign of something",
+  "garage": "a building or part of a house where a car is kept",
+  "delighted": "very pleased",
+  "community": "the people living in one area",
+  "nonprofit": "not made or run in order to make money",
+  "ambitious": "needing a lot of effort and having big goals",
+  "fund": "to give money to pay for something",
+  "stranger": "a person you do not know",
+  "supporter": "a person who helps or agrees with someone or something",
+  "grassroots": "started by ordinary people rather than by leaders or the government",
+  "tribute": "something done to show respect for someone",
+  "collaborator": "a person who works with others on a project",
+  "benchmark": "a standard used to judge or compare other things",
+  "surpass": "to be better or greater than something else",
+  "foster": "to help something grow or develop",
+  "familiarity": "good knowledge of something because you have seen or used it often",
+  "concentrated": "gathered together in one area or group",
+  "inequality": "an unfair situation in which some people have more than others",
+  "generosity": "the quality of being kind and willing to give money or help"
+};
+
 const FIGS = {"lfl": {"svg": "<svg viewBox=\"0 0 600 306\" role=\"img\" aria-label=\"Growth of Little Free Libraries\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FFF7F9\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2385A\">From One Box to a World Movement</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >從一個書箱，到全世界的分享運動</text>\n<line x1=\"40\" y1=\"172\" x2=\"560\" y2=\"172\" stroke=\"#E6CCD4\" stroke-width=\"2\"/>\n<circle cx=\"80\" cy=\"158\" r=\"14\" fill=\"#E7A3B6\"/><text x=\"80\" y=\"164\" font-size=\"13\" font-weight=\"900\" fill=\"#fff\" text-anchor=\"middle\">1</text><text x=\"80\" y=\"198\" font-size=\"15\" font-weight=\"900\" text-anchor=\"middle\">2009</text><text x=\"80\" y=\"216\" font-size=\"12\" text-anchor=\"middle\">the first box</text><text x=\"80\" y=\"232\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >第一座</text>\n<circle cx=\"210\" cy=\"138\" r=\"34\" fill=\"#D9738F\"/><text x=\"210\" y=\"144\" font-size=\"21\" font-weight=\"900\" fill=\"#fff\" text-anchor=\"middle\">2,510</text><text x=\"210\" y=\"198\" font-size=\"15\" font-weight=\"900\" text-anchor=\"middle\">2012</text><text x=\"210\" y=\"216\" font-size=\"12\" text-anchor=\"middle\">beats Carnegie</text><text x=\"210\" y=\"232\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >超越卡內基</text>\n<circle cx=\"350\" cy=\"122\" r=\"50\" fill=\"#C9506E\"/><text x=\"350\" y=\"128\" font-size=\"22\" font-weight=\"900\" fill=\"#fff\" text-anchor=\"middle\">75,000+</text><text x=\"350\" y=\"198\" font-size=\"15\" font-weight=\"900\" text-anchor=\"middle\">2018</text><text x=\"350\" y=\"216\" font-size=\"12\" text-anchor=\"middle\">88 countries</text><text x=\"350\" y=\"232\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >88 個國家</text>\n<circle cx=\"500\" cy=\"108\" r=\"64\" fill=\"#C2385A\"/><text x=\"500\" y=\"114\" font-size=\"22\" font-weight=\"900\" fill=\"#fff\" text-anchor=\"middle\">175,000+</text><text x=\"500\" y=\"198\" font-size=\"15\" font-weight=\"900\" text-anchor=\"middle\">2024</text><text x=\"500\" y=\"216\" font-size=\"12\" text-anchor=\"middle\">128 countries</text><text x=\"500\" y=\"232\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >128 個國家</text>\n<rect x=\"90\" y=\"248\" width=\"420\" height=\"46\" rx=\"23\" fill=\"#FDE8EE\"/>\n<text x=\"300\" y=\"268\" font-size=\"15\" text-anchor=\"middle\" font-weight=\"700\">Take a book, share a book.</text><text x=\"300\" y=\"285\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >拿一本書，也分享一本書</text></g></svg>", "cap": "從家門口的一個書箱開始，小小免費圖書館在十幾年內擴展到全世界。", "credit": "圖解：winglish.tw（2018、2024 數字取自當年報導）"}};
 const QUIZ = [
  {
@@ -367,5 +399,5 @@ const META = {
  "id": "lfl",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

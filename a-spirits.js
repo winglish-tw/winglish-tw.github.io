@@ -102,6 +102,46 @@ const GLOSS = {
 const KEY = [["spirit","ancestor","lantern","tomb","cucumber","eggplant","welcome","wrap","cloth","island"],
              ["recognizable","ancestral","offering","transform","linger","literally","shroud","somber","unsettling","gratitude","conviction","bond"],
              ["obscure","porous","observance","exodus","laden","fleeting","endearing","hasten","plodding","bestow","realm","exuberant","macabre","preoccupation","continuity"]];
+const DEFS = {
+  "spirit": "the part of a person that is believed to live on after death",
+  "ancestor": "a person in your family who lived long ago",
+  "lantern": "a light with a cover around it, often carried or hung up",
+  "tomb": "a place where a dead person is buried",
+  "cucumber": "a long green vegetable eaten raw",
+  "eggplant": "a vegetable with smooth purple skin",
+  "welcome": "to greet someone in a friendly way when they arrive",
+  "wrap": "to cover something completely with paper or cloth",
+  "cloth": "material made by weaving cotton, wool or other fibers",
+  "island": "a piece of land surrounded by water",
+  "recognizable": "easy to identify",
+  "ancestral": "connected with your ancestors",
+  "offering": "something given as a gift, especially to a god or spirit",
+  "transform": "to change something completely",
+  "linger": "to stay in a place longer than usual",
+  "literally": "according to the exact meaning of the words",
+  "shroud": "a cloth used to wrap a dead body",
+  "somber": "sad and serious",
+  "unsettling": "making you feel nervous or worried",
+  "gratitude": "the feeling of being thankful",
+  "conviction": "a strong belief",
+  "bond": "a close connection between people",
+  "obscure": "to hide something or make it unclear",
+  "porous": "allowing things to pass through",
+  "observance": "the act of following a religious custom or holiday",
+  "exodus": "a situation in which many people leave a place at the same time",
+  "laden": "carrying a lot of something",
+  "fleeting": "lasting for only a very short time",
+  "endearing": "making people feel love and affection",
+  "hasten": "to make something happen sooner or faster",
+  "plodding": "moving slowly and heavily",
+  "bestow": "to give something as a gift or honor",
+  "realm": "a kingdom or world, especially an imaginary one",
+  "exuberant": "very cheerful and full of energy",
+  "macabre": "strange and frightening because it is connected with death",
+  "preoccupation": "a state of thinking about something all the time",
+  "continuity": "the state of continuing without stopping or changing"
+};
+
 const FIGS = {
   horse:{src:"https://commons.wikimedia.org/wiki/Special:FilePath/Syoryou-uma,obon,katori-city,japan.JPG?width=1280", local:"spirits-horse.jpg", alt:"A cucumber horse and an eggplant cow for Obon", fb:"（小黃瓜馬和茄子牛的照片）",
     cap:"小黃瓜做的馬和茄子做的牛，腳是用竹籤或免洗筷插成的。",
@@ -321,5 +361,5 @@ const META = {
   "href": "read.html#octopus"
  }
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

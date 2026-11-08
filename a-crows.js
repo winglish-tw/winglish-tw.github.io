@@ -89,6 +89,45 @@ const KEY = [["crow","noisy","smart","scary","mask","caught","hurt","campus","sh
              ["pest","intelligence","experiment","recognize","release","neutral","scold","ignore","spread","warning","fade"],
              ["nuisance","sophisticated","fashion","vividly","distinguish","cue","resemble","subsequent","propagate","encounter","acquire","deliberate","intensified","linger","witness"]];
 
+const DEFS = {
+  "crow": "a large black bird with a loud, harsh call",
+  "noisy": "making a lot of loud sound",
+  "smart": "clever; able to learn and think quickly",
+  "scary": "making you feel afraid",
+  "mask": "a covering you wear over your face to hide or protect it",
+  "caught": "took hold of and held an animal or person that was trying to escape",
+  "hurt": "to cause pain or harm to someone",
+  "campus": "the land and buildings of a university or school",
+  "shout": "to say something very loudly",
+  "dangerous": "likely to cause harm or injury",
+  "pest": "an insect or animal that damages crops or causes trouble",
+  "intelligence": "the ability to learn, understand and think",
+  "experiment": "a scientific test done to find out or prove something",
+  "recognize": "to know who someone is or what something is because you have seen it before",
+  "release": "to let a person or animal go free",
+  "neutral": "not showing any strong feeling or not taking any side",
+  "scold": "to speak angrily to someone because they did something wrong",
+  "ignore": "to pay no attention to something or someone",
+  "spread": "to move or be passed from one person or place to many others",
+  "warning": "something that tells people about a possible danger",
+  "fade": "to slowly become weaker or less strong",
+  "nuisance": "a person or thing that is annoying or causes trouble",
+  "sophisticated": "complicated and advanced",
+  "fashion": "to make something with your hands from materials",
+  "vividly": "in a very clear and detailed way",
+  "distinguish": "to see or recognize the difference between things",
+  "cue": "a signal or sign that tells you what to do or think",
+  "resemble": "to look like or be similar to someone or something",
+  "subsequent": "happening after something else",
+  "propagate": "to spread an idea or behavior to more and more people or animals",
+  "encounter": "to meet or come across someone or something",
+  "acquire": "to gain knowledge or a skill; to get something",
+  "deliberate": "done on purpose and carefully planned",
+  "intensified": "became stronger or greater",
+  "linger": "to stay somewhere longer than expected; to continue to exist",
+  "witness": "to see something happen"
+};
+
 const FIGS = {
   timeline:{svg:`<svg viewBox="0 0 600 330" role="img" aria-label="Timeline of the crow mask experiment" style="display:block;width:100%;height:auto;border-radius:6px;background:#F3F5FA">
 <path d="M50 230 C170 236 250 222 330 228 S470 236 560 226" fill="none" stroke="#1A2238" stroke-width="3" stroke-linecap="round"/>
@@ -169,5 +208,5 @@ const META = {
  fact:"烏鴉看到同伴死掉時，常會聚集過來大叫。科學家認為，牠們是在了解這裡發生了什麼危險，之後會避開那個地方一陣子。",
  next:{title:"Why Does Spicy Food Feel Hot?", href:"read.html#chili"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

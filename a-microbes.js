@@ -320,6 +320,37 @@ const LEVELS = [
 ];
 const GLOSS = {"trillion": ["n.", "兆"], "tiny": ["adj.", "微小的"], "bacteria": ["n.", "細菌（複數）"], "gut": ["n.", "腸道"], "outnumber": ["v.", "數量超過"], "cell": ["n.", "細胞"], "count": ["v.", "計算"], "adult": ["n.", "成年人"], "gram": ["n.", "公克"], "sick": ["adj.", "生病的"], "digest": ["v.", "消化"], "fiber": ["n.", "纖維"], "vitamin": ["n.", "維生素"], "germ": ["n.", "病菌"], "bean": ["n.", "豆子"], "antibiotic": ["n.", "抗生素"], "microbiome": ["n.", "微生物群"], "claim": ["n.", "說法；主張"], "documentary": ["n.", "紀錄片"], "rough": ["adj.", "粗略的"], "estimate": ["n./v.", "估計"], "typical": ["adj.", "典型的"], "intestine": ["n.", "腸"], "ratio": ["n.", "比例"], "organism": ["n.", "生物"], "dietary": ["adj.", "飲食的"], "produce": ["v.", "製造"], "immune": ["adj.", "免疫的"], "harmless": ["adj.", "無害的"], "diet": ["n.", "飲食"], "variety": ["n.", "多樣"], "grain": ["n.", "穀物"], "unnecessary": ["adj.", "不必要的"], "confidently": ["adv.", "有把握地"], "density": ["n.", "密度"], "feces": ["n.", "糞便"], "volume": ["n.", "容積；體積"], "digestive": ["adj.", "消化的"], "striking": ["adj.", "驚人的；醒目的"], "scrutiny": ["n.", "仔細檢查"], "revisit": ["v.", "重新檢視"], "colon": ["n.", "大腸；結腸"], "revised": ["adj.", "修正過的"], "diminish": ["v.", "減少；降低"], "significance": ["n.", "重要性"], "microorganism": ["n.", "微生物"], "ferment": ["v.", "發酵"], "nourish": ["v.", "滋養"], "synthesize": ["v.", "合成"], "calibrate": ["v.", "校準；調節"], "organ": ["n.", "器官"], "hype": ["n.", "炒作"], "correlation": ["n.", "相關性"], "causation": ["n.", "因果關係"], "obesity": ["n.", "肥胖"], "evidence": ["n.", "證據"], "cite": ["v.", "引用"], "continual": ["adj.", "不斷的"], "correction": ["n.", "修正"]};
 const KEY = [["trillion", "bacteria", "gut", "cell", "adult", "digest", "fiber", "vitamin", "germ"], ["claim", "rough", "estimate", "typical", "intestine", "ratio", "dietary", "immune", "harmless"], ["density", "scrutiny", "colon", "diminish", "ferment", "synthesize", "hype", "correlation", "causation", "continual"]];
+const DEFS = {
+  "trillion": "the number 1,000,000,000,000",
+  "bacteria": "very small living things, some of which cause disease",
+  "gut": "the long tube in the body that food passes through after the stomach",
+  "cell": "the smallest unit of a living thing",
+  "adult": "a fully grown person",
+  "digest": "to break down food in the stomach so the body can use it",
+  "fiber": "the part of plant foods that the body cannot digest but that helps keep it healthy",
+  "vitamin": "a natural substance in food that the body needs to stay healthy",
+  "germ": "a very small living thing that can cause disease",
+  "claim": "a statement that something is true, though it has not been proven",
+  "rough": "not exact; approximately correct",
+  "estimate": "to guess the size or amount of something using available information",
+  "typical": "having the usual qualities of a particular type of person or thing",
+  "intestine": "the long tube in the body that carries food from the stomach",
+  "ratio": "the relationship between two amounts, showing how much bigger one is",
+  "dietary": "connected with the food that people eat",
+  "immune": "connected with the body's protection against disease",
+  "harmless": "not able to cause harm",
+  "density": "how closely packed together something is",
+  "scrutiny": "careful and thorough examination",
+  "colon": "the main part of the large intestine",
+  "diminish": "to become or make something smaller or less",
+  "ferment": "to change chemically because of bacteria or yeast",
+  "synthesize": "to make a substance by combining simpler substances",
+  "hype": "exaggerated talk to make something seem more exciting than it is",
+  "correlation": "a connection between two things in which one changes with the other",
+  "causation": "the fact of one thing directly causing another",
+  "continual": "happening again and again without stopping"
+};
+
 const FIGS = {"mic": {"svg": "<svg viewBox=\"0 0 600 312\" role=\"img\" aria-label=\"Human cells versus bacteria\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#F4F9FD\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#1F6FAE\">Who Lives in Your Body?</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >你的身體裡住了誰？</text>\n<g font-size=\"13\">\n<text x=\"40\" y=\"84\" font-weight=\"900\">Human cells</text><text x=\"40\" y=\"99\" font-size=\"10\" text-anchor=\"start\" fill=\"#5A6478\" >人體細胞</text>\n<rect x=\"150\" y=\"68\" width=\"300\" height=\"30\" rx=\"6\" fill=\"#F4A6A6\"/><text x=\"440\" y=\"89\" font-weight=\"900\" text-anchor=\"end\">≈ 30 trillion 約 30 兆</text>\n<text x=\"40\" y=\"136\" font-weight=\"900\">Bacteria</text><text x=\"40\" y=\"151\" font-size=\"10\" text-anchor=\"start\" fill=\"#5A6478\" >細菌</text>\n<rect x=\"150\" y=\"120\" width=\"380\" height=\"30\" rx=\"6\" fill=\"#1F6FAE\"/><text x=\"520\" y=\"141\" font-weight=\"900\" fill=\"#fff\" text-anchor=\"end\">≈ 38 trillion 約 38 兆</text>\n</g>\n<g>\n<rect x=\"40\" y=\"176\" width=\"250\" height=\"62\" rx=\"10\" fill=\"#fff\" stroke=\"#C2385A\" stroke-width=\"2\"/>\n<text x=\"165\" y=\"202\" font-size=\"15\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#C2385A\">Old myth: 10 to 1</text><text x=\"165\" y=\"220\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >舊說法：細菌是細胞的 10 倍</text>\n<path d=\"M60 186 L270 230\" stroke=\"#C2385A\" stroke-width=\"2\" opacity=\".55\"/>\n<rect x=\"310\" y=\"176\" width=\"250\" height=\"62\" rx=\"10\" fill=\"#fff\" stroke=\"#17875C\" stroke-width=\"2\"/>\n<text x=\"435\" y=\"202\" font-size=\"15\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#17875C\">2016 study: about 1.3 to 1</text><text x=\"435\" y=\"220\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >2016 年新研究：大約 1.3 比 1</text>\n</g>\n<rect x=\"70\" y=\"252\" width=\"460\" height=\"46\" rx=\"23\" fill=\"#E3F1FB\"/>\n<text x=\"300\" y=\"272\" font-size=\"14\" text-anchor=\"middle\" font-weight=\"700\">All your bacteria weigh only about 0.2 kg.</text><text x=\"300\" y=\"289\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >你身上所有細菌加起來只有約 0.2 公斤</text></g></svg>", "cap": "人體細胞和細菌的數量其實差不多，「細菌多 10 倍」是過時的說法。", "credit": "圖解：winglish.tw（資料：Sender, Fuchs & Milo, 2016）"}};
 const QUIZ = [
  {
@@ -372,5 +403,5 @@ const META = {
  "id": "microbes",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

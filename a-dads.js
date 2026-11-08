@@ -329,6 +329,36 @@ const LEVELS = [
 ];
 const GLOSS = {"stroller": ["n.", "嬰兒推車"], "latte": ["n.", "拿鐵咖啡"], "parental": ["adj.", "父母的"], "leave": ["n.", "休假"], "paid": ["adj.", "有薪的"], "share": ["v.", "分享；共享"], "percent": ["n.", "百分之…"], "government": ["n.", "政府"], "rule": ["n.", "規定"], "diaper": ["n.", "尿布"], "weekday": ["n.", "平日"], "playful": ["adj.", "俏皮的"], "unemployed": ["adj.", "失業的"], "maternity": ["n.", "產婦的；母親身分"], "responsibility": ["n.", "責任"], "available": ["adj.", "可用的"], "introduce": ["v.", "推出；引進"], "reserve": ["v.", "保留"], "reserved": ["adj.", "保留的"], "transfer": ["v.", "轉讓"], "extend": ["v.", "延長"], "policy": ["n.", "政策"], "attitude": ["n.", "態度"], "workplace": ["n.", "職場"], "equal": ["adj.", "平等的"], "society": ["n.", "社會"], "childcare": ["n.", "育兒"], "coin": ["v.", "創造（新詞）"], "affectionate": ["adj.", "親切的；充滿感情的"], "phenomenon": ["n.", "現象"], "coincidence": ["n.", "巧合"], "deliberate": ["adj.", "刻意的"], "grant": ["v.", "給予"], "compensate": ["v.", "補償；支付"], "ceiling": ["n.", "上限"], "convert": ["v.", "轉換"], "reform": ["n.", "改革"], "egalitarian": ["adj.", "平等主義的"], "minimal": ["adj.", "極少的"], "entrenched": ["adj.", "根深蒂固的"], "policymaker": ["n.", "政策制定者"], "incentive": ["n.", "誘因"], "pioneer": ["v.", "率先開創"], "exclusively": ["adv.", "專門地；獨有地"], "quota": ["n.", "配額"], "forfeit": ["v.", "喪失；放棄"], "household": ["n.", "家庭"], "dramatic": ["adj.", "驚人的；劇烈的"], "majority": ["n.", "大多數"], "persistent": ["adj.", "持續的"], "wage": ["n.", "薪資"], "gap": ["n.", "差距"], "unmistakable": ["adj.", "不會弄錯的；明顯的"], "decline": ["v.", "拒絕"], "pursue": ["v.", "追求"], "preserve": ["v.", "保存"], "reshape": ["v.", "重塑"], "underlie": ["v.", "作為…的基礎"]};
 const KEY = [["stroller", "parental", "leave", "paid", "share", "percent", "government", "diaper"], ["unemployed", "maternity", "responsibility", "available", "reserve", "transfer", "extend", "policy", "attitude"], ["phenomenon", "coincidence", "compensate", "egalitarian", "entrenched", "incentive", "quota", "forfeit", "persistent", "underlie"]];
+const DEFS = {
+  "stroller": "a small chair on wheels for pushing a baby or young child",
+  "parental": "connected with being a parent",
+  "leave": "time when you are allowed to be away from work",
+  "paid": "receiving money for the time you are away from work",
+  "share": "to have or use something together with others",
+  "percent": "one part in every hundred",
+  "government": "the group of people who control and run a country",
+  "diaper": "a piece of soft cloth or paper worn by a baby to hold its waste",
+  "unemployed": "without a job",
+  "maternity": "connected with mothers and with having a baby",
+  "responsibility": "a duty to take care of someone or something",
+  "available": "able to be used or taken",
+  "reserve": "to keep something for a particular person or purpose",
+  "transfer": "to give something to another person",
+  "extend": "to make something last longer",
+  "policy": "a set of plans or rules decided by a government or organization",
+  "attitude": "the way you think and feel about something",
+  "phenomenon": "a fact or event that can be observed, especially one that is unusual",
+  "coincidence": "a surprising situation in which two things happen together by chance",
+  "compensate": "to pay someone for work, loss or trouble",
+  "egalitarian": "believing that all people are equal and should have the same rights",
+  "entrenched": "firmly fixed and very difficult to change",
+  "incentive": "something that encourages a person to do something",
+  "quota": "a fixed number or amount that is officially allowed or required",
+  "forfeit": "to lose a right or thing because you did not use it or follow a rule",
+  "persistent": "continuing for a long time",
+  "underlie": "to be the basic cause of or reason for something"
+};
+
 const FIGS = {"bars": {"svg": "<svg viewBox=\"0 0 600 342\" role=\"img\" aria-label=\"Days of parental leave reserved for fathers in Sweden\" style=\"display:block;width:100%;height:auto;border-radius:6px;background:#FAF7FD\"><g font-family=\"Noto Sans TC,sans-serif\" fill=\"#1A2238\"><text x=\"300\" y=\"26\" font-size=\"18\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#7A4FB5\">Leave Days Just for Dads in Sweden</text><text x=\"300\" y=\"44\" font-size=\"12\" text-anchor=\"middle\" fill=\"#5A6478\" >瑞典「爸爸專屬」育嬰假天數</text>\n<line x1=\"80\" y1=\"236\" x2=\"540\" y2=\"236\" stroke=\"#1A2238\" stroke-width=\"2\"/>\n<g font-size=\"14\" text-anchor=\"middle\">\n<rect x=\"110\" y=\"232\" width=\"70\" height=\"4\" fill=\"#C9CED6\"/><text x=\"145\" y=\"220\" font-weight=\"900\">0 days</text><text x=\"145\" y=\"258\" font-weight=\"700\">1974</text><text x=\"145\" y=\"275\" font-size=\"12\">shared leave</text><text x=\"145\" y=\"290\" font-size=\"10\" text-anchor=\"middle\" fill=\"#5A6478\" >爸媽可共享</text>\n<rect x=\"215\" y=\"186\" width=\"70\" height=\"50\" rx=\"4\" fill=\"#B79BDB\"/><text x=\"250\" y=\"176\" font-weight=\"900\">30 days</text><text x=\"250\" y=\"258\" font-weight=\"700\">1995</text>\n<rect x=\"320\" y=\"136\" width=\"70\" height=\"100\" rx=\"4\" fill=\"#9874CB\"/><text x=\"355\" y=\"126\" font-weight=\"900\">60 days</text><text x=\"355\" y=\"258\" font-weight=\"700\">2002</text>\n<rect x=\"425\" y=\"86\" width=\"70\" height=\"150\" rx=\"4\" fill=\"#7A4FB5\"/><text x=\"460\" y=\"76\" font-weight=\"900\">90 days</text><text x=\"460\" y=\"258\" font-weight=\"700\">2016–</text>\n</g>\n<text x=\"300\" y=\"314\" font-size=\"13\" text-anchor=\"middle\" font-weight=\"700\">480 days per child. If dad doesn't use his days, they're lost.</text><text x=\"300\" y=\"331\" font-size=\"11\" text-anchor=\"middle\" fill=\"#5A6478\" >每個孩子共 480 天；爸爸專屬的天數不用就會消失</text></g></svg>", "cap": "瑞典一步步增加「爸爸專屬」的育嬰假，讓更多爸爸願意回家帶孩子。", "credit": "圖解：winglish.tw"}};
 const QUIZ = [
  [
@@ -495,5 +525,5 @@ const META = {
  "id": "dads",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

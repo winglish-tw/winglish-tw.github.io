@@ -90,6 +90,45 @@ const KEY = [["instant","noodle","invent","hungry","shed","fry","tiny","hole","s
              ["scarce","bankrupt","experiment","breakthrough","countless","launch","notice","inspired","vacuum","float","aboard"],
              ["processed","colonial","struck","queue","convince","collapse","modest","inspiration","moisture","microscopic","absorb","soar","masterstroke","retreat","philosophy"]];
 
+const DEFS = {
+  "instant": "able to be made very quickly; instant noodles are ready in minutes",
+  "noodle": "a long thin piece of food made from flour, water and sometimes eggs",
+  "invent": "to create something that did not exist before",
+  "hungry": "wanting or needing food",
+  "shed": "a small simple building used for storing things or working in",
+  "fry": "to cook food in hot oil",
+  "tiny": "very small",
+  "hole": "an empty space in something solid",
+  "soft": "not hard; easy to press",
+  "astronaut": "a person who travels into space",
+  "scarce": "not easy to find or get",
+  "bankrupt": "not having enough money to pay what you owe",
+  "experiment": "to try out new ideas or methods to see what happens",
+  "breakthrough": "an important discovery or achievement after a lot of effort",
+  "countless": "too many to count",
+  "launch": "to start selling a new product",
+  "notice": "to see or become aware of something",
+  "inspired": "having been given an idea or the desire to do something",
+  "vacuum": "a space with no air in it",
+  "float": "to move slowly in the air or stay in the air without falling",
+  "aboard": "on or in a ship, plane or spacecraft",
+  "processed": "changed by a factory process before being sold",
+  "colonial": "connected with a time when one country ruled another",
+  "struck": "be struck by: to be very impressed by something",
+  "queue": "to wait in a line of people",
+  "convince": "to make someone feel sure that something is true",
+  "collapse": "to fail suddenly and completely",
+  "modest": "simple and not expensive or large",
+  "inspiration": "something that gives you new ideas",
+  "moisture": "small amounts of water in something",
+  "microscopic": "extremely small; only seen with a microscope",
+  "absorb": "to take in a liquid or gas",
+  "soar": "to rise very quickly to a high level",
+  "masterstroke": "a very clever action that achieves great success",
+  "retreat": "to go back to a quieter place",
+  "philosophy": "a set of beliefs about how to live"
+};
+
 const FIGS = {
   fry:{svg:`<svg viewBox="0 0 600 330" role="img" aria-label="How flash-frying makes instant noodles" style="display:block;width:100%;height:auto;border-radius:6px;background:#FFF7EC">
 <defs><marker id="nh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2238"/></marker></defs>
@@ -181,5 +220,5 @@ const META = {
  fact:"日清在大阪池田和神奈川橫濱都有杯麵博物館，遊客可以自己設計杯麵的杯子、挑選湯頭和配料，做一個獨一無二的杯麵帶回家。",
  next:{title:"The World's Biggest Mirror", href:"read.html#uyuni"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

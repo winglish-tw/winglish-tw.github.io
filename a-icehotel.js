@@ -90,6 +90,44 @@ const KEY = [["imagine","village","block","frozen","river","design","melt","gues
              ["decade","disappear","rebuild","massive","harvest","store","construction","mixture","gallery","suite","carve","cycle"],
              ["permanence","embrace","dismantle","paradoxically","colossal","dormant","plunge","resume","lure","incarnation","cocoon","ephemeral","captivate","impermanence"]];
 
+const DEFS = {
+  "imagine": "to form a picture of something in your mind",
+  "village": "a very small town in the countryside",
+  "block": "a large solid piece of a hard material such as ice or stone",
+  "frozen": "turned into ice because of the cold",
+  "river": "a large natural stream of water flowing to the sea",
+  "design": "to plan how something will look and work before it is made",
+  "melt": "to change from solid to liquid because of heat",
+  "guest": "a person staying at a hotel or invited to someone's home",
+  "below": "at a lower level than something",
+  "decade": "a period of ten years",
+  "disappear": "to go away so that you cannot see it anymore",
+  "rebuild": "to build something again after it has been damaged or destroyed",
+  "massive": "very large and heavy",
+  "harvest": "to collect crops or other natural things when they are ready",
+  "store": "to keep something somewhere until it is needed",
+  "construction": "the process or work of building something",
+  "mixture": "a combination of different things mixed together",
+  "gallery": "a room or building where works of art are shown",
+  "suite": "a set of connected rooms in a hotel",
+  "carve": "to make an object or pattern by cutting a material such as wood, stone or ice",
+  "cycle": "a set of events that happen again and again in the same order",
+  "permanence": "the quality of lasting forever or for a very long time",
+  "embrace": "to accept an idea or change happily and completely",
+  "dismantle": "to take something apart piece by piece",
+  "paradoxically": "in a way that seems strange or opposite to what you would expect",
+  "colossal": "extremely large",
+  "dormant": "not active or growing now, but able to become active later",
+  "plunge": "to fall suddenly and by a large amount",
+  "resume": "to start again after stopping",
+  "lure": "to attract someone to a place, often by offering something",
+  "incarnation": "one of a series of forms that something takes over time",
+  "cocoon": "to wrap or surround something completely to keep it protected",
+  "ephemeral": "lasting for only a very short time",
+  "captivate": "to hold someone's attention completely by being interesting or attractive",
+  "impermanence": "the state of not lasting forever"
+};
+
 const FIGS = {
   cycle:{svg:`<svg viewBox="0 0 600 420" role="img" aria-label="The yearly cycle of the ICEHOTEL" style="display:block;width:100%;height:auto;border-radius:6px;background:#EEF5FB">
 <defs><marker id="ca" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2238"/></marker></defs>
@@ -277,5 +315,5 @@ const META = {
  fact:"冰旅館裡甚至有一座用冰蓋的小教堂，有人特地跑到北極圈在冰裡舉行婚禮！",
  next:{title:"Why Does Popcorn Pop?", href:"read.html#popcorn"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

@@ -88,6 +88,45 @@ const KEY = [["jet","lag","zone","clock","wake","slow","sunlight","west","east",
              ["exciting","awake","uncomfortable","master","cycle","slightly","reset","direction","force","recover","adjust"],
              ["aviation","fatigue","insomnia","circadian","neuron","coordinate","rhythm","isolation","discrepancy","asymmetry","accommodate","underestimate","penalty","countermeasure","persuade"]];
 
+const DEFS = {
+  "jet": "a fast aircraft; jet lag is the tired feeling after a long flight",
+  "lag": "a delay in time; jet lag is tiredness after flying across time zones",
+  "zone": "an area with a particular feature; a time zone shares the same time",
+  "clock": "something that shows the time; the body's clock controls daily cycles",
+  "wake": "to stop sleeping",
+  "slow": "not moving or happening quickly",
+  "sunlight": "the light that comes from the sun",
+  "west": "toward the direction where the sun goes down",
+  "east": "toward the direction where the sun comes up",
+  "local": "belonging to the particular place you are in",
+  "exciting": "making you feel very happy and enthusiastic",
+  "awake": "not sleeping",
+  "uncomfortable": "not feeling physically relaxed or pleasant",
+  "master": "most important; controlling all the others",
+  "cycle": "a period of time in which a set of events happens again and again",
+  "slightly": "a little",
+  "reset": "to change something back to a new or starting time or setting",
+  "direction": "the way something is moving or pointing",
+  "force": "to make someone do something they do not want to do",
+  "recover": "to get well again after being ill, hurt or tired",
+  "adjust": "to change slightly to get used to a new situation",
+  "aviation": "the designing, building and flying of aircraft",
+  "fatigue": "a feeling of being extremely tired",
+  "insomnia": "the condition of being unable to sleep",
+  "circadian": "connected with the body's 24-hour cycle of sleeping and waking",
+  "neuron": "a cell that carries messages in the brain and nerves",
+  "coordinate": "to organize different parts so that they work together well",
+  "rhythm": "a regular repeated pattern of movement, sound or activity",
+  "isolation": "the state of being separated from other people or things",
+  "discrepancy": "a difference between things that should be the same",
+  "asymmetry": "a lack of balance between two sides",
+  "accommodate": "to adjust to or make room for something",
+  "underestimate": "to think something is smaller or less important than it really is",
+  "penalty": "a disadvantage or bad result caused by an action",
+  "countermeasure": "an action taken to reduce or prevent something harmful",
+  "persuade": "to make someone agree to do something by giving reasons"
+};
+
 const FIGS = {
   clock:{svg:`<svg viewBox="0 0 600 340" role="img" aria-label="Why flying east causes worse jet lag than flying west" style="display:block;width:100%;height:auto;border-radius:6px;background:#F3F5FA">
 <defs><marker id="jh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1A2238"/></marker></defs>
@@ -171,5 +210,5 @@ const META = {
  fact:"從台灣往東飛到美國，因為會越過國際換日線，常會出現「降落時間比起飛時間還早」的情況，例如晚上出發，抵達時卻還是同一天的傍晚！",
  next:{title:"Three Hearts and Blue Blood", href:"read.html#octopus"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();

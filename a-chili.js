@@ -92,6 +92,45 @@ const KEY = [["chili","pepper","chemical","taste","trick","nerve","sweat","spicy
              ["bite","receptor","temperature","react","dissolve","effective","protein","scale","compete","mammal","swallow"],
              ["deliberately","interpret","culprit","compound","perceive","remedy","dilute","quantify","intriguing","deterrence","crush","intact","disperse","crave","weapon"]];
 
+const DEFS = {
+  "chili": "a small hot-tasting pepper used in cooking",
+  "pepper": "a hollow vegetable that can be red, green or yellow; some kinds taste hot",
+  "chemical": "a substance made by or used in chemistry",
+  "taste": "the flavor of something that you sense in your mouth",
+  "trick": "to make someone believe something that is not true",
+  "nerve": "a long thin fiber that carries messages between the brain and other parts of the body",
+  "sweat": "to produce liquid through your skin when you are hot or nervous",
+  "spicy": "having a strong, hot flavor from spices",
+  "measure": "to find out the size, amount or degree of something",
+  "seed": "a small hard part of a plant from which a new plant grows",
+  "bite": "the amount of food you take into your mouth at one time",
+  "receptor": "a nerve ending or cell that receives signals such as heat, light or chemicals",
+  "temperature": "how hot or cold something is",
+  "react": "to change or behave in a certain way because of something",
+  "dissolve": "to mix with a liquid and become part of it",
+  "effective": "working well and producing the result you want",
+  "protein": "a substance found in foods such as meat and milk that the body needs to grow",
+  "scale": "a range of numbers or levels used to measure something",
+  "compete": "to try to get something that others are also trying to get",
+  "mammal": "an animal that drinks milk from its mother when young, such as a dog or a human",
+  "swallow": "to make food or drink go down your throat",
+  "deliberately": "on purpose; intentionally",
+  "interpret": "to understand something in a particular way",
+  "culprit": "the person or thing responsible for a problem",
+  "compound": "a substance made of two or more elements joined together",
+  "perceive": "to notice or experience something through the senses",
+  "remedy": "a way of dealing with or curing a problem",
+  "dilute": "to make a liquid weaker by adding water or another liquid",
+  "quantify": "to measure or express something as a number",
+  "intriguing": "very interesting because it is unusual or mysterious",
+  "deterrence": "the act of stopping someone from doing something by making them afraid",
+  "crush": "to press something so hard that it breaks or loses its shape",
+  "intact": "not damaged; complete",
+  "disperse": "to spread or send things over a wide area",
+  "crave": "to want something very strongly",
+  "weapon": "an object used for fighting or attacking"
+};
+
 const FIGS = {
   scoville:{svg:`<svg viewBox="0 0 600 350" role="img" aria-label="The Scoville scale from bell pepper to Pepper X" style="display:block;width:100%;height:auto;border-radius:6px;background:#FFF7EC">
 <g font-family="Noto Sans TC,sans-serif" fill="#1A2238">
@@ -178,5 +217,5 @@ const META = {
  fact:"在植物學上，辣椒其實是「水果」！只要是由花發育而來、裡面有種子的部分就算果實，所以辣椒和番茄一樣，都是水果。",
  next:{title:"The Man Who Invented Instant Noodles", href:"read.html#noodles"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
 })();
