@@ -1187,7 +1187,7 @@ const PARKMAP=`<svg viewBox="0 0 600 500" role="img" aria-label="科學園區地
 </svg>`;
 
 SETS.push({
-  title:"A Visitor's Guide to Maple Hill Science Park",tag:"地圖題",img:"",
+  title:"A Visitor's Guide to Maple Hill Science Park",tag:"地圖題",img:PARKMAP,
   p:[
 "Welcome to Maple Hill Science Park! The park has five exhibit buildings, a café, a gift shop, and a large pond, all connected by easy walking paths. This guide will help you find your way around, and it will also tell you a little about the surprises waiting for you inside each building.",
 "If you come by bus, you will get off at the bus stop just to the left of the main gate on the south side of the park. As you walk through the gate, you will see the main path running straight north. The first building on your right is the Mirror Maze. Hundreds of mirrors make its narrow paths seem to go on forever, so it is easy to lose your way. Visitors are given cotton gloves, both to keep the mirrors clean and to help them feel their way. Families with young children may also enjoy the playground just beyond the Mirror Maze, to the east. Directly across the main path from the Mirror Maze stands the Robot Lab, with the public restrooms right behind it. The lab's star is a small robot that can solve a Rubik's Cube in less than a second, far faster than any human.",
@@ -1209,8 +1209,8 @@ SETS.push({
    {type:"fill",n:2,pts:"2 分",inst:"請從第 4 段找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
     s:"{A} = in a place that few people go to or know about",
     blanks:{A:{ans:["off the beaten track","a little off the beaten track","off the beaten path"],src:"-",hint:"第 4 段講很多人沒發現蝴蝶花園的原因，找那個片語（四個字）。",k:"第 4 段 it is a little off the beaten track。beaten track 是「被很多人踩出來的路」，off 就是「離開」，所以 off the beaten track 是「偏僻、人跡罕至、少有人知道的地方」。"}}},
-   {type:"map",n:3,pts:"6 分（每格 1 分）",inst:"請根據文章內容，在地圖中找出下列各建築物的位置，選出代號（A–G）。（有一個代號用不到）",
-    map:PARKMAP,letters:"ABCDEFG",
+   {type:"map",n:3,pts:"6 分（每格 1 分）",inst:"請根據文章內容，在文章上方的地圖中找出下列各建築物的位置，選出代號（A–G）。（有一個代號用不到）",
+    map:"",letters:"ABCDEFG",
     items:[
      {name:"Robot Lab",ans:"A",k:"第 2 段：機器人實驗室在主步道另一側、正對著鏡子迷宮（B），而且正後方是廁所（WC），所以是 A。"},
      {name:"Mirror Maze",ans:"B",k:"第 2 段：從南邊大門進來，右手邊第一棟是鏡子迷宮。面向北方時，右手邊是東邊；而且它再過去、東邊是遊樂場，所以是 B。"},
@@ -1331,7 +1331,7 @@ function build(){
         if(tries>=2)el.querySelector("[data-s]").hidden=false};
       el.querySelector("[data-s]").onclick=()=>reveal(false);
     }else if(q.type==="map"){
-      el.classList.add("isMap");qm.innerHTML=head+`<div class="mapq"><figure>${q.map}</figure>${q.items.map((it,k)=>`<div class="mrow" data-k="${k}"><b>${esc(it.name)}</b><select aria-label="${esc(it.name)} 的位置"><option value="">選代號</option>${[...q.letters].map(c=>`<option>${c}</option>`).join("")}</select></div>`).join("")}</div>`+btns;
+      el.classList.add("isMap");qm.innerHTML=head+`<div class="mapq">${q.map?`<figure>${q.map}</figure>`:""}${q.items.map((it,k)=>`<div class="mrow" data-k="${k}"><b>${esc(it.name)}</b><select aria-label="${esc(it.name)} 的位置"><option value="">選代號</option>${[...q.letters].map(c=>`<option>${c}</option>`).join("")}</select></div>`).join("")}</div>`+btns;
       const rows=[...el.querySelectorAll(".mrow")];
       const run=show=>{let out="",wrong=0;
         rows.forEach(r=>{const it=q.items[r.dataset.k],sel=r.querySelector("select");if(r.classList.contains("ok"))return;
