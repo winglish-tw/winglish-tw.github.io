@@ -526,5 +526,34 @@ const META = {
  "id": "kintsugi",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "bowl": ["a rice bowl · a bowl of soup · a glass bowl", "I had a big bowl of beef noodles for lunch.", "我午餐吃了一大碗牛肉麵。"],
+  "glue": ["glue A to B · glue sth together · a glue stick", "Glue the photo to the card with a glue stick.", "用口紅膠把照片黏在卡片上。"],
+  "lacquer": ["black lacquer · lacquer boxes · a coat of lacquer", "The jewelry box was covered in shiny black lacquer.", "那個珠寶盒塗了一層亮亮的黑漆。"],
+  "sap": ["tree sap · sticky sap · maple sap", "Maple syrup is made from the sap of maple trees.", "楓糖漿是用楓樹的樹液做成的。"],
+  "crack": ["a crack in … · a deep crack · a hairline crack", "There's a crack in my phone screen.", "我的手機螢幕有一道裂痕。"],
+  "powder": ["baking powder · washing powder · gold powder", "Add a teaspoon of baking powder to the flour.", "在麵粉裡加一茶匙泡打粉。"],
+  "useless": ["completely useless · useless information · feel useless", "This umbrella is useless — it has a big hole in it.", "這把傘沒用了，上面有一個大洞。"],
+  "heal": ["heal a broken heart · time heals · heal old wounds", "They say time heals all wounds.", "人家說時間能撫平一切傷痛。"],
+  "shatter": ["shatter into pieces · glass shatters · shatter one's dreams", "The plate fell and shattered into pieces.", "盤子掉下來摔得粉碎。"],
+  "humid": ["hot and humid · humid weather · a humid climate", "Taipei summers are hot and humid.", "台北的夏天又熱又潮濕。"],
+  "seam": ["along the seam · split at the seam · a seam in …", "My jeans split along the seam when I bent down.", "我一彎腰，牛仔褲的接縫就裂開了。"],
+  "legend": ["according to legend · a local legend · a living legend", "According to legend, a dragon once lived in this lake.", "傳說中，這座湖裡曾經住著一條龍。"],
+  "clumsy": ["a clumsy repair · clumsy hands · feel clumsy", "I'm so clumsy — I broke another glass.", "我好笨手笨腳，又打破一個杯子了。"],
+  "elegant": ["an elegant dress · an elegant solution · look elegant", "She looked elegant in her long blue dress.", "她穿著藍色長洋裝，看起來很優雅。"],
+  "imperfect": ["an imperfect world · imperfect English · perfectly imperfect", "Her English is imperfect, but people understand her easily.", "她的英文不完美，但大家都很容易聽懂她。"],
+  "highlight": ["highlight a problem · highlight the importance of … · highlight key words", "Use a yellow pen to highlight the key words.", "用黃色的筆把關鍵字畫出來。"],
+  "metaphor": ["a metaphor for … · use a metaphor · a powerful metaphor", "The writer uses the storm as a metaphor for the family's troubles.", "作者用暴風雨比喻這個家庭遇到的麻煩。"],
+  "conceal": ["conceal one's feelings · conceal the truth · conceal sth from sb", "He tried to conceal his fear by laughing.", "他試著用笑來掩飾自己的害怕。"],
+  "conspicuous": ["conspicuous place · highly conspicuous · conspicuous by one's absence", "Put the fire extinguisher in a conspicuous place.", "把滅火器放在醒目的地方。"],
+  "fracture": ["a bone fracture · a hip fracture · a fracture in …", "The X-ray showed a small fracture in his wrist.", "X 光顯示他手腕有一處輕微骨折。"],
+  "artisan": ["skilled artisans · artisan bread · local artisans", "The market sells cheese and bread made by local artisans.", "這個市集販售當地職人手作的起司和麵包。"],
+  "anecdote": ["a funny anecdote · tell an anecdote · personal anecdote", "The speaker opened with a funny anecdote about his first job.", "講者以一則關於他第一份工作的趣事作開場。"],
+  "aesthetic": ["a Japanese aesthetic · a minimalist aesthetic", "The café has a clean, minimalist aesthetic with lots of white wood.", "這間咖啡店有著大量白色木材、乾淨簡約的美學風格。"],
+  "discard": ["discard old clothes · discarded bottles · discard sth as …", "Discarded fishing nets are dangerous to sea animals.", "被丟棄的漁網對海洋動物很危險。"],
+  "resilience": ["show resilience · emotional resilience · build resilience", "Sports can help children build resilience when they lose.", "運動能幫助孩子在輸的時候培養韌性。"],
+  "genuine": ["genuine leather · a genuine smile · genuine interest", "She showed genuine interest in learning about Taiwanese culture.", "她對了解台灣文化表現出真誠的興趣。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

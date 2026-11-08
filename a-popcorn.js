@@ -313,5 +313,44 @@ const META = {
  fact:"好的爆米花玉米粒大約含 13–14.5% 的水。太乾，水蒸氣不夠撐破外殼；太濕，爆出來的爆米花又會軟軟的。所以爆米花玉米要好好密封保存喔！",
  next:{title:"The Biggest Food Fight on Earth", href:"read.html#tomatina"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "snack": ["a healthy snack · a midnight snack · snack food", "Fruit is a healthy snack between meals.", "水果是正餐之間健康的點心。"],
+  "wonder": ["wonder why … · wonder if … · I wonder …", "I wonder why the sky is blue.", "我很好奇天空為什麼是藍的。"],
+  "kernel": ["a corn kernel · a kernel of truth", "There's a kernel of truth in every old saying.", "每句老話裡都有一點真理。"],
+  "shell": ["an egg shell · a hard shell · a turtle's shell", "A turtle can pull its head into its shell.", "烏龜可以把頭縮進殼裡。"],
+  "heat": ["heat the oil · heat up food · heat water", "Heat the oil in a pan before adding the vegetables.", "先在鍋裡把油加熱，再放蔬菜。"],
+  "steam": ["steam rises · full of steam · let off steam", "Steam rose from the bowl of hot soup.", "熱湯碗裡冒出蒸氣。"],
+  "pressure": ["air pressure · under pressure · put pressure on sb", "Many students feel under pressure before big exams.", "許多學生在大考前感到有壓力。"],
+  "escape": ["escape from … · gas escapes · a narrow escape", "Heat escapes through old windows in winter.", "冬天熱氣會從舊窗戶散失。"],
+  "camera": ["a security camera · a digital camera · on camera", "The thief was caught on a security camera.", "小偷被監視器拍到了。"],
+  "experiment": ["carry out an experiment · experiment shows that … · a simple experiment", "This simple experiment shows that air takes up space.", "這個簡單的實驗顯示空氣會占空間。"],
+  "munch": ["munch on sth · munch away", "The kids munched on chips while watching the movie.", "孩子們一邊看電影一邊嚼洋芋片。"],
+  "tough": ["tough meat · a tough job · tough skin", "This steak is too tough to cut.", "這塊牛排太韌，切不動。"],
+  "hull": ["the hull of a ship · seed hulls · rice hulls", "Rice hulls are sometimes used to make eco-friendly cups.", "稻殼有時被用來做環保杯。"],
+  "trap": ["be trapped in … · trap heat · trap animals", "Five people were trapped in the elevator for an hour.", "五個人被困在電梯裡一個小時。"],
+  "burst": ["burst open · burst into tears · a balloon bursts", "The balloon burst with a loud bang.", "氣球砰的一聲爆破了。"],
+  "expand": ["expand rapidly · expand in size · expand one's mind", "Bread dough expands as it rises.", "麵團發酵時會膨脹。"],
+  "rapidly": ["grow rapidly · change rapidly · rapidly increasing", "The city has grown rapidly in the last ten years.", "這座城市在過去十年迅速發展。"],
+  "crunchy": ["crunchy cookies · crunchy vegetables · nice and crunchy", "I like my fried chicken nice and crunchy.", "我喜歡炸雞外皮酥酥脆脆的。"],
+  "footage": ["video footage · security footage · news footage", "Police checked the security footage to find the driver.", "警方調閱監視器畫面找那名駕駛。"],
+  "reveal": ["reveal a secret · reveal the truth · reveal that …", "The test revealed that he had a broken bone.", "檢查顯示他骨折了。"],
+  "release": ["release energy · release heat · release a song", "Burning wood releases heat and smoke.", "燒木頭會釋放熱和煙。"],
+  "somersault": ["do a somersault · turn a somersault", "The gymnast did three somersaults in the air.", "那位體操選手在空中翻了三個筋斗。"],
+  "theatrical": ["theatrical performance · a theatrical gesture · theatrical effect", "He opened the door with a theatrical bow.", "他誇張地鞠了個躬打開門。"],
+  "inert": ["inert gas · lie inert · an inert object", "The cat lay inert on the sofa all afternoon.", "那隻貓整個下午動也不動地躺在沙發上。"],
+  "elusive": ["an elusive answer · elusive animal · prove elusive", "The snow leopard is an elusive animal that is rarely seen.", "雪豹是一種難以捉摸、很少被看到的動物。"],
+  "robust": ["a robust system · robust health · robust design", "The phone has a robust design that can survive a fall.", "這支手機設計堅固，摔了也不怕。"],
+  "impermeable": ["impermeable to water · an impermeable layer", "Rubber boots are impermeable to water.", "橡膠雨靴是不透水的。"],
+  "accumulate": ["accumulate wealth · dust accumulates · accumulate knowledge", "Dust accumulates quickly under the bed.", "床底下很快就積滿灰塵。"],
+  "rupture": ["a pipe ruptures · a ruptured tendon · rupture under pressure", "The water pipe ruptured during the cold night.", "水管在寒冷的夜裡破裂了。"],
+  "liberate": ["liberate sb from … · liberate energy · feel liberated", "Moving out of her parents' house made her feel liberated.", "搬離爸媽家讓她覺得自由了。"],
+  "solidify": ["solidify quickly · solidify into … · solidify one's position", "Melted chocolate solidifies quickly in the fridge.", "融化的巧克力放冰箱很快就會凝固。"],
+  "propel": ["propel sb/sth forward · be propelled by … · jet-propelled", "The boat is propelled by a small engine.", "這艘船由一具小引擎推動。"],
+  "catapult": ["catapult sb into … · be catapulted to fame", "The viral video catapulted the young singer to fame.", "那支爆紅影片讓年輕歌手一夕成名。"],
+  "counterintuitive": ["a counterintuitive idea · seem counterintuitive", "It's counterintuitive, but resting more can help you run faster.", "雖然違反直覺，但多休息能幫你跑得更快。"],
+  "coincide": ["coincide with … · happen to coincide", "My birthday coincides with the Dragon Boat Festival this year.", "今年我的生日剛好和端午節同一天。"],
+  "resonate": ["resonate with sb · the sound resonates · deeply resonate", "Her story resonated with many young mothers.", "她的故事引起許多年輕媽媽的共鳴。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

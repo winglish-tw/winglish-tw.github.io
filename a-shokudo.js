@@ -395,5 +395,36 @@ const META = {
  "id": "shokudo",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "alone": ["all alone · feel alone · alone at home", "The little girl was all alone at home when the power went out.", "停電時，小女孩一個人在家。"],
+  "healthy": ["healthy food · eat healthy · a healthy breakfast", "A healthy breakfast gives you energy for the morning.", "健康的早餐給你一整個早上的活力。"],
+  "vegetable": ["fresh vegetables · eat your vegetables · vegetable soup", "My mom always tells me to eat my vegetables.", "我媽總是叫我要吃青菜。"],
+  "cafeteria": ["a staff cafeteria · cafeteria food · the hospital cafeteria", "The hospital cafeteria is open 24 hours a day.", "醫院的餐廳二十四小時營業。"],
+  "warm": ["a warm meal · warm milk · keep warm", "A glass of warm milk helps me fall asleep.", "一杯溫牛奶幫助我入睡。"],
+  "meal": ["a hot meal · skip a meal · have a meal together", "Our family tries to have at least one meal together every day.", "我們家每天至少一起吃一餐。"],
+  "friendly": ["friendly staff · be friendly to sb · a friendly smile", "The staff at the hotel were very friendly to us.", "飯店的工作人員對我們非常友善。"],
+  "volunteer": ["work as a volunteer · volunteer work · hospital volunteers", "My aunt works as a volunteer at the library on weekends.", "我阿姨週末在圖書館當志工。"],
+  "stomach": ["on an empty stomach · a stomachache · upset stomach", "Don't take this medicine on an empty stomach.", "這個藥不要空腹吃。"],
+  "relative": ["relative poverty · relatively easy · relative to …", "The test was relatively easy compared with the last one.", "這次考試跟上次比相對簡單。"],
+  "poverty": ["live in poverty · poverty line · fight poverty", "Millions of children around the world still live in poverty.", "全世界仍有數百萬兒童生活在貧窮中。"],
+  "hidden": ["hidden costs · a hidden camera · hidden talent", "Be careful of hidden costs when you book cheap flights.", "訂便宜機票時要小心隱藏費用。"],
+  "instant": ["instant coffee · instant noodles · instant message", "He drinks two cups of instant coffee every morning.", "他每天早上喝兩杯即溶咖啡。"],
+  "skip": ["skip breakfast · skip class · skip a meal", "Skipping breakfast can make it hard to focus in class.", "不吃早餐會讓你上課很難專心。"],
+  "embarrassed": ["feel embarrassed · embarrassed about … · too embarrassed to …", "He was too embarrassed to ask for help.", "他太不好意思了，不敢開口求助。"],
+  "elderly": ["elderly people · the elderly · an elderly couple", "An elderly couple runs the small noodle shop on our street.", "我們這條街上那家小麵店是一對老夫婦開的。"],
+  "generation": ["the younger generation · from generation to generation · future generations", "This recipe has been passed down from generation to generation.", "這道食譜代代相傳下來。"],
+  "donation": ["make a donation · a generous donation · donations to …", "The school received a generous donation of new computers.", "學校收到一批慷慨捐贈的新電腦。"],
+  "prosperity": ["economic prosperity · peace and prosperity · a time of prosperity", "People pray for peace and prosperity at the start of the new year.", "人們在新年伊始祈求平安與繁榮。"],
+  "obscure": ["obscure the view · obscure the truth · be obscured by …", "Tall buildings obscure the view of the mountains.", "高樓擋住了山景。"],
+  "vulnerable": ["vulnerable to … · vulnerable groups · feel vulnerable", "Young children and the elderly are more vulnerable to the flu.", "幼兒和老人比較容易感染流感。"],
+  "hardship": ["economic hardship · face hardship · suffer hardship", "Many families faced economic hardship during the pandemic.", "疫情期間許多家庭面臨經濟困難。"],
+  "nutritious": ["a nutritious meal · nutritious food · highly nutritious", "Soy milk is cheap and highly nutritious.", "豆漿便宜又非常營養。"],
+  "nominal": ["a nominal fee · nominal charge · nominal leader", "The museum charges only a nominal fee for students.", "這間博物館只向學生收取象徵性的費用。"],
+  "dilemma": ["face a dilemma · a moral dilemma · in a dilemma", "I'm in a dilemma: should I study abroad or stay near my family?", "我陷入兩難：該出國念書，還是留在家人身邊？"],
+  "stigmatize": ["be stigmatized · stigmatize mental illness", "People with mental illness should not be stigmatized.", "心理疾病患者不該被汙名化。"],
+  "isolation": ["feel a sense of isolation · social isolation · live in isolation", "Many elderly people live in isolation after their partners pass away.", "許多老人在伴侶過世後過著孤立的生活。"],
+  "compassion": ["show compassion · compassion for … · with compassion", "The nurse treated every patient with compassion.", "那位護理師以關懷之心對待每一位病人。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

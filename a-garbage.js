@@ -524,5 +524,36 @@ const META = {
  "id": "garbage",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "plastic": ["plastic bags · plastic bottles · made of plastic", "Many shops no longer give out free plastic bags.", "許多商店不再免費提供塑膠袋。"],
+  "float": ["float on water · float away · float in the air", "Ice floats on water because it is lighter.", "冰會浮在水面上，因為它比較輕。"],
+  "garbage": ["take out the garbage · garbage truck · a garbage can", "It's your turn to take out the garbage tonight.", "今晚輪到你倒垃圾。"],
+  "current": ["ocean currents · a strong current · against the current", "Don't swim here — the current is too strong.", "不要在這裡游泳，水流太強了。"],
+  "tiny": ["a tiny insect · tiny pieces · a tiny room", "The ant carried a tiny piece of cookie back to its nest.", "那隻螞蟻把一小塊餅乾搬回窩裡。"],
+  "net": ["a fishing net · cast a net · be caught in a net", "A sea turtle was caught in an old fishing net.", "一隻海龜被困在一張舊漁網裡。"],
+  "swallow": ["swallow sth whole · accidentally swallow", "Snakes can swallow their food whole.", "蛇可以把食物整個吞下去。"],
+  "disappear": ["disappear from sight · suddenly disappear · disappear without a trace", "The cat suddenly disappeared under the car.", "那隻貓突然鑽到車子底下不見了。"],
+  "recycle": ["recycle paper · recycle bottles · recycled materials", "Our class recycles paper and cans every Friday.", "我們班每個星期五做紙類和鐵罐的回收。"],
+  "solid": ["solid ground · solid food · frozen solid", "The lake was frozen solid, so people could walk on it.", "湖面結了厚厚的冰，所以人們可以在上面走。"],
+  "vast": ["a vast area · vast majority · vast amounts of", "The vast majority of students take the bus to school.", "絕大多數的學生搭公車上學。"],
+  "scatter": ["scatter seeds · be scattered across … · scatter around", "Toys were scattered all over the living room floor.", "玩具散落在客廳地板上到處都是。"],
+  "gyre": ["an ocean gyre · the North Pacific Gyre", "An ocean gyre is a huge circle of moving water that collects floating trash.", "海洋環流是一大圈流動的海水，會聚集漂浮的垃圾。"],
+  "whirlpool": ["a whirlpool bath · be sucked into a whirlpool", "The small boat was pulled into a whirlpool and spun around.", "那艘小船被捲進漩渦，轉個不停。"],
+  "estimate": ["estimate the cost · it is estimated that … · roughly estimate", "It is estimated that there are over 8 billion people in the world.", "據估計，世界上有超過八十億人。"],
+  "fragment": ["small fragments · fragments of glass · a fragment of …", "Be careful — there are glass fragments on the kitchen floor.", "小心，廚房地板上有玻璃碎片。"],
+  "microplastic": ["microplastic pollution · microplastics in the ocean · contain microplastics", "Scientists have found microplastics in bottled water and sea salt.", "科學家在瓶裝水和海鹽中都發現了塑膠微粒。"],
+  "gear": ["fishing gear · camping gear · sports gear", "Don't forget to bring your camping gear for the trip.", "旅行別忘了帶露營裝備。"],
+  "vivid": ["a vivid image · vivid colors · a vivid dream", "I had a vivid dream about flying over the ocean.", "我做了一個很逼真的夢，夢到自己飛越海洋。"],
+  "debris": ["space debris · debris from … · clear away debris", "Workers cleared away the debris after the typhoon.", "颱風過後，工人們清除了殘骸。"],
+  "diffuse": ["diffuse light · diffuse pollution · a diffuse network", "Pollution from farms is diffuse and hard to trace to one source.", "來自農田的汙染很分散，很難追溯到單一來源。"],
+  "disperse": ["disperse a crowd · disperse into the air · smoke disperses", "The police asked the crowd to disperse after the concert.", "演唱會結束後，警方要求群眾散去。"],
+  "composition": ["the composition of … · chemical composition · change in composition", "Scientists studied the chemical composition of the rock.", "科學家研究了那塊岩石的化學成分。"],
+  "substantial": ["a substantial amount · substantial increase · substantial damage", "The storm caused substantial damage to the harbor.", "暴風雨對港口造成相當大的損害。"],
+  "entangle": ["become entangled in · entangled with", "A dolphin became entangled in a plastic net and couldn't swim.", "一隻海豚被塑膠網纏住，無法游泳。"],
+  "ingest": ["ingest food · accidentally ingest · ingest plastic", "Seabirds often ingest plastic because it looks like food.", "海鳥常誤食塑膠，因為它看起來像食物。"],
+  "implication": ["have implications for · serious implications · the implication is that …", "The new law has serious implications for small businesses.", "這條新法律對小型企業有重大的影響。"],
+  "upstream": ["travel upstream · upstream from … · swim upstream", "Salmon swim upstream to lay their eggs.", "鮭魚逆流而上去產卵。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

@@ -399,5 +399,37 @@ const META = {
  "id": "lfl",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "tiny": ["a tiny apartment · tiny details · a tiny bit", "They live in a tiny apartment in the city.", "他們住在市區一間很小的公寓裡。"],
+  "wooden": ["a wooden box · a wooden house · wooden furniture", "My grandpa made me a small wooden box for my treasures.", "爺爺幫我做了一個小木盒，裝我的寶貝。"],
+  "post": ["a wooden post · a fence post · a lamp post", "He tied his dog to a lamp post outside the store.", "他把狗綁在店外的路燈柱上。"],
+  "yard": ["in the front yard · a back yard · play in the yard", "The kids built a snowman in the front yard.", "孩子們在前院堆了一個雪人。"],
+  "neighbor": ["a good neighbor · next-door neighbors · help one's neighbors", "Good neighbors help each other when someone is sick.", "好鄰居會在有人生病時互相幫忙。"],
+  "free": ["free of charge · for free · free tickets", "The museum is free on the first Sunday of every month.", "這間博物館每個月第一個星期天免費入場。"],
+  "goal": ["reach a goal · set a goal · one's main goal", "My goal this year is to read twenty books.", "我今年的目標是讀二十本書。"],
+  "spread": ["spread the word · spread to other … · spread around the world", "The idea spread to other schools very quickly.", "這個點子很快就擴散到其他學校。"],
+  "willing": ["be willing to … · more than willing · willing helpers", "Are you willing to help me move this weekend?", "你願意這週末幫我搬家嗎？"],
+  "honor": ["honor sb's memory · honor a promise · be honored for …", "The city built a statue to honor the brave firefighters.", "市政府建了一座雕像紀念英勇的消防員。"],
+  "reflect": ["reflect one's personality · reflect the culture · reflect on sth", "Your room often reflects your personality.", "你的房間常常反映出你的個性。"],
+  "garage": ["in the garage · park in the garage · a garage sale", "We sold our old toys at a garage sale.", "我們在車庫拍賣會上賣掉舊玩具。"],
+  "delighted": ["be delighted to … · delighted with … · absolutely delighted", "We are delighted to welcome you to our school.", "我們很高興歡迎你來到我們學校。"],
+  "community": ["the local community · community center · a sense of community", "The community center offers free English classes.", "社區中心提供免費英文課。"],
+  "nonprofit": ["a nonprofit organization · nonprofit group", "She works for a nonprofit organization that helps stray dogs.", "她在一個幫助流浪狗的非營利組織工作。"],
+  "ambitious": ["an ambitious plan · ambitious goals · highly ambitious", "The city has an ambitious plan to plant a million trees.", "市政府有個種一百萬棵樹的遠大計畫。"],
+  "fund": ["be funded by … · fund a project · fully funded", "The research is funded by the government.", "這項研究由政府資助。"],
+  "stranger": ["a complete stranger · talk to strangers · a kind stranger", "A kind stranger helped me carry my suitcase up the stairs.", "一位好心的陌生人幫我把行李箱提上樓梯。"],
+  "supporter": ["a strong supporter · supporters of … · loyal supporters", "He is a strong supporter of animal rights.", "他是動物權利的堅定支持者。"],
+  "grassroots": ["a grassroots movement · grassroots support · at the grassroots level", "The clean beach campaign started as a grassroots movement.", "淨灘運動一開始是一場草根運動。"],
+  "tribute": ["pay tribute to · a tribute concert · in tribute to", "The band played a song in tribute to their late friend.", "樂團演奏了一首歌，向已故的朋友致敬。"],
+  "collaborator": ["a close collaborator · collaborators on a project", "The two artists have been close collaborators for twenty years.", "這兩位藝術家已經密切合作二十年了。"],
+  "benchmark": ["set a benchmark · a benchmark for … · industry benchmark", "The new phone set a benchmark for battery life.", "這支新手機為電池續航力立下了標竿。"],
+  "surpass": ["surpass expectations · surpass a record · surpass sb in …", "The movie's ticket sales surpassed all expectations.", "這部電影的票房超乎所有人的預期。"],
+  "foster": ["foster a love of … · foster cooperation · foster creativity", "Good teachers foster a love of learning in their students.", "好老師能培養學生對學習的熱愛。"],
+  "familiarity": ["familiarity with … · a sense of familiarity", "Familiarity with computers is necessary for most jobs today.", "熟悉電腦是現今大多數工作的必要條件。"],
+  "concentrated": ["concentrated in … · highly concentrated · concentrated juice", "Most of the country's population is concentrated in the west.", "這個國家大部分的人口集中在西部。"],
+  "inequality": ["income inequality · social inequality · gender inequality", "Income inequality has grown in many rich countries.", "許多富裕國家的所得不平等日益加劇。"],
+  "generosity": ["act of generosity · thanks to sb's generosity · show generosity", "Thanks to the generosity of local shops, the event was free.", "多虧當地店家的慷慨，這個活動免費參加。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

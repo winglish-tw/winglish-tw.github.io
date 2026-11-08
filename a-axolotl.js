@@ -228,5 +228,44 @@ const META = {
  fact:"六角恐龍的基因組大約是人類的 10 倍大，是科學家定序過最大的動物基因組之一。科學家正在裡面尋找「再生」的祕密。",
  next:{title:"Never Forget a Face", href:"read.html#crows"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "salamander": ["a fire salamander · salamanders live in/near water", "We found a small salamander hiding under a wet rock by the stream.", "我們在溪邊一塊濕石頭底下發現一隻小蠑螈。"],
+  "gill": ["breathe through gills · a fish's gills", "Fish take in oxygen from the water through their gills.", "魚透過鰓從水中吸取氧氣。"],
+  "breathe": ["breathe in / breathe out · breathe deeply · breathe fresh air", "Close your eyes and breathe deeply before you start the test.", "考試開始前，閉上眼睛深呼吸。"],
+  "repair": ["repair a bike · repair the damage · get sth repaired", "My dad repaired my old bike, so now I can ride it to school.", "爸爸把我的舊腳踏車修好了，所以我現在可以騎它上學。"],
+  "heart": ["heart disease · heart attack · my heart beats fast", "My heart beats very fast when I speak in front of the class.", "我在全班面前說話時，心跳得好快。"],
+  "brain": ["use your brain · brain damage · the human brain", "Playing chess is a good way to exercise your brain.", "下西洋棋是鍛鍊大腦的好方法。"],
+  "heal": ["heal a wound · heal quickly · the cut healed", "The cut on my finger healed in just three days.", "我手指上的傷口只花三天就癒合了。"],
+  "wild": ["wild animals · in the wild · grow wild", "Pandas in the wild eat bamboo almost all day.", "野生的貓熊幾乎整天都在吃竹子。"],
+  "canal": ["a canal boat · along the canal · dig a canal", "We took a boat ride along the canals of Venice.", "我們搭船遊覽了威尼斯的運河。"],
+  "dirty": ["dirty clothes · dirty water · get dirty", "Don't drink that water — it's too dirty.", "別喝那個水，它太髒了。"],
+  "feature": ["a key feature · a special feature · facial features", "The most popular feature of the new phone is its camera.", "這支新手機最受歡迎的特色是它的相機。"],
+  "neoteny": ["show neoteny · neoteny in animals", "Some scientists think dogs show neoteny, because adult dogs still act like playful puppies.", "有些科學家認為狗有幼態延續的現象，因為成年狗的行為還是像愛玩的小狗。"],
+  "regeneration": ["cell regeneration · the regeneration of tissue · urban regeneration", "Sleep is important for cell regeneration in our skin.", "睡眠對我們皮膚的細胞再生很重要。"],
+  "complete": ["a complete set · complete silence · complete the form", "I finally have a complete set of the comic books.", "我終於收集到一整套完整的漫畫了。"],
+  "nerve": ["nerve cells · a nerve ending · damage a nerve", "The doctor said the accident had damaged a nerve in his arm.", "醫生說那場意外傷到了他手臂的一條神經。"],
+  "scar": ["leave a scar · a deep scar · a scar on one's face", "The fall left a small scar on her knee.", "那次跌倒在她膝蓋上留下一個小疤痕。"],
+  "wound": ["a deep wound · clean a wound · the wound heals", "The nurse cleaned the wound and covered it with a bandage.", "護理師清洗傷口，然後用繃帶包起來。"],
+  "rebuild": ["rebuild a house · rebuild one's life · rebuild trust", "After the earthquake, the town took ten years to rebuild its schools.", "地震過後，這個小鎮花了十年重建學校。"],
+  "ironically": ["Ironically, … · ironically enough", "Ironically, the fire station itself caught fire last night.", "諷刺的是，消防局本身昨晚竟然失火了。"],
+  "polluted": ["polluted air · heavily polluted · a polluted river", "The river is so heavily polluted that no fish can live in it.", "這條河汙染得非常嚴重，沒有魚能在裡面生存。"],
+  "survive": ["survive a crash · survive on sth · barely survive", "Camels can survive for weeks without drinking water.", "駱駝可以好幾個星期不喝水還活得下去。"],
+  "effortlessly": ["move effortlessly · effortlessly switch between", "She switches effortlessly between English, Japanese, and Chinese.", "她能毫不費力地在英文、日文和中文之間切換。"],
+  "native": ["native to (a place) · native species · native speaker", "Kangaroos are native to Australia and are not found in the wild anywhere else.", "袋鼠原產於澳洲，在其他地方的野外找不到。"],
+  "undergo": ["undergo surgery · undergo a change · undergo training", "The old train station is undergoing major repairs this year.", "那座舊火車站今年正在進行大規模整修。"],
+  "metamorphosis": ["undergo a metamorphosis · complete metamorphosis", "A caterpillar goes through metamorphosis before it becomes a butterfly.", "毛毛蟲在變成蝴蝶之前要經過變態的過程。"],
+  "retain": ["retain heat · retain one's title · retain information", "Clay pots retain heat well, so food stays warm for a long time.", "陶鍋很能保溫，所以食物可以保溫很久。"],
+  "external": ["external walls · for external use only · external factors", "This cream is for external use only; do not swallow it.", "這款藥膏僅供外用，請勿吞食。"],
+  "extract": ["extract oil from · extract a tooth · extract information", "Olive oil is extracted from fresh olives by pressing them.", "橄欖油是把新鮮橄欖壓榨後提取出來的。"],
+  "blastema": ["form a blastema · blastema cells", "When a starfish loses an arm, a blastema forms at the wound and slowly becomes a new arm.", "海星失去一隻腕時，傷口會形成芽基，慢慢長成一隻新腕。"],
+  "indistinguishable": ["indistinguishable from · virtually indistinguishable", "The fake painting was almost indistinguishable from the original.", "那幅假畫和真跡幾乎無法分辨。"],
+  "mend": ["mend a fence · mend clothes · mend a relationship", "My grandmother mended the hole in my sweater by hand.", "奶奶用手把我毛衣上的破洞補好了。"],
+  "decode": ["decode a message · decode the genome · decode body language", "The spy needed a special key to decode the secret message.", "那名間諜需要一把特別的密鑰才能解開這則祕密訊息。"],
+  "thrive": ["thrive on · thrive in (a place) · a thriving business", "Cactuses thrive in hot, dry places where other plants die.", "仙人掌在其他植物會死的炎熱乾燥之地反而長得茂盛。"],
+  "habitat": ["natural habitat · habitat loss · destroy a habitat", "Habitat loss is the biggest threat to orangutans in Borneo.", "棲地流失是婆羅洲紅毛猩猩面臨的最大威脅。"],
+  "devour": ["devour one's food · devour a book", "The hungry kids devoured the whole pizza in five minutes.", "那群餓壞的孩子五分鐘就把整個披薩吃光。"],
+  "inflict": ["inflict damage on · inflict pain on · inflict harm on", "The typhoon inflicted serious damage on the island's farms.", "颱風對島上的農場造成了嚴重損害。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

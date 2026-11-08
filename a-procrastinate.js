@@ -411,5 +411,36 @@ const META = {
  "id": "procrastinate",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "procrastination": ["stop procrastination · a habit of procrastination · procrastination problem", "Procrastination is the main reason I always finish my homework at midnight.", "拖延是我總是半夜才寫完功課的主要原因。"],
+  "lazy": ["a lazy afternoon · too lazy to … · lazy student", "I was too lazy to cook, so I ordered pizza.", "我懶得煮飯，所以叫了披薩。"],
+  "psychologist": ["a child psychologist · see a psychologist · psychologists say …", "Psychologists say that smiling can actually make you feel happier.", "心理學家說，微笑其實能讓你更快樂。"],
+  "task": ["a difficult task · finish a task · a simple task", "Cleaning the whole house is not an easy task.", "打掃整間房子不是件容易的事。"],
+  "worried": ["worried about … · look worried · a worried face", "My mom is always worried about my grades.", "我媽總是擔心我的成績。"],
+  "escape": ["escape from reality · escape the heat · try to escape", "Many people go to the mountains to escape the summer heat.", "很多人到山上避暑。"],
+  "stranger": ["a total stranger · treat sb like a stranger · talk to strangers", "Children are taught not to talk to strangers.", "孩子被教導不要跟陌生人說話。"],
+  "tiny": ["a tiny step · a tiny change · a tiny bit", "Even a tiny change in your habits can make a big difference.", "即使習慣上一點小改變也能帶來很大的不同。"],
+  "guilty": ["feel guilty about … · a guilty conscience · plead guilty", "I feel guilty about eating all the cake myself.", "我自己吃掉整個蛋糕，覺得很有罪惡感。"],
+  "scroll": ["scroll down · scroll through … · scroll up", "She scrolled through photos on her phone for an hour.", "她滑手機看照片滑了一個小時。"],
+  "blame": ["blame sb for sth · be to blame · take the blame", "Don't blame your brother for your own mistake.", "別為了你自己的錯怪你弟弟。"],
+  "emotion": ["show emotion · strong emotions · control one's emotions", "It's hard to control your emotions when you're tired.", "累的時候很難控制情緒。"],
+  "anxious": ["feel anxious · anxious about … · anxious to do sth", "She felt anxious about her first day at the new job.", "她對新工作的第一天感到焦慮。"],
+  "avoid": ["avoid doing sth · avoid sb · avoid the problem", "Try to avoid eating too much sugar.", "盡量避免吃太多糖。"],
+  "relief": ["a sense of relief · to one's relief · breathe a sigh of relief", "To my relief, the test was easier than I expected.", "讓我鬆一口氣的是，考試比我預期的簡單。"],
+  "forgive": ["forgive sb for sth · forgive and forget · forgive oneself", "Please forgive me for being late.", "請原諒我遲到了。"],
+  "strategy": ["a good strategy · a strategy for … · develop a strategy", "What's your strategy for remembering new words?", "你記新單字有什麼策略？"],
+  "habit": ["form a habit · get into the habit of … · a healthy habit", "I got into the habit of reading before bed.", "我養成了睡前閱讀的習慣。"],
+  "discipline": ["self-discipline · lack discipline · strict discipline", "Learning a musical instrument takes a lot of self-discipline.", "學樂器需要很大的自律。"],
+  "remedy": ["a simple remedy · a remedy for … · find a remedy", "There is no simple remedy for loneliness.", "孤單沒有簡單的解藥。"],
+  "assumption": ["a false assumption · challenge an assumption · be based on the assumption that …", "The plan was based on the false assumption that it wouldn't rain.", "這個計畫建立在不會下雨的錯誤假設上。"],
+  "fundamentally": ["fundamentally different · fundamentally change · fundamentally wrong", "Living in a city is fundamentally different from living on a farm.", "住在城市和住在農場根本上是不同的。"],
+  "evoke": ["evoke memories · evoke feelings · evoke a response", "The smell of rice cakes evokes memories of my grandmother's kitchen.", "年糕的香味喚起我對奶奶廚房的回憶。"],
+  "prioritize": ["prioritize tasks · prioritize one's health · learn to prioritize", "You need to prioritize your tasks and do the most important ones first.", "你要排定事情的優先順序，先做最重要的。"],
+  "reinforce": ["reinforce a habit · reinforce a belief · reinforce learning", "Doing practice questions reinforces what you learned in class.", "做練習題能加強你在課堂上學到的東西。"],
+  "backfire": ["the plan backfired · backfire on sb", "His joke backfired, and everyone got angry.", "他的玩笑適得其反，大家都生氣了。"],
+  "implication": ["practical implications · implications for … · consider the implications", "Think about the implications before you post photos online.", "上傳照片到網路前，先想想可能帶來的影響。"],
+  "concrete": ["concrete examples · concrete steps · concrete evidence", "Can you give me a concrete example?", "你可以給我一個具體的例子嗎？"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

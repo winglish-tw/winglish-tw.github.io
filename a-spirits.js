@@ -361,5 +361,45 @@ const META = {
   "href": "read.html#octopus"
  }
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "spirit": ["evil spirits · the spirit of … · spirits of the dead", "People once hung garlic on doors to keep evil spirits away.", "以前人們會在門上掛大蒜來驅趕惡靈。"],
+  "ancestor": ["honor one's ancestors · worship ancestors · our ancestors", "Many Taiwanese families honor their ancestors on Tomb-Sweeping Day.", "許多台灣家庭在清明節祭拜祖先。"],
+  "lantern": ["a paper lantern · light a lantern · the Lantern Festival", "Thousands of sky lanterns rose into the night sky in Pingxi.", "數千盞天燈在平溪升上夜空。"],
+  "tomb": ["visit a tomb · sweep the tomb · an ancient tomb", "Archaeologists found gold coins inside the ancient tomb.", "考古學家在古墓裡發現了金幣。"],
+  "cucumber": ["slice a cucumber · cucumber salad · as cool as a cucumber", "She stayed as cool as a cucumber during the interview.", "面試時她一直保持冷靜。"],
+  "eggplant": ["grilled eggplant · purple eggplant · eggplant with garlic", "My favorite dish is eggplant with garlic and basil.", "我最愛的菜是九層塔炒茄子。"],
+  "welcome": ["welcome sb to … · welcome sb home · warmly welcome", "The whole family came to the airport to welcome Grandpa home.", "全家人都到機場迎接爺爺回家。"],
+  "wrap": ["wrap a present · wrap sth in … · wrap up", "She wrapped the gift in red paper.", "她用紅紙把禮物包起來。"],
+  "cloth": ["a piece of cloth · cotton cloth · a table cloth", "Clean your glasses with a soft cloth.", "用軟布擦你的眼鏡。"],
+  "island": ["a small island · on the island · an island country", "Green Island is a small island off the coast of Taitung.", "綠島是台東外海的一座小島。"],
+  "recognizable": ["instantly recognizable · easily recognizable · recognizable by …", "The Eiffel Tower is instantly recognizable all over the world.", "艾菲爾鐵塔在全世界都一眼就能認出來。"],
+  "ancestral": ["ancestral home · ancestral hall · ancestral land", "Every Lunar New Year, the family returns to their ancestral home in the countryside.", "每年農曆新年，全家人都會回到鄉下的老家。"],
+  "offering": ["make an offering · temple offerings · food offerings", "People place fruit and flowers as offerings on the altar.", "人們把水果和花放在供桌上當作供品。"],
+  "transform": ["transform A into B · completely transform · be transformed", "The old factory was transformed into an art center.", "那間舊工廠被改造成藝術中心。"],
+  "linger": ["linger over … · linger on · linger in the mind", "We lingered over coffee and talked for hours.", "我們喝著咖啡慢慢聊，一坐就是好幾個小時。"],
+  "literally": ["literally means … · take sth literally · literally translated", "\"Kintsugi\" literally means \"golden joinery\" in Japanese.", "kintsugi 在日文中字面上的意思是「金色的接合」。"],
+  "shroud": ["a burial shroud · a shroud of mist/mystery · shrouded in …", "The mountain top was shrouded in mist.", "山頂籠罩在霧中。"],
+  "somber": ["a somber mood · somber colors · a somber occasion", "The funeral was a somber occasion, and everyone wore black.", "喪禮是個肅穆的場合，大家都穿黑色。"],
+  "unsettling": ["an unsettling feeling · deeply unsettling · unsettling news", "I had an unsettling feeling that someone was watching me.", "我有一種有人在看著我的不安感覺。"],
+  "gratitude": ["express gratitude · with gratitude · a sense of gratitude", "We wrote cards to express our gratitude to our teachers.", "我們寫卡片向老師表達感謝。"],
+  "conviction": ["a strong conviction · with conviction · religious conviction", "She spoke with such conviction that everyone believed her.", "她說得如此堅定，所以大家都相信她。"],
+  "bond": ["a strong bond · bond between A and B · form a bond", "There is a strong bond between the two sisters.", "那兩姊妹之間有很深的情感連結。"],
+  "obscure": ["obscure the meaning · obscure the fact that … · partly obscured", "Heavy makeup can obscure a person's natural beauty.", "濃妝可能掩蓋一個人的自然美。"],
+  "porous": ["porous rock · a porous border · porous material", "The country's long, porous border is hard to guard.", "這個國家漫長又容易穿越的邊境很難防守。"],
+  "observance": ["religious observance · in observance of … · strict observance", "Many shops close in observance of the holiday.", "許多商店為了過節而休息。"],
+  "exodus": ["a mass exodus · an exodus from … · holiday exodus", "There is a mass exodus from Taipei before every Lunar New Year.", "每年農曆新年前都有大批人潮離開台北。"],
+  "laden": ["laden with … · heavily laden · fruit-laden trees", "The table was laden with food for the wedding banquet.", "喜宴的桌上擺滿了菜。"],
+  "fleeting": ["a fleeting moment · fleeting glimpse · fleeting fame", "I caught a fleeting glimpse of the singer as her car drove past.", "她的車開過時，我瞥見了那位歌手一眼。"],
+  "endearing": ["an endearing smile · endearing habit · find sth endearing", "The puppy has an endearing habit of tilting its head when you talk.", "那隻小狗有個惹人憐愛的習慣：你說話時牠會歪著頭。"],
+  "hasten": ["hasten to do sth · hasten the process · hasten one's death", "I hasten to add that the food was delicious, even if the service was slow.", "我得趕緊補充一句：雖然服務很慢，但食物很好吃。"],
+  "plodding": ["plodding pace · plodding steps · a plodding story", "The old horse walked at a plodding pace up the hill.", "那匹老馬步履沉重地慢慢走上山坡。"],
+  "bestow": ["bestow A on/upon B · bestow an honor · bestow a gift", "The city bestowed an award on the brave young lifeguard.", "市政府頒獎給那位英勇的年輕救生員。"],
+  "realm": ["the realm of … · beyond the realm of possibility · spirit realm", "Traveling to Mars is no longer beyond the realm of possibility.", "去火星旅行已不再是不可能的事。"],
+  "exuberant": ["exuberant fans · an exuberant mood · exuberant celebration", "Exuberant fans danced in the streets after the team won.", "球隊獲勝後，興高采烈的球迷在街上跳舞。"],
+  "macabre": ["a macabre story · macabre humor · macabre fascination", "The museum has a macabre collection of old surgical tools.", "那間博物館有一批陰森的古老手術工具收藏。"],
+  "preoccupation": ["a preoccupation with … · main preoccupation", "Her preoccupation with her phone annoyed her friends at dinner.", "她吃飯時一直沉迷於手機，讓朋友們很不高興。"],
+  "continuity": ["a sense of continuity · continuity between past and present", "Family traditions give children a sense of continuity with the past.", "家族傳統給孩子一種與過去相連的延續感。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

@@ -208,5 +208,44 @@ const META = {
  fact:"烏鴉看到同伴死掉時，常會聚集過來大叫。科學家認為，牠們是在了解這裡發生了什麼危險，之後會避開那個地方一陣子。",
  next:{title:"Why Does Spicy Food Feel Hot?", href:"read.html#chili"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "crow": ["a black crow · crows gather · a flock of crows", "A crow stole a piece of bread from my lunch box.", "一隻烏鴉從我的便當盒偷走一片麵包。"],
+  "noisy": ["noisy neighbors · a noisy street · make it noisy", "I can't sleep because our neighbors are too noisy.", "鄰居太吵了，我睡不著。"],
+  "smart": ["a smart kid · smart enough to … · a smart move", "Pigs are smart enough to learn their names.", "豬聰明到能學會自己的名字。"],
+  "scary": ["a scary movie · look scary · scary stories", "We told scary stories around the campfire.", "我們圍著營火講恐怖故事。"],
+  "mask": ["wear a mask · a face mask · put on a mask", "Please wear a mask if you have a cold.", "如果你感冒了，請戴口罩。"],
+  "caught": ["get caught in the rain · be caught cheating · caught a cold", "We got caught in the rain on our way home.", "我們在回家路上遇到大雨。"],
+  "hurt": ["hurt oneself · hurt sb's feelings · get hurt", "Be careful not to hurt yourself on the slide.", "溜滑梯時小心別傷到自己。"],
+  "campus": ["on campus · a college campus · campus life", "Freshmen usually live on campus in their first year.", "新生第一年通常住在校園裡。"],
+  "shout": ["shout at sb · shout for help · shout loudly", "Please don't shout at your little brother.", "請不要對你弟弟大吼。"],
+  "dangerous": ["dangerous animals · it is dangerous to … · a dangerous road", "It is dangerous to swim in the river after heavy rain.", "大雨過後在河裡游泳很危險。"],
+  "pest": ["garden pests · pest control · a pest problem", "Ladybugs eat aphids, so farmers like them as natural pest control.", "瓢蟲會吃蚜蟲，所以農夫喜歡用牠們來天然防治害蟲。"],
+  "intelligence": ["artificial intelligence · high intelligence · test one's intelligence", "Dolphins are famous for their high intelligence.", "海豚以高智力聞名。"],
+  "experiment": ["do/conduct an experiment · a science experiment", "We did an experiment to see which ice melts fastest.", "我們做了一個實驗，看哪種冰塊融得最快。"],
+  "recognize": ["recognize sb's voice · recognize sb by … · hardly recognize", "I hardly recognized my old classmate after ten years.", "十年沒見，我幾乎認不出我的老同學。"],
+  "release": ["release a bird · release sb from … · be released", "The volunteers released the healed sea turtle back into the ocean.", "志工們把治好的海龜放回大海。"],
+  "neutral": ["stay neutral · a neutral expression · neutral colors", "The referee must stay neutral during the game.", "裁判在比賽中必須保持中立。"],
+  "scold": ["scold sb for … · get scolded", "My mom scolded me for coming home late.", "我晚回家，被媽媽罵了一頓。"],
+  "ignore": ["ignore sb · ignore a warning · completely ignore", "He ignored the doctor's warning and kept smoking.", "他不理會醫生的警告，繼續抽菸。"],
+  "spread": ["news spreads · spread quickly · spread a rumor", "The news of the earthquake spread quickly online.", "地震的消息很快在網路上傳開。"],
+  "warning": ["a warning sign · give a warning · without warning", "The storm hit the town without warning.", "暴風雨毫無預警地襲擊小鎮。"],
+  "fade": ["fade away · memories fade · the color fades", "The colors of my old T-shirt have faded after many washes.", "我那件舊 T 恤洗了很多次，顏色都褪了。"],
+  "nuisance": ["a public nuisance · make a nuisance of oneself", "The loud motorcycles are a nuisance to people living nearby.", "吵鬧的機車對附近居民來說是一大困擾。"],
+  "sophisticated": ["sophisticated technology · a sophisticated system · highly sophisticated", "Modern cars use sophisticated computer systems.", "現代汽車使用精密的電腦系統。"],
+  "fashion": ["fashion A out of B · fashion A into B", "The boy fashioned a small boat out of an old milk carton.", "那個男孩用舊牛奶盒做了一艘小船。"],
+  "vividly": ["vividly remember · vividly describe · vividly colored", "I still vividly remember my first day of elementary school.", "我仍然清楚記得我小學第一天的情景。"],
+  "distinguish": ["distinguish between A and B · distinguish A from B", "Young children can't always distinguish between dreams and reality.", "小孩子不一定能分辨夢境和現實。"],
+  "cue": ["a visual cue · take one's cue from · social cues", "Babies learn a lot from visual cues like their mother's face.", "寶寶從媽媽的臉之類的視覺線索中學到很多。"],
+  "resemble": ["closely resemble · resemble each other · resemble one's father", "The twins closely resemble each other, but their personalities are very different.", "那對雙胞胎長得很像，但個性非常不同。"],
+  "subsequent": ["subsequent years · subsequent events · in subsequent studies", "The first test failed, but subsequent tests were successful.", "第一次測試失敗了，但之後的測試都成功了。"],
+  "propagate": ["propagate ideas · propagate a rumor · propagate plants", "Social media can propagate false information very quickly.", "社群媒體能很快地傳播錯誤資訊。"],
+  "encounter": ["encounter a problem · encounter difficulties · encounter sb", "Hikers sometimes encounter wild monkeys on this trail.", "登山客有時會在這條步道上遇到野生猴子。"],
+  "acquire": ["acquire knowledge · acquire a skill · acquire a habit", "Children acquire language naturally by listening to people around them.", "孩子透過聽身邊的人說話，自然學會語言。"],
+  "deliberate": ["a deliberate attempt · a deliberate choice · deliberate lie", "It wasn't an accident; it was a deliberate attempt to hurt him.", "那不是意外，而是蓄意要傷害他。"],
+  "intensified": ["intensify efforts · the storm intensified · fighting intensified", "The typhoon intensified as it moved closer to Taiwan.", "颱風靠近台灣時增強了。"],
+  "linger": ["linger in the air · linger on · a lingering smell", "The smell of fried fish lingered in the kitchen for hours.", "炸魚的味道在廚房裡殘留了好幾個小時。"],
+  "witness": ["witness an accident · witness a crime · witness history", "Several people witnessed the accident and called the police.", "有好幾個人目睹了車禍並報了警。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

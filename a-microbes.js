@@ -403,5 +403,36 @@ const META = {
  "id": "microbes",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "trillion": ["a trillion dollars · trillions of … · one trillion", "The company is now worth over one trillion dollars.", "這間公司現在市值超過一兆美元。"],
+  "bacteria": ["good bacteria · harmful bacteria · kill bacteria", "Yogurt contains good bacteria that help your stomach.", "優格含有對胃有益的好菌。"],
+  "gut": ["gut health · gut bacteria · a gut feeling", "Eating vegetables is good for your gut health.", "吃蔬菜對腸道健康有益。"],
+  "cell": ["blood cells · brain cells · skin cells", "Your body makes millions of new blood cells every second.", "你的身體每秒製造數百萬個新的血球細胞。"],
+  "adult": ["adults and children · a young adult · as an adult", "Tickets are 200 dollars for adults and 100 for children.", "門票成人兩百元，兒童一百元。"],
+  "digest": ["digest food · easy to digest · hard to digest", "Rice porridge is easy to digest when you're sick.", "生病時稀飯很好消化。"],
+  "fiber": ["high in fiber · dietary fiber · a source of fiber", "Sweet potatoes are high in fiber.", "地瓜富含纖維。"],
+  "vitamin": ["vitamin C · take vitamins · rich in vitamins", "Oranges are rich in vitamin C.", "柳橙富含維生素 C。"],
+  "germ": ["spread germs · kill germs · full of germs", "Cover your mouth when you cough so you don't spread germs.", "咳嗽時要遮住嘴巴，才不會散播病菌。"],
+  "claim": ["make a claim · the claim that … · a false claim", "The ad made the claim that the drink could make you taller.", "那則廣告聲稱這種飲料能讓你長高。"],
+  "rough": ["a rough idea · a rough guess · rough draft", "Can you give me a rough idea of the cost?", "你能給我一個大概的費用嗎？"],
+  "estimate": ["a rough estimate · an estimate of … · estimate the number", "At a rough estimate, about 500 people came to the concert.", "粗略估計，大約有五百人來聽演唱會。"],
+  "typical": ["a typical day · typical of … · a typical example", "On a typical school day, I get up at six thirty.", "在平常上學的日子，我六點半起床。"],
+  "intestine": ["the small intestine · the large intestine", "Most food is absorbed in the small intestine.", "大部分的食物是在小腸被吸收的。"],
+  "ratio": ["the ratio of A to B · a ratio of 3 to 1 · high ratio", "The ratio of students to teachers in this school is 15 to 1.", "這間學校的師生比是十五比一。"],
+  "dietary": ["dietary fiber · dietary habits · dietary needs", "Doctors asked the patient about his dietary habits.", "醫生詢問病人的飲食習慣。"],
+  "immune": ["the immune system · immune to … · boost one's immunity", "Sleep helps keep your immune system strong.", "睡眠有助於讓你的免疫系統保持強健。"],
+  "harmless": ["completely harmless · harmless to humans · harmless fun", "Most spiders are harmless to humans.", "大部分的蜘蛛對人類無害。"],
+  "density": ["population density · high density · bone density", "Hong Kong has one of the highest population densities in the world.", "香港是世界上人口密度最高的地方之一。"],
+  "scrutiny": ["under scrutiny · close scrutiny · come under scrutiny", "The company's safety record came under close scrutiny after the accident.", "事故發生後，這間公司的安全紀錄受到嚴格檢視。"],
+  "colon": ["colon cancer · the colon and rectum", "Eating more fiber may lower the risk of colon cancer.", "多吃纖維可能降低大腸癌的風險。"],
+  "diminish": ["diminish the risk · diminish in value · greatly diminish", "The pain diminished after she took the medicine.", "她吃了藥之後疼痛就減輕了。"],
+  "ferment": ["ferment cabbage · fermented food · allow sth to ferment", "Kimchi is made by fermenting cabbage with spices.", "泡菜是把高麗菜加香料發酵做成的。"],
+  "synthesize": ["synthesize vitamin D · synthesize proteins · synthesize information", "Our skin synthesizes vitamin D when it is exposed to sunlight.", "我們的皮膚照到陽光時會合成維生素 D。"],
+  "hype": ["media hype · believe the hype · live up to the hype", "The new restaurant didn't live up to the hype.", "那家新餐廳名不副實，沒有傳說中那麼好。"],
+  "correlation": ["a correlation between A and B · strong correlation · positive correlation", "There is a strong correlation between sleep and test scores.", "睡眠和考試成績之間有很強的相關性。"],
+  "causation": ["correlation and causation · prove causation", "Correlation does not always mean causation.", "相關不一定代表因果。"],
+  "continual": ["continual changes · continual pressure · continual interruptions", "The continual noise from the construction site made it hard to study.", "工地不斷傳來的噪音讓人很難讀書。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

@@ -305,5 +305,42 @@ const META = {
  fact:"閃電打到沙地時，會把沙子熔成中空的玻璃管，叫做「閃電熔岩」（fulgurite），形狀就像閃電在地下留下的樹枝。",
  next:{title:"The Moon Is Running Away", href:"read.html#moon"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "lightning": ["a flash of lightning · be struck by lightning · thunder and lightning", "A flash of lightning lit up the whole sky.", "一道閃電照亮了整片天空。"],
+  "powerful": ["a powerful engine · a powerful storm · powerful enough to …", "The wind was powerful enough to knock down trees.", "風大到足以吹倒樹木。"],
+  "giant": ["a giant wave · giant pandas · a giant screen", "We watched the game on a giant screen in the square.", "我們在廣場的超大螢幕上看比賽。"],
+  "spark": ["a spark of … · spark plug · sparks fly", "Sparks flew from the fireworks into the dark sky.", "煙火的火花飛向漆黑的天空。"],
+  "surface": ["the surface of the water · the earth's surface · on the surface", "Leaves floated on the surface of the pond.", "葉子漂浮在池塘水面上。"],
+  "thunder": ["a clap of thunder · loud thunder · thunder rumbles", "My dog hides under the bed whenever it hears thunder.", "我家的狗一聽到打雷就躲到床底下。"],
+  "flash": ["a flash of light · camera flash · in a flash", "The camera flash made everyone blink.", "相機的閃光讓每個人都眨了眼睛。"],
+  "storm": ["a heavy storm · a storm hits … · during the storm", "The ferry was canceled because of the storm.", "渡輪因為暴風雨停駛了。"],
+  "strike": ["lightning strikes · be struck by … · strike a tree", "Lightning struck the tall tree in the middle of the field.", "閃電擊中了田中央那棵高大的樹。"],
+  "extreme": ["extreme heat · extreme weather · extreme sports", "Extreme weather is becoming more common around the world.", "極端天氣在世界各地變得愈來愈常見。"],
+  "bolt": ["a bolt of lightning · like a bolt from the blue", "The news hit us like a bolt from the blue.", "這個消息對我們來說就像晴天霹靂。"],
+  "expand": ["expand quickly · expand one's business · metals expand when heated", "Metal expands when it is heated.", "金屬受熱會膨脹。"],
+  "shock": ["shock wave · culture shock · electric shock", "The explosion sent a shock wave through the building.", "爆炸的震波傳遍了整棟大樓。"],
+  "melt": ["melt metal · melt at … degrees · melt down", "Gold melts at about 1,064 degrees Celsius.", "黃金大約在攝氏一千零六十四度熔化。"],
+  "hollow": ["a hollow tree · a hollow tube · sound hollow", "An owl was living in a hollow tree near the river.", "一隻貓頭鷹住在河邊一棵樹幹中空的樹裡。"],
+  "estimate": ["estimate the distance · estimate that … · a rough estimate", "Can you estimate how far it is to the next town?", "你能估計到下一個鎮有多遠嗎？"],
+  "gap": ["a gap between A and B · fill the gap · a time gap", "There is a big gap between the rich and the poor.", "貧富之間有很大的差距。"],
+  "myth": ["a common myth · the myth that … · break a myth", "It's a common myth that goldfish only remember things for three seconds.", "金魚只有三秒記憶是一個常見的迷思。"],
+  "pointed": ["pointed ears · a pointed roof · a pointed stick", "Elves in stories often have pointed ears.", "故事裡的精靈常常有尖尖的耳朵。"],
+  "rod": ["a lightning rod · a fishing rod · a metal rod", "He bought a new fishing rod for his trip to the lake.", "他為了去湖邊玩買了一根新釣竿。"],
+  "phenomenon": ["a weather phenomenon · natural phenomena · a rare phenomenon", "Rainbows are a common weather phenomenon after rain.", "彩虹是雨後常見的天氣現象。"],
+  "underestimate": ["underestimate the danger · underestimate the power of …", "Many swimmers underestimate the power of ocean waves.", "許多泳客低估了海浪的力量。"],
+  "discharge": ["electrical discharge · the discharge of …", "Static shock is a tiny electrical discharge from your body.", "靜電電擊是你身體發出的微小放電。"],
+  "fraction": ["a fraction of the cost · in a fraction of a second", "The new train covers the distance in a fraction of the time.", "新列車只花一小部分的時間就跑完這段距離。"],
+  "channel": ["a narrow channel · TV channel · through official channels", "The water flows through a narrow channel into the sea.", "水經過一條狹窄的水道流入大海。"],
+  "fuse": ["fuse together · be fused into … · fuse A with B", "The singer's music fuses Taiwanese folk songs with hip-hop.", "那位歌手的音樂融合了台灣民謠與嘻哈。"],
+  "fragile": ["fragile glass · a fragile ecosystem · handle with care: fragile", "The box was marked \"Fragile\" because it contained glasses.", "那個箱子標示「易碎」，因為裡面裝著玻璃杯。"],
+  "interval": ["at regular intervals · an interval of … · time interval", "Buses leave the station at ten-minute intervals.", "公車每隔十分鐘從車站發車。"],
+  "gauge": ["gauge the distance · gauge sb's reaction · hard to gauge", "It's hard to gauge how people will react to the news.", "很難估計大家對這個消息會有什麼反應。"],
+  "instantaneously": ["happen instantaneously · react instantaneously", "The message was sent around the world almost instantaneously.", "這則訊息幾乎在一瞬間就傳遍全世界。"],
+  "misconception": ["a common misconception · a misconception about … · correct a misconception", "It's a common misconception that bats are blind.", "蝙蝠是瞎子是一個常見的誤解。"],
+  "exploit": ["exploit a weakness · exploit resources · exploit an opportunity", "The team exploited the other side's weak defense to score.", "這支隊伍利用對方的防守弱點得分。"],
+  "tendency": ["a tendency to do sth · a growing tendency · natural tendency", "He has a tendency to talk too fast when he's nervous.", "他緊張時往往會說得太快。"],
+  "emerge": ["emerge from … · a picture emerges · new problems emerge", "The sun emerged from behind the clouds.", "太陽從雲後露出來了。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

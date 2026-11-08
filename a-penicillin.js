@@ -408,5 +408,36 @@ const META = {
  "id": "penicillin",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "scientist": ["a famous scientist · a computer scientist · scientists discover …", "Scientists discovered water ice on the moon.", "科學家在月球上發現了冰。"],
+  "tidy": ["keep sth tidy · a tidy room · tidy up", "Please keep your desk tidy.", "請保持你的書桌整齊。"],
+  "bacteria": ["bacteria grow · bacteria cause … · bacteria on one's hands", "Bacteria grow quickly on food left out in hot weather.", "天熱時放在外面的食物，細菌長得很快。"],
+  "strange": ["a strange smell · strange to say · feel strange", "There's a strange smell coming from the fridge.", "冰箱傳出一股奇怪的味道。"],
+  "mold": ["green mold · mold grows · covered in mold", "The old bread was covered in green mold.", "那塊舊麵包長滿了綠色的黴菌。"],
+  "realize": ["realize that … · suddenly realize · realize one's mistake", "I suddenly realized that I had left my wallet at home.", "我突然發現我把錢包忘在家裡了。"],
+  "antibiotic": ["take antibiotics · prescribe antibiotics · a course of antibiotics", "The doctor prescribed antibiotics for my ear infection.", "醫生開了抗生素治療我的耳朵感染。"],
+  "survive": ["survive an illness · survive the war · survive in the wild", "Her grandfather survived the war and lived to 95.", "她爺爺從戰爭中活了下來，活到九十五歲。"],
+  "wisely": ["use money wisely · choose wisely · spend time wisely", "Choose your friends wisely.", "要明智地選擇朋友。"],
+  "deadly": ["a deadly disease · deadly poison · deadly snake", "Malaria is a deadly disease spread by mosquitoes.", "瘧疾是一種由蚊子傳播的致命疾病。"],
+  "infection": ["a bacterial infection · fight infection · risk of infection", "Keep the wound clean to reduce the risk of infection.", "保持傷口清潔以降低感染風險。"],
+  "identify": ["identify the cause · identify sb as … · be identified", "Scientists are trying to identify the cause of the disease.", "科學家正試著找出這種疾病的成因。"],
+  "substance": ["a toxic substance · a sticky substance · illegal substances", "The bottle was filled with a sticky green substance.", "瓶子裡裝滿了黏黏的綠色物質。"],
+  "purify": ["purify water · purify the air · purified drinking water", "This machine can purify seawater into drinking water.", "這台機器能把海水淨化成飲用水。"],
+  "supply": ["a limited supply · in short supply · water supply", "Masks were in short supply at the start of the pandemic.", "疫情剛開始時，口罩供不應求。"],
+  "productive": ["a productive day · highly productive · productive land", "I had a productive day and finished all my homework.", "我今天很有效率，把功課全寫完了。"],
+  "dose": ["a high dose · a daily dose · the right dose", "Don't take more than the recommended daily dose.", "不要服用超過建議的每日劑量。"],
+  "resistant": ["resistant to … · drug-resistant · water-resistant", "My new watch is water-resistant, so I can swim with it.", "我的新手錶防水，所以可以戴著游泳。"],
+  "observant": ["very observant · an observant child", "An observant student noticed the mistake on the blackboard.", "一位觀察力敏銳的學生注意到黑板上的錯誤。"],
+  "contaminate": ["contaminated water · contaminate food · be contaminated with …", "The river was contaminated with waste from the factory.", "河水被工廠的廢棄物汙染了。"],
+  "fungus": ["a type of fungus · fungus grows · fungal infection", "Mushrooms are a type of fungus.", "香菇是一種真菌。"],
+  "languish": ["languish in obscurity · languish in prison · languish for years", "Her first novel languished in a drawer for ten years before it was published.", "她的第一本小說在抽屜裡被冷落了十年才出版。"],
+  "isolate": ["isolate a virus · isolate the patient · be isolated from …", "Doctors isolated the patient to stop the disease from spreading.", "醫生把病人隔離，以防疾病擴散。"],
+  "unprecedented": ["unprecedented growth · an unprecedented event · on an unprecedented scale", "The country saw unprecedented growth in the tech industry.", "這個國家的科技業出現了前所未有的成長。"],
+  "fermentation": ["fermentation process · undergo fermentation · natural fermentation", "Soy sauce is made through a long fermentation process.", "醬油是經過漫長的發酵過程製成的。"],
+  "mutation": ["a genetic mutation · gene mutation · cause a mutation", "A gene mutation can make some people unable to drink milk.", "基因突變可能讓有些人無法喝牛奶。"],
+  "prescription": ["a prescription for … · write a prescription · prescription drugs", "You need a prescription to buy this medicine.", "買這個藥需要處方箋。"],
+  "accelerate": ["accelerate growth · accelerate the process · accelerate rapidly", "Heat accelerates the process of food going bad.", "高溫會加速食物變質。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

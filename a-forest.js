@@ -522,5 +522,36 @@ const META = {
  "id": "forest",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "flood": ["a flash flood · flood waters · be hit by floods", "The heavy rain caused floods in several towns.", "大雨在好幾個鎮造成淹水。"],
+  "snake": ["a poisonous snake · a snake bite · snakes shed their skin", "Hikers should watch out for snakes on mountain trails.", "登山客在山上步道要小心蛇。"],
+  "sandbar": ["on a sandbar · a boat gets stuck on a sandbar", "Birds rest on the sandbar when the tide goes out.", "退潮時，鳥兒在沙洲上休息。"],
+  "shade": ["in the shade · provide shade · sit in the shade", "Let's sit in the shade of that big tree.", "我們去那棵大樹的樹蔭下坐吧。"],
+  "plant": ["plant trees · plant seeds · plant flowers", "Every spring, our school plants trees on campus.", "每年春天，我們學校都會在校園裡種樹。"],
+  "bamboo": ["bamboo shoots · a bamboo forest · made of bamboo", "Bamboo can grow almost one meter in a single day.", "竹子一天可以長將近一公尺。"],
+  "forest": ["a rain forest · deep in the forest · forest fires", "Forest fires spread quickly in hot, dry weather.", "森林大火在炎熱乾燥的天氣下蔓延得很快。"],
+  "honor": ["an honor to … · in honor of · a great honor", "It is a great honor to meet you.", "能見到您是我莫大的榮幸。"],
+  "patience": ["run out of patience · have patience with sb · test one's patience", "The little boy's endless questions tested his father's patience.", "小男孩沒完沒了的問題考驗著爸爸的耐心。"],
+  "bare": ["bare feet · bare hands · bare branches", "In winter, the trees in the park have bare branches.", "冬天時，公園裡的樹枝光禿禿的。"],
+  "elder": ["village elders · respect one's elders · tribal elders", "In many cultures, children are taught to respect their elders.", "在許多文化中，孩子被教導要尊敬長輩。"],
+  "spread": ["spread quickly · spread across … · spread out", "The fire spread across the hillside in less than an hour.", "大火在不到一小時內蔓延了整片山坡。"],
+  "herd": ["a herd of cattle · a herd of elephants · herd animals", "A herd of elephants walked slowly across the river.", "一群大象慢慢地走過河。"],
+  "species": ["an endangered species · a rare species · a new species", "Scientists discovered a new species of frog in the rain forest.", "科學家在雨林裡發現了一種新的青蛙。"],
+  "habitat": ["natural habitat · lose one's habitat · protect habitats", "Zoos try to make animal enclosures look like their natural habitats.", "動物園試著把動物的展區布置得像牠們的自然棲地。"],
+  "destroy": ["destroy a building · be completely destroyed · destroy one's hopes", "The old castle was completely destroyed in the war.", "那座古堡在戰爭中被完全摧毀。"],
+  "civilian": ["civilian deaths · civilian clothes · protect civilians", "Many civilians had to leave their homes because of the war.", "許多平民因為戰爭被迫離開家園。"],
+  "seedling": ["plant seedlings · young seedlings · grow seedlings", "We grew tomato seedlings in paper cups by the window.", "我們在窗邊用紙杯培育番茄幼苗。"],
+  "monsoon": ["monsoon season · monsoon rains · the summer monsoon", "During the monsoon season, it rains almost every afternoon.", "在季風季節，幾乎每天下午都會下雨。"],
+  "relentless": ["relentless pressure · relentless heat · relentless pursuit", "The relentless heat made it impossible to work outside at noon.", "持續不斷的酷熱讓人中午根本無法在戶外工作。"],
+  "erosion": ["soil erosion · wind erosion · cause erosion", "Cutting down trees on hills can cause serious soil erosion.", "砍伐山上的樹木會造成嚴重的土壤侵蝕。"],
+  "perish": ["perish in a fire · perish from hunger · many perished", "Hundreds of people perished when the ship sank.", "那艘船沉沒時，有數百人罹難。"],
+  "reforestation": ["reforestation projects · large-scale reforestation", "The reforestation project has planted a million trees along the river.", "這項重新造林計畫已沿著河岸種了一百萬棵樹。"],
+  "stabilize": ["stabilize prices · stabilize the soil · stabilize one's condition", "The patient's condition has stabilized after the surgery.", "手術後病人的情況已經穩定下來。"],
+  "succession": ["ecological succession · in succession · a succession of …", "She won three races in succession.", "她連續贏得三場比賽。"],
+  "refuge": ["take refuge in · seek refuge · a wildlife refuge", "During the storm, we took refuge in a small mountain cabin.", "暴風雨期間，我們躲進一間小山屋避難。"],
+  "persistence": ["with persistence · patience and persistence", "With persistence, she finally passed her driving test on the fourth try.", "憑著堅持，她第四次終於考過駕照。"],
+  "ultimately": ["ultimately lead to · ultimately decide · ultimately responsible", "Small daily habits ultimately decide who we become.", "每天的小習慣最終決定我們會成為什麼樣的人。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

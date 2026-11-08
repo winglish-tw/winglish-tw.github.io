@@ -411,5 +411,36 @@ const META = {
  "id": "sleep",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "asleep": ["fall asleep · fast asleep · half asleep", "I fell asleep on the bus and missed my stop.", "我在公車上睡著，坐過站了。"],
+  "midnight": ["at midnight · after midnight · midnight snack", "The store stays open until midnight.", "那家店營業到午夜。"],
+  "fault": ["it's sb's fault · find fault with · through no fault of one's own", "It's not your fault that the bus was late.", "公車誤點不是你的錯。"],
+  "teenager": ["a typical teenager · as a teenager · teenagers today", "As a teenager, I loved reading comic books.", "我青少年時期很愛看漫畫。"],
+  "hormone": ["growth hormone · stress hormones · hormone levels", "Growth hormone is released mainly while we sleep.", "生長激素主要在我們睡覺時分泌。"],
+  "sleepy": ["feel sleepy · a sleepy town · make sb sleepy", "Warm milk makes me feel sleepy.", "溫牛奶讓我覺得想睡。"],
+  "attention": ["pay attention to … · attract attention · short attention span", "Please pay attention to the teacher.", "請專心聽老師說話。"],
+  "grumpy": ["grumpy in the morning · a grumpy old man", "My dad is always grumpy before his first cup of coffee.", "我爸在喝第一杯咖啡前總是脾氣很差。"],
+  "weekend": ["on the weekend · this weekend · a long weekend", "What are you doing this weekend?", "你這個週末要做什麼？"],
+  "biology": ["human biology · marine biology · a biology class", "She wants to study marine biology in college.", "她想在大學念海洋生物學。"],
+  "puberty": ["reach puberty · go through puberty · during puberty", "Kids often grow very fast when they reach puberty.", "孩子進入青春期時常常長得很快。"],
+  "internal": ["internal organs · internal clock · internal problems", "The heart and lungs are internal organs.", "心臟和肺是體內器官。"],
+  "rhythm": ["a natural rhythm · daily rhythm · the rhythm of the music", "Our bodies follow a natural daily rhythm.", "我們的身體遵循自然的每日節律。"],
+  "expert": ["an expert on/in … · ask an expert · according to experts", "According to experts, teenagers need eight to ten hours of sleep.", "根據專家的說法，青少年需要八到十小時的睡眠。"],
+  "recommend": ["strongly recommend · recommend doing sth · recommended amount", "Doctors recommend drinking at least eight glasses of water a day.", "醫生建議一天至少喝八杯水。"],
+  "concentrate": ["concentrate on … · hard to concentrate · concentrate one's mind", "I can't concentrate on my homework with the TV on.", "電視開著，我沒辦法專心寫功課。"],
+  "district": ["school district · business district · a shopping district", "Our school district is building a new library.", "我們學區正在興建一座新圖書館。"],
+  "schedule": ["a busy schedule · on schedule · sleep schedule", "Try to keep the same sleep schedule even on weekends.", "就算是週末，也盡量保持相同的睡眠作息。"],
+  "adolescent": ["adolescent girls/boys · adolescent years · adolescent development", "The adolescent years can be full of change and confusion.", "青春期可能充滿變化和困惑。"],
+  "dismiss": ["dismiss an idea · dismiss sth as … · be quickly dismissed", "At first, people dismissed her idea as crazy.", "一開始，大家把她的點子當作瘋狂而不予理會。"],
+  "chronic": ["chronic sleep loss · chronic illness · chronic stress", "Chronic stress can make you sick.", "長期壓力會讓你生病。"],
+  "mismatch": ["a mismatch between A and B", "There is a mismatch between what students learn and what jobs need.", "學生所學和工作所需之間存在落差。"],
+  "drowsiness": ["cause drowsiness · daytime drowsiness · feelings of drowsiness", "This cold medicine may cause drowsiness, so don't drive after taking it.", "這個感冒藥可能會引起睏倦，所以吃了之後不要開車。"],
+  "consolidation": ["memory consolidation · the consolidation of …", "Sleep plays an important role in memory consolidation.", "睡眠在鞏固記憶方面扮演重要角色。"],
+  "impaired": ["impaired vision · impaired hearing · impaired judgment", "Too little sleep can lead to impaired judgment.", "睡眠太少可能導致判斷力受損。"],
+  "intervention": ["early intervention · medical intervention · government intervention", "Early intervention can help children who have trouble reading.", "及早介入能幫助有閱讀困難的孩子。"],
+  "barely": ["barely enough · can barely … · barely sleep", "I barely slept last night because of the noise.", "昨晚因為噪音，我幾乎沒睡。"],
+  "diligence": ["work with diligence · hard work and diligence", "Her diligence paid off when she got into her dream university.", "她的勤奮有了回報，考上了夢想中的大學。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

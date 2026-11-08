@@ -327,5 +327,48 @@ const META = {
  fact:"章魚沒有骨頭，全身最硬的部分是嘴巴的「喙」。只要洞口比喙大，牠幾乎都鑽得過去，所以水族館都很怕章魚「越獄」！",
  next:{title:"A Hotel That Melts Every Spring", href:"read.html#icehotel"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "octopus": ["a giant octopus · octopus ink · grilled octopus", "We tried grilled octopus at a seafood market in Keelung.", "我們在基隆的海鮮市場吃了烤章魚。"],
+  "heart": ["a healthy heart · heart rate · the heart pumps blood", "Exercise keeps your heart healthy.", "運動讓你的心臟保持健康。"],
+  "blood": ["blood type · lose blood · donate blood", "What's your blood type?", "你是什麼血型？"],
+  "gill": ["fish gills · breathe through gills", "Sharks must keep swimming to push water over their gills.", "鯊魚必須一直游，才能讓水流過鰓。"],
+  "crawl": ["crawl on the floor · crawl into … · crawl slowly", "The baby is learning to crawl.", "寶寶正在學爬。"],
+  "arm": ["an octopus's arm · break one's arm · arm in arm", "An octopus can open a jar with its arms.", "章魚可以用牠的腕打開罐子。"],
+  "taste": ["taste good · taste sweet · taste the soup", "Can you taste the ginger in this soup?", "你嚐得出這碗湯裡的薑味嗎？"],
+  "hide": ["hide from sb · hide behind … · hide one's feelings", "The children hid behind the door to surprise their mom.", "孩子們躲在門後面要給媽媽驚喜。"],
+  "danger": ["in danger · out of danger · a sign of danger", "The doctor says the patient is now out of danger.", "醫生說病人現在已經脫離危險。"],
+  "aquarium": ["a public aquarium · a home aquarium · visit an aquarium", "We saw sharks and jellyfish at the aquarium in Pingtung.", "我們在屏東的水族館看到鯊魚和水母。"],
+  "tank": ["a fish tank · a water tank · a gas tank", "I clean my fish tank once a week.", "我每週清一次魚缸。"],
+  "pipe": ["a water pipe · a broken pipe · through a pipe", "A broken pipe flooded the kitchen floor.", "一根破掉的水管讓廚房地板淹水了。"],
+  "flexible": ["a flexible body · flexible hours · flexible plans", "My job has flexible hours, so I can pick up my kids after school.", "我的工作時間有彈性，所以能在放學後接孩子。"],
+  "creature": ["a strange creature · sea creatures · living creatures", "The deep sea is full of strange creatures that glow in the dark.", "深海充滿在黑暗中發光的奇特生物。"],
+  "pump": ["pump water · pump blood · pump air into …", "He pumped air into his bike tires.", "他幫腳踏車輪胎打氣。"],
+  "oxygen": ["oxygen tank · a lack of oxygen · produce oxygen", "Trees produce the oxygen we need to breathe.", "樹木製造我們呼吸所需的氧氣。"],
+  "copper": ["copper wire · copper pots · made of copper", "Electrical wires are usually made of copper.", "電線通常是用銅做的。"],
+  "prefer": ["prefer A to B · prefer to do sth · much prefer", "I prefer tea to coffee.", "比起咖啡，我比較喜歡茶。"],
+  "remarkable": ["remarkable for … · a remarkable woman · remarkably well", "The bridge is remarkable for its unusual design.", "這座橋以獨特的設計而引人注目。"],
+  "nerve": ["nerve damage · a pinched nerve · nerve endings", "Our fingertips have many nerve endings, so they are very sensitive.", "我們的指尖有很多神經末梢，所以非常敏感。"],
+  "sucker": ["suction cups / suckers · rows of suckers", "Each octopus arm has rows of suckers that can grip almost anything.", "章魚的每條腕上都有一排排吸盤，幾乎什麼都抓得住。"],
+  "texture": ["a smooth texture · a rough texture · the texture of …", "I love the soft, chewy texture of mochi.", "我很喜歡麻糬軟 Q 的口感。"],
+  "blend": ["blend in with … · blend into the background · blend A and B", "The lizard's skin helps it blend in with the leaves.", "蜥蜴的皮膚幫助牠融入樹葉之中。"],
+  "squeeze": ["squeeze through … · squeeze into … · squeeze a lemon", "Five of us squeezed into the back of the taxi.", "我們五個人擠進計程車的後座。"],
+  "drainpipe": ["a blocked drainpipe · climb down a drainpipe", "Leaves blocked the drainpipe, and water overflowed onto the roof.", "落葉塞住排水管，水溢到屋頂上。"],
+  "defy": ["defy gravity · defy expectations · defy description", "The acrobats seemed to defy gravity as they flew through the air.", "特技演員在空中飛躍，彷彿違抗了地心引力。"],
+  "assumption": ["make an assumption · on the assumption that … · a basic assumption", "Don't make assumptions about people based on their looks.", "不要以外表對人妄下假設。"],
+  "branchial": ["branchial hearts · branchial arteries", "The two branchial hearts push blood through the octopus's gills.", "兩顆鰓心把血液送過章魚的鰓。"],
+  "systemic": ["systemic heart · a systemic problem · systemic change", "Bullying in schools is a systemic problem, not just a few bad kids.", "校園霸凌是體制性的問題，不只是幾個壞孩子而已。"],
+  "dispatch": ["dispatch a team · dispatch goods · be dispatched to …", "Rescue teams were dispatched to the flooded villages.", "救援隊被派往淹水的村莊。"],
+  "cease": ["cease to exist · cease fire · cease operations", "The old factory ceased operations in 2010.", "那間老工廠在二〇一〇年停止營運。"],
+  "quirk": ["a strange quirk · personality quirks · a quirk of fate", "One of my cat's quirks is that she only drinks from the bathroom sink.", "我家貓的怪癖之一是只喝浴室洗手台的水。"],
+  "reside": ["reside in … · power resides in … · reside abroad", "Many Taiwanese people reside abroad but still vote at home.", "許多台灣人旅居海外，但仍回國投票。"],
+  "autonomy": ["personal autonomy · a degree of autonomy · local autonomy", "Teenagers want more autonomy to make their own choices.", "青少年希望有更多自主權來做自己的選擇。"],
+  "receptor": ["taste receptors · smell receptors · receptors in the skin", "Dogs have about 300 million smell receptors in their noses.", "狗的鼻子大約有三億個嗅覺受器。"],
+  "crevice": ["a narrow crevice · hide in a crevice · cracks and crevices", "A small crab hid in a crevice between the rocks.", "一隻小螃蟹躲在岩石之間的裂縫裡。"],
+  "ingenuity": ["human ingenuity · show ingenuity · with great ingenuity", "The students showed great ingenuity in building a robot from old parts.", "學生們用舊零件組出機器人，展現了驚人的巧思。"],
+  "mischief": ["get into mischief · make mischief · full of mischief", "The puppy is full of mischief and chews everything.", "那隻小狗非常調皮，什麼都咬。"],
+  "notorious": ["notorious for … · a notorious criminal · notoriously difficult", "This road is notorious for traffic jams.", "這條路以塞車出名。"],
+  "compel": ["compel sb to do sth · feel compelled to … · be compelled by law", "Heavy rain compelled the organizers to cancel the concert.", "大雨迫使主辦單位取消演唱會。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

@@ -210,5 +210,44 @@ const META = {
  fact:"從台灣往東飛到美國，因為會越過國際換日線，常會出現「降落時間比起飛時間還早」的情況，例如晚上出發，抵達時卻還是同一天的傍晚！",
  next:{title:"Three Hearts and Blue Blood", href:"read.html#octopus"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "jet": ["a jet plane · a private jet · jet engine", "The movie star flew to Paris on a private jet.", "那位電影明星搭私人噴射機飛到巴黎。"],
+  "lag": ["jet lag · suffer from jet lag · a time lag", "I suffered from bad jet lag after flying to New York.", "飛到紐約後，我時差很嚴重。"],
+  "zone": ["time zone · a danger zone · a no-parking zone", "Japan is in a time zone one hour ahead of Taiwan.", "日本所在的時區比台灣快一小時。"],
+  "clock": ["an alarm clock · set the clock · the clock strikes", "I set my alarm clock for six o'clock.", "我把鬧鐘設在六點。"],
+  "wake": ["wake up · wake sb up · wake up early", "Please wake me up at seven tomorrow.", "明天七點請叫我起床。"],
+  "slow": ["a slow walker · slow down · slow to respond", "The internet is very slow today.", "今天網路好慢。"],
+  "sunlight": ["direct sunlight · bright sunlight · get some sunlight", "Keep this medicine out of direct sunlight.", "這個藥要避免陽光直射。"],
+  "west": ["head west · travel west · face west", "The birds fly west every autumn.", "那些鳥每年秋天都往西飛。"],
+  "east": ["go east · drive east · the sun rises in the east", "We drove east to watch the sunrise over the ocean.", "我們往東開，去看海上日出。"],
+  "local": ["local time · local food · local people", "Our plane landed at 3 p.m. local time.", "我們的飛機在當地時間下午三點降落。"],
+  "exciting": ["an exciting trip · exciting news · How exciting!", "We have some exciting news: we're getting a puppy!", "我們有個令人興奮的消息：我們要養小狗了！"],
+  "awake": ["stay awake · wide awake · lie awake", "I drank coffee to stay awake during the long drive.", "長途開車時我喝咖啡保持清醒。"],
+  "uncomfortable": ["feel uncomfortable · uncomfortable shoes · an uncomfortable silence", "These new shoes are really uncomfortable.", "這雙新鞋真的很不舒服。"],
+  "master": ["master clock · master bedroom · master key", "The master bedroom has its own bathroom.", "主臥室有自己的浴室。"],
+  "cycle": ["a sleep cycle · the life cycle · a 24-hour cycle", "A normal sleep cycle lasts about 90 minutes.", "一個正常的睡眠週期大約九十分鐘。"],
+  "slightly": ["slightly different · slightly better · slightly higher", "My answer was slightly different from yours.", "我的答案和你的稍微不一樣。"],
+  "reset": ["reset a password · reset the clock · reset a machine", "I forgot my password, so I had to reset it.", "我忘了密碼，只好重設。"],
+  "direction": ["in the direction of · the opposite direction · a sense of direction", "I have no sense of direction, so I often get lost.", "我沒有方向感，所以常常迷路。"],
+  "force": ["force sb to do sth · be forced to …", "The rain forced us to cancel the picnic.", "下雨迫使我們取消野餐。"],
+  "recover": ["recover from an illness · fully recover · recover quickly", "It took her two weeks to fully recover from the flu.", "她花了兩個星期才從流感中完全康復。"],
+  "adjust": ["adjust to sth · adjust the volume · adjust quickly", "It took me a month to adjust to life in a new city.", "我花了一個月才適應新城市的生活。"],
+  "aviation": ["the aviation industry · civil aviation · aviation safety", "She wants to work in the aviation industry as a pilot.", "她想進入航空業當機師。"],
+  "fatigue": ["chronic fatigue · driver fatigue · suffer from fatigue", "Driver fatigue causes many accidents on highways.", "駕駛疲勞造成許多高速公路上的事故。"],
+  "insomnia": ["suffer from insomnia · chronic insomnia", "Drinking coffee late at night can cause insomnia.", "深夜喝咖啡可能導致失眠。"],
+  "circadian": ["circadian rhythm · circadian clock", "Night-shift work can disturb your circadian rhythm.", "上夜班可能打亂你的晝夜節律。"],
+  "neuron": ["brain neurons · nerve cells / neurons · neurons fire", "The human brain contains about 86 billion neurons.", "人腦大約有八百六十億個神經元。"],
+  "coordinate": ["coordinate efforts · coordinate with sb · well coordinated", "The two teams coordinated their efforts to find the lost child.", "兩個團隊協調合作尋找走失的孩子。"],
+  "rhythm": ["a steady rhythm · the rhythm of life · keep the rhythm", "The drummer kept a steady rhythm throughout the song.", "鼓手整首歌都維持穩定的節奏。"],
+  "isolation": ["in isolation · social isolation · isolation ward", "Social isolation can be as harmful as smoking.", "社會孤立的害處可能跟抽菸一樣大。"],
+  "discrepancy": ["a discrepancy between A and B · a large discrepancy", "There was a discrepancy between the price on the shelf and the price at the counter.", "架上標的價格和櫃檯的價格不一致。"],
+  "asymmetry": ["facial asymmetry · an asymmetry between A and B", "There is an asymmetry between how easily we gain weight and how hard it is to lose it.", "變胖有多容易和瘦下來有多難，兩者並不對等。"],
+  "accommodate": ["accommodate the needs of · accommodate change · accommodate guests", "The new schedule accommodates students who have part-time jobs.", "新的課表配合了有打工的學生。"],
+  "underestimate": ["underestimate the cost · underestimate sb · seriously underestimate", "Never underestimate how long a group project will take.", "千萬別低估分組報告會花多少時間。"],
+  "penalty": ["pay a penalty · a heavy penalty · the penalty for …", "The penalty for littering in Singapore is very heavy.", "在新加坡亂丟垃圾的罰則非常重。"],
+  "countermeasure": ["take countermeasures · effective countermeasures", "The city took countermeasures to stop the spread of dengue fever.", "市政府採取對策阻止登革熱擴散。"],
+  "persuade": ["persuade sb to do sth · persuade sb into … · try to persuade", "I persuaded my parents to let me join the trip.", "我說服爸媽讓我參加這趟旅行。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

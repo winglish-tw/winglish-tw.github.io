@@ -412,5 +412,37 @@ const META = {
  "id": "braille",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "blind": ["go blind · be born blind · blind people", "The old dog went blind, but it still finds its way home by smell.", "那隻老狗瞎了，但牠還是靠嗅覺找到回家的路。"],
+  "village": ["a small village · a fishing village · village life", "My grandparents live in a small fishing village by the sea.", "我的祖父母住在海邊一個小漁村。"],
+  "workshop": ["a car workshop · a pottery workshop · hold a workshop", "We joined a pottery workshop and made our own cups.", "我們參加了陶藝工作坊，做了自己的杯子。"],
+  "sharp": ["a sharp knife · sharp teeth · a sharp pain", "Be careful — that knife is very sharp.", "小心，那把刀很利。"],
+  "injury": ["a serious injury · suffer an injury · head injury", "The player missed the game because of a knee injury.", "那名球員因為膝蓋受傷而錯過比賽。"],
+  "raised": ["raised letters · a raised pattern · raised dots", "The elevator buttons have raised numbers for people who can't see.", "電梯按鈕上有凸起的數字，方便看不見的人使用。"],
+  "soldier": ["a young soldier · soldiers fight · a brave soldier", "The soldiers marched past the crowd in the parade.", "士兵們在遊行中從人群前走過。"],
+  "code": ["a secret code · break a code · a zip code", "The kids made up a secret code to pass notes in class.", "孩子們發明了一套密碼，在課堂上傳紙條。"],
+  "fingertip": ["at one's fingertips · touch with one's fingertips", "She felt the soft fur of the kitten with her fingertips.", "她用指尖感覺小貓柔軟的毛。"],
+  "leather": ["a leather jacket · leather shoes · genuine leather", "He saved up for months to buy a black leather jacket.", "他存了好幾個月的錢買一件黑色皮夾克。"],
+  "infection": ["an eye infection · catch an infection · prevent infection", "Wash your hands often to prevent infection.", "常洗手可以預防感染。"],
+  "sight": ["lose one's sight · poor sight · have good sight", "After the accident, he slowly lost his sight in one eye.", "那次意外後，他一隻眼睛慢慢失明了。"],
+  "institute": ["a research institute · an institute of technology", "She works at a research institute that studies ocean life.", "她在一間研究海洋生物的研究所工作。"],
+  "represent": ["represent the school · represent an idea · stand for / represent", "In this map, the blue lines represent rivers.", "在這張地圖上，藍線代表河流。"],
+  "potential": ["have great potential · full potential · reach one's potential", "The coach believes every player can reach their full potential.", "教練相信每個球員都能發揮全部潛力。"],
+  "punctuation": ["punctuation marks · use punctuation correctly", "Don't forget the punctuation at the end of each sentence.", "別忘了每個句子結尾要加標點符號。"],
+  "simplify": ["simplify a process · simplify the rules · greatly simplify", "The new app greatly simplifies the way we pay bills.", "這個新應用程式大大簡化了我們繳帳單的方式。"],
+  "combination": ["a combination of A and B · in combination with", "Success is a combination of hard work and good luck.", "成功是努力加上好運的組合。"],
+  "adopt": ["adopt a system · adopt a new method · adopt a child", "Many schools have adopted tablets in the classroom.", "許多學校已經在課堂上採用平板電腦。"],
+  "profoundly": ["profoundly affect · profoundly deaf · profoundly change", "The trip to Africa profoundly changed the way she saw the world.", "那趟非洲之旅深深改變了她看世界的方式。"],
+  "devise": ["devise a plan · devise a method · devise a way to …", "The students devised a clever way to reuse plastic bottles.", "學生們想出一個巧妙的方法重複利用寶特瓶。"],
+  "decipher": ["decipher handwriting · decipher a code · decipher ancient writing", "I could hardly decipher the doctor's handwriting on the note.", "我幾乎看不懂醫生在紙條上寫的字。"],
+  "painstakingly": ["painstakingly restore · painstakingly slow · painstakingly record", "The workers painstakingly restored the old temple's painted ceiling.", "工匠們煞費苦心地修復古廟的彩繪天花板。"],
+  "breakthrough": ["a major breakthrough · make a breakthrough · a breakthrough in …", "Scientists made a major breakthrough in treating the disease.", "科學家在治療這種疾病上有了重大突破。"],
+  "tactile": ["tactile paving · tactile experience · tactile sense", "Tactile paving on sidewalks helps blind people find their way.", "人行道上的導盲磚能幫助盲人辨認方向。"],
+  "perceive": ["perceive sth as … · perceive a change · be perceived as", "Bees can perceive colors that humans cannot see.", "蜜蜂能感知人類看不到的顏色。"],
+  "flaw": ["a fatal flaw · a design flaw · a major flaw", "The new phone was recalled because of a serious design flaw.", "這款新手機因為嚴重的設計缺陷而被召回。"],
+  "refine": ["refine a method · refine one's skills · refine sugar", "The chef spent years refining her secret recipe.", "那位主廚花了好幾年改良她的祕方。"],
+  "accessibility": ["improve accessibility · wheelchair accessibility · accessibility for …", "The museum added ramps to improve accessibility for wheelchair users.", "博物館加設了斜坡，讓輪椅使用者更方便進出。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

@@ -539,5 +539,34 @@ const META = {
  "id": "happiness",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "study": ["a study of/on … · a recent study · the study shows …", "A recent study shows that teenagers need about nine hours of sleep.", "一項最近的研究顯示，青少年需要大約九小時的睡眠。"],
+  "relationship": ["a close relationship · build a relationship · relationship with sb", "She has a close relationship with her grandmother.", "她和奶奶的關係很親近。"],
+  "lonely": ["feel lonely · lonely people · a lonely childhood", "Many elderly people feel lonely after their children move away.", "許多老人在孩子搬走後會覺得孤單。"],
+  "healthy": ["stay healthy · a healthy diet · healthy habits", "Eating breakfast every day is a healthy habit.", "每天吃早餐是個健康的習慣。"],
+  "famous": ["famous for … · a famous singer · world-famous", "Tainan is famous for its delicious street food.", "台南以美味的小吃聞名。"],
+  "neighbor": ["next-door neighbor · a friendly neighbor · get along with one's neighbors", "Our next-door neighbor gave us a box of mangoes.", "隔壁鄰居送我們一箱芒果。"],
+  "caring": ["a caring person · a caring family · caring nature", "She grew up in a warm and caring family.", "她在一個溫暖又關愛彼此的家庭中長大。"],
+  "director": ["a film director · the director of … · managing director", "He is the director of a small museum in Kaohsiung.", "他是高雄一間小博物館的館長。"],
+  "track": ["track sb's progress · keep track of · track changes", "This app helps you keep track of how much water you drink.", "這個應用程式幫你記錄自己喝了多少水。"],
+  "interview": ["a job interview · give an interview · do an interview with sb", "She was nervous before her first job interview.", "她第一次求職面試前很緊張。"],
+  "satisfied": ["be satisfied with · a satisfied customer · feel satisfied", "Are you satisfied with your test score?", "你對你的考試成績滿意嗎？"],
+  "predict": ["predict the future · predict the weather · hard to predict", "It's hard to predict how the game will end.", "很難預測這場比賽的結局。"],
+  "quality": ["high quality · quality of life · poor quality", "Good friends can improve your quality of life.", "好朋友能提升你的生活品質。"],
+  "quantity": ["a large quantity of · in large quantities · quality over quantity", "When it comes to friends, quality matters more than quantity.", "說到朋友，品質比數量更重要。"],
+  "toxic": ["toxic chemicals · a toxic relationship · toxic waste", "She finally left the toxic relationship that made her unhappy.", "她終於離開那段讓她不快樂的有毒關係。"],
+  "decline": ["decline sharply · decline with age · sales decline", "Our eyesight usually declines with age.", "我們的視力通常會隨著年齡衰退。"],
+  "investment": ["a good investment · investment in … · a long-term investment", "Learning a foreign language is a good investment in your future.", "學外語是對未來的一項好投資。"],
+  "longitudinal": ["a longitudinal study · longitudinal data · longitudinal research", "The longitudinal study followed the same group of children for 30 years.", "這項縱貫研究追蹤同一群孩子長達三十年。"],
+  "participant": ["a study participant · active participant · participants in …", "Each participant was asked to keep a sleep diary for a month.", "每位參與者都被要求寫一個月的睡眠日記。"],
+  "predictor": ["a strong predictor of … · the best predictor · a reliable predictor", "Reading habits are a strong predictor of later success at school.", "閱讀習慣是日後學業成就的強力預測指標。"],
+  "midlife": ["midlife crisis · in midlife · midlife career change", "He went through a midlife crisis and suddenly bought a motorcycle.", "他經歷了中年危機，突然買了一台重機。"],
+  "buffer": ["act as a buffer · a buffer against … · a buffer zone", "Savings act as a buffer against unexpected costs.", "存款可以作為應付意外開銷的緩衝。"],
+  "inflammation": ["reduce inflammation · chronic inflammation · cause inflammation", "Ice can help reduce inflammation after a sports injury.", "運動傷害後冰敷有助於消炎。"],
+  "regulator": ["a mood regulator · emotional regulator · a natural regulator", "Sleep is a natural regulator of mood and appetite.", "睡眠是情緒和食慾的天然調節器。"],
+  "chronic": ["chronic pain · chronic disease · a chronic shortage", "Diabetes is a chronic disease that needs long-term care.", "糖尿病是一種需要長期照護的慢性病。"],
+  "sample": ["a large sample · a random sample · a sample of …", "The survey used a random sample of 1,000 high school students.", "這份調查隨機抽樣了一千名高中生。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

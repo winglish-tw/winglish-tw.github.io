@@ -522,5 +522,36 @@ const META = {
  "id": "ruby",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "court": ["go to court · in court · the Supreme Court", "The two companies took their fight to court.", "這兩家公司把紛爭鬧上法院。"],
+  "attend": ["attend school · attend a meeting · attend a wedding", "About 500 students attend this school.", "大約有五百名學生就讀這所學校。"],
+  "federal": ["federal government · federal law · federal court", "In the U.S., the federal government is in Washington, D.C.", "美國的聯邦政府設在華盛頓特區。"],
+  "marshal": ["U.S. marshals · a federal marshal · fire marshal", "Four marshals walked beside the girl to keep her safe.", "四名法警走在女孩身旁保護她的安全。"],
+  "crowd": ["a large crowd · in the crowd · draw a crowd", "A large crowd gathered to watch the fireworks.", "一大群人聚集觀看煙火。"],
+  "shout": ["shout at sb · shout out · shout for joy", "The fans shouted for joy when their team won.", "球隊獲勝時，粉絲們歡呼大叫。"],
+  "agree": ["agree with sb · agree to do sth · agree on sth", "My parents finally agreed to let me get a dog.", "我爸媽終於同意讓我養狗。"],
+  "kindness": ["thank you for your kindness · random acts of kindness · treat sb with kindness", "Treat others with kindness, and they will do the same.", "以善意待人，別人也會以善意待你。"],
+  "brave": ["a brave decision · be brave enough to … · brave firefighters", "It was brave of you to tell the truth.", "你說出真相，真的很勇敢。"],
+  "ruling": ["a court ruling · make a ruling · the ruling on …", "The court's ruling changed the law for the whole country.", "法院的裁決改變了全國的法律。"],
+  "refuse": ["refuse to do sth · flatly refuse · refuse an offer", "He refused to say sorry for what he had done.", "他拒絕為他做過的事道歉。"],
+  "safety": ["for safety reasons · road safety · in safety", "For safety reasons, swimming is not allowed after dark.", "為了安全起見，天黑後禁止游泳。"],
+  "insult": ["shout insults · a personal insult · take sth as an insult", "Don't take it as an insult — he was only joking.", "別把它當成侮辱，他只是在開玩笑。"],
+  "exception": ["with the exception of · make an exception · no exception", "Everyone passed the test with the exception of Ken.", "除了 Ken 以外，大家都通過考試了。"],
+  "cafeteria": ["the school cafeteria · eat in the cafeteria", "We have lunch in the school cafeteria every day.", "我們每天在學校餐廳吃午餐。"],
+  "recess": ["at recess · play during recess · a 10-minute recess", "During recess, we usually play dodgeball.", "下課時間我們通常玩躲避球。"],
+  "fairness": ["a sense of fairness · in fairness · fairness and justice", "Children have a strong sense of fairness.", "孩子們有很強的公平意識。"],
+  "hatred": ["deep hatred · hatred of/for … · full of hatred", "Wars often leave behind deep hatred between countries.", "戰爭常在國與國之間留下深深的仇恨。"],
+  "unconstitutional": ["be declared unconstitutional · an unconstitutional law", "The judges declared the new law unconstitutional.", "法官們宣告這條新法律違憲。"],
+  "segregated": ["segregated schools · racially segregated · a segregated society", "In the 1950s, many schools in the American South were racially segregated.", "一九五〇年代，美國南方許多學校實施種族隔離。"],
+  "integration": ["racial integration · social integration · integration into …", "Language classes help with the integration of new immigrants.", "語言課程有助於新移民融入社會。"],
+  "resist": ["resist change · resist the temptation to … · hard to resist", "I couldn't resist the temptation to eat another cookie.", "我忍不住又吃了一塊餅乾。"],
+  "escort": ["escort sb to … · a police escort · under escort", "Security guards escorted the singer to her car.", "保全人員護送那位歌手到她的車上。"],
+  "boycott": ["call for a boycott · a boycott of … · consumer boycott", "Fans called for a boycott of the company's products.", "粉絲們呼籲抵制這家公司的產品。"],
+  "hostility": ["open hostility · hostility toward(s) … · face hostility", "The new student faced hostility from some classmates.", "那位新同學遭到一些同學的敵視。"],
+  "resilience": ["show remarkable resilience · build resilience · mental resilience", "The town showed remarkable resilience after the earthquake.", "這個小鎮在地震後展現了驚人的韌性。"],
+  "solidarity": ["in solidarity with · show solidarity · a sign of solidarity", "Students wore yellow ribbons in solidarity with the victims.", "學生們繫上黃絲帶，表示與受害者團結一心。"],
+  "paradox": ["a strange paradox · the paradox of … · it's a paradox that …", "It's a paradox that we feel lonely in a city full of people.", "在一個滿是人的城市裡卻感到孤單，真是矛盾。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

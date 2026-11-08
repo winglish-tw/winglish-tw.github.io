@@ -527,5 +527,36 @@ const META = {
  "id": "bristlecone",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "pyramid": ["the pyramids of Egypt · build a pyramid · a food pyramid", "The pyramids in Egypt were built more than 4,000 years ago.", "埃及的金字塔是四千多年前建造的。"],
+  "soil": ["rich soil · dry soil · soil quality", "Tea plants grow best in soil that drains well.", "茶樹最適合長在排水良好的土壤裡。"],
+  "survive": ["survive a storm · survive on little food · survive the winter", "Some frogs survive the winter by freezing almost solid.", "有些青蛙靠著身體幾乎凍成冰塊來撐過冬天。"],
+  "insect": ["insect bites · an insect species · flying insects", "Spiders are not insects because they have eight legs.", "蜘蛛不是昆蟲，因為牠們有八隻腳。"],
+  "disease": ["catch a disease · heart disease · spread a disease", "Mosquitoes can spread diseases like dengue fever.", "蚊子會傳播登革熱之類的疾病。"],
+  "bark": ["tree bark · peel off the bark · thick bark", "Cinnamon actually comes from the bark of a tree.", "肉桂其實來自一種樹的樹皮。"],
+  "root": ["tree roots · take root · deep roots", "The roots of the big tree pushed up the sidewalk.", "那棵大樹的根把人行道撐得隆起。"],
+  "exact": ["the exact time · exact number · to be exact", "Nobody knows the exact number of stars in the sky.", "沒有人知道天上星星的確切數量。"],
+  "steady": ["a steady pace · steady growth · keep sth steady", "The runner kept a steady pace and won the marathon.", "那位跑者維持穩定的速度，贏得了馬拉松。"],
+  "fierce": ["fierce competition · a fierce storm · a fierce dog", "There is fierce competition for places at top universities.", "頂尖大學的名額競爭非常激烈。"],
+  "competition": ["competition for sth · face competition · a singing competition", "Young trees in a forest face strong competition for sunlight.", "森林裡的小樹要激烈地爭奪陽光。"],
+  "threat": ["a serious threat · pose a threat to · under threat", "Rising sea levels pose a serious threat to island nations.", "海平面上升對島國構成嚴重威脅。"],
+  "dense": ["dense fog · a dense forest · dense wood", "The plane couldn't land because of the dense fog.", "因為濃霧，飛機無法降落。"],
+  "resin": ["tree resin · pine resin · ancient resin", "Amber is ancient tree resin that has turned hard over millions of years.", "琥珀是古老的樹脂，經過數百萬年後變硬而成。"],
+  "drought": ["a severe drought · suffer from drought · a long drought", "The severe drought killed most of the farmers' crops.", "嚴重的乾旱讓農民大部分的作物都死了。"],
+  "erosion": ["soil erosion · coastal erosion · prevent erosion", "Planting grass on hillsides helps prevent soil erosion.", "在山坡上種草有助於防止土壤流失。"],
+  "remarkable": ["a remarkable achievement · remarkable progress · truly remarkable", "She made remarkable progress in English in just one year.", "她只用一年，英文就有驚人的進步。"],
+  "patience": ["lose one's patience · have the patience to … · with patience", "Learning to play the violin takes a lot of patience.", "學拉小提琴需要很大的耐心。"],
+  "longevity": ["the secret of longevity · longevity of …", "Okinawa is famous for the longevity of its people.", "沖繩以居民長壽而聞名。"],
+  "elevation": ["high elevation · at an elevation of … · low elevation", "Tea grown at high elevations often has a lighter, sweeter taste.", "高海拔種的茶通常味道更清香甘甜。"],
+  "endure": ["endure pain · endure hardship · endure the cold", "The climbers had to endure freezing winds near the top.", "登山者在接近山頂時必須忍受刺骨的寒風。"],
+  "scant": ["scant attention · scant evidence · scant rainfall", "The report paid scant attention to the needs of older people.", "那份報告幾乎沒有關注到老年人的需求。"],
+  "imperceptible": ["almost imperceptible · an imperceptible change", "The change in her voice was almost imperceptible, but her mother noticed it.", "她聲音的變化幾乎察覺不到，但她母親注意到了。"],
+  "sparse": ["sparse population · sparse vegetation · sparse hair", "The desert has only sparse vegetation, mostly small bushes.", "沙漠裡只有稀疏的植物，大多是小灌木。"],
+  "ingenious": ["an ingenious idea · an ingenious solution · ingenious design", "The kids came up with an ingenious solution to keep the classroom cool.", "孩子們想出一個巧妙的辦法讓教室保持涼爽。"],
+  "adaptation": ["adaptation to … · a clever adaptation · a film adaptation", "The camel's long eyelashes are an adaptation to sandstorms.", "駱駝的長睫毛是對沙塵暴的一種適應。"],
+  "sacrifice": ["sacrifice A for B · sacrifice one's time · make sacrifices", "Many parents sacrifice their own comfort for their children's education.", "許多父母為了孩子的教育犧牲自己的舒適。"],
+  "scarce": ["scarce resources · water is scarce · become scarce", "In the dry season, food becomes scarce for many animals.", "在乾季，許多動物的食物變得稀少。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

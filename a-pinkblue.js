@@ -521,5 +521,35 @@ const META = {
  "id": "pinkblue",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "dress": ["a long dress · a wedding dress · wear a dress", "She wore a red dress to her friend's wedding.", "她穿了一件紅洋裝去參加朋友的婚禮。"],
+  "bleach": ["use bleach · bleach one's hair · bleach towels", "My mom uses bleach to keep the towels white.", "我媽用漂白水讓毛巾保持潔白。"],
+  "magazine": ["a fashion magazine · read a magazine · magazine article", "I read an interesting article in a science magazine.", "我在一本科學雜誌上讀到一篇有趣的文章。"],
+  "advice": ["give sb advice · take sb's advice · a piece of advice", "Let me give you a piece of advice: always back up your files.", "給你一個建議：檔案一定要備份。"],
+  "clothing": ["warm clothing · a piece of clothing · protective clothing", "Bring warm clothing — it's cold in the mountains.", "帶些保暖衣物，山上很冷。"],
+  "historian": ["a famous historian · art historian · historians believe …", "Historians believe the temple was built in the 1700s.", "歷史學家認為這座廟建於十八世紀。"],
+  "belong": ["belong to sb · belong in … · a sense of belonging", "Does this umbrella belong to you?", "這把傘是你的嗎？"],
+  "strange": ["strange as it may seem · it is strange that …", "Strange as it may seem, I enjoy doing math homework.", "說來奇怪，我喜歡寫數學作業。"],
+  "aisle": ["the toy aisle · an aisle seat · walk down the aisle", "Would you like a window seat or an aisle seat?", "您想要靠窗還是靠走道的座位？"],
+  "assume": ["assume that … · it is assumed that … · wrongly assume", "I assumed that the store would be open on Sunday, but it was closed.", "我以為那家店星期天有開，結果沒開。"],
+  "practical": ["practical advice · a practical solution · practical skills", "Cooking is a practical skill everyone should learn.", "做菜是每個人都該學的實用技能。"],
+  "pastel": ["pastel colors · pastel pink · pastel shades", "The baby's room is painted in soft pastel colors.", "寶寶房漆成柔和的粉彩色。"],
+  "delicate": ["delicate skin · a delicate flower · delicate taste", "Use a gentle soap on a baby's delicate skin.", "寶寶細嫩的皮膚要用溫和的肥皂。"],
+  "recommend": ["recommend sth to sb · recommend that … · highly recommend", "I highly recommend this book to anyone who loves animals.", "我非常推薦這本書給愛動物的人。"],
+  "flip": ["flip a coin · flip a pancake · flip over", "Let's flip a coin to decide who goes first.", "我們擲硬幣決定誰先。"],
+  "manufacturer": ["a car manufacturer · toy manufacturer · the manufacturer's instructions", "Follow the manufacturer's instructions when you set up the machine.", "安裝機器時請依照製造商的說明。"],
+  "habit": ["a bad habit · break a habit · out of habit", "Biting your nails is a bad habit.", "咬指甲是個壞習慣。"],
+  "convention": ["social convention · by convention · break with convention", "By convention, the bride's family sits on the left side.", "按照慣例，新娘的家人坐在左邊。"],
+  "association": ["in association with · a strong association · association between A and B", "For many people, the smell of rain has a strong association with childhood.", "對很多人來說，雨的氣味和童年有很強的連結。"],
+  "infant": ["newborn infant · infant formula · infant mortality", "Infants need to be fed every few hours.", "嬰兒每幾個小時就要餵一次奶。"],
+  "neutral": ["gender-neutral · neutral colors · a neutral tone", "Many parents now choose gender-neutral names for their babies.", "現在許多父母為寶寶取中性的名字。"],
+  "prominent": ["a prominent writer · play a prominent role · prominent position", "She is a prominent writer whose books are read around the world.", "她是一位知名作家，作品在全世界都有人讀。"],
+  "dominant": ["the dominant color · a dominant role · dominant culture", "Blue is the dominant color in the new school uniform.", "藍色是新校服的主色。"],
+  "prenatal": ["prenatal care · prenatal tests · prenatal check-ups", "Pregnant women should go for regular prenatal check-ups.", "孕婦應該定期做產檢。"],
+  "incentive": ["a financial incentive · create an incentive · little incentive to …", "Free parking gives people an incentive to shop at the mall.", "免費停車給人們到購物中心消費的誘因。"],
+  "norm": ["social norms · the norm · break the norm", "Working from home has become the norm for many office workers.", "在家工作已成為許多上班族的常態。"],
+  "dictate": ["dictate what … · dictate the terms · fashion dictates", "Should fashion dictate what we wear to school?", "時尚應該決定我們穿什麼上學嗎？"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

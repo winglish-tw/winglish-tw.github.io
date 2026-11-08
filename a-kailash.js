@@ -516,5 +516,36 @@ const META = {
  "id": "kailash",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "gate": ["the school gate · open the gate · at the gate", "Let's meet at the school gate after class.", "下課後我們在校門口見。"],
+  "poor": ["poor families · the poor · poor countries", "The charity gives free lunches to children from poor families.", "這個慈善團體提供免費午餐給貧困家庭的孩子。"],
+  "engineer": ["a software engineer · an electrical engineer · train as an engineer", "My cousin works as a software engineer in Hsinchu.", "我表哥在新竹當軟體工程師。"],
+  "forced": ["forced labor · a forced smile · forced marriage", "She gave him a forced smile and walked away.", "她勉強對他笑了一下就走開了。"],
+  "rescue": ["rescue sb from … · come to the rescue · rescue workers", "Firefighters rescued a cat from the top of a tree.", "消防員把一隻貓從樹頂救了下來。"],
+  "factory": ["a shoe factory · factory owner · close a factory", "The factory owner promised to give workers a raise.", "工廠老闆答應幫工人加薪。"],
+  "dangerous": ["dangerous work · extremely dangerous · a dangerous situation", "Working on high buildings is extremely dangerous.", "在高樓上工作極度危險。"],
+  "march": ["a peace march · go on a march · a protest march", "Thousands of people joined the peace march.", "數千人參加了和平遊行。"],
+  "labor": ["child labor · manual labor · cheap labor", "Child labor is still a problem in some parts of the world.", "童工在世界上某些地方仍然是個問題。"],
+  "polish": ["polish shoes · polish the floor · polish one's English", "He polishes his shoes every Sunday night.", "他每個星期天晚上都擦皮鞋。"],
+  "cobbler": ["a local cobbler · take shoes to a cobbler", "I took my broken boots to the cobbler down the street.", "我把壞掉的靴子拿去街角的鞋匠那裡修。"],
+  "satisfy": ["satisfy one's hunger · satisfy customers · satisfy the requirements", "A small snack satisfied my hunger until dinner.", "一點小點心就讓我撐到晚餐不餓。"],
+  "afford": ["can afford to do sth · can't afford sth · afford the price", "We can't afford to buy a new car this year.", "我們今年買不起新車。"],
+  "career": ["a career in … · career choice · start one's career", "She started her career as a nurse before becoming a doctor.", "她在成為醫生之前，以護理師開始她的職業生涯。"],
+  "raid": ["police raid · raid a building · a surprise raid", "Police raided the factory and found children working there.", "警方突襲那間工廠，發現有孩童在裡面工作。"],
+  "debt": ["be in debt · pay off a debt · get into debt", "It took him ten years to pay off his debts.", "他花了十年才還清債務。"],
+  "label": ["a price label · put a label on … · read the label", "Always read the label before taking any medicine.", "吃任何藥之前一定要看標籤。"],
+  "participant": ["participants in … · an active participant", "All participants in the race will get a T-shirt.", "所有參賽者都會拿到一件 T 恤。"],
+  "formative": ["formative years · a formative experience · formative influence", "Living abroad was a formative experience in her teenage years.", "旅居國外是她青少年時期影響深遠的經歷。"],
+  "abandon": ["abandon a plan · abandon one's dream · abandon a pet", "They had to abandon their plan to climb the mountain because of the storm.", "因為暴風雨，他們只好放棄爬山的計畫。"],
+  "bonded": ["bonded labor · bonded laborers", "Bonded laborers work for years to pay back a small loan that never seems to shrink.", "債役勞工工作好幾年來償還一筆似乎永遠還不完的小額借款。"],
+  "rehabilitation": ["drug rehabilitation · a rehabilitation center · physical rehabilitation", "After the accident, he spent six months in physical rehabilitation.", "那場意外後，他花了六個月做復健。"],
+  "exploitation": ["the exploitation of workers · sexual exploitation · labor exploitation", "The report revealed the exploitation of workers on fishing boats.", "那份報告揭露了漁船上對漁工的剝削。"],
+  "certification": ["organic certification · receive certification · a certification program", "The farm received organic certification after three years.", "那座農場三年後取得了有機認證。"],
+  "persuade": ["persuade sb that … · easily persuaded · fail to persuade", "He persuaded the factory owners that hiring adults was better.", "他說服工廠老闆僱用成人比較好。"],
+  "convention": ["an international convention · sign a convention · a UN convention", "Most countries have signed the UN Convention on the Rights of the Child.", "大多數國家都簽署了聯合國兒童權利公約。"],
+  "perpetuate": ["perpetuate a myth · perpetuate poverty · perpetuate stereotypes", "Some TV shows perpetuate stereotypes about women.", "有些電視節目讓對女性的刻板印象延續下去。"],
+  "immense": ["immense pressure · immense pride · an immense amount of", "Doctors are under immense pressure during a pandemic.", "疫情期間醫生承受巨大的壓力。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

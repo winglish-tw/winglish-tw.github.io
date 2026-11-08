@@ -212,5 +212,44 @@ const META = {
  fact:"每年大約 11 月，智利紅鶴、安地斯紅鶴和詹氏紅鶴這三種紅鶴，會來到烏尤尼鹽沼一帶繁殖，讓白色的鹽原多了一點粉紅色。",
  next:{title:"Why Flying East Is Harder", href:"read.html#jetlag"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "salt": ["a pinch of salt · sea salt · add salt", "Add a pinch of salt to the boiling water.", "在滾水裡加一小撮鹽。"],
+  "flat": ["salt flats · a flat surface · flat land", "The tablet must be placed on a flat surface.", "這台平板必須放在平坦的表面上。"],
+  "lake": ["a lake view · swim in the lake · Sun Moon Lake", "We rode bikes around Sun Moon Lake.", "我們騎腳踏車環日月潭。"],
+  "layer": ["a thin layer · a thick layer · layer of dust", "A thick layer of dust covered the old piano.", "那台舊鋼琴上積了厚厚一層灰塵。"],
+  "thick": ["thick fog · a thick book · thick walls", "The castle has very thick stone walls.", "這座城堡有非常厚的石牆。"],
+  "thin": ["a thin layer · thin ice · thin air", "Don't walk on the pond — the ice is too thin.", "別走在池塘上，冰太薄了。"],
+  "mirror": ["a mirror image · like a mirror · reflect like a mirror", "On a calm day, the lake looks like a giant mirror.", "風平浪靜的日子，湖面看起來像一面巨大的鏡子。"],
+  "cloud": ["dark clouds · a cloud of smoke · clouds gather", "Dark clouds gathered, and it began to rain.", "烏雲聚集，開始下雨了。"],
+  "satellite": ["a weather satellite · launch a satellite · satellite images", "Satellite images show the typhoon moving toward Taiwan.", "衛星雲圖顯示颱風正朝台灣移動。"],
+  "battery": ["charge the battery · the battery is dead · battery life", "My phone battery is dead — can I borrow your charger?", "我的手機沒電了，可以借你的充電器嗎？"],
+  "remote": ["a remote village · remote areas · a remote island", "Doctors fly to remote villages to treat patients.", "醫生搭飛機到偏遠村落看診。"],
+  "plain": ["a vast plain · the plains of … · coastal plain", "Rice fields cover the vast plain in western Taiwan.", "稻田覆蓋了台灣西部廣闊的平原。"],
+  "prehistoric": ["prehistoric times · prehistoric animals · prehistoric cave paintings", "Mammoths were prehistoric animals that lived during the Ice Age.", "長毛象是生活在冰河時期的史前動物。"],
+  "evaporate": ["water evaporates · evaporate quickly · evaporate into …", "Puddles evaporate quickly in the hot sun.", "水坑在烈日下很快就蒸發了。"],
+  "crust": ["the earth's crust · a pizza crust · a hard crust", "I like pizza with a thin, crispy crust.", "我喜歡薄脆餅皮的披薩。"],
+  "shallow": ["shallow water · a shallow dish · shallow end", "Little kids should stay in the shallow end of the pool.", "小小孩應該待在泳池的淺水區。"],
+  "surface": ["a smooth surface · rise to the surface · below the surface", "A whale rose to the surface to breathe.", "一頭鯨魚浮上水面換氣。"],
+  "landmark": ["a famous landmark · a local landmark · a historic landmark", "Taipei 101 is the city's most famous landmark.", "台北 101 是這座城市最有名的地標。"],
+  "adjust": ["adjust the settings · adjust A to B · adjust one's seat", "Adjust your seat before you start driving.", "開車前先調整你的座椅。"],
+  "beneath": ["beneath the surface · beneath one's feet · lie beneath", "There are hot springs beneath the ground in Beitou.", "北投地底下有溫泉。"],
+  "treasure": ["buried treasure · a national treasure · hidden treasure", "The old map showed where the pirates hid their treasure.", "那張古地圖標示了海盜藏寶的地點。"],
+  "horizon": ["on the horizon · over the horizon · broaden one's horizons", "Traveling abroad can broaden your horizons.", "出國旅行能開拓你的眼界。"],
+  "merge": ["merge with … · merge into … · merge two companies", "The two small schools merged into one last year.", "那兩所小學校去年合併成一所。"],
+  "altitude": ["at high altitude · altitude sickness · gain altitude", "Some climbers get altitude sickness above 3,000 meters.", "有些登山者在三千公尺以上會出現高山症。"],
+  "remnant": ["remnants of … · the last remnant · a remnant of the past", "These old walls are the last remnants of the city's ancient castle.", "這些古老的城牆是這座城市古堡僅存的遺跡。"],
+  "accumulate": ["salt accumulates · accumulate over time · accumulate debt", "Salt accumulates on the car after driving near the sea.", "在海邊開車後，鹽分會累積在車上。"],
+  "brine": ["soak in brine · salty brine · brine shrimp", "Soak the chicken in brine overnight to make it juicy.", "把雞肉泡在鹽水裡一整晚，會讓肉更多汁。"],
+  "crystallize": ["crystallize into … · sugar crystallizes · crystallize one's thoughts", "Honey can crystallize when it gets cold.", "蜂蜜變冷時會結晶。"],
+  "circulate": ["blood circulates · air circulates · circulate a rumor", "Open the windows to let fresh air circulate.", "打開窗戶讓新鮮空氣流通。"],
+  "phenomenon": ["a strange phenomenon · a cultural phenomenon · this phenomenon occurs", "The \"mirror effect\" is a phenomenon that happens only after rain.", "「鏡面效果」是只有在下雨後才會出現的現象。"],
+  "elevation": ["at an elevation of … meters · high elevation · gain elevation", "Alishan sits at an elevation of over 2,000 meters.", "阿里山位於海拔兩千多公尺。"],
+  "calibrate": ["calibrate a scale · calibrate instruments · be carefully calibrated", "The scale must be calibrated before weighing the medicine.", "秤藥之前必須先校正秤子。"],
+  "contentious": ["a contentious issue · highly contentious · contentious debate", "Building a nuclear power plant is a contentious issue.", "興建核電廠是一個有爭議的議題。"],
+  "surge": ["prices surge · demand surges · surge forward", "Demand for electric scooters has surged in recent years.", "近年來電動機車的需求激增。"],
+  "impurity": ["remove impurities · free of impurities · impurities in water", "Water filters remove impurities from tap water.", "濾水器能去除自來水中的雜質。"],
+  "spoil": ["spoil the view · spoil the fun · spoil a child", "The ugly new building spoils the view of the sea.", "那棟難看的新大樓破壞了海景。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

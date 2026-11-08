@@ -516,5 +516,35 @@ const META = {
  "id": "jeans",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "jeans": ["a pair of jeans · tight jeans · wear jeans", "I bought a new pair of jeans for the trip.", "我為了這趟旅行買了一條新牛仔褲。"],
+  "cotton": ["a cotton T-shirt · 100% cotton · grow cotton", "This T-shirt is made of 100% cotton.", "這件 T 恤是百分之百純棉。"],
+  "thirsty": ["feel thirsty · a thirsty crop · thirsty plants", "Rice is a thirsty crop that needs a lot of water.", "稻米是一種需要大量水的作物。"],
+  "dye": ["dye one's hair · dye A blue · natural dye", "She dyed her hair purple for the summer.", "她暑假把頭髮染成紫色。"],
+  "factory": ["a car factory · factory workers · work in a factory", "My uncle works in a car factory in Taoyuan.", "我叔叔在桃園一間汽車工廠工作。"],
+  "impact": ["have an impact on · a big impact · environmental impact", "Social media has a big impact on young people's lives.", "社群媒體對年輕人的生活有很大的影響。"],
+  "environment": ["protect the environment · harm the environment · a safe environment", "Taking the bus instead of driving is better for the environment.", "搭公車取代開車對環境比較好。"],
+  "closet": ["in the closet · a walk-in closet · clean out one's closet", "I cleaned out my closet and found clothes I'd never worn.", "我整理衣櫥，發現一些從沒穿過的衣服。"],
+  "resource": ["natural resources · a waste of resources · limited resources", "Water is a limited resource, so we shouldn't waste it.", "水是有限的資源，所以我們不該浪費。"],
+  "crop": ["grow crops · a cash crop · crop failure", "Bananas were once an important cash crop in Taiwan.", "香蕉曾是台灣重要的經濟作物。"],
+  "fabric": ["soft fabric · cotton fabric · a piece of fabric", "She made a bag from a piece of old fabric.", "她用一塊舊布做了一個包包。"],
+  "faded": ["faded jeans · faded colors · a faded photo", "My grandma keeps a faded photo of her wedding day.", "奶奶留著一張她婚禮當天褪了色的照片。"],
+  "consumer": ["consumer goods · consumer rights · protect consumers", "Consumers have the right to return broken products.", "消費者有權退回壞掉的商品。"],
+  "landfill": ["end up in a landfill · landfill site · send waste to landfill", "Most old clothes end up in a landfill.", "大部分的舊衣服最後都進了垃圾掩埋場。"],
+  "swap": ["swap A for B · swap seats · swap clothes with sb", "Can we swap seats? I want to sit by the window.", "我們可以換位子嗎？我想坐窗邊。"],
+  "donate": ["donate money to … · donate blood · donate old clothes", "We donated our old books to the village library.", "我們把舊書捐給村裡的圖書館。"],
+  "sustainable": ["sustainable development · sustainable fashion · a sustainable way", "Buying second-hand clothes is a more sustainable way to shop.", "買二手衣是比較永續的購物方式。"],
+  "lifecycle": ["the lifecycle of a product · product lifecycle", "The lifecycle of a phone includes mining, making, using, and throwing it away.", "一支手機的生命週期包括採礦、製造、使用和丟棄。"],
+  "assessment": ["an environmental assessment · risk assessment · make an assessment", "An environmental assessment is required before building a new factory.", "蓋新工廠之前必須做環境評估。"],
+  "cultivate": ["cultivate rice · cultivate land · cultivate a habit", "Farmers in this valley have cultivated tea for over 100 years.", "這個山谷的農民種茶已經超過一百年。"],
+  "irrigation": ["irrigation system · irrigation canal · drip irrigation", "Drip irrigation delivers water directly to plant roots, so less is wasted.", "滴灌把水直接送到植物根部，所以比較不浪費。"],
+  "divert": ["divert water · divert attention from · divert traffic", "Police diverted traffic away from the parade route.", "警方讓車流改道，避開遊行路線。"],
+  "counterintuitive": ["seem counterintuitive · a counterintuitive result", "It seems counterintuitive, but drinking hot tea can cool you down.", "聽起來違反直覺，但喝熱茶其實能讓你涼快下來。"],
+  "footprint": ["carbon footprint · environmental footprint · reduce one's footprint", "Eating less meat can reduce your carbon footprint.", "少吃肉可以減少你的碳足跡。"],
+  "garment": ["a garment factory · a woolen garment · protective garments", "Garment workers in some countries earn very low wages.", "一些國家的成衣工人工資非常低。"],
+  "insufficient": ["insufficient evidence · insufficient funds · insufficient sleep", "The man was released because of insufficient evidence.", "那名男子因證據不足獲釋。"],
+  "perspective": ["from sb's perspective · put things into perspective · a new perspective", "Traveling abroad gave me a whole new perspective on my own country.", "出國旅行讓我用全新的觀點看待自己的國家。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

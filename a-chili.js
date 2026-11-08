@@ -217,5 +217,44 @@ const META = {
  fact:"在植物學上，辣椒其實是「水果」！只要是由花發育而來、裡面有種子的部分就算果實，所以辣椒和番茄一樣，都是水果。",
  next:{title:"The Man Who Invented Instant Noodles", href:"read.html#noodles"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "chili": ["chili sauce · hot chili · add some chili", "Do you want some chili sauce with your dumplings?", "你的水餃要不要加點辣椒醬？"],
+  "pepper": ["a green pepper · black pepper · salt and pepper", "Add a little salt and black pepper to the soup.", "在湯裡加一點鹽和黑胡椒。"],
+  "chemical": ["harmful chemicals · chemical reaction · use chemicals", "Farmers try to use fewer chemicals on their vegetables.", "農夫們試著在蔬菜上少用化學物質。"],
+  "taste": ["a sweet taste · taste of sth · a bitter taste", "This medicine has a very bitter taste.", "這個藥的味道很苦。"],
+  "trick": ["trick sb into doing sth · be tricked", "The fox tricked the crow into dropping its cheese.", "狐狸騙烏鴉把起司掉下來。"],
+  "nerve": ["nerve cells · nerves in the skin · a nerve signal", "Nerves carry messages from your body to your brain very quickly.", "神經能很快地把訊息從身體傳到大腦。"],
+  "sweat": ["sweat a lot · sweat heavily · start to sweat", "I always sweat a lot when I play basketball in summer.", "我夏天打籃球時總是流很多汗。"],
+  "spicy": ["spicy food · too spicy · a spicy hot pot", "I can't eat spicy food, so I'll order the mild one.", "我不能吃辣，所以我點不辣的。"],
+  "measure": ["measure the length · measure one's temperature · measure sth in …", "The nurse measured my temperature before I saw the doctor.", "看醫生前，護理師先幫我量體溫。"],
+  "seed": ["plant seeds · sunflower seeds · grow from a seed", "We planted some sunflower seeds in the school garden.", "我們在學校花園種了一些向日葵種子。"],
+  "bite": ["take a bite of · have a bite · one bite", "Can I take a bite of your sandwich?", "我可以咬一口你的三明治嗎？"],
+  "receptor": ["pain receptors · taste receptors · bind to a receptor", "Cats lack the taste receptors for sweet flavors.", "貓沒有感受甜味的味覺受器。"],
+  "temperature": ["body temperature · high temperatures · the temperature drops", "The temperature drops quickly in the mountains at night.", "山上的氣溫在晚上降得很快。"],
+  "react": ["react to sth · react quickly · react badly", "How did your parents react to your test results?", "你爸媽對你的考試成績有什麼反應？"],
+  "dissolve": ["dissolve in water · sugar dissolves · dissolve completely", "Stir the tea until the sugar dissolves completely.", "攪拌茶，直到糖完全溶解。"],
+  "effective": ["an effective way · highly effective · effective against …", "Regular exercise is an effective way to reduce stress.", "規律運動是減輕壓力的有效方法。"],
+  "protein": ["high in protein · a source of protein · plant protein", "Eggs and tofu are cheap sources of protein.", "蛋和豆腐是便宜的蛋白質來源。"],
+  "scale": ["on a scale of 1 to 10 · a large scale · rating scale", "On a scale of 1 to 10, how would you rate the movie?", "從一到十分，你會給這部電影幾分？"],
+  "compete": ["compete with/against … · compete for sth · compete in a race", "Hundreds of students compete for only a few scholarships.", "好幾百個學生在爭取僅有的幾個獎學金。"],
+  "mammal": ["a large mammal · marine mammals · mammals feed their babies milk", "Whales and dolphins are mammals, not fish.", "鯨魚和海豚是哺乳動物，不是魚。"],
+  "swallow": ["swallow food · swallow a pill · hard to swallow", "Chew your food well before you swallow it.", "食物吞下去之前要好好咀嚼。"],
+  "deliberately": ["deliberately design · deliberately hide · deliberately set", "Some games are deliberately designed to keep players hooked.", "有些遊戲是刻意設計來讓玩家上癮的。"],
+  "interpret": ["interpret A as B · interpret data · be interpreted as", "The teacher's silence was interpreted as anger by the class.", "全班把老師的沉默解讀成生氣。"],
+  "culprit": ["the main culprit · the real culprit · catch the culprit", "Sugar is often the main culprit behind tooth decay.", "糖往往是蛀牙背後的主要元兇。"],
+  "compound": ["a chemical compound · organic compound · a natural compound", "Caffeine is a natural compound found in coffee and tea.", "咖啡因是存在於咖啡和茶中的一種天然化合物。"],
+  "perceive": ["perceive pain · perceive differences · be perceived as", "Older people often perceive time as passing more quickly.", "年長的人常覺得時間過得比較快。"],
+  "remedy": ["a home remedy · a natural remedy · a remedy for …", "Ginger tea is a popular home remedy for colds.", "薑茶是很受歡迎的感冒居家療法。"],
+  "dilute": ["dilute A with B · diluted juice · dilute the effect", "Dilute the juice with water so it's not too sweet for the baby.", "用水稀釋果汁，免得寶寶喝起來太甜。"],
+  "quantify": ["quantify the impact · difficult to quantify · quantify the risk", "The damage to the town's reputation is hard to quantify.", "對小鎮名聲造成的傷害很難量化。"],
+  "intriguing": ["an intriguing question · find sth intriguing · intriguing possibility", "Scientists find it intriguing that some birds can sense magnetic fields.", "科學家覺得有些鳥能感應磁場這件事很耐人尋味。"],
+  "deterrence": ["nuclear deterrence · act as a deterrence", "Security cameras act as a deterrence against shoplifting.", "監視器能嚇阻順手牽羊。"],
+  "crush": ["crush garlic · crush ice · be crushed under …", "Crush two cloves of garlic and fry them in oil.", "壓碎兩瓣大蒜，下油鍋炒。"],
+  "intact": ["remain intact · fully intact · keep sth intact", "Amazingly, the glass vase remained intact after the fall.", "神奇的是，那個玻璃花瓶摔下來還是完好無缺。"],
+  "disperse": ["disperse seeds · the crowd dispersed · disperse quickly", "The wind disperses dandelion seeds over long distances.", "風把蒲公英的種子散播到很遠的地方。"],
+  "crave": ["crave sugar · crave attention · crave sth sweet", "When I'm stressed, I always crave something sweet.", "我壓力大的時候總是很想吃甜的。"],
+  "weapon": ["a secret weapon · chemical weapons · use sth as a weapon", "Skunks use their smell as a weapon against enemies.", "臭鼬用牠們的臭味當作對付敵人的武器。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

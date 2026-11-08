@@ -521,5 +521,36 @@ const META = {
  "id": "switzer",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "marathon": ["run a marathon · a full marathon · marathon runner", "My uncle ran his first marathon at the age of 50.", "我叔叔五十歲時跑了他的第一場馬拉松。"],
+  "weak": ["feel weak · weak from hunger · a weak heart", "After the long illness, she felt too weak to walk.", "久病之後，她虛弱得走不動。"],
+  "train": ["train for a race · train hard · train every day", "The team trains every morning before school.", "球隊每天上學前都會訓練。"],
+  "official": ["government officials · race officials · official rules", "A race official checked our numbers at the starting line.", "一名賽事工作人員在起跑線檢查我們的號碼。"],
+  "grab": ["grab sb's arm · grab a bite · grab sth from sb", "He grabbed my arm to stop me from falling.", "他抓住我的手臂，不讓我跌倒。"],
+  "tear": ["tear up · tear sth off · tear a page out of …", "Don't tear pages out of library books.", "不要從圖書館的書上撕下書頁。"],
+  "crawl": ["crawl across … · crawl under … · crawl to the finish line", "The exhausted runner crawled the last few meters to the finish line.", "那位筋疲力盡的跑者爬完最後幾公尺到終點。"],
+  "symbol": ["a symbol of … · national symbol · a symbol of hope", "The dove is a symbol of peace.", "鴿子是和平的象徵。"],
+  "fearless": ["a fearless leader · fearless attitude", "The fearless climber reached the top without any help.", "那位無所畏懼的登山者獨自攻上山頂。"],
+  "journalism": ["study journalism · a career in journalism · sports journalism", "She chose to study journalism because she loves writing.", "她選擇念新聞系，因為她熱愛寫作。"],
+  "bib": ["a race bib · pin on a bib · bib number", "Pin your race bib to the front of your shirt.", "把號碼布別在你的上衣前面。"],
+  "athlete": ["a professional athlete · Olympic athletes · top athletes", "Top athletes train for many hours every day.", "頂尖運動員每天訓練好幾個小時。"],
+  "determined": ["be determined to … · a determined effort · fiercely determined", "She was determined to finish the race, even with a hurt leg.", "即使腿受傷了，她仍下定決心要跑完比賽。"],
+  "quit": ["quit one's job · quit smoking · never quit", "My father quit smoking ten years ago.", "我爸十年前戒菸了。"],
+  "activist": ["a human rights activist · environmental activist · political activist", "The young activist gave a speech about climate change.", "那位年輕的倡議人士發表了一場關於氣候變遷的演講。"],
+  "campaign": ["campaign for … · campaign against … · campaign hard", "Parents campaigned for safer roads near the school.", "家長們奔走爭取學校附近更安全的道路。"],
+  "retire": ["retire from … · retire a number · retire early", "The team retired his jersey number to honor him.", "球隊讓他的背號退休以表敬意。"],
+  "confidence": ["gain confidence · lack confidence · with confidence", "Joining the speech club helped me gain confidence.", "參加演講社讓我變得更有自信。"],
+  "prejudice": ["racial prejudice · prejudice against … · overcome prejudice", "We should judge people by their actions, not by prejudice.", "我們應該以行為而非偏見來評斷一個人。"],
+  "evidence": ["evidence of … · scientific evidence · there is no evidence that …", "There is no evidence that the drink makes you smarter.", "沒有證據顯示這種飲料能讓你變聰明。"],
+  "companion": ["a travel companion · a constant companion · a loyal companion", "My dog has been my loyal companion for twelve years.", "我的狗已經忠實地陪伴我十二年了。"],
+  "emblem": ["the national emblem · an emblem of … · school emblem", "The plum blossom is the national flower and an emblem of Taiwan.", "梅花是國花，也是台灣的象徵之一。"],
+  "conviction": ["personal conviction · deep conviction · act on one's convictions", "He acted on his convictions, even when others laughed at him.", "即使別人嘲笑他，他仍按照自己的信念行事。"],
+  "stereotype": ["a gender stereotype · break a stereotype · fit the stereotype", "She broke the stereotype that girls can't be good engineers.", "她打破了女生當不了好工程師的刻板印象。"],
+  "reformer": ["a social reformer · education reformer · a great reformer", "The social reformer fought for children's right to go to school.", "那位社會改革者為孩子受教育的權利奮鬥。"],
+  "lobby": ["lobby for … · lobby against … · lobby the government", "Environmental groups lobbied the government to ban plastic straws.", "環保團體遊說政府禁用塑膠吸管。"],
+  "reconciliation": ["national reconciliation · a spirit of reconciliation · seek reconciliation", "After years of silence, the two brothers finally sought reconciliation.", "沉默多年後，兩兄弟終於尋求和解。"],
+  "boundary": ["push the boundaries · set boundaries · cross a boundary", "Great artists push the boundaries of what art can be.", "偉大的藝術家不斷突破藝術的界線。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

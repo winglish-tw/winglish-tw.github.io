@@ -410,5 +410,36 @@ const META = {
  "id": "bench",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "recess": ["at recess · during recess · morning recess", "We usually play basketball at recess.", "我們下課時間通常會去打籃球。"],
+  "alone": ["be alone · live alone · leave sb alone", "My grandfather lives alone, so we visit him every weekend.", "爺爺一個人住，所以我們每個週末都去看他。"],
+  "bench": ["sit on a bench · a park bench · a wooden bench", "An old man was feeding birds from a park bench.", "一位老先生坐在公園長椅上餵鳥。"],
+  "playground": ["in the playground · a school playground · playground equipment", "The children ran to the playground as soon as the bell rang.", "鐘聲一響，孩子們就衝向操場。"],
+  "lonely": ["feel lonely · a lonely life · lonely old people", "I felt lonely during my first week at the new school.", "在新學校的第一個星期，我覺得很孤單。"],
+  "principal": ["the school principal · the principal's office", "The principal gave a short speech at the opening ceremony.", "校長在開學典禮上簡短致詞。"],
+  "bright": ["bright colors · a bright light · a bright smile", "The classroom walls are painted in bright yellow and green.", "教室的牆壁漆成鮮豔的黃色和綠色。"],
+  "continent": ["the African continent · on every continent · seven continents", "Antarctica is the coldest continent on Earth.", "南極洲是地球上最冷的一洲。"],
+  "notice": ["notice sth/sb · notice that … · fail to notice", "Did you notice that our teacher got a new haircut?", "你有注意到我們老師換新髮型了嗎？"],
+  "shy": ["shy about/with … · too shy to … · a shy smile", "He was too shy to ask the girl for her phone number.", "他太害羞，不敢跟那個女生要電話。"],
+  "unexpected": ["an unexpected visitor · an unexpected result · totally unexpected", "We had an unexpected visitor during dinner: my cousin from Canada.", "吃晚餐時來了一位不速之客：我從加拿大來的表哥。"],
+  "brochure": ["a travel brochure · pick up a brochure · a free brochure", "I picked up a free travel brochure about Hualien at the station.", "我在車站拿了一份免費的花蓮旅遊手冊。"],
+  "signal": ["send a signal · give sb a signal · a warning signal", "The coach gave us a signal to start running.", "教練對我們打了開始跑的手勢。"],
+  "install": ["install an app · install a camera · install new windows", "The school installed air conditioners in every classroom last summer.", "學校去年夏天在每間教室都裝了冷氣。"],
+  "invite": ["invite sb to … · invite sb for dinner", "Jenny invited the whole class to her birthday party.", "Jenny 邀請全班參加她的生日派對。"],
+  "absent": ["absent from school · be marked absent", "Tom was absent from school for three days because of the flu.", "Tom 因為流感，有三天沒來上學。"],
+  "solve": ["solve a problem · solve a puzzle · solve a mystery", "It took me an hour to solve the last math problem.", "我花了一個小時才解出最後一題數學。"],
+  "kindness": ["an act of kindness · show kindness to sb · out of kindness", "A small act of kindness can change someone's whole day.", "一個小小的善舉就能改變別人的一整天。"],
+  "exclusion": ["social exclusion · exclusion from … · to the exclusion of", "Social exclusion at school can hurt a child as much as physical bullying.", "在學校被排擠，對孩子的傷害可能和肢體霸凌一樣大。"],
+  "activate": ["activate an alarm · activate one's account · activate a card", "You need to activate your new credit card before using it.", "新的信用卡要先開卡才能使用。"],
+  "distressing": ["a distressing experience · deeply distressing · distressing news", "Losing her pet dog was a deeply distressing experience for her.", "失去愛犬對她來說是非常痛苦的經歷。"],
+  "deliberately": ["deliberately ignore · deliberately avoid", "He deliberately sat at the back so the teacher wouldn't call on him.", "他故意坐在最後面，免得老師點他起來。"],
+  "underlying": ["the underlying cause · underlying problem · underlying reason", "Stress is often the underlying cause of poor sleep.", "壓力常常是睡不好的根本原因。"],
+  "initiative": ["launch an initiative · a new initiative · take the initiative", "The city launched a new initiative to plant 10,000 trees.", "市政府推動一項種一萬棵樹的新計畫。"],
+  "empower": ["empower sb to do sth · empower women · feel empowered", "Good teachers empower students to think for themselves.", "好老師能讓學生有能力獨立思考。"],
+  "objection": ["raise an objection · have no objection to · strong objection", "Nobody raised any objection to the new class rules.", "沒有人對新的班規提出反對意見。"],
+  "empathy": ["show empathy · feel empathy for · a lack of empathy", "Reading novels can help us develop empathy for people unlike ourselves.", "讀小說能幫助我們對跟自己不同的人產生同理心。"],
+  "counterpart": ["one's counterpart in … · foreign counterpart", "The Taiwanese minister met his Japanese counterpart in Tokyo.", "台灣的部長在東京與日本的對口部長會面。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

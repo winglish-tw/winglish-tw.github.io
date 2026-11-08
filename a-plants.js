@@ -302,5 +302,42 @@ const META = {
  fact:"研究人員把植物的錄音放慢、降低音調後，聽起來就像有人在捏氣泡紙，啵、啵、啵！",
  next:{title:"Hotter Than the Sun", href:"read.html#lightning"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "scientist": ["a team of scientists · a young scientist · scientists believe", "A team of scientists is studying the coral reefs near Kenting.", "一組科學家正在研究墾丁附近的珊瑚礁。"],
+  "microphone": ["speak into the microphone · a wireless microphone · hold a microphone", "Please speak into the microphone so everyone can hear you.", "請對著麥克風說話，讓大家都聽得到。"],
+  "stem": ["a flower stem · a long stem · cut the stem", "Cut the stems of the roses before you put them in water.", "玫瑰放進水裡前先修剪花莖。"],
+  "healthy": ["healthy plants · stay healthy · a healthy lifestyle", "Healthy plants have bright green leaves.", "健康的植物葉子是鮮綠色的。"],
+  "thirsty": ["get thirsty · thirsty plants · feel thirsty", "Plants get thirsty quickly in hot summer weather.", "植物在炎熱的夏天很快就會缺水。"],
+  "insect": ["insects eat … · attract insects · insect sprays", "The bright flowers attract bees and other insects.", "鮮豔的花朵吸引蜜蜂和其他昆蟲。"],
+  "program": ["a computer program · write a program · run a program", "My brother wrote a computer program that plays chess.", "我哥寫了一個會下棋的電腦程式。"],
+  "farmer": ["a rice farmer · farmers grow … · local farmers", "Local farmers sell their vegetables at the Sunday market.", "當地農夫在星期天的市集賣他們的蔬菜。"],
+  "silent": ["remain silent · silent reading · fall silent", "The whole room fell silent when the principal walked in.", "校長一走進來，整個房間都安靜下來。"],
+  "publish": ["publish a book · publish a study · be published in …", "The study was published in a famous science journal.", "那篇研究發表在一本知名的科學期刊上。"],
+  "soundproof": ["a soundproof room · soundproof windows · soundproof walls", "The singer recorded her album in a soundproof room.", "那位歌手在隔音室錄製專輯。"],
+  "ultrasonic": ["ultrasonic sound · ultrasonic waves · ultrasonic cleaner", "Bats use ultrasonic sounds to find insects in the dark.", "蝙蝠用超音波在黑暗中找昆蟲。"],
+  "striking": ["a striking difference · a striking example · striking beauty", "There is a striking difference between the two sisters.", "那兩姊妹之間有著顯著的差異。"],
+  "stressed": ["feel stressed · stressed out · stressed plants", "I always feel stressed before final exams.", "期末考前我總是覺得壓力很大。"],
+  "greenhouse": ["greenhouse gases · greenhouse effect · grow in a greenhouse", "These tomatoes were grown in a greenhouse.", "這些番茄是在溫室裡種的。"],
+  "frequency": ["high frequency · low frequency · radio frequency", "Dogs can hear sounds at a much higher frequency than humans.", "狗能聽到比人類高得多的頻率的聲音。"],
+  "bubble": ["air bubbles · soap bubbles · blow bubbles", "The kids blew soap bubbles in the park.", "孩子們在公園吹肥皂泡泡。"],
+  "species": ["plant species · different species · species of bird", "Taiwan has over 4,000 species of plants.", "台灣有超過四千種植物。"],
+  "visible": ["clearly visible · visible to the naked eye · become visible", "On a clear day, the mountains are visible from Taipei 101.", "天氣晴朗時，從台北 101 可以看見那些山。"],
+  "crop": ["crop yields · harvest crops · protect crops", "Farmers use nets to protect their crops from birds.", "農夫用網子保護作物不被鳥吃。"],
+  "notion": ["the notion that … · a strange notion · have no notion of …", "The notion that girls are bad at math is simply wrong.", "女生數學不好的這種想法根本是錯的。"],
+  "relegate": ["be relegated to … · relegate sb to a minor role", "After the new phone came out, the old model was relegated to the bargain bin.", "新手機推出後，舊機型被打入特價區。"],
+  "folklore": ["Taiwanese folklore · in folklore · local folklore", "In Taiwanese folklore, the Moon Festival is linked to the story of Chang'e.", "在台灣民間傳說中，中秋節和嫦娥的故事有關。"],
+  "credibility": ["lose credibility · gain credibility · damage one's credibility", "The news site lost credibility after it published fake stories.", "那個新聞網站刊登假新聞之後就失去了公信力。"],
+  "drought": ["severe drought · a period of drought · drought-resistant", "Cactuses are drought-resistant plants.", "仙人掌是耐旱植物。"],
+  "sever": ["sever a cable · sever ties with … · severed nerve", "The storm severed the power cable to the village.", "暴風雨切斷了通往村莊的電纜。"],
+  "barrage": ["a barrage of questions · a barrage of criticism", "The singer faced a barrage of questions from reporters.", "那位歌手面對記者連珠砲似的提問。"],
+  "airborne": ["airborne diseases · airborne particles · become airborne", "Some viruses are airborne and spread when people cough.", "有些病毒會經由空氣傳播，在人咳嗽時擴散。"],
+  "perceive": ["perceive danger · perceive sound · perceive sth as a threat", "Animals can perceive danger long before humans can.", "動物能比人類早很久察覺到危險。"],
+  "eavesdrop": ["eavesdrop on sb · eavesdrop on a conversation", "It's rude to eavesdrop on other people's conversations.", "偷聽別人說話很沒禮貌。"],
+  "cavitation": ["cause cavitation · cavitation bubbles", "Cavitation can damage a ship's propeller over time.", "空蝕作用久了會損壞船的螺旋槳。"],
+  "distinguish": ["distinguish between · distinguish A from B · hard to distinguish", "Can you distinguish real flowers from fake ones?", "你分得出真花和假花嗎？"],
+  "wilt": ["plants wilt · wilt in the heat · wilting flowers", "The flowers wilted in the hot sun.", "花在烈日下枯萎了。"],
+  "tranquil": ["a tranquil lake · tranquil atmosphere · peaceful and tranquil", "We spent a tranquil afternoon by the lake.", "我們在湖邊度過一個寧靜的下午。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

@@ -302,5 +302,44 @@ const META = {
  fact:"番茄節當天，很多店家會在牆壁和門窗上鋪大塊塑膠布，免得被番茄汁弄髒；參加的人也常戴上泳鏡保護眼睛。",
  next:{title:"Can Plants Talk?", href:"read.html#plants"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "festival": ["a music festival · the Dragon Boat Festival · celebrate a festival", "We eat zongzi during the Dragon Boat Festival.", "我們在端午節吃粽子。"],
+  "throw": ["throw a ball · throw sth at sb · throw away", "Don't throw stones at the dogs.", "不要對狗丟石頭。"],
+  "truck": ["a delivery truck · drive a truck · a garbage truck", "A big delivery truck was parked outside our school.", "一輛大貨車停在我們學校外面。"],
+  "ripe": ["ripe fruit · ripe bananas · not ripe yet", "These mangoes aren't ripe yet — they're still green.", "這些芒果還沒熟，還是綠的。"],
+  "last": ["last for hours · last a long time · last until …", "The typhoon lasted for two days.", "颱風持續了兩天。"],
+  "parade": ["a street parade · march in a parade · watch the parade", "We watched the parade from the balcony.", "我們從陽台觀看遊行。"],
+  "grab": ["grab a seat · grab a handful of … · grab sth quickly", "Grab a seat — the movie is about to start.", "快找個位子坐，電影要開始了。"],
+  "tradition": ["a family tradition · follow a tradition · break with tradition", "It's a family tradition to eat hot pot on New Year's Eve.", "除夕吃火鍋是我們家的傳統。"],
+  "squash": ["squash a bug · get squashed · squash sth flat", "My sandwich got squashed at the bottom of my bag.", "我的三明治在包包底部被壓扁了。"],
+  "signal": ["on a signal · a starting signal · send a signal", "The race began at the signal of a gunshot.", "槍聲一響，比賽就開始了。"],
+  "transform": ["transform A into B · transform the city · transform one's life", "A few lights and plants transformed the plain room into a cozy café.", "幾盞燈和幾株植物就把那間平凡的房間變成溫馨的咖啡館。"],
+  "narrow": ["a narrow street · a narrow escape · narrow down", "The old town is full of narrow streets.", "老城區到處是狹窄的街道。"],
+  "weapon": ["use sth as a weapon · nuclear weapons · carry a weapon", "Some animals use their tails as a weapon.", "有些動物把尾巴當作武器。"],
+  "ban": ["ban sth · ban sb from … · be banned", "Smoking is banned in all public buildings.", "所有公共建築都禁止吸菸。"],
+  "recognize": ["be officially recognized · recognize sb's efforts · widely recognized", "The festival was officially recognized as a national event.", "這個節慶被正式認可為全國性活動。"],
+  "greasy": ["greasy food · greasy hands · greasy hair", "I can't eat too much greasy food — it makes my stomach hurt.", "我不能吃太多油膩的食物，會胃痛。"],
+  "overripe": ["overripe bananas · overripe fruit", "Overripe bananas are perfect for making banana bread.", "過熟的香蕉最適合做香蕉蛋糕。"],
+  "participant": ["a willing participant · participants must … · the number of participants", "All participants must wear safety goggles.", "所有參加者都必須戴護目鏡。"],
+  "tear": ["tear sth apart · tear sth to pieces · tear off", "The dog tore my homework to pieces.", "狗把我的作業撕成碎片。"],
+  "resident": ["local residents · a permanent resident · residents of …", "Local residents complained about the noise from the bar.", "當地居民抱怨酒吧的噪音。"],
+  "limited": ["limited time · a limited number of … · limited edition", "Only a limited number of tickets are available.", "只有限量的票可以買。"],
+  "encourage": ["encourage sb to do sth · be encouraged by … · strongly encourage", "My teacher encouraged me to enter the writing contest.", "我的老師鼓勵我參加作文比賽。"],
+  "frenzied": ["a frenzied crowd · frenzied activity · in a frenzied way", "Shoppers rushed into the store in a frenzied way when the sale began.", "特價一開始，購物者瘋狂地衝進店裡。"],
+  "pelt": ["pelt sb with sth · pelting rain", "The kids pelted each other with snowballs.", "孩子們互相丟雪球。"],
+  "originate": ["originate in/from … · originate as …", "The game of chess originated in India.", "西洋棋起源於印度。"],
+  "scuffle": ["a brief scuffle · break out into a scuffle · a scuffle with sb", "A brief scuffle broke out between two fans after the game.", "比賽結束後，兩名球迷之間爆發短暫的扭打。"],
+  "ammunition": ["run out of ammunition · live ammunition · give sb ammunition", "His mistake gave his opponents ammunition to attack him.", "他的失誤給了對手攻擊他的把柄。"],
+  "quell": ["quell a riot · quell fears · quell rumors", "The company tried to quell rumors that it was closing.", "那家公司試圖平息它要關門的謠言。"],
+  "futile": ["a futile attempt · prove futile · it is futile to …", "It was futile to argue with him; he never changes his mind.", "跟他爭論是白費力氣，他從不改變主意。"],
+  "anarchic": ["anarchic humor · an anarchic situation · anarchic scenes", "The comedy show is famous for its anarchic humor.", "那個喜劇節目以無厘頭的幽默聞名。"],
+  "protocol": ["safety protocol · follow protocol · a breach of protocol", "All workers must follow safety protocols in the lab.", "所有人員在實驗室都必須遵守安全規範。"],
+  "commence": ["commence work · the ceremony commences · commence on …", "The graduation ceremony will commence at 10 a.m.", "畢業典禮將於上午十點開始。"],
+  "deem": ["deem sth necessary · be deemed unsafe · deem it appropriate", "The old bridge was deemed unsafe and closed to traffic.", "那座老橋被認定為不安全，禁止通行。"],
+  "refrain": ["refrain from doing sth · kindly refrain from …", "Please refrain from talking during the performance.", "表演期間請勿交談。"],
+  "infrastructure": ["public infrastructure · invest in infrastructure · transport infrastructure", "The government plans to invest more in rail infrastructure.", "政府計畫在鐵路基礎設施上投入更多資金。"],
+  "mayhem": ["cause mayhem · total mayhem · scenes of mayhem", "When the monkeys got into the kitchen, it was total mayhem.", "猴子跑進廚房的時候，簡直是一場大混亂。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

@@ -220,5 +220,44 @@ const META = {
  fact:"日清在大阪池田和神奈川橫濱都有杯麵博物館，遊客可以自己設計杯麵的杯子、挑選湯頭和配料，做一個獨一無二的杯麵帶回家。",
  next:{title:"The World's Biggest Mirror", href:"read.html#uyuni"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "instant": ["instant noodles · instant coffee · an instant success", "We ate instant noodles every night during exam week.", "考試週我們每天晚上都吃泡麵。"],
+  "noodle": ["a bowl of noodles · beef noodles · cook noodles", "My favorite food is beef noodle soup.", "我最喜歡的食物是牛肉麵。"],
+  "invent": ["invent a machine · be invented by … · invent a game", "The telephone was invented by Alexander Graham Bell.", "電話是貝爾發明的。"],
+  "hungry": ["feel hungry · go hungry · hungry for …", "No child in this town should go hungry.", "這個鎮上不該有任何孩子挨餓。"],
+  "shed": ["a garden shed · a tool shed · a wooden shed", "Dad keeps all his tools in the shed behind the house.", "爸爸把所有工具放在屋後的小屋裡。"],
+  "fry": ["fry an egg · deep-fry · fried chicken", "Can you fry an egg for me?", "你可以幫我煎一顆蛋嗎？"],
+  "tiny": ["tiny holes · a tiny amount · tiny bubbles", "Sponges have thousands of tiny holes that hold water.", "海綿有數千個能吸水的小洞。"],
+  "hole": ["dig a hole · a hole in … · fill a hole", "There's a hole in my sock.", "我的襪子破了一個洞。"],
+  "soft": ["soft bread · a soft voice · soft and fluffy", "The pancakes were soft and fluffy.", "鬆餅又軟又蓬鬆。"],
+  "astronaut": ["a female astronaut · astronaut training · astronauts on board", "Astronauts on board the space station exercise every day.", "太空站上的太空人每天都要運動。"],
+  "scarce": ["food is scarce · scarce resources · jobs are scarce", "After the war, food was scarce and expensive.", "戰後糧食短缺又昂貴。"],
+  "bankrupt": ["go bankrupt · be declared bankrupt", "The restaurant went bankrupt after only two years.", "那家餐廳只開了兩年就破產了。"],
+  "experiment": ["experiment with … · experiment on … · experiment freely", "The chef likes to experiment with new flavors.", "那位主廚喜歡嘗試新口味。"],
+  "breakthrough": ["a technological breakthrough · achieve a breakthrough · a big breakthrough", "The new battery is a big breakthrough for electric cars.", "這款新電池對電動車來說是一大突破。"],
+  "countless": ["countless times · countless people · countless hours", "I've watched that movie countless times.", "那部電影我已經看過無數次了。"],
+  "launch": ["launch a product · launch a campaign · launch a rocket", "The company will launch its new phone next month.", "這家公司下個月將推出新手機。"],
+  "notice": ["notice a sign · hardly notice · notice the difference", "Can you notice the difference between these two photos?", "你看得出這兩張照片的差別嗎？"],
+  "inspired": ["be inspired by … · feel inspired · inspired to do sth", "The song was inspired by the singer's trip to Japan.", "這首歌的靈感來自歌手的日本之旅。"],
+  "vacuum": ["in a vacuum · a vacuum cleaner · vacuum-packed", "Sound cannot travel in a vacuum.", "聲音無法在真空中傳播。"],
+  "float": ["float in space · float around · float to the top", "Bubbles floated to the top of the glass of soda.", "氣泡浮到汽水杯的頂端。"],
+  "aboard": ["aboard a ship · all aboard · aboard the train", "There were 300 passengers aboard the ship.", "那艘船上有三百名乘客。"],
+  "processed": ["processed food · processed meat · highly processed", "Doctors say we should eat less processed meat, like sausages.", "醫生說我們應該少吃加工肉品，例如香腸。"],
+  "colonial": ["colonial rule · colonial period · colonial buildings", "Tamsui still has many colonial buildings from the 1800s.", "淡水還留有許多十九世紀的殖民時期建築。"],
+  "struck": ["be struck by … · struck by the beauty of …", "I was struck by how friendly the local people were.", "當地人的友善讓我印象深刻。"],
+  "queue": ["queue up · queue for … · a long queue", "People queued for hours to buy the new sneakers.", "人們排隊好幾個小時就為了買新球鞋。"],
+  "convince": ["convince sb of sth · convince sb to … · be convinced that …", "She convinced me to try skydiving.", "她說服我去嘗試跳傘。"],
+  "collapse": ["the company collapsed · the bridge collapsed · collapse in exhaustion", "Many small banks collapsed during the financial crisis.", "金融危機期間許多小銀行倒閉了。"],
+  "modest": ["a modest house · a modest income · modest success", "They live in a modest house near the market.", "他們住在市場附近一間樸素的房子裡。"],
+  "inspiration": ["a source of inspiration · draw inspiration from · find inspiration", "The artist draws inspiration from the mountains of Taiwan.", "那位藝術家從台灣的山林中汲取靈感。"],
+  "moisture": ["absorb moisture · moisture content · keep in moisture", "Rice in the salt shaker absorbs moisture and keeps the salt dry.", "鹽罐裡放米可以吸收濕氣，保持鹽巴乾燥。"],
+  "microscopic": ["microscopic organisms · microscopic holes · at a microscopic level", "Water is full of microscopic organisms you can't see.", "水裡充滿了你看不見的微生物。"],
+  "absorb": ["absorb water · absorb information · absorb the shock", "Good running shoes absorb the shock when your feet hit the ground.", "好的跑鞋能在腳落地時吸收衝擊力。"],
+  "soar": ["prices soar · soar into the sky · sales soar", "House prices in Taipei have soared over the last twenty years.", "台北的房價在過去二十年飆漲。"],
+  "masterstroke": ["a marketing masterstroke · a political masterstroke", "Giving away free samples was a marketing masterstroke.", "免費贈送試用品是一記行銷高招。"],
+  "retreat": ["retreat into … · retreat from … · beat a retreat", "The shy cat retreated under the sofa when guests arrived.", "客人來時，那隻害羞的貓退回沙發底下。"],
+  "philosophy": ["a philosophy of life · business philosophy · personal philosophy", "Her philosophy of life is simple: work hard and be kind.", "她的人生觀很簡單：努力工作，待人和善。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

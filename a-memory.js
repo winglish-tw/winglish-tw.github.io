@@ -403,5 +403,36 @@ const META = {
  "id": "memory",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "memory": ["a good memory · in memory of · childhood memories", "My grandmother has a very good memory for names.", "我奶奶記人名的記性非常好。"],
+  "remember": ["remember to do sth · remember doing sth · if I remember correctly", "Remember to bring your swimsuit tomorrow.", "明天記得帶泳衣。"],
+  "nonsense": ["talk nonsense · complete nonsense · nonsense words", "Don't listen to him — he's talking nonsense.", "別聽他的，他在胡說八道。"],
+  "quickly": ["quickly learn · forget quickly · act quickly", "Children learn new languages quickly.", "小孩子學新語言學得很快。"],
+  "pattern": ["a pattern of … · see a pattern · follow a pattern", "Can you see the pattern in these numbers: 2, 4, 8, 16?", "你看得出這些數字的規律嗎：二、四、八、十六？"],
+  "curve": ["a steep curve · learning curve · a curve in the road", "Learning to drive has a steep learning curve.", "學開車一開始要學的東西很多。"],
+  "review": ["review a lesson · review for a test · review one's notes", "I review my notes for ten minutes every night.", "我每天晚上花十分鐘複習筆記。"],
+  "recall": ["recall a name · can't recall · recall that …", "I can't recall where I put my keys.", "我想不起來我把鑰匙放哪裡了。"],
+  "brain": ["train one's brain · the brain stores … · brain power", "Learning a new skill keeps your brain young.", "學新技能能讓大腦保持年輕。"],
+  "measure": ["measure progress · measure one's height · be measured in …", "We measure progress by how many words you can use, not just memorize.", "我們衡量進步是看你能用多少字，而不只是背多少字。"],
+  "syllable": ["a stressed syllable · a two-syllable word · the first syllable", "In the word \"banana,\" the stress is on the second syllable.", "banana 這個字的重音在第二個音節。"],
+  "memorize": ["memorize words · memorize a poem · memorize by heart", "We had to memorize a short poem for English class.", "英文課我們得背一首短詩。"],
+  "graph": ["a bar graph · line graph · draw a graph", "The line graph shows how temperatures changed over the year.", "這張折線圖顯示一年中氣溫的變化。"],
+  "considerably": ["considerably more · considerably better · increase considerably", "Prices are considerably higher in Taipei than in the countryside.", "台北的物價比鄉下高出許多。"],
+  "cram": ["cram for an exam · cram school · cram A into B", "He stayed up all night cramming for his history test.", "他熬夜一整晚臨時抱佛腳準備歷史考試。"],
+  "confident": ["feel confident · be confident that … · confident about …", "I feel confident about tomorrow's speech.", "我對明天的演講很有信心。"],
+  "familiar": ["be familiar with … · look familiar · a familiar face", "That man looks familiar — have we met before?", "那個男人看起來好眼熟，我們以前見過嗎？"],
+  "illusion": ["an optical illusion · under the illusion that … · create an illusion", "Mirrors can create the illusion of a bigger room.", "鏡子可以營造房間比較大的錯覺。"],
+  "subjective": ["a subjective opinion · highly subjective · subjective experience", "Taste in music is highly subjective.", "對音樂的喜好非常主觀。"],
+  "interval": ["at intervals · regular intervals · an interval between …", "Take the medicine at regular intervals, every eight hours.", "定時服藥，每隔八小時一次。"],
+  "steep": ["a steep hill · a steep drop · a steep rise in prices", "There was a steep rise in egg prices this winter.", "今年冬天蛋價急劇上漲。"],
+  "initial": ["initial reaction · initial stage · initial plan", "My initial reaction was surprise, but then I felt happy.", "我最初的反應是驚訝，但後來覺得很開心。"],
+  "gradual": ["a gradual change · gradual improvement · gradual decline", "There has been a gradual improvement in her health.", "她的健康狀況逐漸好轉。"],
+  "deliberately": ["deliberately practice · deliberately space out · deliberately choose", "Good learners deliberately test themselves instead of just rereading.", "好的學習者會刻意自我測驗，而不只是重讀。"],
+  "retain": ["retain information · retain new words · retain customers", "We retain more information when we explain it to someone else.", "當我們把東西講給別人聽時，記住的資訊更多。"],
+  "distribute": ["distribute evenly · distribute food · distribute leaflets", "Volunteers distributed food to people after the earthquake.", "地震後志工把食物分發給民眾。"],
+  "retrieval": ["information retrieval · retrieval practice · memory retrieval", "Retrieval practice, like flashcards, is one of the best ways to study.", "提取練習，例如字卡，是最好的讀書方法之一。"],
+  "fluency": ["reading fluency · speak with fluency · fluency in …", "Reading aloud every day can improve your reading fluency.", "每天朗讀能增進你的閱讀流暢度。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

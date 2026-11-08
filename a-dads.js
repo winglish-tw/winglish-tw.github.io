@@ -525,5 +525,35 @@ const META = {
  "id": "dads",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "stroller": ["push a stroller · a baby stroller · fold a stroller", "A young father was pushing a stroller through the park.", "一位年輕爸爸推著嬰兒車穿過公園。"],
+  "parental": ["parental leave · parental consent · parental love", "You need parental consent to join the school trip.", "參加校外教學需要家長同意。"],
+  "leave": ["be on leave · take leave · sick leave · maternity leave", "My teacher is on sick leave this week, so we have a substitute.", "我們老師這週請病假，所以有代課老師。"],
+  "paid": ["paid leave · a paid job · well paid", "Workers in Taiwan get at least seven days of paid leave a year.", "台灣的勞工一年至少有七天的有薪假。"],
+  "share": ["share A with B · share housework · share the cost", "My brother and I share a bedroom.", "我和哥哥共用一間臥室。"],
+  "percent": ["… percent of · a 10 percent increase", "About 70 percent of the Earth's surface is covered by water.", "地球表面大約百分之七十被水覆蓋。"],
+  "government": ["the central government · local government · government policy", "The government plans to build more public housing.", "政府計畫興建更多社會住宅。"],
+  "diaper": ["change a diaper · disposable diapers · wear a diaper", "My uncle learned how to change a diaper when his baby was born.", "我舅舅在寶寶出生後學會了換尿布。"],
+  "unemployed": ["become unemployed · the unemployed · long-term unemployed", "He became unemployed when the factory closed.", "工廠關閉後他就失業了。"],
+  "maternity": ["maternity leave · maternity ward · maternity clothes", "She will start her maternity leave next month.", "她下個月開始請產假。"],
+  "responsibility": ["take responsibility for · a sense of responsibility · share responsibility", "You have to take responsibility for your own mistakes.", "你必須為自己的錯誤負責。"],
+  "available": ["available to sb · readily available · available for …", "Free Wi-Fi is available to all visitors in the library.", "圖書館提供所有訪客免費 Wi-Fi。"],
+  "reserve": ["reserve a table · reserve a seat · be reserved for", "This seat is reserved for elderly and pregnant passengers.", "這個座位保留給年長者和孕婦乘客。"],
+  "transfer": ["transfer money · transfer to another school · transfer A to B", "She transferred to a school in Taichung last year.", "她去年轉學到台中的一所學校。"],
+  "extend": ["extend a deadline · extend a visa · extend the stay", "The teacher agreed to extend the deadline by two days.", "老師同意把截止日延後兩天。"],
+  "policy": ["a new policy · government policy · introduce a policy", "The company introduced a new policy that lets staff work from home.", "公司推出新政策，讓員工可以在家工作。"],
+  "attitude": ["a positive attitude · change one's attitude · attitude toward(s)", "A positive attitude can help you get through hard times.", "積極的態度能幫你度過難關。"],
+  "phenomenon": ["a natural phenomenon · a social phenomenon · a global phenomenon", "The northern lights are a beautiful natural phenomenon.", "北極光是一種美麗的自然現象。"],
+  "coincidence": ["by coincidence · pure coincidence · What a coincidence!", "By coincidence, my new neighbor went to the same high school as me.", "真巧，我的新鄰居和我念同一所高中。"],
+  "compensate": ["compensate sb for sth · compensate for a loss", "The airline compensated passengers for the long delay.", "航空公司因長時間延誤賠償了乘客。"],
+  "egalitarian": ["an egalitarian society · egalitarian values · egalitarian marriage", "Many young couples want an egalitarian marriage where chores are shared equally.", "許多年輕夫妻想要一段家事平均分擔的平等婚姻。"],
+  "entrenched": ["deeply entrenched · entrenched attitudes · entrenched in …", "Some gender stereotypes are deeply entrenched in our culture.", "有些性別刻板印象在我們的文化中根深蒂固。"],
+  "incentive": ["an incentive to do sth · a tax incentive · provide an incentive", "The city offers a cash incentive for people who buy electric scooters.", "市政府提供現金誘因給購買電動機車的人。"],
+  "quota": ["a quota for … · meet a quota · import quota", "The salesman worked late to meet his monthly sales quota.", "那名業務員工作到很晚，為了達成每月的業績配額。"],
+  "forfeit": ["forfeit the right to … · forfeit a game · forfeit a deposit", "If you cancel less than 24 hours before, you will forfeit your deposit.", "如果你在不到二十四小時前取消，訂金就會被沒收。"],
+  "persistent": ["a persistent cough · persistent problem · persistent effort", "See a doctor if you have a persistent cough.", "如果你一直咳嗽不停，就去看醫生。"],
+  "underlie": ["underlie a problem · the ideas that underlie …", "Poverty and poor education often underlie crime in big cities.", "貧窮和教育不足往往是大城市犯罪的根本原因。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

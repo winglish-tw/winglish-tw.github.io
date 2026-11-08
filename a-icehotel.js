@@ -315,5 +315,43 @@ const META = {
  fact:"冰旅館裡甚至有一座用冰蓋的小教堂，有人特地跑到北極圈在冰裡舉行婚禮！",
  next:{title:"Why Does Popcorn Pop?", href:"read.html#popcorn"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "imagine": ["imagine doing sth · imagine that … · hard to imagine", "Can you imagine living without a phone for a week?", "你能想像一個星期沒有手機的生活嗎？"],
+  "village": ["a mountain village · a remote village · the whole village", "The whole village came out to watch the festival.", "全村的人都出來看慶典。"],
+  "block": ["a block of ice · a block of wood · building blocks", "The artist carved a swan out of a huge block of ice.", "那位藝術家用一大塊冰雕出一隻天鵝。"],
+  "frozen": ["frozen food · a frozen lake · frozen solid", "We bought some frozen dumplings for dinner.", "我們買了一些冷凍水餃當晚餐。"],
+  "river": ["cross a river · along the river · the river flows", "We rode our bikes along the river on Sunday.", "星期天我們沿著河邊騎腳踏車。"],
+  "design": ["design a house · be designed for … · design a logo", "This backpack is designed for long hikes.", "這個背包是為長途健行設計的。"],
+  "melt": ["melt in the sun · ice melts · melt butter", "Eat your ice cream before it melts!", "趁冰淇淋融化前趕快吃！"],
+  "guest": ["a hotel guest · invite guests · a special guest", "Hotel guests can use the swimming pool for free.", "飯店房客可以免費使用游泳池。"],
+  "below": ["below zero · below the surface · below average", "Last night the temperature dropped below zero.", "昨晚氣溫降到零度以下。"],
+  "decade": ["for decades · over the past decade · a decade ago", "Smartphones have changed our lives over the past decade.", "過去十年，智慧型手機改變了我們的生活。"],
+  "disappear": ["disappear into … · slowly disappear · disappear from the market", "The sun slowly disappeared behind the mountains.", "太陽慢慢消失在山後面。"],
+  "rebuild": ["rebuild a bridge · completely rebuild · rebuild from scratch", "The old bridge was completely rebuilt after the flood.", "那座老橋在水災後完全重建了。"],
+  "massive": ["a massive rock · massive damage · on a massive scale", "A massive rock fell onto the road after the earthquake.", "地震後一塊巨大的石頭掉到路上。"],
+  "harvest": ["harvest rice · harvest crops · harvest tea leaves", "Farmers harvest rice twice a year in southern Taiwan.", "南台灣的農夫一年收割兩次稻米。"],
+  "store": ["store food · store data · be stored in …", "Store the milk in the fridge after you open it.", "牛奶開封後要放冰箱保存。"],
+  "construction": ["under construction · construction workers · construction site", "The new MRT line is still under construction.", "新的捷運線還在施工中。"],
+  "mixture": ["a mixture of A and B · a strange mixture", "The cake is a mixture of chocolate and banana.", "這個蛋糕是巧克力和香蕉混合做成的。"],
+  "gallery": ["an art gallery · a photo gallery · visit a gallery", "We spent the afternoon at an art gallery in Taipei.", "我們在台北的一間藝廊度過一個下午。"],
+  "suite": ["a hotel suite · a honeymoon suite · book a suite", "They booked a suite with an ocean view for their anniversary.", "他們為結婚紀念日訂了一間海景套房。"],
+  "carve": ["carve A out of B · carve wood · carve one's name", "He carved a small bear out of a piece of wood.", "他用一塊木頭刻出一隻小熊。"],
+  "cycle": ["the water cycle · the life cycle · a cycle of …", "Rain is an important part of the water cycle.", "下雨是水循環中重要的一環。"],
+  "permanence": ["a sense of permanence · the permanence of …", "Stone buildings give a sense of permanence that wooden ones lack.", "石造建築給人一種木造建築沒有的永久感。"],
+  "embrace": ["embrace change · embrace an idea · embrace new technology", "Older people are slowly embracing online shopping.", "年長者正慢慢接受網路購物。"],
+  "dismantle": ["dismantle a stage · dismantle a machine · dismantle a system", "Workers dismantled the concert stage overnight.", "工人一夜之間就把演唱會舞台拆除了。"],
+  "paradoxically": ["Paradoxically, … · paradoxically enough", "Paradoxically, the more choices we have, the harder it is to feel satisfied.", "弔詭的是，選擇愈多，我們反而愈難感到滿足。"],
+  "colossal": ["a colossal statue · a colossal waste · colossal amount", "Building the stadium was a colossal waste of money.", "蓋那座體育場是天大的浪費。"],
+  "dormant": ["lie dormant · a dormant volcano · remain dormant", "The seeds can lie dormant in the desert for years until it rains.", "種子可以在沙漠裡休眠好幾年，直到下雨。"],
+  "plunge": ["prices plunge · plunge into … · temperatures plunge", "Temperatures plunged to minus 20 degrees overnight.", "氣溫一夜之間驟降到零下二十度。"],
+  "resume": ["resume work · resume one's studies · service resumes", "Train service resumed after the typhoon passed.", "颱風過後，火車恢復行駛。"],
+  "lure": ["lure sb into/to … · lure customers · be lured by", "Low prices lure many shoppers to the night market.", "低廉的價格吸引許多人到夜市購物。"],
+  "incarnation": ["the latest incarnation · in a previous incarnation", "The latest incarnation of the game has better graphics and new levels.", "這款遊戲的最新版本有更好的畫面和新關卡。"],
+  "cocoon": ["be cocooned in … · cocoon oneself", "The baby was cocooned in a soft blanket.", "寶寶被包裹在一條柔軟的毯子裡。"],
+  "ephemeral": ["ephemeral beauty · an ephemeral moment · ephemeral fame", "Cherry blossoms are loved for their ephemeral beauty.", "櫻花因其短暫的美而受人喜愛。"],
+  "captivate": ["captivate an audience · be captivated by …", "The young pianist captivated the audience with her performance.", "那位年輕的鋼琴家以她的演奏迷住了觀眾。"],
+  "impermanence": ["the impermanence of life · accept impermanence", "Buddhism teaches us to accept the impermanence of all things.", "佛教教導我們接受萬物的無常。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

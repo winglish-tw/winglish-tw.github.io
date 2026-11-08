@@ -306,5 +306,41 @@ const META = {
  fact:"月亮永遠用同一面對著地球，所以站在地球上的人，從來沒有直接看過月亮的背面！",
  next:{title:"The 85-Year Secret to Happiness", href:"read.html#happiness"}
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "slowly": ["walk slowly · slowly change · slowly but surely", "Turtles walk slowly but they live a long time.", "烏龜走得很慢，但活得很久。"],
+  "astronaut": ["become an astronaut · astronauts in space · train astronauts", "She dreams of becoming an astronaut one day.", "她夢想有一天成為太空人。"],
+  "mirror": ["look in the mirror · a full-length mirror · a mirror image", "He looked in the mirror and fixed his hair.", "他照鏡子整理頭髮。"],
+  "laser": ["a laser beam · laser pointer · laser surgery", "The teacher used a laser pointer during the presentation.", "老師在簡報時用了雷射筆。"],
+  "ocean": ["the Pacific Ocean · ocean waves · deep ocean", "Taiwan lies on the western edge of the Pacific Ocean.", "台灣位於太平洋的西緣。"],
+  "tide": ["high tide · low tide · the tide comes in / goes out", "At low tide, you can walk out to the small island.", "退潮時，你可以走到那座小島上。"],
+  "spin": ["the Earth's spin · spin around · go for a spin", "The dancer did a quick spin on one foot.", "舞者用單腳快速轉了一圈。"],
+  "dinosaur": ["dinosaur bones · dinosaur fossils · a dinosaur museum", "Kids love the giant dinosaur bones at the museum.", "孩子們很喜歡博物館裡巨大的恐龍骨頭。"],
+  "drift": ["drift away · drift apart · drift along", "After high school, my best friend and I slowly drifted apart.", "高中畢業後，我和最好的朋友漸漸疏遠了。"],
+  "fingernail": ["cut one's fingernails · bite one's fingernails · long fingernails", "Stop biting your fingernails when you're nervous!", "別在緊張的時候咬指甲！"],
+  "reflector": ["a bike reflector · a light reflector", "Put a reflector on your bike so drivers can see you at night.", "在腳踏車上裝反光片，晚上駕駛人才看得到你。"],
+  "lunar": ["the lunar surface · Lunar New Year · lunar calendar", "Lunar New Year is the most important holiday in Taiwan.", "農曆新年是台灣最重要的節日。"],
+  "bounce": ["bounce off · bounce a ball · bounce back", "The ball bounced off the wall and hit my head.", "球從牆上彈回來打到我的頭。"],
+  "calculate": ["calculate the cost · calculate the distance · carefully calculate", "Use your phone to calculate the total cost.", "用你的手機算出總費用。"],
+  "accuracy": ["with great accuracy · improve accuracy · the accuracy of …", "Weather apps can predict rain with great accuracy now.", "天氣應用程式現在能非常精準地預測下雨。"],
+  "gravity": ["the force of gravity · zero gravity · the law of gravity", "In zero gravity, astronauts float around the spaceship.", "在無重力狀態下，太空人在太空船裡飄來飄去。"],
+  "bulge": ["a bulge in … · bulge out", "There was a strange bulge in his jacket pocket.", "他的外套口袋有個奇怪的凸起。"],
+  "friction": ["reduce friction · create friction · friction between A and B", "Oil reduces friction between the parts of a machine.", "油能減少機器零件之間的摩擦。"],
+  "rotation": ["the Earth's rotation · crop rotation · in rotation", "The Earth's rotation gives us day and night.", "地球自轉帶給我們白天和黑夜。"],
+  "fossil": ["fossil fuels · dinosaur fossils · find a fossil", "Coal and oil are fossil fuels.", "煤和石油是化石燃料。"],
+  "recede": ["the water recedes · recede into the distance · a receding hairline", "After the flood, the water slowly receded.", "水災過後，水慢慢退去。"],
+  "pace": ["at a slow pace · keep pace with · the pace of life", "The pace of life in the countryside is much slower.", "鄉下的生活步調慢得多。"],
+  "deploy": ["deploy troops · deploy technology · deploy resources", "The city deployed extra police officers for the New Year's Eve party.", "市政府為跨年晚會部署了額外的警力。"],
+  "array": ["an array of … · a wide array · solar array", "The night market offers a wide array of snacks.", "夜市提供各式各樣的小吃。"],
+  "pulse": ["take sb's pulse · a pulse of light · a weak pulse", "The nurse took my pulse and blood pressure.", "護理師幫我量了脈搏和血壓。"],
+  "fraction": ["a small fraction · a fraction of the price · only a fraction", "I bought this jacket for a fraction of its original price.", "我用原價的一小部分買到這件外套。"],
+  "culprit": ["the real culprit · the chief culprit · find the culprit", "Wet towels were the culprit behind the bad smell in the room.", "濕毛巾是房間裡那股臭味的元兇。"],
+  "tidal": ["tidal waves · tidal energy · tidal flats", "Tidal flats are home to many crabs and birds.", "潮間帶是許多螃蟹和鳥類的家。"],
+  "transfer": ["transfer energy · transfer heat · transfer A to B", "Metal pans transfer heat quickly to the food.", "金屬鍋能很快把熱傳到食物上。"],
+  "nudge": ["nudge sb · nudge sb toward(s) … · a gentle nudge", "My friend nudged me when the teacher called my name.", "老師叫到我的名字時，朋友用手肘輕推了我一下。"],
+  "preserve": ["preserve food · preserve history · well preserved", "Salt was used to preserve fish before refrigerators existed.", "在冰箱發明前，人們用鹽保存魚。"],
+  "extinct": ["become extinct · an extinct species · extinct volcano", "The dodo became extinct in the 1600s.", "渡渡鳥在十七世紀就滅絕了。"],
+  "eclipse": ["a solar eclipse · a lunar eclipse · a total eclipse", "Never look directly at the sun during a solar eclipse.", "日蝕時千萬不要直視太陽。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();

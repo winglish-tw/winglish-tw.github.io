@@ -408,5 +408,36 @@ const META = {
  "id": "waterbear",
  "date": "2026/11/1"
 };
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ});
+const USAGE = {
+  "tough": ["tough enough to … · a tough little animal · tough conditions", "Cockroaches are tough enough to survive almost anything.", "蟑螂強悍到幾乎什麼都能熬過。"],
+  "millimeter": ["a few millimeters · millimeters long · a millimeter thick", "The ant is only about two millimeters long.", "那隻螞蟻只有大約兩公釐長。"],
+  "microscope": ["under a microscope · look through a microscope · an electron microscope", "We looked at an onion skin under a microscope in science class.", "自然課上我們用顯微鏡看洋蔥表皮。"],
+  "moss": ["green moss · covered in moss · moss grows on …", "The old stone steps were covered in green moss.", "老舊的石階上長滿了綠色青苔。"],
+  "trick": ["a clever trick · the trick to … · a magic trick", "The trick to cooking good rice is using the right amount of water.", "煮好飯的訣竅是用對水量。"],
+  "extreme": ["extreme cold · extreme conditions · go to extremes", "Polar bears can live in extreme cold.", "北極熊可以在極度寒冷中生活。"],
+  "radiation": ["exposure to radiation · harmful radiation · UV radiation", "Sunscreen protects your skin from UV radiation.", "防曬乳保護你的皮膚免受紫外線輻射傷害。"],
+  "spacecraft": ["launch a spacecraft · an unmanned spacecraft · aboard a spacecraft", "The unmanned spacecraft took photos of Mars.", "那艘無人太空船拍下了火星的照片。"],
+  "weak": ["a weak point · weak against … · grow weak", "Every team has a weak point that others can attack.", "每支隊伍都有能被攻擊的弱點。"],
+  "creature": ["a tiny creature · creatures of the deep · a strange creature", "This tiny creature can live in boiling water.", "這種微小的生物能活在滾水中。"],
+  "species": ["a species of … · endangered species · a new species", "There are more than 1,000 known species of water bears.", "已知的水熊蟲超過一千種。"],
+  "metabolism": ["a fast metabolism · slow down one's metabolism · boost metabolism", "Some people can eat a lot without gaining weight because of their fast metabolism.", "有些人吃很多也不會胖，因為他們新陳代謝很快。"],
+  "brief": ["a brief visit · a brief moment · for a brief period", "We made a brief visit to my aunt's house on the way home.", "我們在回家路上順道去阿姨家坐了一下。"],
+  "exposure": ["exposure to … · long exposure · sun exposure", "Too much sun exposure can damage your skin.", "過度日曬會傷害皮膚。"],
+  "vacuum": ["the vacuum of space · a vacuum-sealed bag", "Food in vacuum-sealed bags stays fresh much longer.", "真空包裝袋裡的食物能保鮮更久。"],
+  "revive": ["revive a tradition · revive sb · be revived", "Doctors revived the man after his heart stopped.", "那名男子心跳停止後，醫生把他救了回來。"],
+  "protein": ["a type of protein · protein-rich food · build proteins", "Fish and beans are protein-rich foods.", "魚和豆類是富含蛋白質的食物。"],
+  "indestructible": ["almost indestructible · seemingly indestructible", "My old phone seems indestructible — it has survived ten falls.", "我的舊手機好像摔不壞，已經摔過十次了。"],
+  "improbable": ["highly improbable · an improbable story · improbable as it may seem", "Improbable as it may seem, the cat found its way home after a month.", "看似不太可能，但那隻貓一個月後自己找到路回家了。"],
+  "inhabit": ["inhabit an area · be inhabited by … · inhabit the earth", "The island is inhabited only by birds and a few fishermen.", "那座島上只住著鳥和少數漁民。"],
+  "defy": ["defy logic · defy death · defy the odds", "The small team defied the odds and won the championship.", "那支小球隊跌破眾人眼鏡，贏得冠軍。"],
+  "retract": ["retract its claws · retract a statement · retract the landing gear", "Cats can retract their claws when they walk.", "貓走路時可以把爪子縮回去。"],
+  "suspended": ["suspended animation · suspended from school · be suspended in …", "The bear seemed to be in suspended animation during its winter sleep.", "那隻熊冬眠時彷彿處於假死狀態。"],
+  "lethal": ["a lethal dose · lethal weapon · potentially lethal", "Some mushrooms are potentially lethal if eaten.", "有些蘑菇吃了可能會致命。"],
+  "exterior": ["the exterior of … · a hard exterior · exterior walls", "Behind his tough exterior, he is a very kind person.", "在他強悍的外表下，他其實是個非常善良的人。"],
+  "shield": ["shield A from B · shield one's eyes · shield sb against …", "She raised her hand to shield her eyes from the sun.", "她舉起手遮住眼睛擋陽光。"],
+  "preserve": ["preserve wildlife · preserve the past · perfectly preserved", "The insect was perfectly preserved in amber.", "那隻昆蟲完好地保存在琥珀中。"],
+  "fragile": ["a fragile peace · fragile health · fragile environment", "Coral reefs are part of a fragile environment.", "珊瑚礁是脆弱生態環境的一部分。"]
+};
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
 })();
