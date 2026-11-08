@@ -57,6 +57,14 @@ table.tb{border-collapse:collapse;width:100%;margin:6px 0;font-size:16px}
 .fb.good b.t{color:var(--ok)} .fb.bad b.t{color:var(--sheet-red)}
 .fb ul{margin:4px 0 0;padding-left:1.2em}
 .done{text-align:center;font-weight:700;font-size:18px}
+.mapq figure{margin:6px 0 12px}
+.q.isMap{display:block}
+.q.isMap .note{transform:none;max-width:520px}
+.mapq .mrow{display:flex;align-items:center;justify-content:space-between;gap:10px;border:1px solid var(--mist);border-radius:10px;padding:8px 12px;margin-bottom:6px}
+.mapq .mrow b{font-weight:700}
+.mapq select{font:inherit;font-size:16px;padding:4px 10px;border-radius:8px;border:2px solid var(--ink);background:#fff;min-width:5.5em}
+.mapq .mrow.ok{background:var(--ok-soft);border-color:var(--ok)} .mapq .mrow.ok select{border-color:var(--ok);color:var(--ok);font-weight:700}
+.mapq .mrow.bad{background:var(--wrong-soft);border-color:var(--sheet-red)}
 /* 題組選單 */
 .picker{background:#fff;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 1px 0 var(--mist),0 14px 30px -20px rgba(26,34,56,.35)}
 .pk-bar{display:flex;align-items:center;gap:8px}
@@ -788,6 +796,413 @@ SETS.push({
   ]
 });
 
+const CHATBOT=`<svg viewBox="0 0 480 330" role="img" aria-label="流程圖：讀問題、預測最可能的下一個字、把字加進回答、重複預測直到回答完成；沒有查證事實的步驟">
+<defs><filter id="hand10"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="15"/><feDisplacementMap in="SourceGraphic" scale="2.4"/></filter></defs>
+<text x="240" y="22" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="15" font-weight="700" fill="#1A2238">How a Chatbot Writes an Answer</text>
+<g filter="url(#hand10)" fill="none" stroke="#1A2238" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M70 40 C160 38 270 41 350 39 C354 50 353 68 350 78 C270 80 160 77 70 79 C66 68 66 50 70 40Z" fill="#fff"/>
+ <path d="M70 108 C160 106 270 109 350 107 C354 118 353 136 350 146 C270 148 160 145 70 147 C66 136 66 118 70 108Z" fill="#DCEBF7"/>
+ <path d="M70 176 C160 174 270 177 350 175 C354 186 353 204 350 214 C270 216 160 213 70 215 C66 204 66 186 70 176Z" fill="#DCEBF7"/>
+ <path d="M70 252 C160 250 270 253 350 251 C354 262 353 280 350 290 C270 292 160 289 70 291 C66 280 66 262 70 252Z" fill="#FBE3C4"/>
+ <path d="M210 81 C211 88 209 96 210 104 M204 97 C206 99 208 101 210 105 C212 101 214 99 216 97"/>
+ <path d="M210 149 C211 156 209 164 210 172 M204 165 C206 167 208 169 210 173 C212 169 214 167 216 165"/>
+ <path d="M210 217 C211 228 209 238 210 248 M204 241 C206 243 208 245 210 249 C212 245 214 243 216 241"/>
+ <path d="M354 196 C392 194 410 176 410 160 C410 142 392 126 356 127" stroke="#4A7BB7" stroke-width="2.4"/>
+ <path d="M364 120 C361 123 358 125 355 127 C358 130 361 132 364 135" stroke="#4A7BB7" stroke-width="2.4"/>
+</g>
+<g font-family="Noto Sans TC, sans-serif" fill="#1A2238" text-anchor="middle" font-size="13.5" font-weight="700">
+ <text x="210" y="64">① It reads your question.</text>
+ <text x="210" y="132">② It predicts the most likely next word.</text>
+ <text x="210" y="200">③ It adds that word to the answer.</text>
+ <text x="210" y="276">④ It stops when the answer is complete.</text>
+ <text x="440" y="156" font-size="12" fill="#4A7BB7">repeat</text><text x="440" y="172" font-size="12" fill="#4A7BB7">② → ③</text>
+</g>
+<text x="240" y="318" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12" fill="#4A536B">(Simplified. Note: there is no step for checking whether the facts are true.)</text>
+</svg>`;
+
+const TURING=`<svg viewBox="0 0 540 200" role="img" aria-label="時間軸：1950 圖靈提出測試、1966 ELIZA、1997 深藍贏西洋棋冠軍、2016 AlphaGo 贏圍棋、2022 ChatGPT 推出">
+<defs><filter id="hand11"><feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="2" seed="8"/><feDisplacementMap in="SourceGraphic" scale="2.6"/></filter></defs>
+<g font-family="Noto Sans TC, sans-serif" fill="#1A2238" text-anchor="middle">
+<text x="270" y="20" font-size="15" font-weight="700">Turning Points in AI</text>
+<g filter="url(#hand11)" stroke="#1A2238" stroke-width="2.2" stroke-linecap="round" fill="none">
+ <path d="M30 96 C150 93 380 99 528 95"/><path d="M518 87 C522 91 525 93 530 95 C525 97 522 100 518 103"/>
+ <circle cx="60" cy="95" r="9" fill="#fff"/><circle cx="165" cy="95" r="9" fill="#fff"/><circle cx="270" cy="95" r="9" fill="#fff"/><circle cx="375" cy="95" r="9" fill="#fff"/><circle cx="478" cy="95" r="9" fill="#4A7BB7"/>
+</g>
+<g font-size="14" font-weight="700"><text x="60" y="66">1950</text><text x="165" y="66">1966</text><text x="270" y="66">1997</text><text x="375" y="66">2016</text><text x="478" y="66">2022</text></g>
+<g font-size="12" fill="#4A536B">
+<text x="60" y="128">Turing</text><text x="60" y="145">suggests his</text><text x="60" y="162">test</text>
+<text x="165" y="128">ELIZA, an</text><text x="165" y="145">early chatbot,</text><text x="165" y="162">is built</text>
+<text x="270" y="128">Deep Blue</text><text x="270" y="145">beats a world</text><text x="270" y="162">chess champion</text>
+<text x="375" y="128">AlphaGo</text><text x="375" y="145">beats a top</text><text x="375" y="162">Go player</text>
+<text x="478" y="128">ChatGPT</text><text x="478" y="145">is released</text></g>
+</g></svg>`;
+
+SETS.push({
+  title:"When AI Makes Things Up",tag:"科技與 AI",img:"",
+  p:[
+"Ask an AI chatbot almost any question, and it will reply in seconds, in smooth and confident sentences. Sometimes, however, the confident answer is completely wrong. The chatbot may describe a book that was never written, give a date for an event that never happened, or quote something that nobody ever said. Experts call this problem \"hallucination.\"",
+"To understand why it happens, it helps to know how a chatbot writes. It does not look up answers in a library of facts. Instead, it has learned patterns from huge amounts of text, and it builds each answer one word at a time by predicting which word is most likely to come next. As the diagram below shows, it repeats this step again and again until the answer is complete. This makes its writing sound natural, but sounding right is not the same as being right. If you ask about a little-known scientist, for example, the chatbot may mix up details from several different people, because the result still \"sounds like\" a typical life story.",
+"Hallucinations can cause real trouble. In 2023, a lawyer in New York used a chatbot to help prepare a document for a court case. The document mentioned six earlier cases that did not exist; the chatbot had made them up. The lawyer later explained that he had not realized a chatbot could invent information. When the judge discovered the problem, the lawyers involved were ordered to pay $5,000.",
+"Even large technology companies have been caught out. In early 2023, Google showed off its new chatbot in an advertisement. In it, the chatbot claimed that a new space telescope had taken the very first pictures of a planet outside our solar system. Astronomers quickly pointed out that this was wrong, since such pictures had been taken years earlier. The day the mistake was reported, the value of Google's parent company fell by about $100 billion.",
+"Developers are working hard to make their chatbots more accurate, for example by letting them search the Internet and show where their information comes from. Still, no chatbot is perfect. Users are therefore advised to take its answers with a grain of salt, especially when the answers involve health, money, or the law. A simple habit helps: ask the chatbot for its sources, and then check that those sources really exist.",
+"AI can be a powerful helper, but the final responsibility for checking the facts still belongs to us."],
+  chartAfter:1,chart:CHATBOT,
+  tr:[
+"幾乎問 AI 聊天機器人任何問題，它都會在幾秒內用流暢又自信的句子回答。不過，有時候這個自信的答案完全是錯的。聊天機器人可能會介紹一本從來沒有人寫過的書、替一件從沒發生過的事給出日期，或引用一句沒有人說過的話。專家把這個問題叫做「幻覺」。",
+"要了解為什麼會這樣，先知道聊天機器人怎麼寫字會很有幫助。它並不是去一座事實資料庫裡查答案，而是從大量的文字中學會了各種模式，然後一次一個字地組出答案：預測下一個最可能出現的字是什麼。如下方的流程圖所示，它會一再重複這個步驟，直到回答完成。這讓它寫出來的東西聽起來很自然，但「聽起來對」和「真的對」並不是同一件事。舉例來說，如果你問它一位不太有名的科學家，它可能會把好幾個不同人的資料混在一起，因為這樣的結果「聽起來」仍然很像一般人的生平。",
+"幻覺可能會惹出真正的麻煩。2023 年，紐約一位律師用聊天機器人幫忙準備一份訴訟文件。文件裡提到六個過去的案例，但這些案例根本不存在，是聊天機器人捏造出來的。這位律師事後解釋，他不知道聊天機器人會編造資訊。法官發現這個問題後，相關的律師被命令支付五千美元。",
+"就連大型科技公司也曾出糗。2023 年初，Google 在一支廣告裡展示自家的新聊天機器人。廣告中，聊天機器人說一架新的太空望遠鏡拍下了太陽系外行星的「第一張」照片。天文學家很快就指出這是錯的，因為這種照片好幾年前就有人拍過了。這個錯誤被報導的那一天，Google 母公司的市值大約蒸發了一千億美元。",
+"開發者正努力讓聊天機器人更準確，例如讓它們上網搜尋，並標示資訊的來源。不過，沒有一個聊天機器人是完美的。因此，大家被建議對它的回答要「半信半疑」，特別是跟健康、金錢或法律有關的時候。有一個簡單的好習慣：請聊天機器人提供來源，然後確認那些來源真的存在。",
+"AI 可以是很強大的幫手，但查證事實的最終責任，還是在我們自己身上。"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
+    s:"A chatbot builds each answer through word-by-word {A}, so its smooth and natural writing is no guarantee of {B}.",
+    blanks:{A:{ans:["prediction","predictions"],src:"predicting",hint:"看第 2 段，聊天機器人「預測」下一個字，用哪個字？through 後面要接名詞。",k:"第 2 段 by predicting which word is most likely to come next。介系詞 through 後面要接名詞，所以把動詞 predict 改成名詞 prediction（預測）。"},
+            B:{ans:["accuracy"],src:"accurate",hint:"看第 5 段，開發者想讓聊天機器人更「準確」，用哪個字？guarantee of 後面要接名詞。",k:"第 5 段 make their chatbots more accurate。介系詞 of 後面要接名詞，所以把形容詞 accurate 改成名詞 accuracy（準確性）。"}}},
+   {type:"fill",n:2,pts:"2 分",inst:"請從第 5 段找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
+    s:"{A} = with some doubt; without believing something completely",
+    blanks:{A:{ans:["with a grain of salt","take its answers with a grain of salt","take with a grain of salt","a grain of salt"],src:"-",hint:"第 5 段講使用者被建議「怎麼看待」聊天機器人的回答，找一個跟「鹽」有關的片語。",k:"第 5 段 take its answers with a grain of salt。字面是「配一粒鹽」，真正的意思是「半信半疑、不要全盤相信」。據說古時候的人認為吃東西時配一點鹽比較容易下嚥，後來引申為「聽別人的話要保留一點懷疑」。"}}},
+   {type:"multi",n:3,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["A chatbot finds its answers by searching a library of facts.","A chatbot may describe a book that was never written.","The lawyer's court document mentioned cases that were not real.","The judge ordered the chatbot company to pay $5,000.","Experts say chatbots are now perfect at checking facts."],
+    a:[1,2],why:["錯。第 2 段：它不是去事實資料庫查答案，而是預測下一個最可能的字。","對。第 1 段：可能介紹一本從來沒有人寫過的書。","對。第 3 段：文件提到的六個案例根本不存在。","錯。第 3 段：被命令付錢的是相關的律師，不是聊天機器人公司。","錯。第 5 段：沒有一個聊天機器人是完美的。"]},
+   {type:"single",n:4,pts:"2 分",q:"According to the diagram, what does the chatbot do right after it adds a word to the answer (if the answer is not complete yet)?",
+    opts:["It checks whether the word is true.","It predicts the next most likely word.","It searches the Internet for the facts.","It reads your question again from the beginning."],
+    a:1,why:["錯。圖下方特別說明：沒有查證事實的步驟。","對。藍色箭頭表示 ③ 之後回到 ②，再預測下一個最可能的字。","錯。上網搜尋是第 5 段文字提到的改善方法，圖裡沒有。這種「文章有寫、圖沒有」的選項是常見陷阱。","錯。讀問題是第 ① 步，只做一次，箭頭沒有回到 ①。"]},
+   {type:"short",n:5,pts:"2 分",inst:"請以英文作答。",q:"What do experts call the problem of an AI chatbot giving false information in a confident way?",
+    check:v=>/hallucinat/.test(v),model:"(They call it) hallucination.",hint:"回到第 1 段最後一句，找 Experts call this problem…。",k:"答案在第 1 段：Experts call this problem \"hallucination.\""}
+  ]
+});
+
+SETS.push({
+  title:"Can a Machine Think?",tag:"科技與 AI",img:"",
+  p:[
+"In 1950, the British mathematician Alan Turing asked a bold question: can machines think? Because \"thinking\" is so hard to define, he suggested a game instead. A judge types messages to two hidden partners, one human and one machine. If the judge cannot reliably tell which is which, the machine passes. This idea became known as the Turing test. Turing even made a prediction: within about fifty years, he wrote, computers would be able to fool an average judge for five minutes about three times out of ten.",
+"Only sixteen years later, a simple program named ELIZA surprised even its own creator. Built in 1966 at MIT, ELIZA mostly turned users' own words back into questions. If a user typed \"I feel tired,\" for instance, it might answer, \"Why do you feel tired?\" Yet many people felt that it truly understood them. Its creator, Joseph Weizenbaum, was shocked when his own secretary asked him to leave the room so that she could talk to the program in private. He later spent years warning people not to trust machines too much.",
+"Later, computers began to beat humans at games of skill. In 1996, the world chess champion Garry Kasparov played against IBM's computer Deep Blue and won. A year later, an improved Deep Blue defeated him in a rematch. Go, which has more possible board positions than there are atoms in the known universe, was thought to be beyond the reach of computers for decades to come. But in 2016, Google's AlphaGo beat the top player Lee Sedol four games to one. One of its moves was so unusual that experts at first believed it was a mistake; later, they called it creative. The timeline below shows these turning points.",
+"Then, at the end of 2022, ChatGPT arrived. Within about two months, it was reported to have 100 million users, making it one of the fastest-growing apps in history. Unlike the game-playing machines, it could write essays, answer questions, and hold conversations on almost any topic.",
+"Today's chatbots are a far cry from ELIZA, and some can already fool people in short conversations. Yet many scientists argue that passing the Turing test does not prove that a machine can really think. A chatbot may simply be very good at imitating the way people write. Turing's question, it seems, is still waiting for an answer."],
+  chartAfter:2,chart:TURING,
+  tr:[
+"1950 年，英國數學家艾倫．圖靈提出一個大膽的問題：機器會思考嗎？因為「思考」很難下定義，他改提出一個遊戲。一位裁判打字傳訊息給兩個看不見的對象，一個是人，一個是機器。如果裁判沒辦法穩定地分辨出誰是誰，機器就算通過。這個想法後來被稱為「圖靈測試」。圖靈甚至做了一個預測：他寫道，大約五十年內，電腦在五分鐘的對話裡，每十次就能騙過一般裁判大約三次。",
+"才過了十六年，一個叫做 ELIZA 的簡單程式就連它的創造者都嚇了一跳。ELIZA 是 1966 年在麻省理工學院做出來的，它大多只是把使用者自己說的話改成問句丟回去。例如使用者打「我覺得很累」，它可能會回「你為什麼覺得很累？」然而，很多人覺得它真的懂他們。它的創造者約瑟夫．維森鮑姆很震驚：他自己的祕書竟然請他離開房間，好讓她能私下跟這個程式說話。後來他花了好多年提醒大家，不要太相信機器。",
+"後來，電腦開始在需要技巧的遊戲上打敗人類。1996 年，西洋棋世界冠軍卡斯帕洛夫和 IBM 的電腦「深藍」對弈，結果是卡斯帕洛夫贏了。一年後，改良過的深藍在再次對決中擊敗了他。圍棋可能出現的盤面，比已知宇宙中的原子還要多，大家原本以為往後幾十年電腦都碰不到。但在 2016 年，Google 的 AlphaGo 以四比一打敗頂尖棋士李世乭。它其中一步棋非常奇特，專家一開始還以為是失誤；後來卻稱讚那一步很有創意。下方的時間軸顯示了這些轉捩點。",
+"接著在 2022 年底，ChatGPT 出現了。據報導，大約兩個月內它就有了一億名使用者，成為史上成長最快的應用程式之一。跟那些下棋的機器不同，它能寫文章、回答問題，還能幾乎針對任何話題聊天。",
+"今天的聊天機器人跟 ELIZA 已經是天壤之別，有些甚至已經能在簡短的對話中騙過人。然而，許多科學家認為，通過圖靈測試並不能證明機器真的會思考。聊天機器人也許只是非常擅長模仿人類寫字的方式。看來，圖靈的問題至今仍在等待答案。"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
+    s:"Turing found it hard to give \"thinking\" a clear {A}, and ChatGPT's rapid {B} after its release surprised the world.",
+    blanks:{A:{ans:["definition"],src:"define",hint:"看第 1 段，「思考」很難「下定義」，用哪個字？a clear 後面要接名詞。",k:"第 1 段 \"thinking\" is so hard to define。a clear 後面要接名詞，所以把動詞 define 改成名詞 definition（定義）。"},
+            B:{ans:["growth"],src:"growing",hint:"看第 4 段，ChatGPT 是史上「成長」最快的應用程式之一，用哪個字？rapid 後面要接名詞。",k:"第 4 段 one of the fastest-growing apps。所有格 ChatGPT's 和形容詞 rapid 後面要接名詞，所以把 grow 改成名詞 growth（成長）。"}}},
+   {type:"fill",n:2,pts:"2 分",inst:"請從第 5 段找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
+    s:"{A} = very different from; much better or more advanced than",
+    blanks:{A:{ans:["a far cry from","far cry from","are a far cry from"],src:"-",hint:"第 5 段第一句把今天的聊天機器人跟 ELIZA 比較，找那個片語（四個字）。",k:"第 5 段 Today's chatbots are a far cry from ELIZA。字面像是「遠遠的一聲呼喊」，真正的意思是「跟……天差地遠、大不相同」。原本指兩地相隔很遠，遠到喊叫聲都傳不到。"}}},
+   {type:"multi",n:3,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["Turing suggested a game because thinking is hard to define.","ELIZA was built by Alan Turing.","Deep Blue defeated a world chess champion.","AlphaGo lost most of its games against Lee Sedol.","ChatGPT, like Deep Blue, was designed mainly to play games."],
+    a:[0,2],why:["對。第 1 段：因為「思考」很難下定義，他改提出一個遊戲。","錯。第 2 段：ELIZA 的創造者是 Joseph Weizenbaum。","對。第 3 段：深藍擊敗西洋棋世界冠軍卡斯帕洛夫。","錯。第 3 段：AlphaGo 以四比一獲勝。","錯。第 4 段：跟下棋的機器不同，ChatGPT 能寫文章、回答問題、聊天。"]},
+   {type:"single",n:4,pts:"2 分",q:"Which of the following is supported by the timeline?",
+    opts:["ELIZA was built before Turing suggested his test.","A computer beat a top human at chess before one did so at Go.","ChatGPT had 100 million users within two months.","One of AlphaGo's moves first looked like a mistake."],
+    a:1,why:["錯。圖靈測試是 1950 年，ELIZA 是 1966 年，順序相反。","對。深藍贏西洋棋是 1997 年，AlphaGo 贏圍棋是 2016 年。","錯。一億名使用者是第 4 段文字的內容，時間軸上沒有。這種「文章有寫、圖沒有」的選項是常見陷阱。","錯。這是第 3 段文字的內容，時間軸上沒有。"]},
+   {type:"short",n:5,pts:"2 分",inst:"請以英文作答。",q:"According to the passage, when does a machine pass the Turing test?",
+    check:v=>/(not|n't|unable)/.test(v)&&/(tell|know|guess|identify|distinguish)/.test(v),model:"When the judge cannot (reliably) tell which partner is the human and which is the machine.",hint:"回到第 1 段，找 the machine passes 前面那個 If 子句。",k:"答案在第 1 段：If the judge cannot reliably tell which is which, the machine passes。"}
+  ]
+});
+
+const PARKMAP=`<svg viewBox="0 0 600 500" role="img" aria-label="科學園區地圖：南邊大門外有馬路、公車站和停車場；主步道往北經過中央噴水池廣場通到北端；東北有池塘和木橋；地圖上有 A 到 G 七個位置">
+<defs>
+<linearGradient id="pkGrass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4F0D6"/><stop offset="1" stop-color="#D6E8C4"/></linearGradient>
+<radialGradient id="pkWater" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#BFE0F2"/><stop offset="1" stop-color="#86BEDD"/></radialGradient>
+<radialGradient id="pkDome" cx=".38" cy=".35" r=".75"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".6" stop-color="#D9DEE8"/><stop offset="1" stop-color="#AEB6C6"/></radialGradient>
+<filter id="pkSh" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="2.5" dy="3" stdDeviation="2" flood-color="#1A2238" flood-opacity=".22"/></filter>
+<pattern id="pkPlank" width="6" height="6" patternUnits="userSpaceOnUse"><rect width="6" height="6" fill="#C89A63"/><rect width="1.2" height="6" fill="#A8794A"/></pattern>
+</defs>
+<rect x="0" y="446" width="600" height="54" fill="#D5D9E0"/><path d="M0 473 H600" stroke="#fff" stroke-width="2.5" stroke-dasharray="16 12"/>
+<rect x="10" y="10" width="580" height="428" rx="22" fill="#9DC487"/><rect x="18" y="18" width="564" height="412" rx="16" fill="url(#pkGrass)"/>
+<path d="M300 432 C300 380 301 330 300 296" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M300 204 C300 170 299 140 300 112" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M254 250 C236 251 214 249 196 250" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M268 216 C236 184 196 160 168 112" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M346 250 C362 252 372 252 384 252" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M300 360 C270 362 252 368 244 372" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M300 360 C330 362 348 368 356 372" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M454 300 C478 318 494 334 500 340" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M498 108 C510 100 516 94 520 90" fill="none" stroke="#D3BE93" stroke-width="22" stroke-linecap="round"/>
+<path d="M300 432 C300 380 301 330 300 296" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M300 204 C300 170 299 140 300 112" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M254 250 C236 251 214 249 196 250" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M268 216 C236 184 196 160 168 112" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M346 250 C362 252 372 252 384 252" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M300 360 C270 362 252 368 244 372" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M300 360 C330 362 348 368 356 372" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M454 300 C478 318 494 334 500 340" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M498 108 C510 100 516 94 520 90" fill="none" stroke="#F4E8CD" stroke-width="17" stroke-linecap="round"/>
+<path d="M346 150 C344 112 384 92 430 96 C476 100 510 118 512 150 C514 182 482 206 436 206 C392 206 348 190 346 150Z" fill="#7FB6D6"/>
+<path d="M352 150 C351 116 388 100 430 103 C472 106 504 122 505 150 C506 178 478 199 436 199 C394 199 353 184 352 150Z" fill="url(#pkWater)"/>
+<path d="M380 170 a6 4.5 0 1 1 6 1 L380 170Z" fill="#6FA86A"/>
+<path d="M392 178 a6 4.5 0 1 1 6 1 L392 178Z" fill="#6FA86A"/>
+<path d="M462 124 a6 4.5 0 1 1 6 1 L462 124Z" fill="#6FA86A"/>
+<path d="M402 134 c6 -3 12 -3 18 0 M440 168 c6 -3 12 -3 18 0" fill="none" stroke="#fff" stroke-width="1.4" stroke-linecap="round" opacity=".8"/>
+<ellipse cx="418" cy="150" rx="5" ry="3.2" fill="#fff" stroke="#6B7383" stroke-width=".8"/><circle cx="422" cy="147" r="2.2" fill="#fff" stroke="#6B7383" stroke-width=".8"/><path d="M424 147 l2.5 .6 -2.5 .6Z" fill="#E3A63B"/>
+<ellipse cx="432" cy="156" rx="5" ry="3.2" fill="#fff" stroke="#6B7383" stroke-width=".8"/><circle cx="436" cy="153" r="2.2" fill="#fff" stroke="#6B7383" stroke-width=".8"/><path d="M438 153 l2.5 .6 -2.5 .6Z" fill="#E3A63B"/>
+<g transform="translate(478 165) rotate(-62)"><rect x="-58" y="-9" width="116" height="18" rx="3" fill="url(#pkPlank)" stroke="#8A6236" stroke-width="1.4"/><path d="M-58 -9 H58 M-58 9 H58" stroke="#6E4B26" stroke-width="2"/></g>
+<path d="M436 222 C446 214 452 210 456 206" fill="none" stroke="#D3BE93" stroke-width="14" stroke-linecap="round"/><path d="M436 222 C446 214 452 210 456 206" fill="none" stroke="#F4E8CD" stroke-width="10" stroke-linecap="round"/>
+<circle cx="300" cy="250" r="50" fill="#D3BE93"/><circle cx="300" cy="250" r="46" fill="#EFE2C4"/>
+<circle cx="300" cy="250" r="34" fill="none" stroke="#E2D1AC" stroke-width="1.2" stroke-dasharray="3 4"/>
+<circle cx="300" cy="250" r="20" fill="#B9C2CF"/><circle cx="300" cy="250" r="16.5" fill="url(#pkWater)"/><circle cx="300" cy="250" r="4" fill="#E9EEF5" stroke="#9AA5B5"/>
+<path d="M300 246 C297 240 293 238 289 239 M300 246 C303 240 307 238 311 239 M300 246 C300 240 300 236 300 233" fill="none" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
+<ellipse cx="240" cy="205" rx="14" ry="8" fill="#8FB873"/>
+<circle cx="236.3" cy="201.1" r="2.1" fill="#fff"/>
+<circle cx="230.5" cy="208.6" r="2.1" fill="#F28CA6"/>
+<circle cx="237.2" cy="200.0" r="2.1" fill="#fff"/>
+<circle cx="234.0" cy="200.4" r="2.1" fill="#FFD24D"/>
+<circle cx="231.0" cy="200.4" r="2.1" fill="#FFD24D"/>
+<circle cx="230.7" cy="205.7" r="2.1" fill="#F28CA6"/>
+<circle cx="242.7" cy="205.9" r="2.1" fill="#F28CA6"/>
+<circle cx="241.6" cy="203.8" r="2.1" fill="#F28CA6"/>
+<circle cx="230.5" cy="209.0" r="2.1" fill="#FFD24D"/>
+<ellipse cx="360" cy="205" rx="14" ry="8" fill="#8FB873"/>
+<circle cx="358.3" cy="205.5" r="2.1" fill="#fff"/>
+<circle cx="356.0" cy="208.5" r="2.1" fill="#F28CA6"/>
+<circle cx="351.7" cy="205.8" r="2.1" fill="#F28CA6"/>
+<circle cx="357.3" cy="205.5" r="2.1" fill="#F28CA6"/>
+<circle cx="361.4" cy="206.3" r="2.1" fill="#FFD24D"/>
+<circle cx="363.8" cy="204.2" r="2.1" fill="#FFD24D"/>
+<circle cx="359.3" cy="209.7" r="2.1" fill="#FFD24D"/>
+<circle cx="355.8" cy="208.3" r="2.1" fill="#fff"/>
+<circle cx="365.9" cy="200.3" r="2.1" fill="#FFD24D"/>
+<ellipse cx="240" cy="300" rx="14" ry="8" fill="#8FB873"/>
+<circle cx="240.5" cy="304.2" r="2.1" fill="#fff"/>
+<circle cx="238.9" cy="301.2" r="2.1" fill="#C59BEA"/>
+<circle cx="232.0" cy="299.1" r="2.1" fill="#FFD24D"/>
+<circle cx="232.7" cy="299.9" r="2.1" fill="#C59BEA"/>
+<circle cx="249.7" cy="295.3" r="2.1" fill="#fff"/>
+<circle cx="241.5" cy="304.2" r="2.1" fill="#FFD24D"/>
+<circle cx="236.6" cy="298.3" r="2.1" fill="#FFD24D"/>
+<circle cx="241.7" cy="299.5" r="2.1" fill="#C59BEA"/>
+<circle cx="249.3" cy="299.7" r="2.1" fill="#fff"/>
+<ellipse cx="360" cy="300" rx="14" ry="8" fill="#8FB873"/>
+<circle cx="350.9" cy="302.6" r="2.1" fill="#FFD24D"/>
+<circle cx="363.1" cy="305.5" r="2.1" fill="#FFD24D"/>
+<circle cx="355.5" cy="298.7" r="2.1" fill="#fff"/>
+<circle cx="356.8" cy="304.9" r="2.1" fill="#FFD24D"/>
+<circle cx="353.0" cy="295.7" r="2.1" fill="#C59BEA"/>
+<circle cx="354.1" cy="297.6" r="2.1" fill="#fff"/>
+<circle cx="354.7" cy="298.8" r="2.1" fill="#FFD24D"/>
+<circle cx="351.2" cy="299.4" r="2.1" fill="#fff"/>
+<circle cx="355.3" cy="295.9" r="2.1" fill="#FFD24D"/>
+<ellipse cx="44.5" cy="167.2" rx="13.0" ry="9.1" fill="#1A2238" opacity=".13"/>
+<path d="M51.2 160.0 Q53.1 165.0 49.3 167.8 Q47.4 173.2 42.3 172.8 Q37.7 174.6 34.2 170.1 Q28.7 169.2 28.2 164.3 Q25.7 160.3 29.5 156.2 Q29.4 150.9 34.0 149.5 Q37.6 145.1 42.3 147.2 Q47.1 147.0 48.9 152.5 Q52.9 155.2 51.2 160.0 Z" fill="#5E9A55"/>
+<circle cx="36.8" cy="156.8" r="7.2" fill="#79B46A"/><circle cx="35.5" cy="155.1" r="2.9" fill="#9CCB86"/>
+<ellipse cx="65.8" cy="192.1" rx="11.0" ry="7.7" fill="#1A2238" opacity=".13"/>
+<path d="M71.5 186.0 Q73.1 190.2 69.8 192.6 Q68.2 197.1 63.9 196.8 Q60.1 198.4 57.1 194.5 Q52.5 193.8 52.0 189.6 Q49.9 186.3 53.1 182.8 Q53.0 178.3 56.9 177.1 Q59.9 173.4 63.9 175.2 Q68.0 175.0 69.5 179.7 Q72.9 181.9 71.5 186.0 Z" fill="#5E9A55"/>
+<circle cx="59.2" cy="183.2" r="6.1" fill="#79B46A"/><circle cx="58.1" cy="181.8" r="2.4" fill="#9CCB86"/>
+<ellipse cx="40.2" cy="220.6" rx="12.0" ry="8.4" fill="#1A2238" opacity=".13"/>
+<path d="M46.3 214.0 Q48.1 218.6 44.5 221.2 Q42.8 226.2 38.1 225.8 Q33.9 227.5 30.6 223.3 Q25.6 222.5 25.1 218.0 Q22.8 214.3 26.3 210.5 Q26.2 205.6 30.4 204.3 Q33.8 200.3 38.1 202.2 Q42.6 202.0 44.2 207.1 Q47.9 209.6 46.3 214.0 Z" fill="#5E9A55"/>
+<circle cx="33.0" cy="211.0" r="6.6" fill="#79B46A"/><circle cx="31.8" cy="209.4" r="2.6" fill="#9CCB86"/>
+<ellipse cx="48.2" cy="306.6" rx="12.0" ry="8.4" fill="#1A2238" opacity=".13"/>
+<path d="M54.3 300.0 Q56.1 304.6 52.5 307.2 Q50.8 312.2 46.1 311.8 Q41.9 313.5 38.6 309.3 Q33.6 308.5 33.1 304.0 Q30.8 300.3 34.3 296.5 Q34.2 291.6 38.4 290.3 Q41.8 286.3 46.1 288.2 Q50.6 288.0 52.2 293.1 Q55.9 295.6 54.3 300.0 Z" fill="#5E9A55"/>
+<circle cx="41.0" cy="297.0" r="6.6" fill="#79B46A"/><circle cx="39.8" cy="295.4" r="2.6" fill="#9CCB86"/>
+<ellipse cx="73.5" cy="327.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M78.6 322.0 Q80.1 325.8 77.1 328.0 Q75.7 332.1 71.7 331.8 Q68.2 333.3 65.5 329.8 Q61.3 329.1 60.9 325.3 Q59.0 322.2 61.9 319.1 Q61.9 315.0 65.3 313.9 Q68.1 310.5 71.7 312.2 Q75.5 312.0 76.9 316.2 Q79.9 318.3 78.6 322.0 Z" fill="#5E9A55"/>
+<circle cx="67.5" cy="319.5" r="5.5" fill="#79B46A"/><circle cx="66.5" cy="318.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="123.8" cy="318.1" rx="11.0" ry="7.7" fill="#1A2238" opacity=".13"/>
+<path d="M129.5 312.0 Q131.1 316.2 127.8 318.6 Q126.2 323.1 121.9 322.8 Q118.1 324.4 115.1 320.5 Q110.5 319.8 110.0 315.6 Q107.9 312.3 111.1 308.8 Q111.0 304.3 114.9 303.1 Q117.9 299.4 121.9 301.2 Q126.0 301.0 127.5 305.7 Q130.9 307.9 129.5 312.0 Z" fill="#5E9A55"/>
+<circle cx="117.2" cy="309.2" r="6.1" fill="#79B46A"/><circle cx="116.2" cy="307.8" r="2.4" fill="#9CCB86"/>
+<ellipse cx="200.2" cy="146.6" rx="12.0" ry="8.4" fill="#1A2238" opacity=".13"/>
+<path d="M206.3 140.0 Q208.1 144.6 204.5 147.2 Q202.8 152.2 198.1 151.8 Q193.9 153.5 190.6 149.3 Q185.6 148.5 185.1 144.0 Q182.8 140.3 186.3 136.5 Q186.2 131.6 190.4 130.3 Q193.8 126.3 198.1 128.2 Q202.6 128.0 204.2 133.1 Q207.9 135.6 206.3 140.0 Z" fill="#5E9A55"/>
+<circle cx="193.0" cy="137.0" r="6.6" fill="#79B46A"/><circle cx="191.8" cy="135.4" r="2.6" fill="#9CCB86"/>
+<ellipse cx="215.5" cy="175.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M220.6 170.0 Q222.1 173.8 219.1 176.0 Q217.7 180.1 213.7 179.8 Q210.2 181.3 207.5 177.8 Q203.3 177.1 202.9 173.3 Q201.0 170.2 203.9 167.1 Q203.9 163.0 207.3 161.9 Q210.1 158.5 213.7 160.2 Q217.5 160.0 218.9 164.2 Q221.9 166.3 220.6 170.0 Z" fill="#5E9A55"/>
+<circle cx="209.5" cy="167.5" r="5.5" fill="#79B46A"/><circle cx="208.5" cy="166.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="149.8" cy="192.1" rx="11.0" ry="7.7" fill="#1A2238" opacity=".13"/>
+<path d="M155.5 186.0 Q157.1 190.2 153.8 192.6 Q152.2 197.1 147.9 196.8 Q144.1 198.4 141.1 194.5 Q136.5 193.8 136.0 189.6 Q133.9 186.3 137.1 182.8 Q137.0 178.3 140.9 177.1 Q143.9 173.4 147.9 175.2 Q152.0 175.0 153.5 179.7 Q156.9 181.9 155.5 186.0 Z" fill="#5E9A55"/>
+<circle cx="143.2" cy="183.2" r="6.1" fill="#79B46A"/><circle cx="142.2" cy="181.8" r="2.4" fill="#9CCB86"/>
+<ellipse cx="253.5" cy="165.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M258.6 160.0 Q260.1 163.8 257.1 166.0 Q255.7 170.1 251.7 169.8 Q248.2 171.3 245.5 167.8 Q241.3 167.1 240.9 163.3 Q239.0 160.2 241.9 157.1 Q241.9 153.0 245.3 151.9 Q248.1 148.5 251.7 150.2 Q255.5 150.0 256.9 154.2 Q259.9 156.3 258.6 160.0 Z" fill="#5E9A55"/>
+<circle cx="247.5" cy="157.5" r="5.5" fill="#79B46A"/><circle cx="246.5" cy="156.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="354.2" cy="66.6" rx="12.0" ry="8.4" fill="#1A2238" opacity=".13"/>
+<path d="M360.3 60.0 Q362.1 64.6 358.5 67.2 Q356.8 72.2 352.1 71.8 Q347.9 73.5 344.6 69.3 Q339.6 68.5 339.1 64.0 Q336.8 60.3 340.3 56.5 Q340.2 51.6 344.4 50.3 Q347.8 46.3 352.1 48.2 Q356.6 48.0 358.2 53.1 Q361.9 55.6 360.3 60.0 Z" fill="#5E9A55"/>
+<circle cx="347.0" cy="57.0" r="6.6" fill="#79B46A"/><circle cx="345.8" cy="55.4" r="2.6" fill="#9CCB86"/>
+<ellipse cx="375.5" cy="45.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M380.6 40.0 Q382.1 43.8 379.1 46.0 Q377.7 50.1 373.7 49.8 Q370.2 51.3 367.5 47.8 Q363.3 47.1 362.9 43.3 Q361.0 40.2 363.9 37.1 Q363.9 33.0 367.4 31.9 Q370.1 28.5 373.7 30.2 Q377.5 30.0 378.9 34.2 Q381.9 36.3 380.6 40.0 Z" fill="#5E9A55"/>
+<circle cx="369.5" cy="37.5" r="5.5" fill="#79B46A"/><circle cx="368.5" cy="36.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="407.9" cy="68.0" rx="11.0" ry="7.7" fill="#1A2238" opacity=".13"/>
+<path d="M413.5 62.0 Q415.1 66.2 411.8 68.6 Q410.2 73.1 405.9 72.8 Q402.1 74.4 399.1 70.5 Q394.5 69.8 394.0 65.6 Q391.9 62.3 395.1 58.8 Q395.0 54.3 398.9 53.1 Q401.9 49.4 405.9 51.2 Q410.0 51.0 411.5 55.7 Q414.9 57.9 413.5 62.0 Z" fill="#5E9A55"/>
+<circle cx="401.2" cy="59.2" r="6.1" fill="#79B46A"/><circle cx="400.1" cy="57.8" r="2.4" fill="#9CCB86"/>
+<ellipse cx="243.8" cy="54.0" rx="11.0" ry="7.7" fill="#1A2238" opacity=".13"/>
+<path d="M249.5 48.0 Q251.1 52.2 247.8 54.6 Q246.2 59.1 241.9 58.8 Q238.1 60.4 235.1 56.5 Q230.5 55.8 230.0 51.6 Q227.9 48.3 231.1 44.8 Q231.0 40.3 234.9 39.1 Q237.9 35.4 241.9 37.2 Q246.0 37.0 247.5 41.7 Q250.9 43.9 249.5 48.0 Z" fill="#5E9A55"/>
+<circle cx="237.2" cy="45.2" r="6.1" fill="#79B46A"/><circle cx="236.2" cy="43.8" r="2.4" fill="#9CCB86"/>
+<ellipse cx="217.5" cy="79.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M222.6 74.0 Q224.1 77.8 221.1 80.0 Q219.7 84.1 215.7 83.8 Q212.2 85.3 209.5 81.8 Q205.3 81.1 204.9 77.3 Q203.0 74.2 205.9 71.1 Q205.9 67.0 209.3 65.9 Q212.1 62.5 215.7 64.2 Q219.5 64.0 220.9 68.2 Q223.9 70.3 222.6 74.0 Z" fill="#5E9A55"/>
+<circle cx="211.5" cy="71.5" r="5.5" fill="#79B46A"/><circle cx="210.5" cy="70.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="564.2" cy="166.6" rx="12.0" ry="8.4" fill="#1A2238" opacity=".13"/>
+<path d="M570.3 160.0 Q572.1 164.6 568.5 167.2 Q566.8 172.2 562.1 171.8 Q557.9 173.5 554.6 169.3 Q549.6 168.5 549.1 164.0 Q546.8 160.3 550.3 156.5 Q550.2 151.6 554.4 150.3 Q557.8 146.3 562.1 148.2 Q566.6 148.0 568.2 153.1 Q571.9 155.6 570.3 160.0 Z" fill="#5E9A55"/>
+<circle cx="557.0" cy="157.0" r="6.6" fill="#79B46A"/><circle cx="555.8" cy="155.4" r="2.6" fill="#9CCB86"/>
+<ellipse cx="569.5" cy="201.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M574.6 196.0 Q576.1 199.8 573.1 202.0 Q571.7 206.1 567.7 205.8 Q564.2 207.3 561.5 203.8 Q557.3 203.1 556.9 199.3 Q555.0 196.2 557.9 193.1 Q557.9 189.0 561.4 187.9 Q564.1 184.5 567.7 186.2 Q571.5 186.0 572.9 190.2 Q575.9 192.3 574.6 196.0 Z" fill="#5E9A55"/>
+<circle cx="563.5" cy="193.5" r="5.5" fill="#79B46A"/><circle cx="562.5" cy="192.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="545.9" cy="234.1" rx="11.0" ry="7.7" fill="#1A2238" opacity=".13"/>
+<path d="M551.5 228.0 Q553.1 232.2 549.8 234.6 Q548.2 239.1 543.9 238.8 Q540.1 240.4 537.1 236.5 Q532.5 235.8 532.0 231.6 Q529.9 228.3 533.1 224.8 Q533.0 220.3 536.9 219.1 Q539.9 215.4 543.9 217.2 Q548.0 217.0 549.5 221.7 Q552.9 223.9 551.5 228.0 Z" fill="#5E9A55"/>
+<circle cx="539.2" cy="225.2" r="6.1" fill="#79B46A"/><circle cx="538.1" cy="223.8" r="2.4" fill="#9CCB86"/>
+<ellipse cx="573.5" cy="261.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M578.6 256.0 Q580.1 259.8 577.1 262.0 Q575.7 266.1 571.7 265.8 Q568.2 267.3 565.5 263.8 Q561.3 263.1 560.9 259.3 Q559.0 256.2 561.9 253.1 Q561.9 249.0 565.4 247.9 Q568.1 244.5 571.7 246.2 Q575.5 246.0 576.9 250.2 Q579.9 252.3 578.6 256.0 Z" fill="#5E9A55"/>
+<circle cx="567.5" cy="253.5" r="5.5" fill="#79B46A"/><circle cx="566.5" cy="252.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="333.1" cy="329.9" rx="9.0" ry="6.3" fill="#1A2238" opacity=".13"/>
+<path d="M337.7 325.0 Q339.1 328.4 336.4 330.4 Q335.1 334.1 331.6 333.9 Q328.4 335.1 326.0 332.0 Q322.2 331.4 321.8 328.0 Q320.1 325.2 322.7 322.4 Q322.7 318.7 325.8 317.8 Q328.3 314.7 331.6 316.1 Q334.9 316.0 336.2 319.8 Q338.9 321.7 337.7 325.0 Z" fill="#5E9A55"/>
+<circle cx="327.8" cy="322.8" r="5.0" fill="#79B46A"/><circle cx="326.9" cy="321.6" r="2.0" fill="#9CCB86"/>
+<ellipse cx="273.1" cy="329.9" rx="9.0" ry="6.3" fill="#1A2238" opacity=".13"/>
+<path d="M277.7 325.0 Q279.1 328.4 276.4 330.4 Q275.1 334.1 271.6 333.9 Q268.4 335.1 266.0 332.0 Q262.2 331.4 261.8 328.0 Q260.1 325.2 262.7 322.4 Q262.7 318.7 265.8 317.8 Q268.3 314.7 271.6 316.1 Q274.9 316.0 276.2 319.8 Q278.9 321.7 277.7 325.0 Z" fill="#5E9A55"/>
+<circle cx="267.8" cy="322.8" r="5.0" fill="#79B46A"/><circle cx="266.9" cy="321.6" r="2.0" fill="#9CCB86"/>
+<ellipse cx="123.5" cy="425.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M128.6 420.0 Q130.1 423.8 127.1 426.0 Q125.7 430.1 121.7 429.8 Q118.2 431.3 115.5 427.8 Q111.3 427.1 110.9 423.3 Q109.0 420.2 111.9 417.1 Q111.9 413.0 115.3 411.9 Q118.1 408.5 121.7 410.2 Q125.5 410.0 126.9 414.2 Q129.9 416.3 128.6 420.0 Z" fill="#5E9A55"/>
+<circle cx="117.5" cy="417.5" r="5.5" fill="#79B46A"/><circle cx="116.5" cy="416.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="187.2" cy="424.9" rx="9.0" ry="6.3" fill="#1A2238" opacity=".13"/>
+<path d="M191.7 420.0 Q193.1 423.4 190.4 425.4 Q189.1 429.1 185.6 428.9 Q182.4 430.1 180.0 427.0 Q176.2 426.4 175.8 423.0 Q174.1 420.2 176.7 417.4 Q176.7 413.7 179.8 412.8 Q182.3 409.7 185.6 411.1 Q188.9 411.0 190.2 414.8 Q192.9 416.7 191.7 420.0 Z" fill="#5E9A55"/>
+<circle cx="181.8" cy="417.8" r="5.0" fill="#79B46A"/><circle cx="180.8" cy="416.6" r="2.0" fill="#9CCB86"/>
+<ellipse cx="423.5" cy="425.5" rx="10.0" ry="7.0" fill="#1A2238" opacity=".13"/>
+<path d="M428.6 420.0 Q430.1 423.8 427.1 426.0 Q425.7 430.1 421.7 429.8 Q418.2 431.3 415.5 427.8 Q411.3 427.1 410.9 423.3 Q409.0 420.2 411.9 417.1 Q411.9 413.0 415.4 411.9 Q418.1 408.5 421.7 410.2 Q425.5 410.0 426.9 414.2 Q429.9 416.3 428.6 420.0 Z" fill="#5E9A55"/>
+<circle cx="417.5" cy="417.5" r="5.5" fill="#79B46A"/><circle cx="416.5" cy="416.2" r="2.2" fill="#9CCB86"/>
+<ellipse cx="454.8" cy="320.4" rx="8.0" ry="5.6" fill="#1A2238" opacity=".13"/>
+<path d="M458.9 316.0 Q460.1 319.1 457.7 320.8 Q456.5 324.1 453.4 323.9 Q450.6 325.0 448.4 322.2 Q445.1 321.7 444.7 318.6 Q443.2 316.2 445.5 313.6 Q445.5 310.4 448.3 309.6 Q450.5 306.8 453.4 308.1 Q456.4 308.0 457.5 311.4 Q459.9 313.1 458.9 316.0 Z" fill="#5E9A55"/>
+<circle cx="450.0" cy="314.0" r="4.4" fill="#79B46A"/><circle cx="449.2" cy="313.0" r="1.8" fill="#9CCB86"/>
+<ellipse cx="263.1" cy="424.9" rx="9.0" ry="6.3" fill="#1A2238" opacity=".13"/>
+<path d="M267.7 420.0 Q269.1 423.4 266.4 425.4 Q265.1 429.1 261.6 428.9 Q258.4 430.1 256.0 427.0 Q252.2 426.4 251.8 423.0 Q250.1 420.2 252.7 417.4 Q252.7 413.7 255.8 412.8 Q258.3 409.7 261.6 411.1 Q264.9 411.0 266.2 414.8 Q268.9 416.7 267.7 420.0 Z" fill="#5E9A55"/>
+<circle cx="257.8" cy="417.8" r="5.0" fill="#79B46A"/><circle cx="256.9" cy="416.6" r="2.0" fill="#9CCB86"/>
+<g filter="url(#pkSh)"><rect x="160" y="340" width="84" height="64" rx="5" fill="#F8F6F1" stroke="#7D8494" stroke-width="1.3"/></g>
+<rect x="166" y="346" width="72" height="52" rx="3" fill="#E9C9A8"/>
+<path d="M166 372.0 H238" stroke="#fff" stroke-width="1" opacity=".5"/>
+<rect x="240" y="364" width="5" height="16" rx="1.5" fill="#6B4F35"/>
+
+<circle cx="202" cy="372" r="15" fill="#1A2238" stroke="#fff" stroke-width="2.5"/><text x="202" y="378.5" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="800" fill="#fff">A</text>
+<g filter="url(#pkSh)"><rect x="356" y="340" width="84" height="64" rx="5" fill="#F8F6F1" stroke="#7D8494" stroke-width="1.3"/></g>
+<rect x="362" y="346" width="72" height="52" rx="3" fill="#B9D3E8"/>
+<path d="M362 372.0 H434" stroke="#fff" stroke-width="1" opacity=".5"/>
+<rect x="355" y="364" width="5" height="16" rx="1.5" fill="#6B4F35"/>
+
+<circle cx="398" cy="372" r="15" fill="#1A2238" stroke="#fff" stroke-width="2.5"/><text x="398" y="378.5" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="800" fill="#fff">B</text>
+<g filter="url(#pkSh)"><rect x="96" y="212" width="100" height="76" rx="5" fill="#F8F6F1" stroke="#7D8494" stroke-width="1.3"/></g>
+<rect x="102" y="218" width="88" height="64" rx="3" fill="#D9C9E6"/>
+<path d="M102 250.0 H190" stroke="#fff" stroke-width="1" opacity=".5"/>
+<rect x="195" y="242" width="5" height="16" rx="1.5" fill="#6B4F35"/>
+
+<circle cx="146" cy="250" r="15" fill="#1A2238" stroke="#fff" stroke-width="2.5"/><text x="146" y="256.5" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="800" fill="#fff">C</text>
+<g filter="url(#pkSh)"><circle cx="300" cy="72" r="42" fill="#F8F6F1" stroke="#7D8494" stroke-width="1.3"/></g><circle cx="300" cy="72" r="36" fill="url(#pkDome)"/>
+<path d="M264 72 H336 M300 36 V108 M274 47 C290 60 310 60 326 47 M274 97 C290 84 310 84 326 97" fill="none" stroke="#9AA5B5" stroke-width=".9" opacity=".8"/>
+<circle cx="300" cy="72" r="15" fill="#1A2238" stroke="#fff" stroke-width="2.5"/><text x="300" y="78.5" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="800" fill="#fff">D</text>
+<rect x="44" y="36" width="130" height="78" rx="10" fill="#CFE6B8" stroke="#8A6236" stroke-width="1.6" stroke-dasharray="5 3"/>
+<circle cx="79.1" cy="77.7" r="2.3" fill="#C59BEA"/>
+<circle cx="156.4" cy="73.4" r="2.3" fill="#F28CA6"/>
+<circle cx="121.0" cy="100.3" r="2.3" fill="#fff"/>
+<circle cx="81.6" cy="58.5" r="2.3" fill="#fff"/>
+<circle cx="97.3" cy="97.4" r="2.3" fill="#FFD24D"/>
+<circle cx="124.4" cy="97.8" r="2.3" fill="#fff"/>
+<circle cx="136.5" cy="85.6" r="2.3" fill="#F28CA6"/>
+<circle cx="70.2" cy="103.4" r="2.3" fill="#F28CA6"/>
+<circle cx="86.3" cy="45.9" r="2.3" fill="#C59BEA"/>
+<circle cx="152.2" cy="88.3" r="2.3" fill="#fff"/>
+<circle cx="97.0" cy="93.7" r="2.3" fill="#fff"/>
+<circle cx="161.9" cy="52.3" r="2.3" fill="#C59BEA"/>
+<circle cx="63.1" cy="52.4" r="2.3" fill="#FFD24D"/>
+<circle cx="81.4" cy="85.7" r="2.3" fill="#C59BEA"/>
+<circle cx="100.0" cy="95.7" r="2.3" fill="#C59BEA"/>
+<circle cx="78.5" cy="64.9" r="2.3" fill="#F28CA6"/>
+<circle cx="149.6" cy="105.4" r="2.3" fill="#FFD24D"/>
+<circle cx="131.6" cy="64.2" r="2.3" fill="#F28CA6"/>
+<circle cx="133.4" cy="57.1" r="2.3" fill="#C59BEA"/>
+<circle cx="84.5" cy="47.9" r="2.3" fill="#fff"/>
+<circle cx="62.1" cy="93.6" r="2.3" fill="#fff"/>
+<circle cx="154.3" cy="45.2" r="2.3" fill="#fff"/>
+<circle cx="139.6" cy="98.1" r="2.3" fill="#F28CA6"/>
+<g filter="url(#pkSh)"><rect x="90" y="56" width="40" height="38" rx="4" fill="#E6F3F7" stroke="#7D8494" stroke-width="1.2"/></g><path d="M90 75 H130 M110 56 V94" stroke="#A9C6D3" stroke-width="1"/>
+<circle cx="110" cy="75" r="15" fill="#1A2238" stroke="#fff" stroke-width="2.5"/><text x="110" y="81.5" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="800" fill="#fff">E</text>
+<g filter="url(#pkSh)"><rect x="384" y="226" width="72" height="52" rx="5" fill="#F8F6F1" stroke="#7D8494" stroke-width="1.3"/></g>
+<rect x="390" y="232" width="60" height="40" rx="3" fill="#F2D69B"/>
+<path d="M390 252.0 H450" stroke="#fff" stroke-width="1" opacity=".5"/>
+<rect x="383" y="244" width="5" height="14" rx="1.5" fill="#6B4F35"/>
+
+<circle cx="420" cy="252" r="15" fill="#1A2238" stroke="#fff" stroke-width="2.5"/><text x="420" y="258.5" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="800" fill="#fff">F</text>
+<circle cx="398" cy="290" r="4.5" fill="#fff" stroke="#9AA5B5" stroke-width="1"/>
+<circle cx="414" cy="290" r="4.5" fill="#fff" stroke="#9AA5B5" stroke-width="1"/>
+<circle cx="430" cy="290" r="4.5" fill="#fff" stroke="#9AA5B5" stroke-width="1"/>
+<circle cx="446" cy="290" r="4.5" fill="#fff" stroke="#9AA5B5" stroke-width="1"/>
+<g filter="url(#pkSh)"><rect x="506" y="30" width="70" height="58" rx="5" fill="#F8F6F1" stroke="#7D8494" stroke-width="1.3"/></g>
+<rect x="512" y="36" width="58" height="46" rx="3" fill="#F4B9AE"/>
+<path d="M512 59.0 H570" stroke="#fff" stroke-width="1" opacity=".5"/>
+<rect x="520" y="87" width="14" height="5" rx="1.5" fill="#6B4F35"/>
+
+<circle cx="541" cy="59" r="15" fill="#1A2238" stroke="#fff" stroke-width="2.5"/><text x="541" y="65.5" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="18" font-weight="800" fill="#fff">G</text>
+<g filter="url(#pkSh)"><rect x="222" y="308" width="34" height="22" rx="3" fill="#F8F6F1" stroke="#7D8494" stroke-width="1.1"/></g><text x="239" y="323" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="9.5" font-weight="700" fill="#4A536B">WC</text>
+<rect x="468" y="318" width="106" height="88" rx="12" fill="#E9C9A0" stroke="#D3BE93" stroke-width="1.5"/>
+<rect x="472" y="322" width="98" height="80" rx="10" fill="#F2DCB8"/>
+<g filter="url(#pkSh)"><rect x="480" y="330" width="44" height="4" rx="2" fill="#C0563F"/></g>
+<circle cx="482" cy="332" r="3.2" fill="#9E3F2C"/><circle cx="522" cy="332" r="3.2" fill="#9E3F2C"/>
+<path d="M492 334 V347 M498 334 V347 M506 334 V347 M512 334 V347" stroke="#7D8494" stroke-width=".9"/>
+<rect x="490" y="347" width="10" height="5" rx="1.5" fill="#4A7BB7"/><rect x="504" y="347" width="10" height="5" rx="1.5" fill="#E3A63B"/>
+<g filter="url(#pkSh)"><rect x="534" y="328" width="16" height="16" rx="2" fill="#4A7BB7"/></g>
+<path d="M534 345 H546 M534 353 H546 M536 345 V353 M540 345 V353 M544 345 V353" stroke="#6B7383" stroke-width="1.3" stroke-linecap="round"/>
+<path d="M550 334 C558 336 562 344 562 356 L562 362 C562 366 560 368 556 368" fill="none" stroke="#E3A63B" stroke-width="7" stroke-linecap="round"/>
+<path d="M550 334 C558 336 562 344 562 356 L562 362 C562 366 560 368 556 368" fill="none" stroke="#F7D07A" stroke-width="3" stroke-linecap="round"/>
+<rect x="478" y="364" width="38" height="28" rx="4" fill="#B98B5A"/><rect x="481" y="367" width="32" height="22" rx="3" fill="#F3DFA8"/>
+<circle cx="489" cy="374" r="1.2" fill="#D9BF7E"/><circle cx="500" cy="381" r="1.2" fill="#D9BF7E"/><circle cx="506" cy="372" r="1.2" fill="#D9BF7E"/><path d="M494 379 l5 -3 1 2 -5 3Z" fill="#C0392B"/><circle cx="504" cy="384" r="2.6" fill="#4A7BB7"/>
+<g transform="rotate(-12 545 384)"><g filter="url(#pkSh)"><rect x="525" y="381" width="40" height="6" rx="3" fill="#6FA86A"/></g><circle cx="545" cy="384" r="3.6" fill="#4A536B"/><rect x="526" y="379" width="4" height="10" rx="1.5" fill="#3E6E3A"/><rect x="560" y="379" width="4" height="10" rx="1.5" fill="#3E6E3A"/></g>
+<rect x="263" y="137.5" width="14" height="5" rx="1.5" fill="#A8794A" transform="rotate(90 270 140)"/>
+<rect x="323" y="167.5" width="14" height="5" rx="1.5" fill="#A8794A" transform="rotate(90 330 170)"/>
+<rect x="313" y="327.5" width="14" height="5" rx="1.5" fill="#A8794A" transform="rotate(90 320 330)"/>
+<rect x="207" y="229.5" width="14" height="5" rx="1.5" fill="#A8794A" transform="rotate(0 214 232)"/>
+<rect x="279" y="424" width="8" height="18" rx="1.5" fill="#6B7383"/><rect x="313" y="424" width="8" height="18" rx="1.5" fill="#6B7383"/><path d="M283 426 C292 414 308 414 317 426" fill="none" stroke="#6B7383" stroke-width="3"/>
+<rect x="176" y="452" width="40" height="12" rx="2" fill="#4A7BB7"/><rect x="194" y="440" width="3" height="14" fill="#6B7383"/>
+<rect x="410" y="452" width="22" height="22" rx="4" fill="#4A7BB7"/><text x="421" y="469" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="15" font-weight="800" fill="#fff">P</text>
+<g transform="translate(58 382)"><circle r="22" fill="#fff" fill-opacity=".85" stroke="#9AA5B5" stroke-width="1"/><path d="M0 -18 L5 0 L0 18 L-5 0Z" fill="#fff" stroke="#1A2238" stroke-width="1"/><path d="M0 -18 L5 0 L-5 0Z" fill="#C0392B"/><path d="M-18 0 L0 4 L18 0 L0 -4Z" fill="#E9EDF3" stroke="#1A2238" stroke-width=".8"/></g>
+<text x="58" y="356" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="13" font-weight="800" fill="#1A2238" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">N</text>
+<text x="300" y="312" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="11" font-weight="700" fill="#1A2238" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">Fountain</text>
+<text x="430" y="124" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12" font-weight="700" fill="#2F6C93" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">Pond</text>
+<text x="496" y="198" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="10" font-weight="700" fill="#6E4B26" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">Bridge</text>
+<text x="521" y="421" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="10.5" font-weight="700" fill="#1A2238" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">Playground</text>
+<text x="300" y="492" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="12.5" font-weight="800" fill="#1A2238" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">Main Gate</text>
+<text x="196" y="486" text-anchor="middle" font-family="Noto Sans TC, sans-serif" font-size="10" font-weight="700" fill="#4A536B" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">Bus Stop</text>
+<text x="448" y="468" text-anchor="start" font-family="Noto Sans TC, sans-serif" font-size="10" font-weight="700" fill="#4A536B" paint-order="stroke" stroke="#fff" stroke-width="3" stroke-linejoin="round">Parking</text>
+</svg>`;
+
+SETS.push({
+  title:"A Visitor's Guide to Maple Hill Science Park",tag:"地圖題",img:"",
+  p:[
+"Welcome to Maple Hill Science Park! The park has five exhibit buildings, a café, a gift shop, and a large pond, all connected by easy walking paths. This guide will help you find your way around, and it will also tell you a little about the surprises waiting for you inside each building.",
+"If you come by bus, you will get off at the bus stop just to the left of the main gate on the south side of the park. As you walk through the gate, you will see the main path running straight north. The first building on your right is the Mirror Maze. Hundreds of mirrors make its narrow paths seem to go on forever, so it is easy to lose your way. Visitors are given cotton gloves, both to keep the mirrors clean and to help them feel their way. Families with young children may also enjoy the playground just beyond the Mirror Maze, to the east. Directly across the main path from the Mirror Maze stands the Robot Lab, with the public restrooms right behind it. The lab's star is a small robot that can solve a Rubik's Cube in less than a second, far faster than any human.",
+"Keep walking north and you will reach the fountain in the center of the park. To the west of the fountain is Dinosaur Hall, home to a full-size model of a Tyrannosaurus rex. Here is a surprising fact: T. rex actually lived closer in time to us than to Stegosaurus, another famous dinosaur. If you continue past the fountain to the very end of the main path, you will arrive at the Space Dome. Lie back in its comfortable seats and watch the night sky appear above you. You will learn, for example, that a single day on Venus is longer than its whole year.",
+"Many visitors never discover the Butterfly Garden, because it is a little off the beaten track. To find it, take the winding path that leaves the fountain toward the northwest. The garden is tucked away in the corner of the park, behind Dinosaur Hall. Look closely at the butterflies resting on the flowers. Believe it or not, they taste their food with their feet!",
+"When you need a break, head to the café on the east side of the fountain, where you can enjoy a cold drink while watching the ducks on the pond. From the café, a wooden bridge crosses the pond. On the far side, in the northeast corner of the park, is the Gift Shop, where you can buy a tiny robot kit to take home. The park is open from 9 a.m. to 5 p.m. every day except Monday, and the last show at the Space Dome starts at 4 p.m. Enjoy your visit!"],
+  chartAfter:-1,chart:"",
+  tr:[
+"歡迎來到楓丘科學園區！園區裡有五棟展覽館、一間咖啡館、一間禮品店和一座大池塘，全部都有好走的步道相連。這份導覽會幫你找到路，也會告訴你每一棟館裡有哪些驚喜在等著你。",
+"如果你搭公車來，會在園區南側大門左邊的公車站下車。走進大門後，你會看到主步道一路往北延伸。右手邊的第一棟建築是鏡子迷宮。數百面鏡子讓裡面窄窄的通道看起來好像永遠走不完，所以很容易迷路。遊客會拿到棉手套，一方面保持鏡子乾淨，一方面也幫助大家摸索方向。帶著小小孩的家庭，也可能會喜歡鏡子迷宮再過去、東邊的遊樂場。在主步道另一側、正對著鏡子迷宮的是機器人實驗室，公共廁所就在它的正後方。實驗室的明星是一台小機器人，它能在不到一秒內解開魔術方塊，比任何人都快得多。",
+"繼續往北走，就會到達園區正中央的噴水池。噴水池的西邊是恐龍館，裡面有一座和真實大小一樣的暴龍模型。有個令人驚訝的事實：暴龍生存的年代，其實離我們比離另一種有名的恐龍「劍龍」還要近。如果你經過噴水池，一直走到主步道的最盡頭，就會到達太空圓頂館。躺在舒服的座椅上，看著夜空在頭頂上出現。舉例來說，你會學到金星上的一天比它的一整年還要長。",
+"很多遊客從來沒發現蝴蝶花園，因為它的位置有點偏僻。要找到它，請走從噴水池往西北方延伸的那條彎彎曲曲的小路。花園就藏在園區的角落，在恐龍館的後方。仔細看看停在花朵上的蝴蝶。信不信由你，牠們是用腳來嚐食物的味道！",
+"想休息的時候，可以去噴水池東邊的咖啡館，一邊喝冷飲一邊看池塘裡的鴨子。從咖啡館有一座木橋橫跨池塘。過了橋，在園區的東北角就是禮品店，你可以在那裡買一組迷你機器人套件帶回家。園區每天早上 9 點到下午 5 點開放，星期一除外；太空圓頂館最後一場表演在下午 4 點開始。祝你玩得愉快！"],
+  q:[
+   {type:"fill",n:1,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
+    s:"Visitors can watch the night sky in great {A} at the Space Dome, and finding the hidden Butterfly Garden can feel like a real {B}.",
+    blanks:{A:{ans:["comfort"],src:"comfortable",hint:"看第 3 段，太空圓頂館的座椅很「舒服」，用哪個字？in great 後面要接名詞。",k:"第 3 段 its comfortable seats。in great 後面要接名詞，所以把形容詞 comfortable 改成名詞 comfort（舒適）。in comfort 就是「舒舒服服地」。"},
+            B:{ans:["discovery"],src:"discover",hint:"看第 4 段第一句，很多遊客從沒「發現」蝴蝶花園，用哪個字？a real 後面要接名詞。",k:"第 4 段 Many visitors never discover the Butterfly Garden。a real 後面要接名詞，所以把動詞 discover 改成名詞 discovery（發現）。"}}},
+   {type:"fill",n:2,pts:"2 分",inst:"請從第 4 段找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
+    s:"{A} = in a place that few people go to or know about",
+    blanks:{A:{ans:["off the beaten track","a little off the beaten track","off the beaten path"],src:"-",hint:"第 4 段講很多人沒發現蝴蝶花園的原因，找那個片語（四個字）。",k:"第 4 段 it is a little off the beaten track。beaten track 是「被很多人踩出來的路」，off 就是「離開」，所以 off the beaten track 是「偏僻、人跡罕至、少有人知道的地方」。"}}},
+   {type:"map",n:3,pts:"6 分（每格 1 分）",inst:"請根據文章內容，在地圖中找出下列各建築物的位置，選出代號（A–G）。（有一個代號用不到）",
+    map:PARKMAP,letters:"ABCDEFG",
+    items:[
+     {name:"Robot Lab",ans:"A",k:"第 2 段：機器人實驗室在主步道另一側、正對著鏡子迷宮（B），而且正後方是廁所（WC），所以是 A。"},
+     {name:"Mirror Maze",ans:"B",k:"第 2 段：從南邊大門進來，右手邊第一棟是鏡子迷宮。面向北方時，右手邊是東邊；而且它再過去、東邊是遊樂場，所以是 B。"},
+     {name:"Dinosaur Hall",ans:"C",k:"第 3 段：噴水池的西邊是恐龍館。地圖上北方朝上，西邊在左，所以是 C。"},
+     {name:"Space Dome",ans:"D",k:"第 3 段：經過噴水池，走到主步道的最盡頭就是太空圓頂館，所以是 D。"},
+     {name:"Butterfly Garden",ans:"E",k:"第 4 段：從噴水池往西北走那條彎曲小路，花園藏在角落、恐龍館（C）的後方，所以是 E。"},
+     {name:"Gift Shop",ans:"G",k:"第 5 段：從咖啡館過木橋（Bridge）橫跨池塘，在園區的東北角，所以是 G。F 在噴水池東邊、池塘旁，是咖啡館，題目沒有問。"}],
+    hint:"先在地圖上找到大門和指北針（N），想像自己從大門走進去、面向北方：右手邊是東、左手邊是西。再利用文章提到的地標（公車站、廁所、遊樂場、木橋）一棟一棟找。記得有一個代號用不到：第 5 段提到的另一個地點不在題目裡。"},
+   {type:"multi",n:4,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
+    opts:["The park is open seven days a week.","Visitors to the Mirror Maze are given gloves.","The café is on the west side of the fountain.","T. rex lived closer in time to humans than to Stegosaurus.","A day on Venus is shorter than its year."],
+    a:[1,3],why:["錯。第 5 段：星期一不開放。","對。第 2 段：遊客會拿到棉手套。","錯。第 5 段：咖啡館在噴水池的東邊；西邊是恐龍館。","對。第 3 段：暴龍的年代離我們比離劍龍還近。","錯。第 3 段：金星上的一天比它的一年還要長。"]},
+   {type:"short",n:5,pts:"2 分",inst:"請以英文作答。",q:"If you want to see a show at the Space Dome, what is the latest time it can start?",
+    check:v=>/(4|four)/.test(v),model:"(At) 4 p.m. / four o'clock in the afternoon.",hint:"回到第 5 段最後幾句，找 Space Dome 和 last show。",k:"答案在第 5 段：the last show at the Space Dome starts at 4 p.m.。"}
+  ]
+});
+
 /* 每種題型旁邊的解題便利貼 */
 const NOTES={
  fill:{t:"📝 填充題怎麼解？",s:[
@@ -812,10 +1227,15 @@ const NOTES={
   "可以用文章的字，但只要<b>回答問題</b>就好，不要整段照抄。",
   "寫完檢查<b>拼字</b>。"]}
 };
+NOTES.map={t:"📝 地圖題怎麼解？",s:[
+  "先找<b>指北針（N）</b>和<b>起點</b>（通常是大門），確定上下左右是哪個方位。",
+  "想像自己<b>走進地圖</b>：面向北方時，右手邊是東、左手邊是西。",
+  "照文章的順序一個一個找，注意 <b>across from、next to、behind、at the end of、to the west of</b> 這些位置用語。",
+  "先找確定的，<b>用刪去法</b>處理剩下的；記得有一個代號可能用不到。"]};
 const CLUE={multi:"每個選項先找它在第幾段：選項的關鍵字通常會在文章裡原封不動出現。",
  single:"把每個選項放回圖上檢查：圖上找得到這個數字或順序嗎？找不到就刪掉。"};
 function noteHTML(q){const N=NOTES[q.type];
-  const clue=q.type==="fill"?Object.entries(q.blanks).map(([k,B])=>`(${k}) ${B.hint}`).join("<br>"):q.type==="short"?q.hint:CLUE[q.type];
+  const clue=q.type==="fill"?Object.entries(q.blanks).map(([k,B])=>`(${k}) ${B.hint}`).join("<br>"):(q.type==="short"||q.type==="map")?q.hint:CLUE[q.type];
   return `<details class="note"${window.innerWidth>=820?" open":""}><summary>${N.t}</summary><ol>${N.s.map(x=>`<li>${x}</li>`).join("")}</ol><button class="clue" type="button">🔍 給我線索</button><div class="cluebox" hidden>${clue}</div></details>`}
 
 const $=s=>document.querySelector(s);
@@ -857,7 +1277,7 @@ function build(){
     const el=$("#q"+i);let tries=0,over=false;
     el.innerHTML=`<div class="qmain"></div>${noteHTML(q)}`;const qm=el.querySelector(".qmain");
     el.querySelector(".clue").onclick=e=>{e.target.nextElementSibling.hidden=false;e.target.hidden=true};
-    const head=`<p class="qt">${q.n}. ${q.type==="fill"?"填充題":q.type==="short"?"簡答題":q.type==="multi"?"多選題":"單選題"}<span class="pts">${q.pts}</span></p>${q.inst?`<p class="inst">${q.inst}</p>`:""}`;
+    const head=`<p class="qt">${q.n}. ${q.type==="fill"?"填充題":q.type==="short"?"簡答題":q.type==="multi"?"多選題":q.type==="map"?"地圖題":"單選題"}<span class="pts">${q.pts}</span></p>${q.inst?`<p class="inst">${q.inst}</p>`:""}`;
     const btns=`<div class="row"><button class="b main" data-c>檢查答案</button><button class="b" data-s hidden>看答案</button></div><div class="fbw"></div>`;
     const fbw=()=>el.querySelector(".fbw");
     const end=f=>{over=true;el.querySelector("[data-c]").hidden=true;el.querySelector("[data-s]").hidden=true;finish(f)};
@@ -886,6 +1306,17 @@ function build(){
         fbw().innerHTML=`<div class="fb bad"><b class="t">再想想看</b>${q.type==="multi"?`正確答案有 ${ans.length} 個。紅色的選項不對，`:""}回到文章${q.type==="single"?"和圖表":""}再找找證據。</div>`;
         if(tries>=2)el.querySelector("[data-s]").hidden=false};
       el.querySelector("[data-s]").onclick=()=>reveal(false);
+    }else if(q.type==="map"){
+      el.classList.add("isMap");qm.innerHTML=head+`<div class="mapq"><figure>${q.map}</figure>${q.items.map((it,k)=>`<div class="mrow" data-k="${k}"><b>${esc(it.name)}</b><select aria-label="${esc(it.name)} 的位置"><option value="">選代號</option>${[...q.letters].map(c=>`<option>${c}</option>`).join("")}</select></div>`).join("")}</div>`+btns;
+      const rows=[...el.querySelectorAll(".mrow")];
+      const run=show=>{let out="",wrong=0;
+        rows.forEach(r=>{const it=q.items[r.dataset.k],sel=r.querySelector("select");if(r.classList.contains("ok"))return;
+          if(show||sel.value===it.ans){if(show)sel.value=it.ans;r.classList.remove("bad");r.classList.add("ok");sel.disabled=true;out+=`<li><b>${esc(it.name)} → ${it.ans}</b>　${it.k}</li>`}
+          else{wrong++;r.classList.add("bad")}});
+        fbw().innerHTML=(out?`<div class="fb good"><b class="t">${show?"答案":"答對的部分"}</b><ul>${out}</ul></div>`:"")+(wrong&&!show?`<div class="fb bad"><b class="t">還有 ${wrong} 個不對（紅色）</b>${q.hint}</div>`:"");
+        if(rows.every(r=>r.classList.contains("ok")))end(!show&&tries===1);else if(tries>=2)el.querySelector("[data-s]").hidden=false};
+      el.querySelector("[data-c]").onclick=()=>{if(rows.some(r=>!r.classList.contains("ok")&&!r.querySelector("select").value)){fbw().innerHTML=`<div class="fb bad"><b class="t">還有建築物沒選代號</b></div>`;return}tries++;run(false)};
+      el.querySelector("[data-s]").onclick=()=>run(true);
     }else{
       qm.innerHTML=head+`<p class="en">${esc(q.q)}</p><input class="in long" autocomplete="off" spellcheck="false" aria-label="簡答">`+btns;
       const inp=el.querySelector(".in");
