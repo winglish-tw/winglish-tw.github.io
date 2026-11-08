@@ -263,7 +263,7 @@ const META = {
 <svg viewBox="0 0 800 420" aria-hidden="true"><rect width="800" height="420" fill="#DDF3E9"/><path d="M0 350 H800 V420 H0Z" fill="#8C5A2B"/><path d="M400 350 V170" stroke="#17875C" stroke-width="10" stroke-linecap="round"/><g fill="#17875C"><path d="M400 260 C330 260 280 220 270 170 C330 166 390 200 400 260Z"/><path d="M400 226 C470 226 520 186 534 136 C474 132 414 166 400 226Z"/><path d="M400 190 C376 150 380 110 404 80 C428 116 424 156 400 190Z"/></g><g fill="none" stroke="#1A2238" stroke-width="6" stroke-linecap="round" opacity=".7"><path d="M580 170 q24 34 0 68"/><path d="M620 146 q44 58 0 116"/><path d="M220 170 q-24 34 0 68"/><path d="M180 146 q-44 58 0 116"/></g></svg>
 <figcaption>植物看起來安安靜靜，其實可能一直在發出我們聽不到的聲音。<span class="credit">Photo: Unsplash</span></figcaption>`,
  fact:"研究人員把植物的錄音放慢、降低音調後，聽起來就像有人在捏氣泡紙，啵、啵、啵！",
- next:{title:"The 85-Year Secret to Happiness", href:"read.html#happiness"}
+ next:{title:"Hotter Than the Sun", href:"read.html#lightning"}
 };
 return Object.assign(META,{LEVELS,GLOSS,KEY,FIGS,QUIZ});
 })();

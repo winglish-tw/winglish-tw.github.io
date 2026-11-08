@@ -74,6 +74,24 @@ window.ARTICLES = [
   "svg": "<svg viewBox=\"0 0 320 170\" aria-hidden=\"true\"><rect width=\"320\" height=\"170\" fill=\"#DDF3E9\"/><path d=\"M0 140 H320 V170 H0Z\" fill=\"#8C5A2B\"/><path d=\"M160 140 V70\" stroke=\"#17875C\" stroke-width=\"5\" stroke-linecap=\"round\"/>\n          <g fill=\"#17875C\"><path d=\"M160 100 C130 100 110 84 106 64 C130 62 154 76 160 100Z\"/><path d=\"M160 86 C188 86 208 70 214 50 C190 48 166 62 160 86Z\"/><path d=\"M160 72 C150 56 152 40 162 28 C172 42 170 58 160 72Z\"/></g>\n          <g fill=\"none\" stroke=\"#1A2238\" stroke-width=\"3\" stroke-linecap=\"round\" opacity=\".7\"><path d=\"M232 70 q10 14 0 28\"/><path d=\"M248 60 q18 24 0 48\"/><path d=\"M88 70 q-10 14 0 28\"/><path d=\"M72 60 q-18 24 0 48\"/></g></svg>"
  },
  {
+  "id": "lightning",
+  "cat": "science",
+  "catName": "科學",
+  "title": "Hotter Than the Sun",
+  "blurb": "閃電比太陽表面還熱五倍？「閃電不會打同一個地方兩次」其實是錯的。",
+  "photo": "photo-1559087867-ce4c91325525",
+  "svg": "<svg viewBox=\"0 0 320 170\" aria-hidden=\"true\"><rect width=\"320\" height=\"170\" fill=\"#1A2238\"/><path d=\"M0 50 C60 20 120 60 180 34 S280 30 320 44 V0 H0Z\" fill=\"#2C355A\"/><path d=\"M0 148 C90 140 200 154 320 144 V170 H0Z\" fill=\"#0F1526\"/><path d=\"M172 26 l-14 44 l16 -4 l-18 48 l14 -4 l-16 44\" fill=\"none\" stroke=\"#FFE14D\" stroke-width=\"6\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/><path d=\"M160 88 q-14 14 -32 18\" fill=\"none\" stroke=\"#FFE14D\" stroke-width=\"3\" stroke-linecap=\"round\"/></svg>"
+ },
+ {
+  "id": "moon",
+  "cat": "science",
+  "catName": "科學",
+  "title": "The Moon Is Running Away",
+  "blurb": "月亮每年離地球遠 3.8 公分，恐龍時代的一天只有 23 個半小時。",
+  "photo": "photo-1628003222314-88aa10a0b51f",
+  "svg": "<svg viewBox=\"0 0 320 170\" aria-hidden=\"true\"><rect width=\"320\" height=\"170\" fill=\"#141B33\"/><g fill=\"#fff\" opacity=\".6\"><circle cx=\"30\" cy=\"30\" r=\"1.5\"/><circle cx=\"280\" cy=\"40\" r=\"1.5\"/><circle cx=\"150\" cy=\"150\" r=\"1.2\"/></g><circle cx=\"70\" cy=\"110\" r=\"38\" fill=\"#2F7FC1\"/><path d=\"M50 92 c10 -6 20 -2 22 6 c2 8 -8 12 -4 20 c-8 4 -22 -12 -18 -26Z\" fill=\"#3FA96B\"/><circle cx=\"240\" cy=\"70\" r=\"22\" fill=\"#E3E5EA\"/><circle cx=\"233\" cy=\"64\" r=\"5\" fill=\"#C9CCD3\"/><circle cx=\"248\" cy=\"78\" r=\"4\" fill=\"#C9CCD3\"/><path d=\"M108 102 C150 92 190 84 216 76\" fill=\"none\" stroke=\"#FF5A6E\" stroke-width=\"2.5\" stroke-dasharray=\"6 4\"/><path d=\"M268 62 q14 -4 26 -8\" fill=\"none\" stroke=\"#7CE0B5\" stroke-width=\"3\" stroke-linecap=\"round\"/><path d=\"M286 50 l9 4 l-6 8\" fill=\"none\" stroke=\"#7CE0B5\" stroke-width=\"3\" stroke-linejoin=\"round\" stroke-linecap=\"round\"/></svg>"
+ },
+ {
   "id": "happiness",
   "cat": "life",
   "catName": "生命教育",
