@@ -57,6 +57,27 @@ table.tb{border-collapse:collapse;width:100%;margin:6px 0;font-size:16px}
 .fb.good b.t{color:var(--ok)} .fb.bad b.t{color:var(--sheet-red)}
 .fb ul{margin:4px 0 0;padding-left:1.2em}
 .done{text-align:center;font-weight:700;font-size:18px}
+/* 題組選單 */
+.picker{background:#fff;border-radius:16px;padding:12px 14px;margin-bottom:16px;box-shadow:0 1px 0 var(--mist),0 14px 30px -20px rgba(26,34,56,.35)}
+.pk-bar{display:flex;align-items:center;gap:8px}
+.pk-now{flex:1;min-width:0}
+.pk-now small{display:block;color:var(--ink-soft);font-size:13px}
+.pk-now b{display:block;font-size:16px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pk-arrow{font:inherit;font-size:18px;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;flex:none}
+.pk-arrow:disabled{opacity:.3;cursor:default}
+.pk-open{font:inherit;font-weight:700;font-size:15px;padding:8px 14px;border-radius:999px;border:0;background:var(--ink);color:#fff;cursor:pointer;flex:none;white-space:nowrap}
+.pk-panel{margin-top:12px;border-top:1px solid var(--mist);padding-top:12px}
+.pk-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.pk-tag{font:inherit;font-size:14px;padding:4px 12px;border-radius:999px;border:1.5px solid var(--mist);background:#fff;color:var(--ink);cursor:pointer}
+.pk-tag.on{border-color:var(--ink);background:var(--ink);color:#fff}
+.pk-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px;max-height:360px;overflow:auto}
+.pk-item{font:inherit;text-align:left;padding:9px 12px;border-radius:12px;border:1.5px solid var(--mist);background:#fff;color:var(--ink);cursor:pointer;display:flex;gap:8px;align-items:flex-start}
+.pk-item.on{border-color:var(--ink);background:var(--paper)}
+.pk-item .no{flex:none;font-weight:800;color:var(--ink-soft);min-width:1.6em}
+.pk-item .tt{flex:1;line-height:1.35}
+.pk-item .tg{display:block;font-size:12px;color:var(--ink-soft);margin-top:2px}
+.pk-item .ck{flex:none;color:var(--ok);font-weight:800}
+.pk-sum{font-size:13px;color:var(--ink-soft);margin-top:8px}
 /* 解題便利貼 */
 .note{position:relative;background:#FFF3A3;border-radius:3px;padding:14px 14px 12px;font-size:14.5px;line-height:1.65;color:#3A3420;box-shadow:2px 6px 14px -6px rgba(60,50,0,.35);margin-top:12px}
 .note::before{content:"";position:absolute;top:-9px;left:50%;width:64px;height:18px;margin-left:-32px;background:rgba(255,255,255,.6);border:1px solid rgba(0,0,0,.06);transform:rotate(-3deg)}
@@ -108,7 +129,7 @@ table.tb{border-collapse:collapse;width:100%;margin:6px 0;font-size:16px}
     </ol>
     每一題旁邊都有一張黃色便利貼，卡住的時候看一下，還可以按「🔍 給我線索」。
   </details>
-  <div class="sets" id="sets"></div>
+  <div class="picker" id="sets"></div>
   <div id="app"></div>
 </main>
 
@@ -802,15 +823,36 @@ const L="ABCDE";
 const esc=t=>t.replace(/&/g,"&amp;").replace(/</g,"&lt;");
 function norm(v){return v.trim().toLowerCase().replace(/[.!?,]+$/,"").replace(/\s+/g," ")}
 let cur=0;
-function sets(){$("#sets").innerHTML=SETS.map((s,i)=>`<button class="set-btn${i===cur?" on":""}" data-i="${i}">第 ${i+1} 組：${esc(s.title)}</button>`).join("");
-  document.querySelectorAll(".set-btn").forEach(b=>b.onclick=()=>{cur=+b.dataset.i;build()})}
+const TAGS={"Why Can't We Stop Yawning?":"身體與科學","Why Do Onions Make Us Cry?":"身體與科學","Why Do Our Fingers Wrinkle in Water?":"身體與科學","What Is Brain Freeze?":"身體與科學",
+ "Born Grey, Grown Pink":"動物","Why Do Zebras Wear Stripes?":"動物","The Penguin Huddle":"動物","Who Sleeps the Most?":"動物",
+ "The Accidental Success of Bubble Wrap":"發明與歷史","The Fortune Cookie's Surprising Journey":"發明與歷史","The Sticky Note That Almost Wasn't":"發明與歷史",
+ "How Long Does a New Habit Take?":"生活與心理"};
+const tagOf=S=>S.tag||TAGS[S.title]||"其他";
+const DONE=(()=>{try{return JSON.parse(localStorage.getItem("mx-done")||"[]")}catch(e){return []}})();
+function markDone(t){if(!DONE.includes(t)){DONE.push(t);try{localStorage.setItem("mx-done",JSON.stringify(DONE))}catch(e){}}}
+let pkOpen=false,pkTag="全部";
+function sets(){const S=SETS[cur],n=SETS.length;
+  const tags=["全部",...[...new Set(SETS.map(tagOf))]];
+  const list=SETS.map((x,i)=>({x,i})).filter(o=>pkTag==="全部"||tagOf(o.x)===pkTag);
+  $("#sets").innerHTML=`<div class="pk-bar"><button class="pk-arrow" id="pkPrev" aria-label="上一組"${cur===0?" disabled":""}>‹</button>
+  <div class="pk-now"><small>第 ${cur+1} 組 / 共 ${n} 組 · ${tagOf(S)}</small><b>${esc(S.title)}</b></div>
+  <button class="pk-arrow" id="pkNext" aria-label="下一組"${cur===n-1?" disabled":""}>›</button>
+  <button class="pk-open" id="pkOpen">${pkOpen?"收起 ▴":"📋 選題組 ▾"}</button></div>
+  ${pkOpen?`<div class="pk-panel"><div class="pk-tags">${tags.map(t=>`<button class="pk-tag${t===pkTag?" on":""}" data-t="${t}">${t}</button>`).join("")}</div>
+  <div class="pk-list">${list.map(o=>`<button class="pk-item${o.i===cur?" on":""}" data-i="${o.i}"><span class="no">${o.i+1}</span><span class="tt">${esc(o.x.title)}<span class="tg">${tagOf(o.x)}</span></span>${DONE.includes(o.x.title)?'<span class="ck">✓</span>':""}</button>`).join("")}</div>
+  <p class="pk-sum">已完成 ${SETS.filter(x=>DONE.includes(x.title)).length} / ${n} 組（✓ 表示這台裝置上做完過）</p></div>`:""}`;
+  const go=i=>{cur=i;pkOpen=false;try{history.replaceState(null,"","#"+(i+1))}catch(e){}build();$("#sets").scrollIntoView({block:"start"})};
+  $("#pkPrev").onclick=()=>go(cur-1);$("#pkNext").onclick=()=>go(cur+1);
+  $("#pkOpen").onclick=()=>{pkOpen=!pkOpen;sets()};
+  document.querySelectorAll(".pk-tag").forEach(b=>b.onclick=()=>{pkTag=b.dataset.t;sets()});
+  document.querySelectorAll(".pk-item").forEach(b=>b.onclick=()=>go(+b.dataset.i))}
 function build(){
   sets();const S=SETS[cur];let done=0;const total=S.q.length;
   let ph=S.p.map((t,i)=>`<p><span class="pn">(${i+1})</span>${esc(t)}</p>`+(i===S.chartAfter?`<figure>${S.chart}</figure>`:"")).join("");
   $("#app").innerHTML=`<div class="card passage"><h2>閱讀下文，回答第 1 至 ${total} 題</h2><h3>${esc(S.title)}</h3>${S.img?`<figure>${S.img}</figure>`:""}${ph}
   <details class="tr" id="tr" hidden><summary>看全文翻譯</summary>${S.tr.map(t=>`<p>${t}</p>`).join("")}</details></div>
   <div class="card" id="qs">${S.q.map((q,i)=>`<div class="q" id="q${i}"></div>`).join("")}<div id="end"></div></div>`;
-  let firstOk=0;const finish=f=>{done++;if(f)firstOk++;if(done===total){logUse("done","混合題","第 "+(cur+1)+" 組："+S.title,firstOk,total);$("#tr").hidden=false;$("#end").innerHTML=`<p class="done">全部完成！可以打開上面的「看全文翻譯」再讀一次。</p>${cur<SETS.length-1?`<div class="row" style="justify-content:center"><button class="b main" id="nextSet">做下一組 →</button></div>`:""}`;const nx=document.getElementById("nextSet");if(nx)nx.onclick=()=>{cur++;build();window.scrollTo({top:0})}}};
+  let firstOk=0;const finish=f=>{done++;if(f)firstOk++;if(done===total){markDone(S.title);sets();logUse("done","混合題","第 "+(cur+1)+" 組："+S.title,firstOk,total);$("#tr").hidden=false;$("#end").innerHTML=`<p class="done">全部完成！可以打開上面的「看全文翻譯」再讀一次。</p>${cur<SETS.length-1?`<div class="row" style="justify-content:center"><button class="b main" id="nextSet">做下一組 →</button></div>`:""}`;const nx=document.getElementById("nextSet");if(nx)nx.onclick=()=>{cur++;try{history.replaceState(null,"","#"+(cur+1))}catch(e){}build();window.scrollTo({top:0})}}};
   S.q.forEach((q,i)=>{
     const el=$("#q"+i);let tries=0,over=false;
     el.innerHTML=`<div class="qmain"></div>${noteHTML(q)}`;const qm=el.querySelector(".qmain");
@@ -854,6 +896,7 @@ function build(){
     }
   });
 }
+{const h=parseInt(location.hash.slice(1));if(h>=1&&h<=SETS.length)cur=h-1}
 build();
 </script>
 </body>
