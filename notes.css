@@ -29,9 +29,7 @@ body{background-color:var(--paper);
 ::selection{background:var(--marker)}
 :focus-visible{outline-color:var(--sheet-red)}
 
-/* ---------- 標誌 ---------- */
-.logo svg rect{fill:#D9483F}
-.logo svg ellipse{fill:#FFE97A}
+/* ---------- 標誌：保持原本的深藍底＋黃點（和 IG、Threads 一致） ---------- */
 .logo small{color:var(--ok)!important}
 
 /* ---------- 導覽列的便利貼按鈕 ---------- */
