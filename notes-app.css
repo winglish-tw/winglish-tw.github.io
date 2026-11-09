@@ -1,0 +1,38 @@
+/* ==========================================================
+   winglish.tw 便利貼手帳風格：作答頁（考古題練習、程度測驗、我的進度）
+   ========================================================== */
+:root{
+  --bg:#EADFCB; --sheet:#FFFDF6; --fg:#3A2E25; --muted:#6B5B4E; --rule:#DDCFB6;
+  --ink:#3A2E25; --ink-soft:#FFF3A8;
+  --ok:#3E8E5E; --ok-soft:#D9F2E1; --bad:#D9483F; --bad-soft:#FFE0DD;
+  --red:#D9483F; --note-p:#FFD3D8; --note-g:#CFF0DA; --note-y:#FFF3A8;
+  --tape:rgba(150,205,220,.78);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#241D18; --sheet:#30271F; --fg:#F2E8D8; --muted:#C4B49F; --rule:#4A3D32;
+  --ink:#FFD86B; --ink-soft:#463A22; --ok:#86D6A4; --ok-soft:#1E3627; --bad:#FF8F84; --bad-soft:#47241F; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#241D18; --sheet:#30271F; --fg:#F2E8D8; --muted:#C4B49F; --rule:#4A3D32;
+  --ink:#FFD86B; --ink-soft:#463A22; --ok:#86D6A4; --ok-soft:#1E3627; --bad:#FF8F84; --bad-soft:#47241F; color-scheme:dark}
+
+body{background-color:var(--bg);background-image:radial-gradient(rgba(150,125,90,.36) 1.1px,transparent 1.6px);background-size:22px 22px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) body{background-image:radial-gradient(rgba(255,240,210,.08) 1.1px,transparent 1.6px)}}
+:root[data-theme="dark"] body{background-image:radial-gradient(rgba(255,240,210,.08) 1.1px,transparent 1.6px)}
+
+/* 便條紙卡片 */
+.sheet,.gbox,.login,.lock,.timer,.summary,.card,.box,.panel{border-radius:4px!important;box-shadow:0 8px 16px -10px rgba(58,46,37,.45)}
+.sheet{position:relative;margin-top:14px}
+.sheet::before{content:"";position:absolute;top:-12px;left:50%;width:110px;height:24px;margin-left:-55px;background:var(--tape);transform:rotate(-2deg);
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px);pointer-events:none}
+.summary{background:var(--ink-soft)}
+
+/* 大題分頁：像便利貼索引標籤 */
+.tab{border-radius:4px 4px 2px 2px!important}
+.tab[aria-selected="true"]{background:var(--ink);color:var(--sheet);box-shadow:0 3px 0 rgba(0,0,0,.25)}
+.btn{border-radius:5px}
+.btn.primary{box-shadow:0 3px 0 rgba(0,0,0,.28)}
+.opt{border-radius:5px}
+.opt b{color:var(--red)}
+.num{color:var(--red)!important}
+.homelink{color:var(--ink)}
+.clock{color:var(--red)}

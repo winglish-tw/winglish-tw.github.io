@@ -1,0 +1,108 @@
+/* ==========================================================
+   winglish.tw 便利貼手帳風格（全站共用）
+   牛皮紙點點底 × 便利貼 × 紙膠帶
+   這個檔案放在每一頁 <head> 的最後，蓋過各頁原本的顏色。
+   ========================================================== */
+:root{
+  --ink:#3A2E25;          /* 深咖啡：主要文字、深色區塊 */
+  --ink-soft:#6B5B4E;
+  --paper:#EADFCB;        /* 牛皮紙 */
+  --white:#FFFDF6;        /* 便條紙白 */
+  --mist:#D8C9AF;
+  --sheet-red:#D9483F;    /* 紅筆 */
+  --sheet-red-soft:#FFD6D3;
+  --red:#D9483F; --red-soft:#FFD6D3;
+  --marker:#FFE97A;       /* 黃色便利貼 */
+  --marker-soft:#FFF6C2;
+  --ok:#3E8E5E; --ok-soft:#D9F2E1;
+  --wrong-soft:#FFE0DD; --bad-soft:#FFE0DD;
+  --l2:#A9780A; --l2-soft:#FFF3A8;
+  --radius-lg:6px; --radius-sm:5px;
+  /* 便利貼三色＋紙膠帶 */
+  --note-y:#FFF3A8; --note-p:#FFD3D8; --note-g:#CFF0DA; --note-b:#D3E9F5;
+  --tape:rgba(150,205,220,.78);
+  --note-shadow:0 6px 12px -6px rgba(58,46,37,.42);
+}
+body{background-color:var(--paper);
+  background-image:radial-gradient(rgba(150,125,90,.38) 1.1px,transparent 1.6px);
+  background-size:22px 22px}
+::selection{background:var(--marker)}
+:focus-visible{outline-color:var(--sheet-red)}
+
+/* ---------- 標誌 ---------- */
+.logo svg rect{fill:#D9483F}
+.logo svg ellipse{fill:#FFE97A}
+.logo small{color:var(--ok)!important}
+
+/* ---------- 導覽列的便利貼按鈕 ---------- */
+.top nav a.nav-mx,.top nav a.nav-read{border-radius:3px!important;box-shadow:0 3px 6px rgba(58,46,37,.2);color:var(--ink)!important}
+.top nav a.nav-mx{background:var(--note-g)!important;transform:rotate(-2deg)}
+.top nav a.nav-read{background:var(--marker)!important;transform:rotate(2deg)}
+.nav-cta{border-radius:4px!important}
+
+/* ---------- 螢光筆重點 ---------- */
+.hero h1 .mark,.rd .mark,.mark{background:linear-gradient(-2deg,transparent 30%,#FFB8B3 30%,#FFB8B3 88%,transparent 88%)}
+
+/* ---------- 按鈕 ---------- */
+.btn{border-radius:6px}
+.btn-main{background:var(--sheet-red);border-color:var(--ink);box-shadow:0 5px 0 var(--ink)}
+.btn-main:hover{box-shadow:0 7px 0 var(--ink)}
+.btn-line{background:var(--white)}
+.rd-btn{box-shadow:0 5px 0 #000}
+.next{border-radius:5px}
+
+/* ---------- 試做一題：貼紙膠帶的便條 ---------- */
+.hero .sheet{border-top:0;transform:rotate(-1deg);box-shadow:0 14px 26px -12px rgba(58,46,37,.45);background:var(--white)}
+.hero .sheet::before{content:"";position:absolute;top:-14px;left:50%;width:120px;height:28px;margin-left:-60px;background:var(--tape);transform:rotate(3deg);
+  background-image:repeating-linear-gradient(45deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px);z-index:2}
+.hero .sheet-head{border-bottom:2px dashed var(--mist);background:transparent}
+.hero .q,.hero .sheet-foot{background:transparent}
+
+/* ---------- 年度：一張張便利貼 ---------- */
+.years{background:var(--ink);color:#FFF6E3}
+.years h2 span{color:var(--marker)}
+.year-list li a{background:var(--note-y);color:var(--ink);padding:10px 0;border-radius:2px;box-shadow:0 3px 6px rgba(0,0,0,.3);transform:rotate(-2deg);transition:transform .15s}
+.year-list li:nth-child(3n) a{background:var(--note-p);transform:rotate(2deg)}
+.year-list li:nth-child(3n+2) a{background:var(--note-g);transform:rotate(1deg)}
+.year-list li:last-child{color:inherit}
+.year-list li:last-child a{background:var(--sheet-red);color:#fff}
+.year-list li a:hover{transform:rotate(0) translateY(-3px);text-decoration:none}
+.year-list li small{opacity:.8}
+
+/* ---------- 首頁閱讀館區 ---------- */
+.rd{background:transparent;border:0}
+.rd-tag{transform:rotate(-2deg);box-shadow:var(--note-shadow)}
+.rd-why>div{background:var(--note-y);box-shadow:var(--note-shadow);transform:rotate(-1deg);border-radius:2px}
+.rd-why>div:nth-child(2){background:var(--note-p);transform:rotate(1deg)}
+.rd-why>div:nth-child(3){background:var(--note-g);transform:rotate(-.5deg)}
+.rd-why .ic{background:rgba(255,255,255,.75)}
+.rd-demo{border-top:0;transform:rotate(.6deg);background:var(--white)}
+.rd-demo::before{content:"";position:absolute;top:-13px;left:28px;width:96px;height:26px;background:rgba(255,184,179,.8);transform:rotate(-4deg);
+  background-image:repeating-linear-gradient(-45deg,rgba(255,255,255,.35) 0 6px,transparent 6px 12px)}
+.rd-tabs{background:var(--paper)}
+.rd-tabs button.on[data-l="1"]{background:var(--l2);color:#fff}
+.rd-steps li::before{background:var(--sheet-red);color:#fff}
+.rd-path{box-shadow:var(--note-shadow)}
+
+/* ---------- 特色、適合誰、常見問題 ---------- */
+.feat article{border-top:2px dashed var(--ink)}
+.who{background:var(--white);border:0}
+.who-grid div{border-left:5px solid var(--sheet-red)}
+.faq-grid>div{background:var(--white);border-radius:3px;box-shadow:var(--note-shadow)}
+footer{background:var(--ink);color:#E8DCC8}
+
+
+@media (prefers-reduced-motion:reduce){.hero .sheet,.rd-demo,.rd-why>div,.year-list li a,.top nav a{transform:none!important}}
+
+/* 首頁特色：手繪圖示貼在小便利貼上 */
+.feat-note{display:inline-grid;place-items:center;width:54px;height:54px;margin-bottom:12px;border-radius:2px;box-shadow:var(--note-shadow);transform:rotate(-4deg)}
+.feat article:nth-child(even) .feat-note{transform:rotate(3deg)}
+.feat-note.n-y{background:var(--note-y)}.feat-note.n-p{background:var(--note-p)}.feat-note.n-g{background:var(--note-g)}
+.feat-note svg{width:34px;height:34px}
+
+/* 常見問題：便條卡 */
+.faq-grid>div{border-top:0!important;padding:16px 18px!important}
+
+/* 閱讀館文章：放在一張白紙上，長文比較好讀 */
+.article{background:var(--white);border-radius:4px;box-shadow:0 10px 24px -14px rgba(58,46,37,.45);padding:22px 22px 30px;margin-top:10px!important}
+@media (max-width:600px){.article{padding:16px 16px 26px}}
