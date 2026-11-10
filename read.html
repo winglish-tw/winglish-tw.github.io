@@ -476,7 +476,7 @@ render(); renderQuiz();
 </script>
 <script>
 (function(){
-  var id=(location.hash.slice(1)||"spirits").replace(/[^a-z0-9-]/g,"");
+  var id=(location.hash.slice(1)||"thanksgiving").replace(/[^a-z0-9-]/g,"");
   var sc=document.createElement("script"); sc.src="a-"+id+".js?v="+Math.floor(Date.now()/300000);
   sc.onload=function(){ initArticle(); try{ gtag("event","page_view",{page_title:document.title,page_location:location.origin+"/read.html?a="+id}); }catch(e){} };
   sc.onerror=function(){ document.getElementById("text").innerHTML='<p>找不到這篇文章。<a href="reading.html">回到閱讀館</a></p>'; };

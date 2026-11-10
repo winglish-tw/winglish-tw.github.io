@@ -323,7 +323,7 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
 
     <div class="rd-grid">
       <div class="rd-demo" aria-label="分級閱讀示範">
-        <div class="rd-demo-head"><strong>When Spirits Come Home</strong><span class="try">直接在這裡試試看 ↓</span></div>
+        <div class="rd-demo-head"><strong>A Feast, a Letter and a Lucky Turkey</strong><span class="try">直接在這裡試試看 ↓</span></div>
         <div class="rd-tabs" id="rdTabs">
           <button class="on" data-l="0">Level 1<small>國三</small></button>
           <button data-l="1">Level 2<small>高二</small></button>
@@ -349,7 +349,7 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
         </ol>
         <div class="cta-row" style="margin-top:22px">
           <a class="btn rd-btn" href="reading.html">進入閱讀館</a>
-          <a class="btn btn-line" href="read.html#spirits">讀第一篇文章</a>
+          <a class="btn btn-line" href="read.html#thanksgiving">讀第一篇文章</a>
         </div>
         <p class="rd-path">閱讀館練實力　→　考古題練題型　→　學測拿分</p>
       </div>
@@ -489,14 +489,13 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
 
 <script>
 (function(){
-  var G={cucumber:["n.","小黃瓜"],eggplant:["n.","茄子"],spirits:["n.","靈魂（spirit 的複數）"],sticks:["n.","小棒子（stick 的複數）"],
-    inserted:["v.","插入（insert）"],transformed:["v.","使轉變（transform）"],swiftly:["adv.","迅速地"],
-    propped:["v.","prop up 撐起"],fashioned:["v.","製作（fashion）"],hasten:["v.","趕緊"],whereas:["conj.","然而；而"],plodding:["adj.","慢吞吞的"],
-    departure:["n.","離開"],unhurried:["adj.","不慌不忙的"],abundant:["adj.","豐富的"],bestowed:["v.","贈與（bestow）"],offerings:["n.","供品"]};
+  var G={harvest:["n.","收成"],feast:["n.","盛宴；大餐"],lasted:["v.","持續（last）"],turkeys:["n.","火雞（turkey 的複數）"],president:["n.","總統"],
+    pardons:["v.","特赦；饒恕（pardon）"],sparing:["v.","使免於（spare）"],oven:["n.","烤箱"],
+    accumulated:["v.","累積（accumulate）"],rituals:["n.","儀式（ritual 的複數）"],tongue:["n.","tongue-in-cheek 半開玩笑的"],cheek:["n.","tongue-in-cheek 半開玩笑的"],pardon:["n.","特赦"],parades:["n.","遊行（parade 的複數）"]};
   var T=[
-   {s:["They put four sticks into a cucumber, and it becomes a horse.","The horse is fast, so the spirits can come home quickly.","An eggplant becomes a cow, and the cow is slow."],m:"全文約 180 字・國三會考程度"},
-   {s:["With four sticks inserted as legs, a cucumber is transformed into a horse, allowing the spirits to arrive as swiftly as possible."],m:"全文約 330 字・高二程度"},
-   {s:["A cucumber propped up on four sticks is fashioned into a horse so that the ancestors may hasten home, whereas an eggplant is turned into a plodding cow, ensuring that their departure is unhurried and that they can carry back the abundant offerings bestowed upon them."],m:"全文約 370 字・比學測更難"}
+   {s:["In the fall of 1621, they had a good harvest, so they shared a feast that lasted three days.","Today, Americans eat more than 40 million turkeys on Thanksgiving.","But every year, the president saves one or two turkeys from the dinner table."],m:"全文約 190 字・國三會考程度"},
+   {s:["Each year, the president \u201cpardons\u201d a turkey, sparing it from the oven and sending it to live on a farm."],m:"全文約 340 字・高二程度"},
+   {s:["Today the holiday has accumulated its own rituals, from the president\u2019s tongue-in-cheek \u201cpardon\u201d of a turkey to the parades and football games that fill the afternoon."],m:"全文約 370 字・比學測更難"}
   ];
   var tabs=document.querySelectorAll('#rdTabs button'),txt=document.getElementById('rdText'),pop=document.getElementById('rdPop'),play=document.getElementById('rdPlay'),cur=0,timer,touched=false,playing=false;
   var NOV=/Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Fred|Junior|Ralph|Kathy|Grandma|Grandpa|Rocko|Shelley|Sandy|Flo|Eddy|Reed/i;
