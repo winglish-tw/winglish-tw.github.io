@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://winglish-tw.github.io/sitemap.xml
+Sitemap: https://winglish.tw/sitemap.xml
