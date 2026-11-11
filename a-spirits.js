@@ -401,5 +401,36 @@ const USAGE = {
   "continuity": ["a sense of continuity · continuity between past and present", "Family traditions give children a sense of continuity with the past.", "家族傳統給孩子一種與過去相連的延續感。"]
 };
 
-return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE});
+/* 導讀模式：after＝第幾個段落（從 0 算）讀完後出題；hint＝答錯時的提示 */
+const GUIDE = [
+ [{after:1,q:"When does Obon come?",opts:["Every summer","Every winter","Every few years"],a:0,hint:"回到上一段第一句：it comes every ____。"},
+  {after:2,q:"Why is the eggplant cow slow?",opts:["So the spirits can stay with their families a little longer","Because eggplants are heavy","So children can ride it"],a:0,hint:"看上一段最後關於 cow 的那一句：so they can ____。"},
+  {after:3,q:"What do the families wrap the bodies in?",opts:["New cloth","Paper lanterns","Leaves"],a:0,hint:"找 wrap 這個字：They wrap the bodies in ____。"}],
+ [{after:1,q:"What do families do during Obon?",opts:["They clean graves and prepare offerings for the spirits.","They paint skulls and dance in the streets.","They move away from their hometowns."],a:0,hint:"看上一段第二句：families tidy ancestral graves… and prepare offerings。"},
+  {after:2,q:"Why is a cucumber turned into a horse?",opts:["So the spirits can arrive as quickly as possible","So the spirits can linger on their way back","So it can carry the gifts"],a:0,hint:"找 cucumber 那一句：allowing the spirits to arrive as ____ as possible。"},
+  {after:3,q:"What is the mood of Famadihana?",opts:["Joyful, with music and dancing","Sad and quiet","Scary for the whole family"],a:0,hint:"找 Far from being a somber occasion 那一句，後面說聚會充滿了什麼？"}],
+ [{after:1,q:"What happens during Obon, according to the paragraph?",opts:["People leave the cities and return to their hometowns to welcome the spirits.","People move to the cities for good.","Families travel to Mexico."],a:0,hint:"看 an annual exodus from crowded cities to ancestral hometowns，exodus 是「大批離開」。"},
+  {after:2,q:"What is the purpose of the eggplant cow?",opts:["To make the spirits' departure slow and unhurried","To bring the spirits home quickly","To guide the lanterns down the river"],a:0,hint:"找 eggplant 後面：ensuring that their departure is ____。"},
+  {after:3,q:"How is Famadihana different from Obon, according to the writer?",opts:["It treats the dead as participants rather than guests.","Only children take part in it.","It is held every summer."],a:0,hint:"看這一段第一句：If Obon treats the dead as honored guests, the Famadihana… treats them as ____。"}]
+];
+/* 單字小練習：w＝要存進單字本的原形 */
+const VPRAC = [
+ [{s:"Taiwan is an ____ in the Pacific Ocean.",opts:["island","tomb","lantern","cloth"],a:0,w:"island"},
+  {s:"Please ____ the gift in this pretty paper.",opts:["wrap","welcome","spirit","island"],a:0,w:"wrap"},
+  {s:"My grandfather's grandfather is one of my ____.",opts:["ancestors","lanterns","cucumbers","tombs"],a:0,w:"ancestor"},
+  {s:"We hung a red ____ at the door for the Lantern Festival.",opts:["lantern","cloth","eggplant","spirit"],a:0,w:"lantern"},
+  {s:"The students clapped to ____ the new teacher.",opts:["welcome","wrap","bury","carry"],a:0,w:"welcome"}],
+ [{s:"She wrote a card to show her ____ to the nurses who helped her.",opts:["gratitude","conviction","offering","shroud"],a:0,w:"gratitude"},
+  {s:"After the concert, fans ____ outside, hoping to see the singer.",opts:["lingered","transformed","wrapped","honored"],a:0,w:"linger"},
+  {s:"The old factory was ____ into an art museum.",opts:["transformed","lingered","recognized","separated"],a:0,w:"transform"},
+  {s:"The mood at the meeting was ____ after the bad news.",opts:["somber","recognizable","ancestral","literal"],a:0,w:"somber"},
+  {s:"Sharing hobbies built a strong ____ between the two brothers.",opts:["bond","shroud","offering","tomb"],a:0,w:"bond"}],
+ [{s:"Before Lunar New Year, there is a huge ____ from Taipei as people head home.",opts:["exodus","realm","observance","continuity"],a:0,w:"exodus"},
+  {s:"The tree was ____ with ripe oranges.",opts:["laden","porous","fleeting","macabre"],a:0,w:"laden"},
+  {s:"The puppy's clumsy attempts to climb the stairs were truly ____.",opts:["endearing","plodding","porous","macabre"],a:0,w:"endearing"},
+  {s:"Cherry blossoms are ____; they fall within a week or two.",opts:["fleeting","exuberant","laden","endearing"],a:0,w:"fleeting"},
+  {s:"Thick clouds ____ the top of the mountain from view.",opts:["obscured","bestowed","hastened","transformed"],a:0,w:"obscure"}]
+];
+
+return Object.assign(META,{LEVELS,GLOSS,KEY,DEFS,FIGS,QUIZ,USAGE,GUIDE,VPRAC});
 })();

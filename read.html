@@ -103,6 +103,51 @@ figcaption{font-size:14px;color:var(--ink-soft);padding:8px 0 0}
 .exp{display:none;font-size:15px;border-radius:10px;padding:10px 14px;background:var(--ok-soft);border-left:5px solid var(--ok)}
 .exp.bad{background:var(--bad-soft);border-left-color:var(--red)}
 .exp.show{display:block}
+/* 導讀模式 */
+.blk.locked{filter:blur(6px);opacity:.55;pointer-events:none;user-select:none;transition:filter .4s,opacity .4s}
+.guide{background:#EEF4FB;border:2px dashed #5B7DB1;border-radius:16px;padding:14px 16px;margin:18px 0}
+.guide .gh{font-size:13px;font-weight:800;color:#3D5E92;margin-bottom:4px}
+.guide p{font-weight:700;margin:0 0 6px;font-size:17px}
+.guide .opt{font-size:15.5px}
+.guide.done{border-style:solid;border-color:var(--ok);background:var(--ok-soft)}
+.guide .gfb{font-size:14.5px;margin-top:6px}
+.gbar{display:flex;align-items:center;gap:10px;background:#EEF4FB;border-radius:12px;padding:9px 14px;margin:8px 0 4px;font-size:14.5px}
+.gbar b{color:#3D5E92}
+.gsw{margin-left:auto;flex:none;border:0;border-radius:999px;padding:5px 14px;font-weight:800;cursor:pointer;background:#5B7DB1;color:#fff;font-size:13.5px}
+.gsw.off{background:var(--mist);color:var(--ink-soft)}
+/* 單字小練習 */
+.vprac{border-top:8px solid #5B7DB1;background:var(--white);border-radius:20px;box-shadow:0 1px 0 var(--mist),0 24px 50px -28px rgba(26,34,56,.35);padding:22px;margin-top:24px}
+.vprac h2{margin:0 0 4px;font-size:22px}
+.vprac .vs{font-weight:700;margin:0 0 6px}
+.vprac .opts{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.vprac .opt{margin:0;justify-content:center;font-weight:600}
+.addwb{border:1.5px solid #5B7DB1;color:#3D5E92;background:#fff;border-radius:999px;padding:3px 11px;font-size:13px;font-weight:800;cursor:pointer;margin-left:6px;white-space:nowrap}
+.addwb.in{background:#5B7DB1;color:#fff;border-color:#5B7DB1}
+/* 單字本 */
+.wbov{position:fixed;inset:0;background:rgba(26,34,56,.45);z-index:80;display:none;align-items:flex-end;justify-content:center}
+.wbov.show{display:flex}
+.wbbox{background:var(--paper,#FBF6EC);width:min(100vw,620px);max-height:86vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 18px 28px}
+@media (min-width:700px){.wbov{align-items:center}.wbbox{border-radius:22px}}
+.wbhd{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.wbhd h2{margin:0;font-size:21px;flex:1}
+.wbhd button{border:0;background:var(--white);border-radius:999px;padding:6px 14px;font-weight:800;cursor:pointer;font-size:14px}
+.wbx{font-size:22px!important;width:38px;height:38px;padding:0!important}
+.wbit{background:var(--white);border:1.5px solid var(--mist);border-radius:14px;padding:10px 14px;margin:8px 0;display:flex;gap:10px;align-items:flex-start}
+.wbit .t{flex:1}
+.wbit b{font-size:18px}
+.wbit .p{color:var(--ink-soft);font-size:13px;margin-left:6px}
+.wbit .z{display:block;margin-top:2px}
+.wbit .d{display:block;color:var(--ink-soft);font-size:13.5px;margin-top:2px}
+.wbit .src{display:block;color:#3D5E92;font-size:12px;margin-top:3px}
+.wbit button{border:0;background:var(--paper,#F4EFE4);border-radius:10px;padding:6px 9px;cursor:pointer;font-size:13px;flex:none}
+.wbempty{color:var(--ink-soft);text-align:center;padding:30px 10px;line-height:1.8}
+.card{background:var(--white);border-radius:20px;min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;box-shadow:0 10px 30px -18px rgba(26,34,56,.4);cursor:pointer;margin:10px 0}
+.card .cw{font-size:32px;font-weight:800}
+.card .cz{font-size:20px;margin-top:8px}
+.card .cd{font-size:14px;color:var(--ink-soft);margin-top:6px}
+.card .ch{font-size:13px;color:var(--ink-soft);margin-top:14px}
+.cardbtns{display:flex;gap:8px}
+.cardbtns button{flex:1;border:0;border-radius:12px;padding:12px;font-weight:800;font-size:15px;cursor:pointer}
 .qscore{font-weight:800;font-size:18px;color:var(--red);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .again{border:2px solid var(--ink);background:none;border-radius:999px;padding:5px 16px;font-weight:700;cursor:pointer;font-size:15px}
 
@@ -227,6 +272,7 @@ figure img.photo + svg{display:none !important}
       <button class="tool" id="tZh"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h10M8 3v2M5 5c1 4 4 7 7 8M11 5c-1 4-4 7-7 8"/><path d="M13 21l4-9 4 9M14.5 18h5"/></svg>中譯</button>
       <button class="tool" id="tSize"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 19l5-13 5 13M4.8 15h6.4"/><path d="M15 19l3-8 3 8M16 16.5h4"/></svg>字體大小</button>
       <button class="tool" id="tMark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>收藏</span></button>
+      <button class="tool" id="tWB"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3z"/><path d="M4 17a3 3 0 0 1 3-3h11"/><path d="M9 8h5"/></svg><span>單字本</span></button>
       <button class="tool" id="tQuiz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>測驗</button>
     </div>
     <div class="voicebar"><label for="voiceSel">🗣 朗讀聲音</label><select id="voiceSel"><option>載入中…</option></select><span class="vb-note">有 ⭐ 的最像真人</span></div>
@@ -235,6 +281,7 @@ figure img.photo + svg{display:none !important}
       ・<b>電腦</b>：用 <b>Microsoft Edge</b> 瀏覽器開這個網站，會自動用最像真人的「Natural」聲音。</div>
     <div class="tip">👆 <b>點文章裡任何一個字</b>：看中文意思，還能聽這一句、跟讀這一句。紅色虛線是這一級的重點單字（右邊／下方「本篇單字」有整理）。</div>
 
+    <div class="gbar" id="gbar" hidden>🧭 <span><b>導讀模式</b>：讀一段、答一題，答對才會打開下一段。</span><button class="gsw" id="gsw">開</button></div>
     <div class="text" id="text"></div>
 
     <div class="fact"><div class="ic">💡</div><div><b>冷知識</b><span id="aFact"></span></div></div>
@@ -246,6 +293,13 @@ figure img.photo + svg{display:none !important}
       <div class="qscore" id="qscore"></div>
     </section>
 
+    <section class="vprac" id="vprac" hidden>
+      <h2>單字小練習</h2>
+      <p class="sub" style="color:var(--ink-soft);font-size:14px;margin:0 0 10px">用本篇單字填空，答錯的字可以按「＋ 單字本」存起來複習。</p>
+      <div id="vps"></div>
+      <div class="qscore" id="vpscore"></div>
+    </section>
+
     <a class="back" id="aNext" href="reading.html"><div><b>回到閱讀館</b><br><span id="aNextT"></span></div><span style="margin-left:auto;font-size:22px">→</span></a>
   </article>
 
@@ -255,6 +309,7 @@ figure img.photo + svg{display:none !important}
       <div class="task" id="k1"><div class="tic" style="background:var(--marker-soft)">🎧</div><div class="tt">聽完全文<small>按「朗讀全文」聽到最後一句</small></div><div class="chk">✓</div></div>
       <div class="task" id="k2"><div class="tic" style="background:var(--red-soft)">🎤</div><div class="tt">跟讀 3 句<small id="k2s">已完成 0 / 3 句（70 分以上）</small></div><div class="chk">✓</div></div>
       <div class="task" id="k3"><div class="tic" style="background:var(--ok-soft)">📝</div><div class="tt">完成閱讀測驗<small id="k3s">0 / 3 題</small></div><div class="chk">✓</div></div>
+      <div class="task" id="k4" hidden><div class="tic" style="background:#E3ECF7">🔤</div><div class="tt">完成單字小練習<small id="k4s">0 / 5 題</small></div><div class="chk">✓</div></div>
       <div class="prog"><i id="progBar"></i></div>
     </div>
     <div class="panel">
@@ -267,6 +322,7 @@ figure img.photo + svg{display:none !important}
 <div class="sheet" id="sheet" role="dialog" aria-label="單字與句子工具">
   <div class="wordrow">
     <div style="flex:1"><div class="wd" id="wd"></div><div class="wm" id="wm"></div></div>
+    <button class="addwb" id="wAdd" hidden>＋ 單字本</button>
     <button class="spk" id="wSpk" title="念這個字">🔊</button>
     <button class="x" id="sx" aria-label="關閉">×</button>
   </div>
@@ -279,6 +335,8 @@ figure img.photo + svg{display:none !important}
   <div class="sz" id="sz"></div>
   <div class="sres" id="sres"></div>
 </div>
+
+<div class="wbov" id="wbov" role="dialog" aria-label="我的單字本"><div class="wbbox" id="wbbox"></div></div>
 
 <script>
 /* 使用紀錄（寫進 Winglish 後台「使用統計」） */
@@ -376,10 +434,16 @@ function sentHTML(txt,i){
 function render(){
   const L=LEVELS[level];
   let html="";
+  const G=guideOn?(GUIDE[level]||[]):[]; let lockAfter=99;
+  for(const g of G){ if(!gSolved[level+"-"+g.after]){ lockAfter=g.after; break; } }
   L.paras.forEach((p,pi)=>{
-    if(L.heads[pi]) html+=`<h2>${L.heads[pi]}</h2>`;
-    html+=`<p>${p.map(i=>sentHTML(L.sents[i][0],i)).join(" ")}</p><div class="pzh">${p.map(i=>L.sents[i][1]).join("")}</div>`;
-    if(L.figs&&L.figs[pi]) html+=figHTML(L.figs[pi]);
+    let b="";
+    if(L.heads[pi]) b+=`<h2>${L.heads[pi]}</h2>`;
+    b+=`<p>${p.map(i=>sentHTML(L.sents[i][0],i)).join(" ")}</p><div class="pzh">${p.map(i=>L.sents[i][1]).join("")}</div>`;
+    if(L.figs&&L.figs[pi]) b+=figHTML(L.figs[pi]);
+    html+=`<div class="blk${pi>lockAfter?" locked":""}">${b}</div>`;
+    const g=G.find(x=>x.after===pi);
+    if(g&&pi<=lockAfter) html+=guideHTML(g);
   });
   $("#text").innerHTML=html;
   $("#mWords").textContent=L.sents.reduce((n,s)=>n+s[0].split(/\s+/).length,0);
@@ -388,9 +452,12 @@ function render(){
   $("#vocab").querySelectorAll("[data-say]").forEach(b=>b.onclick=()=>{ stopAll(); speak(b.dataset.say); });
   $("#text").querySelectorAll(".w").forEach(w=>w.onclick=e=>{ e.stopPropagation(); openSheet(w.closest(".s"),w.dataset.w); });
   $("#text").querySelectorAll(".s").forEach(s=>s.onclick=()=>openSheet(s,null));
+  bindGuide();
+  $("#vocab").querySelectorAll("li").forEach((li,k)=>{ const w=KEY[level][k]; const b=document.createElement("button"); b.className="addwb"; b.dataset.wb=w; li.querySelector(".vz").after(b); b.onclick=()=>{ toggleWB(w); }; });
+  refreshWB();
   state.recOk=new Set(); updTasks();
 }
-$("#lv").onchange=e=>{ stopAll(); hideSheet(); level=+e.target.value; render(); if(Array.isArray(QUIZ[0])){ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); } };
+$("#lv").onchange=e=>{ stopAll(); hideSheet(); level=+e.target.value; render(); renderVP(); if(Array.isArray(QUIZ[0])){ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); } };
 
 /* ---------- tools ---------- */
 $("#tZh").onclick=()=>{ const on=$("#text").classList.toggle("showzh"); $("#tZh").classList.toggle("on",on); };
@@ -412,7 +479,8 @@ function openSheet(sEl,word){
     $("#wm").innerHTML = g?`<span class="pos">${g[1]}</span>${g[2]}${DEFS[g[0]]?`<span class="wdef">${DEFS[g[0]]}</span>`:""}${USAGE[g[0]]?`<span class="wcol"><b style="color:#fff;background:#5B7DB1;border-radius:4px;padding:0 5px;font-size:11.5px">搭配</b> ${USAGE[g[0]][0]}</span>`:""}`:`<span style="color:var(--ink-soft)">本篇單字表沒有收這個字，可以先聽發音。</span>`;
     $("#wSpk").onclick=()=>{ try{speechSynthesis.cancel();}catch(e){} speak(g?g[0]:word); };
     wr.style.display="flex"; try{speechSynthesis.cancel();}catch(e){} speak(g?g[0]:word);
-  } else { wr.style.display="flex"; $("#wd").textContent="這一句"; $("#wm").innerHTML=`<span style="color:var(--ink-soft)">可以聽、跟讀或看中譯</span>`; $("#wSpk").onclick=()=>$("#sPlay").click(); }
+    const ab=$("#wAdd"); ab.hidden=!g; if(g){ ab.dataset.wb=g[0]; ab.onclick=()=>toggleWB(g[0]); refreshWB(); }
+  } else { $("#wAdd").hidden=true; wr.style.display="flex"; $("#wd").textContent="這一句"; $("#wm").innerHTML=`<span style="color:var(--ink-soft)">可以聽、跟讀或看中譯</span>`; $("#wSpk").onclick=()=>$("#sPlay").click(); }
   $("#sz").classList.remove("show"); $("#sz").textContent=LEVELS[level].sents[selS][1];
   $("#sres").classList.remove("show");
   $("#sheet").classList.add("show");
@@ -478,9 +546,74 @@ function updTasks(){
   $("#k1").classList.toggle("done",state.listened);
   $("#k2").classList.toggle("done",r>=3); $("#k2s").textContent=`已完成 ${r} / 3 句（70 分以上）`;
   $("#k3").classList.toggle("done",a>=QUIZ.length); $("#k3s").textContent=`${a} / ${QUIZ.length} 題`;
-  $("#progBar").style.width=Math.round(((state.listened?1:0)+r/3+a/QUIZ.length)/3*100)+"%";
+  const VP=VPRAC[level]||[], hasVP=VP.length>0, v=Object.keys(vpAns).length;
+  $("#k4").hidden=!hasVP; if(hasVP){ $("#k4").classList.toggle("done",v>=VP.length); $("#k4s").textContent=`${v} / ${VP.length} 題`; }
+  $("#progBar").style.width=Math.round(((state.listened?1:0)+r/3+a/QUIZ.length+(hasVP?v/VP.length:0))/(hasVP?4:3)*100)+"%";
 }
-render(); renderQuiz();
+/* ---------- 導讀模式 ---------- */
+const GUIDE=A.GUIDE||[], VPRAC=A.VPRAC||[];
+const gSolved={}; const gOrder={};
+let guideOn=false;
+function shuf(n,key){ if(!gOrder[key]){ const o=[...Array(n).keys()]; for(let i=n-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[o[i],o[j]]=[o[j],o[i]];} gOrder[key]=o; } return gOrder[key]; }
+function guideHTML(g){ const key=level+"-"+g.after, done=gSolved[key], n=(GUIDE[level]||[]).indexOf(g)+1;
+  return `<div class="guide${done?" done":""}" data-g="${key}"><div class="gh">🧭 導讀問題 ${n} / ${(GUIDE[level]||[]).length}</div><p>${esc(g.q)}</p>${shuf(g.opts.length,"g"+key).map(j=>`<button class="opt${done&&j===g.a?" right":""}" data-o="${j}"${done?" disabled":""}><span class="bub">${"ABC"[shuf(g.opts.length,"g"+key).indexOf(j)]}</span>${esc(g.opts[j])}</button>`).join("")}<div class="gfb">${done?"✅ 答對了，繼續往下讀！":""}</div></div>`; }
+function bindGuide(){
+  $("#text").querySelectorAll(".guide").forEach(box=>{ const key=box.dataset.g, g=(GUIDE[level]||[]).find(x=>level+"-"+x.after===key);
+    box.querySelectorAll(".opt").forEach(b=>b.onclick=()=>{ if(gSolved[key]) return; const o=+b.dataset.o;
+      if(o===g.a){ gSolved[key]=true; const y=box.getBoundingClientRect().top; render(); const nb=$("#text").querySelector(`.guide[data-g="${key}"]`); if(nb) window.scrollBy(0,nb.getBoundingClientRect().top-y); }
+      else { b.classList.add("wrong"); b.disabled=true; box.querySelector(".gfb").innerHTML="❌ 再想想看。💡 "+g.hint; } }); }); }
+if(GUIDE.length){ $("#gbar").hidden=false; try{ guideOn=localStorage.getItem("wg-guide")!=="0"; }catch(e){ guideOn=true; }
+  const sw=()=>{ $("#gsw").textContent=guideOn?"開":"關"; $("#gsw").classList.toggle("off",!guideOn); };
+  sw(); $("#gsw").onclick=()=>{ guideOn=!guideOn; try{localStorage.setItem("wg-guide",guideOn?"1":"0")}catch(e){} sw(); render(); }; }
+
+/* ---------- 單字本（存在這台裝置） ---------- */
+function getWB(){ try{ return JSON.parse(localStorage.getItem("wg-wordbook")||"[]"); }catch(e){ return []; } }
+function setWB(l){ try{ localStorage.setItem("wg-wordbook",JSON.stringify(l)); }catch(e){} }
+function toggleWB(w){ const l=getWB(), i=l.findIndex(x=>x.w===w);
+  if(i>=0) l.splice(i,1); else { const g=GLOSS[w]||["",""]; l.unshift({w,p:g[0],z:g[1],d:DEFS[w]||"",src:A.title,id:A.id,t:Date.now()}); logUse("wordbook","閱讀館",A.title+"："+w); }
+  setWB(l); refreshWB(); }
+function refreshWB(){ const set=new Set(getWB().map(x=>x.w));
+  document.querySelectorAll("[data-wb]").forEach(b=>{ const on=set.has(b.dataset.wb); b.classList.toggle("in",on); b.textContent=on?"✓ 已加入":"＋ 單字本"; });
+  $("#tWB span").textContent=set.size?`單字本 ${set.size}`:"單字本"; }
+let wbMode="list", cardI=0, cardFlip=false;
+function openWB(){ wbMode="list"; drawWB(); $("#wbov").classList.add("show"); }
+function drawWB(){ const l=getWB(), box=$("#wbbox");
+  if(wbMode==="card"&&l.length){ if(cardI>=l.length) cardI=0; const x=l[cardI];
+    box.innerHTML=`<div class="wbhd"><h2>字卡複習 ${cardI+1} / ${l.length}</h2><button id="wbList">清單</button><button class="wbx" id="wbClose">×</button></div>
+    <div class="card" id="card"><div class="cw">${esc(x.w)}</div>${cardFlip?`<div class="cz"><span class="p" style="color:var(--ink-soft);font-size:14px">${esc(x.p)}</span> ${esc(x.z)}</div>${x.d?`<div class="cd">${esc(x.d)}</div>`:""}`:`<div class="ch">先想想看意思，再點卡片翻面</div>`}</div>
+    <div class="cardbtns"><button id="cSay" style="background:#fff">🔊 發音</button><button id="cKnow" style="background:var(--ok-soft);color:var(--ok)">我會了（移除）</button><button id="cNext" style="background:#5B7DB1;color:#fff">下一張 →</button></div>`;
+    $("#card").onclick=()=>{ cardFlip=!cardFlip; drawWB(); };
+    $("#cSay").onclick=()=>speak(x.w);
+    $("#cNext").onclick=()=>{ cardI=(cardI+1)%l.length; cardFlip=false; drawWB(); };
+    $("#cKnow").onclick=()=>{ toggleWB(x.w); cardFlip=false; if(!getWB().length) wbMode="list"; drawWB(); };
+  } else {
+    box.innerHTML=`<div class="wbhd"><h2>📒 我的單字本（${l.length}）</h2>${l.length?`<button id="wbCard" style="background:#5B7DB1;color:#fff">字卡複習</button>`:""}<button class="wbx" id="wbClose">×</button></div>
+    ${l.length?l.map(x=>`<div class="wbit"><div class="t"><b>${esc(x.w)}</b><span class="p">${esc(x.p)}</span><span class="z">${esc(x.z)}</span>${x.d?`<span class="d">${esc(x.d)}</span>`:""}<span class="src">出自：${esc(x.src)}</span></div><button data-say="${esc(x.w)}">🔊</button><button data-del="${esc(x.w)}">移除</button></div>`).join("")
+      :`<div class="wbempty">單字本還是空的。<br>點文章裡的字，按「＋ 單字本」就能存起來。<br><small>單字本存在這台手機／電腦裡，換裝置看不到。</small></div>`}`;
+    box.querySelectorAll("[data-say]").forEach(b=>b.onclick=()=>speak(b.dataset.say));
+    box.querySelectorAll("[data-del]").forEach(b=>b.onclick=()=>{ toggleWB(b.dataset.del); drawWB(); });
+    const c=$("#wbCard"); if(c) c.onclick=()=>{ wbMode="card"; cardI=0; cardFlip=false; drawWB(); };
+  }
+  const lb=$("#wbList"); if(lb) lb.onclick=()=>{ wbMode="list"; drawWB(); };
+  $("#wbClose").onclick=()=>$("#wbov").classList.remove("show");
+}
+$("#tWB").onclick=openWB;
+$("#wbov").onclick=e=>{ if(e.target.id==="wbov") $("#wbov").classList.remove("show"); };
+
+/* ---------- 單字小練習 ---------- */
+let vpAns={};
+function renderVP(){ const VP=VPRAC[level]||[]; vpAns={}; $("#vpscore").innerHTML="";
+  $("#vprac").hidden=!VP.length; if(!VP.length) return;
+  $("#vps").innerHTML=VP.map((q,i)=>`<div class="q"><p class="vs">${i+1}. ${esc(q.s).replace("____","<u>　　　　</u>")}</p><div class="opts">${shuf(q.opts.length,"v"+level+"-"+i).map(j=>`<button class="opt" data-q="${i}" data-o="${j}">${esc(q.opts[j])}</button>`).join("")}</div><div class="exp" id="ve${i}"></div></div>`).join("");
+  $("#vps").querySelectorAll(".opt").forEach(b=>b.onclick=()=>{ const qi=+b.dataset.q, oi=+b.dataset.o, q=VP[qi]; if(vpAns[qi]!==undefined) return; vpAns[qi]=oi;
+    $("#vps").querySelectorAll(`.opt[data-q="${qi}"]`).forEach(x=>{ const j=+x.dataset.o; if(j===q.a) x.classList.add("right"); else if(j===oi) x.classList.add("wrong"); });
+    const g=GLOSS[q.w]||["",""], e=$("#ve"+qi);
+    e.innerHTML=`<b>${oi===q.a?"✅ 答對了！":"❌ 答案是 "+esc(q.opts[q.a])}</b>　${esc(q.w)} <span style="color:var(--ink-soft)">${esc(g[0])}</span> ${esc(g[1])}<button class="addwb" data-wb="${q.w}">＋ 單字本</button>`;
+    e.classList.add("show"); e.classList.toggle("bad",oi!==q.a); e.querySelector(".addwb").onclick=()=>toggleWB(q.w); refreshWB(); updTasks();
+    if(Object.keys(vpAns).length===VP.length){ const c=VP.filter((q,k)=>vpAns[k]===q.a).length; logUse("vocab","閱讀館",A.title+"（"+LEVELS[level].name+"）單字",c,VP.length);
+      $("#vpscore").innerHTML=`得分 ${c} / ${VP.length}<button class="again" id="vagain">再做一次</button>`; $("#vagain").onclick=()=>{ Object.keys(gOrder).filter(k=>k.startsWith("v")).forEach(k=>delete gOrder[k]); renderVP(); updTasks(); }; } }); }
+
+render(); renderQuiz(); renderVP(); updTasks();
 }
 </script>
 <script>
