@@ -147,6 +147,13 @@ figcaption{font-size:14px;color:var(--ink-soft);padding:8px 0 0}
 .card .cd{font-size:14px;color:var(--ink-soft);margin-top:6px}
 .card .ch{font-size:13px;color:var(--ink-soft);margin-top:14px}
 .cardbtns{display:flex;gap:8px}
+.wbfab{position:fixed;right:14px;bottom:18px;z-index:40;border:0;border-radius:999px;background:#5B7DB1;color:#fff;font-weight:800;font-size:15px;padding:11px 18px;box-shadow:0 8px 22px -6px rgba(26,34,56,.45);cursor:pointer;display:none}
+.wbfab.show{display:block}
+.sheet.show ~ .wbfab{display:none!important}
+.wbfab.pop{animation:wbpop .5s}
+@keyframes wbpop{30%{transform:scale(1.18)}}
+.wbtoast{position:fixed;left:50%;top:18px;transform:translate(-50%,-150%);background:#1A2238;color:#fff;border-radius:999px;padding:9px 18px;font-size:14.5px;z-index:90;transition:transform .3s;white-space:nowrap}
+.wbtoast.show{transform:translate(-50%,0)}
 .cardbtns button{flex:1;border:0;border-radius:12px;padding:12px;font-weight:800;font-size:15px;cursor:pointer}
 .qscore{font-weight:800;font-size:18px;color:var(--red);display:flex;gap:12px;align-items:center;flex-wrap:wrap}
 .again{border:2px solid var(--ink);background:none;border-radius:999px;padding:5px 16px;font-weight:700;cursor:pointer;font-size:15px}
@@ -336,6 +343,8 @@ figure img.photo + svg{display:none !important}
   <div class="sres" id="sres"></div>
 </div>
 
+<button class="wbfab" id="wbfab">📒 單字本</button>
+<div class="wbtoast" id="wbtoast"></div>
 <div class="wbov" id="wbov" role="dialog" aria-label="我的單字本"><div class="wbbox" id="wbbox"></div></div>
 
 <script>
@@ -570,11 +579,14 @@ if(GUIDE.length){ $("#gbar").hidden=false; try{ guideOn=localStorage.getItem("wg
 function getWB(){ try{ return JSON.parse(localStorage.getItem("wg-wordbook")||"[]"); }catch(e){ return []; } }
 function setWB(l){ try{ localStorage.setItem("wg-wordbook",JSON.stringify(l)); }catch(e){} }
 function toggleWB(w){ const l=getWB(), i=l.findIndex(x=>x.w===w);
-  if(i>=0) l.splice(i,1); else { const g=GLOSS[w]||["",""]; l.unshift({w,p:g[0],z:g[1],d:DEFS[w]||"",src:A.title,id:A.id,t:Date.now()}); logUse("wordbook","閱讀館",A.title+"："+w); }
+  if(i>=0) l.splice(i,1); else { const g=GLOSS[w]||["",""]; l.unshift({w,p:g[0],z:g[1],d:DEFS[w]||"",src:A.title,id:A.id,t:Date.now()}); logUse("wordbook","閱讀館",A.title+"："+w);
+    const t=$("#wbtoast"); t.textContent=`✓ 已加入單字本：${w}　按右下角「📒 單字本」打開`; t.classList.add("show"); clearTimeout(t._h); t._h=setTimeout(()=>t.classList.remove("show"),2600);
+    const fb=$("#wbfab"); fb.classList.remove("pop"); void fb.offsetWidth; fb.classList.add("pop"); }
   setWB(l); refreshWB(); }
 function refreshWB(){ const set=new Set(getWB().map(x=>x.w));
   document.querySelectorAll("[data-wb]").forEach(b=>{ const on=set.has(b.dataset.wb); b.classList.toggle("in",on); b.textContent=on?"✓ 已加入":"＋ 單字本"; });
-  $("#tWB span").textContent=set.size?`單字本 ${set.size}`:"單字本"; }
+  $("#tWB span").textContent=set.size?`單字本 ${set.size}`:"單字本";
+  $("#wbfab").textContent=`📒 單字本 ${set.size}`; $("#wbfab").classList.toggle("show",set.size>0); }
 let wbMode="list", cardI=0, cardFlip=false;
 function openWB(){ wbMode="list"; drawWB(); $("#wbov").classList.add("show"); }
 function drawWB(){ const l=getWB(), box=$("#wbbox");
@@ -597,7 +609,7 @@ function drawWB(){ const l=getWB(), box=$("#wbbox");
   const lb=$("#wbList"); if(lb) lb.onclick=()=>{ wbMode="list"; drawWB(); };
   $("#wbClose").onclick=()=>$("#wbov").classList.remove("show");
 }
-$("#tWB").onclick=openWB;
+$("#tWB").onclick=openWB; $("#wbfab").onclick=()=>{ hideSheet(); openWB(); };
 $("#wbov").onclick=e=>{ if(e.target.id==="wbov") $("#wbov").classList.remove("show"); };
 
 /* ---------- 單字小練習 ---------- */
