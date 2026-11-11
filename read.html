@@ -29,6 +29,10 @@ button{font:inherit;color:inherit}
 .site nav{display:flex;gap:18px;font-size:15px}
 .site nav a{text-decoration:none;color:var(--ink-soft)}
 .site nav a.on{color:var(--ink);font-weight:700;background:linear-gradient(transparent 60%,var(--marker) 60%)}
+nav a.nav-mx{display:inline-block;background:#CFF0DA!important;color:#2F2A26!important;font-weight:800;border-radius:3px;padding:5px 14px;box-shadow:0 3px 6px rgba(58,46,37,.2);transform:rotate(-2deg);white-space:nowrap;text-decoration:none}
+@media (max-width:640px){nav a.nav-mx{font-size:14px;padding:4px 10px}}
+.site nav a{white-space:nowrap}
+@media (max-width:640px){.site nav a.hide-m{display:none}.site nav{gap:12px;align-items:center}}
 
 /* sticky reading controls (like Newsela's Language / Reading level bar) */
 .controls{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--mist);padding:10px 20px;display:flex;gap:14px;align-items:flex-end;flex-wrap:wrap}
@@ -187,7 +191,7 @@ figure img.photo + svg{display:none !important}
     <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#1A2238"/><path d="M7 12c5 1 8 4 9.5 10L20 13l3.5 9c1.5-6 4.5-9 9.5-10-3.5 4-5 9-6 16h-3.2L20 20.5 16.2 28H13c-1-7-2.5-12-6-16z" fill="#fff"/><ellipse cx="31" cy="30" rx="4" ry="2.4" fill="#FFE14D"/></svg>
     <span><b>學測英文必贏</b><small>winglish.tw</small></span>
   </a>
-  <nav><a href="index.html">學測練習</a><a href="reading.html" class="on">閱讀館</a></nav>
+  <nav><a href="index.html" class="hide-m">學測練習</a><a href="mixed.html" class="nav-mx">🧩 混合題</a><a href="reading.html" class="on">閱讀館</a></nav>
 </header>
 
 <div class="controls">

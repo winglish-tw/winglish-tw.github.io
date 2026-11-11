@@ -35,6 +35,8 @@ a{color:inherit}
 .top nav a{text-decoration:none;color:var(--ink-soft)}
 .top nav a.on{color:var(--ink);font-weight:700;background:linear-gradient(transparent 60%,var(--marker) 60%)}
 @media (max-width:640px){.top nav a.hide-m{display:none}}
+nav a.nav-mx{display:inline-block;background:#CFF0DA!important;color:#2F2A26!important;font-weight:800;border-radius:3px;padding:5px 14px;box-shadow:0 3px 6px rgba(58,46,37,.2);transform:rotate(-2deg);white-space:nowrap;text-decoration:none}
+@media (max-width:640px){nav a.nav-mx{font-size:14px;padding:4px 10px}}
 
 /* hero */
 .hero{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding:28px 0 64px}
@@ -169,6 +171,7 @@ footer a{text-decoration:none}
     </a>
     <nav>
       <a href="index.html" class="hide-m">學測練習</a>
+      <a href="mixed.html" class="nav-mx">🧩 混合題</a>
       <a href="reading.html" class="on">閱讀館</a>
       <a href="test.html" class="hide-m">程度測驗</a>
     </nav>
