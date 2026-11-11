@@ -25,6 +25,10 @@
 .passage h3{font-family:"Bricolage Grotesque",sans-serif;font-size:22px;margin:0 0 10px}
 .passage p{margin:0 0 .8em;text-indent:1.5em;line-height:1.8}
 .passage .pn{font-weight:700;color:var(--ink-soft);margin-right:4px}
+.forum{width:100%;border-collapse:collapse;margin:6px 0 12px;background:#fff}
+.forum td{border:1.5px solid var(--ink);padding:10px 14px;line-height:1.75;vertical-align:top}
+.forum .who{display:block;background:none;padding:0;font-weight:800;font-size:1.05em;margin-bottom:2px}
+.forum .role{font-weight:400;font-size:.85em;color:var(--ink-soft);margin-left:6px}
 figure{margin:12px 0 16px;text-align:center}
 figure svg{max-width:100%;height:auto}
 figcaption{font-size:14px;color:var(--ink-soft);margin-top:4px}
@@ -1231,7 +1235,7 @@ SETS.push({
 
 
 SETS.push({
-  title:"Should School Start Later?",tag:"議題討論",img:"",
+  title:"Should School Start Later?",tag:"議題討論",img:"",forum:true,
   p:[
 "In many places, high school students are already sitting in class before 8 a.m. Some people believe this is simply too early for teenagers, while others think a later start would cause more problems than it solves. In 2022, a law took effect in California, the first U.S. state to make one like it: most public high schools there may no longer begin classes before 8:30 a.m. We asked our readers what they think. Here are some of their replies.",
 "Kevin, 16, student: I get up at six every morning, and when my first class begins, my brain is still asleep. Adults keep telling me to just go to bed earlier, but it's not that easy. When I turn off the light at 10:30, I usually lie awake staring at the ceiling for an hour. Starting school at 8:30 would make my mornings so much better.",
@@ -1251,37 +1255,37 @@ SETS.push({
 "里維拉老師，自然科老師：我們不用猜，我們有數據。2016 年，西雅圖把公立高中的上課時間延後了將近一小時。研究人員發現，學生在要上學的夜晚多睡了大約 34 分鐘。他們的成績進步了，而且其中一所學校的學生遲到和缺席也變少了。",
 "羅培茲先生，校長：我喜歡這個想法，但總得有人付帳。在我們鎮上，同一批校車要一趟接一趟載三所學校的學生。如果高中延後上課，我們就需要更多校車和司機。這筆錢總得從某個地方來，可能就要從我們的音樂課程裡挪。"],
   q:[
-   {type:"match",n:1,pts:"3.5 分（每格 0.5 分）",inst:"請根據文章內容，判斷下列每個人對「延後上學時間」的立場。<br><b>A</b> ＝ 贊成　　<b>B</b> ＝ 反對",
-    letters:"AB",
+   {type:"match",n:1,pts:"3.5 分（每格 0.5 分）",inst:"請根據文章內容，判斷下列每個人對「延後上學時間」的立場。每個人請選「贊成」或「反對」。",
+    letters:"AB",choices:["贊成","反對"],
     items:[
-     {name:"Kevin",ans:"A",k:"第 2 段：他說 8:30 上課會讓早上好過很多。"},
-     {name:"Dr. Linda Morris",ans:"A",k:"第 3 段：她用褪黑激素解釋青少年晚睡是正常的，並引用兒科學會建議 8:30 以後才上課。"},
-     {name:"Mrs. Chen",ans:"B",k:"第 4 段：她七點半要上班，延後上學就沒人送兒子。"},
-     {name:"Mr. Grant",ans:"B",k:"第 5 段：練球結束更晚，學生反而更晚睡，多出來的時間白費。"},
-     {name:"Amy",ans:"A",k:"第 6 段：學校改成 8:30 之後，她睡得更多，上課不再打瞌睡。"},
-     {name:"Ms. Rivera",ans:"A",k:"第 7 段：她用西雅圖的研究數據支持延後上學。"},
-     {name:"Mr. Lopez",ans:"B",k:"第 8 段：開頭說 I like the idea，但重點在 but 後面：要多花錢買校車、請司機，可能得砍音樂課程。看立場要看轉折詞後面。"}],
+     {name:"Kevin",ans:"贊成",k:"Kevin（A）：他說 8:30 上課會讓早上好過很多。"},
+     {name:"Dr. Linda Morris",ans:"贊成",k:"Dr. Morris（B）：她用褪黑激素解釋青少年晚睡是正常的，並引用兒科學會建議 8:30 以後才上課。"},
+     {name:"Mrs. Chen",ans:"反對",k:"Mrs. Chen（C）：她七點半要上班，延後上學就沒人送兒子。"},
+     {name:"Mr. Grant",ans:"反對",k:"Mr. Grant（D）：練球結束更晚，學生反而更晚睡，多出來的時間白費。"},
+     {name:"Amy",ans:"贊成",k:"Amy（E）：學校改成 8:30 之後，她睡得更多，上課不再打瞌睡。"},
+     {name:"Ms. Rivera",ans:"贊成",k:"Ms. Rivera（F）：她用西雅圖的研究數據支持延後上學。"},
+     {name:"Mr. Lopez",ans:"反對",k:"Mr. Lopez（G）：開頭說 I like the idea，但重點在 but 後面：要多花錢買校車、請司機，可能得砍音樂課程。看立場要看轉折詞後面。"}],
     hint:"每個人先找<b>結論句</b>，特別注意 but、however 後面才是真正的立場。例如有人先說 I like the idea，後面卻講一堆困難。"},
    {type:"fill",n:2,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
     s:"Dr. Morris says that Kevin's sleepy mornings are not a sign of {A}, and her view is supported by the American Academy of Pediatrics' {B} on school start times.",
-    blanks:{A:{ans:["laziness"],src:"lazy",hint:"看第 3 段第一句，凱文「不是懶」，用哪個字？a sign of 後面要接名詞。",k:"第 3 段 Kevin isn't lazy。介系詞 of 後面要接名詞，所以把形容詞 lazy 改成名詞 laziness（懶惰）。注意 y 要改成 i 再加 -ness。"},
-            B:{ans:["recommendation","recommendations"],src:"recommends",hint:"看第 3 段最後一句，兒科學會「建議」什麼？所有格 Pediatrics' 後面要接名詞。",k:"第 3 段 the American Academy of Pediatrics recommends that…。所有格後面要接名詞，所以把動詞 recommend 改成名詞 recommendation（建議）。"}}},
-   {type:"fill",n:3,pts:"2 分",inst:"請從第 6 段找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
+    blanks:{A:{ans:["laziness"],src:"lazy",hint:"看 Dr. Morris（B）說的第一句，凱文「不是懶」，用哪個字？a sign of 後面要接名詞。",k:"Dr. Morris（B） Kevin isn't lazy。介系詞 of 後面要接名詞，所以把形容詞 lazy 改成名詞 laziness（懶惰）。注意 y 要改成 i 再加 -ness。"},
+            B:{ans:["recommendation","recommendations"],src:"recommends",hint:"看 Dr. Morris（B）說的最後一句，兒科學會「建議」什麼？所有格 Pediatrics' 後面要接名詞。",k:"Dr. Morris（B） the American Academy of Pediatrics recommends that…。所有格後面要接名詞，所以把動詞 recommend 改成名詞 recommendation（建議）。"}}},
+   {type:"fill",n:3,pts:"2 分",inst:"請從 Amy（E）說的話中找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
     s:"{A} = to work or stay busy from early morning until late at night, so that you become very tired",
-    blanks:{A:{ans:["burn the candle at both ends","burning the candle at both ends","was burning the candle at both ends","burn the candle at both end"],src:"-",hint:"第 6 段艾咪說她以前「唸到半夜、六點起床」，冒號前面那個跟「蠟燭」有關的片語就是答案。",k:"第 6 段 I was burning the candle at both ends: studying until midnight and getting up at six。字面是「蠟燭兩頭一起點」，真正的意思是「早起又晚睡、透支體力」。中文也有一模一樣的說法：蠟燭兩頭燒。"}}},
-   {type:"single",nk:"opinion",hint:"回到第 5 段葛蘭特教練說的話，看他最後一句擔心什麼。",n:4,pts:"2 分",q:"Mr. Grant worries that a later start time would ______.",
+    blanks:{A:{ans:["burn the candle at both ends","burning the candle at both ends","was burning the candle at both ends","burn the candle at both end"],src:"-",hint:"Amy（E）艾咪說她以前「唸到半夜、六點起床」，冒號前面那個跟「蠟燭」有關的片語就是答案。",k:"Amy（E） I was burning the candle at both ends: studying until midnight and getting up at six。字面是「蠟燭兩頭一起點」，真正的意思是「早起又晚睡、透支體力」。中文也有一模一樣的說法：蠟燭兩頭燒。"}}},
+   {type:"single",nk:"opinion",hint:"回到 Mr. Grant（D）說的話，看他最後一句擔心什麼。",n:4,pts:"2 分",q:"Mr. Grant worries that a later start time would ______.",
     opts:["cost the school too much money","make students go to bed even later","leave some parents with no way to get their children to school","make it hard for students to fall asleep at 10:30"],
-    a:1,why:["錯。這是羅培茲校長（第 8 段）擔心的事。","對。第 5 段：練球結束更晚，學生最後會更晚睡。","錯。這是陳太太（第 4 段）擔心的事。","錯。10:30 睡不著是凱文（第 2 段）說的，而且是現在的狀況。這種「別人說的話」是議題題最常見的陷阱。"]},
+    a:1,why:["錯。這是 Mr. Lopez（G）擔心的事。","對。Mr. Grant（D）：練球結束更晚，學生最後會更晚睡。","錯。這是 Mrs. Chen（C）擔心的事。","錯。10:30 睡不著是 Kevin（A）說的，而且是現在的狀況。這種「別人說的話」是議題題最常見的陷阱。"]},
    {type:"multi",n:5,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
     opts:["Teenagers' brains start releasing melatonin later at night than children's do.","Mrs. Chen's son takes the school bus to school.","Amy stayed up later after her school changed its start time.","In the Seattle study, students slept longer on school nights after the change.","Mr. Lopez opposes the idea because he thinks teenagers are lazy."],
-    a:[0,3],why:["對。第 3 段：青春期大腦分泌褪黑激素的時間，最多比小時候晚兩小時。","錯。第 4 段：是陳太太上班途中開車送他。","錯。第 6 段：她原本以為會更晚睡，but I didn't。","對。第 7 段：學生多睡了大約 34 分鐘。","錯。第 8 段：他擔心的是錢（校車和司機）；說「不是懶」的是莫里斯博士。"]},
+    a:[0,3],why:["對。Dr. Morris（B）：青春期大腦分泌褪黑激素的時間，最多比小時候晚兩小時。","錯。Mrs. Chen（C）：是陳太太上班途中開車送他。","錯。Amy（E）：她原本以為會更晚睡，but I didn't。","對。Ms. Rivera（F）：學生多睡了大約 34 分鐘。","錯。Mr. Lopez（G）：他擔心的是錢（校車和司機）；說「不是懶」的是莫里斯博士。"]},
    {type:"short",n:6,pts:"2 分",inst:"請以英文作答。",q:"According to Mr. Lopez, what might the school have to cut in order to pay for more buses?",
-    check:v=>/music/.test(v),model:"(Perhaps) the music program.",hint:"回到第 8 段最後一句，找 That money would have to come from somewhere…。",k:"答案在第 8 段：That money would have to come from somewhere, perhaps from our music program。"}
+    check:v=>/music/.test(v),model:"(Perhaps) the music program.",hint:"回到 Mr. Lopez（G）說的最後一句，找 That money would have to come from somewhere…。",k:"答案在Mr. Lopez（G）：That money would have to come from somewhere, perhaps from our music program。"}
   ]
 });
 
 SETS.push({
-  title:"Should Tourists Pay to Enter a City?",tag:"議題討論",img:"",
+  title:"Should Tourists Pay to Enter a City?",tag:"議題討論",img:"",forum:true,
   p:[
 "In April 2024, Venice, Italy, became the first city in the world to charge day-trippers an entry fee. On the busiest days of the year, visitors who were not staying overnight had to pay €5 to walk into the old city. Supporters hope the fee will ease the crowds; critics say it turns a city into a theme park. Should other popular places do the same? Here is what our readers said.",
 "Marco, Venice resident: When I was a boy, my street was full of families. Today, most of the apartments around me have been turned into holiday rentals. In 2022, the number of people living in the old city fell below 50,000, less than a third of the population in the 1950s. Anything that slows down the crowds is fine with me.",
@@ -1301,32 +1305,32 @@ SETS.push({
 "莉莉，來自台灣的學生：我把打工賺的每一塊錢都存起來，準備第一次去歐洲旅行。像我這樣的學生，旅行預算都很緊，這種費用很快就會累積起來。如果每個有名的地方都開始在門口收費，旅行就會變成只有有錢人才能享受的事。美麗的城市應該屬於每一個人。",
 "畢安奇先生，飯店經理：在威尼斯過夜的旅客不用付入城費，這正是重點所在。遊客不會只匆匆進來拍幾小時的照片，而是被鼓勵待久一點、在當地餐廳吃飯、好好認識這座城市。我寧願迎接人數少但待得久的遊客，也不要一大群當天來回的人潮。"],
   q:[
-   {type:"match",n:1,pts:"3.5 分（每格 0.5 分）",inst:"請根據文章內容，判斷下列每個人對「向遊客收取入城費」的立場。<br><b>A</b> ＝ 贊成　　<b>B</b> ＝ 反對",
-    letters:"AB",
+   {type:"match",n:1,pts:"3.5 分（每格 0.5 分）",inst:"請根據文章內容，判斷下列每個人對「向遊客收取入城費」的立場。每個人請選「贊成」或「反對」。",
+    letters:"AB",choices:["贊成","反對"],
     items:[
-     {name:"Marco",ans:"A",k:"第 2 段：居民越來越少，他說只要能讓人潮慢下來都好。"},
-     {name:"Sophie",ans:"B",k:"第 3 段：她認為 5 歐元太少、擋不住人，而且讓城市像遊樂園。"},
-     {name:"Mr. Rossi",ans:"B",k:"第 4 段：他的店靠當日遊客，收費就像殺雞取卵。"},
-     {name:"Kenji",ans:"A",k:"第 5 段：富士山收費後步道變得不那麼擠，錢還能請安全人員。"},
-     {name:"Dr. Ana Silva",ans:"A",k:"第 6 段：她認為費用要夠高才有效，並舉不丹為成功例子。她不是反對收費，而是主張收得更有效。"},
-     {name:"Lily",ans:"B",k:"第 7 段：學生預算有限，收費會讓旅行變成有錢人的專利。"},
-     {name:"Mr. Bianchi",ans:"A",k:"第 8 段：入城費鼓勵遊客留下來過夜、好好認識城市，他說 That is exactly the point。"}],
+     {name:"Marco",ans:"贊成",k:"Marco（A）：居民越來越少，他說只要能讓人潮慢下來都好。"},
+     {name:"Sophie",ans:"反對",k:"Sophie（B）：她認為 5 歐元太少、擋不住人，而且讓城市像遊樂園。"},
+     {name:"Mr. Rossi",ans:"反對",k:"Mr. Rossi（C）：他的店靠當日遊客，收費就像殺雞取卵。"},
+     {name:"Kenji",ans:"贊成",k:"Kenji（D）：富士山收費後步道變得不那麼擠，錢還能請安全人員。"},
+     {name:"Dr. Ana Silva",ans:"贊成",k:"Dr. Silva（E）：她認為費用要夠高才有效，並舉不丹為成功例子。她不是反對收費，而是主張收得更有效。"},
+     {name:"Lily",ans:"反對",k:"Lily（F）：學生預算有限，收費會讓旅行變成有錢人的專利。"},
+     {name:"Mr. Bianchi",ans:"贊成",k:"Mr. Bianchi（G）：入城費鼓勵遊客留下來過夜、好好認識城市，他說 That is exactly the point。"}],
     hint:"注意有人雖然批評現在的做法，但不代表反對收費。例如有人覺得「收太少沒用」，其實是希望收得更多。"},
    {type:"fill",n:2,pts:"2 分",inst:"請從文章中找出最適當的單詞（word）填入空格，並視語法需要作適當的字形變化（詞類變化），使句子合乎文法且語意完整。",
     s:"Mr. Rossi's shop has a strong {A} on day-trippers, while Dr. Silva points out that Bhutan's fee helps pay for the {B} of nature.",
-    blanks:{A:{ans:["dependence","dependency"],src:"depends",hint:"看第 4 段第一句，羅西的店「依賴」誰？a strong 後面要接名詞。",k:"第 4 段 My shop depends on day-trippers。a strong 後面要接名詞，所以把動詞 depend 改成名詞 dependence（依賴）。原句 depend on，名詞也是 dependence on。"},
-            B:{ans:["protection"],src:"protecting",hint:"看第 6 段，不丹的費用用來「保護」自然，用哪個字？the 後面要接名詞。",k:"第 6 段 the money helps pay for things like free health care and protecting nature。the 後面要接名詞，所以把動詞 protect 改成名詞 protection（保護）。"}}},
-   {type:"fill",n:3,pts:"2 分",inst:"請從第 4 段找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
+    blanks:{A:{ans:["dependence","dependency"],src:"depends",hint:"看 Mr. Rossi（C）說的第一句，羅西的店「依賴」誰？a strong 後面要接名詞。",k:"Mr. Rossi（C） My shop depends on day-trippers。a strong 後面要接名詞，所以把動詞 depend 改成名詞 dependence（依賴）。原句 depend on，名詞也是 dependence on。"},
+            B:{ans:["protection"],src:"protecting",hint:"看 Dr. Silva（E）說的話，不丹的費用用來「保護」自然，用哪個字？the 後面要接名詞。",k:"Dr. Silva（E） the money helps pay for things like free health care and protecting nature。the 後面要接名詞，所以把動詞 protect 改成名詞 protection（保護）。"}}},
+   {type:"fill",n:3,pts:"2 分",inst:"請從 Mr. Rossi（C）說的話中找出一個<b>片語</b>（phrase），意思符合下面的英文解釋。",
     s:"{A} = to destroy the very thing that brings you money or success",
-    blanks:{A:{ans:["kill the goose that lays the golden eggs","killing the goose that lays the golden eggs","kill the goose that lays the golden egg","killing the goose that lays the golden egg","like killing the goose that lays the golden eggs"],src:"-",hint:"第 4 段最後一句，羅西把向遊客收費比喻成什麼？找 like 後面那個跟「鵝」有關的片語。",k:"第 4 段 charging visitors at the door is like killing the goose that lays the golden eggs。出自《伊索寓言》：農夫有一隻會生金蛋的鵝，他貪心想一次拿到所有金蛋，就把鵝殺了，結果什麼都沒有。意思是「為了眼前的利益，毀掉長久賺錢的來源」，相當於中文的「殺雞取卵」。"}}},
-   {type:"single",nk:"opinion",hint:"回到第 3 段蘇菲說的話，找 so it won't keep anyone away 前面的原因。",n:4,pts:"2 分",q:"Why does Sophie think the fee will not work?",
+    blanks:{A:{ans:["kill the goose that lays the golden eggs","killing the goose that lays the golden eggs","kill the goose that lays the golden egg","killing the goose that lays the golden egg","like killing the goose that lays the golden eggs"],src:"-",hint:"Mr. Rossi（C）最後一句，羅西把向遊客收費比喻成什麼？找 like 後面那個跟「鵝」有關的片語。",k:"Mr. Rossi（C） charging visitors at the door is like killing the goose that lays the golden eggs。出自《伊索寓言》：農夫有一隻會生金蛋的鵝，他貪心想一次拿到所有金蛋，就把鵝殺了，結果什麼都沒有。意思是「為了眼前的利益，毀掉長久賺錢的來源」，相當於中文的「殺雞取卵」。"}}},
+   {type:"single",nk:"opinion",hint:"回到 Sophie（B）說的話，找 so it won't keep anyone away 前面的原因。",n:4,pts:"2 分",q:"Why does Sophie think the fee will not work?",
     opts:["The amount is too small to keep people away.","Day-trippers spend a lot of money in local shops.","It is unfair to students with little money.","Visitors who stay overnight do not have to pay it."],
-    a:0,why:["對。第 3 段：Five euros is pocket change…, so it won't keep anyone away。","錯。這是羅西先生（第 4 段）的理由。","錯。這是莉莉（第 7 段）的理由。","錯。這是畢安奇先生（第 8 段）提到的，而且他是拿來支持收費的。"]},
+    a:0,why:["對。Sophie（B）：Five euros is pocket change…, so it won't keep anyone away。","錯。這是 Mr. Rossi（C）的理由。","錯。這是 Lily（F）的理由。","錯。這是 Mr. Bianchi（G）提到的，而且他是拿來支持收費的。"]},
    {type:"multi",n:5,pts:"4 分",q:"According to the passage, which of the following statements are true? (多選)",
     opts:["Visitors staying overnight in Venice must also pay the entry fee.","Venice's old city had more residents in the 1950s than it does today.","Kenji found Mount Fuji less crowded on his latest climb than on his first.","Bhutan's fee is paid only once, when visitors arrive.","Lily believes entry fees will make travel easier for students."],
-    a:[1,2],why:["錯。第 8 段：過夜的旅客不用付入城費。","對。第 2 段：現在不到五萬人，還不到 1950 年代的三分之一。","對。第 5 段：去年夏天再爬時，步道比第一次空曠多了。","錯。第 6 段：每住一晚都要付（for each night of their stay）。","錯。第 7 段：她認為收費會讓旅行變成只有有錢人才能享受。"]},
+    a:[1,2],why:["錯。Mr. Bianchi（G）：過夜的旅客不用付入城費。","對。Marco（A）：現在不到五萬人，還不到 1950 年代的三分之一。","對。Kenji（D）：去年夏天再爬時，步道比第一次空曠多了。","錯。Dr. Silva（E）：每住一晚都要付（for each night of their stay）。","錯。Lily（F）：她認為收費會讓旅行變成只有有錢人才能享受。"]},
    {type:"short",n:6,pts:"2 分",inst:"請以英文作答。",q:"According to Dr. Silva, at least what percentage of Bhutan's land must stay covered by forest?",
-    check:v=>/(60|sixty)/.test(v),model:"(At least) 60 percent.",hint:"回到第 6 段最後一句，找 its constitution requires…。",k:"答案在第 6 段：its constitution requires that at least 60 percent of its land stay covered by forest。冷知識：不丹的森林覆蓋率其實超過七成，是全世界少數「負碳」的國家，吸收的二氧化碳比排放的還多。"}
+    check:v=>/(60|sixty)/.test(v),model:"(At least) 60 percent.",hint:"回到 Dr. Silva（E）說的最後一句，找 its constitution requires…。",k:"答案在Dr. Silva（E）：its constitution requires that at least 60 percent of its land stay covered by forest。冷知識：不丹的森林覆蓋率其實超過七成，是全世界少數「負碳」的國家，吸收的二氧化碳比排放的還多。"}
   ]
 });
 
@@ -1404,7 +1408,7 @@ function sets(){const S=SETS[cur],n=SETS.length;
   document.querySelectorAll(".pk-item").forEach(b=>b.onclick=()=>go(+b.dataset.i))}
 function build(){
   sets();const S=SETS[cur];let done=0;const total=S.q.length;
-  let ph=S.p.map((t,i)=>`<p><span class="pn">(${i+1})</span>${esc(t)}</p>`+(i===S.chartAfter?`<figure>${S.chart}</figure>`:"")).join("");
+  let ph=S.forum?`<p>${esc(S.p[0])}</p><table class="forum"><tbody>${S.p.slice(1).map((t,i)=>{const c=t.indexOf(": "),h=t.slice(0,c),k=h.indexOf(", "),nm=k<0?h:h.slice(0,k),rl=k<0?"":h.slice(k+2);return `<tr><td><span class="who">${"ABCDEFGHIJ"[i]}. ${esc(nm)}<span class="role">${esc(rl)}</span></span>${esc(t.slice(c+2))}</td></tr>`}).join("")}</tbody></table>`:S.p.map((t,i)=>`<p><span class="pn">(${i+1})</span>${esc(t)}</p>`+(i===S.chartAfter?`<figure>${S.chart}</figure>`:"")).join("");
   $("#app").innerHTML=`<div class="card passage"><h2>閱讀下文，回答第 1 至 ${total} 題</h2><h3>${esc(S.title)}</h3>${S.img?`<figure>${S.img}</figure>`:""}${ph}
   <details class="tr" id="tr" hidden><summary>看全文翻譯</summary>${S.tr.map(t=>`<p>${t}</p>`).join("")}</details></div>
   <div class="card" id="qs">${S.q.map((q,i)=>`<div class="q" id="q${i}"></div>`).join("")}<div id="end"></div></div>`;
@@ -1443,7 +1447,7 @@ function build(){
         if(tries>=2)el.querySelector("[data-s]").hidden=false};
       el.querySelector("[data-s]").onclick=()=>reveal(false);
     }else if(q.type==="map"||q.type==="match"){
-      el.classList.add("isMap");qm.innerHTML=head+`<div class="mapq">${q.map?`<figure>${q.map}</figure>`:""}${q.items.map((it,k)=>`<div class="mrow" data-k="${k}"><b>${esc(it.name)}</b><select aria-label="${esc(it.name)} 的${q.type==="match"?"立場":"位置"}"><option value="">選代號</option>${[...q.letters].map(c=>`<option>${c}</option>`).join("")}</select></div>`).join("")}</div>`+btns;
+      el.classList.add("isMap");qm.innerHTML=head+`<div class="mapq">${q.map?`<figure>${q.map}</figure>`:""}${q.items.map((it,k)=>`<div class="mrow" data-k="${k}"><b>${esc(it.name)}</b><select aria-label="${esc(it.name)} 的${q.type==="match"?"立場":"位置"}"><option value="">${q.choices?"請選擇":"選代號"}</option>${(q.choices||[...q.letters]).map(c=>`<option>${c}</option>`).join("")}</select></div>`).join("")}</div>`+btns;
       const rows=[...el.querySelectorAll(".mrow")];
       const run=show=>{let out="",wrong=0;
         rows.forEach(r=>{const it=q.items[r.dataset.k],sel=r.querySelector("select");if(r.classList.contains("ok"))return;
@@ -1451,7 +1455,7 @@ function build(){
           else{wrong++;r.classList.add("bad")}});
         fbw().innerHTML=(out?`<div class="fb good"><b class="t">${show?"答案":"答對的部分"}</b><ul>${out}</ul></div>`:"")+(wrong&&!show?`<div class="fb bad"><b class="t">還有 ${wrong} 個不對（紅色）</b>${q.hint}</div>`:"");
         if(rows.every(r=>r.classList.contains("ok")))end(!show&&tries===1);else if(tries>=2)el.querySelector("[data-s]").hidden=false};
-      el.querySelector("[data-c]").onclick=()=>{if(rows.some(r=>!r.classList.contains("ok")&&!r.querySelector("select").value)){fbw().innerHTML=`<div class="fb bad"><b class="t">還有${q.type==="match"?"人物":"建築物"}沒選代號</b></div>`;return}tries++;run(false)};
+      el.querySelector("[data-c]").onclick=()=>{if(rows.some(r=>!r.classList.contains("ok")&&!r.querySelector("select").value)){fbw().innerHTML=`<div class="fb bad"><b class="t">${q.type==="match"?"還有人物沒選立場":"還有建築物沒選代號"}</b></div>`;return}tries++;run(false)};
       el.querySelector("[data-s]").onclick=()=>run(true);
     }else{
       qm.innerHTML=head+`<p class="en">${esc(q.q)}</p><input class="in long" autocomplete="off" spellcheck="false" aria-label="簡答">`+btns;
