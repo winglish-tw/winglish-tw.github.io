@@ -103,7 +103,7 @@ section{padding:68px 0}
 .cat{font-size:13px;font-weight:700;color:var(--sheet-red)}
 .card h3{font-family:"Bricolage Grotesque";font-size:21px;line-height:1.2;margin:2px 0 4px;font-weight:800}
 .card p{margin:0 0 12px;font-size:15px;color:var(--ink-soft)}
-.meta{margin-top:auto;display:flex;gap:6px;align-items:center;font-size:13px;color:var(--ink-soft)}
+.meta{margin-top:auto;display:flex;flex-wrap:wrap;white-space:nowrap;gap:6px;align-items:center;font-size:13px;color:var(--ink-soft)}
 .lv{font-family:"Bricolage Grotesque";font-weight:700;font-size:12px;border-radius:6px;padding:1px 7px}
 .lv1{background:var(--ok-soft);color:var(--ok)} .lv2{background:var(--l2-soft);color:var(--l2)} .lv3{background:var(--sheet-red-soft);color:var(--sheet-red)}
 .soon{position:absolute;top:12px;left:12px;background:rgba(26,34,56,.85);color:#fff;font-size:13px;font-weight:700;border-radius:999px;padding:2px 12px}
@@ -118,7 +118,7 @@ section{padding:68px 0}
 .badge{white-space:nowrap;display:inline-flex;align-items:center;height:24px;line-height:1;font-size:13px;font-weight:800;border-radius:999px;padding:3px 11px;box-shadow:0 4px 10px -4px rgba(0,0,0,.35)}
 .badge.new{background:var(--marker);color:var(--ink)}
 .badge.hot{background:#E2483D;color:#fff}
-.wpill{font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;background:var(--ink);color:#fff}
+.wpill{white-space:nowrap;font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;background:var(--ink);color:#fff}
 .card.big{grid-column:1/-1;border:2px solid var(--ink)}
 .card.big .hook{font-size:26px}
 @media (min-width:700px){.card.big{flex-direction:row}.card.big .cover-photo,.card.big>svg{width:55%;aspect-ratio:auto;object-fit:cover}.card.big .body{padding:24px 28px}.card.big .hook{font-size:32px}}
@@ -300,7 +300,7 @@ setTimeout(()=>logUse("open","閱讀館","文章列表"),1500);
       (a.photo?'<img class="cover-photo" src="https://images.unsplash.com/'+a.photo+'?auto=format&fit=crop&w=800&q=70" data-local="'+a.id+'-hero.jpg" alt="" onerror="'+fb+'">':'')+
       (a.svg||fallbackSvg(a))+
       '<div class="body"><div class="cat">'+esc(a.catName)+'</div><h3 class="hook">'+esc(a.hook||a.title)+'</h3>'+(a.hook?'<div class="en-t" lang="en">'+esc(a.title)+'</div>':'')+'<p>'+esc(a.blurb)+'</p>'+
-      '<div class="meta"><span class="lv lv1">L1</span><span class="lv lv2">L2</span><span class="lv lv3">L3</span>'+(a.words?'<span class="wpill">學測單字 ×'+a.words+'</span>':'')+'<span style="margin-left:auto">約 4 分鐘</span></div></div></a>';
+      '<div class="meta"><span class="lv lv1">L1</span><span class="lv lv2">L2</span><span class="lv lv3">L3</span>'+(a.words?'<span class="wpill" title="大考中心 7000 單字表第 3–6 級">學測中高級字 '+a.words+'</span>':'')+'<span style="margin-left:auto">約 4 分鐘</span></div></div></a>';
   }).join('');
   document.querySelectorAll('#filters button').forEach(function(b){b.onclick=function(){
     document.querySelectorAll('#filters button').forEach(function(x){x.classList.toggle('on',x===b);});
