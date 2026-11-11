@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：A Journey Through Taiwan, One Dish at a Time（好書介紹：臺灣漫遊錄） */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4,5,6],[7,8,9],[10,11,12,13]], figs:{3:"awards"}, heads:{1:"A Trip Full of Food",2:"Friends, but Not Equal",3:"A Big Prize"},
    sents:[
     ["Imagine traveling around Taiwan almost 90 years ago and tasting a new dish in every town.","想像一下，在將近九十年前環遊台灣，每到一個城鎮就嘗一道新的料理。"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["The writer and the translator, Lin King, shared the prize.","作者和譯者金翎一起分享了這個獎。"],
     ["If you love Taiwan and good food, this book is a great place to start!","如果你愛台灣，也愛美食，這本書會是很棒的起點！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2],[3,4,5,6],[7,8,9],[10,11,12,13,14]], figs:{3:"awards"}, heads:{1:"A Memoir That Never Was",2:"Who Holds the Power?",3:"Twins Behind the Name"},
    sents:[
     ["In May 2026, a novel about two women eating their way across Taiwan made history in London.","2026 年 5 月，一本關於兩個女人吃遍台灣的小說，在倫敦創下了歷史。"],
@@ -38,7 +38,7 @@ const LEVELS = [
     ["After her sister died of cancer in 2015, Yang kept the name to honor her.","2015 年妹妹因癌症過世後，楊繼續使用這個筆名來紀念她。"],
     ["In a way, every book by \"Yang Shuang-zi\" is still written by two people.","從某個角度來說，每一本「楊双子」的書，仍然是兩個人一起寫的。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4],[5,6,7,8],[9,10,11,12]], figs:{3:"awards"}, heads:{1:"A Forgery by Design",2:"The Politics of a Meal",3:"Two Voices, One Name"},
    sents:[
     ["When Taiwan Travelogue won the 2026 International Booker Prize, it completed a remarkable journey for a novel that publishers had reportedly once considered too local, too layered, or simply untranslatable.","《臺灣漫遊錄》贏得 2026 年國際布克獎，替一本據說曾被出版社認為太在地、太多層次，甚至根本無法翻譯的小說，走完了一段非凡的旅程。"],

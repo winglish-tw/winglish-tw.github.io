@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Three Hearts and Blue Blood */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4,5,6],[7,8,9],[10,11,12,13],[14]], figs:{1:"hearts",2:"photo"}, heads:{1:"Three Hearts and Blue Blood",2:"Smart Arms",3:"The Great Escape"},
    sents:[
     ["Octopuses are some of the strangest animals in the ocean.","章魚是海洋裡最奇特的動物之一。"],
@@ -20,7 +20,7 @@ const LEVELS = [
     ["He was never seen again!","從此再也沒有人見過牠！"],
     ["With three hearts, blue blood and smart arms, the octopus is truly an amazing animal.","有三顆心臟、藍色的血和聰明的手臂，章魚真的是很神奇的動物。"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12,13,14],[15]], figs:{1:"hearts",2:"photo"}, heads:{1:"Three Hearts and Blue Blood",2:"Arms That Think and Taste",3:"Inky's Great Escape"},
    sents:[
     ["With eight flexible arms, no bones and eyes that seem to watch you closely, the octopus looks more like a creature from another planet than an animal from our own oceans.","有八隻柔軟的手臂、沒有骨頭，眼睛還好像一直盯著你看，章魚看起來比較像來自外星球的生物，而不像地球海洋裡的動物。"],
@@ -40,7 +40,7 @@ const LEVELS = [
     ["The aquarium staff searched the pipes, but they never found him.","水族館的員工搜查了水管，但再也沒找到牠。"],
     ["Clearly, an animal with three hearts and thinking arms still has plenty of surprises for us.","很顯然，這種有三顆心臟、手臂還會思考的動物，還有很多驚奇等著我們發現。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10],[11,12,13,14,15],[16]], figs:{1:"hearts",2:"photo"}, heads:{1:"A Circulatory Puzzle",2:"A Mind Spread Across Eight Arms",3:"The Escape Artist"},
    sents:[
     ["If evolution had set out to design an alien, it might well have produced the octopus: a boneless, eight-armed creature whose intelligence developed along a path entirely separate from our own.","假如演化存心要設計一個外星人，它很可能就會造出章魚：一種沒有骨頭、有八隻手臂的生物，而牠的智慧沿著一條和我們完全不同的路發展出來。"],

@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Why Does Popcorn Pop? */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4,5],[6,7,8],[9,10,11],[12]], figs:{1:"kernel"}, heads:{1:"Water Inside a Hard Shell",2:"Pop!",3:"Caught on Camera"},
    sents:[
     ["Popcorn is a favorite snack at the movies, but have you ever wondered why it pops?","爆米花是看電影時最受歡迎的點心，但你有沒有想過它為什麼會爆開？"],
@@ -18,7 +18,7 @@ const LEVELS = [
     ["They also saw that popcorn jumps like a gymnast, kicking off the pan with a small \"leg.\"","他們也看到爆米花跳起來就像體操選手，用一隻小小的「腳」踢離鍋子。"],
     ["So next time you eat popcorn, remember that every piece is a tiny science experiment!","所以下次吃爆米花時，記得每一顆都是一個小小的科學實驗！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5],[6,7,8],[9,10,11,12],[13]], figs:{1:"kernel"}, heads:{1:"A Tiny Pressure Cooker",2:"The Moment of Explosion",3:"Solving the Mystery of the Pop"},
    sents:[
     ["Every year, people around the world munch through mountains of popcorn, yet few stop to ask what actually happens inside the pan.","每年，全世界的人都吃掉堆積如山的爆米花，卻很少有人停下來想一想，鍋子裡到底發生了什麼事。"],
@@ -36,7 +36,7 @@ const LEVELS = [
     ["Interestingly, they compared this jump to the way animals use their muscles to leap.","有趣的是，他們把這種跳躍比作動物用肌肉跳起的方式。"],
     ["Who knew that a simple snack could hide so much science?","誰想得到一份簡單的點心，竟藏著這麼多科學？"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4],[5,6,7,8,9],[10,11],[12]], figs:{1:"kernel"}, heads:{1:"A Pressure Vessel in Miniature",2:"Fracture and Flight",3:"The Source of the Sound"},
    sents:[
     ["Few foods are as theatrical as popcorn: a heap of inert, flinty kernels that, given enough heat, erupts into a cascade of edible foam.","很少有食物像爆米花這麼有戲劇效果：一堆毫無動靜、像燧石一樣硬的玉米粒，只要夠熱，就會爆發成一連串可以吃的泡沫。"],

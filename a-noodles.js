@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：The Man Who Invented Instant Noodles */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2],[3,4,5,6,7,8,9],[10,11,12],[13,14]], figs:{1:"fry",2:"photo"}, heads:{1:"A Little Shed",2:"Noodles in a Cup and in Space"},
    sents:[
     ["Do you like instant noodles?","你喜歡吃泡麵嗎？"],
@@ -20,7 +20,7 @@ const LEVELS = [
     ["Today, people around the world eat more than 100 billion servings of instant noodles every year.","現在，全世界的人每年吃掉超過 1000 億份泡麵。"],
     ["Ando liked to say that in life, it is never too late to start something new.","安藤百福常說，人生中，開始做新的事永遠不嫌晚。"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2],[3,4,5,6,7,8],[9,10,11],[12,13]], figs:{1:"fry",2:"photo"}, heads:{1:"Starting Over at 48",2:"From a Cup to Outer Space"},
    sents:[
     ["Instant noodles are so common today that it is hard to imagine a world without them.","泡麵現在普遍到讓人很難想像沒有它的世界。"],
@@ -38,7 +38,7 @@ const LEVELS = [
     ["Today, people eat over 100 billion servings of instant noodles each year.","現在，人們每年吃掉超過 1000 億份泡麵。"],
     ["Not bad for a man who began his greatest success after losing almost everything.","對一個在幾乎失去一切之後，才開始他最大成就的人來說，這實在很不簡單。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4,5,6,7,8],[9,10,11],[12,13]], figs:{1:"fry",2:"photo"}, heads:{1:"A Second Chance in a Backyard Shed",2:"Reinvention"},
    sents:[
     ["It is one of the most widely eaten processed foods on the planet, yet few people who tear open a packet of instant noodles know that its inventor was born in Taiwan.","泡麵是全世界最多人吃的加工食品之一，但撕開一包泡麵的人，很少知道它的發明者是在台灣出生的。"],

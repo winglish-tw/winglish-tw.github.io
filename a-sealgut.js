@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：The Raincoat Inside a Seal（海豹腸子做的防水外套） */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10],[11,12,13]], figs:{1:"steps"}, heads:{1:"From Seal to Coat",2:"Light, Dry and Clever",3:"An Old Skill, Still Alive"},
    sents:[
     ["What do you wear on a rainy day?","下雨天你都穿什麼？"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["Today, only some elders still know how to make them, and they are teaching young people.","現在只剩一些長者還會做，他們正在教年輕人。"],
     ["Next time it rains, think about the clever people who made raincoats from seals!","下次下雨的時候，想想那些用海豹做雨衣的聰明人吧！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5,6],[7,8,9,10],[11,12],[13,14,15]], figs:{1:"steps"}, heads:{1:"Turning Guts into Cloth",2:"A Coat That Breathes",3:"A Work of Art",4:"Passing It On"},
    sents:[
     ["Long before plastic raincoats, people living along the coasts of Alaska and Siberia had already solved a tricky problem: how to stay dry in a land of icy rain and sea spray.","早在塑膠雨衣出現之前，住在阿拉斯加和西伯利亞沿海的人就已經解決了一個棘手的問題：在冰冷雨水和海浪飛沫不斷的地方，要怎麼保持乾爽。"],
@@ -39,7 +39,7 @@ const LEVELS = [
     ["Today, elders in Alaska are working hard to pass it on to younger generations.","現在，阿拉斯加的長者們正努力把它傳給年輕一代。"],
     ["Next to a modern rain jacket, a gut parka may look strange, but it proves that clever design does not always need a laboratory.","和現代的雨衣比起來，腸衣大衣也許看起來很奇怪，但它證明了聰明的設計不一定需要實驗室。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12,13]], figs:{1:"steps"}, heads:{1:"An Unlikely Fabric",2:"Engineering for the Open Sea",3:"Spiritual Armor, Fragile Legacy"},
    sents:[
     ["For most of human history, waterproof clothing was something of a contradiction: a garment that kept rain out tended to trap sweat in, leaving its wearer soaked from the inside.","在人類歷史的大部分時間裡，防水衣物幾乎是一種矛盾：能把雨擋在外面的衣服，往往也會把汗悶在裡面，讓穿的人從裡面濕透。"],

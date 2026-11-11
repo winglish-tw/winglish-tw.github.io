@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：The Animal That Never Grows Up */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14]], figs:{2:"regen"}, heads:{1:"A Baby Forever",2:"A Super Power",3:"In Danger"},
    sents:[
     ["Have you ever seen a pink animal with a big smile and six feathery things on its head?","你看過一種粉紅色、笑咪咪，頭上還有六根像羽毛一樣的東西的動物嗎？"],
@@ -20,7 +20,7 @@ const LEVELS = [
     ["Because the water is dirty and other fish eat their babies, very few are left.","因為水很髒，別的魚又會吃牠們的寶寶，所以剩下的非常少。"],
     ["There are many axolotls in pet shops and labs around the world, but in the wild, they may soon be gone.","世界各地的寵物店和實驗室裡有很多六角恐龍，但在野外，牠們可能很快就會消失。"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10],[11,12,13,14],[15]], figs:{2:"regen"}, heads:{1:"The Peter Pan of Animals",2:"Rebuilding the Body",3:"Disappearing from Home"},
    sents:[
     ["With its wide smile, tiny eyes and pink, feathery \"horns,\" the axolotl looks more like a cartoon character than a real animal.","嘴巴笑得開開的、眼睛小小的，頭上還有粉紅色、像羽毛一樣的「角」，六角恐龍看起來比較像卡通人物，不太像真的動物。"],
@@ -40,7 +40,7 @@ const LEVELS = [
     ["Polluted water and fish such as tilapia, which eat axolotl eggs and babies, are the main reasons.","被汙染的水，還有會吃六角恐龍卵和寶寶的吳郭魚等魚類，是主要的原因。"],
     ["It would be sad if an animal that can rebuild its own heart could not survive the damage humans have done to its home.","一種能重建自己心臟的動物，卻撐不過人類對牠家園造成的破壞，那會是多令人難過的事。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10,11],[12,13,14,15],[16]], figs:{2:"regen"}, heads:{1:"A Life Without Metamorphosis",2:"Masters of Regeneration",3:"A Vanishing Home"},
    sents:[
     ["Few creatures have become internet celebrities as effortlessly as the axolotl, whose permanent grin and frilly pink gills have made it a favorite of aquarium owners and meme makers alike.","很少有動物像六角恐龍這樣，毫不費力就成了網路明星；牠永遠掛在臉上的笑容和粉紅色的荷葉邊外鰓，讓水族愛好者和做迷因的人都愛上了牠。"],

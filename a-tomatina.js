@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：The Biggest Food Fight on Earth */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4,5,6],[7,8,9],[10,11,12,13],[14]], figs:{3:"rules"}, heads:{1:"A Small Town, a Big Party",2:"How It Started",3:"Rules of the Fight"},
    sents:[
     ["Have you ever had a food fight?","你打過食物大戰嗎？"],
@@ -20,7 +20,7 @@ const LEVELS = [
     ["Afterward, fire trucks wash the streets, and the town is clean again in a few hours.","之後消防車會沖洗街道，幾個小時後小鎮又乾乾淨淨。"],
     ["Would you like to join the biggest food fight on Earth?","你想參加地球上最大的食物大戰嗎？"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12]], figs:{2:"rules"}, heads:{1:"From a Street Fight to a Festival",2:"One Hour of Red Chaos",3:"Keeping the Party Under Control"},
    sents:[
     ["Every year, on the last Wednesday of August, the quiet Spanish town of Bunol is transformed into a sea of red.","每年八月的最後一個星期三，安靜的西班牙小鎮布尼奧爾都會變成一片紅海。"],
@@ -37,7 +37,7 @@ const LEVELS = [
     ["When the fight is over, fire trucks hose down the streets, and the acid in the tomatoes even leaves the stone cleaner than before.","大戰結束後，消防車沖洗街道，番茄裡的酸甚至讓石板路比原本更乾淨。"],
     ["For one day a year, playing with your food is not only allowed but encouraged.","一年中有那麼一天，玩食物不但被允許，還受到鼓勵。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12,13],[14]], figs:{2:"rules"}, heads:{1:"An Accidental Tradition",2:"Choreographed Chaos",3:"Taming a Global Phenomenon"},
    sents:[
     ["For sixty frenzied minutes each August, the otherwise unremarkable town of Bunol, some 40 kilometers inland from Valencia, becomes the stage for what is widely billed as the largest food fight on the planet.","每年八月，在那瘋狂的六十分鐘裡，距離瓦倫西亞內陸約 40 公里、平常毫不起眼的小鎮布尼奧爾，就成了號稱全球最大食物大戰的舞台。"],

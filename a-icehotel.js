@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：A Hotel That Melts Every Spring */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10,11],[12,13,14]], figs:{1:"cycle"}, heads:{1:"Built From a River",2:"A New Hotel Every Year",3:"Back to the River"},
    sents:[
     ["Imagine sleeping in a hotel made of ice.","想像一下睡在用冰做成的旅館裡。"],
@@ -20,7 +20,7 @@ const LEVELS = [
     ["The water goes back into the river, and the ice for next year's hotel is cut from the same river.","水流回河裡，而明年旅館用的冰，又是從同一條河切下來的。"],
     ["It is a hotel that never stays the same!","這是一間永遠不會一樣的旅館！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5,6],[7,8,9,10],[11,12,13]], figs:{1:"cycle"}, heads:{1:"Ice From the River",2:"A Gallery You Can Sleep In",3:"An Endless Cycle"},
    sents:[
     ["Most hotels are built to last for decades, but one hotel in Swedish Lapland is designed to disappear every spring.","大部分的旅館都是為了使用幾十年而蓋的，但瑞典拉普蘭有一間旅館，卻是設計成每年春天就消失。"],
@@ -38,7 +38,7 @@ const LEVELS = [
     ["A few months later, ice is cut from the very same river, and the cycle begins again.","幾個月後，人們又從同一條河切下冰塊，循環再次開始。"],
     ["In a way, guests are not just staying in a hotel; they are borrowing a piece of the river for a night.","某種程度上，客人不只是住在旅館裡，而是向河流借了一小塊，住上一晚。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10],[11,12,13,14]], figs:{1:"cycle"}, heads:{1:"Harvesting a Frozen River",2:"An Exhibition You Can Sleep In",3:"Returning to the River"},
    sents:[
     ["Architecture is usually an exercise in permanence: we build in stone and steel so that our structures might outlast us.","建築通常是一門追求永恆的學問：我們用石頭和鋼鐵蓋房子，希望建築能比我們活得更久。"],

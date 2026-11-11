@@ -3,7 +3,7 @@ window.ARTICLE = (function(){
 const LEVELS = [
  {
   "name": "Level 1",
-  "rec": "國三（會考程度）",
+  "rec": "單字量約 2000",
   "paras": [
    [
     0,
@@ -108,7 +108,7 @@ const LEVELS = [
  },
  {
   "name": "Level 2",
-  "rec": "高二",
+  "rec": "單字量約 4500",
   "paras": [
    [
     0,
@@ -216,7 +216,7 @@ const LEVELS = [
  },
  {
   "name": "Level 3",
-  "rec": "比學測更難（進階挑戰）",
+  "rec": "單字量 7000 以上",
   "paras": [
    [
     0,

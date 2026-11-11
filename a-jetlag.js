@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Why Flying East Is Harder */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2,3],[4,5,6],[7,8,9,10,11],[12,13]], figs:{2:"clock",3:"photo"}, heads:{1:"A Clock in Your Brain",2:"East or West?",3:"How to Feel Better"},
    sents:[
     ["Have you ever flown to another country and felt sleepy in the middle of the day?","你有沒有飛到別的國家，結果大白天卻一直想睡覺？"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["To feel better, get some sunlight in the morning after you arrive, and try to eat and sleep at local times.","想舒服一點的話，抵達後早上去曬曬太陽，並且試著照當地的時間吃飯、睡覺。"],
     ["People often say it takes about one day to get used to each hour of time difference.","大家常說，每差一個小時，大約需要一天來適應。"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10],[11,12,13]], figs:{2:"clock",3:"photo"}, heads:{1:"The Body's Master Clock",2:"Why East Hurts More",3:"Resetting the Clock"},
    sents:[
     ["A long flight can be exciting, but the excitement often ends the moment you land, when you find yourself wide awake at 3 a.m. and fighting to keep your eyes open at lunchtime.","長途飛行可能很令人興奮，但這份興奮常常在降落的那一刻就結束了：你發現自己凌晨三點還睡不著，到了午餐時間卻拚命撐著不讓眼睛閉上。"],
@@ -37,7 +37,7 @@ const LEVELS = [
     ["After flying east, try to get bright light in the morning; after flying west, evening light helps you stay up later.","往東飛之後，試著在早上多照亮光；往西飛之後，傍晚的光線能幫助你晚一點睡。"],
     ["Eating meals and going to bed at local times also sends your body the message that it has arrived somewhere new.","照當地時間吃飯、睡覺，也是在告訴你的身體：它已經到了一個新的地方。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4],[5,6,7,8],[9,10,11,12]], figs:{2:"clock",3:"photo"}, heads:{1:"A Clock That Runs Slow",2:"The Asymmetry of Travel",3:"Strategies That Work"},
    sents:[
     ["Modern aviation allows us to cross half the globe between breakfast and dinner, but the human body still behaves as if it were traveling on foot.","現代航空讓我們能在早餐和晚餐之間橫越半個地球，但人體的反應，卻仍然像是靠雙腳在旅行。"],

@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Hotter Than the Sun */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4],[5,6,7],[8,9,10,11]], figs:{2:"count"}, heads:{1:"A Very Hot Spark",2:"Counting to the Storm",3:"The Same Place Again and Again"},
    sents:[
     ["Lightning is beautiful, but it is also very powerful.","閃電很美，但也非常強大。"],
@@ -17,7 +17,7 @@ const LEVELS = [
     ["Lightning likes tall things, so stay away from tall trees in a storm.","閃電喜歡打高的東西，所以暴風雨時要遠離大樹。"],
     ["When you hear thunder, go inside a building right away!","聽到雷聲，就要馬上躲進建築物裡！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12,13]], figs:{2:"count"}, heads:{1:"Five Times Hotter Than the Sun",2:"How Far Away Is the Storm?",3:"A Myth That Won't Die"},
    sents:[
     ["Every second, somewhere on Earth, lightning strikes about 100 times.","每一秒鐘，地球上某處都有大約 100 次閃電落下。"],
@@ -35,7 +35,7 @@ const LEVELS = [
     ["That is why tall buildings have lightning rods, metal bars that guide the electricity safely into the ground.","這就是為什麼高樓都裝有避雷針：一種把電安全引導到地下的金屬棒。"],
     ["So the next time a storm rolls in, remember the saying: \"When thunder roars, go indoors.\"","所以下次暴風雨來臨時，記住這句話：「雷聲一響，快進屋裡。」"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4],[5,6,7],[8,9,10],[11,12]], figs:{2:"count"}, heads:{1:"Anatomy of a Bolt",2:"Reading the Gap",3:"Debunking an Old Saying",4:"Respect the Storm"},
    sents:[
     ["Few natural phenomena are as familiar, or as routinely underestimated, as lightning.","很少有自然現象像閃電這樣，既為人熟悉，又經常被低估。"],

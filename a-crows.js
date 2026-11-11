@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Never Forget a Face */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2,3,4],[5,6,7,8],[9,10,11,12],[13]], figs:{1:"timeline",2:"photo"}, heads:{1:"The Crows Remember",2:"A Very Long Memory"},
    sents:[
     ["Crows are black, noisy birds that we can see in many cities.","烏鴉是黑色、很吵的鳥，在很多城市都看得到。"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["Finally, in 2023, no crow shouted anymore.","直到 2023 年，終於再也沒有烏鴉對他大叫了。"],
     ["So be nice to the crows near your home, because they may remember your face for a long time!","所以，對你家附近的烏鴉好一點吧，因為牠們可能會記住你的臉很久很久！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10],[11,12,13]], figs:{2:"timeline",3:"photo"}, heads:{1:"The Caveman Mask",2:"Spreading the Word",3:"Seventeen Years Later"},
    sents:[
     ["Many people think of crows as noisy pests that tear open garbage bags, but scientists see them very differently.","很多人覺得烏鴉是會把垃圾袋撕開的吵鬧害鳥，但科學家眼中的烏鴉完全不是這樣。"],
@@ -37,7 +37,7 @@ const LEVELS = [
     ["In September 2023, more than 17 years after the trapping, Marzluff walked the campus in the caveman mask, and not a single crow scolded him.","2023 年 9 月，也就是抓鳥事件的 17 年多以後，馬茲盧夫戴著原始人面具走過校園，終於沒有任何一隻烏鴉罵他。"],
     ["Still, a memory that lasted that long and spread through a whole community of birds is something few animals can match.","不過，一段記憶能維持這麼久，還能傳遍整群鳥，這是很少動物比得上的。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1,2],[3,4,5,6],[7,8,9,10],[11,12,13],[14]], figs:{2:"timeline",3:"photo"}, heads:{1:"An Experiment in Disguise",2:"Knowledge That Spreads",3:"The Fading of a Grudge"},
    sents:[
     ["To many city dwellers, crows are little more than a nuisance, raiding trash cans, cawing at dawn and leaving droppings on parked cars.","對許多城市居民來說，烏鴉不過是個麻煩：翻垃圾桶、天一亮就嘎嘎叫，還在停著的車上留下糞便。"],

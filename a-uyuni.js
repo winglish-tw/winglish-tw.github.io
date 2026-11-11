@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：The World's Biggest Mirror */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2,3,4],[5,6,7,8,9],[10,11,12],[13]], figs:{1:"layers",2:"photo"}, heads:{1:"A Giant Mirror",2:"Flat and Useful"},
    sents:[
     ["Imagine standing in a place where the sky is above you and also under your feet.","想像你站在一個地方，天空在你頭上，也在你的腳下。"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["Under the salt, there is also a lot of lithium, a metal used to make phone and car batteries.","鹽的下面還有很多鋰，鋰是一種用來做手機和汽車電池的金屬。"],
     ["If you visit, bring sunglasses, because all that white salt is very bright!","如果你去玩，記得帶太陽眼鏡，因為一大片白色的鹽非常刺眼！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2],[3,4,5,6,7],[8,9,10,11],[12]], figs:{1:"layers",2:"photo"}, heads:{1:"From Lake to Salt",2:"Help from Space"},
    sents:[
     ["Every year, travelers from around the world make a long journey to a remote corner of Bolivia to see something that looks unreal: a white plain where the sky seems to continue under their feet.","每年都有來自世界各地的旅客，長途跋涉到玻利維亞一個偏遠的角落，只為了看一個看起來不像真的景象：一片白色的平原，天空好像一路延伸到他們的腳下。"],
@@ -36,7 +36,7 @@ const LEVELS = [
     ["Beneath the crust lies salty water rich in lithium, a metal used in batteries for phones and electric cars, and Bolivia is now trying to turn this treasure into income.","鹽殼底下是富含鋰的鹹水；鋰是一種用在手機和電動車電池裡的金屬，玻利維亞現在正努力把這個寶藏變成收入。"],
     ["For now, though, most visitors come for a simpler reason: to stand in the middle of the sky.","不過目前，大部分的遊客來這裡是為了一個更簡單的理由：站在天空的正中央。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4,5],[6,7,8],[9,10,11]], figs:{1:"layers",2:"photo"}, heads:{1:"A Landscape Shaped by Evaporation",2:"A Target for Satellites",3:"Treasure Beneath the Salt"},
    sents:[
     ["There are few places on Earth where the horizon simply disappears, but on the Salar de Uyuni, in southwestern Bolivia, sky and ground can merge so completely that visitors lose all sense of scale.","地球上很少有地方能讓地平線就這樣消失；但在玻利維亞西南部的烏尤尼鹽沼，天空和地面可以完全融為一體，讓遊客失去所有的大小比例感。"],

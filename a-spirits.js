@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：When Spirits Come Home */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0],[1,2],[3,4,5,6,7,8],[9,10,11,12],[13]], figs:{2:"horse",3:"fama"}, heads:{1:"Summer Visitors in Japan",3:"A Party in Madagascar"},
    sents:[
     ["Mexico is not the only country with a special holiday for people who have died.","墨西哥並不是唯一有紀念過世親人節日的國家。"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["Then they sing, dance, and even carry their ancestors around!","接著他們唱歌、跳舞，甚至抱著祖先四處走！"],
     ["It may sound scary, but for these families, it is a happy party, not a sad day.","聽起來也許有點可怕，但對這些家庭來說，這是快樂的派對，而不是悲傷的日子。"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3],[4,5,6,7],[8,9,10,11],[12,13]], figs:{2:"horse",4:"fama"}, heads:{1:"Obon: A Journey by Horse and Cow",3:"Famadihana: Dancing With Ancestors"},
    sents:[
     ["Mexico's Day of the Dead, with its marigolds and painted skulls, has become one of the most recognizable festivals on the planet.","墨西哥的亡靈節有萬壽菊和彩繪骷髏，已成為全世界最具辨識度的節慶之一。"],
@@ -37,7 +37,7 @@ const LEVELS = [
     ["While outsiders may find the ritual unsettling, participants regard it as an expression of gratitude and a chance to share the latest family news with their ancestors.","外人也許會覺得這個儀式令人不安，參與者卻把它看作表達感謝的方式，也是向祖先報告家族近況的機會。"],
     ["Whether through floating lanterns or joyful dances, these customs reflect a shared conviction: death may separate families, but it cannot break the bonds between them.","無論是透過漂流的燈籠還是歡樂的舞蹈，這些習俗都反映了同一個信念：死亡或許會讓家人分開，卻無法切斷彼此之間的羈絆。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3],[4,5,6],[7,8,9,10],[11,12]], figs:{2:"horse",3:"fama"}, heads:{1:"Obon: Hospitality for the Departed",3:"Famadihana: A Reunion With the Departed"},
    sents:[
     ["Few celebrations have captured the global imagination quite like Mexico's Day of the Dead, whose marigold-strewn altars and sugar skulls have migrated from village cemeteries to cinema screens and fashion runways.","很少有節慶像墨西哥的亡靈節那樣擄獲全世界的想像；它鋪滿萬壽菊的祭壇和糖做的骷髏，已經從鄉村墓地一路走進電影銀幕和時裝伸展台。"],

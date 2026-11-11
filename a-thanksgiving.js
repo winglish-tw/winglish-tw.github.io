@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：A Feast, a Letter and a Lucky Turkey（感恩節） */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12],[13]], figs:{2:"timeline"}, heads:{1:"The First Feast",2:"A Woman Who Never Gave Up",3:"A Lucky Turkey"},
    sents:[
     ["Every November, families in the United States sit down for a big dinner on Thanksgiving Day.","每年十一月，美國的家家戶戶會在感恩節坐下來一起吃一頓大餐。"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["These lucky birds go to live on a farm instead.","這些幸運的火雞改到農場去生活。"],
     ["So this November, why not say \"thank you\" to someone special?","所以這個十一月，何不對某個特別的人說聲「謝謝」呢？"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5,6],[7,8,9,10],[11,12,13],[14,15,16]], figs:{2:"timeline"}, heads:{1:"A Harvest Shared",2:"Seventeen Years of Letters",3:"Pardoned Birds and Leftovers",4:"Not Everyone Celebrates"},
    sents:[
     ["On the fourth Thursday of November, millions of Americans gather around tables loaded with roast turkey, mashed potatoes and pumpkin pie.","每年十一月的第四個星期四，數百萬美國人圍坐在擺滿烤火雞、馬鈴薯泥和南瓜派的餐桌旁。"],
@@ -40,7 +40,7 @@ const LEVELS = [
     ["Since 1970, some Native Americans have marked the day as a National Day of Mourning, remembering what their people lost after the settlers arrived.","從 1970 年起，有些美洲原住民把這一天當作「全國哀悼日」，紀念移民到來後他們的族人所失去的一切。"],
     ["For them, and for many others, the holiday is a reminder that saying thanks also means remembering the whole story.","對他們，以及許多其他人來說，這個節日提醒我們：說謝謝，也代表要記得完整的故事。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4,5,6],[7,8,9,10],[11,12,13]], figs:{2:"timeline"}, heads:{1:"What Really Happened in 1621",2:"A Holiday Built on Persistence",3:"A Day of Thanks, and of Mourning"},
    sents:[
     ["Few holidays are as wrapped in myth as Thanksgiving, an occasion that most Americans picture as a harmonious meal shared by grateful Pilgrims and welcoming Native Americans.","很少有節日像感恩節這樣被神話包裹著──大多數美國人想像中的感恩節，是心懷感激的清教徒移民和熱情好客的美洲原住民共享的一頓和樂融融的大餐。"],

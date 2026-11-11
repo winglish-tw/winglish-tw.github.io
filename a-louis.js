@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：The King Who Dressed for Power（愛漂亮的路易十四） */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4],[5,6,7,8],[9,10,11,12,13]], figs:{3:"timeline"}, heads:{1:"The Sun King",2:"Red Heels and Big Wigs",3:"A Hall Full of Mirrors"},
    sents:[
     ["Do you like to look good in photos?","你喜歡在照片裡看起來很好看嗎？"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["Louis was king for 72 years, longer than any other king in European history.","路易當了 72 年的國王，比歐洲歷史上任何其他國王都久。"],
     ["Maybe looking good really was part of his job!","也許「看起來很好看」，真的是他工作的一部分！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4],[5,6,7,8],[9,10,11,12],[13,14,15]], figs:{3:"timeline"}, heads:{1:"Becoming the Sun",2:"Fashion as a Weapon",3:"A Palace of Mirrors",4:"Vain, or Clever?"},
    sents:[
     ["Long before social media influencers, one man set the fashion for a whole continent: Louis XIV of France.","早在社群網紅出現之前，就有一個人引領了整個歐洲的時尚：法國的路易十四。"],
@@ -39,7 +39,7 @@ const LEVELS = [
     ["Almost certainly.","幾乎可以確定是的。"],
     ["But his vanity was also a clever political tool, and it helped make Paris the fashion capital of Europe, a reputation the city still enjoys today.","但他的虛榮也是一種聰明的政治工具，還幫助巴黎成為歐洲的時尚之都──這個名聲巴黎到今天都還享有。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4],[5,6,7,8],[9,10,11],[12,13]], figs:{3:"timeline"}, heads:{1:"The Making of a Myth",2:"Dressing for Domination",3:"A Gilded Cage",4:"A Deathbed Confession"},
    sents:[
     ["Vanity is rarely counted among the virtues of a statesman, yet in the case of Louis XIV it is difficult to tell where personal indulgence ended and political strategy began.","虛榮很少被算作政治家的美德，然而在路易十四身上，很難分辨個人的放縱在哪裡結束、政治策略又從哪裡開始。"],

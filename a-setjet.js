@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Holidays from the Screen（Set-jetting 追劇旅行） */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2,3],[4,5,6],[7,8,9,10],[11,12,13]], figs:{1:"map"}, heads:{1:"Famous Places on Screen",2:"Too Many Visitors",3:"Be a Good Visitor"},
    sents:[
     ["Have you ever watched a movie and thought, \"I want to go there\"?","你有沒有看完一部電影，心裡想：「我好想去那裡」？"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["Just remember that real people live there.","只是要記得，那裡住著真實的人。"],
     ["Be polite, stay safe, and leave nothing behind but your footprints!","要有禮貌、注意安全，除了腳印之外，什麼都別留下！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2,3],[4,5,6,7],[8,9,10,11],[12,13,14]], figs:{1:"map"}, heads:{1:"From Screen to Suitcase",2:"When Fans Become a Flood",3:"Real or Imagined?"},
    sents:[
     ["When the TV series Game of Thrones needed a setting for its royal capital, King's Landing, the producers chose the old walled city of Dubrovnik in Croatia.","當影集《權力遊戲》需要為劇中的王城「君臨城」找拍攝地時，製作團隊選中了克羅埃西亞的城牆古城──杜布羅夫尼克。"],
@@ -38,7 +38,7 @@ const LEVELS = [
     ["Jiufen, in northern Taiwan, is often called the town behind the anime Spirited Away, even though director Hayao Miyazaki has denied it.","台灣北部的九份常被說是動畫《神隱少女》的原型，雖然導演宮崎駿早就否認過。"],
     ["Tourists keep coming anyway, proving that a story can be as powerful as the place itself.","遊客還是照樣湧入，證明了一個故事可以和地方本身一樣有力量。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1,2],[3,4,5],[6,7,8,9],[10,11,12,13]], figs:{1:"map"}, heads:{1:"The Blessing",2:"The Burden",3:"Chasing a Feeling"},
    sents:[
     ["Tourism has always been shaped by stories, but rarely has the link between fiction and footsteps been as direct as it is today.","觀光一向受到故事的影響，但虛構的故事和旅人的腳步之間，很少像今天連得這麼直接。"],

@@ -325,9 +325,9 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
       <div class="rd-demo" aria-label="分級閱讀示範">
         <div class="rd-demo-head"><strong>A Feast, a Letter and a Lucky Turkey</strong><span class="try">直接在這裡試試看 ↓</span></div>
         <div class="rd-tabs" id="rdTabs">
-          <button class="on" data-l="0">Level 1<small>國三</small></button>
-          <button data-l="1">Level 2<small>高二</small></button>
-          <button data-l="2">Level 3<small>超越學測</small></button>
+          <button class="on" data-l="0">Level 1<small>單字量 2000</small></button>
+          <button data-l="1">Level 2<small>單字量 4500</small></button>
+          <button data-l="2">Level 3<small>單字量 7000+</small></button>
         </div>
         <p class="rd-text en" id="rdText"></p>
         <div class="rd-pop" id="rdPop"></div>
@@ -341,7 +341,7 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
       <div>
         <h3 class="rd-h3">每一篇文章，都可以這樣讀</h3>
         <ol class="rd-steps">
-          <li><b>選難度</b>國三、高二、超越學測三種程度，同一個故事，讀你跟得上的版本。</li>
+          <li><b>選難度</b>依單字量 2000、4500、7000+ 分三種程度，同一個故事，讀你跟得上的版本。</li>
           <li><b>聽朗讀</b>念到哪一句就亮到哪一句，可以調慢速度。</li>
           <li><b>點字查義</b>不會的字點一下，中文意思和發音馬上出來。</li>
           <li><b>開口跟讀</b>念一句給系統聽，念錯的字直接標紅色。</li>
@@ -493,9 +493,9 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
     pardons:["v.","特赦；饒恕（pardon）"],sparing:["v.","使免於（spare）"],oven:["n.","烤箱"],
     accumulated:["v.","累積（accumulate）"],rituals:["n.","儀式（ritual 的複數）"],tongue:["n.","tongue-in-cheek 半開玩笑的"],cheek:["n.","tongue-in-cheek 半開玩笑的"],pardon:["n.","特赦"],parades:["n.","遊行（parade 的複數）"]};
   var T=[
-   {s:["In the fall of 1621, they had a good harvest, so they shared a feast that lasted three days.","Today, Americans eat more than 40 million turkeys on Thanksgiving.","But every year, the president saves one or two turkeys from the dinner table."],m:"全文約 190 字・國三會考程度"},
-   {s:["Each year, the president \u201cpardons\u201d a turkey, sparing it from the oven and sending it to live on a farm."],m:"全文約 340 字・高二程度"},
-   {s:["Today the holiday has accumulated its own rituals, from the president\u2019s tongue-in-cheek \u201cpardon\u201d of a turkey to the parades and football games that fill the afternoon."],m:"全文約 370 字・比學測更難"}
+   {s:["In the fall of 1621, they had a good harvest, so they shared a feast that lasted three days.","Today, Americans eat more than 40 million turkeys on Thanksgiving.","But every year, the president saves one or two turkeys from the dinner table."],m:"全文約 190 字・單字量 2000"},
+   {s:["Each year, the president \u201cpardons\u201d a turkey, sparing it from the oven and sending it to live on a farm."],m:"全文約 340 字・單字量 4500"},
+   {s:["Today the holiday has accumulated its own rituals, from the president\u2019s tongue-in-cheek \u201cpardon\u201d of a turkey to the parades and football games that fill the afternoon."],m:"全文約 370 字・單字量 7000+"}
   ];
   var tabs=document.querySelectorAll('#rdTabs button'),txt=document.getElementById('rdText'),pop=document.getElementById('rdPop'),play=document.getElementById('rdPlay'),cur=0,timer,touched=false,playing=false;
   var NOV=/Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Fred|Junior|Ralph|Kathy|Grandma|Grandpa|Rocko|Shelley|Sandy|Flo|Eddy|Reed/i;

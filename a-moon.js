@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：The Moon Is Running Away */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1],[2,3,4],[5,6,7],[8,9,10,11]], figs:{1:"laser"}, heads:{1:"Mirrors on the Moon",2:"Why Is It Moving Away?",3:"Shorter Days Long Ago"},
    sents:[
     ["The moon looks the same every night, but it is slowly moving away from us.","月亮每天晚上看起來都一樣，但它正慢慢地離我們遠去。"],
@@ -17,7 +17,7 @@ const LEVELS = [
     ["Scientists learned this from the lines on an old shell, just like the rings in a tree.","科學家是從一個古老貝殼上的紋路得知的，就像樹的年輪一樣。"],
     ["Don't worry, though. The moon will not leave us any time soon!","不過別擔心，月亮短時間內不會離開我們的！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12,13]], figs:{1:"laser"}, heads:{1:"A Mirror Left Behind",2:"The Tug of the Tides",3:"Clues in an Ancient Shell"},
    sents:[
     ["The moon may look as if it never changes, but it is quietly drifting away from Earth.","月亮看起來好像從來不會變，但它正悄悄地遠離地球。"],
@@ -35,7 +35,7 @@ const LEVELS = [
     ["Since the length of a year has not changed, each day must have lasted only about 23.5 hours.","因為一年的長度沒有改變，所以當時每一天一定只有大約 23.5 小時。"],
     ["So if you ever wish you had more hours in a day, just wait a few million years.","所以如果你希望一天能多幾個小時，只要再等個幾百萬年就好了。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4],[5,6,7],[8,9,10],[11,12]], figs:{1:"laser"}, heads:{1:"Bouncing Light off the Moon",2:"A Cosmic Brake",3:"A Calendar in Stone",4:"A Slowly Changing Sky"},
    sents:[
     ["To the naked eye, the moon seems to be among the most constant features of the night sky, yet it is gradually retreating from us.","用肉眼看，月亮似乎是夜空中最恆久不變的存在之一，然而它正逐漸離我們遠去。"],

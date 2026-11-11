@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Why Does Spicy Food Feel Hot? */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0,1,2,3,4],[5,6,7],[8,9,10],[11,12,13]], figs:{2:"scoville"}, heads:{1:"Milk, Not Water",2:"How Hot Is Hot?",3:"A Pepper's Plan"},
    sents:[
     ["Why does your mouth feel like it is on fire when you eat a chili pepper?","為什麼吃辣椒的時候，嘴巴會覺得像著火了一樣？"],
@@ -19,7 +19,7 @@ const LEVELS = [
     ["They eat the peppers and fly far away, and the seeds come out in their droppings, so new chili plants can grow in new places.","牠們吃了辣椒、飛到很遠的地方，種子跟著糞便排出來，新的辣椒就能在新的地方長出來。"],
     ["Maybe the chili pepper's fire is only a warning for animals like us!","也許辣椒的「火」，只是用來警告像我們這樣的動物吧！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1,2,3,4],[5,6,7],[8,9,10,11],[12,13,14]], figs:{2:"scoville"}, heads:{1:"Putting Out the Fire",2:"Measuring the Heat",3:"Why Birds Don't Care"},
    sents:[
     ["For some people, a meal without chili is not a meal at all; for others, a single bite is enough to bring tears to their eyes.","對有些人來說，沒有辣椒就不算一餐；對另一些人來說，咬一口就足以讓他們眼淚直流。"],
@@ -38,7 +38,7 @@ const LEVELS = [
     ["Scientists believe this benefits the plant: mammals chew up and destroy the seeds, but birds swallow them whole and spread them over long distances in their droppings.","科學家認為這對植物有好處：哺乳動物會把種子嚼爛，鳥卻會把種子整顆吞下，再隨著糞便散播到很遠的地方。"],
     ["In other words, the \"fire\" in chili peppers may be a clever way to choose which animals get to eat them.","換句話說，辣椒裡的「火」，可能是一種聰明的方法，用來挑選哪些動物可以吃它。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1,2,3,4],[5,6,7],[8,9,10],[11,12,13,14]], figs:{2:"scoville"}, heads:{1:"Why Water Fails",2:"Quantifying Pain",3:"An Evolutionary Gamble"},
    sents:[
     ["Every day, people around the world deliberately eat a substance that their bodies interpret as pain, a habit that, from a biological standpoint, is distinctly odd.","每天，世界各地的人都刻意吃下一種會被身體當成「疼痛」的物質；從生物學的角度看，這個習慣實在相當古怪。"],

@@ -1,7 +1,7 @@
 /* winglish.tw 閱讀館文章資料：Can Plants Talk? */
 window.ARTICLE = (function(){
 const LEVELS = [
- { name:"Level 1", rec:"國三（會考程度）",
+ { name:"Level 1", rec:"單字量約 2000",
    paras:[[0],[1,2,3,4],[5,6,7,8],[9,10,11]], figs:{2:"freq"}, heads:{1:"Listening to Thirsty Plants",2:"Sounds We Cannot Hear",3:"Helping Farmers"},
    sents:[
     ["Plants cannot walk or talk, but scientists have found that some of them make sounds!","植物不會走路也不會說話，但科學家發現有些植物會發出聲音！"],
@@ -17,7 +17,7 @@ const LEVELS = [
     ["In the future, farmers might use microphones to know when their plants need water.","未來，農夫也許能用麥克風知道植物什麼時候需要水。"],
     ["Maybe a quiet garden is not so quiet after all!","也許安靜的花園其實一點也不安靜！"]
  ]},
- { name:"Level 2", rec:"高二",
+ { name:"Level 2", rec:"單字量約 4500",
    paras:[[0,1],[2,3,4,5],[6,7,8,9],[10,11,12,13]], figs:{2:"freq"}, heads:{1:"An Experiment in a Soundproof Box",2:"Too High for Human Ears",3:"What the Clicks Can Tell Us"},
    sents:[
     ["We usually think of plants as silent living things, but a study published in 2023 suggests that they may be far noisier than we ever imagined.","我們通常把植物想成安靜的生物，但一項 2023 年發表的研究顯示，它們可能比我們想像的吵得多。"],
@@ -35,7 +35,7 @@ const LEVELS = [
     ["This discovery could one day help farmers save water by watering crops only when the plants themselves \"ask\" for it.","這個發現將來也許能幫助農夫節省用水，只在植物自己「開口要」的時候才澆水。"],
     ["A field of flowers, it seems, may be a surprisingly noisy place.","看來，一片花田可能是個出奇吵鬧的地方。"]
  ]},
- { name:"Level 3", rec:"比學測更難（進階挑戰）",
+ { name:"Level 3", rec:"單字量 7000 以上",
    paras:[[0,1],[2,3,4],[5,6,7],[8,9,10],[11,12,13]], figs:{2:"freq"}, heads:{1:"Eavesdropping on Distress",2:"Beyond the Range of Human Hearing",3:"Decoding the Message",4:"A Noisier World Than We Knew"},
    sents:[
     ["The notion that plants might \"speak\" has long been relegated to the realm of folklore and fringe science, invoked mainly by enthusiasts who murmur encouragement to their houseplants.","植物會「說話」這個想法，長久以來都被歸入民間傳說和邊緣科學的範疇，主要只有那些對著盆栽喃喃打氣的愛好者才會提起。"],
