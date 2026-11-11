@@ -160,6 +160,9 @@ section{padding:68px 0}
 footer{padding:36px 0 50px;color:var(--ink-soft);font-size:14px;border-top:1px solid var(--mist)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 footer a{text-decoration:none}
+
+/* 手機版精簡導覽：只留 logo 圖示和三張便利貼 */
+@media (max-width:640px){header .logo>span{display:none!important}header nav{gap:8px!important;align-items:center}header nav a.nav-gsat,header nav a.nav-mx,header nav a.nav-read{display:inline-block!important;font-size:13px!important;padding:5px 9px!important}header nav a:not(.nav-gsat):not(.nav-mx):not(.nav-read):not(.on){display:none!important}header nav a.on{font-size:14px;white-space:nowrap}}
 </style>
 <link rel="stylesheet" href="notes.css?v=2">
 </head>
@@ -172,7 +175,7 @@ footer a{text-decoration:none}
       <span><b>學測英文必贏</b><small>winglish.tw</small></span>
     </a>
     <nav>
-      <a href="practice.html" class="hide-m nav-gsat">📘 學測歷屆考題</a>
+      <a href="practice.html" class="nav-gsat">📘 學測歷屆考題</a>
       <a href="mixed.html" class="nav-mx">🧩 混合題</a>
       <a href="reading.html" class="on">閱讀館</a>
       <a href="test.html" class="hide-m nav-test">程度測驗</a>

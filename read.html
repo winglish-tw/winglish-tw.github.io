@@ -183,6 +183,9 @@ figure img.photo + svg{display:none !important}
 }
 .back{display:flex;align-items:center;gap:12px;text-decoration:none;background:var(--ink);color:#fff;border-radius:18px;padding:16px 20px;margin-top:30px}
 .back span{opacity:.75;font-size:14px}
+
+/* 手機版精簡導覽：只留 logo 圖示和三張便利貼 */
+@media (max-width:640px){header .logo>span{display:none!important}header nav{gap:8px!important;align-items:center}header nav a.nav-gsat,header nav a.nav-mx,header nav a.nav-read{display:inline-block!important;font-size:13px!important;padding:5px 9px!important}header nav a:not(.nav-gsat):not(.nav-mx):not(.nav-read):not(.on){display:none!important}header nav a.on{font-size:14px;white-space:nowrap}}
 </style>
 <link rel="stylesheet" href="notes.css?v=2">
 </head>
@@ -193,7 +196,7 @@ figure img.photo + svg{display:none !important}
     <svg width="36" height="36" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#1A2238"/><path d="M7 12c5 1 8 4 9.5 10L20 13l3.5 9c1.5-6 4.5-9 9.5-10-3.5 4-5 9-6 16h-3.2L20 20.5 16.2 28H13c-1-7-2.5-12-6-16z" fill="#fff"/><ellipse cx="31" cy="30" rx="4" ry="2.4" fill="#FFE14D"/></svg>
     <span><b>學測英文必贏</b><small>winglish.tw</small></span>
   </a>
-  <nav><a href="practice.html" class="hide-m nav-gsat">📘 學測歷屆考題</a><a href="mixed.html" class="nav-mx">🧩 混合題</a><a href="reading.html" class="on">閱讀館</a></nav>
+  <nav><a href="practice.html" class="nav-gsat">📘 學測歷屆考題</a><a href="mixed.html" class="nav-mx">🧩 混合題</a><a href="reading.html" class="on">閱讀館</a></nav>
 </header>
 
 <div class="controls">
