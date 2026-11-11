@@ -188,19 +188,19 @@ footer a{text-decoration:none}
       <h1>讀得懂、聽得到，<br>還能<span class="mark">開口念出來</span></h1>
       <p class="lead">同一篇文章分成三種難度，選適合自己的開始讀。每一句都能聽朗讀，點單字馬上看中文；念一遍給系統聽，念錯的字直接標出來。</p>
       <div class="cta-row">
-        <a class="btn btn-main go-feature" href="read.html#travelogue">讀第一篇文章</a>
+        <a class="btn btn-main go-feature" href="read.html#necklace">讀第一篇文章</a>
         <a class="btn btn-line" href="#library">看全部文章</a>
       </div>
       <div class="chips"><span>🎧 真人語速朗讀</span><span>👆 點字查義</span><span>🎤 跟讀打分數</span><span>📝 讀完小測驗</span></div>
     </div>
 
     <div class="feature">
-      <a class="fcard go-feature" id="fcard" href="read.html#travelogue">
-        <img class="cover-photo" id="fImg" src="https://images.unsplash.com/photo-1745324212400-bcdf7224e1e9?auto=format&fit=crop&w=1600&q=70" data-local="travelogue-hero.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}">
+      <a class="fcard go-feature" id="fcard" href="read.html#necklace">
+        <img class="cover-photo" id="fImg" src="https://images.unsplash.com/photo-1620650893164-fb56b7e66067?auto=format&fit=crop&w=1600&q=70" data-local="necklace-hero.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}">
         <div class="fbody">
-          <div class="kicker" id="fKick">本週主打・好書介紹</div>
-          <h3 id="fHook" style="font-family:'Noto Sans TC',sans-serif;font-weight:900">1938 年的台灣，有什麼好吃的？</h3><div lang="en" id="fEn" style="font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink-soft);margin:-2px 0 6px">A Journey Through Taiwan, One Dish at a Time</div>
-          <p id="fBlurb">楊双子《臺灣漫遊錄》拿下 2026 年國際布克獎：1938 年，一位胃口驚人的日本作家和她的台灣口譯，跟著一道道料理走遍全台。</p>
+          <div class="kicker" id="fKick">今日主打・經典文學</div>
+          <h3 id="fHook" style="font-family:'Noto Sans TC',sans-serif;font-weight:900">借來的一條項鍊，賠上十年青春</h3><div lang="en" id="fEn" style="font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink-soft);margin:-2px 0 6px">The Necklace: Ten Years for One Night</div>
+          <p id="fBlurb">莫泊桑〈項鍊〉：為了一場舞會借來的鑽石項鍊，讓一對夫妻辛苦了十年。最後一句話的大逆轉，你猜得到嗎？</p>
           <div class="wave"><span class="play">▶</span>
             <i class="on" style="height:10px"></i><i class="on" style="height:18px"></i><i class="on" style="height:24px"></i><i class="on" style="height:14px"></i><i class="on" style="height:20px"></i><i class="on" style="height:9px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:19px"></i><i style="height:8px"></i><i style="height:15px"></i><i style="height:21px"></i><i style="height:11px"></i><i style="height:17px"></i><i style="height:9px"></i>
             <span class="en" style="margin-left:auto;font-size:14px;color:var(--ink-soft)">0:24 / 1:12</span>
@@ -255,7 +255,7 @@ footer a{text-decoration:none}
     <div>
       <h2 class="sec-title">每天讀一點，<br><span class="mark">看得到自己的進步</span></h2>
       <p class="sec-lead">登入之後，系統會記下你讀了幾篇、跟讀平均幾分、測驗答對多少，每週自動寄一份進度給你。</p>
-      <a class="btn btn-main go-feature" href="read.html#travelogue">現在就讀一篇</a>
+      <a class="btn btn-main go-feature" href="read.html#necklace">現在就讀一篇</a>
     </div>
     <div class="week">
       <h3>本週閱讀紀錄 <span>示意畫面</span></h3>
@@ -303,13 +303,13 @@ setTimeout(()=>logUse("open","閱讀館","文章列表"),1500);
   (function(){var f=A.filter(function(a){return a.id===F;})[0]; if(!f) return; var $=function(i){return document.getElementById(i);};
     document.querySelectorAll('.go-feature').forEach(function(el){el.href='read.html#'+f.id;});
     var im=$('fImg'); if(f.photo&&im){im.dataset.t=''; im.dataset.local=f.id+'-hero.jpg'; im.src='https://images.unsplash.com/'+f.photo+'?auto=format&fit=crop&w=1600&q=70';}
-    $('fKick').textContent='本週主打・'+f.catName; $('fHook').textContent=f.hook||f.title; $('fEn').textContent=f.hook?f.title:''; $('fBlurb').textContent=f.blurb;
+    $('fKick').textContent='今日主打・'+f.catName; $('fHook').textContent=f.hook||f.title; $('fEn').textContent=f.hook?f.title:''; $('fBlurb').textContent=f.blurb;
     var sc=document.createElement('script'); sc.src='a-'+f.id+'.js'; sc.onload=function(){try{var R=window.ARTICLE, k=R.KEY.flat().filter(function(w){return R.GLOSS[w];})[0];
       if(k) $('fSticker').innerHTML='<b class="en"></b>　'+R.GLOSS[k][0]+' '+R.GLOSS[k][1], $('fSticker').querySelector('b').textContent=k;}catch(e){}}; document.body.appendChild(sc);
   })();
   A=A.filter(function(a){return a.id===F;}).concat(A.filter(function(a){return a.id!==F;}));
   function badges(a){var b=[];
-    if(a.id===F) b.push('<span class="badge new">本週新文章</span>');
+    if(a.id===F) b.push('<span class="badge new">今日新文章</span>');
     else if(latest&&(latest-dt(a.date))<=3*864e5) b.push('<span class="badge new">NEW</span>');
     if(a.hot) b.push('<span class="badge hot">🔥 熱門</span>');
     return b.length?'<div class="badges">'+b.join('')+'</div>':'';}
