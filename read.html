@@ -41,6 +41,8 @@ nav a.nav-test{color:var(--ink)!important;font-weight:700}
 .ctl label{display:block;font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:2px}
 .ctl select{font:inherit;font-size:15px;border:1.5px solid var(--mist);border-radius:10px;padding:7px 30px 7px 12px;background:var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A2238' stroke-width='2' fill='none'/%3E%3C/svg%3E") no-repeat right 10px center;-webkit-appearance:none;appearance:none;color:var(--ink)}
 .controls .spacer{flex:1}
+.wb-big{display:flex;align-items:center;gap:6px;background:#5B7DB1;color:#fff;border:0;border-radius:999px;padding:9px 16px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #3D5E92;margin-right:8px;white-space:nowrap;font-size:15px}
+@media (max-width:640px){.wb-big{display:none}}
 .listen-big{display:flex;align-items:center;gap:8px;background:var(--red);color:#fff;border:0;border-radius:999px;padding:9px 18px;font-weight:800;cursor:pointer;box-shadow:0 4px 0 #9E2A3E}
 .listen-big.playing{background:var(--ink);box-shadow:0 4px 0 #000}
 
@@ -257,6 +259,7 @@ figure img.photo + svg{display:none !important}
   <div class="ctl"><label for="rate">朗讀速度</label>
     <select id="rate"><option value="0.7">0.7x 慢速</option><option value="0.85" selected>0.85x 稍慢</option><option value="1">1x 正常</option></select></div>
   <div class="spacer"></div>
+  <button class="wb-big" id="wbBig">📒 <span>單字本</span></button>
   <button class="listen-big" id="listenBig">🎧 <span>朗讀全文</span></button>
 </div>
 
@@ -320,7 +323,7 @@ figure img.photo + svg{display:none !important}
       <div class="prog"><i id="progBar"></i></div>
     </div>
     <div class="panel">
-      <h3>📒 本篇單字</h3>
+      <h3 style="display:flex;align-items:center;gap:8px">📒 本篇單字<button class="addwb" id="wbOpen2" style="margin-left:auto">打開我的單字本</button></h3>
       <ul class="vocab" id="vocab"></ul>
     </div>
   </aside>
@@ -586,7 +589,8 @@ function toggleWB(w){ const l=getWB(), i=l.findIndex(x=>x.w===w);
 function refreshWB(){ const set=new Set(getWB().map(x=>x.w));
   document.querySelectorAll("[data-wb]").forEach(b=>{ const on=set.has(b.dataset.wb); b.classList.toggle("in",on); b.textContent=on?"✓ 已加入":"＋ 單字本"; });
   $("#tWB span").textContent=set.size?`單字本 ${set.size}`:"單字本";
-  $("#wbfab").textContent=`📒 單字本 ${set.size}`; $("#wbfab").classList.toggle("show",set.size>0); }
+  $("#wbfab").textContent=`📒 單字本 ${set.size}`; $("#wbfab").classList.add("show");
+  $("#wbBig span").textContent=set.size?`單字本 ${set.size}`:"單字本"; }
 let wbMode="list", cardI=0, cardFlip=false;
 function openWB(){ wbMode="list"; drawWB(); $("#wbov").classList.add("show"); }
 function drawWB(){ const l=getWB(), box=$("#wbbox");
@@ -609,7 +613,7 @@ function drawWB(){ const l=getWB(), box=$("#wbbox");
   const lb=$("#wbList"); if(lb) lb.onclick=()=>{ wbMode="list"; drawWB(); };
   $("#wbClose").onclick=()=>$("#wbov").classList.remove("show");
 }
-$("#tWB").onclick=openWB; $("#wbfab").onclick=()=>{ hideSheet(); openWB(); };
+$("#tWB").onclick=openWB; $("#wbfab").onclick=()=>{ hideSheet(); openWB(); }; $("#wbBig").onclick=()=>{ hideSheet(); openWB(); }; $("#wbOpen2").onclick=openWB;
 $("#wbov").onclick=e=>{ if(e.target.id==="wbov") $("#wbov").classList.remove("show"); };
 
 /* ---------- 單字小練習 ---------- */
