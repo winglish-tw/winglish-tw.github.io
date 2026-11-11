@@ -198,7 +198,7 @@ footer a{text-decoration:none}
       <a class="fcard go-feature" id="fcard" href="read.html#blackcat">
         <img class="cover-photo" id="fImg" src="https://images.unsplash.com/photo-1546618389-edc7251944b1?auto=format&fit=crop&w=1600&q=70" data-local="blackcat-hero.jpg" alt="" onerror="if(!this.dataset.t){this.dataset.t=1;this.src=this.dataset.local}else{this.remove()}">
         <div class="fbody">
-          <div class="kicker" id="fKick">本週主打・經典文學</div>
+          <div class="kicker" id="fKick">今日主打・經典文學</div>
           <h3 id="fHook" style="font-family:'Noto Sans TC',sans-serif;font-weight:900">一聲貓叫，揭穿了牆裡的祕密</h3><div lang="en" id="fEn" style="font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink-soft);margin:-2px 0 6px">The Black Cat: Who Is the Real Monster?</div>
           <p id="fBlurb">愛倫坡〈黑貓〉：一個愛動物的人，怎麼一步步變成兇手？最後揭穿他的，竟是一聲貓叫。</p>
           <div class="wave"><span class="play">▶</span>
@@ -303,13 +303,13 @@ setTimeout(()=>logUse("open","閱讀館","文章列表"),1500);
   (function(){var f=A.filter(function(a){return a.id===F;})[0]; if(!f) return; var $=function(i){return document.getElementById(i);};
     document.querySelectorAll('.go-feature').forEach(function(el){el.href='read.html#'+f.id;});
     var im=$('fImg'); if(f.photo&&im){im.dataset.t=''; im.dataset.local=f.id+'-hero.jpg'; im.src='https://images.unsplash.com/'+f.photo+'?auto=format&fit=crop&w=1600&q=70';}
-    $('fKick').textContent='本週主打・'+f.catName; $('fHook').textContent=f.hook||f.title; $('fEn').textContent=f.hook?f.title:''; $('fBlurb').textContent=f.blurb;
+    $('fKick').textContent='今日主打・'+f.catName; $('fHook').textContent=f.hook||f.title; $('fEn').textContent=f.hook?f.title:''; $('fBlurb').textContent=f.blurb;
     var sc=document.createElement('script'); sc.src='a-'+f.id+'.js'; sc.onload=function(){try{var R=window.ARTICLE, k=R.KEY.flat().filter(function(w){return R.GLOSS[w];})[0];
       if(k) $('fSticker').innerHTML='<b class="en"></b>　'+R.GLOSS[k][0]+' '+R.GLOSS[k][1], $('fSticker').querySelector('b').textContent=k;}catch(e){}}; document.body.appendChild(sc);
   })();
   A=A.filter(function(a){return a.id===F;}).concat(A.filter(function(a){return a.id!==F;}));
   function badges(a){var b=[];
-    if(a.id===F) b.push('<span class="badge new">本週新文章</span>');
+    if(a.id===F) b.push('<span class="badge new">今日新文章</span>');
     else if(latest&&(latest-dt(a.date))<=3*864e5) b.push('<span class="badge new">NEW</span>');
     if(a.hot) b.push('<span class="badge hot">🔥 熱門</span>');
     return b.length?'<div class="badges">'+b.join('')+'</div>':'';}
