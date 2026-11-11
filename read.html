@@ -380,9 +380,9 @@ let state={listened:false, recOk:new Set(), answered:{}};
 
 /* ---------- speech ---------- */
 const NOVELTY=/Albert|Bad News|Bahh|Bells|Boing|Bubbles|Cellos|Good News|Jester|Organ|Superstar|Trinoids|Whisper|Wobble|Zarvox|Fred|Junior|Ralph|Kathy|Grandma|Grandpa|Rocko|Shelley|Sandy|Flo|Eddy|Reed/i;
-function vScore(v){ let n=v.name, s=0;
+function vScore(v){ let n=v.name+" "+(v.voiceURI||""), s=0;
   if(/Natural|Online/i.test(n)) s+=100;          // Edge 的自然語音（最像真人）
-  if(/Premium/i.test(n)) s+=90;                  // Apple 高品質語音
+  if(/Premium/i.test(n)) s+=90;                  // iPhone/iPad 的 voiceURI 會寫 premium / enhanced                  // Apple 高品質語音
   if(/Enhanced|Neural|WaveNet/i.test(n)) s+=80;
   if(/^Google/i.test(n)) s+=60;                  // Chrome 的 Google 語音
   if(/Ava|Zoe|Evan|Nathan|Allison|Susan|Aria|Jenny|Guy|Emma|Andrew|Brian|Samantha/i.test(n)) s+=15;
@@ -399,6 +399,7 @@ function loadVoices(){ try{
   sel.innerHTML=(voice?"":'<option value="" selected>裝置預設聲音</option>')+VOICES.slice(0,10).map(v=>`<option value="${v.name}"${voice&&v.name===voice.name?" selected":""}>${v.name.replace(/Microsoft |Google |\(.*?\)| Online| - English.*$/g,"").trim()}${vScore(v)>=80?" ⭐":""}（${v.lang.replace("_","-")}）</option>`).join("")||"<option>預設聲音</option>";
   const best=VOICES[0]?vScore(VOICES[0]):0;
   document.getElementById("voiceTip").style.display = best>=80 ? "none" : "block";
+  const nt=document.querySelector(".vb-note"); if(nt) nt.textContent = best>=80 ? "有 ⭐ 的最像真人" : "這台裝置還沒有高品質聲音，看下面說明";
 }catch(e){} }
 if("speechSynthesis" in window){ loadVoices(); speechSynthesis.onvoiceschanged=loadVoices; setTimeout(loadVoices,800); }
 document.addEventListener("change",e=>{ if(e.target.id!=="voiceSel") return; voiceOK=false; voice=e.target.value?(VOICES.find(v=>v.name===e.target.value)||null):null; try{ voice?localStorage.setItem("wg-voice",voice.name):localStorage.removeItem("wg-voice"); }catch(_){} stopAll(); speak("Hi! This is how I sound."); });
