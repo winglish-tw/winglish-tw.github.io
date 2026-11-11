@@ -1,8 +1,8 @@
 /* winglish.tw 閱讀館：文章清單（書架會自動依照這裡排出卡片）
    新增文章：加一筆資料＋上傳 a-<id>.js 即可 */
 /* 每篇欄位：hook＝書架上的大字中文標題（要吸睛）、words＝文章（三個程度合計）出現的大考中心 7000 單字表第 3–6 級單字數、date＝上架日期、hot＝熱門標籤（依點閱人數手動標前三名）
-   FEATURED＝書架最上面的「本週新文章」大卡（換新文章時改這裡） */
-window.FEATURED = "travelogue";
+   FEATURED＝想手動指定主打文章時填文章 id；留空就自動主打上架日期最新的一篇 */
+window.FEATURED = "";
 window.ARTICLES = [
  {"id": "travelogue", "hook": "1938 年的台灣，有什麼好吃的？", "words": 62, "date": "2026/11/11", "cat": "books", "catName": "好書介紹", "title": "A Journey Through Taiwan, One Dish at a Time", "blurb": "楊双子《臺灣漫遊錄》：1938 年，一位日本作家和她的台灣口譯，跟著一道道料理走遍全台。", "photo": "photo-1745324212400-bcdf7224e1e9"},
  {"id": "sealgut", "hook": "用海豹腸子做成的雨衣？", "words": 83, "date": "2026/11/11", "cat": "fashion", "catName": "服飾時尚", "title": "The Raincoat Inside a Seal", "blurb": "海豹的腸子洗淨、吹氣、晾乾，竟能縫成又輕又防水、還會「呼吸」的外套。", "photo": "photo-1730330727667-952f0b8fb436"},
