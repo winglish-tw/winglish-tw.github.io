@@ -1,6 +1,7 @@
 /* winglish.tw 閱讀館：文章清單（書架會自動依照這裡排出卡片）
    新增文章：加一筆資料＋上傳 a-<id>.js 即可 */
 window.ARTICLES = [
+ {"id": "travelogue", "cat": "books", "catName": "好書介紹", "title": "A Journey Through Taiwan, One Dish at a Time", "blurb": "楊双子《臺灣漫遊錄》拿下國際布克獎：1938 年，兩個女人吃遍台灣。", "photo": "photo-1745324212400-bcdf7224e1e9"},
  {"id": "sealgut", "cat": "fashion", "catName": "服飾時尚", "title": "The Raincoat Inside a Seal", "blurb": "海豹的腸子洗淨、吹氣、晾乾，竟能縫成又輕又防水、還會「呼吸」的外套。", "photo": "photo-1730330727667-952f0b8fb436"},
  {"id": "louis", "cat": "fashion", "catName": "服飾時尚", "title": "The King Who Dressed for Power", "blurb": "紅色高跟鞋、巨大捲髮假髮、357 面鏡子──全歐洲最愛漂亮的國王路易十四。", "photo": "photo-1527463945444-74a3bcda664c"},
  {"id": "setjet", "cat": "travel", "catName": "旅行", "title": "Holidays from the Screen", "blurb": "為了一部劇飛去一座城市？追劇旅行 set-jetting 的魅力與煩惱。", "photo": "photo-1565784623522-7fdf499a94a4"},
@@ -168,4 +169,4 @@ window.ARTICLES = [
   "photo": "photo-1766939366704-e4df32f3837a"
  }
 ];
-window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["bio", "醫學生物"], ["psych", "心理學"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["fashion", "服飾時尚"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];
+window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["bio", "醫學生物"], ["psych", "心理學"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["books", "好書介紹"], ["fashion", "服飾時尚"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];
