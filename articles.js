@@ -4,7 +4,7 @@
    FEATURED＝書架最上面的「本週新文章」大卡（換新文章時改這裡） */
 window.FEATURED = "travelogue";
 window.ARTICLES = [
- {"id": "travelogue", "hook": "拿下國際布克獎的台灣美食小說", "words": 36, "date": "2026/11/11", "cat": "books", "catName": "好書介紹", "title": "A Journey Through Taiwan, One Dish at a Time", "blurb": "楊双子《臺灣漫遊錄》：1938 年，一位日本作家和她的台灣口譯，跟著一道道料理走遍全台。", "photo": "photo-1745324212400-bcdf7224e1e9"},
+ {"id": "travelogue", "hook": "1938 年的台灣，有什麼好吃的？", "words": 36, "date": "2026/11/11", "cat": "books", "catName": "好書介紹", "title": "A Journey Through Taiwan, One Dish at a Time", "blurb": "楊双子《臺灣漫遊錄》：1938 年，一位日本作家和她的台灣口譯，跟著一道道料理走遍全台。", "photo": "photo-1745324212400-bcdf7224e1e9"},
  {"id": "sealgut", "hook": "用海豹腸子做成的雨衣？", "words": 36, "date": "2026/11/11", "cat": "fashion", "catName": "服飾時尚", "title": "The Raincoat Inside a Seal", "blurb": "海豹的腸子洗淨、吹氣、晾乾，竟能縫成又輕又防水、還會「呼吸」的外套。", "photo": "photo-1730330727667-952f0b8fb436"},
  {"id": "louis", "hook": "家裡有 357 面鏡子的愛美國王", "words": 36, "date": "2026/11/11", "cat": "fashion", "catName": "服飾時尚", "title": "The King Who Dressed for Power", "blurb": "紅色高跟鞋、巨大捲髮假髮、357 面鏡子──全歐洲最愛漂亮的國王路易十四。", "photo": "photo-1527463945444-74a3bcda664c"},
  {"id": "setjet", "hook": "為了一部劇，飛去一座城市", "words": 36, "date": "2026/11/11", "hot": true, "cat": "travel", "catName": "旅行", "title": "Holidays from the Screen", "blurb": "為了一部劇飛去一座城市？追劇旅行 set-jetting 的魅力與煩惱。", "photo": "photo-1565784623522-7fdf499a94a4"},
