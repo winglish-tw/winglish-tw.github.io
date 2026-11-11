@@ -393,7 +393,7 @@ const $=id=>document.getElementById(id);
 /* ===== 文意選填／篇章結構／閱讀測驗／混合題 ===== */
 /* ===== 匿名使用統計 ===== */
 const VID=(()=>{try{let v=localStorage.getItem("wg-vid");if(!v){v=Math.random().toString(36).slice(2,10);localStorage.setItem("wg-vid",v)}return v}catch(e){return "anon"}})();
-const MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+const MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1); /* iPad 的 Safari 會假裝成 Mac，用觸控點數辨認 */
 function logUse(ev,sec,first,total){try{gas("logUse",{ev,vid:VID,year:YEAR,sec:sec||"",first:first||0,total:total||0,login:!!CODE,mobile:MOBILE}).catch(()=>{})}catch(e){}}
 setTimeout(()=>logUse("open"),1500);
 const MSEC={wb:"文意選填",st:"篇章結構",rd:"閱讀測驗",mx:"混合題"};

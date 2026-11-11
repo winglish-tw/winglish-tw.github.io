@@ -147,7 +147,7 @@ table.tb{border-collapse:collapse;width:100%;margin:6px 0;font-size:16px}
 /* 使用紀錄（寫進 Winglish 後台「使用統計」） */
 const WG_API="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec";
 const WG_VID=(()=>{try{let v=localStorage.getItem("wg-vid");if(!v){v=Math.random().toString(36).slice(2,10);localStorage.setItem("wg-vid",v)}return v}catch(e){return "anon"}})();
-const WG_MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent);
+const WG_MOBILE=/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent)||(/Macintosh/.test(navigator.userAgent)&&navigator.maxTouchPoints>1); /* iPad 的 Safari 會假裝成 Mac，用觸控點數辨認 */
 function logUse(ev,area,sec,first,total){try{let login=false;try{login=!!localStorage.getItem("gsat-code")}catch(e){}
   fetch(WG_API,{method:"POST",keepalive:true,headers:{"Content-Type":"text/plain;charset=utf-8"},body:JSON.stringify({fn:"logUse",args:[{ev,vid:WG_VID,year:area,sec:sec||"",first:first||0,total:total||0,login,mobile:WG_MOBILE}]})}).catch(()=>{})}catch(e){}}
 setTimeout(()=>logUse("open","混合題"),1500);
