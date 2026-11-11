@@ -48,7 +48,7 @@ a{color:inherit}
 .top nav{display:flex;gap:22px;font-size:15px}
 .top nav a{text-decoration:none;color:var(--ink-soft)}
 .top nav a:hover{color:var(--ink)}
-@media (max-width:640px){.top nav a:not(.nav-cta){display:none}}
+@media (max-width:640px){.top nav a:not(.nav-cta):not(.nav-gsat){display:none}}
 .nav-cta{background:var(--ink);color:#fff!important;padding:8px 16px;border-radius:999px;font-weight:700}
 
 /* hero */
@@ -213,6 +213,7 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
 .years-nav a{text-decoration:none;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:20px;border:2px solid var(--ink);border-radius:999px;padding:6px 18px}
 .years-nav a[aria-current]{background:var(--ink);color:#fff}
 
+nav a.nav-gsat{display:inline-block;background:#D3E9F5!important;color:#1A2238!important;font-weight:800;border-radius:3px;padding:6px 14px;box-shadow:0 3px 6px rgba(58,46,37,.2);transform:rotate(1.5deg);white-space:nowrap;text-decoration:none}
 </style>
 <link rel="stylesheet" href="notes.css?v=2">
 </head>
@@ -220,7 +221,7 @@ footer .links{display:flex;gap:22px;flex-wrap:wrap}
 <div class="wrap">
   <header class="top">
     <a class="logo" href="index.html" aria-label="學測英文必贏 winglish.tw 首頁"><svg width="38" height="38" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="11" fill="#1A2238"/><path d="M7 12c5 1 8 4 9.5 10L20 13l3.5 9c1.5-6 4.5-9 9.5-10-3.5 4-5 9-6 16h-3.2L20 20.5 16.2 28H13c-1-7-2.5-12-6-16z" fill="#fff"/><ellipse cx="31" cy="30" rx="4" ry="2.4" fill="#FFE14D"/></svg><span><b>學測英文必贏</b><small>winglish.tw</small></span></a>
-    <nav><a href="index.html">首頁</a><a class="nav-cta" href="https://winglish.tw/practice.html">開始練習</a></nav>
+    <nav><a href="index.html">首頁</a><a class="nav-gsat" href="https://winglish.tw/practice.html">📘 學測歷屆考題</a></nav>
   </header>
 </div>
 <main class="yp">
