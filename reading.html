@@ -110,6 +110,18 @@ section{padding:68px 0}
 .card.locked{cursor:default}
 .card.locked:hover{transform:none;box-shadow:none}
 .hidden{display:none!important}
+/* 書架卡片：中文吸睛標題＋標籤 */
+.card .hook{font-family:"Noto Sans TC",sans-serif;font-size:20px;line-height:1.35;margin:2px 0 2px;font-weight:900;color:var(--ink)}
+.card .en-t{font-family:"Bricolage Grotesque";font-size:15px;font-weight:700;color:var(--ink-soft);margin:0 0 6px;line-height:1.3}
+.card p{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.badges{position:absolute;top:10px;left:10px;display:flex;gap:6px;z-index:2}
+.badge{white-space:nowrap;display:inline-flex;align-items:center;height:24px;line-height:1;font-size:13px;font-weight:800;border-radius:999px;padding:3px 11px;box-shadow:0 4px 10px -4px rgba(0,0,0,.35)}
+.badge.new{background:var(--marker);color:var(--ink)}
+.badge.hot{background:#E2483D;color:#fff}
+.wpill{font-size:12px;font-weight:700;border-radius:6px;padding:1px 7px;background:var(--ink);color:#fff}
+.card.big{grid-column:1/-1;border:2px solid var(--ink)}
+.card.big .hook{font-size:26px}
+@media (min-width:700px){.card.big{flex-direction:row}.card.big .cover-photo,.card.big>svg{width:55%;aspect-ratio:auto;object-fit:cover}.card.big .body{padding:24px 28px}.card.big .hook{font-size:32px}}
 
 /* levels */
 .levels{background:var(--white);border-top:1px solid var(--mist);border-bottom:1px solid var(--mist)}
@@ -187,7 +199,7 @@ footer a{text-decoration:none}
         </svg>
         <div class="fbody">
           <div class="kicker">本週主打・文化節慶</div>
-          <h3>A Feast, a Letter and a Lucky Turkey</h3>
+          <h3 style="font-family:'Noto Sans TC',sans-serif;font-weight:900">總統每年都要「特赦」一隻火雞？</h3><div lang="en" style="font-family:'Bricolage Grotesque';font-weight:700;color:var(--ink-soft);margin:-2px 0 6px">A Feast, a Letter and a Lucky Turkey</div>
           <p>第一次感恩節可能根本沒有火雞？一位作家寫信寫了 17 年，才讓它變成全國節日；每年總統還會「特赦」一隻火雞。</p>
           <div class="wave"><span class="play">▶</span>
             <i class="on" style="height:10px"></i><i class="on" style="height:18px"></i><i class="on" style="height:24px"></i><i class="on" style="height:14px"></i><i class="on" style="height:20px"></i><i class="on" style="height:9px"></i><i style="height:16px"></i><i style="height:22px"></i><i style="height:12px"></i><i style="height:19px"></i><i style="height:8px"></i><i style="height:15px"></i><i style="height:21px"></i><i style="height:11px"></i><i style="height:17px"></i><i style="height:9px"></i>
@@ -284,12 +296,19 @@ setTimeout(()=>logUse("open","閱讀館","文章列表"),1500);
   var CI={life:['#DDF3E9','#17875C','🌱'],gender:['#EEE6F7','#7A4FB5','🤝'],eco:['#DFF2F4','#1F7A8C','🌍'],people:['#FDECDD','#C2571A','⭐'],social:['#FDE8EE','#C2385A','💗'],bio:['#E3F1FB','#1F6FAE','🧬'],psych:['#FFF1DC','#B4690E','🧠']};
   function fallbackSvg(a){var c=CI[a.cat]||['#E4E9F2','#1A2238','📖'];
     return '<svg viewBox="0 0 320 170" aria-hidden="true"><rect width="320" height="170" fill="'+c[0]+'"/><circle cx="160" cy="78" r="44" fill="#fff" opacity=".8"/><text x="160" y="94" text-anchor="middle" font-size="44">'+c[2]+'</text><text x="160" y="150" text-anchor="middle" font-size="15" font-weight="700" fill="'+c[1]+'" font-family="Noto Sans TC,sans-serif">'+esc(a.catName)+'</text></svg>';}
+  var F=window.FEATURED, latest=A.reduce(function(m,a){var t=Date.parse(a.date||0)||0;return t>m?t:m;},0);
+  A=A.filter(function(a){return a.id===F;}).concat(A.filter(function(a){return a.id!==F;}));
+  function badges(a){var b=[];
+    if(a.id===F) b.push('<span class="badge new">本週新文章</span>');
+    else if(latest&&(latest-(Date.parse(a.date||0)||0))<=3*864e5) b.push('<span class="badge new">NEW</span>');
+    if(a.hot) b.push('<span class="badge hot">🔥 熱門</span>');
+    return b.length?'<div class="badges">'+b.join('')+'</div>':'';}
   document.getElementById('grid').innerHTML=A.map(function(a){
-    return '<a class="card" data-c="'+a.cat+'" href="read.html#'+a.id+'">'+
+    return '<a class="card'+(a.id===F?' big':'')+'" data-c="'+a.cat+'" href="read.html#'+a.id+'">'+badges(a)+
       (a.photo?'<img class="cover-photo" src="https://images.unsplash.com/'+a.photo+'?auto=format&fit=crop&w=800&q=70" data-local="'+a.id+'-hero.jpg" alt="" onerror="'+fb+'">':'')+
       (a.svg||fallbackSvg(a))+
-      '<div class="body"><div class="cat">'+esc(a.catName)+'</div><h3>'+esc(a.title)+'</h3><p>'+esc(a.blurb)+'</p>'+
-      '<div class="meta"><span class="lv lv1">L1</span><span class="lv lv2">L2</span><span class="lv lv3">L3</span><span style="margin-left:auto">約 4 分鐘</span></div></div></a>';
+      '<div class="body"><div class="cat">'+esc(a.catName)+'</div><h3 class="hook">'+esc(a.hook||a.title)+'</h3>'+(a.hook?'<div class="en-t" lang="en">'+esc(a.title)+'</div>':'')+'<p>'+esc(a.blurb)+'</p>'+
+      '<div class="meta"><span class="lv lv1">L1</span><span class="lv lv2">L2</span><span class="lv lv3">L3</span>'+(a.words?'<span class="wpill">學測單字 ×'+a.words+'</span>':'')+'<span style="margin-left:auto">約 4 分鐘</span></div></div></a>';
   }).join('');
   document.querySelectorAll('#filters button').forEach(function(b){b.onclick=function(){
     document.querySelectorAll('#filters button').forEach(function(x){x.classList.toggle('on',x===b);});
