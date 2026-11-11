@@ -372,7 +372,7 @@ function sentHTML(txt,i){
     const g=lookup(m[1].toLowerCase()); out+=`<span class="w${g&&KEY[level].includes(g[0])?' gl'+((window.KEYLV||{})[g[0]]===0?' gx':''):''}" data-w="${m[1]}">${m[1]}</span>`; }
   return `<span class="s" id="s${i}" data-i="${i}">${out}</span>`;
 }
-function KLtag(k){const v=(window.KEYLV||{})[k]; if(v===undefined) return ""; return v?`<span class="vtag in">學測 ${v} 級</span>`:`<span class="vtag out">超出學測</span>`;}
+function KLtag(k){const v=(window.KEYLV||{})[k]; if(v===undefined) return ""; return v?"":`<span class="vtag out">超出學測</span>`;}
 function render(){
   const L=LEVELS[level];
   let html="";
