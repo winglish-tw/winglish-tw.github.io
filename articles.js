@@ -1,6 +1,9 @@
 /* winglish.tw 閱讀館：文章清單（書架會自動依照這裡排出卡片）
    新增文章：加一筆資料＋上傳 a-<id>.js 即可 */
 window.ARTICLES = [
+ {"id": "sealgut", "cat": "fashion", "catName": "服飾時尚", "title": "The Raincoat Inside a Seal", "blurb": "海豹的腸子洗淨、吹氣、晾乾，竟能縫成又輕又防水、還會「呼吸」的外套。", "photo": "photo-1730330727667-952f0b8fb436"},
+ {"id": "louis", "cat": "fashion", "catName": "服飾時尚", "title": "The King Who Dressed for Power", "blurb": "紅色高跟鞋、巨大捲髮假髮、357 面鏡子──全歐洲最愛漂亮的國王路易十四。", "photo": "photo-1527463945444-74a3bcda664c"},
+ {"id": "setjet", "cat": "travel", "catName": "旅行", "title": "Holidays from the Screen", "blurb": "為了一部劇飛去一座城市？追劇旅行 set-jetting 的魅力與煩惱。", "photo": "photo-1565784623522-7fdf499a94a4"},
  {"id": "thanksgiving", "cat": "culture", "catName": "文化節慶", "title": "A Feast, a Letter and a Lucky Turkey", "blurb": "第一次感恩節可能沒有火雞？寫信 17 年的作家，和每年被總統「特赦」的火雞。", "photo": "photo-1763689454945-4b0f3b151969", "svg": "<svg viewBox=\"0 0 320 170\" aria-hidden=\"true\"><rect width=\"320\" height=\"170\" fill=\"#F3D9A4\"/><path d=\"M0 120 C80 114 240 114 320 120 V170 H0Z\" fill=\"#B9773E\"/><ellipse cx=\"160\" cy=\"122\" rx=\"96\" ry=\"18\" fill=\"#FFFDF6\"/><path d=\"M98 118 C98 80 126 60 160 60 C194 60 222 80 222 118Z\" fill=\"#C46A2B\"/><path d=\"M118 108 C122 84 138 72 158 71\" fill=\"none\" stroke=\"#E39A57\" stroke-width=\"6\" stroke-linecap=\"round\"/><g fill=\"#E07A3A\"><circle cx=\"58\" cy=\"126\" r=\"9\"/><circle cx=\"262\" cy=\"128\" r=\"9\"/></g><g fill=\"#7BA05B\"><circle cx=\"44\" cy=\"120\" r=\"7\"/><circle cx=\"276\" cy=\"120\" r=\"7\"/></g></svg>"},
  {"id": "axolotl", "cat": "animal", "catName": "動物冷知識", "title": "The Animal That Never Grows Up", "blurb": "斷了腳會長回來、連心臟都能修補，一輩子長不大的「六角恐龍」。", "photo": "photo-1578999621243-9381851a6a84"},
  {"id": "crows", "cat": "animal", "catName": "動物冷知識", "title": "Never Forget a Face", "blurb": "戴面具抓了七隻烏鴉，結果整個校園的烏鴉罵了他十幾年。", "photo": "photo-1559649191-b9d89ad31819"},
@@ -165,4 +168,4 @@ window.ARTICLES = [
   "photo": "photo-1766939366704-e4df32f3837a"
  }
 ];
-window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["bio", "醫學生物"], ["psych", "心理學"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];
+window.CATS = [["all", "全部"], ["people", "人物"], ["social", "社會關懷"], ["bio", "醫學生物"], ["psych", "心理學"], ["life", "生命教育"], ["gender", "性別平等"], ["eco", "環保"], ["fashion", "服飾時尚"], ["culture", "文化節慶"], ["animal", "動物冷知識"], ["science", "科學"], ["food", "食物"], ["travel", "旅行"]];
