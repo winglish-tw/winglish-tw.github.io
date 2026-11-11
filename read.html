@@ -75,6 +75,13 @@ figcaption{font-size:14px;color:var(--ink-soft);padding:8px 0 0}
 .s.reading{background:var(--marker)}
 .s.sel{background:var(--marker-soft);box-shadow:0 2px 0 var(--marker)}
 .w.gl{border-bottom:2px dotted var(--red)}
+.w.gl.gx{border-bottom-color:#2F6FD6}
+.vtag{font-size:12px;font-weight:700;border-radius:6px;padding:1px 6px;white-space:nowrap}
+.vtag.in{background:var(--bad-soft,#FDE8E8);color:var(--red)}
+.vtag.out{background:#E3ECFB;color:#2F6FD6}
+.vlegend{font-size:13px;color:var(--ink-soft);margin:-4px 0 8px;line-height:1.7}
+.vlegend i{display:inline-block;width:22px;border-bottom:2px dotted var(--red);margin:0 4px 3px 0;vertical-align:middle}
+.vlegend i.b{border-bottom-color:#2F6FD6;margin-left:10px}
 .w.good{color:var(--ok);background:var(--ok-soft)}
 .w.miss{color:var(--red);background:var(--bad-soft)}
 .pzh{display:none;font-family:"Noto Sans TC",sans-serif;font-size:.78em;line-height:1.7;color:var(--ink-soft);background:var(--paper);border-left:4px solid var(--marker);border-radius:8px;padding:8px 12px;margin:-.5em 0 1.2em}
@@ -250,6 +257,7 @@ figure img.photo + svg{display:none !important}
     </div>
     <div class="panel">
       <h3>📒 本篇單字</h3>
+      <p class="vlegend"><span style="white-space:nowrap"><i></i>學測單字（大考中心 7000 字）</span> <span style="white-space:nowrap"><i class="b"></i>超出學測的進階字</span></p>
       <ul class="vocab" id="vocab"></ul>
     </div>
   </aside>
@@ -361,9 +369,10 @@ function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g
 function sentHTML(txt,i){
   const re=/([A-Za-z]+(?:['’][A-Za-z]+)*)|([^A-Za-z]+)/g; let m,out="";
   while((m=re.exec(txt))){ if(m[2]){ out+=esc(m[2]); continue; }
-    const g=lookup(m[1].toLowerCase()); out+=`<span class="w${g&&KEY[level].includes(g[0])?' gl':''}" data-w="${m[1]}">${m[1]}</span>`; }
+    const g=lookup(m[1].toLowerCase()); out+=`<span class="w${g&&KEY[level].includes(g[0])?' gl'+((window.KEYLV||{})[g[0]]===0?' gx':''):''}" data-w="${m[1]}">${m[1]}</span>`; }
   return `<span class="s" id="s${i}" data-i="${i}">${out}</span>`;
 }
+function KLtag(k){const v=(window.KEYLV||{})[k]; if(v===undefined) return ""; return v?`<span class="vtag in">學測 ${v} 級</span>`:`<span class="vtag out">超出學測</span>`;}
 function render(){
   const L=LEVELS[level];
   let html="";
@@ -375,7 +384,7 @@ function render(){
   $("#text").innerHTML=html;
   $("#mWords").textContent=L.sents.reduce((n,s)=>n+s[0].split(/\s+/).length,0);
   $("#mLevel").textContent=L.name; $("#recFor").textContent=L.rec;
-  $("#vocab").innerHTML=KEY[level].map(k=>`<li><span class="vw">${k}</span><span class="vp">${GLOSS[k][0]}</span><span class="vz">${GLOSS[k][1]}</span><button class="spk" data-say="${k}">🔊</button>${DEFS[k]?`<span class="ve">${DEFS[k]}</span>`:""}${USAGE[k]?`<span class="vu"><b>搭配</b>${USAGE[k][0].split(" · ").map(c=>`<i>${c}</i>`).join(" · ")}</span><span class="vx"><b>例句</b>${USAGE[k][1]} <button class="spk2" data-say="${USAGE[k][1].replace(/"/g,'&quot;')}">🔊</button><span class="vxz">${USAGE[k][2]}</span></span>`:""}</li>`).join("");
+  $("#vocab").innerHTML=KEY[level].map(k=>`<li><span class="vw">${k}</span>${KLtag(k)}<span class="vp">${GLOSS[k][0]}</span><span class="vz">${GLOSS[k][1]}</span><button class="spk" data-say="${k}">🔊</button>${DEFS[k]?`<span class="ve">${DEFS[k]}</span>`:""}${USAGE[k]?`<span class="vu"><b>搭配</b>${USAGE[k][0].split(" · ").map(c=>`<i>${c}</i>`).join(" · ")}</span><span class="vx"><b>例句</b>${USAGE[k][1]} <button class="spk2" data-say="${USAGE[k][1].replace(/"/g,'&quot;')}">🔊</button><span class="vxz">${USAGE[k][2]}</span></span>`:""}</li>`).join("");
   $("#vocab").querySelectorAll("[data-say]").forEach(b=>b.onclick=()=>{ stopAll(); speak(b.dataset.say); });
   $("#text").querySelectorAll(".w").forEach(w=>w.onclick=e=>{ e.stopPropagation(); openSheet(w.closest(".s"),w.dataset.w); });
   $("#text").querySelectorAll(".s").forEach(s=>s.onclick=()=>openSheet(s,null));
@@ -474,6 +483,7 @@ function updTasks(){
 render(); renderQuiz();
 }
 </script>
+<script>document.write('<script src="key-levels.js?v='+Math.floor(Date.now()/300000)+'"><\/script>');</script>
 <script>
 (function(){
   var id=(location.hash.slice(1)||"thanksgiving").replace(/[^a-z0-9-]/g,"");
