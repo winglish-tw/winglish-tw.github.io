@@ -483,6 +483,7 @@ $("#tQuiz").onclick=()=>$("#quiz").scrollIntoView({behavior:"smooth"});
 /* ---------- bottom sheet ---------- */
 function openSheet(sEl,word){
   if(playing) stopAll();
+  if(rec){ try{rec.abort();}catch(e){} recReset(); }
   document.querySelectorAll(".s.sel").forEach(e=>e.classList.remove("sel"));
   selS=+sEl.dataset.i; sEl.classList.add("sel");
   const wr=$("#sheet .wordrow");
@@ -510,30 +511,47 @@ function lcs(a,b){ const n=a.length,m=b.length,dp=Array.from({length:n+1},()=>ne
   for(let i=n-1;i>=0;i--)for(let j=m-1;j>=0;j--) dp[i][j]=a[i]===b[j]?dp[i+1][j+1]+1:Math.max(dp[i+1][j],dp[i][j+1]);
   const hit=new Array(n).fill(false); let i=0,j=0;
   while(i<n&&j<m){ if(a[i]===b[j]){hit[i]=true;i++;j++;} else if(dp[i+1][j]>=dp[i][j+1]) i++; else j++; } return hit; }
-let rec=null;
+let rec=null, recTimer=null, recStarting=false;
+function recUI(on,msg){ $("#sRec").classList.toggle("recording",on); $("#sRec").textContent=on?"■ 停止錄音":"🎤 跟讀"; if(msg!==undefined) $("#sres").innerHTML=msg; }
+function recReset(){ clearTimeout(recTimer); recTimer=null; recStarting=false; rec=null; recUI(false); }
 $("#sRec").onclick=()=>{
   const res=$("#sres"); res.classList.add("show");
   if(!SR){ res.innerHTML="這個瀏覽器不支援語音辨識，建議用電腦或 Android 的 Chrome。"; return; }
-  if(rec){ try{rec.stop();}catch(e){} return; }
-  if(selS===null) return; try{speechSynthesis.cancel();}catch(e){}
+  if(recStarting) return;
+  if(rec){ const r=rec; try{r.stop();}catch(e){} /* Safari 有時停了不回應，1.5 秒後強制重置 */ clearTimeout(recTimer); recTimer=setTimeout(()=>{ try{r.abort();}catch(e){} recReset(); },1500); return; }
+  if(selS===null) return;
+  stopAll(); try{speechSynthesis.cancel();}catch(e){}
   const idx=selS, sEl=$("#s"+idx), words=[...sEl.querySelectorAll(".w")];
   const target=words.map(w=>norm(w.dataset.w).join(""));
-  rec=new SR(); rec.lang="en-US"; rec.interimResults=false; rec.maxAlternatives=3;
-  $("#sRec").classList.add("recording"); $("#sRec").textContent="● 錄音中"; res.innerHTML="請念出這一句…（念完會自動停止）";
-  rec.onresult=e=>{
-    let best=null,bn=-1,bt="";
-    [...e.results[0]].forEach(r=>{ const h=lcs(target,norm(r.transcript)); const n=h.filter(Boolean).length; if(n>bn){bn=n;best=h;bt=r.transcript;} });
-    words.forEach((w,k)=>{ w.classList.remove("good","miss"); w.classList.add(best[k]?"good":"miss"); });
-    const pct=Math.round(bn/words.length*100);
-    if(pct>=70){ state.recOk.add(idx); updTasks(); }
-    res.innerHTML=`<b class="sc" style="color:${pct>=70?'var(--ok)':'var(--red)'}">${pct}</b>分　${pct>=90?"很棒！幾乎全對 🎉":pct>=70?"不錯！紅色的字再念一次":"再試一次，可以先按 ▶ 聽一遍"}<br><span style="color:var(--ink-soft);font-size:14px">系統聽到：「${esc(bt)}」</span>`;
-  };
-  rec.onerror=e=>{ res.innerHTML = (e.error==="not-allowed"||e.error==="service-not-allowed")
-      ? "麥克風被擋住了。預覽頁面不能用麥克風；放到 winglish.tw 後，瀏覽器問是否允許麥克風時按「允許」即可。"
-      : e.error==="no-speech" ? "沒有聽到聲音，再按一次 🎤 試試。" : "辨識失敗（"+e.error+"），再試一次。"; };
-  rec.onend=()=>{ $("#sRec").classList.remove("recording"); $("#sRec").textContent="🎤 跟讀"; rec=null; };
-  try{ rec.start(); }catch(err){ rec=null; $("#sRec").classList.remove("recording"); $("#sRec").textContent="🎤 跟讀"; res.innerHTML="無法啟動錄音。"; }
+  recStarting=true; recUI(true,"準備中…");
+  /* 朗讀剛停時，iPhone/iPad 的麥克風需要一點時間切換，等 0.4 秒再開始，避免卡住 */
+  setTimeout(()=>{
+    const r=new SR(); rec=r; r.lang="en-US"; r.interimResults=true; r.continuous=false; r.maxAlternatives=3;
+    let got=false, heard="";
+    r.onstart=()=>{ recStarting=false; res.innerHTML="🎙 請念出這一句…（念完會自動停止，也可以按「停止錄音」）"; };
+    r.onresult=e=>{
+      const last=e.results[e.results.length-1];
+      heard=[...e.results].map(x=>x[0].transcript).join(" ");
+      if(!last.isFinal){ res.innerHTML=`🎙 聽到：<span style="color:var(--ink-soft)">${esc(heard)}</span>`; return; }
+      got=true;
+      let best=null,bn=-1,bt="";
+      [...last].forEach(a=>{ const h=lcs(target,norm(a.transcript)); const n=h.filter(Boolean).length; if(n>bn){bn=n;best=h;bt=a.transcript;} });
+      words.forEach((w,k)=>{ w.classList.remove("good","miss"); w.classList.add(best[k]?"good":"miss"); });
+      const pct=Math.round(bn/words.length*100);
+      if(pct>=70){ state.recOk.add(idx); updTasks(); }
+      res.innerHTML=`<b class="sc" style="color:${pct>=70?'var(--ok)':'var(--red)'}">${pct}</b>分　${pct>=90?"很棒！幾乎全對 🎉":pct>=70?"不錯！紅色的字再念一次":"再試一次，可以先按 ▶ 聽一遍"}<br><span style="color:var(--ink-soft);font-size:14px">系統聽到：「${esc(bt)}」</span>`;
+      try{ r.stop(); }catch(_){}
+    };
+    r.onerror=e=>{ if(e.error==="aborted") return; res.innerHTML = (e.error==="not-allowed"||e.error==="service-not-allowed")
+        ? "麥克風被擋住了。請在瀏覽器詢問時按「允許」；iPhone/iPad 可到「設定 → Safari → 麥克風」改成允許。"
+        : e.error==="no-speech" ? "沒有聽到聲音，再按一次 🎤 試試。" : "辨識失敗（"+e.error+"），再按一次 🎤 試試。"; };
+    r.onend=()=>{ if(rec!==r) return; if(!got && heard) res.innerHTML=`系統聽到：「${esc(heard)}」，但還沒判斷完，再念一次試試。`; recReset(); };
+    /* 最多錄 12 秒，避免一直卡在錄音中 */
+    clearTimeout(recTimer); recTimer=setTimeout(()=>{ if(rec===r){ try{r.stop();}catch(_){} setTimeout(()=>{ if(rec===r){ try{r.abort();}catch(_){} if(!got) res.innerHTML="錄音太久沒反應，已自動停止。再按一次 🎤 試試。"; recReset(); } },1500); } },12000);
+    try{ r.start(); }catch(err){ recReset(); res.innerHTML="無法啟動錄音，請稍等一下再按一次 🎤。"; }
+  },400);
 };
+$("#sx").addEventListener("click",()=>{ if(rec){ try{rec.abort();}catch(e){} recReset(); } });
 
 /* ---------- quiz ---------- */
 function QZ(){ return Array.isArray(QUIZ[0])?(QUIZ[level]||QUIZ[0]):QUIZ; }
