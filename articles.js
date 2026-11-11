@@ -5,7 +5,7 @@
 window.FEATURED = "";
 window.ARTICLES = [
  {"id": "travelogue", "hook": "1938 年的台灣，有什麼好吃的？", "words": 62, "date": "2026/11/11", "cat": "books", "catName": "好書介紹", "title": "A Journey Through Taiwan, One Dish at a Time", "blurb": "楊双子《臺灣漫遊錄》：1938 年，一位日本作家和她的台灣口譯，跟著一道道料理走遍全台。", "photo": "photo-1745324212400-bcdf7224e1e9"},
- {"id": "sealgut", "hook": "用海豹腸子做成的雨衣？", "words": 83, "date": "2026/11/11", "cat": "fashion", "catName": "服飾時尚", "title": "The Raincoat Inside a Seal", "blurb": "海豹的腸子洗淨、吹氣、晾乾，竟能縫成又輕又防水、還會「呼吸」的外套。", "photo": "photo-1730330727667-952f0b8fb436"},
+ {"id": "sealgut", "hook": "用海豹腸子做成的雨衣？", "words": 83, "date": "2026/11/11", "hot": true, "cat": "fashion", "catName": "服飾時尚", "title": "The Raincoat Inside a Seal", "blurb": "海豹的腸子洗淨、吹氣、晾乾，竟能縫成又輕又防水、還會「呼吸」的外套。", "photo": "photo-1730330727667-952f0b8fb436"},
  {"id": "louis", "hook": "家裡有 357 面鏡子的愛美國王", "words": 69, "date": "2026/11/11", "cat": "fashion", "catName": "服飾時尚", "title": "The King Who Dressed for Power", "blurb": "紅色高跟鞋、巨大捲髮假髮、357 面鏡子──全歐洲最愛漂亮的國王路易十四。", "photo": "photo-1527463945444-74a3bcda664c"},
  {"id": "setjet", "hook": "為了一部劇，飛去一座城市", "words": 53, "date": "2026/11/11", "hot": true, "cat": "travel", "catName": "旅行", "title": "Holidays from the Screen", "blurb": "為了一部劇飛去一座城市？追劇旅行 set-jetting 的魅力與煩惱。", "photo": "photo-1565784623522-7fdf499a94a4"},
  {"id": "thanksgiving", "hook": "總統每年都要「特赦」一隻火雞？", "words": 68, "date": "2026/11/10", "hot": true, "cat": "culture", "catName": "文化節慶", "title": "A Feast, a Letter and a Lucky Turkey", "blurb": "第一次感恩節可能沒有火雞？寫信 17 年的作家，和每年被總統「特赦」的火雞。", "photo": "photo-1763689454945-4b0f3b151969", "svg": "<svg viewBox=\"0 0 320 170\" aria-hidden=\"true\"><rect width=\"320\" height=\"170\" fill=\"#F3D9A4\"/><path d=\"M0 120 C80 114 240 114 320 120 V170 H0Z\" fill=\"#B9773E\"/><ellipse cx=\"160\" cy=\"122\" rx=\"96\" ry=\"18\" fill=\"#FFFDF6\"/><path d=\"M98 118 C98 80 126 60 160 60 C194 60 222 80 222 118Z\" fill=\"#C46A2B\"/><path d=\"M118 108 C122 84 138 72 158 71\" fill=\"none\" stroke=\"#E39A57\" stroke-width=\"6\" stroke-linecap=\"round\"/><g fill=\"#E07A3A\"><circle cx=\"58\" cy=\"126\" r=\"9\"/><circle cx=\"262\" cy=\"128\" r=\"9\"/></g><g fill=\"#7BA05B\"><circle cx=\"44\" cy=\"120\" r=\"7\"/><circle cx=\"276\" cy=\"120\" r=\"7\"/></g></svg>"},
@@ -32,7 +32,6 @@ window.ARTICLES = [
   "hook": "小黃瓜馬、茄子牛，是什麼節日？",
   "words": 87,
   "date": "2026/11/1",
-  "hot": true,
   "cat": "culture",
   "catName": "文化節慶",
   "title": "When Spirits Come Home",
