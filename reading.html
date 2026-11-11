@@ -300,7 +300,7 @@ setTimeout(()=>logUse("open","閱讀館","文章列表"),1500);
       (a.photo?'<img class="cover-photo" src="https://images.unsplash.com/'+a.photo+'?auto=format&fit=crop&w=800&q=70" data-local="'+a.id+'-hero.jpg" alt="" onerror="'+fb+'">':'')+
       (a.svg||fallbackSvg(a))+
       '<div class="body"><div class="cat">'+esc(a.catName)+'</div><h3 class="hook">'+esc(a.hook||a.title)+'</h3>'+(a.hook?'<div class="en-t" lang="en">'+esc(a.title)+'</div>':'')+'<p>'+esc(a.blurb)+'</p>'+
-      '<div class="meta"><span class="lv lv1">L1</span><span class="lv lv2">L2</span><span class="lv lv3">L3</span>'+(a.words?'<span class="wpill" title="大考中心 7000 單字表第 3–6 級">學測中高級字 '+a.words+'</span>':'')+'<span style="margin-left:auto">約 4 分鐘</span></div></div></a>';
+      '<div class="meta"><span class="lv lv1">L1</span><span class="lv lv2">L2</span><span class="lv lv3">L3</span>'+(a.words?'<span class="wpill" title="大考中心 7000 單字表第 3–6 級">學測中高級字 '+a.words+'</span>':'')+'</div></div></a>';
   }).join('');
   document.querySelectorAll('#filters button').forEach(function(b){b.onclick=function(){
     document.querySelectorAll('#filters button').forEach(function(x){x.classList.toggle('on',x===b);});
