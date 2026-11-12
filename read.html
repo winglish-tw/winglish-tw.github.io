@@ -274,7 +274,7 @@ figure img.photo + svg{display:none !important}
     <div class="byline">
       <div>By winglish.tw 編輯部</div>
       <div><span class="cap">適合</span><span id="recFor">單字量約 2000</span></div>
-      <div class="metas"><span><span class="cap">字數</span><b class="bf" id="mWords">0</b></span><span><span class="cap">難度</span><b class="bf" id="mLevel">Level 1</b></span><span><span class="cap">發布</span><b class="bf" id="aDate"></b></span></div>
+      <div class="metas"><span><span class="cap">字數</span><b class="bf" id="mWords">0</b></span><span><span class="cap">難度</span><b class="bf" id="mLevel">Level 1</b></span></div>
     </div>
 
     <div class="tools">
@@ -363,7 +363,7 @@ setTimeout(()=>logUse("open","閱讀館",A.title),1500);
 document.title=A.title+"｜winglish.tw 閱讀館";
 document.getElementById("aCat").textContent=A.category; document.getElementById("aTitle").textContent=A.title;
 document.getElementById("aDek").textContent=A.dek; document.getElementById("aHero").innerHTML=A.hero;
-document.getElementById("aDate").textContent=A.date; document.getElementById("aFact").textContent=A.fact;
+document.getElementById("aFact").textContent=A.fact;
 if(A.next){ document.getElementById("aNext").href=A.next.href||"reading.html"; document.getElementById("aNextT").textContent="下一篇："+A.next.title+(A.next.soon?"（即將推出）":""); if(A.next.soon) document.getElementById("aNext").href="reading.html"; }
 function lookup(w){ w=w.replace(/['’]s$/,"");
   const c=[w,w.replace(/ies$/,"y"),w.replace(/es$/,""),w.replace(/s$/,""),w.replace(/ed$/,""),w.replace(/d$/,""),w.replace(/ing$/,""),w.replace(/ing$/,"e")];
