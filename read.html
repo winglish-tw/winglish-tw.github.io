@@ -240,6 +240,25 @@ figure img.photo + svg{display:none !important}
 
 /* 手機版精簡導覽：只留 logo 圖示和三張便利貼 */
 @media (max-width:640px){header.top,header.site{flex-wrap:wrap;row-gap:10px}header .logo>span{display:block!important}header .logo b{font-size:19px!important;white-space:nowrap}header nav{width:100%;gap:10px!important;align-items:center;justify-content:flex-start;padding-left:2px}header nav a.nav-gsat,header nav a.nav-mx,header nav a.nav-read{display:inline-block!important;font-size:13px!important;padding:5px 9px!important}header nav a:not(.nav-gsat):not(.nav-mx):not(.nav-read):not(.on){display:none!important}header nav a.on{font-size:14px;white-space:nowrap}}
+/* 做完推薦下一篇／升級彈窗 */
+.nxov{position:fixed;inset:0;background:rgba(26,34,56,.5);z-index:90;display:none;align-items:center;justify-content:center;padding:18px}
+.nxov.show{display:flex}
+.nxbox{background:var(--white);border-radius:22px;max-width:420px;width:100%;padding:22px 20px 18px;box-shadow:0 18px 50px rgba(0,0,0,.25);text-align:center;animation:nxin .35s ease}
+@keyframes nxin{from{transform:translateY(24px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+.nxup{background:linear-gradient(135deg,#FFE14D,#FFB84D);border-radius:16px;padding:14px 12px;margin-bottom:16px}
+.nxup .big{font-size:34px;line-height:1.2}
+.nxup b{display:block;font-size:20px;margin:4px 0}
+.nxup span{font-size:14px;color:var(--ink-soft)}
+.nxh{font-size:15px;color:var(--ink-soft);margin:0 0 10px}
+.nxcard{display:block;text-decoration:none;color:var(--ink);border:2px solid var(--mist);border-radius:16px;overflow:hidden;text-align:left}
+.nxcard svg{display:block;width:100%;height:auto;max-height:150px}
+.nxcard .t{font-weight:800;font-size:18px;padding:10px 14px 2px}
+.nxcard .d{font-size:14px;color:var(--ink-soft);padding:0 14px 12px}
+.nxbtns{display:flex;gap:10px;margin-top:14px}
+.nxbtns button,.nxbtns a{flex:1;border:0;border-radius:999px;padding:12px 8px;font-size:16px;font-weight:700;cursor:pointer;text-decoration:none;font-family:inherit}
+.nxgo{background:var(--red);color:#fff}
+.nxother{background:var(--mist);color:var(--ink)}
+.nxstay{background:none;border:0;color:var(--ink-soft);font-size:14px;margin-top:10px;cursor:pointer;text-decoration:underline;font-family:inherit}
 </style>
 <link rel="stylesheet" href="notes.css?v=2">
 </head>
@@ -350,6 +369,9 @@ figure img.photo + svg{display:none !important}
 <div class="wbtoast" id="wbtoast"></div>
 <div class="wbov" id="wbov" role="dialog" aria-label="我的單字本"><div class="wbbox" id="wbbox"></div></div>
 
+<div class="nxov" id="nxov" role="dialog" aria-label="推薦下一篇"><div class="nxbox" id="nxbox"></div></div>
+
+<script src="articles.js"></script>
 <script>
 /* 使用紀錄（寫進 Winglish 後台「使用統計」） */
 const WG_API="https://script.google.com/macros/s/AKfycbw3MkXckmbZXEnMGWXjHp01c1Ft02E7o9nDpjOU_V2XwKfglFWL16x3__W7djchzFznSw/exec";
@@ -376,6 +398,7 @@ function figHTML(k){ const f=FIGS[k];
 
 const $=s=>document.querySelector(s);
 let level=0, selS=null, playing=false, stopFlag=false, voice=null;
+try{ const sl=+localStorage.getItem("wg-level"); if(sl>=0&&sl<LEVELS.length){ level=sl; $("#lv").value=String(sl); } }catch(e){}
 let state={listened:false, recOk:new Set(), answered:{}};
 
 /* ---------- speech ---------- */
@@ -470,7 +493,7 @@ function render(){
   refreshWB();
   state.recOk=new Set(); updTasks();
 }
-$("#lv").onchange=e=>{ stopAll(); hideSheet(); level=+e.target.value; render(); renderVP(); if(Array.isArray(QUIZ[0])){ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); } };
+$("#lv").onchange=e=>{ stopAll(); hideSheet(); level=+e.target.value; try{ localStorage.setItem("wg-level",String(level)); }catch(_){} render(); renderVP(); if(Array.isArray(QUIZ[0])){ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); } };
 
 /* ---------- tools ---------- */
 $("#tZh").onclick=()=>{ const on=$("#text").classList.toggle("showzh"); $("#tZh").classList.toggle("on",on); };
@@ -567,6 +590,7 @@ function renderQuiz(){
     updTasks();
     if(Object.keys(state.answered).length===QUIZ.length){ const c=QUIZ.filter((q,k)=>state.answered[k]===q.a).length;
       logUse("done","閱讀館",A.title+"（"+LEVELS[level].name+"）",c,QUIZ.length);
+      markDone(); setTimeout(showNext,2500);
       $("#qscore").innerHTML=`得分 ${c} / ${QUIZ.length}<button class="again" id="again">再做一次</button>`;
       $("#again").onclick=()=>{ state.answered={}; $("#qscore").innerHTML=""; renderQuiz(); updTasks(); }; }
   });
@@ -647,6 +671,44 @@ function renderVP(){ const VP=VPRAC[level]||[]; vpAns={}; $("#vpscore").innerHTM
     e.classList.add("show"); e.classList.toggle("bad",oi!==q.a); e.querySelector(".addwb").onclick=()=>toggleWB(q.w); refreshWB(); updTasks();
     if(Object.keys(vpAns).length===VP.length){ const c=VP.filter((q,k)=>vpAns[k]===q.a).length; logUse("vocab","閱讀館",A.title+"（"+LEVELS[level].name+"）單字",c,VP.length);
       $("#vpscore").innerHTML=`得分 ${c} / ${VP.length}<button class="again" id="vagain">再做一次</button>`; $("#vagain").onclick=()=>{ Object.keys(gOrder).filter(k=>k.startsWith("v")).forEach(k=>delete gOrder[k]); renderVP(); updTasks(); }; } }); }
+
+/* ---------- 做完推薦下一篇＋升級 ---------- */
+const UP_N=3; /* 同一級做完幾篇就升級 */
+function getDone(){ try{ return JSON.parse(localStorage.getItem("wg-done")||"{}"); }catch(e){ return {}; } }
+let upMsg=null;
+function markDone(){
+  const d=getDone(); const k=String(level);
+  d[k]=d[k]||[]; if(!d[k].includes(A.id)) d[k].push(A.id);
+  try{ localStorage.setItem("wg-done",JSON.stringify(d)); }catch(e){}
+  let up={}; try{ up=JSON.parse(localStorage.getItem("wg-upgraded")||"{}"); }catch(e){}
+  if(level<LEVELS.length-1 && d[k].length>=UP_N && !up[k]){
+    up[k]=1; try{ localStorage.setItem("wg-upgraded",JSON.stringify(up)); localStorage.setItem("wg-level",String(level+1)); }catch(e){}
+    upMsg={from:level,to:level+1};
+  }
+}
+function allDoneIds(){ const d=getDone(); return new Set([].concat(...Object.values(d))); }
+let nxSeen=[];
+function pickNext(){
+  const L=window.ARTICLES||[], done=allDoneIds();
+  let pool=L.filter(a=>a.id!==A.id&&!done.has(a.id)&&!nxSeen.includes(a.id));
+  if(!pool.length) pool=L.filter(a=>a.id!==A.id&&!nxSeen.includes(a.id));
+  if(!pool.length){ nxSeen=[]; pool=L.filter(a=>a.id!==A.id); }
+  /* 優先推不同類別，比較不會膩 */
+  const diff=pool.filter(a=>a.catName!==A.category);
+  const P=diff.length?diff:pool; const a=P[Math.floor(Math.random()*P.length)]; if(a) nxSeen.push(a.id); return a;
+}
+function showNext(){
+  const a=pickNext(); if(!a&&!upMsg) return;
+  const nm=i=>"Level "+(i+1);
+  const upH=upMsg?`<div class="nxup"><div class="big">🎉🏅</div><b>升級！${nm(upMsg.from)} → ${nm(upMsg.to)}</b><span>你已經用 ${nm(upMsg.from)} 讀完 ${UP_N} 篇文章，太厲害了！<br>接下來的文章會自動用 ${nm(upMsg.to)} 開啟（隨時可以在上方切換難度）。</span></div>`:"";
+  const cardH=a?`<p class="nxh">${upMsg?"用新等級挑戰下一篇：":"👏 這篇完成了！再讀一篇吧："}</p><a class="nxcard" href="read.html#${a.id}">${a.svg||""}<div class="t">${a.hook}</div><div class="d">${a.catName}・${a.blurb}</div></a>
+    <div class="nxbtns"><button class="nxother" id="nxOther">🔄 換一篇</button><a class="nxgo" href="read.html#${a.id}">去讀這篇 →</a></div>`:"";
+  $("#nxbox").innerHTML=upH+cardH+`<button class="nxstay" id="nxStay">先留在這裡看詳解</button>`;
+  $("#nxov").classList.add("show");
+  $("#nxStay").onclick=()=>{ $("#nxov").classList.remove("show"); upMsg=null; };
+  const o=$("#nxOther"); if(o) o.onclick=()=>{ upMsg=null; showNext(); };
+}
+$("#nxov").onclick=e=>{ if(e.target.id==="nxov"){ $("#nxov").classList.remove("show"); upMsg=null; } };
 
 render(); renderQuiz(); renderVP(); updTasks();
 }
